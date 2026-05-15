@@ -1,0 +1,55 @@
+# BluMind Benchmark — GitHub Pages configuration
+#
+# The site is a thin public face for the BluMind Benchmark repository.
+# It serves only the landing pages (English and Spanish); the rest of
+# the benchmark (methodology, submission guide, committee, leaderboard,
+# etc.) is read from this same repository on GitHub.
+
+title: BluMind Benchmark
+description: >-
+  The public benchmark of AI reasoning applied to water-treatment-plant
+  operations.
+url: https://benchmark.blumind.es
+lang: en
+
+theme: minima
+
+minima:
+  skin: classic
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+
+# Files and folders excluded from the site build.
+# Everything below stays in the GitHub repository but is not served as a
+# web page on benchmark.blumind.es.
+exclude:
+  # Data and benchmark artifacts
+  - cases/
+  - responses/
+  - scoring/
+  - golds/
+  - ideal_responses/
+  - subjects/
+  - logs/
+  - mappings/
+  # Internal results (raw CSVs and history; the leaderboard markdown is
+  # still on GitHub and is linked from the landing)
+  - results/
+  # Scripts and CI
+  - scripts/
+  # System internals (schemas, rubric, families, prompts, PGP keys)
+  - system/
+  # Project documentation rendered on GitHub instead of via Jekyll
+  - docs/
+  - README.md
+  - CHANGELOG.md
+  - COMMITTEE.md
+  - LICENSE
+  # Misc
+  - .gitignore
+  - .gitkeep
+  - "**/.gitkeep"
