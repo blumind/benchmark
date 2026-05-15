@@ -3,7 +3,7 @@
 
 Some fields in this repository belong to the *commercial* (PREMIUM) tier of
 the BluMind dataset and must NEVER end up in the public benchmark export
-that is published on GitHub / blumind.dev. This script is the manual gate
+that is published on GitHub / benchmark.blumind.es. This script is the manual gate
 that catches them before publication.
 
 What it checks

@@ -33,10 +33,10 @@ Each subject declares its mode in `subjects/registry.yaml` (`sampling_policy.kin
 
 ## Quick links
 
-- **Public leaderboard**: [https://benchmark.blumind.es](https://benchmark.blumind.es) *(pending)*
-- **Methodology**: [`docs/metodologia.md`](docs/metodologia.md) *(pending)*
-- **Submit a model for evaluation**: [`docs/submission_guide.md`](docs/submission_guide.md) *(pending)*
-- **Join as an expert reviewer**: [`docs/reviewer_guide.md`](docs/reviewer_guide.md) *(pending)*
+- **Public leaderboard**: [https://benchmark.blumind.es](https://benchmark.blumind.es)
+- **Methodology**: [`docs/methodology.md`](docs/methodology.md)
+- **Submit a model for evaluation**: [`docs/submission_guide.md`](docs/submission_guide.md)
+- **Join as an expert reviewer**: [`docs/reviewer_guide.md`](docs/reviewer_guide.md)
 - **License**: [`LICENSE`](LICENSE)
 
 ---
@@ -189,18 +189,19 @@ To keep v1.0 shippable, the following design decisions are intentionally postpon
 
 ## How to submit a model for evaluation
 
-> Summary flow. Detailed guide in [`docs/submission_guide.md`](docs/submission_guide.md) *(pending)*.
->
-> **Operational note**: the flow described below is the target mechanic. End-to-end execution activates with the publication of v1.0; steps marked *(pending)* are not yet enabled.
+> Summary flow. The canonical, operative reference is
+> [`docs/submission_guide.md`](docs/submission_guide.md). In case of any
+> divergence between this summary and that document, the submission guide
+> prevails.
 
-1. **Register your model** by adding an entry in [`subjects/registry.yaml`](subjects/registry.yaml) via pull request *(PR mechanism pending to be enabled)*. The entry must validate against [`system/schemas/v1.0/registry.schema.json`](system/schemas/v1.0/registry.schema.json) and provide a unique `subject_id`, the `kind` of subject (`llm`, `expert_system`, `human_baseline`, or `committee`), the `provider`, and at least one `version` with its `subject_version`, `registered_at` date, and `access_type`.
-2. **Provide API credentials** (or weights, if it is a local model) through a secure channel outside the repo *(secure channel pending to be enabled)*.
-3. **BluMind runs the evaluation** against the cases of the requested version *(execution capability pending to be enabled)*.
-4. **The committee scores** the responses (2 independent reviewers; third reviewer if there is disagreement) *(committee being formed)*.
-5. **You receive a private report** with your full metrics, including breakdown by failure family, ECE by confidence quantile, and comparison against other models *(report format to be defined)*.
-6. **The aggregated result is published** on the leaderboard if agreed in the evaluation contract *(evaluation contract pending)*.
+1. **Prepare your registry entry** for [`subjects/registry.yaml`](subjects/registry.yaml), conforming to [`system/schemas/v1.0/registry.schema.json`](system/schemas/v1.0/registry.schema.json). In v1.0 `kind` must be `llm` and `access_type` must be `api` or `hosted_endpoint`. See [Submission requirements](docs/submission_guide.md#submission-requirements) for the full schema.
+2. **Send a single PGP-encrypted email** to `submissions@blumind.es` with the proposed registry entry, API credentials, technical and administrative contacts, and an explicit acceptance of the operative terms. The BluMind public PGP key and fingerprint are in [`system/keys/`](system/keys/).
+3. **BluMind validates the submission** (target: within 2 working days). The evaluation timeline starts from the validation timestamp.
+4. **BluMind runs the evaluation** against the v1.0 case set and scores it through the [BluMind Technical Committee](docs/submission_guide.md#scoring-by-the-blumind-technical-committee) (two independent reviewers per response, with escalation to the full committee on disagreement).
+5. **The result is published** on the public leaderboard. During the foundational phase, every validated submission is published, including a `Disqualified` status if the safety gate is triggered.
+6. **A private report** (Standard or Premium) may be requested as a paid service, in addition to the public leaderboard row.
 
-**Cost**: the v1.0 evaluation (30 cases) is **free during the foundational phase** (2026) for the first 10 models *(program pending activation)*. Starting from v2.0, the paid service model activates.
+**Cost**: during the **foundational phase (until 31 December 2026)** BluMind waives the evaluation fee for accepted submissions. Custom evaluations, private reports, expedited turnarounds, and re-evaluations may be offered as paid services. See [Pricing](docs/submission_guide.md#pricing) for the full terms.
 
 ---
 
@@ -210,10 +211,10 @@ To keep v1.0 shippable, the following design decisions are intentionally postpon
 
 BluMind selects reviewers with demonstrable experience in water treatment plant operation (minimum 5 years) or in membrane / process R&D. v1.0 specifically requires experience in reverse-osmosis desalination; future versions will open calls for reviewers in other sub-sectors (potabilization, wastewater treatment, water reuse, industrial water). The target process:
 
-1. CV submission to `revisores@blumind.es` *(inbox pending activation)*.
+1. CV submission to `committee@blumind.es`.
 2. Technical interview with a committee member *(committee being formed)*.
 3. Calibration test on 3 pilot cases *(pilot cases pending preparation)*.
-4. Onboarding via the reviewer guide ([`docs/reviewer_guide.md`](docs/reviewer_guide.md) *(pending)*).
+4. Onboarding via the reviewer guide ([`docs/reviewer_guide.md`](docs/reviewer_guide.md)).
 
 Reviewers sign an NDA and an anonymity agreement *(templates pending)*. Their name never appears publicly; only their anonymized `reviewer_id` (`R01`, `R02`…).
 
@@ -272,17 +273,17 @@ In prose: *"BluMind Benchmark v1.0 (BluMind Technologies SL, 2026)"*.
 
 ## Contact
 
-- General: `hola@blumind.es` *(pending)*
-- Model evaluation: `benchmark@blumind.es` *(pending)*
-- Reviewers and committee: `revisores@blumind.es` *(pending)*
-- Press and institutional: `institucional@blumind.es` *(pending)*
+- General: `info@blumind.es`
+- Model evaluation: `submissions@blumind.es`
+- Reviewers and committee: `committee@blumind.es`
+- Press and institutional: `info@blumind.es`
 
 ---
 
 ## Project status
 
-**Current version**: v1.0 under construction — 5 families × 6 cases planned (details in [`docs/metodologia.md`](docs/metodologia.md) *(pending)*).
+**Current version**: v1.0 under construction — 5 families × 6 cases planned (details in [`docs/methodology.md`](docs/methodology.md)).
 **Next milestone**: release v1.0 with a public leaderboard populated with the main frontier LLMs evaluated.
-**Version history**: see [`CHANGELOG.md`](CHANGELOG.md) *(pending)*.
+**Version history**: see [`CHANGELOG.md`](CHANGELOG.md).
 
 This benchmark is a living product. The rubric version, the case set and the methodology will be refined as the committee accumulates operational evidence. Each version is frozen in its folder and is not overwritten when the next one is published.

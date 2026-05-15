@@ -22,7 +22,7 @@ subjects:
       shot, no consultation with other reviewers. Establishes the ceiling
       reference of the leaderboard. Recomputed at the start of each new
       benchmark version.
-    contact: revisores@blumind.es
+    contact: committee@blumind.es
     versions:
       - subject_version: human-senior-baseline-2026-pilot
         registered_at: "2026-05-07"
@@ -38,7 +38,7 @@ subjects:
       OpenAI's GPT-5 frontier model evaluated via the public Chat Completions
       API. Sampling parameters fixed by the platform (temperature=0, top_p=1)
       per system/prompts/v1.0/prompt_template.md.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: gpt-5-2025-08-07
         registered_at: "2026-04-22"
@@ -54,7 +54,7 @@ subjects:
       Anthropic's Claude Opus 4.6 evaluated via the public Messages API.
       Sampling parameters fixed by the platform (temperature=0, top_p=1)
       per system/prompts/v1.0/prompt_template.md.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: claude-opus-4-6
         registered_at: "2026-04-23"
@@ -75,7 +75,7 @@ subjects:
       mechanism with thinking.adaptive + output_config.effort. The runner
       uses sampling_policy kind=reasoning; LiteLLM translates reasoning_effort
       into Anthropic's native control.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: claude-opus-4-7
         registered_at: "2026-05-13"
@@ -96,7 +96,7 @@ subjects:
       temperature (1), so the runner uses sampling_policy kind=reasoning
       and instead controls determinism via reasoning_effort/verbosity per
       OpenAI's GPT-5.5 migration guide.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: gpt-5.5-2026-04-23
         registered_at: "2026-05-13"
@@ -114,7 +114,7 @@ subjects:
       to test that the rubric discriminates across the quality spectrum.
       Sampling parameters fixed by the platform (temperature=0, top_p=1) per
       system/prompts/v1.0/prompt_template.md.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: gpt-3.5-turbo-0125
         registered_at: "2026-05-12"
@@ -132,7 +132,7 @@ subjects:
       test that the rubric discriminates across the quality spectrum.
       Sampling parameters fixed by the platform (temperature=0, top_p=1)
       per system/prompts/v1.0/prompt_template.md.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: claude-haiku-4-5-20251001
         registered_at: "2026-05-12"
@@ -150,7 +150,7 @@ subjects:
       reference point on the leaderboard.
       Sampling parameters fixed by the platform (temperature=0, top_p=1)
       per system/prompts/v1.0/prompt_template.md.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: mistral-medium-2505
         registered_at: "2026-05-12"
@@ -168,7 +168,7 @@ subjects:
       rubric discriminates across the quality spectrum.
       Sampling parameters fixed by the platform (temperature=0, top_p=1)
       per system/prompts/v1.0/prompt_template.md.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: mistral-small-2603
         registered_at: "2026-05-12"
@@ -186,7 +186,7 @@ subjects:
       Google AI Studio Tier-1 capacity gating returned 503 for 8 of 9
       FOUL cases. The model will be re-attempted once Google releases
       Tier-2 capacity or a stable (non-preview) snapshot.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: gemini-3.1-pro-preview
         registered_at: "2026-05-12"
@@ -208,7 +208,7 @@ subjects:
       reliable Google frontier entry for v1.0.
       Sampling parameters fixed by the platform (temperature=0, top_p=1)
       per system/prompts/v1.0/prompt_template.md.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: gemini-2.5-pro
         registered_at: "2026-05-13"
@@ -226,7 +226,7 @@ subjects:
       Gemini 3.1 generation. Included as the Google mid-tier probe.
       Sampling parameters fixed by the platform (temperature=0, top_p=1)
       per system/prompts/v1.0/prompt_template.md.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: gemini-3.1-flash-lite
         registered_at: "2026-05-12"
@@ -245,7 +245,7 @@ subjects:
       probe (since Gemini 2.0 Flash-Lite was retired for new users).
       Sampling parameters fixed by the platform (temperature=0, top_p=1)
       per system/prompts/v1.0/prompt_template.md.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: gemini-2.5-flash-lite
         registered_at: "2026-05-12"
@@ -268,7 +268,7 @@ subjects:
       time.
       Sampling parameters fixed by the platform (temperature=0, top_p=1)
       per system/prompts/v1.0/prompt_template.md.
-    contact: benchmark@blumind.es
+    contact: submissions@blumind.es
     versions:
       - subject_version: deepseek-v4-flash
         registered_at: "2026-05-12"

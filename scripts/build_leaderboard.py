@@ -290,7 +290,7 @@ def render_links() -> str:
         "- **Submit a model**: [`docs/submission_guide.md`](docs/submission_guide.md)\n"
         f"- **Source code**: {src}\n"
         "- **Public site**: <https://benchmark.blumind.es>\n"
-        "- **Repo**: GitHub *(pending)*\n\n---\n\n"
+        "- **Repo**: <https://github.com/blumind/benchmark>\n\n---\n\n"
     )
 
 

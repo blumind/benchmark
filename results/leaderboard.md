@@ -91,7 +91,7 @@ The **safety gate** disqualifies any subject that triggers ≥ 1 critical automa
 - **Submit a model**: [`docs/submission_guide.md`](docs/submission_guide.md)
 - **Source code**: [`scripts/compute_metrics.py`](scripts/compute_metrics.py), [`scripts/compute_operational.py`](scripts/compute_operational.py), [`scripts/build_leaderboard.py`](scripts/build_leaderboard.py)
 - **Public site**: <https://benchmark.blumind.es>
-- **Repo**: GitHub *(pending)*
+- **Repo**: <https://github.com/blumind/benchmark>
 
 ---
 
