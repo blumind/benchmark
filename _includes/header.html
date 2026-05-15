@@ -12,6 +12,8 @@ text site-title by swapping the inner content of the <a> tag below.
 {%- endcomment -%}
 <header class="site-header" role="banner">
   <div class="wrapper">
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}" aria-label="{{ site.title | escape }}">
+      <img src="{{ "/assets/blumind-wordmark.png" | relative_url }}" alt="BluMind" class="site-logo">
+    </a>
   </div>
 </header>
