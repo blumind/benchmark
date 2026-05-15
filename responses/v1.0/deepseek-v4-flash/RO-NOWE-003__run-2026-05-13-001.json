@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:21:10Z",
+  "main_hypothesis": "Incomplete removal of preservative (bisulfite and glycerine) from the new membranes due to insufficient flushing during commissioning.",
+  "key_signals": [
+    "Glicerina/COD permeado 320 mg/L (subida transitoria)",
+    "ORP alimentación -10 mV (esperado +90 mV)",
+    "Pasos de aclarado pre-arranque ejecutados: 1 (30 min) en lugar de los 3 (1 h cada uno) recomendados",
+    "Caudal permeado 175 m³/h (70% del esperado) con subida lenta",
+    "Conductividad permeado 580 µS/cm (superior al esperado 350 µS/cm) con tendencia a la baja",
+    "Presión alimentación 60 bar (mayor que la esperada 58 bar)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membranas dañadas por oxidación (cloro)",
+      "why_plausible": "El cloro libre es indetectable (<0.02 mg/L) y la conductividad inicial elevada podría sugerir daño.",
+      "why_discardable": "El cloro se mantiene estable y por debajo del límite; la conductividad mejora en lugar de empeorar; ORP bajo indica ambiente reductor, no oxidante."
+    },
+    {
+      "hypothesis": "Elementos nuevos con menor permeabilidad o mayor paso de sales intrínseco (fabricación)",
+      "why_plausible": "Proveedor distinto pudo tener membranas con características diferentes; las presiones y caudales son anómalos.",
+      "why_discardable": "La mejora lenta en conductividad y caudal es coherente con una limpieza progresiva de preservantes, no con diferencias intrínsecas que serían estables. Además, la presencia de glicerina en permeado indica que el problema es residual."
+    },
+    {
+      "hypothesis": "Fugas en O-rings o conexiones del portamembranas",
+      "why_plausible": "Causaría conductividad elevada y caudal reducido.",
+      "why_discardable": "No explicaría la presencia de glicerina en permeado ni el ORP anómalamente bajo; la mejora progresiva tampoco sería esperada por fugas mecánicas."
+    }
+  ],
+  "requested_data": "Concentración de bisulfito residual (SO3^2-) en el agua de alimentación al tren RO (mg/L)",
+  "recommended_action": "Realizar dos aclarados adicionales con permeado a baja presión (5-10 bar) de 1 hora de duración cada uno, según el procedimiento del proveedor. Monitorear ORP, conductividad y glicerina/COD en permeado tras cada aclarado. Posteriormente, retomar ramp-up de presión de forma gradual (30 min hasta presión nominal).",
+  "decision_change_condition": "Si tras completar los dos aclarados adicionales no se observa mejora en ORP (hacia +90 mV), reducción de glicerina/COD en permeado (<50 mg/L) y reducción de ΔP etapa 1 hacia 1,1 bar, entonces reconsiderar hipótesis de daño por oxidación o defecto de fabricación de las membranas.",
+  "confidence": 85
+}

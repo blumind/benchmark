@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:34:06Z",
+  "main_hypothesis": "Incrustación de fosfato de calcio (Ca3(PO4)2) en la segunda etapa debido a la incapacidad del antiincrustante poliacrílico estándar para inhibir la precipitación de fosfatos bajo las condiciones de concentración del rechazo.",
+  "key_signals": [
+    "Aumento marcado de ΔP en la etapa 2 (0,9 a 1,9 bar)",
+    "Aumento significativo de PO4³⁻ en alimentación (1,8 a 2,8 mg/L) y rechazo (7,8 a 12,5 mg/L)",
+    "Ineficacia de la limpieza ácida (HCl) para mantener la reducción de ΔP a largo plazo",
+    "Confirmación del fabricante de que el antiincrustante actual no contempla la inhibición de fosfatos",
+    "Cálculo de saturación de Ca3(PO4)2 en riesgo alto"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bioincrustación (biofouling) por proliferación bacteriana debido al aumento de nutrientes (fosfatos).",
+      "why_plausible": "El aumento de fosfatos puede actuar como nutriente para el crecimiento de biopelículas en la segunda etapa.",
+      "why_discardable": "La limpieza ácida (HCl) tuvo un efecto temporal en la reducción de ΔP, lo cual es característico de incrustaciones inorgánicas; la bioincrustación suele requerir limpiezas alcalinas o biocidas para una recuperación significativa."
+    },
+    {
+      "hypothesis": "Incrustación de sulfato de calcio (yeso) por desajuste en la dosificación de ácido sulfúrico.",
+      "why_plausible": "El uso de H2SO4 para control de pH aumenta la concentración de sulfatos, favoreciendo la precipitación de CaSO4.",
+      "why_discardable": "El pH de alimentación se mantiene estable en 6,8 y los niveles de calcio y alcalinidad en el rechazo no muestran una desviación que justifique una precipitación masiva de sulfatos frente a la clara correlación con el aumento de fosfatos."
+    }
+  ],
+  "requested_data": "Análisis de autopsia de membrana o análisis de los sólidos disueltos en el efluente de limpieza (CIP) mediante espectroscopía de rayos X por energía dispersiva (EDX) para confirmar la presencia de fósforo y calcio en el depósito.",
+  "recommended_action": "Sustituir el antiincrustante actual por uno específico de alta eficiencia para fosfatos y realizar una limpieza química (CIP) utilizando un agente quelante (como EDTA al 1-2% p/p) a pH controlado (pH 4-5) para solubilizar los depósitos de fosfato de calcio.",
+  "decision_change_condition": "Si el análisis de los sólidos del CIP revelara una composición mayoritaria de materia orgánica o polisacáridos en lugar de sales de calcio y fósforo, la hipótesis cambiaría a bioincrustación.",
+  "confidence": 90
+}

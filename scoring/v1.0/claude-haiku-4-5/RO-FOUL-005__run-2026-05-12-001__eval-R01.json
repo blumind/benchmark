@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-005-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-005",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'overdosing FeCl3 → iron hydroxide precipitation' captura cause."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta Fe×8+SDI+turbidez+color+ATP estable+conductividad estable."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (bio, SCAL, MECH sand filter, corrosión) anclados."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Operacional: reducir FeCl3 a 1.5 + backwash filtros + reemplazar cartuchos. NO CIP de membrana — incompleto."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide Fe speciation Fe2+/Fe3+ — dato discriminante pero no en accepted del gold."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: Fe >80% dissolved OR Fe no <0.10 en 48h → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Acción falta CIP de membrana — solo operacional."
+}

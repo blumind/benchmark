@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:23:55Z",
+  "main_hypothesis": "Microbial biofilm formation and proliferation within the RO membrane elements during the 28-day stagnation period without biocide preservation, causing membrane fouling, increased differential pressure, reduced permeate flow, and compromised salt rejection.",
+  "key_signals": [
+    "ATP in feed water increased from 60 pg/mL to 980 pg/mL post-startup, indicating active microbial biomass",
+    "ΔP stage 1 increased from 0.9 bar to 1.5 bar (67% rise) within 3 days post-startup",
+    "Permeate flow decreased 8% (208 to 192 m³/h) despite increased feed pressure (14.5 to 17 bar)",
+    "Permeate conductivity increased from 95 to 110 µS/cm, indicating compromised membrane rejection",
+    "Hydrogen sulfide odor detected in concentrate on day -3, consistent with anaerobic sulfate-reducing bacteria metabolism",
+    "Turbidity at cartridge outlet increased from 0.06 to 0.12 NTU, suggesting biofilm shedding or microbial debris",
+    "TOC in feed water increased from 1.2 to 1.5 mg/L, providing substrate for microbial growth",
+    "Membranes were stagnant in permeate without biocide for 23 days (day -28 to -5), creating ideal conditions for biofilm establishment"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Silica scaling on membrane surface due to inadequate antiscalant dosing or precipitation during stagnation",
+      "why_plausible": "Feed silica is 33 mg/L (near saturation threshold), antiscalant dosing is 10 ppm, and stagnation without circulation could allow localized supersaturation and silica polymerization on membrane surface.",
+      "why_discardable": "Silica scaling would not explain the marked ATP elevation (980 pg/mL), hydrogen sulfide odor, or the rapid progression of ΔP rise within 3 days post-startup. Silica fouling develops more slowly and does not produce odorous metabolites. The increase in permeate conductivity is inconsistent with silica scaling, which would reduce permeate flow without necessarily compromising salt rejection."
+    },
+    {
+      "hypothesis": "Calcium carbonate scaling triggered by pH drift or CO₂ loss during stagnation",
+      "why_plausible": "Feed calcium is 280 mg/L and pH is 7.3; stagnant water can lose CO₂ and shift pH upward, promoting CaCO₃ precipitation. Calcite scaling is a common RO fouling mechanism.",
+      "why_discardable": "pH remained stable at 7.3–7.4 throughout the period, and feed calcium concentration is unchanged (280 vs 275 mg/L). Calcite scaling does not explain the hydrogen sulfide odor, the dramatic ATP increase, or the turbidity rise at the cartridge outlet. Scaling would not produce the characteristic anaerobic metabolite signature."
+    },
+    {
+      "hypothesis": "Organic fouling from residual feed water contaminants or degradation of antiscalant during stagnation",
+      "why_plausible": "TOC increased from 1.2 to 1.5 mg/L; stagnant conditions can promote hydrolysis and polymerization of organic compounds, including antiscalant breakdown products.",
+      "why_discardable": "Organic fouling alone does not explain the ATP spike (980 pg/mL), which is a direct measure of living microbial biomass, not inert organic matter. The hydrogen sulfide odor is diagnostic of microbial metabolism, not chemical degradation. Organic fouling would not produce the characteristic odor or the rapid ΔP rise observed within 3 days of restart."
+    },
+    {
+      "hypothesis": "Membrane damage or defect introduced during the maintenance shutdown or pre-startup circulation",
+      "why_plausible": "Membranes were exposed to stagnant conditions and then subjected to 4 hours of circulation at day -5; mechanical stress or chemical incompatibility could cause pinhole defects or loss of rejection.",
+      "why_discardable": "Membrane defects would cause a sudden, sustained increase in permeate conductivity without necessarily increasing ΔP. The pattern observed—simultaneous rise in ΔP, decrease in flow, and increase in conductivity—is consistent with fouling, not defects. ATP elevation and hydrogen sulfide odor are not explained by mechanical damage."
+    }
+  ],
+  "requested_data": "Microscopic examination (SEM or optical) of a small coupon or sample from the membrane surface or a membrane element autopsy report showing presence or absence of biofilm matrix, extracellular polysaccharides, and microbial cells.",
+  "recommended_action": "Immediately initiate a chemical cleaning sequence: (1) Circulate a biocide solution (sodium hypochlorite 200 mg/L active chlorine or equivalent approved biocide) through the RO system for 1 hour at low pressure (5 bar) and low flow (50% of nominal) to disrupt biofilm; (2) Follow with a hot-water rinse (40–45 °C) for 30 minutes to remove biofilm debris; (3) Perform an acid clean using citric acid or hydrochloric acid (pH 3.5–4.0) at 40 °C for 1 hour to remove any mineral deposits and residual biofilm; (4) Rinse thoroughly with product water until conductivity and ATP return to baseline; (5) Resume normal operation with verified biocide dosing (e.g., 0.5–1.0 mg/L free chlorine or equivalent) in the feed line during the first 48 hours of operation. Do not exceed 1.5 bar ΔP stage 1 during cleaning to avoid membrane damage. Monitor ATP, ΔP, and permeate conductivity every 4 hours during recovery.",
+  "decision_change_condition": "If the SEM/autopsy reveals no biofilm matrix, no extracellular polysaccharides, and no microbial cells on the membrane surface, and if ATP levels remain elevated (>500 pg/mL) after biocide treatment, the diagnosis would shift toward inorganic scaling (silica or calcite) or organic fouling, requiring acid or alkaline cleaning instead of biocide treatment.",
+  "confidence": 82
+}

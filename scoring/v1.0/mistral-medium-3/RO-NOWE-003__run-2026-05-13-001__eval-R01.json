@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-003",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'inadequate flushing of glycerin' matches glicerina anchor"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 5 signals (glicerina 320, ORP -10, aclarados 1, cond 580, caudal 175)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (ramp-up daño, incompatibilidad quimica) cortas"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: 2 aclarados 1h low-P 10-15 bar - direccional pero presion alta para aclarado"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (glicerina feed)"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: generica 'si glicerina feed<50 invalidado'"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Adecuada superficial"
+}

@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:22:09Z",
+  "main_hypothesis": "Fallo de pretratamiento por greensand no acondicionado (sin ripening) combinado con oxidación insuficiente con KMnO4, que provoca arrastre y/o precipitación de Fe/Mn (óxidos/hidróxidos) hacia el RO y ensuciamiento particulado dominante en la etapa 2.",
+  "key_signals": [
+    "Fe alimentación a RO sube de 0,03 a 0,18 mg/L y Mn de 0,02 a 0,11 mg/L tras el reemplazo de medio y sin ripening",
+    "Cartuchos de 5 µm con tonalidad marrón y depósito ligero (típico de óxidos de hierro/manganeso)",
+    "ΔP etapa 2 aumenta marcadamente (0,8 → 1,8 bar) mientras la etapa 1 solo sube ligeramente (1,1 → 1,4 bar), patrón típico de ensuciamiento particulado/coloidal concentrado en el tail",
+    "Presión de alimentación sube (14,0 → 17,5 bar) y el caudal de permeado cae 8 %, coherente con mayor resistencia hidráulica por fouling",
+    "pH de alimentación deriva a 6,8 desde 6,5 tras mantenimiento de la dosificadora de H2SO4, favoreciendo precipitación/oxidación de Fe/Mn aguas abajo",
+    "Observación operativa de que la dosis de KMnO4 es correcta pero parece insuficiente (oxidación incompleta antes del filtro)",
+    "Incremento de conductividad de permeado (95 → 130 µS/cm) con conductividad de alimentación estable, compatible con pérdida de rendimiento por fouling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación de carbonato cálcico en etapa 2 por pH más alto, alta alcalinidad y alta recuperación.",
+      "why_plausible": "Alcalinidad elevada (320 mg/L), T=30,5 °C, recuperación 75 % y pH sube a 6,8; alcalinidad en rechazo aumenta (1020 → 1150 mg/L), todo ello eleva el índice de saturación en el tail.",
+      "why_discardable": "La acidificación sigue cercana a 6,5 (moderando CaCO3), Ca en rechazo está esencialmente estable (1.200 → 1.260 mg/L), y hay evidencia directa de hierro (cartuchos marrones, Fe/Mn en RO altos) que correlaciona temporalmente con el alza de ΔP."
+    },
+    {
+      "hypothesis": "Incrustación/polimerización de sílice en etapa 2.",
+      "why_plausible": "Sílice elevada en rechazo (~305 mg/L) y ΔP alto en etapa 2 son consistentes con riesgo de ensuciamiento por sílice a altas recuperaciones.",
+      "why_discardable": "Se dosifica antiincrustante específico para sílice a 5 ppm y la sílice en rechazo solo sube levemente; además, los indicios de Fe/Mn (color en cartuchos y picos en alimentación) explican mejor el patrón de ΔP."
+    },
+    {
+      "hypothesis": "Daño oxidativo de membranas (KMnO4/Cl) que aumenta el paso de sales.",
+      "why_plausible": "Se emplea un oxidante fuerte (KMnO4) en pretratamiento y la conductividad de permeado aumentó.",
+      "why_discardable": "Cloro libre <0,02 mg/L estable y se reporta KMnO4 insuficiente (no exceso); el síntoma dominante es gran subida de ΔP (fouling), no solo pérdida de rechazo típica de ataque oxidante."
+    },
+    {
+      "hypothesis": "Bioensuciamiento favorecido por temperatura templada y baja desinfección.",
+      "why_plausible": "Alimentación caliente (~30 °C) y ausencia de desinfectante libre en línea de RO pueden favorecer biofilm.",
+      "why_discardable": "Depósitos observados son marrón mineral (no mucilaginosos), y el incremento de ΔP se concentra en etapa 2 tras aumento claro de Fe/Mn, patrón más acorde con partículas de Fe/Mn que con biofouling que suele iniciar en etapa 1."
+    }
+  ],
+  "requested_data": "Fracción másica Fe+Mn (wt%) por SEM-EDS del depósito tomado del espaciador de alimentación de un elemento de etapa 2.",
+  "recommended_action": "1) Restablecer de inmediato el pH de alimentación a 6,5 ± 0,1 ajustando H2SO4. 2) Sacar de servicio el filtro de greensand reempaquetado y completar su ripening: dosificar KMnO4 a la estequiometría (≈0,94 mg/L por mg/L Fe(II) + 1,92 mg/L por mg/L Mn(II)) con 10–20 % de exceso, mantener ORP >+400 mV en la entrada del filtro y verificación de Fe<0,05 mg/L y Mn<0,02 mg/L en efluente durante ≥24 h; asegurar residuo de permanganato 0 mg/L antes del RO. 3) Sustituir cartuchos de 5 µm y purgar/lavarsección de pretratamiento. 4) Ejecutar CIP por etapas comenzando por la etapa 2: limpieza ácida con 2,0 % p/p ácido cítrico (pH 2,0–2,5) + 0,5 % p/p metabisulfito de sodio, a 30–35 °C, recirculación 45–60 min por etapa; enjuagar a pH ~6–7; si persiste, repetir o aplicar HCl 1,0 % p/p (pH ~2) 30 min; posteriormente limpieza alcalina con 0,1–0,2 % p/p NaOH + 0,1 % p/p tensioactivo no iónico a 30–35 °C por 30–45 min; enjuagar completamente. 5) Operar temporalmente a 65–70 % de recuperación tras el CIP durante 24–48 h para estabilizar y reducir carga en etapa 2. 6) Confirmar ausencia de oxidantes en la entrada de RO (Cl2 libre <0,02 mg/L y permanganato 0 mg/L) antes de puesta en marcha.",
+  "decision_change_condition": "Si el análisis del depósito (SEM-EDS) muestra predominio de Ca/CO3 o SiO2 (>70 % en masa) y Fe+Mn <5 % en masa, o si el SDI15 en la entrada de RO es <3 mientras el índice de saturación de calcita del concentrado de etapa 2 es positivo alto, cambiaría el diagnóstico principal a incrustación (CaCO3 o sílice) en lugar de fouling por Fe/Mn.",
+  "confidence": 80
+}

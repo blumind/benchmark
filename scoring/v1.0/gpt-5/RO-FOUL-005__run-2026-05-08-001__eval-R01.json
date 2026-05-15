@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-005-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-005",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'sobredosificación FeCl3 4 mg/L mantenida → arrastre Fe(OH)3 cabeza etapa 1' — match exacto."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta Fe×8 + SDI×2 + turbidez×4 + color rojizo + ATP estable + conductividad estable."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (bio, particulado no-Fe, SCAL, corrosión upstream) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Cítrico 2% pH 2.5-3 + 30°C + 45 min — ácido primero (correcto para Fe), spec poliamida."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Fe particulado vs disuelto simultáneamente — discriminador específico, accepted gold."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: Fe particulado <0.05 + SDI alto + SEM/EDS orgánico → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

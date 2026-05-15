@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:53:56Z",
+  "main_hypothesis": "Fallo en la dosificación de bisulfito de sodio (SBS) debido a un problema con el agitador del tanque, resultando en una neutralización inadecuada del cloro libre antes de las membranas de ósmosis inversa.",
+  "key_signals": [
+    "Caudal de SBS dosificado: 0 L/h",
+    "ORP tras dosificación SBS: +540 mV (cambio drástico respecto a -50 mV baseline)",
+    "Cloro libre antes RO: 0,42 mg/L (subida marcada respecto a < 0,02 mg/L baseline)",
+    "Conductividad permeado: 720 µS/cm (subida brusca respecto a 380 µS/cm baseline)",
+    "Rechazo de sales (calculado): 98,7 % (bajada respecto a 99,3 % baseline)",
+    "Inspección del tanque de SBS revela que el agitador no funciona y la solución está estratificada (concentración real en el punto de aspiración: 0,2 % p/p frente al 25 % p/p preparado)."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño o ensuciamiento severo de las membranas de ósmosis inversa.",
+      "why_plausible": "La subida de conductividad del permeado y la bajada en el rechazo de sales son síntomas directos de un fallo en la capacidad de las membranas para rechazar sales. El aumento de ΔP en la etapa 1 podría indicar un ensuciamiento, aunque la tendencia sea estable.",
+      "why_discardable": "La causa principal de la degradación del rendimiento de las membranas parece ser la exposición al cloro libre. El cloro libre antes de RO es significativamente alto, lo cual es un factor conocido por dañar las membranas de SWRO. El problema con la dosificación de SBS precede a la degradación severa del permeado y explica la presencia de cloro libre."
+    },
+    {
+      "hypothesis": "Fallo del sensor de cloro libre o de ORP antes de RO.",
+      "why_plausible": "El operador atribuyó la alarma intermitente de cloro libre a una 'calibración del sensor'. Si los sensores estuvieran descalibrados, podrían estar reportando niveles de cloro libre y ORP incorrectos, llevando a una falsa alarma o a una percepción errónea de la situación.",
+      "why_discardable": "Aunque un fallo de sensor es posible, la correlación directa entre la falta de dosificación de SBS (confirmada por el caudal de 0 L/h y la inspección del tanque) y el aumento de cloro libre y ORP, seguido por la degradación del permeado, es demasiado fuerte. Además, el cambio drástico en el ORP *después* de la dosificación de SBS (que debería ser negativa) y la estratificación del SBS son evidencias físicas independientes de un problema de dosificación."
+    },
+    {
+      "hypothesis": "Problema con la bomba dosificadora de SBS (no la falta de solución).",
+      "why_plausible": "Incluso si hay solución en el tanque, la bomba dosificadora podría estar averiada, atascada o con un diafragma dañado, impidiendo la dosificación efectiva. Esto explicaría el caudal de 0 L/h.",
+      "why_discardable": "La inspección del tanque de SBS reveló que el agitador no funcionaba y la solución estaba estratificada, lo que indica que la bomba no estaba aspirando la concentración correcta (o nada en absoluto) debido a la falta de mezcla y posible sedimentación. Si bien la bomba podría tener un problema secundario, la causa raíz identificada (estratificación y falta de agitación) explica la falta de dosificación."
+    }
+  ],
+  "requested_data": "Concentración de cloro libre residual en el punto de aspiración del tanque de SBS.",
+  "recommended_action": "Detener inmediatamente la operación de la planta RO. Asegurar la correcta preparación y agitación de la solución de bisulfito de sodio (SBS) al 25% p/p. Verificar el funcionamiento del agitador del tanque de SBS. Limpiar y purgar la línea de dosificación de SBS. Una vez confirmada la correcta preparación y agitación de la solución, reanudar la dosificación de SBS a 4 mg/L, asegurando que el caudal de dosificación sea el correcto y que el ORP después de la dosificación sea < 0 mV. Monitorear de cerca la conductividad del permeado y el rechazo de sales. Si el problema persiste, considerar el lavado químico de las membranas o la sustitución de elementos si el daño por cloro es severo.",
+  "decision_change_condition": "Si la concentración de cloro libre residual en el punto de aspiración del tanque de SBS fuera la esperada (indicando que la solución está bien preparada y la bomba está aspirando correctamente), entonces la causa principal sería un problema con la bomba dosificadora de SBS o un fallo en el sensor de cloro libre/ORP antes de RO.",
+  "confidence": 95
+}

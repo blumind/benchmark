@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:10:00Z",
+  "main_hypothesis": "Contaminación por clorito (ClO₂⁻) en la alimentación a la SWRO",
+  "key_signals": [
+    "Presencia de clorito (ClO₂⁻) en alimentación a RO en concentración 0,08 mg/L",
+    "Subida progresiva de conductividad permeado",
+    "Subida de cloro total (DPD) en alimentación",
+    "Subida de ORP en alimentación a RO"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Contaminación por cloramina en la alimentación a la SWRO",
+      "why_plausible": "La diferencia entre cloro total y cloro libre podría indicar presencia de cloramina, un desinfectante común en agua potable.",
+      "why_discardable": "La confirmación de clorito en la alimentación a RO hace menos probable la presencia de cloramina como causa principal."
+    },
+    {
+      "hypothesis": "Envejecimiento de las membranas de la SWRO",
+      "why_plausible": "La subida progresiva de conductividad permeado y la disminución del rechazo de sales podrían indicar un problema con las membranas.",
+      "why_discardable": "La presencia confirmada de clorito en la alimentación a RO sugiere una causa externa a las membranas."
+    }
+  ],
+  "requested_data": "Medición de la concentración de cloramina en la alimentación a la SWRO",
+  "recommended_action": "Detener la dosificación de bisulfito sódico (SBS) como medida preventiva y realizar un lavado químico de las membranas para eliminar el clorito presente.",
+  "decision_change_condition": "Si la medición de cloramina en la alimentación a la SWRO es significativa y no se detecta clorito, reconsiderar la contaminación por clorito como causa principal.",
+  "confidence": 90
+}

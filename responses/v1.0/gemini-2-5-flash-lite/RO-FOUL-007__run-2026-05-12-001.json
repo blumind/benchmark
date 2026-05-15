@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:52:45Z",
+  "main_hypothesis": "Biofouling de las membranas de RO, exacerbado por el aumento de TOC y ATP en la alimentación, y la operación prolongada con dosis de FeCl3 más alta de lo necesario.",
+  "key_signals": [
+    "ΔP etapa 1 cabeza: 2,5 bar (subida marcada desde 1,4 bar baseline)",
+    "Caudal permeado tren: 305 m³/h (bajada del 8 %)",
+    "Conductividad permeado: 470 µS/cm (subida ligera)",
+    "TOC alimentación a RO: 2,2 mg/L (subida marcada desde 1,1 mg/L baseline)",
+    "ATP en alimentación RO: 720 pg/mL (subida marcada desde 90 pg/mL baseline)",
+    "SDI₁₅ salida cartuchos: 4,0 (subida desde 2,5 baseline)",
+    "Turbidez salida cartuchos: 0,16 NTU (subida desde 0,07 NTU baseline)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling inorgánico o de partículas finas en las membranas de RO.",
+      "why_plausible": "El aumento del ΔP en cabeza y la ligera subida de la conductividad del permeado podrían indicar un bloqueo físico de las membranas. La subida del SDI15 y la turbidez de salida de los cartuchos también sugieren un problema de filtración aguas arriba.",
+      "why_discardable": "La marcada subida del TOC y ATP en la alimentación, junto con la subida de la conductividad del permeado (indicando una ligera pérdida de selectividad), son más consistentes con biofouling que con fouling puramente inorgánico. El fouling inorgánico típicamente no se correlaciona con un aumento tan drástico de ATP y TOC."
+    },
+    {
+      "hypothesis": "Problema con los cartuchos de 1 µm aguas arriba de la RO.",
+      "why_plausible": "El aumento del SDI15 y la turbidez de salida de los cartuchos, junto con la subida del ΔP en cabeza de la etapa 1 de RO, podrían ser causados por cartuchos de prefiltración obstruidos o dañados. Esto podría estar relacionado con la turbidez temporal en la captación.",
+      "why_discardable": "Aunque los cartuchos pueden estar contribuyendo al problema, el aumento significativo de TOC y ATP en la alimentación a RO, y la consecuente subida de la conductividad del permeado, apuntan a un problema más profundo que solo la prefiltración. El biofouling en las membranas de RO es una causa más probable para la degradación del rendimiento de la RO en sí."
+    },
+    {
+      "hypothesis": "Problema de diseño o envejecimiento de las membranas de RO.",
+      "why_plausible": "La planta tiene un 60% de membranas con 4 años de antigüedad, lo que podría indicar una degradación natural del rendimiento. La subida de la conductividad del permeado podría ser un síntoma de esto.",
+      "why_discardable": "El rápido empeoramiento de los parámetros operativos (ΔP, caudal, conductividad del permeado) en un corto período, junto con el claro aumento de contaminantes orgánicos y biológicos (TOC, ATP) en la alimentación, sugiere un evento operativo o una condición de alimentación que ha acelerado el deterioro, más que un simple envejecimiento gradual."
+    }
+  ],
+  "requested_data": "Análisis de composición del sarro en las membranas de RO (microbiología, materia orgánica, sales inorgánicas).",
+  "recommended_action": "Iniciar un ciclo de limpieza química de las membranas de RO, priorizando un programa de limpieza para biofouling (ej. con enzimas o biocidas suaves), seguido de una limpieza ácida si es necesario, y ajustar la dosis de FeCl3 a 0.8 mg/L o según la turbidez de entrada.",
+  "decision_change_condition": "Si el análisis de sarro revela una predominancia de sales inorgánicas o sílice, y el TOC y ATP en la alimentación se normalizan, la hipótesis principal cambiaría a fouling inorgánico.",
+  "confidence": 85
+}

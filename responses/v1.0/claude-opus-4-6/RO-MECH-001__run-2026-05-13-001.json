@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-MECH-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:27:44Z",
+  "main_hypothesis": "Fallo de sellado de un O-ring inter-elemento en el Tubo 4 del Tren T-02, instalado durante la reinstalación del Día -20/-19, que permite bypass de salmuera (agua de alimentación/concentrado) hacia el canal de permeado. El O-ring reportado como 'rígido' probablemente estaba fuera de especificación (material incorrecto, dimensión inadecuada o defecto de fabricación) y no selló correctamente, o sufrió daño por extrusión/pellizco durante la inserción forzada, generando una vía de paso progresiva de salmuera al colector de permeado.",
+  "key_signals": [
+    "Conductividad de permeado del T-02 subió bruscamente de 390 a 1.350 µS/cm inmediatamente después de la reinstalación de elementos, correlación temporal directa con el trabajo de mantenimiento.",
+    "Probe test de conductividad por tubo localiza el problema exclusivamente en el Tubo 4 (4.100 µS/cm vs. 380-420 µS/cm en el resto), descartando un problema generalizado de membrana.",
+    "El operario reportó que 'uno de los O-rings nuevos parecía rígido pero entró bien', indicando posible O-ring fuera de especificación o dañado durante instalación.",
+    "El rechazo de sales del T-02 cayó de 99,3 % a 97,6 %, consistente con bypass mecánico de salmuera y no con degradación química de membrana.",
+    "El test de presión del Tubo 4 (Día -2) muestra anomalía consistente con paso de salmuera por una junta interna, confirmando fuga en sello.",
+    "Los trenes vecinos mantienen conductividad estable (~395 µS/cm), descartando problemas de calidad de agua de alimentación.",
+    "El ΔP del T-02 solo subió marginalmente (1,2 a 1,3 bar) y el caudal de permeado apenas bajó (1 %), lo que es consistente con un bypass mecánico puntual y no con fouling o daño extenso de membrana.",
+    "La tendencia progresiva de conductividad (390→720→1.100→1.350 µS/cm en 18 días) sugiere deterioro progresivo del sello, compatible con extrusión gradual de un O-ring dañado o mal dimensionado."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño mecánico a la membrana del elemento adyacente al O-ring defectuoso en el Tubo 4 durante la manipulación de reinstalación (rotura de hoja de membrana o daño en el glue line).",
+      "why_plausible": "La manipulación de elementos durante extracción/reinstalación puede causar daño físico a las hojas de membrana o a las líneas de pegamento, especialmente si se aplicó fuerza excesiva. Esto también produciría un aumento localizado de conductividad en un solo tubo y sería consistente con el test de presión anómalo.",
+      "why_discardable": "Un daño mecánico a la membrana típicamente produce un salto instantáneo de conductividad desde el primer momento de operación, no una subida progresiva durante 18 días. Además, el operario reportó específicamente un O-ring rígido, y el test de presión indica paso por junta interna, no por la membrana misma. La correlación con el O-ring anómalo es más directa."
+    },
+    {
+      "hypothesis": "Degradación química de las membranas del Tubo 4 por exposición a oxidante residual durante el CIP avanzado fuera de línea.",
+      "why_plausible": "Si el CIP avanzado incluyó agentes oxidantes y el enjuague posterior fue insuficiente, las membranas podrían haber sufrido daño oxidativo, reduciendo el rechazo de sales. Esto explicaría el aumento de conductividad post-reinstalación.",
+      "why_discardable": "El daño oxidativo afectaría a todos los elementos limpiados (28 elementos en 4 tubos), no solo al Tubo 4. Los otros 3 tubos reinstalados muestran conductividad normal (380-420 µS/cm). Además, el cloro libre antes de RO es <0,02 mg/L y el ORP es estable, y el test de presión apunta a fuga en junta, no a pérdida de rechazo de membrana."
+    },
+    {
+      "hypothesis": "Adaptador de permeado (product water tube / ATD) mal asentado o dañado en el Tubo 4, permitiendo bypass de concentrado al colector de permeado.",
+      "why_plausible": "Un adaptador de tubo de permeado mal instalado o con su propio O-ring dañado puede crear una vía de bypass similar a un O-ring inter-elemento defectuoso. La inspección visual del Día -3 reportó vainas de permeado conectadas correctamente, pero una inspección visual externa puede no detectar un sello interno deficiente.",
+      "why_discardable": "La inspección visual confirmó conexiones correctas de vainas de permeado. El reporte del operario sobre el O-ring rígido proporciona una causa raíz más específica y documentada. Sin embargo, esta alternativa no puede descartarse completamente sin desmontaje del tubo."
+    }
+  ],
+  "requested_data": "Identificación de la posición exacta del O-ring reportado como 'rígido' dentro del Tubo 4 (número de elemento y posición inter-elemento o cabeza/cola), junto con verificación del código de parte/material (EPDM, Buna-N, etc.) y dureza Shore A del O-ring instalado versus la especificación del fabricante de membranas.",
+  "recommended_action": "Aislar inmediatamente el Tubo 4 del Tren T-02 cerrando sus válvulas de permeado para evitar contaminación del colector de permeado del tren. Programar apertura del Tubo 4 en las próximas 24-48 horas para inspección de todos los O-rings inter-elemento y de cabeza/cola, con especial atención al O-ring reportado como rígido. Sustituir todos los O-rings del Tubo 4 por O-rings nuevos verificados contra la especificación del fabricante de membranas (material, dureza Shore A y dimensiones). Antes de reinstalar, realizar un vacuum test o soak test de presión a cada posición de interconector para verificar estanqueidad. Lubricar los O-rings nuevos con glicerina grado alimentario o lubricante aprobado por el fabricante. Tras reinstalación, realizar un test de presión del tubo completo y verificar conductividad de permeado del Tubo 4 antes de reintegrar al tren.",
+  "decision_change_condition": "Si al abrir el Tubo 4 todos los O-rings inter-elemento y de cabeza/cola se encontraran en perfecto estado (correcta especificación, sin daño visible, sin extrusión, y pasando test de estanqueidad individual), mi diagnóstico cambiaría hacia daño mecánico en la membrana de uno de los elementos del Tubo 4 (rotura de hoja o fallo de glue line), y recomendaría realizar un test de vacío elemento por elemento y/o autopsia del elemento sospechoso.",
+  "confidence": 90
+}

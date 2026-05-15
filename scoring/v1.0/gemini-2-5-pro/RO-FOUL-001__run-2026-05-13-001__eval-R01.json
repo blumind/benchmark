@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-001",
+    "subject_id": "gemini-2-5-pro",
+    "subject_version": "gemini-2.5-pro",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling first-stage + SBS interruption'."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Pocos signals con relación explícita."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts breves (colloidal, coagulant Fe, scaling)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP high-pH NaOH 30-35°C 60-90 min — protocolo simple, sin EDTA/surfactante específico."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide Fe total — alt-discriminator."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial threshold."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

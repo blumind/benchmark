@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-NOWE-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-001",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'residual propylene glycol... non-wetting' matches anchors"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 4 signals (caudal 36%, cond 480, dP bajos, mejora 24h)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (compactacion, biofouling) justified by why_discardable"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: circulacion 48h ok pero propone CIP NaOH+EDTA si <90% (recoverable risk)"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (PG en permeado), no preservacion audit, no fabricante"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit thresholds: 48h, caudal <90%, cond >450, TOC <1 -> daño"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Aplicar CIP ácido o alcalino antes de completar el wetting",
+      "severity": "recoverable",
+      "justification": "CIP alcalino propuesto si circulacion estanca <90%"
+    }
+  ],
+  "reviewer_notes": "CIP condicional"
+}

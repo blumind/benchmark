@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-OXID-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:04:10Z",
+  "main_hypothesis": "Daño oxidativo irreversible de la capa de poliamida del Tren T-03 por exposición a H₂O₂ residual durante el retorno a producción, catalizado por trazas de metales (Fe/Mn) presentes en la membrana, debido a un aclarado post-CIP insuficiente y a una verificación de residual con método insensible.",
+  "key_signals": [
+    "Aclarado post-CIP acortado a 45 min frente a los 60 min de protocolo",
+    "Verificación de H₂O₂ residual con tira de sensibilidad 1 mg/L (no apta para confirmar <1 mg/L exigido)",
+    "Subida progresiva y monotónica de conductividad de permeado (410→540 µS/cm) iniciada inmediatamente tras el retorno del tren tras CIP",
+    "Caída del rechazo de sales del 99,28 % al 99,05 % limitada al tren intervenido; trenes vecinos sin desviación",
+    "ΔP de etapas y presión de alimentación estables (descarta ensuciamiento/scaling como causa de la pérdida de rechazo)",
+    "Rastros marrones en cartuchos (indicio de óxidos de Fe/Mn que pudieron catalizar la oxidación de la poliamida con H₂O₂)",
+    "Hierro disuelto en alimentación ligeramente elevado respecto a baseline (0,03 vs 0,02 mg/L)",
+    "H₂O₂ catalogado por el fabricante como de compatibilidad limitada"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño mecánico por golpe de ariete o fallo de o-rings/interconectores durante el rearranque del tren",
+      "why_plausible": "El incidente se manifiesta justo tras el CIP y rearranque; un o-ring dañado produce paso de salmuera al permeado con pérdida de rechazo sin cambio de ΔP",
+      "why_discardable": "La degradación es progresiva y monotónica a lo largo de 5 días, no un salto escalón típico de fuga mecánica; además los cartuchos marrones apuntan a oxidación con catálisis metálica"
+    },
+    {
+      "hypothesis": "Daño por exposición residual a cloro libre o cloraminas en la alimentación",
+      "why_plausible": "La poliamida es muy sensible al cloro y produce el mismo patrón (caída de rechazo sin subida de ΔP)",
+      "why_discardable": "Cloro libre <0,02 mg/L y ORP estable en valores compatibles; sólo el T-03 está afectado, no los trenes vecinos que comparten alimentación"
+    },
+    {
+      "hypothesis": "Ensuciamiento/scaling con paso preferente de sales por bloqueo de canales",
+      "why_plausible": "Tras CIP puede haber redistribución de depósitos",
+      "why_discardable": "ΔP de ambas etapas estable y presión de alimentación apenas cambia; el ensuciamiento elevaría ΔP o presión normalizada"
+    },
+    {
+      "hypothesis": "Residual alcalino del paso de pH 12 mal aclarado, con hidrólisis de la poliamida",
+      "why_plausible": "Aclarado acortado también afecta al residual alcalino",
+      "why_discardable": "La hidrólisis alcalina a pH 12 y 30 °C/60 min es marginal; el agente con compatibilidad explícitamente limitada es el H₂O₂, y la presencia de óxidos marrones apunta a la vía oxidativa catalizada"
+    }
+  ],
+  "requested_data": "Resultado de un test de integridad/autopsia: medición de rechazo de sales con NaCl estándar en banco de un elemento testigo del T-03 y/o ensayo de tinción con Rodamina/Fucsina sobre la poliamida; alternativamente, análisis FTIR de la capa activa para confirmar oxidación de grupos amida",
+  "recommended_action": "Aislar T-03 de producción y no devolverlo a servicio. Ejecutar flushing prolongado con permeado a baja presión (≥2 h, hasta verificar H₂O₂ <0,1 mg/L con método colorimétrico DPD o Quantofix Peroxide 100, no tira de 1 mg/L). Inspeccionar y reemplazar cartuchos. Realizar prueba de perfil de conductividad sonda-a-sonda (probing) para localizar los tubos afectados y autopsiar 1-2 elementos lead. Revisar y modificar el SOP de CIP: prohibir reincorporación sin (i) aclarado mínimo 60 min, (ii) verificación de H₂O₂ residual con método de sensibilidad ≤0,1 mg/L, (iii) confirmación de ausencia de Fe/Mn en lazos de CIP antes de dosificar H₂O₂. Si la autopsia confirma daño oxidativo, planificar sustitución escalonada de los elementos del T-03.",
+  "decision_change_condition": "Si la autopsia/FTIR no muestra oxidación de la poliamida y el probing localiza una única posición con fuga puntual, o si se detecta un o-ring degradado/cracking en interconectores, el diagnóstico cambiaría a fallo mecánico de sellado tras el CIP en lugar de daño oxidativo por H₂O₂.",
+  "confidence": 78
+}

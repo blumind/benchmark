@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:56:53Z",
+  "main_hypothesis": "Daño oxidativo irreversible de las membranas de poliamida por exposición crónica a cloramina (breakthrough del doble lecho de CAG saturado/agotado), agravado por la ausencia de SBS de respaldo y por el aumento no notificado de cloramina en la red municipal.",
+  "key_signals": [
+    "Cloramina tras CAG-2 subió de <0,05 a 0,38 mg/L, con CAG-1 a 0,42 mg/L: ambos lechos no retienen cloramina (segundo lecho con 320 días, primero con 150 días)",
+    "ORP alimentación a RO en +210 mV (vs +60 mV baseline), consistente con oxidante residual presente",
+    "Caída drástica del rechazo de sales de 95,5 % a 80,7 % y subida progresiva de conductividad de permeado (65 → 280 µS/cm) durante ~35 días",
+    "ΔP de etapas estable: descarta ensuciamiento/scaling como causa de la pérdida de rechazo (patrón típico de oxidación: pasaje de sales sube sin subir ΔP)",
+    "Test de elemento líder: rechazo NaCl 95 % vs 99 % nueva, confirma degradación de la capa activa",
+    "Aumento documentado de cloramina municipal de 2,5 a 3,2 mg/L día -45 sin notificación, coincidente con inicio de la deriva",
+    "No hay dosificación de SBS como barrera redundante"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Envejecimiento normal de membranas a 26 meses",
+      "why_plausible": "Las membranas tienen 26 meses; cierta pérdida de rechazo es esperable",
+      "why_discardable": "El envejecimiento normal no produce caída de 95,5 a 80,7 % en 35 días; además el ORP elevado y la cloramina detectable tras CAG explican el patrón abrupto"
+    },
+    {
+      "hypothesis": "Fuga mecánica en o-rings/interconectores o microfisuras en envolturas",
+      "why_plausible": "Pérdida súbita de rechazo puede deberse a bypass mecánico; rechazo cae sin subir ΔP",
+      "why_discardable": "Una fuga típicamente afecta a un tubo y daría perfil de conductividad por tubo asimétrico; el test de elemento líder muestra rechazo NaCl degradado (95 %), consistente con daño químico distribuido, no fuga puntual"
+    },
+    {
+      "hypothesis": "Scaling/fouling con paso de sales",
+      "why_plausible": "Antiincrustante a 2,2 ppm y recovery 75 % podrían generar scaling",
+      "why_discardable": "ΔP estable en ambas etapas descarta fouling/scaling significativo; además no explica el ORP elevado ni la cloramina pasante"
+    }
+  ],
+  "requested_data": "Test de Fujiwara (detección de halógenos en la poliamida) sobre el elemento líder retirado, o índice yodo/capacidad residual del medio CAG (mg I₂/g) de ambos lechos",
+  "recommended_action": "1) Iniciar inmediatamente dosificación de emergencia de bisulfito sódico (SBS) en alimentación a RO a 3–5 mg/L de SBS por cada 1 mg/L de cloramina (objetivo ORP <+200 mV y cloramina <0,02 mg/L aguas arriba de membranas), con punto de inyección antes de cartuchos y mezcla estática. 2) Verificar control redundante de ORP con alarma y parada automática si ORP >+250 mV. 3) Programar sustitución/regeneración del medio de ambos lechos CAG (priorizar CAG-2, 320 días). 4) Planificar reemplazo escalonado de membranas (el daño oxidativo de la poliamida es irreversible). 5) Establecer canal formal de notificación con el operador municipal sobre cambios de dosis de cloramina.",
+  "decision_change_condition": "Si el test de Fujiwara resulta negativo en el elemento líder y el perfil de conductividad por tubo muestra un único tubo desviado, la causa raíz pasaría a daño mecánico/fuga de o-rings y no oxidación química.",
+  "confidence": 86
+}

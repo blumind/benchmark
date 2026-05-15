@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-OXID-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:45:33Z",
+  "main_hypothesis": "Ozone breakthrough from the neighboring plant's increased dosing (0.8 to 1.5 mg/L) is oxidizing the polyacrylic antiscalant and degrading membrane active layer integrity, causing salt passage and permeate quality loss.",
+  "key_signals": [
+    "ORP in RO feed increased from +110 mV to +280 mV coinciding with neighbor's ozone dose increase (day -25 to -22)",
+    "Ozono residual detected at 0.06 mg/L in RO feed (day -3), absent in baseline (<0.01 mg/L)",
+    "Permeate conductivity rose from 75 µS/cm to 380 µS/cm over 10 days, a 5-fold increase",
+    "Salt rejection collapsed from 97.8% to 88.8%, indicating membrane performance loss",
+    "Permeate flow declined 7% (250 to 232 m³/h) despite stable feed pressure and stage ΔP, consistent with membrane fouling or active layer damage",
+    "Temporal correlation: ozone dose change (day -22) preceded conductivity rise (day -18) by 4 days",
+    "Cloro libre remained <0.02 mg/L, ruling out chlorine as the oxidant source"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane scaling or inorganic fouling due to feed water composition change",
+      "why_plausible": "TDS is high (2,200 mg/L feed, 3,380 µS/cm), and a 7% flow decline with stable ΔP could indicate pore blockage. Conductivity rise could reflect concentration polarization.",
+      "why_discardable": "Scaling would increase stage ΔP (especially stage 1), but ΔP etapa 1 remained stable at 1.1 bar. Inorganic fouling develops over weeks; this onset was acute (4 days). ATP and pH are stable, ruling out biological or pH-driven precipitation. Calculated salt rejection fell sharply, inconsistent with pore blockage alone."
+    },
+    {
+      "hypothesis": "Membrane biofouling or biofilm formation",
+      "why_plausible": "ATP is slightly elevated (95 pg/mL vs 90 baseline), and biofouling can degrade salt rejection and increase permeate conductivity.",
+      "why_discardable": "ATP rise is minimal (5 pg/mL, within noise) and stable over 10 days. Biofouling develops over days to weeks and would increase stage ΔP; stage pressures are stable. The acute 4-day onset and high ORP/ozone residual point to chemical oxidation, not biological growth."
+    },
+    {
+      "hypothesis": "Sensor malfunction or calibration drift in conductivity analyzer",
+      "why_plausible": "Operator initially attributed the rise to 'sensor noise' (day -18). Conductivity sensors can drift.",
+      "why_discardable": "The rise is corroborated by calculated salt rejection (97.8% → 88.8%), which is independent of the conductivity sensor. ORP and ozone residual measurements (independent instruments) also confirm oxidant presence. A 5-fold conductivity increase across multiple days is inconsistent with sensor drift alone."
+    },
+    {
+      "hypothesis": "Antiscalant overdose or incompatibility with feed water",
+      "why_plausible": "Antiscalant dosing is 2 ppm; overdose can degrade membrane performance and increase permeate conductivity.",
+      "why_discardable": "Antiscalant dosing is reported as stable. Overdose would increase ΔP and would not explain the sharp ORP rise or ozone residual detection. The temporal correlation with the neighbor's ozone increase is too precise to be coincidental."
+    },
+    {
+      "hypothesis": "Membrane element degradation or defect (unrelated to ozone)",
+      "why_plausible": "Membranes are 11 months old; manufacturing defects or age-related degradation could cause salt passage.",
+      "why_discardable": "Degradation is typically gradual; this event was acute (4-day onset). The sharp ORP and ozone residual increases immediately precede the performance loss. Defects would not explain the temporal correlation with the neighbor's process change."
+    }
+  ],
+  "requested_data": "Membrane active layer surface analysis (SEM or ATR-FTIR) to detect oxidative damage (carbonyl groups, chain scission) or antiscalant polymer degradation products on the membrane surface.",
+  "recommended_action": "Immediately install a sodium bisulfite (Na₂S₂O₅) dosing system upstream of the RO feed at 0.5–1.0 mg/L (as SO₂ equivalent) to quench residual ozone and prevent further membrane oxidation. Coordinate with the neighboring plant to reduce ozone dose back to ≤0.8 mg/L or install ozone destruction (thermal or catalytic) before discharge to the common collector. Monitor ORP in RO feed (target <+150 mV) and permeate conductivity daily. If permeate conductivity does not recover to <100 µS/cm within 5 days of bisulfite dosing, schedule membrane element replacement.",
+  "decision_change_condition": "If SEM analysis shows no oxidative damage to the membrane active layer, or if permeate conductivity recovers to baseline within 3 days of bisulfite dosing without membrane replacement, the diagnosis would shift toward reversible antiscalant fouling or temporary feed water composition change. If ORP remains >+250 mV despite bisulfite dosing, an additional oxidant source (e.g., permanganate, hydrogen peroxide) would be suspected.",
+  "confidence": 82
+}

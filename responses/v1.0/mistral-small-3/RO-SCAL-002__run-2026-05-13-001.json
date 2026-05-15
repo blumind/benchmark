@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:59:02Z",
+  "main_hypothesis": "Fouling por sílice en etapa 2 debido a dosificación insuficiente de antiincrustante tras aumento de recovery a 82 % sin ajuste de la dosis",
+  "key_signals": [
+    "Subida marcada de ΔP en etapa 2 (0,9 → 1,9 bar) con ΔP etapa 1 estable",
+    "Aumento de sílice en rechazo (208 → 295 mg/L) superando límite recomendado del antiincrustante (260 mg/L)",
+    "Presión de alimentación elevada (18,2 bar vs 14,5 bar baseline) indicando mayor resistencia en el sistema",
+    "Caudal de permeado reducido en 7 % (250 → 232 m³/h)",
+    "CIP alcalino temporal redujo ΔP etapa 2 pero rebotó rápidamente, sugiriendo fouling no removido completamente",
+    "Dosis de antiincrustante mantenida en 8 ppm sin recalcular para el nuevo recovery de 82 %"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por materia orgánica o biofilm en etapa 2",
+      "why_plausible": "Subida de ΔP en etapa 2 sin cambios en ΔP etapa 1 podría indicar acumulación de biomasa o materia orgánica en membranas posteriores, especialmente si el antiincrustante no es efectivo contra estos contaminantes.",
+      "why_discardable": "No hay señales de aumento de turbiedad, cloro libre estable en <0,02 mg/L, y el antiincrustante usado es específico para sílice. Además, la sílice en rechazo supera el límite del producto, lo que no se explica por fouling orgánico."
+    },
+    {
+      "hypothesis": "Precipitación de carbonato de calcio en etapa 2 por aumento de recovery",
+      "why_plausible": "El aumento de recovery incrementa la concentración de iones en el rechazo, lo que podría favorecer la precipitación de sales poco solubles como CaCO₃, especialmente si el LSI no se controla.",
+      "why_discardable": "El calcio en rechazo subió como esperado por el aumento de recovery, pero no hay evidencia de precipitación (ej. aumento de sólidos disueltos en rechazo o formación de incrustaciones visibles). Además, el antiincrustante usado es específico para sílice y no para carbonatos."
+    },
+    {
+      "hypothesis": "Daño físico o compactación de membranas en etapa 2",
+      "why_plausible": "La presión de alimentación elevada y la caída de permeado podrían indicar compactación de membranas o daño estructural, especialmente tras 18 meses de servicio.",
+      "why_discardable": "No hay señales de rotura de membranas (ej. aumento de conductividad en permeado por paso de sales) ni cambios en la tendencia de ΔP etapa 1. Además, el CIP alcalino redujo temporalmente la ΔP, lo que sugiere fouling reversible, no daño permanente."
+    },
+    {
+      "hypothesis": "Fouling por sílice en etapa 1 no detectado por sensores",
+      "why_plausible": "La sílice es un contaminante común en acuíferos volcánicos y podría acumularse en las primeras etapas, aunque los datos muestran ΔP etapa 1 estable.",
+      "why_discardable": "Los datos reportan ΔP etapa 1 estable (1,1 → 1,2 bar), mientras que la subida marcada ocurre en etapa 2. Además, la sílice en alimentación es estable, y el antiincrustante debería proteger ambas etapas."
+    }
+  ],
+  "requested_data": "Concentración de sílice en el rechazo de la etapa 1 (mg/L) para evaluar si el fouling por sílice está ocurriendo también en etapa 1 y no solo en etapa 2.",
+  "recommended_action": "Recalcular la dosis de antiincrustante específico para sílice según el nuevo recovery de 82 % y ajustar a la concentración recomendada por el fabricante (ej. sulfonato modificado a 10-12 ppm). Realizar un CIP alcalino con pH 11,5 y 60 min de contacto, seguido de un CIP con ácido cítrico al 0,2 % para remover sílice depositada. Monitorear ΔP etapa 2 y sílice en rechazo cada 4 horas durante 24 horas.",
+  "decision_change_condition": "Si la concentración de sílice en el rechazo de la etapa 1 es superior a 250 mg/L y la ΔP etapa 1 muestra una tendencia alcista, el fouling por sílice estaría ocurriendo en ambas etapas, requiriendo ajuste en la estrategia de limpieza y dosificación.",
+  "confidence": 92
+}

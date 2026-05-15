@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-002",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fouling sílice etapa 2 + dosificación insuficiente + recovery 82% sin ajuste dosis' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (orgánico/biofilm, CaCO3, MECH, sílice etapa 1 no detectado)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Recalcular dosis antiincrustante sílice + ajustar 10-12 ppm + CIP alcalino pH 11.5 60 min + CIP cítrico 0.2% post — alcalino PRIMERO (correcto vs case_specific recoverable)."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide sílice en rechazo etapa 1 — discriminador pero no el trigger gold (SEM-EDS)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: sílice rechazo etapa 1 >250 + ΔP etapa 1 alcista → fouling también en etapa 1."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

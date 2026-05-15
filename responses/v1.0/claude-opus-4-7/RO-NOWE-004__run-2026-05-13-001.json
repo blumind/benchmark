@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-NOWE-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:24:04Z",
+  "main_hypothesis": "Daño mecánico en membranas/juntas (probablemente o-rings de interconectores o glue lines) causado por golpe de ariete/cavitación al arrancar con aire atrapado en el bastidor tras el mantenimiento con línea abierta a atmósfera, lo que genera una vía de bypass de salmuera al permeado.",
+  "key_signals": [
+    "Línea de alimentación abierta a atmósfera durante 18 h durante mantenimiento",
+    "Operario abrió drenajes para 'purgar aire' antes del arranque (purga insuficiente)",
+    "'Borboteo' intermitente en línea HP durante y tras arranque",
+    "Conductividad de permeado disparada (510→380 µS/cm) vs baseline 110 µS/cm; rechazo cayó a 95,4 % desde 98,7 %",
+    "ΔP de ambas etapas por debajo del baseline (sugiere paso preferencial / bypass interno)",
+    "Balance de caudales no cierra (92 %): 27 m³/h de discrepancia compatible con aire residual y/o fuga interna",
+    "Presión de alimentación ligeramente más alta para menor caudal de permeado (pérdida de productividad y rechazo simultánea)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Aire residual en el bastidor sin daño permanente (transitorio de arranque)",
+      "why_plausible": "Línea abierta 18 h, borboteo audible, balance de caudales sin cierre y tendencias hacia baseline son típicas de despresurización/desaireación progresiva.",
+      "why_discardable": "Tras 6 h y dos episodios de borboteo, una conductividad de permeado todavía 3,5× el baseline y rechazo 3 puntos por debajo no se explican solo por aire; además el aire suele aumentar ΔP aparente, no reducirlo."
+    },
+    {
+      "hypothesis": "O-ring de interconector mal asentado o desplazado durante el mantenimiento/arranque",
+      "why_plausible": "Manipulación reciente de la línea, golpe de ariete al arrancar con aire, y firma típica: caída de rechazo con ΔP por debajo de baseline y permeado salino.",
+      "why_discardable": "Es en realidad un subtipo del mecanismo principal; se mantiene como hipótesis específica a confirmar mediante probe test."
+    },
+    {
+      "hypothesis": "Contaminación/oxidación de membranas por exposición atmosférica (biofouling incipiente o intrusión de oxidante)",
+      "why_plausible": "Línea abierta 18 h pudo introducir contaminantes; ORP ligeramente subido (+60 mV).",
+      "why_discardable": "Cloro libre <0,02 mg/L, pH estable, y 18 h es tiempo corto para daño oxidativo; además el patrón con ΔP bajo apunta más a bypass mecánico que a fouling (que subiría ΔP)."
+    },
+    {
+      "hypothesis": "Fuga en tubería de permeado o en válvula de muestreo aguas abajo (contaminación cruzada feed→permeado)",
+      "why_plausible": "Mantenimiento reciente en la línea de alimentación pudo afectar conexiones cercanas; explica salinidad alta sin fouling.",
+      "why_discardable": "No se reportan fugas externas visibles y el borboteo se localiza en la línea HP del bastidor, no en el lado de permeado."
+    }
+  ],
+  "requested_data": "Conductividad de permeado por tubo de presión individual (perfil vessel-by-vessel, µS/cm) mediante probe test para localizar el tubo/elemento afectado.",
+  "recommended_action": "Detener producción del bastidor, despresurizar de forma controlada y ejecutar procedimiento formal de venteo (abrir venteos en el punto más alto con bomba a baja velocidad y presión <3 bar hasta eliminar aire), reiniciar con rampa lenta (>60 s) y verificar conductividad de permeado. Si tras desaireación completa el rechazo no recupera a >98 %, realizar probe test vessel-by-vessel e inspección de o-rings/interconectores; sustituir o-rings dañados. No dosificar químicos correctivos hasta localizar el tubo afectado. Mantener antiincrustante en 2,5 ppm y cloro libre <0,02 mg/L durante el procedimiento.",
+  "decision_change_condition": "Si el probe test muestra conductividad uniforme en todos los tubos y la conductividad de permeado retorna a <150 µS/cm tras desaireación completa sin intervención mecánica, la causa sería puramente aire atrapado transitorio y no daño mecánico.",
+  "confidence": 62
+}

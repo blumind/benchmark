@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-NOWE-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:58:57Z",
+  "main_hypothesis": "Daño químico (hidrólisis) de las membranas de poliamida por exposición prolongada a bisulfito sódico en concentración excesiva (≥1,5 % p/p) combinada con agua bruta (con cationes divalentes y materia orgánica) durante la preservación, lo que provocó degradación parcial de la capa activa de poliamida y pérdida irreversible de rechazo salino.",
+  "key_signals": [
+    "Rechazo de sales drásticamente reducido: 85,3 % frente al baseline de 98,3 %, indicativo de daño en la capa activa de poliamida.",
+    "Conductividad de permeado muy elevada (850 µS/cm vs 95 µS/cm baseline) que baja lentamente pero permanece muy por encima del valor normal, consistente con daño estructural de membrana y no solo con arrastre de SBS residual.",
+    "Sulfito residual en permeado de 8,5 mg/L (vs <0,5 mg/L baseline), confirmando que SBS en exceso atraviesa la membrana dañada y/o que la membrana permite paso preferencial de solutos.",
+    "ORP anómalamente bajo en alimentación (-120 mV) y permeado (-180 mV), coherente con ambiente fuertemente reductor por exceso de bisulfito residual que no fue adecuadamente aclarado.",
+    "Presión de alimentación elevada (16,8 bar vs 14,5 bar) con caudal de permeado reducido (220 m³/h vs 290 m³/h), indicando pérdida de permeabilidad de la membrana (compactación o fouling químico asociado al daño).",
+    "Uso de agua bruta (no permeado) para rellenar el bastidor durante la preservación, introduciendo iones divalentes (Ca²⁺, Mg²⁺, Ba²⁺, Sr²⁺, sílice) que en presencia de SBS y pH neutro pueden precipitar sobre la membrana y catalizar degradación.",
+    "Doble adición de SBS (concentración estimada hasta 1,5 % p/p y luego 1 % adicional tras cambio de agua), superando la concentración recomendada por fabricantes (típicamente 0,5-1,0 % p/p máximo).",
+    "Aclarado pre-arranque insuficiente: solo 15 minutos con agua bruta, insuficiente para eliminar SBS residual y precipitados antes de presurizar."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño por choque osmótico durante el arranque rápido (rampa de 1 minuto a presión nominal) tras preservación prolongada.",
+      "why_plausible": "Una rampa de presurización de 1 minuto es excesivamente rápida según las recomendaciones de fabricantes (típicamente 3-5 minutos mínimo). El choque osmótico puede causar delaminación de la capa activa, especialmente en membranas que han estado en reposo prolongado con soluciones reductoras. Esto explicaría la pérdida de rechazo.",
+      "why_discardable": "El choque osmótico por sí solo típicamente causa daño localizado (telescoping, delaminación parcial) que se manifiesta como aumento de ΔP y paso de sales en elementos específicos, no como una degradación uniforme del rechazo en toda la planta. Además, el ΔP de etapa 1 está casi en baseline (1,1 vs 1,0 bar), lo que no sugiere daño mecánico severo. La presencia de sulfito residual elevado en permeado apunta más a daño químico que mecánico."
+    },
+    {
+      "hypothesis": "Fouling biológico acelerado por proliferación bacteriana durante la parada, favorecida por el uso de agua bruta como medio de preservación.",
+      "why_plausible": "El agua bruta contiene nutrientes y microorganismos que, incluso en presencia de SBS, podrían proliferar durante 8 días si la concentración de biocida fue insuficiente en algún momento. El biofouling causa pérdida de flujo y puede degradar membranas por metabolitos ácidos.",
+      "why_discardable": "El biofouling típicamente se manifiesta con aumento significativo de ΔP (especialmente en etapa 1, elementos de cabecera), lo cual no se observa (ΔP etapa 1 estable en 1,1 bar). Además, la concentración de SBS utilizada (1-1,5 % p/p) es bacteriostática eficaz. La pérdida de rechazo tan severa (85,3 %) no es característica del biofouling inicial, que afecta más al flujo que al rechazo."
+    },
+    {
+      "hypothesis": "Incrustación (scaling) por precipitación de sales de calcio/bario/sílice al introducir agua bruta con TDS 3.800 mg/L en el bastidor durante la preservación, sin antiincrustante.",
+      "why_plausible": "El agua bruta del pozo (TDS 3.800 mg/L) introducida sin antiincrustante en un sistema a recovery 78 % puede superar los índices de saturación de CaSO₄, BaSO₄ o sílice. La precipitación sobre la membrana durante el reposo podría dañar la superficie activa.",
+      "why_discardable": "El scaling durante la preservación (sin presión, sin concentración por rechazo) es poco probable porque no hay flujo de permeado que concentre las sales. Además, el scaling típicamente aumenta el ΔP y reduce el flujo sin causar una caída tan dramática del rechazo salino. El ΔP observado no muestra el patrón típico de scaling (aumento progresivo en etapa 2)."
+    },
+    {
+      "hypothesis": "Arrastre residual de SBS sin daño permanente de membrana: la conductividad elevada y bajo rechazo se deben exclusivamente al paso de sulfito/sulfato sódico residual que aún no se ha aclarado completamente.",
+      "why_plausible": "El sulfito residual en permeado (8,5 mg/L) contribuye a la conductividad medida. La tendencia de mejora (conductividad bajando de 1.500 a 850 µS/cm en 4 horas) podría indicar que el sistema se está aclarando progresivamente.",
+      "why_discardable": "Incluso asumiendo que todo el sulfito residual (8,5 mg/L como Na₂SO₃ ≈ 17 mg/L equivalente iónico) contribuye a la conductividad, esto explicaría solo ~25-30 µS/cm adicionales, no los 755 µS/cm de exceso sobre baseline. El rechazo de 85,3 % es demasiado bajo para explicarse solo por arrastre de SBS. Si las membranas estuvieran intactas, tras 4 horas de operación continua el rechazo debería haber recuperado valores >95 %."
+    }
+  ],
+  "requested_data": "Prueba de sondeo por elemento (probing test) con medición de conductividad de permeado por tubo de presión individual en ambas etapas, para determinar si la pérdida de rechazo es uniforme en todos los elementos o localizada en posiciones específicas (lo que discriminaría entre daño químico generalizado por SBS vs. daño mecánico localizado por choque osmótico o fallo de O-rings).",
+  "recommended_action": "Detener inmediatamente el bastidor y realizar un aclarado exhaustivo (flushing a baja presión, <4 bar) con permeado limpio de otro tren o agua de calidad equivalente durante mínimo 1 hora hasta que el ORP del permeado supere 0 mV y el sulfito residual sea <0,5 mg/L. Tras el aclarado, realizar una prueba de rechazo normalizada (normalized salt rejection test) a condiciones estándar (25 °C, presión de diseño, recovery reducido al 15 %) con agua de alimentación habitual. Si el rechazo normalizado permanece por debajo del 95 %, confirmar daño irreversible de membrana y programar autopsia de un elemento de cabecera y uno de cola para confirmar el mecanismo de degradación. No volver a operar a recovery nominal (78 %) hasta confirmar integridad de membranas, ya que operar con rechazo del 85 % a alta recovery producirá permeado fuera de especificación y concentrará contaminantes inadecuadamente.",
+  "decision_change_condition": "Si tras el aclarado exhaustivo con permeado limpio (ORP >0 mV, sulfito <0,5 mg/L) el rechazo normalizado de sales recupera valores ≥97 % y la conductividad de permeado baja a <120 µS/cm, cambiaría mi diagnóstico de daño químico irreversible a arrastre residual de SBS sin daño permanente, y la causa raíz sería únicamente un procedimiento de aclarado pre-arranque insuficiente.",
+  "confidence": 72
+}

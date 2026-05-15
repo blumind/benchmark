@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T08:51:44Z",
+  "main_hypothesis": "Severe biofouling of the RO membranes, concentrated in the first stage, caused by the failure to add a biocide during the 28-day preservation period.",
+  "key_signals": [
+    "The documented failure to execute the biocide preservation step, leaving membranes in stagnant permeate for 28 days.",
+    "A massive increase in ATP concentration in the RO feed water, from a baseline of 60 pg/mL to 980 pg/mL, indicating high biological activity.",
+    "The operator's report of a hydrogen sulfide (H₂S) smell in the concentrate, a classic indicator of sulfate-reducing bacteria (SRB) activity common in anaerobic biofouling.",
+    "A disproportionately large increase in the first stage differential pressure (ΔP1 from 0.9 to 1.5 bar), which is characteristic of fouling at the front end of the RO train."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Colloidal or particulate fouling.",
+      "why_plausible": "The turbidity at the cartridge filter outlet has doubled from 0.06 to 0.12 NTU, indicating a higher load of suspended solids is reaching the membranes, which would increase ΔP in the first stage.",
+      "why_discardable": "This fails to explain the overwhelming biological evidence (H₂S smell, massive ATP spike). The turbidity increase may be a symptom of biofilm sloughing from upstream piping rather than the root cause, and the performance decline is more rapid and severe than typically caused by such a minor turbidity change."
+    },
+    {
+      "hypothesis": "Inorganic scaling (e.g., calcium carbonate or silica).",
+      "why_plausible": "The feed water has moderate hardness and high silica. A failure in the antiscalant dosing system could lead to scale formation, which increases feed pressure and reduces permeate flow.",
+      "why_discardable": "The feed water chemistry data shows no significant change from baseline. Furthermore, scaling typically manifests most severely in the second stage where concentration is highest, whereas the data clearly shows the problem is predominantly in the first stage. This hypothesis also does not account for the biological signals."
+    }
+  ],
+  "requested_data": "Compositional analysis of a foulant sample taken from the surface of a lead membrane element in the first stage.",
+  "recommended_action": "Immediately shut down the RO train to prevent further compaction of the foulant layer. Perform a two-stage Clean-In-Place (CIP): first with a high-pH (target 11.5-12.0) alkaline cleaner to remove the organic biofilm matrix, followed by a sanitization step with a membrane-compatible, non-oxidizing biocide (e.g., DBNPA) at the concentration and contact time specified by the manufacturer.",
+  "decision_change_condition": "My diagnosis would change if an autopsy or foulant analysis of a lead membrane element revealed that the fouling layer consists predominantly of inorganic scale or colloidal silt, with minimal biological material.",
+  "confidence": 95
+}

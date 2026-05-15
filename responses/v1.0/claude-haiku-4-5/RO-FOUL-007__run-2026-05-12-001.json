@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:23:38Z",
+  "main_hypothesis": "Biofouling of RO membranes caused by elevated biofilm precursors (TOC and ATP) entering the membrane array due to inadequate pretreatment barrier following storm-induced turbidity and subsequent over-dosing of FeCl₃ without corresponding UF polishing.",
+  "key_signals": [
+    "TOC in RO feed doubled from 1.1 to 2.2 mg/L over 12 days, with marked increase beginning day -10",
+    "ATP in RO feed increased 8-fold from 90 to 720 pg/mL, indicating active microbial biomass accumulation",
+    "SDI₁₅ at cartridge outlet rose from 2.5 to 4.0 over 12 days, exceeding typical RO feed specification of <3",
+    "ΔP stage 1 head increased from 1.4 to 2.5 bar (79% rise) with sustained upward trend starting day -15",
+    "Permeate flow declined 8% (332 to 305 m³/h) concurrent with ΔP rise, consistent with membrane fouling",
+    "Permeate conductivity increased slightly (440 to 470 µS/cm) despite stable feed conductivity, indicating membrane integrity loss from biofouling",
+    "FeCl₃ dose remained elevated at 2 mg/L after day -18 despite turbidity normalization to 0.9 NTU, creating excess iron hydroxide colloids that bypass cartridge filtration and accumulate on membranes",
+    "UF bypass was deactivated day -22 without verification that cartridge-only pretreatment was adequate to remove biofilm precursors post-storm"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane scaling (calcium carbonate or silica) due to high feed TDS and elevated temperature.",
+      "why_plausible": "Feed TDS >60,000 mg/L is unusually high; temperature rose to 31.5 °C; ΔP increase is most pronounced at stage 1 head where concentration polarization is highest. Scaling is a common failure mode in high-salinity SWRO.",
+      "why_discardable": "Permeate conductivity increased only slightly (6.8% rise) while ΔP increased 79%; true scaling would cause proportionally larger conductivity rise due to membrane rejection loss. pH remained stable at 8.2, not conducive to rapid CaCO₃ precipitation. Scaling typically develops over weeks to months in well-dosed systems; the 12-day timeline and marked ATP/TOC rise point to biofouling, which develops faster. Antiincrustant is dosed at 2.8 ppm, which is adequate for this salinity if pretreatment is sound."
+    },
+    {
+      "hypothesis": "Mechanical fouling (suspended solids accumulation) from inadequate cartridge filtration post-storm.",
+      "why_plausible": "SDI₁₅ rose to 4.0, exceeding specification; turbidity at cartridge outlet doubled to 0.16 NTU. Storm on day -25 introduced 6 NTU turbidity. Cartridge-only pretreatment (no routine UF) may be insufficient after high-turbidity events.",
+      "why_discardable": "Mechanical fouling alone does not explain the 8-fold ATP rise or 2-fold TOC increase. ATP is a biomarker of living microbial biomass, not inert suspended solids. TOC elevation indicates organic matter accumulation, which feeds biofilm growth. Mechanical fouling would cause rapid ΔP rise over 1–2 days; the 12-day gradual rise with concurrent ATP/TOC accumulation is inconsistent with simple particle loading. Turbidity normalized to 0.9 NTU by day -18, yet ΔP continued rising, indicating the fouling agent is not particulate."
+    },
+    {
+      "hypothesis": "Membrane degradation or defect in the 60% of older (4-year-old) elements, unrelated to feed quality.",
+      "why_plausible": "60% of membranes are 4 years old; age-related material fatigue or microdefects could cause localized ΔP rise and conductivity increase. Older membranes are more susceptible to biofouling, so a defect could accelerate biofilm attachment.",
+      "why_discardable": "Membrane defects would not explain the synchronized rise in TOC, ATP, SDI₁₅, and ΔP all beginning after day -18. If defects were pre-existing, ΔP would have been elevated at baseline. The temporal correlation between FeCl₃ over-dosing (day -18), ATP spike (day -7), and ΔP rise (day -15 onward) is too tight to be coincidental. Defects in 60% of elements would likely cause more severe conductivity rise (>10%) than observed (6.8%). A defect hypothesis does not account for the operational change (FeCl₃ dose elevation) that preceded the failure."
+    },
+    {
+      "hypothesis": "Inadequate chlorine residual or biocide dosing allowing biofilm growth in feed lines upstream of RO.",
+      "why_plausible": "Case states 'sin cloraminación rutinaria' (no routine chloramination). ATP and TOC rise indicate microbial activity. Biofilm in feed piping could slough cells and organic matter into the RO feed.",
+      "why_discardable": "The case does not report any change in biocide dosing or residual monitoring. The ATP/TOC rise is temporally correlated with the FeCl₃ over-dosing event (day -18), not with a biocide withdrawal. If biofilm were growing in feed lines, we would expect gradual ATP rise over weeks; the 8-fold spike in 12 days is more consistent with a sudden influx of biofilm precursors from the pretreatment stage. The absence of routine chloramination is a chronic condition, not a recent change; it does not explain the acute deterioration."
+    }
+  ],
+  "requested_data": "Microscopic examination (SEM or optical) of a cartridge element removed from service on day 0, with quantification of iron hydroxide colloid deposition and any visible biofilm or microbial colonies on the cartridge surface.",
+  "recommended_action": "Immediately reduce FeCl₃ dosage to 0.8 mg/L (baseline) and monitor turbidity and SDI₁₅ at cartridge outlet for 24 hours. If SDI₁₅ remains ≤3.0 and turbidity ≤0.1 NTU, continue at 0.8 mg/L. Simultaneously, activate UF polishing (bypass mode) at 50 L/m²·h for 7 days to remove residual biofilm precursors and iron colloids from the RO feed. Measure ATP and TOC in RO feed daily; if ATP remains >300 pg/mL after 3 days of UF operation, increase UF flux to 70 L/m²·h and add sodium hypochlorite at 2 mg/L Cl₂ to the UF feed to suppress biofilm growth. Do not increase RO feed pressure above 72 bar during this period. Schedule CIP (clean-in-place) of RO membranes with citric acid (pH 3.5–4.0, 500 mg/L) at 8 L/m²·h for 60 minutes if ΔP does not decrease by ≥0.3 bar within 5 days of FeCl₃ reduction and UF activation.",
+  "decision_change_condition": "If, after 5 days of FeCl₃ reduction and UF polishing, ΔP stage 1 head remains ≥2.2 bar and ATP in RO feed is <200 pg/mL (indicating biofilm precursors have been removed but fouling persists), the diagnosis would shift toward membrane scaling or mechanical fouling resistant to pretreatment, requiring CIP with scale-dissolving chemistry (citric acid or EDTA) and possible membrane replacement of the oldest elements.",
+  "confidence": 76
+}

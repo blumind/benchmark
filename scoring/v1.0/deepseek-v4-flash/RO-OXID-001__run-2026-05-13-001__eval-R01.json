@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-001",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'oxidative damage polyamide por cloro breakthrough + CAG agotado' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta cloro detectado + ORP + caída rechazo + ATP estable."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (MECH O-ring, scaling, biofouling) con why_discardable."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Stop chlorine + bisulfite 0.54 mg/L + GAC replacement — match gold operacional."
+    },
+    "requested_data": {
+      "score": 0,
+      "justification": "Pide 'free chlorine in permeate' — lugar conceptualmente incorrecto (cloro libre debe medirse en alimentación o tras CAG, no en permeato)."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single threshold: cloro permeato <0.02 + FTIR sin carbonyl → MECH."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "REQ incorrecto conceptualmente: cloro libre en permeato no discrimina daño oxidativo."
+}

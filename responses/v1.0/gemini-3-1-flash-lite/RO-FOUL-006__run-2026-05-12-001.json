@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-FOUL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:17:08Z",
+  "main_hypothesis": "Biofouling en la primera etapa de las membranas de ósmosis inversa debido a la reducción de la frecuencia de dosificación de biocida (DBNPA).",
+  "key_signals": [
+    "Aumento marcado de ATP en alimentación (110 a 480 pg/mL)",
+    "Subida progresiva de ΔP en la etapa 1 (0,8 a 1,7 bar)",
+    "Rebote rápido del ΔP tras limpieza ácida (de 0,9 a 1,3 bar en 12 días)",
+    "Aumento del TOC en alimentación (1,3 a 1,9 mg/L)",
+    "Cambios de color amarillento en el concentrado"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación inorgánica (scaling) por sales de calcio o sílice.",
+      "why_plausible": "La presión de alimentación ha subido y el caudal de permeado ha bajado, lo cual es consistente con la pérdida de permeabilidad.",
+      "why_discardable": "La limpieza ácida (CIP) fue ineficaz para estabilizar el ΔP, lo que sugiere que el ensuciamiento no es principalmente mineral, y el ATP elevado apunta directamente a actividad biológica."
+    },
+    {
+      "hypothesis": "Ensuciamiento por partículas (coloidal/sedimentos) debido a fallo en filtros de cartucho.",
+      "why_plausible": "El aumento de ΔP en la primera etapa es típico de la acumulación de sólidos en la cara frontal de los elementos.",
+      "why_discardable": "No hay reporte de aumento en la turbidez o SDI (Silt Density Index) y el incremento de ATP es un indicador específico de crecimiento microbiológico que no explicaría un fallo mecánico de filtración."
+    }
+  ],
+  "requested_data": "SDI (Silt Density Index) de 15 minutos medido en la alimentación a las membranas de RO.",
+  "recommended_action": "Realizar una limpieza química (CIP) alcalina utilizando una solución de dodecil sulfato sódico (SDS) al 0,1% p/p y EDTA al 0,5% p/p a pH 11-12, seguida de una desinfección con DBNPA a 10 mg/L durante 30 minutos en recirculación.",
+  "decision_change_condition": "Si el SDI fuera superior a 5,0, mi diagnóstico cambiaría a un fallo en el pretratamiento de filtración (filtros de greensand o cartuchos) en lugar de biofouling primario.",
+  "confidence": 90
+}

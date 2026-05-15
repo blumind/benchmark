@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-004",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'glue line defect membrane elements defective lot + progressive salt leakage compromised seals' literal — captura una de 3 hipótesis (Open)."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (biofouling, scaling, MECH end caps, OXID)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Isolate three tubes T-04 + extract 5 elements defective lot + send manufacturer autopsy + no reapretado/CIP — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide microscopic/visual autopsy inspection glue line + delamination — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi: autopsy sin defecto + active layer degradation/biofilm/scaling → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-MECH-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:39:32Z",
+  "main_hypothesis": "Defecto en el sello frontal del Tubo 2 de la etapa 1",
+  "key_signals": [
+    "Fuga de agua dulce en la 'pestaña' de la cabeza del Tubo 2",
+    "Aumento progresivo de la conductividad del permeado",
+    "Desviación en el Tubo 2 de la etapa 1",
+    "Protrusión anómala y junta tórica marcada en el sello frontal del Tubo 2",
+    "Pérdida de presión en el Test de presión del Tubo 2"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Desgaste de la vaina FRP del Tubo 2",
+      "why_plausible": "El desgaste de la vaina FRP podría afectar la integridad estructural del tubo y causar fugas o problemas de sellado.",
+      "why_discardable": "No hay evidencia directa de una grieta visible en la vaina FRP que indique un fallo estructural importante."
+    },
+    {
+      "hypothesis": "Obstrucción en el Tubo 2 de la etapa 1",
+      "why_plausible": "La obstrucción parcial del tubo podría causar un aumento en la conductividad del permeado y problemas de presión.",
+      "why_discardable": "La pérdida de presión en el Test de presión del Tubo 2 sugiere un problema de sellado más que una obstrucción."
+    }
+  ],
+  "requested_data": "Resultado de un test de integridad de la membrana del Tubo 2 de la etapa 1",
+  "recommended_action": "Reemplazar el sello frontal del Tubo 2 de la etapa 1 y realizar un nuevo test de presión para verificar la estanqueidad.",
+  "decision_change_condition": "Si el test de integridad de la membrana del Tubo 2 muestra una obstrucción significativa en lugar de un fallo en el sello frontal.",
+  "confidence": 90
+}

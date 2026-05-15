@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-005",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'incomplete removal H2O2 + oxidative damage SWRO + increased salt passage' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (orgánico/biológico, térmica, contaminación cruzada, MECH O-ring)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Aclarado adicional T-03 90 min + verificar H2O2 cuantitativo <0.1 + repetir hasta cumplir + 'CIP de recuperación'. La 'CIP de recuperación' para OXID es subóptima aunque no match exacto case_specific (H2O2-CIP). C4=1."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide H2O2 en superficie membrana T-03 método cuantitativo — match accepted (espectrofotométrico)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: <0.1 + conductividad no recupera → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "'CIP de recuperación' tras flush es subóptimo para OXID (irreversible). Strict no fail (no es H2O2-CIP)."
+}

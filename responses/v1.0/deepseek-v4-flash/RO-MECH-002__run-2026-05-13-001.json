@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-MECH-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:36:23Z",
+  "main_hypothesis": "Water hammer due to an excessively rapid VFD ramp after maintenance caused a sudden pressure surge that mechanically damaged the first membrane element in stage 1, leading to telescoping, loss of salt rejection, and decreased differential pressure.",
+  "key_signals": [
+    "Start ramp reported as 'faster' after VFD maintenance (Day -8)",
+    "Abnormal 'thump' sound in high-pressure line after restart (Day -4)",
+    "Sharp increase in permeate conductivity from 92 to 950 µS/cm within days",
+    "Decrease in ΔP stage 1 (1.0 to 0.8 bar) and stage 2 (0.8 to 0.4 bar) instead of expected increase",
+    "Probe test showing extremely high conductivity (6,500 µS/cm) only at head of stage 1, confirming local damage",
+    "Visible telescoping deformation at the downstream end of the first element (Day 0)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Oxidant damage (e.g., chlorine breakthrough) degrading the membrane polymer, causing loss of rejection.",
+      "why_plausible": "Chlorine or other oxidants can attack polyamide membranes, increasing permeate conductivity. The permeate conductivity rise is consistent with oxidation.",
+      "why_discardable": "Free chlorine before RO is stable at <0.02 mg/L, ORP is stable at +85 mV (not elevated), and no oxidant is dosed. Additionally, oxidation typically does not cause telescoping; the physical deformation and the thump sound point to a mechanical event."
+    },
+    {
+      "hypothesis": "Scaling or fouling of the first stage membranes, causing increased pressure drop and loss of rejection.",
+      "why_plausible": "Scaling/fouling can increase pressure drop and sometimes alter rejection if concentration polarization worsens. The plant has been operating for 22 months.",
+      "why_discardable": "Both ΔP stages decreased significantly rather than increased, which contradicts fouling/scaling. The probe test shows high conductivity localized at the head, not uniformly. Telescoping is not a fouling symptom. The sudden onset of high conductivity after a pressure transient also rules out gradual fouling."
+    },
+    {
+      "hypothesis": "Manufacturing defect in the first element causing spontaneous telescoping and failure.",
+      "why_plausible": "Membrane elements can have manufacturing defects that lead to structural failure over time. The telescope deformation could be due to weak glue lines or end caps.",
+      "why_discardable": "The failure occurred immediately after a pressure event (thump sound) rather than gradually. The timing coinciding with VFD maintenance and operator report of faster ramp strongly suggests an external cause. If it were a defect, failure would likely have occurred earlier or without such a clear operational trigger."
+    }
+  ],
+  "requested_data": "Actual VFD ramp time setting before and after maintenance (in seconds) from the drive configuration log.",
+  "recommended_action": "Immediately shut down the RO plant. Inspect and replace the damaged element in pressure vessel 1 of stage 1. Verify and reset the VFD ramp time to the original 90 seconds (or as per manufacturer specification). Perform a controlled restart with monitoring of pressure rise rate.",
+  "decision_change_condition": "If the VFD ramp time is found to be unchanged (still 90 seconds) and no other cause for a rapid pressure surge is identified, then the diagnosis would change toward a potential VFD control issue (e.g., momentary full-voltage start) or a different mechanical failure mechanism.",
+  "confidence": 85
+}

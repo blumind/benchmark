@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-004",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'CaSO4 sobresaturación + recovery↑ + concentración sulfato↑' — match."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts (orgánico/biológico, sílice)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Reducir recovery 80% + ajustar antiincrustante 3.0 ppm — sólo operacional, sin CIP químico."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia membrana CaSO4 — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: autopsia sin CaSO4 → reconsiderar."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

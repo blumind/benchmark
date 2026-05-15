@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-MECH-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:40:02Z",
+  "main_hypothesis": "Fallo en el sello del cap final del tubo 2, etapa 1, debido a desgaste de la junta tórica y protrusión anómala del sello frontal.",
+  "key_signals": [
+    "Conductividad del permeado en el tubo 2 (1.250 µS/cm) significativamente mayor que en los otros tubos (100–130 µS/cm).",
+    "Pérdida de presión en el test de presión del tubo 2 con elementos extraídos.",
+    "Protrusión anómala y marca en la junta tórica del sello frontal del tubo 2.",
+    "Fuga de agua dulce reportada en la pestaña de la cabeza del tubo durante mantenimiento rutinario.",
+    "Disminución progresiva en el rechazo de sales y aumento en la conductividad del permeado."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Degradación de las membranas en el tubo 2 debido a envejecimiento o daño químico.",
+      "why_plausible": "Las membranas tienen 5 años de servicio y podrían estar degradándose, lo que explicaría el aumento en la conductividad del permeado.",
+      "why_discardable": "El test de presión y la inspección visual apuntan a un problema mecánico en el sello, no a un fallo en la membrana. Además, la pérdida de presión es consistente con un sello defectuoso."
+    },
+    {
+      "hypothesis": "Fuga en la vaina de presión (FRP) del tubo 2.",
+      "why_plausible": "Las vainas FRP tienen una vida útil declarada de 10 años y podrían estar desarrollando grietas o fugas.",
+      "why_discardable": "La inspección de la vaina FRP no mostró grietas visibles, y el test de presión sugirió un problema en el sello, no en la vaina."
+    }
+  ],
+  "requested_data": "Imagen de alta resolución de la junta tórica y el sello frontal del tubo 2 para evaluar el estado exacto del desgaste.",
+  "recommended_action": "Reemplazar la junta tórica y el sello frontal del cap del tubo 2, etapa 1, y realizar un test de presión post-reparación para verificar la estanqueidad.",
+  "decision_change_condition": "Si la inspección visual o el test de presión revelaran grietas en la vaina FRP o daño irreversible en las membranas, el diagnóstico cambiaría a fallo en la vaina o degradación de membranas.",
+  "confidence": 85
+}

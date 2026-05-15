@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-FOUL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:22:35Z",
+  "main_hypothesis": "Biofouling of RO membranes caused by proliferation of phytoplankton-derived organic matter (transparent exopolymer particles and algal metabolites) combined with inadequate pre-treatment removal of these colloidal and macromolecular species.",
+  "key_signals": [
+    "Marked increase in clorofila-a from 1.5 to 28 µg/L coinciding with state administration warning of phytoplankton bloom",
+    "Sharp rise in TOC at RO inlet from 1.2 to 3.4 mg/L (183% increase) despite stable source water conductivity",
+    "TEP concentration of 320 µg/L Xeq (>6× baseline threshold of 50 µg/L Xeq), a direct marker of algal exopolysaccharides",
+    "Rapid ΔP increase in stage 1 head from 1.3 bar baseline to 3.1 bar (138% rise) over 7 days",
+    "Permeate flow decline of 11% (248 vs 278 m³/h) with simultaneous feed pressure increase to 67 bar, indicating membrane resistance increase",
+    "SDI₁₅ post-UF elevation to 3.1 (from 2.3 baseline), indicating UF breakthrough of colloidal material",
+    "Visible filaments in feed samples and earthy odor (geosmin signature of algal metabolites) reported on day -12"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane degradation or defect in recently replaced elements (14 months old)",
+      "why_plausible": "Partial membrane replacement 14 months ago; lead tubes are newest; ΔP rise and flow decline could indicate mechanical failure or manufacturing defect in newer elements.",
+      "why_discardable": "Membrane defects do not explain the temporal correlation with phytoplankton bloom, the marked increase in TOC and TEP (which are source-water driven), or the stable permeate conductivity (410 µS/cm, unchanged from baseline). Defects would show localized pressure spikes or salt leakage, not system-wide ΔP rise synchronized with algal bloom onset."
+    },
+    {
+      "hypothesis": "Inadequate coagulation or UF cartridge fouling reducing pre-treatment efficacy",
+      "why_plausible": "FeCl₃ dosage (1.5 mg/L) is fixed; during algal bloom, organic load increases sharply. UF cartridges (1 µm) may be saturated by algal cells and exopolysaccharides. SDI rise to 3.1 suggests UF is not removing colloidal material effectively.",
+      "why_discardable": "While UF performance degradation is a contributing factor, it is not the root cause. The root cause is the source-water algal bloom itself. UF inadequacy is a symptom of insufficient pre-treatment design for bloom conditions, not the primary failure. The temporal sequence shows bloom → TOC/TEP rise → UF breakthrough → RO fouling, making the bloom the root cause."
+    },
+    {
+      "hypothesis": "Biofouling of UF membranes with secondary RO fouling due to UF permeate quality degradation",
+      "why_plausible": "UF membranes can foul with algal biomass and exopolysaccharides, reducing their rejection of colloidal and macromolecular species. This would increase SDI and TOC at RO inlet.",
+      "why_discardable": "UF fouling is a mechanism within the broader biofouling scenario, not a separate root cause. The primary driver is the algal bloom in source water. UF fouling is a consequence of inadequate removal of bloom-derived organics, not an independent failure. The root cause is the biological event (bloom) and the system's inability to handle it, not UF membrane degradation per se."
+    },
+    {
+      "hypothesis": "Scaling (inorganic precipitation) on RO membranes due to elevated temperature and concentration",
+      "why_plausible": "Temperature increased from 21.5 to 22.1 °C; recovery is 42%, which can concentrate salts. Scaling could increase ΔP.",
+      "why_discardable": "Scaling does not explain the marked increase in TOC (3.4 mg/L), TEP (320 µg/L), or clorofila-a (28 µg/L). Permeate conductivity is stable at 410 µS/cm, indicating no salt breakthrough. Temperature rise of 0.6 °C is minor and seasonal, not correlated with the acute ΔP rise. Scaling is a secondary risk but not the primary cause of the observed ΔP surge."
+    },
+    {
+      "hypothesis": "Chlorine residual depletion allowing biofilm growth on RO membranes",
+      "why_plausible": "Cloro libre is <0.02 mg/L (undetectable); no continuous chlorination. Biofilm could form on membranes.",
+      "why_discardable": "Chlorine residual has been <0.02 mg/L at baseline (90 days ago) and remains so. This is not a change. The acute ΔP rise correlates with the algal bloom event, not with a change in chlorine strategy. Biofilm growth would be gradual over weeks/months, not a 2.4 → 3.1 bar jump in 48 hours. The temporal correlation with bloom is too tight for biofilm to be the root cause."
+    }
+  ],
+  "requested_data": "Microscopic analysis (light microscopy or SEM) of RO membrane surface samples from stage 1 head element, identifying the presence and composition of algal cells, exopolysaccharide matrix, and biofilm, with quantification of fouling layer thickness (µm).",
+  "recommended_action": "Immediately execute a chemical cleaning-in-place (CIP) of the RO train using a two-stage protocol: (1) Low-pH stage with 1.0–1.5 % citric acid or equivalent (pH 2.5–3.0) at 40–50 °C for 60 minutes to dissolve inorganic deposits and disrupt polysaccharide matrix; (2) High-pH stage with 0.5–1.0 % sodium hydroxide (pH 11.5–12.0) at 40–50 °C for 60 minutes to saponify and remove algal lipids and exopolysaccharides. Simultaneously, increase UF backwash frequency to every 15 minutes and increase backwash pressure to 3.5 bar to remove algal biomass from UF cartridges. After CIP, increase FeCl₃ coagulant dosage to 2.5–3.0 mg/L (a 67–100 % increase) to enhance removal of algal organic matter during the bloom period. Monitor ΔP stage 1 head hourly; if ΔP does not return to <1.8 bar within 24 hours post-CIP, replace UF cartridges and repeat RO CIP. Implement daily TOC and TEP monitoring at RO inlet until clorofila-a returns to <5 µg/L.",
+  "decision_change_condition": "If post-CIP ΔP stage 1 head remains >2.5 bar after 48 hours, or if permeate conductivity rises above 450 µS/cm, or if microscopic analysis reveals irreversible membrane damage (pitting, tears, or crystalline deposits that cannot be chemically removed), then the diagnosis would shift to partial membrane element failure requiring element replacement rather than biofouling alone.",
+  "confidence": 78
+}

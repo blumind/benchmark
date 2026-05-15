@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:11:52Z",
+  "main_hypothesis": "Scaling on the third stage membranes due to calcium sulfate precipitation",
+  "key_signals": [
+    "Marked increase in pressure drop (ΔP) in stage 3",
+    "Significant rise in sulfate rejection levels",
+    "Observation of a change in reclaimed water mix with higher sulfate content",
+    "Sulfate saturation index (SI) close to 1.1 (oversaturated)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling on the third stage membranes due to silica precipitation",
+      "why_plausible": "Moderate increase in silica rejection levels",
+      "why_discardable": "Silica rejection levels are not significantly high, unlike sulfate rejection levels."
+    },
+    {
+      "hypothesis": "Scaling on the third stage membranes due to organic fouling",
+      "why_plausible": "Stable Total Organic Carbon (TOC) feed levels",
+      "why_discardable": "Lack of significant TOC increase or other organic fouling indicators."
+    }
+  ],
+  "requested_data": "Silica rejection levels",
+  "recommended_action": "Conduct a chemical cleaning with a suitable descaling agent for calcium sulfate removal from the third stage membranes.",
+  "decision_change_condition": "If silica rejection levels are found to be significantly high, indicating silica scaling instead of calcium sulfate scaling.",
+  "confidence": 90
+}

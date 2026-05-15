@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-001",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "MH 'fallo bomba peristáltica + dosificación insuficiente (0.3 L/h vs 1.8 consigna) + acumulación incrustaciones etapa 2' literal con números."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals listados."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (cartuchos, biofouling, daño químico OXID, cavitación bomba alim)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Detener bomba + verificar + cebado SOP + ajustar 2.5 ppm (1.8 L/h); CIP ácido para depósito ya formado no explícito."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide concentración antiincrustante aguas abajo punto inyección — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: antiincrustante ≥2.0 ppm + ΔP etapa 2 ≤1.2 bar en 24h → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "C4=1 por no ver CIP para CaCO3 ya depositado."
+}

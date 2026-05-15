@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-SCAL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:05:15Z",
+  "main_hypothesis": "Fouling in the tail section of stage 1 membranes in T-04 due to localized absence of anti-scalant dosing during 19 days, leading to barium sulfate precipitation and irreversible membrane damage despite restoration of dosing.",
+  "key_signals": [
+    "Sustained ΔP increase in tail section of stage 1 (0.9 → 2.3 bar) in T-04 only",
+    "Conductivity of permeate in T-04 rising (405 → 460 µS/cm) indicating increased salt passage",
+    "Flow decline in T-04 (278 → 252 m³/h, -9%) while other trains stable",
+    "Anti-scalant injection to T-04 interrupted from day -22 to day -3 (19 days) due to solenoid de-energization",
+    "Barium and sulfate in reject stable, indicating no systemic scaling source but localized precipitation in T-04",
+    "Pressure at feed increased (60 → 67 bar) to maintain flux, consistent with membrane fouling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling in T-04 tail section due to chlorine absence or nutrient ingress during maintenance.",
+      "why_plausible": "Chlorine free <0.02 mg/L is stable, but maintenance work (electrical panel change) could have introduced organic load or disrupted biofilm control. Biofouling often causes localized ΔP rise and flux decline.",
+      "why_discardable": "No increase in TOC, turbidity, or chlorine demand reported. Biofouling typically shows irregular ΔP patterns and may not cause such a sharp tail-section pressure rise. Also, recovery of dosing should not reverse biofouling once established."
+    },
+    {
+      "hypothesis": "Particulate fouling from pre-treatment failure (DAF or filters) causing tail-section plugging in T-04.",
+      "why_plausible": "Pre-treatment upsets can cause localized fouling. Tail section of stage 1 is most vulnerable to particle accumulation.",
+      "why_discardable": "No reported turbidity spikes, SDI changes, or pre-treatment alarms. ΔP rise is isolated to T-04, not system-wide. Also, tail ΔP rise due to particles is usually less abrupt and more evenly distributed."
+    },
+    {
+      "hypothesis": "Calcium carbonate scaling due to pH drift or CO₂ degassing in T-04.",
+      "why_plausible": "pH is stable at 8.1, but localized pH shifts can occur in dead legs or after maintenance. Carbonate scaling can cause sharp ΔP increases in tail sections.",
+      "why_discardable": "No change in pH or alkalinity reported. Carbonate scaling would typically show higher conductivity in permeate and would respond to acid cleaning, which is not mentioned as attempted."
+    },
+    {
+      "hypothesis": "Oxidative damage to membranes in T-04 due to chlorine intrusion during maintenance.",
+      "why_plausible": "Chlorine intrusion can damage polyamide membranes, increasing salt passage and ΔP. Maintenance involving electrical work could have disrupted monitoring systems.",
+      "why_discardable": "Chlorine free is stable and <0.02 mg/L. No reports of chlorine spikes or membrane integrity tests. Oxidative damage usually causes uniform performance decline across membranes, not isolated tail-section ΔP rise."
+    }
+  ],
+  "requested_data": "Membrane autopsy report from T-04 tail section stage 1: presence of barium sulfate crystals, scale composition, and membrane surface integrity (SEM/EDS analysis).",
+  "recommended_action": "Isolate T-04 immediately. Perform a low-pressure flush with 0.1% citric acid solution at pH 3.5 and 25 °C for 30 minutes to dissolve barium sulfate scale. If ΔP does not drop below 1.5 bar, proceed with a 2-hour soak at 30 °C with 1.0% EDTA-Na2 solution at pH 10.0. After cleaning, conduct a 24-hour performance test at 45% recovery. If conductivity remains >450 µS/cm or ΔP tail >1.5 bar, replace stage 1 membranes in T-04.",
+  "decision_change_condition": "If membrane autopsy from T-04 shows no barium sulfate scale and ΔP tail section drops below 1.5 bar after a standard alkaline cleaning, the diagnosis changes to reversible organic fouling or particulate fouling.",
+  "confidence": 92
+}

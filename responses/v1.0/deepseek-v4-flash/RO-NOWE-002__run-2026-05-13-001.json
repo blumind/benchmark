@@ -1,0 +1,36 @@
+{
+  "case_id": "RO-NOWE-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:02:48Z",
+  "main_hypothesis": "Calcium sulfite scaling on the second-stage membranes caused by the operator adding sodium bisulfite to raw water containing calcium, leading to membrane damage and leakage of salts and bisulfite into the permeate.",
+  "key_signals": [
+    "Sulfite residual in permeate = 8.5 mg/L (baseline <0.5 mg/L)",
+    "ORP feed = -120 mV (baseline +50 mV)",
+    "ORP permeate = -180 mV (baseline -20 mV)",
+    "ΔP stage 2 = 0.7 bar and rising slowly (baseline 0.8 bar, but trend is up)",
+    "Salt rejection = 85.3% (baseline 98.3%) and improving slowly",
+    "Permeate flow = 75% of baseline and rising slowly",
+    "Feed pressure = 16.8 bar vs baseline 14.5 bar (elevated to maintain flow)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "O-ring or seal damage from rapid pressure ramp (1 min) causing feed water bypass.",
+      "why_plausible": "The 1-minute ramp to nominal pressure is very fast and could cause pressure surges that displace O-rings, especially if they were dried out during preservation. Bypass would explain high salts and SBS in permeate.",
+      "why_discardable": "The rising ΔP stage 2 and improving rejection over time are inconsistent with a mechanical leak; leaks typically do not self-seal. Also, pressure ramp was after the preservation changes, but the damage would likely manifest immediately and not improve."
+    },
+    {
+      "hypothesis": "Inadequate rinsing of SBS from the membranes before start, causing concentration polarization that temporarily reduces salt rejection.",
+      "why_plausible": "Only a 15-minute rinse with raw water was performed, which is likely insufficient to remove 1% SBS from the entire rack. High SBS in the feed could increase osmotic pressure and reduce effective rejection.",
+      "why_discardable": "RO membranes have high rejection for SBS; even at 1% feed concentration, rejection should exceed 99%. The observed 8.5 mg/L SBS in permeate indicates a much higher passage, not explainable by concentration alone. Also, feed and permeate ORP are both very low, but this could be due to residual SBS in the system rather than membrane passage."
+    }
+  ],
+  "requested_data": "Calcium concentration in the permeate (mg/L) and in the feed water (mg/L) to assess if calcium is passing through due to scaling damage or seal leakage.",
+  "recommended_action": "Reduce feed pressure to 13 bar and recovery to 70% to lower the scaling potential. Increase antiscalant dosage to 4 ppm. Continue monitoring permeate conductivity, ΔP, and sulfite residual every hour for 4 hours. If rejection continues to improve, slowly increase recovery back to baseline. If rejection stalls or worsens, plan a low-pH cleaning with 2% citric acid to dissolve calcium sulfite scale.",
+  "decision_change_condition": "If the calcium concentration in the permeate is similar to the feed calcium concentration (indicating extensive bypass), then the root cause is likely a mechanical seal/O-ring failure rather than scaling, and the recommended action would shift to inspecting and replacing O-rings and performing a pressure decay test.",
+  "confidence": 70
+}

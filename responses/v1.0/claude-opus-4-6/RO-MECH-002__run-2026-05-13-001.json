@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-MECH-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:33:01Z",
+  "main_hypothesis": "Daño mecánico por telescoping de los elementos de membrana en cabeza de etapa 1, causado por un golpe de ariete (water hammer) durante el rearranque de la HP pump el Día -5, debido a una rampa de arranque del VFD reprogramada incorrectamente (demasiado rápida) tras el mantenimiento del Día -10, lo que generó un pico de presión transitorio que superó la resistencia mecánica del anti-telescoping device (ATD) y/o de los interconectores del primer elemento.",
+  "key_signals": [
+    "Deformación visible por telescoping en el extremo aguas abajo del primer elemento del Tubo 1 de etapa 1, confirmada en apertura física (Día 0)",
+    "Sonido anómalo de 'golpe' en la línea de alta presión durante 2 segundos tras el rearranque automático (Día -4), consistente con water hammer",
+    "Rampa de arranque del VFD percibida como 'más rápida' por el operario tras el mantenimiento externo del VFD (Día -8), indicando posible reprogramación incorrecta del tiempo de rampa",
+    "Conductividad de permeado subió bruscamente de 92 a 950 µS/cm (rechazo de sales cayó de 97,9% a 78,7%), indicando pérdida de integridad de membrana o sello",
+    "Probe test localiza alta conductividad (6.500 µS/cm) específicamente en cabeza de etapa 1, consistente con daño mecánico localizado en los primeros elementos",
+    "ΔP de ambas etapas bajó en lugar de subir (etapa 1: 1,0→0,8 bar; etapa 2: 0,8→0,4 bar), consistente con bypass interno del flujo a través de membranas dañadas/desplazadas que reduce la resistencia hidráulica",
+    "Presión de alimentación bajó ligeramente (14,8→14,2 bar) con caudal de permeado estable, consistente con menor resistencia al flujo por daño estructural que permite paso preferencial",
+    "Secuencia temporal clara: mantenimiento VFD (Día -10) → rampa rápida reportada (Día -8) → parada y rearranque automático (Día -5) → golpe audible (Día -4) → deterioro progresivo de calidad (Día -3 en adelante)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño químico oxidativo de las membranas por exposición puntual a cloro u otro oxidante durante la parada/rearranque",
+      "why_plausible": "La degradación oxidativa de membranas de poliamida causa pérdida drástica de rechazo de sales similar a la observada. Una parada no programada podría haber permitido ingreso de agua clorada si el sistema de decloración no estaba activo.",
+      "why_discardable": "El cloro libre antes de RO se mantiene < 0,02 mg/L y el ORP es estable en +85 mV sin picos, lo que descarta exposición oxidativa significativa. Además, el daño oxidativo no produce telescoping visible ni golpe audible, y típicamente afecta múltiples elementos de forma más uniforme, no solo la cabeza de etapa 1."
+    },
+    {
+      "hypothesis": "Fallo mecánico del anti-telescoping device (ATD) o interconector por fatiga de material tras 22 meses de operación, sin relación con el water hammer",
+      "why_plausible": "Con 22 meses de operación, los ATDs y componentes plásticos pueden degradarse, especialmente en agua superficial con variaciones de temperatura. Un ATD debilitado podría fallar espontáneamente.",
+      "why_discardable": "La correlación temporal directa entre el mantenimiento del VFD, el rearranque con golpe audible y el inicio del deterioro de calidad hace muy improbable que sea coincidencia. El fallo por fatiga pura no explicaría el sonido de golpe ni la bajada simultánea de ΔP en ambas etapas."
+    },
+    {
+      "hypothesis": "Fallo de O-rings o sellos de interconectores por sobrepresión transitoria, sin telescoping real (el telescoping observado sería consecuencia secundaria)",
+      "why_plausible": "Un pico de presión por water hammer podría dañar primero los O-rings de los adaptadores/interconectores, permitiendo bypass de alimentación a permeado, y el desplazamiento axial posterior causaría el telescoping como efecto secundario.",
+      "why_discardable": "Esta hipótesis comparte la misma causa raíz (water hammer por rampa de VFD incorrecta) y solo difiere en el mecanismo de fallo primario. El telescoping visible confirmado en la inspección sugiere que el desplazamiento axial fue el evento principal, no secundario. No obstante, es posible que ambos mecanismos coexistan."
+    }
+  ],
+  "requested_data": "Registro del parámetro de tiempo de rampa de arranque (ramp-up time en segundos) actualmente programado en el VFD de la HP pump, comparado con el valor original de fábrica/comisionamiento de 90 segundos, para confirmar si fue alterado durante el mantenimiento del Día -10.",
+  "recommended_action": "1) Parar inmediatamente el bastidor afectado para evitar daño adicional a elementos adyacentes. 2) Verificar y restaurar el parámetro de rampa de arranque del VFD a 90 segundos (valor de diseño) antes de cualquier rearranque. 3) Realizar inspección completa (probing test elemento por elemento) de todos los tubos de presión de etapa 1 para identificar el alcance total del daño. 4) Extraer y reemplazar todos los elementos con telescoping o deformación visible, verificando estado de ATDs, interconectores y O-rings en cada posición. 5) Antes del rearranque, realizar prueba de estanqueidad a baja presión (3-5 bar) monitorizando conductividad de permeado por tubo. 6) Implementar protección contra water hammer: verificar que la válvula de alivio de alta presión esté calibrada correctamente y considerar instalación de un acumulador de presión (surge dampener) en la línea de descarga de la HP pump. 7) Establecer procedimiento operativo que requiera verificación de parámetros del VFD tras cualquier intervención de mantenimiento, con firma de conformidad.",
+  "decision_change_condition": "Si el registro del VFD confirma que la rampa de arranque sigue siendo exactamente 90 segundos (no fue modificada) y no se registró ningún pico de presión transitorio durante el rearranque del Día -5, entonces el diagnóstico cambiaría hacia fallo mecánico por fatiga de ATD/interconectores agravado por las condiciones normales de operación tras 22 meses, y se investigaría el lote de fabricación de los elementos y ATDs como causa raíz alternativa.",
+  "confidence": 88
+}

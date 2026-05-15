@@ -1,0 +1,43 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:51:05Z",
+  "main_hypothesis": "Paso de surfactantes/antiespumante e hidrocarburos desde la captación que desestabiliza el DAF/filtración y provoca ensuciamiento orgánico/oleoso tipo gel en la etapa 1 de la RO (taponamiento de canales de paso en elementos de cabecera).",
+  "key_signals": [
+    "ΔP etapa 1 sube bruscamente de 1,2 a 2,4 bar mientras ΔP etapa 2 permanece en 0,8 bar (fouling localizado en cabecera, típico de orgánico/oleoso).",
+    "Tensión superficial de alimentación cae de 72 a 58 mN/m (presencia de surfactantes/antiespumante).",
+    "Hidrocarburos totales en captación aumentan a 2,1 mg/L (baseline <1 mg/L).",
+    "TOC a RO sube de 1,2 a 2,9 mg/L (más carga orgánica).",
+    "SDI15 tras cartuchos aumenta marcadamente a 4,5 (peor filtrabilidad/coloidales).",
+    "Inspección de cartuchos: depósito gelatinoso, no marrón/rojizo (no férrico; típico de orgánico/surfactante).",
+    "Incidentes previos: aviso de vertido con antiespumante y espuma visible en captación.",
+    "Caudal permeado baja 12% y presión de alimentación sube (más pérdidas por fricción en etapa 1).",
+    "Conductividad de permeado sube (ensuciamiento que reduce rechazo en elementos de cabeza).",
+    "ATP en alimentación aumenta (ambiente favorable por materia orgánica; contribución biológica secundaria)."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Arrastre de polímero catiónico (p.ej., poliDADMAC) desde la planta vecina con complejación con antiincrustante/coloides y fouling en etapa 1.",
+      "why_plausible": "Evento reportado día -5; los geles de polímero catiónico son pegajosos y causan ΔP alto en elementos de cabecera; compatible con depósito gelatinoso y caída de caudal.",
+      "why_discardable": "La degradación empieza antes (SDI sube día -7 y ΔP día -3) coincidiendo con antiespumante/espuma; además cae la tensión superficial y suben hidrocarburos, señales más específicas de surfactantes/aceites que de polímero catiónico."
+    },
+    {
+      "hypothesis": "Bioensuciamiento acelerado en elementos de cabecera.",
+      "why_plausible": "ATP en alimentación sube a 240 pg/mL y el depósito gelatinoso puede ser biofilm; la caída de rendimiento y el aumento de ΔP son compatibles.",
+      "why_discardable": "La cinética (subida brusca en ~2–3 días) y la marcada caída de tensión superficial junto con aumento de hidrocarburos/TOC apuntan antes a surfactantes/aceites; además el biofouling suele acompañarse de evolución más gradual."
+    },
+    {
+      "hypothesis": "Escalado inorgánico (carbonato/sulfato) en etapa 1.",
+      "why_plausible": "Recuperación 42% en SWRO; si el control de antiincrustante fallara podría aumentar ΔP y empeorar rechazo.",
+      "why_discardable": "Antiincrustante 3 ppm estable, pH/temperatura estables; el escalado suele manifestarse más en la etapa 2; el depósito descrito es gelatinoso (no cristalino) y coexisten señales claras de materia orgánica/surfactantes."
+    }
+  ],
+  "requested_data": "Concentración residual de polímero catiónico en la alimentación a RO (como poliDADMAC, mg/L) medida a la salida de cartuchos.",
+  "recommended_action": "Detener el tren afectado y ejecutar una CIP para ensuciamiento orgánico/oleoso: preparar con permeado declorado una solución alcalina detergente con 2–3 g/L de NaOH y 1 g/L de tensioactivo no iónico compatible con RO (limpiador orgánico), ajustar pH 11,0–11,5 y calentar a 30–35 °C; recircular por la etapa 1 durante 45–60 min con intervalos de remojo (10–15 min), repetir en etapa 2; enjuagar hasta pH 6–8. Si el ΔP no se recupera suficientemente, aplicar una segunda CIP ácida con ácido cítrico 20 g/L (pH 2,0–2,5) a 25–30 °C durante 30–45 min y enjuagar. Reincorporar el tren a servicio a flujo reducido (10–11 L/m²·h) durante 12 h vigilando ΔP y conductividad. Mientras persista el episodio externo, reforzar la barrera a surfactantes/aceites en pretratamiento (p.ej., dosificación piloto de PAC 10–20 mg/L antes del DAF validada por ensayo de jarras) y no operar si se observa nueva caída de tensión superficial marcada.",
+  "decision_change_condition": "Si la concentración residual de polímero catiónico (como poliDADMAC) en la alimentación a RO es ≥ 0,1 mg/L, cambiaría el diagnóstico principal a fouling por arrastre de polímero catiónico.",
+  "confidence": 80
+}

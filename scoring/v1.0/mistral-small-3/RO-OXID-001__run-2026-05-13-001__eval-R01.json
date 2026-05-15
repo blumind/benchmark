@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-001",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'saturación/agotamiento prematuro CAG por sobreexposición hipoclorito + cloro libre residual daña SWRO' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta con relación causal."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (orgánico/biológico, antiincrustante, contaminación química, instrumentación) con why_discardable."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Sustituir CAG + 'dosificar hipoclorito 0.5 mg/L máx 15 min para validar nuevo CAG + verificar <0.02 antes de reiniciar' — validación del CAG nuevo (no continuar exposición durante evaluación de daño). C4=1 por falta de SBS install como redundancia."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide capacidad adsorción cloro CAG en laboratorio — match accepted (yodo de poros)."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: capacidad >50% → reconsiderar."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Acción de 'dosificar hipoclorito tras reemplazo CAG' es validación de nuevo medio, no exposición a membrana dañada — strict no Critical fail."
+}

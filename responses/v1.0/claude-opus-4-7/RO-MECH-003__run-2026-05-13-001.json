@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-MECH-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:38:30Z",
+  "main_hypothesis": "Fallo del sello de cabeza (cap end seal / o-ring del cap final) del Tubo 2 de la etapa 1, que permite bypass interno de agua de alimentación/concentrado hacia el colector de permeado, contaminando el permeado combinado.",
+  "key_signals": [
+    "Probe test: Tubo 2 etapa 1 con 1.250 µS/cm frente a 100–130 µS/cm en tubos vecinos (desviación localizada, no generalizada)",
+    "Inspección visual día -4: protrusión anómala del cap final del Tubo 2 y junta tórica marcada",
+    "Test de presión día -2 con elementos extraídos: pérdida de presión a 1 bar, consistente con sello de cabeza defectuoso",
+    "Historia día -22: fuga de agua dulce en la pestaña de la cabeza del tubo, 'resuelta' solo con reapriete de pernos (no se reemplazó sello)",
+    "Caída de rechazo de 97,8 % a 90,3 % sin aumento de ΔP ni de conductividad de alimentación, descartando ensuciamiento/escalado",
+    "Sin oxidante presente (Cl libre <0,02, ORP +75 mV estable), descartando oxidación de membrana",
+    "ΔP por etapas estable: descarta fouling/scaling que también podría reducir rechazo",
+    "Caída de caudal de permeado del 6 % consistente con bypass hidráulico interno (parte del flujo no se desala)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "O-ring de interconector (ATD) dañado entre elementos dentro del Tubo 2",
+      "why_plausible": "También produciría desviación de conductividad localizada en un único tubo con resto de la batería normal y ΔP estable.",
+      "why_discardable": "La inspección visual identificó protrusión y marca en la junta del cap final, y el test de presión a 1 bar fue consistente con sello de cabeza, no con interconector interno; además la fuga histórica fue en la pestaña de la cabeza."
+    },
+    {
+      "hypothesis": "Daño físico (telescoping / o-ring de producto) en uno de los elementos del Tubo 2",
+      "why_plausible": "Un elemento dañado produciría perfil de conductividad anómalo solo en ese tubo.",
+      "why_discardable": "No hay evidencia de aumento de ΔP en etapa 1 ni reporte de daño de elemento; las evidencias señalan al sello del cap, no al elemento."
+    },
+    {
+      "hypothesis": "Desgaste de la pista del cap en la vaina FRP (groove) que impide sellado correcto del o-ring",
+      "why_plausible": "Día -1 se documentó desgaste en la pista del cap; con 5 años de servicio y vainas a mitad de vida útil es plausible.",
+      "why_discardable": "Es una causa contribuyente al fallo del sello, no una hipótesis alternativa independiente; sin grieta visible la vaina sigue conteniendo presión. Se incluiría en la reparación pero la causa próxima sigue siendo el sello."
+    },
+    {
+      "hypothesis": "Oxidación generalizada de membranas",
+      "why_plausible": "Pérdida de rechazo sin aumento de ΔP es típica de oxidación.",
+      "why_discardable": "Sería difusa entre tubos; aquí está confinada al Tubo 2 (probe test). Además Cl libre <0,02 mg/L y ORP estable sin dosificación de oxidante."
+    }
+  ],
+  "requested_data": "Conductividad del permeado individual del Tubo 2 antes y después de sustituir el o-ring del cap final y realizar nuevo test hidrostático del tubo a presión de operación (µS/cm y bar de retención).",
+  "recommended_action": "Sacar de servicio el Tubo 2 de etapa 1 siguiendo LOTO; despresurizar y drenar. Retirar el cap final, inspeccionar y reemplazar el o-ring del cap y el o-ring del puerto de permeado por repuestos OEM lubricados con glicerina USP (no usar grasas con hidrocarburos). Pulir/limpiar la pista del cap en la FRP; si la pérdida de material excede la tolerancia del fabricante, programar sustitución de la vaina. Reinstalar elementos con secuencia y par de pernos según manual del fabricante de la vaina. Repetir test hidrostático de retención a 1 bar durante 15 min antes de devolver a servicio. Tras puesta en marcha, realizar nuevo probe test y verificar conductividad de permeado < 150 µS/cm y rechazo > 97 %. Mantener antiincrustante a 2 ppm sin cambios. Documentar fotográficamente.",
+  "decision_change_condition": "Si tras reemplazar el o-ring del cap y aprobar el test hidrostático, la conductividad del permeado del Tubo 2 sigue elevada (>300 µS/cm) y el probe test muestra el elemento concreto fallando, la diagnosis cambiaría a fallo de o-ring de interconector o membrana dañada en un elemento específico del Tubo 2.",
+  "confidence": 86
+}

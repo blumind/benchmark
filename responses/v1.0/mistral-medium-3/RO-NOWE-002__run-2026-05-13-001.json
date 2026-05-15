@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-NOWE-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:00:46Z",
+  "main_hypothesis": "Exceso de bisulfito sódico (SBS) en el sistema debido a la doble dosificación y al uso de agua bruta en lugar de permeado durante la preservación.",
+  "key_signals": [
+    "ORP alimentación anómalamente bajo (-120 mV vs +50 mV baseline)",
+    "ORP en permeado anómalamente bajo (-180 mV vs -20 mV baseline)",
+    "Sulfito residual en permeado elevado (8,5 mg/L vs < 0,5 mg/L baseline)",
+    "Conductividad del permeado inicialmente alta (1.500 µS/cm) y bajando lentamente",
+    "Rechazo de sales bajo (85,3% vs 98,3% baseline)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling en las membranas debido a la parada prolongada.",
+      "why_plausible": "La parada de 8 días podría permitir el crecimiento bacteriano, especialmente si la preservación no fue adecuada.",
+      "why_discardable": "El ORP extremadamente bajo y el sulfito residual elevado sugieren un exceso de SBS, no biofouling. Además, el biofouling no explicaría la alta conductividad inicial del permeado."
+    },
+    {
+      "hypothesis": "Daño en las membranas por exposición a agua bruta sin tratamiento adecuado.",
+      "why_plausible": "El uso de agua bruta en lugar de permeado podría haber introducido contaminantes que dañaron las membranas.",
+      "why_discardable": "El daño en las membranas generalmente resultaría en un aumento irreversible en la conductividad del permeado, no en una mejora lenta como se observa."
+    }
+  ],
+  "requested_data": "Concentración exacta de bisulfito sódico (SBS) en el bastidor antes del arranque (mg/L).",
+  "recommended_action": "Realizar un aclarado completo del sistema con permeado para eliminar el exceso de SBS, seguido de un arranque gradual monitorizando ORP y conductividad.",
+  "decision_change_condition": "Si la concentración de SBS en el bastidor antes del arranque fuera inferior a 500 mg/L, la hipótesis principal sería descartada.",
+  "confidence": 85
+}

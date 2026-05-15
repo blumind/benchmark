@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:25:04Z",
+  "main_hypothesis": "Fouling of stage 2 membranes by iron/manganese oxides due to incomplete ripening of the greensand filter after media replacement, leading to breakthrough of Fe/Mn into the RO feed and progressive deposition on stage 2 elements.",
+  "key_signals": [
+    "Sustained increase in Fe and Mn concentrations in RO feed (0.03 → 0.18 mg/L Fe; 0.02 → 0.11 mg/L Mn)",
+    "Marked rise in stage 2 ΔP (0.8 → 1.8 bar) with stable stage 1 ΔP and stable feed water quality",
+    "Visual inspection of 5 µm cartridges showing brown deposits (iron/manganese oxides)",
+    "Conductivity of permeate rising (95 → 130 µS/cm) indicating increased salt passage through fouled membranes",
+    "Alkalinity and silica in reject stream rising slightly, consistent with reduced membrane rejection efficiency",
+    "pH drift to 6.8 after H2SO4 dosing adjustment, which may have reduced Fe/Mn oxidation efficiency in greensand filter"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling of stage 2 membranes by calcium carbonate or calcium sulfate due to insufficient antiscalant dosage or pH drift.",
+      "why_plausible": "pH increased from 6.5 to 6.8 after H2SO4 dosing maintenance, which could reduce solubility of CaCO3 and promote scaling. Stage 2 ΔP rise could be due to scale accumulation. Calcium and alkalinity in reject stream are elevated.",
+      "why_discardable": "Calcium and alkalinity in reject are stable or only slightly increased, and antiscalant is dosed specifically for silica and iron. No evidence of sudden scaling event; ΔP rise is gradual and localized to stage 2, not consistent with uniform scaling across all elements."
+    },
+    {
+      "hypothesis": "Biofouling of stage 2 membranes due to organic carbon breakthrough or nutrient introduction.",
+      "why_plausible": "Organic carbon could support biofilm growth, increasing ΔP and reducing flux. Visual inspection of cartridges showed deposits, which could include biofilm. However, no chlorine residual is present, and feed water is geothermal with low organic content.",
+      "why_discardable": "No reported increase in TOC or nutrient levels. Biofouling typically causes more uniform ΔP rise across stages and is less likely to cause the sharp localized increase in stage 2 ΔP observed. Also, no cleaning frequency changes or nutrient dosing anomalies reported."
+    },
+    {
+      "hypothesis": "Oxidant deficiency in greensand filter leading to incomplete oxidation of Fe/Mn and breakthrough into RO feed.",
+      "why_plausible": "KMnO4 dose is reported as correct, but operator notes it seems insufficient. Fe/Mn concentrations in RO feed have increased markedly, suggesting oxidation failure. This could lead to deposition on membranes and increased ΔP.",
+      "why_discardable": "KMnO4 dose is stated as correct, and no change in dosing has been reported. The primary signal is breakthrough of Fe/Mn, which is consistent with incomplete ripening of the greensand filter rather than a dosing issue. The timing aligns with the filter media replacement and lack of ripening."
+    },
+    {
+      "hypothesis": "Colloidal silica fouling of stage 2 membranes due to antiscalant underdosing or pH drift.",
+      "why_plausible": "Silica concentration is high (78 mg/L), and antiscalant is dosed for silica and iron. pH increase could reduce silica solubility and promote polymerization. Silica in reject stream is slightly elevated.",
+      "why_discardable": "Silica fouling typically causes uniform flux decline and ΔP rise across all stages, not a localized stage 2 ΔP increase. Also, antiscalant is dosed at 5 ppm, which is standard for silica control. No sudden drop in flux is reported, only a gradual ΔP rise."
+    }
+  ],
+  "requested_data": "Iron (Fe) concentration in the reject stream of stage 2 (mg/L)",
+  "recommended_action": "Immediately initiate an emergency backwash of the greensand filter that was replaced 35 days ago, followed by a full ripening cycle with elevated KMnO4 dose (1.5× normal) and extended runtime to ensure complete oxidation bed conditioning. Then, perform an online cleaning of stage 2 membranes using a low-pH cleaner (e.g., 0.2% citric acid at pH 2.5, 30 °C, 60 min) to remove iron/manganese deposits. Adjust H2SO4 dosing to restore feed pH to 6.5 ± 0.1. Verify Fe and Mn concentrations in RO feed drop below 0.05 mg/L before resuming normal operation.",
+  "decision_change_condition": "If the iron concentration in the reject stream of stage 2 is below 0.5 mg/L and the Fe concentration in RO feed remains above 0.15 mg/L after the greensand filter ripening and membrane cleaning, the diagnosis would change to suggest that the fouling is not solely due to the greensand filter breakthrough but may involve internal membrane scaling or biofouling requiring further investigation.",
+  "confidence": 92
+}

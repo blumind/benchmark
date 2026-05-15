@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:52:28Z",
+  "main_hypothesis": "Incrustación de CaCO3 en la segunda etapa causada por subdosificación real de antiincrustante tras el mantenimiento de la bomba peristáltica, agravada por operar con pH de alimentación a RO por encima de la consigna.",
+  "key_signals": [
+    "El caudal medido de antiincrustante es 0,3 L/h frente a una consigna histórica de 1,8 L/h, compatible con una dosis real muy inferior a la prevista.",
+    "La bomba peristáltica fue intervenida recientemente y no se ejecutó el cebado completo; posteriormente se observaron espuma en el tanque y pulsación irregular.",
+    "El aumento de ΔP se concentra en la etapa 2, de 0,8 a 2,1 bar, mientras la etapa 1 permanece prácticamente estable, patrón típico de precipitación en la zona de mayor concentración.",
+    "La presión de alimentación sube de 15,8 a 18,5 bar y el caudal permeado baja 8 %, coherente con pérdida de permeabilidad por incrustación.",
+    "El pH de alimentación a RO aumentó de 6,7 a 7,3 tras mantenimiento de la bomba de ácido, elevando la sobresaturación de CaCO3.",
+    "La conductividad de alimentación y la temperatura permanecen estables, por lo que el deterioro no se explica por un cambio relevante de salinidad o viscosidad.",
+    "El cambio de cartuchos no alivió el ΔP, lo que apunta a un problema dentro del bastidor y no a ensuciamiento aguas arriba de los cartuchos."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación de CaCO3 causada principalmente por fallo de acidificación y pH alto, independientemente del antiincrustante.",
+      "why_plausible": "El pH de alimentación subió de 6,7 a 7,3 y la alcalinidad del rechazo aumentó ligeramente, elevando el LSI en el rechazo y favoreciendo precipitación de carbonato cálcico.",
+      "why_discardable": "La subida de ΔP en etapa 2 comenzó antes del cambio de consigna de ácido y existe una medición directa de caudal de antiincrustante extremadamente bajo, por lo que la subdosificación del antiincrustante explica mejor el inicio y la progresión."
+    },
+    {
+      "hypothesis": "Ensuciamiento coloidal o por sólidos finos procedentes del pretratamiento.",
+      "why_plausible": "Un aumento de ΔP y de presión de alimentación puede producirse por acumulación de partículas o coloides en los canales de alimentación de los elementos.",
+      "why_discardable": "El ΔP de etapa 1 está estable y el problema se concentra en etapa 2; además, el cambio de cartuchos no produjo alivio. El patrón espacial y la química de alta concentración favorecen más incrustación que ensuciamiento particulado."
+    },
+    {
+      "hypothesis": "Biofouling en los elementos de la segunda etapa.",
+      "why_plausible": "El biofouling puede causar aumento progresivo de ΔP, caída de caudal permeado y ligera pérdida de rechazo salino.",
+      "why_discardable": "No se reportan señales de entrada microbiológica, nutrientes, aumento de cloro residual, episodios de estancamiento ni afectación inicial de la primera etapa. La coincidencia con bajo antiincrustante y pH elevado hace más probable la incrustación mineral."
+    },
+    {
+      "hypothesis": "Incrustación de sílice en la segunda etapa.",
+      "why_plausible": "La sílice se concentra en la segunda etapa a alto recovery y puede producir pérdida de permeabilidad difícil de revertir.",
+      "why_discardable": "La sílice de rechazo está estable alrededor de 89 mg/L y el antiincrustante especificado es para CaCO3; además, el pH elevado y la fuerte dureza/calcio apuntan más a carbonato cálcico que a sílice como mecanismo principal."
+    },
+    {
+      "hypothesis": "Daño oxidativo de membranas por cloro.",
+      "why_plausible": "El aumento de conductividad de permeado puede ser compatible con pérdida de rechazo por daño químico de la membrana.",
+      "why_discardable": "El cloro libre antes de RO se mantiene <0,02 mg/L y el síntoma dominante es un aumento marcado de ΔP en etapa 2, no una pérdida aislada de rechazo salino."
+    }
+  ],
+  "requested_data": "Porcentaje en masa de CaCO3 en el depósito recuperado del elemento de cola de la etapa 2 mediante análisis de incrustación.",
+  "recommended_action": "Retirar el bastidor afectado de operación normal, corregir primero la dosificación química cebando completamente la bomba peristáltica, verificando estanqueidad de la manguera y calibrando el caudal de antiincrustante a 1,8 L/h para restablecer 2,5 mg/L de producto; devolver la consigna de ácido para pH de alimentación a RO 6,7; después realizar limpieza ácida de la segunda etapa según manual de membranas con solución de ácido cítrico al 2 % p/p, pH 2,5-3,0, a 25-30 °C, recirculando a bajo caudal y presión inferior a la de producción, seguida de enjuague con permeado hasta pH y conductividad estables.",
+  "decision_change_condition": "Cambiaría el diagnóstico si el análisis del depósito del elemento de cola de etapa 2 mostrara ausencia de CaCO3 significativo y predominio de biomasa, sílice o material coloidal, o si una verificación trazable demostrara que la dosis real de antiincrustante y el pH se mantuvieron en consigna durante todo el periodo de subida de ΔP.",
+  "confidence": 88
+}

@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:09:49Z",
+  "main_hypothesis": "Incrustación de sulfato de calcio (yeso) en la etapa 3, precipitada por el aumento de recovery al 83 % y por un alza reciente del sulfato en el feed, con dosis/química de antiincrustante (poliacrílico 2,2 mg/L) insuficiente para el nuevo régimen.",
+  "key_signals": [
+    "ΔP etapa 3 sube marcadamente (0,5 → 1,5 bar) mientras la etapa 1 está estable y la 2 solo sube levemente: patrón típico de incrustación localizada en la etapa de mayor concentración.",
+    "Presión de alimentación aumentó (12,5 → 14,8 bar) y el caudal de permeado cayó 8 %: consistentes con ensuciamiento/incrustación.",
+    "Sulfato en rechazo subió a 1.290 mg/L y el SI de CaSO4 calculado ≈ 1,1 (sobresaturado): condiciones favorables a yeso.",
+    "Cambio de mix a mayor proporción de aguas industriales con sulfato más alto justo antes del deterioro.",
+    "La dosis de antiincrustante se mantuvo en 2,2 mg/L sin recálculo al subir el recovery.",
+    "El CIP alcalino (pH 11,5) solo dio alivio parcial y transitorio de la ΔP: típico de incrustación inorgánica (yeso) que requiere limpieza ácida.",
+    "Conductividad de permeado sube levemente con conductividad de alimentación estable: coherente con estrés de membrana por incrustación más que con cambio de salinidad del feed."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación/ensuciamiento por sílice polimerizada en la etapa 3.",
+      "why_plausible": "Sílice en rechazo ≈ 130 mg/L bajo 83 % de recuperación, cerca de umbrales operativos; aumento de ΔP en la etapa más concentrada; alguna respuesta (limitada) al CIP alcalino.",
+      "why_discardable": "La sobresaturación demostrada es de CaSO4 (SI ≈ 1,1) y coincide con el aumento de sulfato; la limpieza alcalina típica no elimina sílice de forma significativa a pH 11,5 y el patrón temporal encaja mejor con yeso."
+    },
+    {
+      "hypothesis": "Bioensuciamiento concentrado en etapa 3.",
+      "why_plausible": "Temperatura 28,5 °C y TOC 1,8 mg/L; ΔP elevado y algo de respuesta al CIP alcalino.",
+      "why_discardable": "El TOC está estable, la UF previa reduce biocarga y el biofouling suele iniciarse en etapa 1; la coincidencia con la subida de recovery y del sulfato, y el SI de yeso > 1, apoyan más la incrustación inorgánica."
+    },
+    {
+      "hypothesis": "Ensuciamiento particulado/coloides por fallo de barrera de UF o aumento de SDI.",
+      "why_plausible": "Aumento de ΔP en una etapa podría deberse a arrastre de sólidos finos; la caída de caudal y subida de presión son compatibles.",
+      "why_discardable": "No se reportan cambios en turbidez/SDI ni incidentes de UF; si fuese particulado, la etapa 1 normalmente mostraría el primer incremento de ΔP, lo cual no se observa."
+    },
+    {
+      "hypothesis": "Compacción/envejecimiento de membranas.",
+      "why_plausible": "30 meses de servicio, ligera subida de conductividad de permeado y aumento de presión de alimentación.",
+      "why_discardable": "La compacción afectaría a todas las etapas de forma más homogénea y no explicaría el fuerte aumento de ΔP localizado en etapa 3 tras subir recovery."
+    }
+  ],
+  "requested_data": "ΔP de la etapa 3 (bar) inmediatamente después de un CIP ácido con HCl al 1,0 % p/p (pH ≈ 2), 60 min de recirculación a 25–30 °C.",
+  "recommended_action": "1) Reducir de inmediato el recovery global de 83 % a 80 % para bajar la sobresaturación en la cola. 2) Ejecutar CIP ácido focalizado en etapa 3: preparar solución con HCl al 1,0 % p/p en permeado RO (pH 2,0 ± 0,2), 25–30 °C; desclorar/ORP<+200 mV; recircular por etapa 3 a 2–3 m³/h por tubo durante 30–45 min, con remojo intermedio de 20–30 min; mantener pH constante (ajustar ácido si sube); enjuagar hasta pH 6–8. 3) Tras recuperar, recalcular la dosis y, si procede, cambiar la química a un antiincrustante específico para yeso (fosfonato/policarboxilato): establecer 3,0–3,5 mg/L como activo (o según cálculo del proveedor) para mantener SI(CaSO4) ≤ 0 a 83 %; mientras se valida el cálculo, subir temporalmente la dosis actual de 2,2 a 3,0 mg/L y monitorizar ΔP y conductividad. 4) Mantener pH de alimentación 6,5–6,8 y verificar diariamente SI de CaSO4 con los análisis actuales de Ca y SO4.",
+  "decision_change_condition": "Si, tras un CIP ácido correcto (HCl 1 % p/p, 60 min, pH≈2), la ΔP de etapa 3 no disminuye al menos un 30 % respecto al valor previo (p. ej., permanece ≥1,2 bar desde 1,5 bar), cambiaría el diagnóstico hacia sílice/polímeros o bioensuciamiento como causa principal.",
+  "confidence": 80
+}

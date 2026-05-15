@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:37:46Z",
+  "main_hypothesis": "Ensuciamiento por coloides y precipitados férricos (hidróxidos/óxidos de Fe) arrastrados desde el pretratamiento tras el episodio de lluvias y sobredosificación temporal de FeCl3, concentrado en la etapa 1.",
+  "key_signals": [
+    "ΔP etapa 1 sube de 0,9 a 1,9 bar mientras etapas 2 y 3 permanecen estables (0,7 y 0,4 bar), patrón típico de ensuciamiento en cabeza por sólidos/coloides.",
+    "Aumento sostenido de la presión de alimentación (16,5 → 19,8 bar) y caída de caudal permeado (~8 %), coherente con pérdida de permeabilidad por ensuciamiento superficial.",
+    "TOC alimentación a RO sube marcadamente (1,8 → 4,1 mg/L) y SDI15 post-cartucho aumenta (2,2 → 3,9), indicando mayor carga coloidal/organica hacia la RO.",
+    "Turbidez post-cartucho aumenta (0,08 → 0,18 NTU), sugiriendo mayor paso de partículas finas.",
+    "Cartuchos reemplazados presentan coloración marrón-anaranjada, indicativa de hierro (óxidos/hidróxidos).",
+    "Tras cambiar cartuchos, la ΔP de etapa 1 sólo baja 0,15 bar y vuelve a subir en 48 h, señal de que el depósito está ya en los elementos de cabeza, no sólo en los cartuchos.",
+    "Sobredosificación puntual de FeCl3 (8 mg/L durante 5 días) coincidente con pico de turbidez en captación tras lluvias, condición propicia a arrastres férricos.",
+    "Conductividad de permeado estable (≈95 µS/cm vs 88 µS/cm baseline), lo que descarta daño de membrana y apunta a ensuciamiento físico en lugar de escalado generalizado."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bioincrustación (biofouling) en elementos de cabeza favorecida por el aumento de TOC y ausencia de desinfectante residual.",
+      "why_plausible": "TOC elevado (4,1 mg/L), SDI al alza y cloro libre <0,02 mg/L pueden favorecer crecimiento biológico; el aumento de ΔP localizado en etapa 1 es compatible.",
+      "why_discardable": "La coloración marrón-anaranjada de cartuchos indica hierro más que biopelícula (típicamente gelatinosa/translúcida); la correlación temporal con sobredosificación de FeCl3 y el incremento de turbidez/SDI apuntan más a coloides férricos."
+    },
+    {
+      "hypothesis": "Ensuciamiento por sólidos/coloides no férricos por fallo/agotamiento de filtración multicapa durante el evento de turbidez.",
+      "why_plausible": "Pico de turbidez en captación y SDI/Turbidez post-cartucho elevados pueden indicar breakthrough de sólidos finos hacia la RO.",
+      "why_discardable": "La evidencia visual (cartuchos marrón-anaranjados) y el antecedente de mayor dosificación de FeCl3 hacen más probable el hierro como especie dominante del ensuciamiento."
+    },
+    {
+      "hypothesis": "Precipitación asociada a complejos Fe–fosfonato o fosfatos férricos inducida por la presencia de antincrustante a 2,0 ppm.",
+      "why_plausible": "El fosfonato puede interactuar con Fe(III) y estabilizar/precipitar complejos que se depositen preferentemente en la etapa 1.",
+      "why_discardable": "Si el problema fuera predominantemente de precipitados por interacción química, podrían observarse efectos más extensivos y no tan ligados al episodio de turbidez/sobredosificación; además, las etapas 2–3 no muestran aumento de ΔP."
+    },
+    {
+      "hypothesis": "Compactación/edad de membranas (3 años en servicio) causando mayor ΔP y requerimiento de presión.",
+      "why_plausible": "Membranas envejecidas pueden requerir más presión para el mismo flujo.",
+      "why_discardable": "La compactación afectaría de forma más uniforme a todas las etapas, no sólo a la etapa 1, y no explicaría el aumento concomitante de SDI/turbidez ni la coloración férrica en cartuchos."
+    }
+  ],
+  "requested_data": "Hierro total (mg/L) en la alimentación a RO después de cartuchos (promedio de los últimos 7 días).",
+  "recommended_action": "Realizar un CIP en dos etapas orientado a orgánico/coloidal y hierro, y ajustar el pretratamiento antes de reiniciar: 1) Verificar ausencia de oxidante: si cloro libre >0,02 mg/L, dosificar bisulfito sódico 1–3 mg/L hasta <0,02 mg/L. 2) Limpieza alcalina: preparar NaOH al 0,1 % p/p (1,0 g/L) con tensioactivo no iónico aprobado al 0,1 % p/p (1,0 g/L); calentar a 30–35 °C; recircular por cada etapa 30–45 min manteniendo pH 11–12; remojo 30 min; enjuagar hasta pH ~7. 3) Limpieza ácida para hierro: preparar ácido cítrico al 2,0 % p/p (20 g/L) ajustando pH 2,0–3,0; 25–30 °C; recircular 30–45 min por etapa; remojo 30 min; enjuagar hasta pH 6–8. 4) Antes de arrancar: optimizar coagulación/filtración para lograr SDI15 pos-cartucho <3,0 y Fe total <0,05 mg/L (ajustar FeCl3 de vuelta a 4–6 mg/L, intensificar retrolavados de filtros); arrancar a bajo flujo y subir gradualmente monitorizando ΔP de etapa 1.",
+  "decision_change_condition": "Si el hierro total pos-cartucho medido durante las últimas dos semanas fuese ≤0,05 mg/L, cambiaría el diagnóstico principal a bioincrustación orgánica como causa primaria del aumento de ΔP en etapa 1.",
+  "confidence": 75
+}

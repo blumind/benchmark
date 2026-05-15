@@ -1,0 +1,50 @@
+{
+  "case_id": "RO-MECH-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:34:32Z",
+  "main_hypothesis": "Mechanical damage to the first-stage RO membrane element (telescoping/collapse) caused by transient overpressure during the VFD ramp-up sequence following the Day -5 power restoration, likely due to altered ramp parameters after the Day -10 VFD maintenance.",
+  "key_signals": [
+    "Visible telescoping deformation on the downstream end of the first element in Tube 1, Stage 1 (Day 0 observation)",
+    "Abrupt increase in permeate conductivity from 92 µS/cm to 950 µS/cm over 3 days, with probe test confirming 6,500 µS/cm at Stage 1 head",
+    "Drastic drop in salt rejection from 97.9% to 78.7% (calculated)",
+    "Anomalous 'golpe' (impact/shock) sound in high-pressure line 2 seconds into ramp-up on Day -4, immediately after power restoration",
+    "Operator report on Day -8 that ramp-up 'feels faster' following VFD maintenance on Day -10",
+    "Counterintuitive decrease in differential pressures (ΔP Stage 1: 1.0→0.8 bar; ΔP Stage 2: 0.8→0.4 bar) instead of expected increase, consistent with membrane structural failure reducing flow resistance"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling or organic fouling in Stage 1 causing partial blockage and bypass through damaged membrane",
+      "why_plausible": "Organic fouling can cause localized high conductivity and reduced salt rejection; no oxidant is dosed; river water source is susceptible to biofilm",
+      "why_discardable": "Biofouling develops gradually over weeks; the conductivity spike occurred over 3 days following a specific mechanical event (power restoration + ramp-up shock). Visible telescoping is a mechanical failure signature, not a fouling signature. Biofouling would increase ΔP, not decrease it."
+    },
+    {
+      "hypothesis": "Cartridge filter breakthrough or bypass allowing particulate damage to membranes",
+      "why_plausible": "5 µm cartridges can fail; particulate ingress could damage membrane surface and increase permeate conductivity",
+      "why_discardable": "Cartridge failure would cause gradual ΔP increase and turbidity rise in permeate, not the acute mechanical shock sound or visible element deformation. The probe test shows high conductivity at Stage 1 head (feed side), not progressive fouling across the element."
+    },
+    {
+      "hypothesis": "Membrane element manufacturing defect or age-related degradation (22 months in service)",
+      "why_plausible": "Membranes at 22 months can show early signs of degradation; defects can manifest under pressure stress",
+      "why_discardable": "Manufacturing defects or age-related degradation would not correlate with the specific timing of the power restoration and ramp-up shock. All 12 elements in Tube 1 would not fail simultaneously; only the first element shows visible damage. The temporal clustering (Day -10 VFD maintenance → Day -5 power event → Day -4 shock sound → Day -3 conductivity spike) points to an acute mechanical trigger, not gradual degradation."
+    },
+    {
+      "hypothesis": "Pressure relief valve malfunction allowing uncontrolled pressure spike during ramp-up",
+      "why_plausible": "Relief valve failure could permit transient overpressure; this would damage membranes acutely",
+      "why_discardable": "Relief valve malfunction would typically cause sustained high pressure or erratic pressure oscillations, not a single 2-second shock sound followed by lower differential pressures. The current feed pressure (14.2 bar) is below baseline (14.8 bar), inconsistent with relief valve failure. The shock sound is localized to the ramp-up event, not continuous."
+    },
+    {
+      "hypothesis": "Incorrect VFD ramp-up acceleration parameter set during Day -10 maintenance, causing water hammer in the feed line",
+      "why_plausible": "VFD ramp acceleration controls pump speed rise; if shortened from 90 seconds to a faster ramp, it could generate transient pressure spikes (water hammer) that damage membranes",
+      "why_discardable": "This is mechanistically sound but does not explain why the damage manifested only after the Day -5 power restoration. If the ramp was altered on Day -10, damage should have occurred immediately. The Day -5 power event and automatic ramp-up may have been the first time the altered ramp was executed under full system pressure, making this a contributing factor rather than the sole root cause. The visible telescoping is the direct damage mechanism, not the ramp parameter itself."
+    }
+  ],
+  "requested_data": "VFD ramp-up acceleration time setting (in seconds) before Day -10 maintenance and after Day -10 maintenance, to confirm whether the 90-second ramp was altered.",
+  "recommended_action": "Immediately shut down the RO plant and isolate the high-pressure feed line. Remove and inspect all 12 membrane elements from Tube 1, Stage 1 for structural damage (telescoping, tears, or delamination). Replace the damaged first element with a new element of identical specification (400 ft², brackish type). Before restart, verify the VFD ramp-up acceleration parameter is set to the original 90-second value and confirm with the external maintenance contractor's work order. Perform a 30-minute low-pressure flush at 5 bar to verify system integrity. Monitor permeate conductivity and salt rejection for the first 4 hours of operation; if conductivity exceeds 200 µS/cm or salt rejection falls below 95%, stop immediately and inspect remaining elements in Tube 1 for secondary damage.",
+  "decision_change_condition": "If the VFD ramp-up parameter was not altered during the Day -10 maintenance, and if inspection of the removed element shows no mechanical damage (no telescoping, tears, or delamination) but instead shows chemical degradation or fouling, then the root cause would shift to membrane material failure or biofouling, and the recommended action would change to element replacement with enhanced pretreatment (activated carbon or biocide dosing) rather than VFD parameter correction.",
+  "confidence": 82
+}

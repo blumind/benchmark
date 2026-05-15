@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://benchmark.blumind.es/schemas/v1.0/gold.schema.json",
+  "title": "BluMind Benchmark — Gold schema v1.0",
+  "description": "Structured evaluation contract for a single benchmark case. This schema validates the JSON code block embedded inside the case's gold Markdown file (e.g. golds/v1.0/RO-FOUL-001_gold.md). The enclosing YAML front-matter (gold_version, status) and free-form prose sections (reviewer notes, change log) are informational and are NOT validated by this schema — the CI handles them separately. v1.0 treats all accepted hypotheses as equivalent; weighted or ranked hypotheses (partial credit) are deferred to v2.0.",
+  "type": "object",
+  "required": [
+    "case_id",
+    "family",
+    "benchmark_version",
+    "case_type",
+    "rubric_floor",
+    "rubric_ceiling",
+    "accepted_main_hypotheses",
+    "expected_key_signals",
+    "non_ignorable_signals",
+    "accepted_requested_data",
+    "accepted_recommended_actions",
+    "case_specific_automatic_fails"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "pattern": "^RO-(OXID|SCAL|FOUL|MECH|NOWE)-[0-9]{3}$",
+      "description": "Case identifier: RO-<FAMILY>-<NNN>. Must match the gold filename. Filename match is enforced by the CI validator, not by this schema."
+    },
+    "family": {
+      "type": "string",
+      "enum": ["OXID", "SCAL", "FOUL", "MECH", "NOWE"],
+      "description": "Case family. Must be consistent with the family segment of case_id. Coherence is enforced by the CI validator."
+    },
+    "benchmark_version": {
+      "type": "string",
+      "pattern": "^v[0-9]+\\.[0-9]+$",
+      "description": "Benchmark version this gold is bound to (e.g. 'v1.0'). Implicitly binds the rubric, taxonomy, prompt and schemas in force at that version."
+    },
+    "case_type": {
+      "type": "string",
+      "enum": ["Closed", "Semi-closed", "Open", "Ambiguous"],
+      "description": "Case type per the rubric's 'Case types' table. Drives how the reviewer reads per-criterion implications."
+    },
+    "rubric_floor": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 11,
+      "default": 0,
+      "description": "Case-specific auto-fail threshold. A response whose 0-12 score is strictly below this value is classified as Fail, overriding the generic Pass/Conditional thresholds. Default 0 means no case-specific floor. Use for high-stakes cases where 'Conditional' is not an acceptable outcome (e.g. active free-chlorine suspicion)."
+    },
+    "rubric_ceiling": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12,
+      "default": 12,
+      "description": "Case-specific score ceiling. A response's 0-12 raw score is clipped to this value before applying Pass/Conditional/Fail thresholds. Default 12 means no ceiling. Use for Ambiguous or Open cases where available evidence does not support a perfect diagnosis (e.g. ceiling 10)."
+    },
+    "accepted_main_hypotheses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["hypothesis", "semantic_anchors"],
+        "properties": {
+          "hypothesis": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Canonical phrasing of one accepted main hypothesis, in the case's content language (typically Spanish)."
+          },
+          "semantic_anchors": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 },
+            "description": "Alternative phrasings, synonyms or keywords that a matcher (regex, embedding) should recognise as equivalent to this hypothesis."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Set of technically equivalent main hypotheses that score 2 points on the 'Main hypothesis' criterion. v1.0: all entries are equivalent with no weighting. Weighted or ranked hypotheses (partial credit) are deferred to v2.0."
+    },
+    "expected_key_signals": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Signals explicitly present in the case statement that a response must connect in its main hypothesis to score 2 points on the 'Key signals' criterion. Mentioning a subset may score 1; ignoring all scores 0."
+    },
+    "non_ignorable_signals": {
+      "type": "array",
+      "minItems": 0,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Signals that the response cannot contradict or silently ignore. Ignoring one of these triggers the generic automatic fail 'ignoring signals that contradict the hypothesis'. May be empty for Closed cases with no contradictory pressure."
+    },
+    "accepted_requested_data": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["datum", "semantic_anchors"],
+        "properties": {
+          "datum": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Canonical phrasing of a discriminating datum, including units where relevant."
+          },
+          "semantic_anchors": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 },
+            "description": "Alternative phrasings, units, or acronyms (e.g. 'ORP manual', 'ORP with DPD', 'DPD colorimetric test')."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Set of 'trigger data' that, if requested by the response, score 2 points on the 'Next datum' criterion."
+    },
+    "accepted_recommended_actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["action", "rationale"],
+        "properties": {
+          "action": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Canonical safe action, including dosage, concentration and unit where applicable."
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Why this action is the canonical safe action for this case. Reviewer-facing guidance."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Set of canonical safe actions that score 2 points on the 'Safe action' criterion."
+    },
+    "case_specific_automatic_fails": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["description", "severity", "justification"],
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Specific action or recommendation that, if present in the response, triggers an automatic fail for this case."
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["critical", "recoverable"],
+            "description": "Severity per the rubric's 'Fail severity' section. Critical → Fail regardless of 0-12 score. Recoverable → Conditional regardless of 0-12 score. Severity can only be escalated relative to the generic rubric, never downgraded (monotonicity rule)."
+          },
+          "justification": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Brief technical justification for the severity assignment, referencing the irreversibility test and/or time-window test when applicable."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Zero to three case-specific automatic fails. An empty array is valid for cases without case-specific fail conditions; the generic fails declared in the rubric still apply."
+    },
+    "gold_author_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional. Identifier of the author who drafted this gold. v1.0 accepts any non-empty string; v2.0 will bind this to a reviewer registry."
+    },
+    "gold_reviewer_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional. Identifier of the expert who validated this gold. v1.0 accepts any non-empty string; v2.0 will bind this to a reviewer registry."
+    }
+  },
+  "additionalProperties": false
+}

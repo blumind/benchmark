@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-005",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'subdosificación antiincrustante fosfonado 1.2 ppm insuficiente para LSI/SI CaCO3 (dureza 920, alcalinidad 240, recovery 78%)' literal cuantitativo."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (CaSO4 por H2SO4, incompatibilidad fosfonato, fallo ablandador, sílice/biofouling)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino + ácido cítrico/HCl pH 2 + reducir recovery 72-74% + subir d[osis] — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide LSI/S&DSI y Ksp CaSO4 + dosis mínima fabricante — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: depósito sulfato cálcico/sílice/fosfonato cálcico/orgánico o software fabricante → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

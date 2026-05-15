@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:41:30Z",
+  "main_hypothesis": "Biofouling incipiente en cabeza de etapa 1, desencadenado por el aporte de materia orgánica/biodegradable tras el temporal y agravado por sobredosis de FeCl₃ (que también puede haber introducido Fe coloidal residual como nutriente/depósito), temperatura creciente y ausencia de cloraminación rutinaria.",
+  "key_signals": [
+    "ATP en alimentación a RO sube de 90 a 720 pg/mL (8x) en 12 días",
+    "TOC duplicado (1,1 → 2,2 mg/L) tras el temporal",
+    "ΔP de etapa 1 concentrado en cabeza (1,4 → 2,5 bar) con cola estable: patrón típico de biofouling frontal, no de scaling (que afectaría a cola)",
+    "SDI₁₅ y turbidez post-cartuchos en aumento (2,5 → 4,0; 0,07 → 0,16 NTU)",
+    "Caída de permeado 8 % y subida de presión de alimentación con ligero aumento de conductividad de permeado (capa biológica que reduce flux y empeora paso de sales localmente)",
+    "Temperatura en aumento (30,2 → 31,5 °C) que acelera crecimiento microbiano",
+    "Sobredosis sostenida de FeCl₃ (2 mg/L vs 0,8 mg/L baseline) tras volver a turbidez normal"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento coloidal por hierro (fouling inorgánico por FeCl₃ mal coagulado/sobredosis)",
+      "why_plausible": "Operador mantuvo FeCl₃ a 2 mg/L tras bajar la turbidez; SDI y turbidez post-cartuchos suben; el Fe coloidal se deposita preferentemente en cabeza de etapa 1",
+      "why_discardable": "El salto de ATP (8x) y TOC (2x) son demasiado marcados para explicarse solo por hierro; un fouling puramente coloidal no eleva ATP de esa forma. Probablemente coexiste pero no es el driver principal"
+    },
+    {
+      "hypothesis": "Scaling (CaCO₃/CaSO₄) por alta TDS y temperatura",
+      "why_plausible": "Salinidad inusualmente alta (>60.000 mg/L), temperatura en aumento, pH 8,2",
+      "why_discardable": "El scaling se manifiesta en la cola de etapa (mayor concentración), pero ΔP de cola está estable a 0,6 bar y el de cabeza es el que dispara; patrón incompatible"
+    },
+    {
+      "hypothesis": "Daño/compactación de membranas antiguas (60 % con 4 años) por evento de presión durante el temporal",
+      "why_plausible": "Bastidor mixto con elementos de 4 años; subida de presión de alimentación",
+      "why_discardable": "Daño mecánico aumentaría notablemente la conductividad de permeado (no solo ligera) y no explicaría el patrón de ΔP frontal ni la subida de ATP/TOC"
+    },
+    {
+      "hypothesis": "Fouling orgánico no biológico (NOM/AOM por bloom marino post-temporal)",
+      "why_plausible": "TOC subió tras el temporal; eventos de resuspensión y posible bloom",
+      "why_discardable": "La subida de ATP de 8x indica componente biológico activo, no solo materia orgánica inerte; se trata más probablemente de biofouling alimentado por esa MO"
+    }
+  ],
+  "requested_data": "Autopsia no destructiva o análisis de un elemento de cabeza: pérdida por ignición (LOI) y recuento heterotrófico/ATP del depósito, junto con contenido de Fe (mg/g) en el fouling",
+  "recommended_action": "1) Reducir inmediatamente la dosis de FeCl₃ a baseline 0,8 mg/L y verificar mezcla/tiempo de floculación; 2) Activar UF de respaldo hasta que SDI₁₅ post-cartuchos vuelva a <3 y ATP <150 pg/mL; 3) Programar CIP en dos pasos sobre los trenes afectados: alcalino con NaOH a pH 11–12 + EDTA 1 % p/p + surfactante (SDBS 0,025 % p/p) a 35 °C durante 4–6 h (recirculación + remojo), seguido de ácido cítrico al 2 % p/p ajustado a pH 3–4 a 35 °C durante 2 h; 4) Evaluar dosificación preventiva de DBNPA en shock 10–20 mg/L durante 30 min cada 24–48 h compatible con membranas; 5) No clorar sin descloración previa (membranas no tolerantes); 6) Monitorizar ATP, TOC y SDI diariamente",
+  "decision_change_condition": "Si la autopsia/análisis del depósito muestra <30 % de pérdida por ignición y >40 % de Fe en el residuo con bajo recuento bacteriano/ATP del depósito, el diagnóstico cambiaría a fouling coloidal de hierro por sobredosis de FeCl₃; si predomina Ca/Mg/SO₄ y el ΔP migra a la cola, sería scaling",
+  "confidence": 72
+}

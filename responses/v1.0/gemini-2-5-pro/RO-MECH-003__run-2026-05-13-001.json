@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-MECH-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:40:43Z",
+  "main_hypothesis": "Mechanical failure of the high-pressure head seal (O-ring) on the end cap of pressure vessel #2 in the first stage, causing a leak of high-salinity feed water directly into the permeate collection channel.",
+  "key_signals": [
+    "The probe test isolating extremely high permeate conductivity (1,250 µS/cm) to a single pressure vessel (Tube 2, Stage 1).",
+    "The pressure test of the empty vessel (membranes removed) confirming a pressure leak at 1 bar, which isolates the fault to the vessel/end cap assembly.",
+    "The operator's report of a leak at the vessel head (Day -22), which temporarily stopped after retightening bolts, suggesting a progressive mechanical sealing issue.",
+    "Visual inspection finding an anomalous protrusion of the end cap and a marked O-ring on Tube 2.",
+    "The sharp increase in overall plant permeate conductivity from 110 µS/cm to 480 µS/cm, coupled with a drop in calculated salt rejection from 97.8% to 90.3%."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "A structural crack in the FRP shell or end cap of pressure vessel #2.",
+      "why_plausible": "This would also cause a high-pressure leak and is a known, though rare, failure mode for aging FRP vessels. The reported wear on the sealing groove could be a precursor to or a sign of a crack.",
+      "why_discardable": "The inspection on Day -1 found wear but no visible crack. While a hairline crack could be missed, a simple seal failure is a much more common cause for these symptoms. The initial leak was temporarily stopped by retightening, which is more consistent with a seal issue than a structural crack."
+    },
+    {
+      "hypothesis": "Failure of the permeate tube O-ring on the first membrane element in vessel #2.",
+      "why_plausible": "A failed O-ring on the membrane interconnector would create a direct path for feed water to enter the permeate tube, perfectly explaining the high conductivity localized to that vessel.",
+      "why_discardable": "The pressure test that confirmed the leak was conducted with all membrane elements removed from the vessel. Since the vessel still failed to hold pressure, the fault cannot be with the membrane elements or their interconnectors."
+    },
+    {
+      "hypothesis": "Oxidative damage (e.g., from chlorine) to the first membrane element in vessel #2.",
+      "why_plausible": "Chemical attack can compromise the polyamide layer, leading to high salt passage. The first element in the first stage sees the highest oxidant concentration if there is an upset.",
+      "why_discardable": "The plant reports no oxidant dosing, and the free chlorine measurements before the RO are consistently non-detect (< 0.02 mg/L). The feed ORP is also stable and not indicative of an oxidant. Furthermore, this would not explain the vessel's failure to hold pressure with the elements removed."
+    }
+  ],
+  "requested_data": "Result of a dye penetrant test on the internal sealing groove of the FRP pressure vessel #2 and the corresponding end cap sealing surface.",
+  "recommended_action": "Immediately isolate and perform lock-out/tag-out on the RO train containing pressure vessel #2. Safely depressurize the vessel. Disassemble both end caps and replace the main head O-rings and permeate port seals. Before reassembly, thoroughly clean and inspect the vessel's internal sealing grooves for any cracks or damage. After reassembly, perform a low-pressure (2-3 bar) hydrostatic test on the isolated vessel to confirm seal integrity before returning the train to service.",
+  "decision_change_condition": "My diagnosis would change if the requested dye penetrant test reveals a structural crack in the FRP vessel shell or end cap.",
+  "confidence": 95
+}

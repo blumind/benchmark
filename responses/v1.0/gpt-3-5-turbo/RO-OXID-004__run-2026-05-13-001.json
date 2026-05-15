@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:58:04Z",
+  "main_hypothesis": "Degradation of the first GAC bed in the BWRO pretreatment system",
+  "key_signals": [
+    "Increase in chloramine concentration after the first GAC bed",
+    "Progressive increase in permeate conductivity",
+    "Significant drop in salt rejection rate",
+    "Marked increase in ORP of feed to RO"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling",
+      "why_plausible": "Increase in permeate conductivity and decline in salt rejection rate are consistent with fouling.",
+      "why_discardable": "Chloramine concentration increase after the first GAC bed and ORP rise are not typical signals of membrane fouling."
+    },
+    {
+      "hypothesis": "Scaling on the RO membranes",
+      "why_plausible": "Drop in salt rejection rate and increase in permeate conductivity could be caused by scaling.",
+      "why_discardable": "Chloramine concentration increase after GAC beds and ORP rise are not typical of scaling issues."
+    }
+  ],
+  "requested_data": "Chloramine concentration after the second GAC bed",
+  "recommended_action": "Replace the first GAC bed in the pretreatment system.",
+  "decision_change_condition": "If the chloramine concentration after the second GAC bed is also elevated.",
+  "confidence": 90
+}

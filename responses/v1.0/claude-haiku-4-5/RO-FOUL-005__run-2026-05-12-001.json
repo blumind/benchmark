@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:22:54Z",
+  "main_hypothesis": "Overdosing of ferric chloride (FeCl₃) causing iron hydroxide precipitation and accumulation in the sand filters and cartridge filters, leading to membrane fouling via iron-laden feed water.",
+  "key_signals": [
+    "Fe total in RO feed increased from 0.05 mg/L to 0.42 mg/L (8.4× baseline) over 10 days",
+    "SDI₁₅ at cartridge outlet increased from 2.4 to 4.2 (well above acceptable <3 threshold) over 10 days",
+    "Turbidity at cartridge outlet increased from 0.06 NTU to 0.22 NTU",
+    "Red-orange coloration observed in cartridge filters on day -5, consistent with iron hydroxide",
+    "FeCl₃ dosing increased from 2.5 mg/L to 4 mg/L on day -22 and maintained at 4 mg/L despite return of source turbidity to 0.5 NTU on day -20",
+    "ΔP stage 1 head increased from 1.1 bar to 2.2 bar (2× baseline) while stage 1 tail ΔP remained stable at 0.7 bar, indicating inlet fouling",
+    "Permeate flow declined 9% (215 to 196 m³/h) despite 5 bar increase in feed pressure, indicating membrane resistance increase",
+    "New FeCl₃ dosing pump installed day -35 with higher capacity, calibrated to 2.5 mg/L but then manually increased to 4 mg/L without proportional adjustment to source water conditions"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling or biofilm formation in membrane elements",
+      "why_plausible": "ATP in feed is elevated at 95 pg/mL (baseline 80 pg/mL), suggesting increased microbial activity. Biofilm can cause gradual ΔP rise and flux decline. No chlorination is in place, leaving membranes unprotected.",
+      "why_discardable": "ATP increase is modest (19% above baseline) and stable over the 10-day trend window, not accelerating. Biofilm typically produces gradual, smooth ΔP rise; the sharp increase in Fe and SDI₁₅ over the same period is inconsistent with primary biofouling. Red-orange coloration in cartridges is not characteristic of biofilm. Conductivity of permeate is stable, which would be disrupted by active biofilm."
+    },
+    {
+      "hypothesis": "Membrane scaling (calcium carbonate or silica) due to high recovery or mineral precipitation",
+      "why_plausible": "Recovery is 40%, which is moderate but not extreme. Stable feed conductivity and stable permeate conductivity suggest no acute scaling risk, but silica or carbonate could precipitate if antiincrustant (2.5 ppm) is insufficient.",
+      "why_discardable": "Permeate conductivity is stable at 380 µS/cm, which would increase if scaling were occurring and reducing rejection. Feed conductivity is stable at 56,500 µS/cm. Scaling typically produces uniform ΔP rise across both stages; here, stage 1 head ΔP is elevated but stage 1 tail ΔP is stable, indicating inlet-side particulate fouling, not membrane scaling. Red-orange coloration is not consistent with mineral scale."
+    },
+    {
+      "hypothesis": "Degradation or breakthrough of sand filter media due to age or improper backwash",
+      "why_plausible": "Sand filters can degrade over time, releasing fines. Improper backwash frequency or pressure could allow media migration. This would explain elevated SDI₁₅ and turbidity at cartridge outlet.",
+      "why_discardable": "The sharp increase in Fe total (8.4×) is not explained by sand filter degradation alone; sand filters do not generate iron. The red-orange coloration in cartridges and the temporal correlation with FeCl₃ overdosing (day -22 increase, day -15 Fe traces observed, day -5 red coloration) strongly implicate iron hydroxide precipitation, not sand media breakdown. No maintenance history of filter media replacement or backwash issues is reported."
+    },
+    {
+      "hypothesis": "Corrosion of iron piping or equipment upstream of RO feed, releasing dissolved iron",
+      "why_plausible": "Corrosion can release Fe²⁺ and Fe³⁺ into the feed. Elevated Fe total would result. This is a common source of iron in RO feeds.",
+      "why_discardable": "The temporal correlation is too tight with FeCl₃ dosing changes (day -22 increase, Fe spike observed by day -2). Corrosion would be a chronic, slowly evolving issue, not a sharp 8.4× increase over 10 days. The red-orange coloration in cartridges (iron hydroxide) appears after the dosing increase, not before. No corrosion history or pipe replacement is reported. The plant is in a Caribbean island environment with seawater intake; corrosion would be expected to be chronic, not acute."
+    }
+  ],
+  "requested_data": "Iron speciation in the RO feed water: concentration of Fe²⁺ (dissolved ferrous) and Fe³⁺ (dissolved ferric) separately, measured by atomic absorption spectroscopy or ICP-MS after 0.45 µm filtration (dissolved) versus unfiltered (total), to confirm whether the 0.42 mg/L Fe is precipitated iron hydroxide particles or dissolved iron.",
+  "recommended_action": "Immediately reduce FeCl₃ dosing from 4 mg/L to 1.5 mg/L (the minimum effective dose for coagulation of seawater intake with typical turbidity <1 NTU). Perform a full backwash of the sand filters at the manufacturer-recommended pressure and duration. Replace all cartridge filters with new 5 µm elements. Monitor SDI₁₅ at cartridge outlet every 4 hours for 24 hours; if SDI₁₅ remains >3, perform a second sand filter backwash and cartridge replacement. Do not increase FeCl₃ dosing above 2.0 mg/L unless source water turbidity exceeds 1.0 NTU sustained for >2 hours, at which point increase in 0.5 mg/L increments only. Establish a written procedure requiring operator sign-off for any manual dosing adjustment >baseline, with mandatory review by the shift supervisor.",
+  "decision_change_condition": "If iron speciation analysis shows that >80% of the 0.42 mg/L Fe is dissolved (not particulate), or if Fe concentration does not decrease to <0.10 mg/L within 48 hours of reducing FeCl₃ dosing and performing filter maintenance, then the root cause is not FeCl₃ overdosing but rather corrosion or another upstream iron source, and the diagnosis would shift to investigation of piping integrity and source water chemistry.",
+  "confidence": 87
+}

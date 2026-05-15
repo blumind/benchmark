@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-005-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-005",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'exceso FeCl3 + hidróxidos hierro + obstrucción primera etapa'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "5 signals."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (bio, particulado no-Fe, SCAL) anclados."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Reducir FeCl3 a 1.5 + lavado cítrico 1% pH 2.5 de CARTUCHOS (no membrana) — target wrong + setpoint contradictorio."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide Fe speciation Fe2+/Fe3+ — sub-óptimo."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi-condición: Fe3+ <0.1 + Fe2+ >0.3 — criterios extraños."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Acción ataca cartuchos, no membrana; setpoint contradictorio (1.5 y luego 2.0)."
+}

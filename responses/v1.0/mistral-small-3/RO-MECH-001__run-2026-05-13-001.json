@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-MECH-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:29:36Z",
+  "main_hypothesis": "Fallo en junta interna (O-ring interconnector) en el Tubo 4 del Tren T-02, permitiendo paso de salmuera al permeado debido a instalación incorrecta o defecto en el O-ring nuevo instalado durante el CIP.",
+  "key_signals": [
+    "Conductividad de permeado en Tubo 4: 4.100 µS/cm (resto: 380–420 µS/cm)",
+    "Rechazo de sales en T-02 bajó bruscamente de 99,3% a 97,6%",
+    "Conductividad de permeado T-02 subió de 390 a 1.350 µS/cm tras reinstalación",
+    "Test de presión en Tubo 4 mostró anomalía consistente con paso de salmuera por junta interna",
+    "Presión alimentación y ΔP estables en T-02 y trenes vecinos, descartando obstrucción o fouling generalizado",
+    "O-ring nuevo reportado como 'rígido' durante instalación, lo que sugiere posible daño o incompatibilidad material"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo en membrana (rotura o pinhole) en el Tubo 4 del Tren T-02",
+      "why_plausible": "Una rotura en membrana podría causar aumento de conductividad en permeado y rechazo de sales reducido. El perfil de conductividad por tubo muestra un solo tubo afectado, lo que es consistente con fallo local en membrana.",
+      "why_discardable": "No hay evidencia de daño físico en membranas reportado en inspecciones visuales o pruebas de presión. Además, el aumento de conductividad es gradual y no instantáneo como se esperaría con una rotura aguda. La estabilidad en ΔP y flujo también descarta fallo masivo en membrana."
+    },
+    {
+      "hypothesis": "Contaminación cruzada por salmuera en el sistema de permeado del Tubo 4",
+      "why_plausible": "La salmuera con alta conductividad (56.500 µS/cm) podría filtrarse al permeado si hay una conexión defectuosa entre el lado de salmuera y permeado en el Tubo 4.",
+      "why_discardable": "El diseño de los elementos SWRO y los O-rings interconectores previenen esta contaminación. Además, el perfil de conductividad muestra solo el Tubo 4 afectado, lo que es consistente con un fallo local en junta, no con contaminación cruzada generalizada."
+    },
+    {
+      "hypothesis": "Fouling o incrustación en membrana del Tubo 4 que reduce el rechazo de sales",
+      "why_plausible": "El fouling puede afectar el rendimiento de las membranas, reduciendo el rechazo de sales y aumentando la conductividad del permeado. La limpieza reciente (CIP) podría no haber sido completamente efectiva.",
+      "why_discardable": "El ΔP en etapa 1 del T-02 es estable y similar al de trenes vecinos, lo que descarta fouling significativo. Además, el fouling no explicaría el perfil de conductividad tan localizado en un solo tubo ni la anomalía en el test de presión."
+    },
+    {
+      "hypothesis": "Error en la instalación de los elementos en el Tubo 4 durante el CIP, causando mala alineación o compresión incorrecta de membranas",
+      "why_plausible": "Una mala instalación podría generar canales preferenciales para el paso de salmuera al permeado, aumentando la conductividad localmente.",
+      "why_discardable": "Aunque posible, este error no explicaría la anomalía específica en el test de presión ni el perfil de conductividad tan localizado. Además, el operario reportó que los elementos 'entraron bien', lo que reduce la plausibilidad de este fallo."
+    }
+  ],
+  "requested_data": "Resultado del test de integridad (integridad de membrana) del Tubo 4, específicamente la prueba de burbuja o presión diferencial en el lado de permeado, para confirmar la presencia de un fallo en junta interna.",
+  "recommended_action": "Aislar el Tubo 4 del Tren T-02 y realizar un test de integridad de membrana (prueba de burbuja o presión diferencial) en el lado de permeado. Si se confirma fallo en junta, reemplazar el O-ring interconnector del Tubo 4 y reinstalar el elemento. Dosificar antiincrustante a 3 ppm y monitorear conductividad de permeado por tubo cada 4 horas durante 24 horas.",
+  "decision_change_condition": "Si el test de integridad del Tubo 4 muestra resultados normales (sin fugas en junta interna) y la conductividad del permeado del Tubo 4 se normaliza (< 450 µS/cm), entonces el diagnóstico cambiaría a un fallo intermitente en membrana o un error de medición en la sonda de conductividad.",
+  "confidence": 92
+}

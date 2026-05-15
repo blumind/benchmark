@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:31:13Z",
+  "main_hypothesis": "Incrustación de fosfato cálcico (Ca₃(PO₄)₂) en la etapa 2, favorecida por el aumento estacional de fósforo en el agua de pozo y la incapacidad del antiincrustante poliacrílico estándar para inhibir fosfatos a recovery 78 %.",
+  "key_signals": [
+    "ΔP etapa 2 sube de 0,9 a 1,9 bar (más del doble) mientras ΔP etapa 1 permanece estable: ensuciamiento localizado en cola, típico de scaling",
+    "PO₄³⁻ alimentación sube de 1,8 a 2,8 mg/L y en rechazo de 7,8 a 12,5 mg/L; con Ca 1.580 mg/L en rechazo y pH ~7 en concentrado se supera ampliamente la saturación de Ca₃(PO₄)₂",
+    "Fabricante del antiincrustante confirma que la formulación no inhibe fosfatos",
+    "CIP ácida (HCl pH 2) recuperó parcialmente ΔP y reincrustación rápida en 72 h: comportamiento consistente con scaling ácido-soluble que se restablece al mantener la química de alimentación",
+    "Conductividad de permeado sube (95→110 µS/cm) y caudal cae 8 %: pérdida de área activa por scaling en etapa 2",
+    "Calcio, alcalinidad y sílice en rechazo estables: descartan carbonato cálcico, sulfato cálcico o sílice como causa principal",
+    "Cloro libre <0,02 mg/L y temperatura estable: descartan oxidación y efecto térmico",
+    "Aviso previo de confederación hidrográfica sobre aumento de P por fertilización estacional"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bioensuciamiento (biofouling) en etapa 2 alimentado por fósforo como nutriente limitante",
+      "why_plausible": "El aporte de P es un nutriente clave y los pozos agrícolas con nitratos+fosfatos favorecen biopelícula; explicaría la reincrustación a 72 h tras CIP ácido",
+      "why_discardable": "La CIP ácida produjo mejora inmediata (biofouling responde mejor a CIP alcalina/biocida), no hay reporte de SDI elevado, materia orgánica, ni olor/aspecto biológico, y la subida es muy rápida y localizada en cola, más típica de scaling"
+    },
+    {
+      "hypothesis": "Incrustación de carbonato cálcico por desviación del dosaje de H₂SO₄ o subdosificación de antiincrustante",
+      "why_plausible": "Ca 360 mg/L y alcalinidad 220 mg/L en alimentación dan LSI positivo si pH sube; etapa 2 es la más expuesta",
+      "why_discardable": "pH alimentación estable en 6,8, alcalinidad y calcio en rechazo estables vs baseline, y el antiincrustante sí inhibe carbonatos; no explica la reincrustación tras CIP con la química actual"
+    },
+    {
+      "hypothesis": "Ensuciamiento coloidal/particulado por fallo en pretratamiento (cartuchos 5 µm o multicapa)",
+      "why_plausible": "Aumento de ΔP y caída de caudal son compatibles con fouling particulado",
+      "why_discardable": "Fouling coloidal afecta predominantemente a etapa 1, no a etapa 2; no hay reporte de SDI elevado ni de cambios en cartuchos; CIP ácida no suele resolver coloidal"
+    }
+  ],
+  "requested_data": "Análisis de depósito de membrana de cola etapa 2 (autopsia o muestreo de CIP): contenido de fósforo y calcio por ICP/SEM-EDS, expresado como % p/p de P y Ca en el depósito seco",
+  "recommended_action": "1) Reducir recovery de 78 % a 70-72 % de forma inmediata para bajar la saturación de Ca₃(PO₄)₂ en etapa 2. 2) Cambiar el antiincrustante a una formulación específica con inhibición de fosfato cálcico (p. ej. basadas en fosfonatos/polímeros con claim explícito para Ca₃(PO₄)₂), dosificada según recomendación del proveedor (típicamente 3-5 mg/L sobre caudal de alimentación, a confirmar con simulación del proveedor para esta química). 3) Ejecutar CIP en dos pasos: primero alcalino (NaOH 0,1 % p/p + EDTA tetrasódico 1 % p/p, pH 11-12, 35 °C, 60-90 min) para disolver fosfato cálcico (Ca₃(PO₄)₂ es más soluble en medio alcalino con quelante que en ácido), seguido de ácido cítrico 2 % p/p neutralizado a pH 3-4 con NH₄OH, 60 min, según manual del fabricante de membrana, respetando temperatura máxima y flujo de recirculación. 4) Mantener pH de alimentación 6,5-6,8 y verificar LSI/S&DSI de concentrado. 5) Aumentar frecuencia de análisis de PO₄³⁻ en alimentación a diario durante el episodio estacional de fertilización.",
+  "decision_change_condition": "Si la autopsia/análisis del depósito muestra <5 % p/p de fósforo y predominio de materia orgánica/biopelícula, o si el ATP/recuento bacteriano del concentrado es elevado, el diagnóstico cambiaría a biofouling estimulado por nutrientes (P), modificando la estrategia de CIP hacia alcalino+biocida y dosificación de inhibidor biológico.",
+  "confidence": 82
+}

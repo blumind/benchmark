@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-OXID-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:05:22Z",
+  "main_hypothesis": "Incomplete removal of hydrogen peroxide (H₂O₂) after CIP, leading to residual oxidative damage on the RO membranes.",
+  "key_signals": [
+    "Reduction in permeate flow by 4% post-CIP",
+    "Increase in permeate conductivity from 410 to 540 µS/cm",
+    "Decrease in salt rejection from 99.28% to 99.05%",
+    "Brown traces on maintenance cartridges",
+    "Shortened rinse time from 60 minutes to 45 minutes",
+    "Use of test strips with a sensitivity of 1 mg/L for H₂O₂ detection"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane scaling due to incomplete removal of cleaning agents post-CIP.",
+      "why_plausible": "Alkaline cleaning can sometimes lead to scaling if not properly rinsed, which could explain the increase in pressure drop and decrease in permeate flow.",
+      "why_discardable": "The stable pressure drop across stages and the specific increase in conductivity suggest membrane damage rather than scaling."
+    },
+    {
+      "hypothesis": "Biofouling or organic fouling due to inadequate pre-treatment.",
+      "why_plausible": "Increased conductivity and decreased flow can be symptoms of fouling.",
+      "why_discardable": "The ORP and chlorine levels are stable, and there is no mention of increased pressure drop which is typically associated with fouling."
+    }
+  ],
+  "requested_data": "Exact residual H₂O₂ concentration in the permeate post-rinse, measured with a method more sensitive than 1 mg/L.",
+  "recommended_action": "Immediately take the affected train offline and perform a thorough rinse with permeate for 120 minutes, followed by a residual H₂O₂ test using a more sensitive method (e.g., laboratory analysis).",
+  "decision_change_condition": "If the exact residual H₂O₂ concentration is found to be below detection limits (<0.1 mg/L) using a sensitive method, the main hypothesis would be invalidated.",
+  "confidence": 85
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-004",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'oxidative degradation por monocloramina breakthrough GAC exhausted + ausencia SBS' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (MECH bypass, envejecimiento normal, scaling/biofouling, cloro libre transitorio)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Stop RO + replace/rebed GAC + total chlorine monitoring interlock + SBS dosing — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide C·T exposición total chloramine al RO feed últimos 45 días — discriminador (ppm·h). Match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: cloramina <0.05 + ORP +60 + rechazo cayó → MECH switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

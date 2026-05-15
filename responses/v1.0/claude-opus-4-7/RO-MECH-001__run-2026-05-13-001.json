@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-MECH-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:28:10Z",
+  "main_hypothesis": "Fuga de salmuera al permeado en el Tubo 4 del T-02 por fallo de sellado de un O-ring interconnector (o de cabeza/cola) instalado durante la reinstalación post-CIP, probablemente el O-ring 'rígido' reportado por el operario (mal asentado, pellizcado o defectuoso).",
+  "key_signals": [
+    "Aumento brusco de conductividad de permeado en T-02 (390 → 1.350 µS/cm) iniciado inmediatamente tras la reinstalación (día -17), sin afectar a trenes vecinos",
+    "Probe test localiza la fuente: Tubo 4 con 4.100 µS/cm vs. 380–420 µS/cm en el resto de tubos del mismo tren",
+    "Test de presión del día -2 indica anomalía consistente con paso de salmuera por una junta interna del Tubo 4",
+    "Reporte del operario en día -19: 'uno de los O-rings nuevos parecía rígido pero entró bien' en uno de los 4 tubos intervenidos",
+    "ΔP de etapa 1 estable (1,3 vs 1,2 bar) y caudal de permeado prácticamente sin cambio (-1 %): descarta fouling/scaling masivo o pérdida de área activa",
+    "Ausencia de cloro libre (<0,02 mg/L) y ORP estable: descarta oxidación de membrana",
+    "Rechazo cae de 99,3 % a 97,6 % de forma escalonada coincidiendo con la intervención mecánica, no de forma gradual"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño mecánico (telescoping o glue-line crack) en un elemento del Tubo 4 durante manipulación/CIP",
+      "why_plausible": "Los elementos fueron retirados, manipulados y sometidos a pruebas de presión; un daño en la línea de pegado del envolvente daría paso directo de alimentación a permeado en un solo tubo",
+      "why_discardable": "El test de presión apunta específicamente a 'paso por una junta interna' (sello), no a rotura de envolvente; además el operario reportó explícitamente un O-ring rígido, signo directo de problema de sellado"
+    },
+    {
+      "hypothesis": "Vaina de permeado (product water tube/adapter) mal acoplada o agrietada en el Tubo 4",
+      "why_plausible": "También produciría bypass localizado de salmuera al permeado en un único tubo tras reinstalación",
+      "why_discardable": "Inspección visual del día -3 confirmó que las vainas de permeado están correctamente conectadas"
+    },
+    {
+      "hypothesis": "Oxidación/degradación química de la membrana durante el CIP avanzado fuera de línea (sobreconcentración u oxidante residual)",
+      "why_plausible": "Un CIP mal ejecutado puede degradar la capa activa de poliamida y elevar el paso de sales",
+      "why_discardable": "El daño químico afectaría a los 28 elementos intervenidos de forma distribuida (varios tubos), no estaría confinado al Tubo 4; ORP y cloro libre en alimentación normales"
+    },
+    {
+      "hypothesis": "O-ring de la conexión del puerto de permeado (adapter/end-cap) en cabeza o cola del Tubo 4 mal asentado",
+      "why_plausible": "Estos O-rings también fueron sustituidos y producen exactamente el mismo patrón (alta conductividad en un solo tubo)",
+      "why_discardable": "Es en realidad una variante de la hipótesis principal (fallo de O-ring post-mantenimiento); se englobaría en la misma acción correctiva"
+    }
+  ],
+  "requested_data": "Resultado del vacuum/pressure decay test elemento por elemento dentro del Tubo 4 (identificando posición del elemento con caída de presión anómala) y, tras desencajar, inspección del O-ring interconnector de esa posición",
+  "recommended_action": "Sacar de servicio el Tubo 4 del T-02 (aislar mediante válvulas, despresurizar siguiendo procedimiento), retirar los elementos, reemplazar todos los O-rings interconnector y de cabeza/cola del tubo por nuevos del lote correcto (verificando referencia, dureza Shore A y compatibilidad química), lubricar con glicerina al 50 % en agua desmineralizada (no usar grasas a base de hidrocarburos), reinstalar verificando torque y alineación, realizar prueba de integridad (vacuum decay y/o conductivity probe) antes de volver a presurizar, y arrancar gradualmente verificando que la conductividad de permeado del tubo retorna a 380–420 µS/cm. Mientras tanto, operar la planta con T-02 fuera de servicio o con el Tubo 4 aislado.",
+  "decision_change_condition": "Cambiaría el diagnóstico si la prueba de integridad por elemento del Tubo 4 mostrara caídas de presión en múltiples elementos no contiguos (sugeriría daño químico generalizado por CIP), o si tras sustituir todos los O-rings la conductividad del Tubo 4 permaneciera elevada (indicaría daño físico del envolvente o de la membrana de un elemento concreto).",
+  "confidence": 86
+}

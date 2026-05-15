@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-001",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fuga salmuera al permeado Tubo 4 T-02 + O-ring interconnector mal asentado/dañado + reinstalación post-CIP' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia incluyendo O-ring 'rígido' reportado."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (telescoping/glue-line, vaina permeado, oxidación CIP, O-ring puerto permeado)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Sacar T-04 + LOTO + retirar elementos + reemplazar todos los O-rings + verificar dureza Shore A + lubricar glicerina 5% — match gold detallado."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide vacuum/pressure decay test elemento por elemento — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi: caídas presión múltiples elementos no contiguos → daño químico generalizado."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

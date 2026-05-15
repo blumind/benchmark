@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-005",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'inadequate scale inhibitor + new phosphonate incompatibility with high hardness/TDS/low pH + progressive CaCO3' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación causal."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (orgánico, MECH, dosis real, agua estacional)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Aumentar dosis 1.2→2.0 ppm + solicitar al proveedor dosis site-specific — operacional; CIP ácido no visible."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide SI CaCO3 y CaSO4 + LSI — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ΔP no estabiliza + conductividad >100 µS/cm → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-NOWE-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:01:50Z",
+  "main_hypothesis": "Daño mecánico de las membranas (compactación/delaminación) por choque osmótico y arranque indebido.",
+  "key_signals": [
+    "Presión de alimentación significativamente más alta (16,8 bar) para un caudal de permeado mucho más bajo (220 m³/h) que los valores de referencia.",
+    "Rechazo de sales extremadamente bajo (85,3 %) y conductividad de permeado muy alta (850 µS/cm), indicando pérdida de integridad de la capa de poliamida.",
+    "Historial de operación: llenado del bastidor con agua bruta en parada, purga insuficiente y rampa de presión de arranque muy rápida (1 minuto).",
+    "Potencial de Óxido-Reducción (ORP) fuertemente negativo en alimentación y permeado, junto con sulfito residual en permeado, confirmando una purga incompleta del agente de preservación que contribuyó al desequilibrio osmótico."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling severo.",
+      "why_plausible": "Se utilizó agua de pozo no tratada para rellenar el bastidor y se dejó estancada durante dos días, creando condiciones para el crecimiento bacteriano a pesar del bisulfito.",
+      "why_discardable": "El biofouling típicamente causa un aumento drástico y progresivo del ΔP en la primera etapa, pero el ΔP reportado es casi normal y estable. Además, no explica la caída catastrófica e inmediata del rechazo de sales."
+    },
+    {
+      "hypothesis": "Incrustación inorgánica (scaling) por carbonato de calcio.",
+      "why_plausible": "El agua bruta estancada en las membranas sin dosificación de antiincrustante podría haber precipitado sales de dureza.",
+      "why_discardable": "La incrustación aumentaría principalmente el ΔP de la segunda etapa, pero este es inicialmente más bajo que el de referencia. Tampoco causa una pérdida tan severa e instantánea del rechazo de sales."
+    }
+  ],
+  "requested_data": "Paso de sales del primer elemento del primer tubo de presión de la Etapa 1 (%).",
+  "recommended_action": "Realizar una parada controlada inmediata de la bomba de alta presión. Iniciar un lavado a baja presión (3-4 bar) y alto caudal utilizando agua de permeado, enviando todo el producto y rechazo a drenaje, durante un mínimo de 2 horas o hasta que la conductividad del permeado y el ORP se estabilicen en valores cercanos a los de referencia.",
+  "decision_change_condition": "Si tras el lavado prolongado recomendado y un arranque posterior con rampa de presión lenta (>15 min), los parámetros de operación (presión, caudal, rechazo de sales) retornan completamente a los valores de referencia pre-parada.",
+  "confidence": 95
+}

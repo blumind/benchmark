@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:53:19Z",
+  "main_hypothesis": "Fallo en la bomba peristáltica de dosificación de antiincrustante debido a desgaste o desajuste post-mantenimiento, resultando en una dosificación insuficiente (0,3 L/h vs. 1,8 L/h consigna) y acumulación de incrustaciones en la etapa 2 de la RO.",
+  "key_signals": [
+    "Subida marcada de ΔP en etapa 2 (de 0,8 a 2,1 bar) con ΔP etapa 1 estable",
+    "Presión de alimentación aumentada (de 15,8 a 18,5 bar)",
+    "Caudal de permeado reducido en un 8% (de 500 a 460 m³/h)",
+    "Conductividad del permeado elevada (92 µS/cm vs. 80 µS/cm baseline)",
+    "Caudal de antiincrustante medido en 0,3 L/h (vs. 1,8 L/h consigna), con tendencia a la baja desde el día -22",
+    "pH de alimentación aumentado a 7,3 (vs. 6,7 baseline) por cambio en dosificación de H₂SO₄ no revertido",
+    "Observación de pulsación irregular en la bomba de antiincrustante y espuma en el tanque (día -10)",
+    "Mantenimiento preventivo de la bomba de antiincrustante el día -25 con sustitución de manguera, seguido de cebado incompleto (día -22)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo en los cartuchos de pretratamiento (5 µm) por obstrucción o rotura, permitiendo paso de partículas a la RO y aumentando ΔP en etapa 2.",
+      "why_plausible": "Los cartuchos se cambiaron el día -5 sin alivio de ΔP, y la obstrucción progresiva podría explicar el aumento de presión en etapa 2. La conductividad del permeado elevada podría deberse a paso de sales disueltas si los cartuchos están rotos.",
+      "why_discardable": "No hay evidencia de aumento de sólidos en suspensión (ej. turbidez) ni de ΔP en etapa 1. Además, la caída de caudal de antiincrustante y la observación de pulsación irregular en la bomba apuntan a un problema en la dosificación, no en el pretratamiento."
+    },
+    {
+      "hypothesis": "Contaminación biológica en el bastidor RO por falta de cloro residual (cloro libre <0,02 mg/L) o dosificación insuficiente de antiincrustante, generando biofilm y obstrucción en etapa 2.",
+      "why_plausible": "El cloro libre es indetectable y la dosificación de antiincrustante es insuficiente, condiciones favorables para crecimiento microbiológico. El biofilm podría aumentar ΔP en etapa 2 y reducir el flujo de permeado.",
+      "why_discardable": "No hay reporte de olor, coloración anormal en el permeado, ni aumento de presión diferencial en etapa 1 (donde suele iniciarse la bioincrustación). La caída abrupta en el caudal de antiincrustante y la pulsación irregular son más consistentes con un fallo mecánico en la bomba que con contaminación biológica."
+    },
+    {
+      "hypothesis": "Fallo en la membrana de la etapa 2 por degradación química (ej. oxidación por cloro residual no detectado) o compactación, aumentando la resistencia al flujo y ΔP.",
+      "why_plausible": "El pH elevado (7,3) y la posible presencia de cloro residual (aunque no medido) podrían degradar las membranas. La compactación por operación a alta presión también aumenta ΔP.",
+      "why_discardable": "No hay evidencia de cloro residual en el agua de alimentación (cloro libre <0,02 mg/L). Además, la caída en el caudal de antiincrustante y la pulsación irregular en la bomba son señales más específicas de un problema en la dosificación que en las membranas."
+    },
+    {
+      "hypothesis": "Aireación o cavitación en la bomba de alimentación de la RO, causando fluctuaciones de presión y aumento de ΔP en etapa 2.",
+      "why_plausible": "La presión de alimentación aumentada (18,5 bar) y la pulsación irregular observada en la bomba de antiincrustante podrían indicar problemas de aireación en el sistema de bombeo.",
+      "why_discardable": "No hay reporte de ruidos anormales en la bomba de alimentación ni fluctuaciones en el caudal de permeado (solo tendencia estable). La caída en el caudal de antiincrustante y la pulsación irregular son más consistentes con un fallo en la bomba de dosificación específica."
+    }
+  ],
+  "requested_data": "Concentración de antiincrustante en el agua de alimentación a la RO (ppm) medido aguas abajo del punto de inyección.",
+  "recommended_action": "1. Detener inmediatamente la bomba peristáltica de antiincrustante y verificar su estado (mangueras, rodillos, ajuste de presión). 2. Realizar un cebado completo de la bomba según procedimiento SOP-RO-003, incluyendo purgado de aire y verificación de flujo con probeta graduada. 3. Ajustar la dosis de antiincrustante a 2,5 ppm (1,8 L/h) y verificar concentración en línea con un kit de análisis rápido. 4. Si la bomba no recupera flujo, sustituir la manguera y rodillos según plan de mantenimiento preventivo. 5. Ajustar el pH de alimentación a 6,7 con H₂SO₄ y verificar LSI en rechazo. 6. Registrar ΔP en ambas etapas cada 2 horas durante 24 horas tras la acción.",
+  "decision_change_condition": "Si la concentración de antiincrustante en el agua de alimentación a la RO (medida aguas abajo del punto de inyección) es ≥2,0 ppm y el ΔP en etapa 2 se estabiliza en ≤1,2 bar en 24 horas tras la acción recomendada, la hipótesis principal se descarta y se requiere reevaluar alternativas.",
+  "confidence": 92
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:33:34Z",
+  "main_hypothesis": "Precipitación de fosfato de calcio (Ca₃(PO₄)₂) en las membranas de la segunda etapa, debido a un aumento de la concentración de fosfatos en el agua de alimentación y a la ineficacia del antiincrustante en uso para inhibir esta sal.",
+  "key_signals": [
+    "Aumento marcado y selectivo de la presión diferencial (ΔP) en la etapa 2 (de 0,9 a 1,9 bar), mientras la etapa 1 permanece estable.",
+    "Aumento significativo de la concentración de fosfato (PO₄³⁻) en la alimentación (de 1,8 a 2,8 mg/L), coincidente con el inicio del problema.",
+    "Respuesta positiva pero temporal a la limpieza ácida (CIP con HCl), con una rápida recurrencia del ensuciamiento, lo que es característico de una incrustación mineral soluble en ácido.",
+    "Confirmación explícita del fabricante de que el antiincrustante poliacrílico en uso no es efectivo contra la incrustación de fosfatos."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling (ensuciamiento biológico) severo en la segunda etapa.",
+      "why_plausible": "El aumento de fosfatos y la presencia de nitratos en el agua de alimentación proporcionan nutrientes que pueden acelerar el crecimiento biológico en las membranas.",
+      "why_discardable": "El biofouling suele manifestarse con mayor intensidad en la primera etapa, que aquí se mantiene estable. Además, una limpieza ácida estándar a pH 2 no es el tratamiento más eficaz para eliminar un biofilm consolidado, y la rapidísima reaparición del problema (72h) es más típica de la cinética de precipitación mineral que del recrecimiento biológico."
+    },
+    {
+      "hypothesis": "Ensuciamiento por partículas coloidales o finos.",
+      "why_plausible": "Un fallo en el pretratamiento (filtros multicapa o de cartucho) podría permitir el paso de sólidos suspendidos, causando un aumento de la presión diferencial.",
+      "why_discardable": "El ensuciamiento por partículas afecta de forma predominante y más severa a los elementos de cabeza de la primera etapa. Los datos muestran que la ΔP de la primera etapa es estable, mientras que el problema se concentra en la segunda, lo cual es el patrón clásico de una incrustación por precipitación."
+    },
+    {
+      "hypothesis": "Incrustación de carbonato de calcio (CaCO₃).",
+      "why_plausible": "El agua de alimentación tiene una dureza y alcalinidad elevadas, lo que supone un riesgo inherente de precipitación de carbonato de calcio.",
+      "why_discardable": "La planta dosifica ácido sulfúrico para mantener un pH de alimentación de 6,8, lo que reduce drásticamente el potencial de incrustación de carbonatos. Adicionalmente, el antiincrustante en uso es efectivo contra este tipo de incrustación y los niveles de alcalinidad en el rechazo se mantienen estables, sin evidencia de precipitación."
+    }
+  ],
+  "requested_data": "Resultado del análisis elemental por Espectroscopía de Energía Dispersiva (EDS/EDX) de una muestra de la incrustación obtenida de una membrana del primer elemento de un tubo de presión de la segunda etapa.",
+  "recommended_action": "Realizar una parada controlada de la planta para evitar daños. Ejecutar una limpieza química (CIP) de baja pH (pH 2.5) con un limpiador formulado para fosfatos o, en su defecto, ácido cítrico al 2% p/p, durante un mínimo de 3 horas. Antes de reiniciar, es imperativo sustituir el antiincrustante actual por uno específico para el control de fosfato de calcio, dosificado según la recomendación del nuevo proveedor para las condiciones actuales del agua.",
+  "decision_change_condition": "Si el análisis de la incrustación solicitado revelara una composición mayoritariamente orgánica (altos picos de Carbono y Nitrógeno) y un contenido minoritario o nulo de Fósforo y Calcio.",
+  "confidence": 95
+}

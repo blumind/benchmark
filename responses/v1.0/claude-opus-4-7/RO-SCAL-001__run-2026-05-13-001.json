@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:51:51Z",
+  "main_hypothesis": "Precipitación de CaCO₃ en etapa 2 por subdosificación de antiincrustante (bomba peristáltica con manguera nueva sin cebado, descebada/con aire) agravada por la deriva del pH de alimentación de 6,7 a 7,3 tras el mantenimiento de la bomba de H₂SO₄, que elevó el LSI en el rechazo.",
+  "key_signals": [
+    "ΔP etapa 2 sube de 0,8 a 2,1 bar mientras etapa 1 permanece estable (típico de scaling en última etapa donde se concentran iones)",
+    "Caudal de antiincrustante medido por trasiego 0,3 L/h frente a consigna 1,8 L/h (subdosificación ~83%)",
+    "Espuma en tanque y bomba 'pulsando irregular' (aire en la manguera tras cambio sin cebado correcto en día -25)",
+    "pH de alimentación derivado a 7,3 desde 6,7 tras mantenimiento de bomba ácida el día -15 (incrementa LSI y favorece CaCO₃)",
+    "Alcalinidad del rechazo en aumento ligero (1.110 → 1.220 mg/L CaCO₃) consistente con precipitación parcial e incremento de pH",
+    "Caída de permeado 8% y subida de conductividad de permeado (pérdida de área activa por incrustación)",
+    "Sílice y calcio en rechazo estables, descartando scaling de sílice; cloro libre <0,02 mg/L descarta oxidación de membrana"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling de sílice en etapa 2",
+      "why_plausible": "La sílice se concentra ~5x al 80% de recovery y la sílice de rechazo (89 mg/L) está cerca del límite de solubilidad amorfa a 19 °C.",
+      "why_discardable": "Sílice de rechazo estable respecto al baseline; el evento coincide temporalmente con fallos de dosificación de antiscalant CaCO₃ y subida de pH, no con cambio en sílice."
+    },
+    {
+      "hypothesis": "Fouling coloidal/biológico por fallo de pretratamiento (cartuchos)",
+      "why_plausible": "Se cambiaron cartuchos el día -5 sin alivio de ΔP; podría haber paso de finos.",
+      "why_discardable": "La subida de ΔP etapa 2 comenzó el día -18, muy anterior al cambio de cartuchos; además fouling coloidal afectaría preferentemente a etapa 1, no a etapa 2."
+    },
+    {
+      "hypothesis": "Daño oxidativo de membranas",
+      "why_plausible": "Pérdida de rechazo (conductividad permeado sube de 80 a 92 µS/cm).",
+      "why_discardable": "Cloro libre <0,02 mg/L estable; además el daño oxidativo bajaría ΔP, no lo subiría."
+    },
+    {
+      "hypothesis": "Scaling de sulfato cálcico por sobredosificación de H₂SO₄",
+      "why_plausible": "Uso de H₂SO₄ aporta sulfato; en etapa 2 puede precipitar CaSO₄.",
+      "why_discardable": "El pH subió (menor dosis de ácido, menos sulfato añadido), opuesto al escenario de CaSO₄; el patrón apunta a carbonato."
+    }
+  ],
+  "requested_data": "pH del rechazo de etapa 2 y cálculo de LSI/S&DSI en el rechazo en las condiciones actuales (pH 7,3, Ca 1.860 mg/L, alcalinidad 1.220 mg/L CaCO₃, T 19 °C)",
+  "recommended_action": "1) Parada controlada del bastidor y aislamiento. 2) Restablecer dosificación de H₂SO₄ hasta pH alimentación 6,7 y verificar consigna LSI rechazo ≤ 0,3. 3) Cebar correctamente la bomba peristáltica del antiincrustante siguiendo el procedimiento, purgar aire, verificar integridad de manguera y válvulas de retención, y confirmar 1,8 L/h por trasiego volumétrico antes de reanudar. 4) Ejecutar limpieza CIP en dos pasos: primero ácida con ácido cítrico al 2% w/w (o HCl a pH 2,0-2,5) a 35 °C durante 1-2 h con recirculación y remojo, seguida de enjuague y limpieza alcalina con NaOH a pH 12 + 0,025% w/w Na-EDTA a 35 °C según manual del fabricante (FilmTec/Hydranautics). 5) Tras CIP, medir ΔP por etapa y rechazo normalizado; verificar dosificación con alarma de bajo caudal en el flujómetro del antiscalant. 6) Implementar enclavamiento que pare la RO si caudal de antiscalant <80% de consigna o pH alimentación fuera de 6,5-6,9.",
+  "decision_change_condition": "Cambiaría el diagnóstico si tras restaurar pH 6,7 y dosis de antiscalant 1,8 L/h, el ΔP de etapa 2 no respondiera a una limpieza ácida (descartando CaCO₃) y/o si el análisis de depósitos de membrana revelara predominio de sílice, sulfatos, materia orgánica/biofilm en lugar de carbonato cálcico.",
+  "confidence": 88
+}

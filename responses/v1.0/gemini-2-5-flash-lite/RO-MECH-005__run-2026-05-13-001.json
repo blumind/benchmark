@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-MECH-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:50:48Z",
+  "main_hypothesis": "Fuga de salmuera a permeado en Tubo 5 de Etapa 1 debido a la incorrecta instalación del sello de salmuera (brine seal) en uno de los elementos.",
+  "key_signals": [
+    "Probe test perfil de permeado por tubo (etapa 1): Tubo 5: 850 µS/cm; resto: 90–115 µS/cm",
+    "Conductividad permeado: Subida progresiva de 95 µS/cm a 220 µS/cm",
+    "Rechazo de sales (calculado): Bajada de 98,5 % a 96,5 %",
+    "Bypass aparente concentrado→permeado en T-5: Compatible",
+    "Historial de mantenimiento: El sello de salmuera del primer elemento del Tubo 5 NO está instalado; está enrollado fuera del elemento. El operario instalador admite que lo quitó porque 'no entraba bien' y olvidó reponerlo en otro elemento."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo prematuro de los elementos nuevos en Tubo 5 de Etapa 1.",
+      "why_plausible": "Los elementos son nuevos y la conductividad del permeado del Tubo 5 es significativamente más alta que el resto. Un fallo podría explicar la degradación del rechazo de sales a nivel de planta.",
+      "why_discardable": "El historial de mantenimiento y la inspección visual del Tubo 5 revelan explícitamente un problema de instalación del sello de salmuera, que es una causa directa de fuga de salmuera a permeado. El fallo de elementos nuevos sin causa aparente es menos probable que un error de instalación documentado."
+    },
+    {
+      "hypothesis": "Contaminación o daño en los elementos del Tubo 5 durante la instalación.",
+      "why_plausible": "El operador es nuevo y la instalación se realizó hace poco. Un daño físico o contaminación durante el manejo podría afectar el rendimiento de los elementos y aumentar la conductividad del permeado.",
+      "why_discardable": "Aunque es posible, la causa principal identificada (brine seal ausente) explica directamente la alta conductividad del permeado del Tubo 5 y la consecuente bajada del rechazo de sales a nivel de planta. La ausencia del brine seal crea un camino directo para que el agua de alta salinidad (concentrado) se mezcle con el permeado."
+    },
+    {
+      "hypothesis": "Problema con el sensor de conductividad del permeado del Tubo 5.",
+      "why_plausible": "La medición de 850 µS/cm en el Tubo 5 es drásticamente diferente al resto. Un sensor defectuoso podría estar reportando un valor erróneo.",
+      "why_discardable": "Si bien un sensor defectuoso es una posibilidad, la conductividad del permeado a nivel de planta ha aumentado progresivamente y el rechazo de sales ha disminuido. Esto sugiere un problema real en el proceso, no solo una lectura errónea. Además, la inspección física del brine seal proporciona una causa mecánica plausible para la degradación del rendimiento."
+    }
+  ],
+  "requested_data": "Presión diferencial (ΔP) del Tubo 5 de Etapa 1.",
+  "recommended_action": "Detener la planta. Abrir el Tubo 5 de Etapa 1. Verificar la correcta instalación de todos los sellos de salmuera (brine seals) en cada elemento. Reinstalar correctamente el sello de salmuera faltante en el primer elemento y asegurar que todos los demás estén en su lugar. Volver a presurizar y operar la planta, monitorizando de cerca la conductividad del permeado y el ΔP del Tubo 5.",
+  "decision_change_condition": "Si, tras la correcta instalación de todos los brine seals, la conductividad del permeado del Tubo 5 y la conductividad general del permeado de planta no mejoran significativamente, o si el ΔP del Tubo 5 aumenta drásticamente, se debería considerar un fallo de los elementos o un problema de diseño/instalación más profundo en el propio tubo.",
+  "confidence": 95
+}

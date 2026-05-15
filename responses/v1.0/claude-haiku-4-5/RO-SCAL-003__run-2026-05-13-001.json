@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:04:51Z",
+  "main_hypothesis": "Barium sulfate scaling on RO membranes in train T-04 due to 22-day period of zero antiscalant dosing, causing irreversible membrane surface damage and flux decline that persists even after antiscalant restoration.",
+  "key_signals": [
+    "ΔP tail stage 1 of T-04 increased from 0.9 bar (baseline) to 2.3 bar (current), with marked rise beginning day -16, coinciding with antiscalant injection failure discovery on day -5",
+    "Permeate flow declined 9% (278 → 252 m³/h) across the train, consistent with membrane fouling/scaling reducing effective membrane area",
+    "Permeate conductivity increased from 405 to 460 µS/cm, indicating compromised membrane rejection capacity due to surface damage or scaling",
+    "ΔP tail stage 1 remains elevated (2.3 bar) on day 0 despite antiscalant restoration on day -3, indicating non-reversible damage",
+    "Antiscalant injection to T-04 was completely absent for 22 days (day -22 to day -3) while feed barium (0.12 mg/L) and sulfate (3,150 mg/L) concentrations remained high, creating supersaturation conditions",
+    "Cross-train comparison on day -12 showed T-04 deviation while other trains remained normal, isolating the problem to the single train with failed injection",
+    "Antiscalant dosage rate stable at 4.1 L/h after correction, ruling out current underdosing as primary cause"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Organic fouling (biofilm or polysaccharide deposition) on T-04 membranes unrelated to scaling",
+      "why_plausible": "Organic fouling can cause ΔP rise and flux decline; the 22-day period without antiscalant could theoretically allow biofilm growth if biocide residual was depleted, and organic matter could pass through pretreatment",
+      "why_discardable": "Chlorine residual is consistently <0.02 mg/L (adequate biocide), and organic fouling typically manifests as gradual, reversible ΔP rise over weeks with recovery after CIP. The sharp ΔP rise starting day -16 (immediately after antiscalant failure detection) and the irreversible nature after antiscalant restoration are inconsistent with organic fouling kinetics. Barium and sulfate concentrations in feed are extremely high (0.12 mg/L Ba, 3,150 mg/L SO₄), making inorganic scaling far more thermodynamically probable."
+    },
+    {
+      "hypothesis": "Colloidal iron or silica fouling from pretreatment bypass or cartridge breakthrough",
+      "why_plausible": "Colloidal particles can accumulate on membrane surfaces, raising ΔP and reducing flux; a cartridge breach on day -22 during electrical work is conceivable",
+      "why_discardable": "Colloidal fouling is typically reversible with CIP and would affect all trains proportionally if pretreatment failed. The isolation of the problem to T-04 alone, combined with the temporal correlation to antiscalant injection failure, strongly argues against a pretreatment-wide event. Additionally, colloidal fouling does not explain the increase in permeate conductivity, which indicates membrane rejection loss characteristic of scaling damage."
+    },
+    {
+      "hypothesis": "Membrane degradation due to chlorine breakthrough or pH excursion during the 22-day period",
+      "why_plausible": "Chlorine or extreme pH can chemically degrade polyamide membranes, causing flux loss and conductivity rise",
+      "why_discardable": "Chlorine residual is consistently <0.02 mg/L (well below degradation threshold of 0.1 mg/L), and pH is stable at 8.1 (within normal SWRO operating range of 7.5–8.5). No pH excursion is reported. Chemical degradation would affect all trains equally if it occurred, not just T-04."
+    },
+    {
+      "hypothesis": "Mechanical damage to T-04 membrane elements (tears, O-ring failure) during the electrical work on day -22",
+      "why_plausible": "Electrical work in the pump room could have caused vibration or pressure transients that damaged membranes, explaining flux loss and conductivity rise",
+      "why_discardable": "Mechanical damage would cause immediate, catastrophic flux loss and very high permeate conductivity (>1,000 µS/cm). The gradual ΔP rise from day -16 to day -2 is inconsistent with acute mechanical failure. Additionally, the temporal alignment of ΔP rise with the antiscalant injection failure (discovered day -5, but failure occurred day -22) suggests a chemical process (scaling) rather than mechanical trauma."
+    }
+  ],
+  "requested_data": "Microscopic or SEM analysis of a membrane coupon from T-04 stage 1 tail element to confirm presence of barium sulfate crystals and quantify scaling coverage (% of membrane surface area affected).",
+  "recommended_action": "Perform immediate chemical cleaning (CIP) of T-04 using a low-pH (pH 3.5–4.0) citric acid or hydrochloric acid formulation at 50–100 mg/L concentration for 60–90 minutes at 10–15 L/m²·h flux to dissolve barium sulfate scale. Monitor ΔP and permeate conductivity during cleaning. If ΔP tail stage 1 does not return to within 10% of baseline (≤1.0 bar) after CIP, prepare for membrane element replacement. Verify antiscalant injection to all trains is functioning by measuring individual train injection point pressures and flow rates before returning to full operation. Increase antiscalant dosage to 5 ppm (from 4 ppm) for 30 days as a safety margin given the high barium and sulfate feed concentrations.",
+  "decision_change_condition": "If SEM analysis reveals <5% membrane surface coverage by barium sulfate crystals, or if ΔP tail stage 1 returns to ≤1.0 bar after CIP, the diagnosis would shift toward partial reversible scaling or early-stage fouling rather than irreversible membrane damage, and membrane replacement would not be necessary. Conversely, if ΔP remains >2.0 bar after CIP and SEM shows >30% scaling coverage with crystal penetration into the polyamide layer, the diagnosis would be confirmed and membrane replacement would be mandatory.",
+  "confidence": 78
+}

@@ -1,0 +1,44 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:28:47Z",
+  "main_hypothesis": "Inadequate ripening of the replaced greensand filter medium caused breakthrough of iron and manganese, leading to metal oxide fouling on the RO membranes, resulting in increased differential pressure (especially stage 2), higher feed pressure, reduced permeate flow, and elevated permeate conductivity.",
+  "key_signals": [
+    "Fe alimentación a RO: 0.18 mg/L (baseline 0.03, marked increase)",
+    "Mn alimentación a RO: 0.11 mg/L (baseline 0.02, marked increase)",
+    "ΔP etapa 2: 1.8 bar (baseline 0.8, marked increase)",
+    "ΔP etapa 1: 1.4 bar (baseline 1.1, slight increase)",
+    "Presión alimentación: 17.5 bar (baseline 14.0, increase)",
+    "Caudal permeado: 153 m³/h (baseline 167, 8% drop)",
+    "Conductividad permeado: 130 µS/cm (baseline 95, increase)",
+    "Inspección cartuchos: tonalidad marrón clara y depósito ligero",
+    "pH alimentación: 6.8 (baseline 6.5, increase)",
+    "Historial: filtro greensand retornó sin ciclo de ripening (día -35)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Calcium carbonate scaling in stage 2 due to pH increase and high alkalinity/calcium concentrations.",
+      "why_plausible": "Feed pH rose from 6.5 to 6.8, increasing the Langelier Saturation Index at the concentrate side; feed calcium (320 mg/L) and alkalinity (320 mg/L) are high; stage 2 ΔP is typical for scaling in tail elements; alkalinity rejection increased.",
+      "why_discardable": "Iron and manganese breakthrough is more directly correlated in time with the symptoms; the ΔP increase started soon after the filter media change (day -18) and well after the pH adjustment (day -22); antiscalant should control CaCO3; permeate conductivity increase is less specific to scaling."
+    },
+    {
+      "hypothesis": "Silica scaling in stage 2 due to high silica recovery and potential antiscalant failure.",
+      "why_plausible": "Silica in reject stream is 305 mg/L, above typical amorphous silica solubility (~150 mg/L at 30°C); temperature is high; pH increase may enhance polymerization.",
+      "why_discardable": "Silica rejection has only slightly increased (290→305 mg/L), not indicating severe precipitation; antiscalant specifically targets silica; iron breakthrough is much more pronounced and aligns with timeline."
+    },
+    {
+      "hypothesis": "Biological fouling (biofilm) exacerbated by warm temperature and iron/nutrient availability.",
+      "why_plausible": "Temperature is high (30.5°C) which promotes microbial growth; iron can serve as nutrient; ΔP increase is significant.",
+      "why_discardable": "No free chlorine residual break, no visible slime or odor reported; stage 2 ΔP increase is more typical of inorganic scaling or metal fouling than biofouling (which usually affects stage 1 first); rapid increase after filter change points to particle breakthrough."
+    }
+  ],
+  "requested_data": "Analysis of iron, manganese, calcium, and silica content in the deposit scraped from the cartridge filters or a membrane element from the stage 2 lead position (mg per mg of deposit).",
+  "recommended_action": "Immediately reduce RO feed pH to 6.5 by recalibrating the H₂SO₄ dosing pump; decrease plant recovery to 65% to reduce concentration factors and scaling potential; increase anti-incrustante dose to 6 ppm; and initiate an investigative clean-in-place (CIP) on stage 2 membranes using a chelating agent (e.g., citric acid 2% w/v at pH 3.5) recirculated for 4 hours, followed by permeate flush until conductivity stabilizes below 150 µS/cm.",
+  "decision_change_condition": "If the deposit analysis shows that the predominant foulant (by weight) is calcium carbonate or amorphous silica rather than iron and manganese oxides, then the diagnosis would change to scaling from calcium carbonate or silica, respectively.",
+  "confidence": 75
+}

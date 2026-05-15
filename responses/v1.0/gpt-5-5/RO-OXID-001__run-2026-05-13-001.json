@@ -1,0 +1,52 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:39:00Z",
+  "main_hypothesis": "Agotamiento/sobrecarga del lecho de carbón activado granular de dechloración tras aumentar la frecuencia de choques con hipoclorito, permitiendo breakthrough de cloro libre hacia las membranas SWRO y oxidación de la poliamida con pérdida de rechazo salino.",
+  "key_signals": [
+    "Cloro libre tras CAG y antes de RO de 0,18 mg/L frente a baseline <0,02 mg/L.",
+    "ORP antes de RO sube a +320 mV frente a baseline +90 mV, con oscilaciones tras CAG desde el día -10.",
+    "Conductividad de permeado aumenta bruscamente de 380 a 1.200 µS/cm mientras la conductividad de alimentación y la temperatura permanecen estables.",
+    "Rechazo de sales cae de 99,1 % a 96,2 %, patrón compatible con daño oxidativo de membrana.",
+    "ΔP de etapa 1 y etapa 2 permanecen estables, lo que no apoya ensuciamiento hidráulico como causa principal.",
+    "ATP de alimentación estable, sin señal de incremento de biofouling.",
+    "El CAG tenía solo 25 % de capacidad residual en día -45 y la frecuencia de hipoclorito se triplicó en día -30.",
+    "El primer cloro medido tras CAG de 0,12 mg/L en día -5 precede a la caída marcada de rechazo."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga mecánica en juntas, interconectores, adaptadores o tubo de permeado de un pressure vessel.",
+      "why_plausible": "Una fuga de salmuera hacia permeado puede causar una subida rápida de conductividad con cambios pequeños en caudal y sin aumento de ΔP.",
+      "why_discardable": "No explica por sí sola la presencia confirmada de cloro libre tras el CAG, el ORP elevado ni la secuencia temporal posterior al aumento de choques con hipoclorito."
+    },
+    {
+      "hypothesis": "Biofouling de membranas por control biológico insuficiente.",
+      "why_plausible": "La planta opera con captación abierta y preocupación reciente por mejillón cebra/biofouling, y un fallo de pretratamiento puede deteriorar el rendimiento.",
+      "why_discardable": "El ATP está estable, los ΔP de ambas etapas están estables y la pérdida dominante es de rechazo salino brusca, no un aumento progresivo de pérdida de carga."
+    },
+    {
+      "hypothesis": "Incrustación mineral por fallo de antiincrustante o cambio en la química del agua.",
+      "why_plausible": "La SWRO opera a 43 % de recovery y la incrustación puede reducir caudal permeado y aumentar presión requerida.",
+      "why_discardable": "El pH, temperatura, conductividad de alimentación y presión están estables, el antiincrustante se mantiene a 3 ppm y no hay incremento de ΔP ni patrón gradual típico."
+    },
+    {
+      "hypothesis": "Error de medición o descalibración del conductivímetro de permeado.",
+      "why_plausible": "Una lectura errónea puede aparentar una pérdida de rechazo sin cambio real en la membrana.",
+      "why_discardable": "La caída del rechazo calculado coincide con señales independientes de oxidante residual, ORP elevado y evolución temporal coherente de empeoramiento."
+    },
+    {
+      "hypothesis": "Canalización hidráulica o bypass interno del lecho de CAG en lugar de agotamiento químico del medio.",
+      "why_plausible": "La aparición de cloro tras CAG también puede producirse si hay caminos preferenciales, mala distribución o bypass del lecho.",
+      "why_discardable": "La capacidad residual baja del CAG y el aumento reciente de carga oxidante hacen más probable una sobrecarga/agotamiento funcional del lecho como causa primaria."
+    }
+  ],
+  "requested_data": "Resultado positivo/negativo de autopsia de un elemento SWRO representativo con ensayo específico de oxidación por cloro de la poliamida.",
+  "recommended_action": "Mantener suspendida la dosificación de hipoclorito y aislar los trenes RO de producción, desviando permeado a rechazo hasta confirmar ausencia de oxidante. Sustituir o reactivar el CAG antes de reiniciar choques; si se requiere protección transitoria, dosificar metabisulfito sódico como Na2S2O5 activo a 0,5 mg/L aguas arriba de cartuchos/RO y ajustar solo para mantener cloro libre antes de RO <0,02 mg/L, verificando con DPD antes de alimentar las membranas.",
+  "decision_change_condition": "Cambiaría el diagnóstico si muestras independientes por DPD demostraran cloro libre antes de RO siempre <0,02 mg/L y ORP en torno a +90 mV durante el periodo de subida de conductividad, y la autopsia fuese negativa a oxidación por cloro.",
+  "confidence": 91
+}

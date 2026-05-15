@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:35:41Z",
+  "main_hypothesis": "Bioincrustación acelerada en los elementos de cabeza de la 1ª etapa por degradación del pretratamiento (DAF operando por debajo de capacidad tras mar gruesa), que elevó SDI, TOC y carga microbiana a la RO.",
+  "key_signals": [
+    "ΔP etapa 1 elevado (2,8 bar vs 1,2 bar) con subida progresiva, mientras ΔP etapa 2 se mantiene ~estable (0,9 bar).",
+    "ATP en alimentación RO muy alto (1.200 pg/mL vs 80 pg/mL).",
+    "TOC alimentación duplicado (2,8 mg/L vs 1,4 mg/L).",
+    "SDI15 tras cartuchos elevado (4,8 vs 2,5) con tendencia al alza desde día -8.",
+    "Caudal permeado por tren -8 % (245 vs 268 m³/h) y necesidad de mayor presión de alimentación (64 vs 58 bar).",
+    "Ligero aumento de conductividad de permeado (380 vs 360 µS/cm).",
+    "Historial: mar gruesa (día -14) con turbidez DAF 1,8 NTU y DAF al 60 % por avería (día -12 a -8)."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento coloidal/particulado (no biológico) procedente del DAF por episodio de mar gruesa y bajo rendimiento.",
+      "why_plausible": "SDI15 elevado y evento de turbidez/operación reducida en DAF favorecen arrastre de sólidos finos a la RO.",
+      "why_discardable": "El marcado aumento de ATP y TOC indica carga biológica/orgánica; el patrón de ΔP concentrado en 1ª etapa y la evolución temporal (empeora días después del evento) encajan mejor con crecimiento biológico que con un simple arrastre particulado puntual."
+    },
+    {
+      "hypothesis": "Incrustación inorgánica (CaCO3/CaSO4/BaSO4) por ineficacia del antiincrustante.",
+      "why_plausible": "Recuperación global 45 % y cambio reciente en dosificación podrían afectar margen frente a incrustación.",
+      "why_discardable": "La incrustación suele manifestarse más en la 2ª etapa; aquí ΔP etapa 2 está estable. pH y salinidad de alimentación son estables y la dosis de antiincrustante aumentó, no disminuyó."
+    },
+    {
+      "hypothesis": "Daño oxidativo por cloro que incrementa el paso de sales y altera el rendimiento.",
+      "why_plausible": "Cloraciones de choque en captación pueden, si no se neutralizan, dañar poliamida.",
+      "why_discardable": "Cloro libre antes de RO <0,02 mg/L estable; el síntoma dominante es aumento de ΔP en 1ª etapa con caída de flujo, no un fuerte aumento de paso salino que sería más característico del daño oxidativo."
+    },
+    {
+      "hypothesis": "Bypass/fallo en filtros de cartucho tras su sustitución, permitiendo paso de sólidos y microbios.",
+      "why_plausible": "Cambio de cartuchos día -22 podría haber dejado sellos defectuosos u holguras.",
+      "why_discardable": "El deterioro del SDI empieza día -8 (dos semanas después del cambio) y coincide con problemas en DAF; además el gran aumento de ATP/TOC sugiere causa upstream más que un simple bypass puntual."
+    }
+  ],
+  "requested_data": "ATP superficial en la cara de entrada del primer elemento de la 1ª etapa, medido por hisopo: pg/cm².",
+  "recommended_action": "Sacar de servicio un tren y ejecutar una CIP dirigida a bioincrustación: 1) Enjuagar con permeado. 2) Preparar solución alcalina con NaOH 1.000–2.000 mg/L (0,10–0,20 % p/p) + surfactante no iónico aprobado para RO 1.000 mg/L (0,10 % p/p) + (opcional) EDTA 5.000 mg/L (0,50 % p/p); ajustar pH 11,0–11,5 y T 30–35 °C. 3) Recircular por cada etapa a caudal de limpieza 3–5 m³/h por tubo (ΔP<0,5 bar) durante 45–60 min, invirtiendo el sentido a mitad; remojar 1–2 h y repetir si ΔP no baja ≥20 %. 4) Enjuagar hasta pH ~7. 5) Desinfectar con biocida no oxidante (DBNPA 200 mg/L), recircular 30 min y remojar 60 min; enjuagar completamente antes de arrancar. Durante la intervención, tomar hisopo de la primera membrana para ATP superficial. Paralelamente, asegurar el DAF a plena capacidad y optimizar coagulante para lograr SDI15 ≤3 e incrementar la frecuencia de lavado de filtros mientras dure el evento orgánico.",
+  "decision_change_condition": "Si el ATP superficial en la primera membrana resulta bajo (p. ej., <50 pg/cm²) y la CIP alcalina/biocida no recupera ΔP, pero una CIP ácida (ácido cítrico 20.000 mg/L, pH ~2) sí lo hace significativamente, concluiría que el mecanismo principal es ensuciamiento coloidal/inorgánico procedente del pretratamiento, no bioincrustación.",
+  "confidence": 85
+}

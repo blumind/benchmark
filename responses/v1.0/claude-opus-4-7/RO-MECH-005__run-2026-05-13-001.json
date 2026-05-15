@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-MECH-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:48:45Z",
+  "main_hypothesis": "Error de instalación: ausencia del brine seal en el primer elemento del Tubo 5 (etapa 1), retirado por el operador nuevo y no repuesto, lo que provoca bypass del agua de alimentación por fuera del elemento (entre la membrana y la pared del tubo de presión), reduciendo la velocidad cruzada efectiva sobre las membranas y generando paso de sales elevado en ese tubo.",
+  "key_signals": [
+    "Inspección visual día -3 confirma que el brine seal del primer elemento del Tubo 5 está enrollado fuera del elemento, no instalado",
+    "Admisión explícita del operador instalador (día -2) de haberlo retirado y no repuesto",
+    "Probe test localiza Tubo 5 con permeado 850 µS/cm frente a 90–115 µS/cm en el resto de tubos de la misma etapa",
+    "Conductividad permeado planta sube progresivamente desde el día siguiente a la sustitución (95 → 220 µS/cm) sin cambios en alimentación, temperatura, pH ni ORP",
+    "ΔP etapa 1 ligeramente menor (0,9 vs 1,0 bar) y presión de alimentación algo menor, coherente con bypass hidráulico que reduce pérdida de carga",
+    "Reapretado de pernos de cabeza no alivió: descarta fuga en o-rings de adaptador/cabezal"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "O-rings de interconectores (interconnectors) dañados o mal lubricados durante la instalación, permitiendo bypass concentrado→permeado dentro del tubo central",
+      "why_plausible": "Operador nuevo, alta conductividad localizada en un solo tubo, patrón típico de fuga interna por o-ring de producto",
+      "why_discardable": "La inspección visual identificó directamente el brine seal fuera de su alojamiento; además el reapretado de cabezales no corrigió y la causa mecánica ya está confirmada visualmente"
+    },
+    {
+      "hypothesis": "Membrana defectuosa de fábrica o dañada (telescoping) en uno de los elementos nuevos del Tubo 5",
+      "why_plausible": "Elementos nuevos pueden tener defectos; un elemento con fuga aumenta conductividad del tubo",
+      "why_discardable": "La degradación es progresiva y afecta a todo el tubo de forma sostenida; el hallazgo del brine seal ausente explica el fenómeno sin necesidad de invocar defecto de membrana; además sin brine seal puede producirse telescoping incipiente, pero la causa raíz sigue siendo la instalación"
+    },
+    {
+      "hypothesis": "Adaptador/sello de cabezal (端板) de permeado mal asentado en el lado de salida del Tubo 5",
+      "why_plausible": "Permitiría mezcla de salmuera con permeado en la cabeza del tubo, explicaría 850 µS/cm localizado",
+      "why_discardable": "Se reapretaron pernos de cabeza sin alivio y la inspección encontró el brine seal fuera, evidencia directa más sólida"
+    }
+  ],
+  "requested_data": "Conductividad de permeado del Tubo 5 medida 24–48 h después de reinstalar correctamente el brine seal del primer elemento (µS/cm), comparada con el resto de tubos de etapa 1",
+  "recommended_action": "Sacar de servicio el Tubo 5, despresurizar y drenar según procedimiento LOTO. Extraer los 12 elementos en orden y reinstalarlos verificando: (a) brine seal correctamente alojado en su ranura en el extremo aguas arriba de CADA elemento, orientado hacia la alimentación; (b) o-rings de interconectores nuevos y lubricados con glicerina USP grado alimentario; (c) adaptadores de cabezal correctamente asentados. Si un brine seal no entra, sustituirlo por uno nuevo del fabricante, nunca retirarlo. Tras reinstalación, realizar enjuague a baja presión (2–4 bar) durante 30–60 min con permeado o agua de alimentación sin antiincrustante, luego arranque progresivo y repetir probe test por tubo a las 24 h. Programar formación y procedimiento firmado de cambio de elementos para el operador. Revisar también si algún otro tubo cambiado por el mismo operador presenta la misma omisión.",
+  "decision_change_condition": "Si tras reinstalar correctamente el brine seal del Tubo 5 y arrancar, la conductividad del permeado de ese tubo permanece >300 µS/cm con el resto de variables estables, la hipótesis cambiaría a fuga interna por o-ring de interconector o elemento defectuoso, requiriendo prueba de vacío/integridad y sonda de conductividad por elemento.",
+  "confidence": 95
+}

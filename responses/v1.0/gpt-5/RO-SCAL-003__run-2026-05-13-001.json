@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-SCAL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:02:28Z",
+  "main_hypothesis": "Pérdida de dosificación de antiincrustante al tren T‑04 tras el cambio del cuadro eléctrico (solenoide de inyección desenergizado), lo que provocó precipitación de incrustaciones de sulfato (dominantemente BaSO4 y/o CaSO4) en los elementos de cola de la etapa 1.",
+  "key_signals": [
+    "Incidencia confirmada: solenoide de inyección desenergizado en T‑04; el antiincrustante NO entró al tren durante ~18 días (Día -21 a -3).",
+    "ΔP cola etapa 1 sube marcadamente 0,9 → 2,3 bar mientras cabeza está estable; patrón típico de incrustación localizada en la cola.",
+    "Otros trenes con ΔP normal y química de alimentación estable; la desviación es específica del T‑04 y no de la toma o pretratamiento.",
+    "Aumento de presión de alimentación 60 → 67 bar, caída de caudal de permeado (−9 %) y subida de conductividad de permeado; consistentes con pérdida de permeabilidad por incrustación.",
+    "Química de alto riesgo sin inhibidor: sulfato 3.150 mg/L y bario 0,12 mg/L en alimentación; a la concentración de la cola, el índice de sobresaturación de BaSO4/CaSO4 es elevado.",
+    "La ΔP alta no remite tras restablecer la dosificación (Día -3), coherente con incrustación de sulfatos poco reversible sin CIP."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento particulado/coloidal por bypass de cartuchos o arrastre del pretratamiento.",
+      "why_plausible": "El aumento de ΔP y la caída de caudal/avance salino pueden deberse a sólidos finos depositándose en los canales de alimentación.",
+      "why_discardable": "El patrón de cola (no cabeza) y la ausencia de evento común en otros trenes contradicen un problema de pretratamiento; además coincide temporalmente con la falta de antiincrustante en T‑04."
+    },
+    {
+      "hypothesis": "Bioincrustación en elementos de cola.",
+      "why_plausible": "Temperatura cálida (28 °C) y operación desclorada favorecen crecimiento; biofilm eleva ΔP y aumenta paso salino.",
+      "why_discardable": "La bioincrustación suele iniciarse en elementos de cabecera; la coincidencia con 18 días sin antiincrustante y la localización en cola encajan mejor con incrustación inorgánica por sobresaturación."
+    },
+    {
+      "hypothesis": "Daño mecánico/compaction de membranas o bloqueo por telescoping del espaciador.",
+      "why_plausible": "El aumento de presión de operación puede inducir compaction; el bloqueo del espaciador eleva ΔP.",
+      "why_discardable": "No explica la correlación temporal con la pérdida de antiincrustante ni la selectividad a la cola; además otros trenes bajo condiciones similares no muestran el problema."
+    }
+  ],
+  "requested_data": "Contenido de bario en el depósito de los elementos de cola por SEM-EDS (Ba en % en peso).",
+  "recommended_action": "Aislar el T‑04 y realizar un CIP ácido dirigido a sulfatos: preparar solución de HCl al 1,0 % p/p en permeado (pH objetivo 1,5–2,0), recircular a 25–30 °C a caudal de limpieza recomendado por el fabricante (≈3–5 m³/h por vasija de 8\") durante 60 min con al menos un remojo intermedio de 15 min; enjuagar hasta pH neutro y verificar ΔP y flujo normalizado. Si la recuperación de ΔP de cola es <50 %, aplicar una segunda limpieza quelante específica para sulfatos de Ba/Sr (por ejemplo, EDTA disódico al 2 % p/p ajustado a pH 10,5, 25–30 °C, 60 min), respetando los límites de pH/temperatura del fabricante de membranas; restablecer operación solo tras confirmar ΔP y rendimiento aceptables y verificar localmente el caudal de antiincrustante al punto de inyección del T‑04.",
+  "decision_change_condition": "Si el análisis del depósito de cola mostrara Ba despreciable (<0,5 % p/p) y predominio de orgánicos/Fe/Al, o si se confirmara por registro independiente que el T‑04 recibió caudal de antiincrustante continuo durante el periodo, cambiaría el diagnóstico hacia ensuciamiento por arrastre del pretratamiento o bioincrustación en lugar de incrustación por pérdida de dosificación.",
+  "confidence": 85
+}

@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:32:26Z",
+  "main_hypothesis": "Calcium phosphate (Ca₃(PO₄)₂) scaling on stage 2 membrane surfaces due to elevated phosphate concentration in feed water exceeding the inhibition capacity of the standard polyacrylic antiscalant formulation.",
+  "key_signals": [
+    "ΔP stage 2 increased from 0.9 bar (baseline) to 1.9 bar (current) over 12 days, with rapid re-escalation after CIP cleaning (1.2 → 1.9 bar in 7 days)",
+    "PO₄³⁻ feed concentration elevated from 1.8 mg/L (baseline) to 2.8 mg/L (current), coinciding with seasonal fertilization episode and confederation warning",
+    "PO₄³⁻ reject concentration increased from 7.8 mg/L to 12.5 mg/L, indicating phosphate accumulation in concentrate",
+    "Antiscalant manufacturer confirmed polyacrylic formulation does not inhibit phosphate precipitation",
+    "Permeate conductivity increased from 95 to 110 µS/cm despite stable feed conductivity, indicating membrane rejection loss",
+    "Permeate flow decreased 8% while feed pressure increased 3.5 bar, consistent with membrane fouling rather than feed-side restriction",
+    "CIP ácida (HCl pH 2) temporarily reduced ΔP stage 2 from 1.5 to 1.2 bar, confirming acid-soluble scale (consistent with calcium phosphate), but scale rapidly reformed"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Organic fouling (biofilm or polysaccharide accumulation) on stage 2 membranes",
+      "why_plausible": "ΔP stage 2 elevation and permeate flow decline are consistent with organic fouling. Seasonal agricultural runoff could introduce organic matter. Chlorine residual is consistently < 0.02 mg/L, which is adequate but biofilm can still develop under low-nutrient conditions.",
+      "why_discardable": "Organic fouling would not be significantly soluble in HCl pH 2 (ácida CIP), yet ΔP stage 2 dropped from 1.5 to 1.2 bar after acid cleaning. Organic fouling requires enzymatic or alkaline cleaning (NaOH) for effective removal. Rapid re-escalation (1.2 → 1.9 bar in 7 days) is inconsistent with biofilm reformation timescale in a low-nutrient RO concentrate. Reject calcium and alkalinity are stable, which would not be expected if biofilm were the primary issue."
+    },
+    {
+      "hypothesis": "Silica scaling (SiO₂ polymerization) on stage 2 membranes",
+      "why_plausible": "Silica reject concentration is 64 mg/L, which is elevated. Silica can form colloidal or polymeric deposits on membrane surfaces, especially at high recovery (78%) and in the concentrate stream. Silica fouling can cause ΔP rise and permeate quality degradation.",
+      "why_discardable": "Silica reject concentration is stable (62 → 64 mg/L), showing no trend correlation with the marked ΔP rise over 12 days. Silica scaling typically develops gradually over weeks to months and does not respond as dramatically to acid cleaning as observed here (1.5 → 1.2 bar in 60 min). The rapid re-escalation after CIP is inconsistent with silica polymerization kinetics. Silica is not acid-soluble; HCl cleaning would not remove silica scale, yet ΔP did decrease."
+    },
+    {
+      "hypothesis": "Sulfate scaling (BaSO₄ or CaSO₄) on stage 2 membranes",
+      "why_plausible": "High calcium (360 mg/L feed) and sulfate (implied from TDS and SO₄²⁻ not explicitly stated but typical in agricultural groundwater) could form CaSO₄ scale. The antiscalant is formulated to inhibit sulfates, but overdosing or underdosing could fail.",
+      "why_discardable": "Sulfate reject concentration is not reported, so direct evidence is absent. However, the timing of ΔP rise correlates precisely with phosphate elevation (day -12 onwards), not with any reported change in sulfate. The antiscalant manufacturer explicitly stated the product inhibits sulfates; no operational change in sulfate feed concentration is reported. Calcium reject is stable (1,530 → 1,580 mg/L), which would be expected to rise if CaSO₄ were precipitating. Acid cleaning (HCl) would dissolve CaSO₄, but the rapid re-escalation suggests the scale-forming species is continuously supplied by the feed, which is consistent with phosphate (elevated and persistent) rather than sulfate (stable)."
+    },
+    {
+      "hypothesis": "Membrane degradation or partial blockage of stage 2 inlet due to cartridge filter breakthrough",
+      "why_plausible": "Membranes have 20 months of service; cartridge filters (5 µm) could be approaching end-of-life. Breakthrough of fine particles could cause localized membrane blockage and ΔP rise.",
+      "why_discardable": "ΔP stage 1 is stable (1.1 → 1.2 bar), which would be expected to rise first if cartridge filters were failing. Permeate conductivity increased (95 → 110 µS/cm), indicating loss of rejection, not blockage. Blockage would maintain or improve rejection. CIP ácida would not restore flow if the issue were cartridge breakthrough; yet ΔP stage 2 did decrease temporarily. The pattern of rapid re-escalation after cleaning is inconsistent with a one-time cartridge failure."
+    }
+  ],
+  "requested_data": "Membrane autopsy or direct microscopic/SEM analysis of stage 2 membrane surface deposits to confirm the chemical composition (calcium phosphate vs. other scales) and morphology.",
+  "recommended_action": "Immediately increase antiscalant dosage from 2.8 ppm to 4.5–5.0 ppm (polyacrylic formulation, concentration in mg/L as supplied) and simultaneously reduce feed phosphate concentration by diverting high-phosphate well water to a separate treatment train or blending with lower-phosphate sources to achieve feed PO₄³⁻ ≤ 1.5 mg/L. If phosphate source diversion is not feasible within 48 hours, perform a second CIP cleaning using a specialized anti-phosphate formulation (e.g., EDTA-based chelant at pH 3.5–4.0, 90 min contact time) to dissolve calcium phosphate scale, followed by a rinse cycle. Monitor ΔP stage 2 and permeate conductivity every 4 hours for 72 hours post-intervention. If ΔP stage 2 remains > 1.5 bar or continues to rise, escalate to membrane replacement.",
+  "decision_change_condition": "If membrane autopsy reveals silica-dominant deposits (not calcium phosphate), or if ΔP stage 2 does not decrease by ≥ 0.3 bar within 24 hours of increased antiscalant dosage and phosphate feed reduction, or if permeate conductivity continues to rise despite these interventions, the diagnosis would shift toward organic fouling or membrane degradation, requiring enzymatic/alkaline CIP and possible element replacement.",
+  "confidence": 78
+}

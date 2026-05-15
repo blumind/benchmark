@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-MECH-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:46:51Z",
+  "main_hypothesis": "Instalación incorrecta del tren de elementos en el Tubo 5 (etapa 1), con sello de salmuera del elemento líder omitido y probable desasiento/daño de juntas tóricas de interconector/permeate adapter, provocando bypass y fuga concentrado→permeado.",
+  "key_signals": [
+    "Probe test: permeado del Tubo 5 = 850 µS/cm frente a 90–115 µS/cm en el resto de tubos (desviación localizada severa).",
+    "Inspección visual: el brine seal del primer elemento NO instalado; operador admite haberlo retirado.",
+    "Conductividad de permeado de planta subiendo progresivamente desde el reinicio tras el cambio de elementos (95 → 220 µS/cm) con alimentación estable.",
+    "Rechazo de sales cae de 98,5 % a 96,5 % tras la reinstalación.",
+    "ΔP etapa 1 ligeramente más bajo que baseline (bypass alrededor de elementos reduce fricción).",
+    "Análisis del balance: “Bypass aparente concentrado→permeado en T-5: Compatible”.",
+    "Cloro libre <0,02 mg/L y ORP/pH/temperatura estables (descartan daño químico/operacional externo)."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Solo ausencia del brine seal del elemento líder (sin fallo de juntas de interconector/permeado), causando bypass de alimentación alrededor del primer elemento.",
+      "why_plausible": "Se observó la falta del brine seal; el bypass alrededor del elemento líder reduce el rechazo global y el ΔP de la etapa.",
+      "why_discardable": "Por sí sola, la falta del brine seal raramente explica un permeado local tan alto (850 µS/cm); sugiere además mezcla directa concentrado→permeado por fallo de juntas internas."
+    },
+    {
+      "hypothesis": "Daño físico o fabricación defectuosa en uno o varios elementos nuevos del Tubo 5 (rotura de hoja, pinchazo, daño en adhesivos).",
+      "why_plausible": "El incremento de conductividad está fuertemente localizado en el Tubo 5 y comenzó inmediatamente tras la sustitución.",
+      "why_discardable": "La evidencia directa de un brine seal ausente y la compatibilidad con bypass concentrado→permeado encajan mejor con un problema de instalación y sellado que con defecto de membrana."
+    },
+    {
+      "hypothesis": "Orientación incorrecta del brine seal (montado al revés) en otros elementos del mismo tubo, causando bypass adicional.",
+      "why_plausible": "Operario nuevo; error de orientación es común y produce bypass y pérdida de rechazo.",
+      "why_discardable": "Se documentó específicamente la omisión del brine seal del primer elemento; el patrón de 850 µS/cm y la nota de bypass concentrado→permeado sugieren además fallo de juntas internas, no solo orientación errónea."
+    }
+  ],
+  "requested_data": "Resultado de prueba de estanqueidad del lado de permeado del Tubo 5 (pressure-hold) a 2,0 bar durante 5 min: caudal de fuga medido en mL/min.",
+  "recommended_action": "Parar, aislar y despresurizar el Tubo 5; aplicar LOTO. Abrir el tubo y extraer los 12 elementos. Instalar un brine seal nuevo y correcto en el elemento líder, orientado hacia la alimentación (labio aguas arriba). Inspeccionar todos los interconectores, juntas tóricas dobles y adaptadores de tubo de permeado; sustituir cualquier junta dañada o ausente y lubricar con agua/glicerina grado potable antes del montaje. Verificar que todos los brine seals restantes están presentes y orientados correctamente. Reensamblar el tren asegurando asiento completo de interconectores y centrado del adaptador de permeado en la cabeza. Realizar prueba de estanqueidad del lado de permeado del Tubo 5 a 2,0 bar (5 min) y corregir si hay fuga. Efectuar enjuague a baja presión (<5 bar) y poner en marcha gradualmente, monitorizando la conductividad de permeado por tubo; detener si el Tubo 5 excede 150 µS/cm para re-inspección.",
+  "decision_change_condition": "Si, tras reinstalar correctamente el brine seal del elemento líder y comprobar/juntar nuevas todas las juntas tóricas, el Tubo 5 pasa la prueba de estanqueidad (fuga ≈ 0 mL/min) pero su permeado permanece >300 µS/cm a las mismas condiciones, cambiaría el diagnóstico a daño físico de elementos (rotura/defecto) en lugar de fallo de instalación de sellos.",
+  "confidence": 90
+}

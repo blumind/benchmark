@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-003",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'BaSO4 T-04 + interrupción dosificación antiincrustante' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP ácido cítrico 2% pH 3-4 + alcalino NaOH 0.1% pH 11-12 — para BaSO4 secuencia genérica; gold expects ácido + EDTA tetrasódico 2% en alcalino, falta el quelante específico."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia para confirmar BaSO4 — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: si autopsia no muestra BaSO4 → descartar."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

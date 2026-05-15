@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-003",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'arranque con aclarado insuficiente + ramp-up rapido + arrastre conservante' matches"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals (ORP -10, glicerina 320, 1x30 vs 3x60, ramp 5min, caudal 70%, dP 1.5/0.9)"
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "C3: 3 alts (mojado/compactacion, baja A intrinseca, O-rings) bien descartadas"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: aislar + 3 aclarados 60min sin oxidantes + ramp 30 min - matches gold completo"
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "C5: 3 anchors (sulfito feed, no oxidantes, cond+rechazo monitoring + 4-6h trigger)"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit: sulfito<0.1 + ORP>+50 + glicerina<50 + caudal/rechazo anomalo -> defecto"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Excelente, cubre 3 hipotesis incluyendo compactacion normal"
+}

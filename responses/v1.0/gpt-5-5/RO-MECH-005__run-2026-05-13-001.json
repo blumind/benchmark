@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-MECH-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:48:50Z",
+  "main_hypothesis": "Instalación incorrecta del Tubo 5 de etapa 1 por omisión del brine seal del primer elemento, provocando bypass hidráulico en el tubo y pérdida localizada de rechazo de sales.",
+  "key_signals": [
+    "El probe test localiza la desviación en un solo tubo: Tubo 5 con 850 µS/cm frente a 90–115 µS/cm en el resto de tubos de etapa 1.",
+    "La subida de conductividad del permeado comenzó inmediatamente después de la sustitución completa de los elementos del Tubo 5.",
+    "Inspección visual confirmó que el brine seal del primer elemento no estaba instalado y estaba enrollado fuera del elemento.",
+    "El operador instalador admitió haber retirado el brine seal durante la reinstalación porque el elemento no entraba bien.",
+    "La conductividad de alimentación, temperatura, pH, ORP y cloro libre permanecen estables, lo que no apoya un cambio general de agua de alimentación ni oxidación.",
+    "El ΔP de etapa 1 baja ligeramente en vez de aumentar, compatible con bypass y no con ensuciamiento obstructivo.",
+    "El reapriete de pernos de cabeza no produjo alivio, por lo que una fuga simple de cierre de cabeza es menos probable."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga en O-ring de interconector, adaptador final o tubo central de permeado en el Tubo 5.",
+      "why_plausible": "Una fuga entre concentrado/alimentación y permeado dentro de un pressure vessel puede producir aumento localizado de conductividad en un solo tubo sin cambios importantes de caudal o presión.",
+      "why_discardable": "No es la hipótesis principal porque se encontró una falla de montaje explícita y directamente relacionada con el evento: ausencia del brine seal del primer elemento, además de admisión del operador."
+    },
+    {
+      "hypothesis": "Daño mecánico de una o más membranas nuevas durante la instalación.",
+      "why_plausible": "El problema apareció tras la reinstalación por un operador nuevo y una membrana dañada puede elevar la conductividad del permeado del tubo afectado.",
+      "why_discardable": "La evidencia disponible apunta más a un bypass por montaje incorrecto, ya que el brine seal ausente fue observado físicamente; además, no se reportan signos de rotura, telescoping o daño visible de los elementos."
+    },
+    {
+      "hypothesis": "Defecto de fabricación o bajo rechazo inicial de los elementos nuevos del Tubo 5.",
+      "why_plausible": "El Tubo 5 contiene elementos nuevos y la conductividad fue alta desde la vuelta a operación, lo que podría confundirse con acondicionamiento o defecto de membrana.",
+      "why_discardable": "El valor de 850 µS/cm es muy localizado y la inspección halló una causa mecánica concreta; un rebote normal de elementos nuevos no explicaría la ausencia física del brine seal."
+    },
+    {
+      "hypothesis": "Oxidación de membranas por exposición a cloro u oxidantes.",
+      "why_plausible": "La oxidación puede causar pérdida de rechazo con ΔP relativamente estable.",
+      "why_discardable": "El cloro libre antes de RO se mantiene <0,02 mg/L, el ORP está estable y bajo, no hay oxidante en el proceso y el problema está localizado en el Tubo 5, no distribuido en todo el bastidor."
+    },
+    {
+      "hypothesis": "Incrustación o ensuciamiento diferencial en etapa 1.",
+      "why_plausible": "Una planta BWRO a 76 % de recuperación puede sufrir incrustación o fouling que afecte rechazo y operación.",
+      "why_discardable": "El ΔP de etapa 1 no aumenta sino que baja ligeramente, el caudal de permeado está estable y la desviación está localizada en el Tubo 5 tras una intervención mecánica, no en toda la etapa."
+    }
+  ],
+  "requested_data": "Conductividad del permeado del Tubo 5 después de reinstalar correctamente el brine seal y estabilizar el tubo durante operación normal, en µS/cm.",
+  "recommended_action": "Parar el bastidor conforme al procedimiento, aislar y despresurizar el Tubo 5, aplicar bloqueo/etiquetado, extraer los elementos del Tubo 5, instalar un brine seal nuevo compatible con el primer elemento en la orientación correcta según el manual del fabricante, inspeccionar y sustituir si están marcados los O-rings de interconectores y adaptadores, relubricar con lubricante aprobado para membranas, reinstalar los elementos sin forzar, enjuagar a baja presión enviando permeado a drenaje hasta estabilización y repetir el probe test antes de devolver el tubo a servicio normal.",
+  "decision_change_condition": "La diagnosis cambiaría si, tras instalar correctamente el brine seal y verificar O-rings/adaptadores, la conductividad del permeado del Tubo 5 permaneciera claramente por encima del resto de tubos; en ese caso la causa principal pasaría a ser fuga interna del tren de permeado o daño de membrana en el Tubo 5.",
+  "confidence": 95
+}

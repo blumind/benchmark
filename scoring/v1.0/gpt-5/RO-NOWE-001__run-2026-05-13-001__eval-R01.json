@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-001",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'no completamente humectadas por remanencia de propilenglicol' matches"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 5 signals: caudal 36%, dP bajos, cond mejorando, aclarado 30 min, 5 meses PG"
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "C3: 3 alts (caudal config, biofouling, oxidacion) bien justificadas"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: venteo + recirculacion 12-24h + rampa lenta - matches gold sin CIP"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (PG en permeado primera hora)"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit numerico: PG<10 mg/L + venteo + 24h sin recuperacion >70%"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Excelente: sin CIP, alta cobertura"
+}

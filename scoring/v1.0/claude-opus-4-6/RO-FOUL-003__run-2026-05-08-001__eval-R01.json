@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-003-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-003",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "MH 'orgánico-coloidal NOM fluvial' captura mitad orgánica; no menciona FeCl3 sobredosificación explícito."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "8 señales con cronología completa; conductividad estable descarta MECH."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (Fe coloidal, bio, SCAL); 2 intra-FOUL pero why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "NaOH 0.1% + cítrico 2% pH 2.0-2.5 — omite tensoactivo y EDTA que gold marca como componentes."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide Fe total y disuelto — match accepted requested_data."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: Fe > 0.5 + TOC < 2.5 → Fe coloidal con CIP ácido primario."
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Captura mitad orgánica como GPT-5 captura mitad Fe. Pierde C4 por protocolo incompleto."
+}

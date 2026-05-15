@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-FOUL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:52:36Z",
+  "main_hypothesis": "Biofouling en la primera etapa de membranas RO debido a la reducción de la frecuencia de dosificación de biocida y al aumento de la carga orgánica en la alimentación.",
+  "key_signals": [
+    "ΔP etapa 1: 1,7 bar (subida progresiva desde 0,8 bar)",
+    "Caudal permeado planta: 305 m³/h (bajada del 8 %)",
+    "ATP en alimentación RO: 480 pg/mL (subida marcada)",
+    "TOC alimentación: 1,9 mg/L (subida moderada)",
+    "Historial de reducción de biocida y aumento de ATP"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling inorgánico (precipitación de sales) en la primera etapa de membranas RO.",
+      "why_plausible": "El aumento de la presión de alimentación (17,5 bar vs 14,2 bar) podría indicar un intento del sistema por mantener el flujo a través de membranas con mayor resistencia al paso, lo cual podría ser causado por incrustaciones inorgánicas. La ligera subida de la conductividad del permeado también podría ser un indicio de un fallo en la barrera de sal.",
+      "why_discardable": "El fouling inorgánico típicamente se manifestaría con un aumento más uniforme de la presión en todas las etapas, no predominantemente en la primera. Además, la conductividad del permeado solo ha subido ligeramente, y el pH y la composición iónica de la alimentación (TDS, Mn, Fe) no muestran cambios drásticos que sugieran precipitación inorgánica inminente. El aumento de ATP y TOC apunta más a un origen biológico."
+    },
+    {
+      "hypothesis": "Obstrucción física por partículas en la primera etapa de membranas RO.",
+      "why_plausible": "Un aumento rápido de la diferencia de presión (ΔP) en la primera etapa, junto con una disminución del caudal de permeado, podría ser causado por la acumulación de partículas sólidas en la superficie de las membranas. Los filtros de cartucho de 5 µm previos podrían haber fallado o estar saturados.",
+      "why_discardable": "Aunque es posible, la tendencia de subida progresiva del ΔP y la correlación con el aumento de ATP y TOC sugieren un proceso de crecimiento biológico más que una simple acumulación física de partículas inertes. Si fuera solo físico, un CIP ácido (realizado hace 30 días) debería haber tenido un efecto más duradero en la recuperación de la presión."
+    },
+    {
+      "hypothesis": "Fallo de membrana en la primera etapa de RO.",
+      "why_plausible": "Una membrana dañada (agujeros, roturas) podría permitir el paso de más sal, aumentando la conductividad del permeado, y también podría contribuir a un aumento de la diferencia de presión si el daño es significativo y afecta la integridad estructural.",
+      "why_discardable": "El fallo de membrana suele manifestarse con un aumento más drástico y repentino de la conductividad del permeado, y a menudo se acompaña de una disminución del caudal de permeado, pero no necesariamente de un aumento tan pronunciado del ΔP en la etapa afectada. La tendencia progresiva del ΔP y la correlación con el ATP y TOC apuntan a un fouling más que a un fallo estructural."
+    }
+  ],
+  "requested_data": "Concentración de biomasa (UFC/mL o mg/L de sólidos en suspensión) en el agua de alimentación a RO.",
+  "recommended_action": "Realizar una limpieza química de membranas (CIP) con un desinfectante adecuado (ej. hipoclorito de sodio a 0.5-1.0% de cloro activo, o un biocida específico como isotiazolinona a la dosis recomendada por el fabricante) en la primera etapa de RO, seguida de un enjuague y posterior reintroducción gradual del biocida en la alimentación a RO a una frecuencia que mantenga el ATP por debajo de 100 pg/mL.",
+  "decision_change_condition": "Si la concentración de biomasa en la alimentación a RO es muy baja (<100 UFC/mL) y el CIP no recupera significativamente el ΔP y el caudal de permeado, se debería investigar un posible fouling inorgánico o un fallo de membrana.",
+  "confidence": 85
+}

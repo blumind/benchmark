@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-005-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-005",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'exceso FeCl3 por calibración bomba + olvido' — captura operacional + mecanismo."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta Fe×8 + SDI + turbidez + color + ATP estable + cronología."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (bio, fallo filtros, corrosión upstream) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Reducir FeCl3 a 2.0 + CIP cítrico 2% pH 3-4 — ácido primero correcto para Fe."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide Fe total efluente filtros arena — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Specific: Fe filtros <0.1 → corrosión upstream."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

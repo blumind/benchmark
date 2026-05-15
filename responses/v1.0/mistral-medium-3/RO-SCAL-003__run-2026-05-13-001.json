@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-SCAL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:05:07Z",
+  "main_hypothesis": "Fouling por precipitación de sulfato de bario en las membranas del tren T-04 debido a la interrupción de la dosificación de antiincrustante.",
+  "key_signals": [
+    "Aumento marcado de ΔP en la etapa 1 cola del tren T-04 (de 0,9 a 2,3 bar)",
+    "Disminución del caudal de permeado en el tren T-04 (9%)",
+    "Aumento de la presión de alimentación del tren T-04 (de 60 a 67 bar)",
+    "Interrupción confirmada de la dosificación de antiincrustante en el tren T-04 durante 24 días",
+    "Concentración estable de bario en el rechazo a pesar del fouling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling biológico en las membranas del tren T-04",
+      "why_plausible": "El aumento de ΔP y la disminución del caudal de permeado pueden ser indicativos de fouling biológico.",
+      "why_discardable": "No hay indicios de un aumento en la materia orgánica o cambios en el pretratamiento que sugieran un problema biológico. Además, el cloro libre antes de la RO es estable y bajo, lo que reduce la probabilidad de fouling biológico."
+    },
+    {
+      "hypothesis": "Fouling por coloides o partículas en suspensión",
+      "why_plausible": "El aumento de ΔP y la disminución del caudal de permeado pueden ser causados por la acumulación de coloides o partículas.",
+      "why_discardable": "No hay cambios reportados en la turbiedad del agua de alimentación ni en el pretratamiento que sugieran un problema con coloides o partículas. Además, el fouling por coloides generalmente afectaría a todos los trenes de manera similar."
+    }
+  ],
+  "requested_data": "Análisis de autopsia de una membrana del tren T-04 para confirmar la presencia de sulfato de bario.",
+  "recommended_action": "Realizar un limpieza química de las membranas del tren T-04 con una solución de ácido cítrico al 2% a un pH de 3-4, seguido de una solución de hidróxido de sodio al 0,1% a un pH de 11-12, siguiendo el protocolo estándar de limpieza de membranas.",
+  "decision_change_condition": "Si el análisis de autopsia de la membrana no muestra presencia de sulfato de bario, la hipótesis principal sería descartada.",
+  "confidence": 85
+}

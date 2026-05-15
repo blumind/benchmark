@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-OXID-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:05:10Z",
+  "main_hypothesis": "Incomplete removal of residual hydrogen peroxide (H₂O₂) from the membrane elements following the CIP oxidation step, resulting in oxidative degradation of the polyamide active layer and membrane defects that allow increased salt passage.",
+  "key_signals": [
+    "Aclarado con permeado reducido a 45 min en lugar de 60 min de protocolo post-CIP",
+    "Verificación de H₂O₂ residual con tira reactiva de sensibilidad 1 mg/L (insuficiente para detectar 0,1–1 mg/L)",
+    "Aumento progresivo de conductividad permeado de 410 a 540 µS/cm en 5 días post-CIP",
+    "Bajada de rechazo de sales calculado de 99,28 % a 99,05 % (0,23 puntos porcentuales)",
+    "Bajada de caudal permeado del 4 % sin aumento de presión de alimentación",
+    "Rastros marrones en cartuchos de mantenimiento (indicativo de oxidación de materia orgánica o corrosión)",
+    "Desviación aislada en tren T-03; trenes vecinos sin desviación"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento biológico o depósito de materia orgánica en la membrana post-CIP",
+      "why_plausible": "El paso alcalino puede no haber eliminado completamente la materia orgánica; la DAF + UF intermitente puede permitir paso de biopolímeros; los rastros marrones podrían ser biofilm incipiente.",
+      "why_discardable": "El cloro libre antes de RO es < 0,02 mg/L (estable), lo que indica desinfección adecuada aguas arriba. El ensuciamiento biológico típicamente progresa más lentamente (días a semanas) y afecta primero a ΔP etapa 1, que aquí permanece estable. La conductividad permeado aumentaría por retención de iones, no por aumento de paso de sales. La ORP estable (+95 mV) no sugiere actividad microbiana."
+    },
+    {
+      "hypothesis": "Corrosión o degradación de la estructura de soporte de la membrana por residuos alcalinos no aclarados",
+      "why_plausible": "El pH de alimentación es 8,1 (neutro-alcalino); si el aclarado fue insuficiente, residuos alcalinos podrían atacar la capa de soporte. El hierro disuelto en alimentación es 0,03 mg/L (ligeramente elevado).",
+      "why_discardable": "La corrosión de soporte típicamente causa aumento de ΔP antes de degradación de rechazo. Aquí ΔP etapa 1 es estable (1,3 bar). El pH de alimentación es estable y no alcalino extremo (8,1). El protocolo incluye aclarado post-alcalino antes del paso H₂O₂, por lo que residuos alcalinos deberían haber sido removidos. El hierro disuelto es bajo y estable."
+    },
+    {
+      "hypothesis": "Daño mecánico o defecto de fabricación en la membrana activado durante el CIP",
+      "why_plausible": "Las membranas tienen 18 meses de edad; un defecto latente podría haber sido exacerbado por el estrés térmico (30 °C) o químico del CIP.",
+      "why_discardable": "Los defectos de fabricación típicamente se manifiestan inmediatamente tras instalación, no tras 18 meses de operación estable. El aumento de conductividad es progresivo (5 días), no abrupto. Otros trenes con membranas de edad similar no muestran desviación. La presión de alimentación es estable, lo que descarta ruptura catastrófica."
+    },
+    {
+      "hypothesis": "Contaminación de la alimentación post-UF por hierro o materia particulada durante el CIP",
+      "why_plausible": "El CIP puede haber movilizado depósitos en tuberías; el hierro disuelto en alimentación es 0,03 mg/L (ligeramente elevado vs. baseline 0,02 mg/L).",
+      "why_discardable": "El aumento de hierro es marginal (0,01 mg/L) y no explica un aumento de conductividad permeado de 130 µS/cm. La UF de respaldo debería retener particulado. El cloro libre es estable, indicando que la desinfección aguas arriba no fue comprometida. Otros trenes no muestran desviación, lo que sugiere que la alimentación común no fue contaminada."
+    }
+  ],
+  "requested_data": "Medición cuantitativa de H₂O₂ residual en el permeado del tren T-03 inmediatamente antes de retornar a producción (día -5), utilizando un método analítico con límite de detección ≤ 0,1 mg/L (p. ej., espectrofotometría o cromatografía).",
+  "recommended_action": "Detener inmediatamente la operación del tren T-03. Ejecutar un CIP de recuperación completo: (1) aclarado con permeado durante 90 min a caudal nominal para remover H₂O₂ residual; (2) paso alcalino (pH 12, 60 min, 30 °C) con NaOH 0,5 % p/p; (3) aclarado intermedio 30 min; (4) paso ácido (pH 3,5–4,0, 60 min, 30 °C) con HCl 0,1 % p/p para remover depósitos de oxidación; (5) aclarado final con permeado durante 90 min; (6) medición de H₂O₂ residual con método analítico (no tira reactiva) antes de retornar a producción. Si la conductividad permeado no se recupera a < 450 µS/cm tras CIP, evaluar reemplazo de elementos de membrana.",
+  "decision_change_condition": "Si la medición cuantitativa de H₂O₂ residual (día -5) fuera < 0,05 mg/L, o si tras el CIP de recuperación la conductividad permeado se normalizara a < 420 µS/cm y permaneciera estable durante 7 días, la hipótesis cambiaría a ensuciamiento reversible o artefacto de medición. Si se detectara hierro disuelto > 0,1 mg/L en la alimentación post-UF, la hipótesis cambiaría a contaminación de la alimentación.",
+  "confidence": 78
+}

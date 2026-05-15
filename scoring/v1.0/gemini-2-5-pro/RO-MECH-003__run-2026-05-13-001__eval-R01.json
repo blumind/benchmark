@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-003",
+    "subject_id": "gemini-2-5-pro",
+    "subject_version": "gemini-2.5-pro",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'mechanical failure high-pressure head seal O-ring end cap pressure vessel #2' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts brief (FRP shell crack, permeate tube O-ring, OXID)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Isolate + LOTO + replace head O-rings + permeate port seals + inspect grooves — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide dye penetrant test internal sealing groove FRP — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: dye test reveals structural crack FRP → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

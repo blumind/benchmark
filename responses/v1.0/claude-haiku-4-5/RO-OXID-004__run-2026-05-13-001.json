@@ -1,0 +1,48 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:58:24Z",
+  "main_hypothesis": "Exhaustion of the second CAG bed's adsorption capacity for chloramine removal, combined with upstream increase in municipal chloramine dosing, resulting in breakthrough of chloramine to the RO membrane and oxidative degradation of the polyamide active layer.",
+  "key_signals": [
+    "Cloramina tras CAG-2 increased from <0.05 mg/L (baseline) to 0.38 mg/L (current), indicating loss of removal capacity in the second bed",
+    "Cloramina tras CAG-1 increased from <0.05 mg/L to 0.42 mg/L, indicating the first bed is also saturated and cannot protect the second",
+    "ORP alimentación a RO increased from +60 mV to +210 mV, indicating oxidizing conditions consistent with chloramine breakthrough",
+    "Conductividad permeado increased progressively from 65 µS/cm to 280 µS/cm over 35 days, consistent with membrane degradation by oxidative attack",
+    "Rechazo de sales (calculado) dropped from 95.5% to 80.7%, indicating loss of membrane rejection capacity",
+    "Caudal permeado decreased 6% despite stable feed pressure and temperature, consistent with membrane fouling/degradation",
+    "Second CAG bed was last replaced 320 days ago; typical service life for chloramine removal under 2.5–3.5 mg/L is 200–250 days",
+    "Municipal chloramine increased from 2.5 to 3.2 mg/L on day -45, but plant was not notified; this accelerated CAG saturation",
+    "Test funcional on day -1 showed NaCl rejection of 95% vs 99% in new membrane, confirming active layer degradation"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling by colloidal or particulate matter (silica, iron oxide, or biofilm) rather than chemical oxidation",
+      "why_plausible": "Conductivity increase and flux decline are consistent with fouling; the municipal network experienced a coliform event on day -45, which could have mobilized biofilm or corrosion products. ΔP stage 1 is stable at 1.3 bar, which could mask early fouling if the cartridge filter is not yet clogged.",
+      "why_discardable": "Fouling does not explain the dramatic increase in permeate conductivity (280 µS/cm) while feed conductivity remained stable (1,450 µS/cm). Fouling reduces flux but does not increase salt passage. The ORP spike to +210 mV is inconsistent with particulate fouling and is a hallmark of oxidizing species (chloramine). The test on day -1 showed 95% NaCl rejection, which is consistent with polyamide degradation, not mechanical fouling."
+    },
+    {
+      "hypothesis": "Premature membrane aging due to high flux (21 L/m²·h) and elevated temperature (19.2 °C vs baseline 18.8 °C), independent of chloramine",
+      "why_plausible": "Membranes are 26 months old; polyamide degrades faster at elevated flux and temperature. The 0.4 °C rise is modest but cumulative over months. Flux decline and conductivity rise could reflect normal aging.",
+      "why_discardable": "The 0.4 °C temperature rise is within normal seasonal variation and does not account for the sharp, progressive conductivity increase starting on day -35 (coinciding with the municipal chloramine increase on day -45). The ORP spike to +210 mV is not explained by temperature or flux alone; it is a direct indicator of oxidizing species. The timeline of degradation (sharp onset after day -45) is inconsistent with gradual aging and consistent with a chemical insult."
+    },
+    {
+      "hypothesis": "Failure of the first CAG bed to remove chloramine, with the second bed compensating until it too became saturated",
+      "why_plausible": "The first bed was replaced 150 days ago, which is within its expected service life. However, if the replacement medium was defective, poorly installed, or if the bed was not properly backwashed, it could have failed early. The second bed (320 days old) would then bear the full chloramine load and saturate faster.",
+      "why_discardable": "While plausible, this does not explain why the first bed's chloramine concentration (0.42 mg/L) is nearly identical to the second bed's (0.38 mg/L). If the first bed had failed, it should show higher chloramine than the second. The parallel rise in both beds suggests both are saturated simultaneously, which is more consistent with an external increase in feed chloramine (the municipal increase on day -45) overwhelming both beds in sequence. The first bed, being fresher, would saturate last, not first."
+    },
+    {
+      "hypothesis": "Bypass of chloramine around the CAG beds due to channeling, poor distribution, or valve malfunction",
+      "why_plausible": "If feed water bypassed the CAG beds (e.g., via a stuck bypass valve or internal channeling), chloramine would reach the RO membrane without removal, causing the observed oxidative damage.",
+      "why_discardable": "Chloramine measurements after CAG-1 (0.42 mg/L) and CAG-2 (0.38 mg/L) show that water is passing through both beds, not bypassing them. If there were a bypass, the chloramine concentration after the beds would be much higher (closer to feed level of 0.38 mg/L at CAG inlet). The slight decrease from 0.42 to 0.38 mg/L across the second bed indicates some residual adsorption capacity, not complete bypass."
+    }
+  ],
+  "requested_data": "Breakthrough curve or residual adsorption capacity test on a sample of the second CAG bed medium (e.g., iodine number or chloramine adsorption isotherm at 0.5 mg/L Cl₂ in 1 hour contact time), compared to a fresh sample of the same medium batch.",
+  "recommended_action": "Immediately replace the second CAG bed with fresh activated carbon medium of the same specification (granular, 12×40 mesh or equivalent, iodine number ≥1000 mg/g). Before returning the RO system to service, dose sodium bisulfite (SBS) at 2.0–2.5 mg/L (as Na₂S₂O₅) upstream of the cartridge filter to reduce any residual chloramine to <0.05 mg/L Cl₂. Verify chloramine <0.05 mg/L after the cartridge filter and before the RO feed pump using a DPD colorimetric test or amperometric probe. Establish a formal notification protocol with the municipal water supplier to receive advance notice of any changes in chloramine dosing. Reduce the service interval of the second CAG bed from 320 days to 180 days, or implement continuous ORP monitoring (target <+100 mV) to trigger replacement before breakthrough.",
+  "decision_change_condition": "If the breakthrough curve test shows that the second CAG bed retains >80% of its original iodine number and >50% of its original chloramine adsorption capacity, or if chloramine concentration after CAG-2 drops to <0.10 mg/L within 24 hours of backwashing the second bed without replacement, then the root cause would shift to inadequate backwashing or poor distribution rather than exhaustion, and the recommended action would change to optimize backwash frequency and pressure.",
+  "confidence": 87
+}

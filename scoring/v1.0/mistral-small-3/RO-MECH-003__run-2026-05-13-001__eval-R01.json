@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-003",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fallo sello frontal cap final Tubo 2 + protrusión anómala + junta tórica dañada' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (fouling, rotura/perforación membrana, fuga FRP)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Aislar + test integridad 15 bar 10 min + reemplazar cap/junta + antiincrustante 2 ppm (operacional unrelated) — match gold core."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide integridad bar/tiempo — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: integridad estable → descarta principal."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

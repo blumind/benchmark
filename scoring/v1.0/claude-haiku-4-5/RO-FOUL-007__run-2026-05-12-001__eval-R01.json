@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-007-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-007",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling biofilm precursors inadequate pretreatment + storm + FeCl3'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta TOC + ATP + ΔP + SDI."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (SCAL, MECH cartridge, MECH defect, OXID) anclados."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Operacional: reducir FeCl3 + activar UF polishing — sin CIP de membrana."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide SEM/optical cartridge — discriminator pero no es el trigger bio del MH."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ΔP ≥2.2 + ATP <200 en 5d → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Falta CIP de membrana — acción operacional incompleta."
+}

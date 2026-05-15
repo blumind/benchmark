@@ -1,0 +1,49 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:56:29Z",
+  "main_hypothesis": "Daño oxidativo irreversible de las membranas de poliamida por exposición prolongada a cloraminas que atraviesan los lechos de CAG agotados, tras el aumento no notificado de la dosis de cloramina en la red municipal (de 2,5 a 3,2 mg/L) que superó la capacidad de adsorción residual de ambos lechos de carbón activado granular.",
+  "key_signals": [
+    "Cloramina total en alimentación a RO de 0,38 mg/L frente a baseline < 0,05 mg/L, indicando fallo del pretratamiento de CAG",
+    "Cloramina tras CAG-1 de 0,42 mg/L y tras CAG-2 de 0,38 mg/L, confirmando agotamiento de ambos lechos en serie",
+    "Caída drástica del rechazo de sales de 95,5 % a 80,7 %, patrón característico de degradación oxidativa de la capa activa de poliamida",
+    "Subida progresiva de conductividad de permeado de 65 a 280 µS/cm en ~35 días, consistente con daño químico acumulativo",
+    "ORP de alimentación a RO subió de +60 mV a +210 mV, indicando presencia de oxidante residual significativo",
+    "Cloro libre < 0,02 mg/L con cloramina total de 0,38 mg/L confirma que el oxidante es cloramina (no cloro libre), coherente con el ataque lento pero sostenido a la poliamida",
+    "Día -45: aumento de cloramina en la red municipal de 2,5 a 3,2 mg/L sin notificación a la planta, coincidiendo temporalmente con el inicio de la degradación",
+    "Test funcional del elemento líder muestra rechazo NaCl de 95 % vs 99 % de membrana nueva, confirmando daño irreversible a la membrana",
+    "ΔP estables en ambas etapas descartan fouling/scaling como causa principal de la pérdida de rendimiento",
+    "Caída de caudal de permeado del 6 % (de 500 a 470 m³/h) con aumento de presión de alimentación de 15,8 a 16,2 bar, consistente con pérdida de selectividad y compactación/degradación de la capa activa"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Degradación de membranas por cloro libre generado por descomposición parcial (breakpoint) de cloraminas en el sistema",
+      "why_plausible": "En ciertas condiciones de pH, temperatura y relación Cl₂/NH₃-N, las cloraminas pueden descomponerse generando cloro libre transitorio, que es mucho más agresivo para la poliamida. El ORP elevado (+210 mV) podría sugerir presencia de especies oxidantes más fuertes que la monocloramina.",
+      "why_discardable": "El cloro libre medido en alimentación a RO es < 0,02 mg/L de forma estable, lo que indica que no hay breakpoint significativo. El pH de 7,8 favorece la estabilidad de la monocloramina. Además, la degradación progresiva en 35 días es más consistente con exposición crónica a cloramina que con episodios de cloro libre."
+    },
+    {
+      "hypothesis": "Daño por presencia de bromo reactivo (bromaminas) formado a partir de bromuro en el agua de alimentación y cloramina residual",
+      "why_plausible": "En aguas con bromuro, la cloramina puede reaccionar formando bromaminas, que son significativamente más agresivas para las membranas de poliamida que la monocloramina sola. Aguas superficiales de California pueden contener bromuro elevado.",
+      "why_discardable": "No se reportan datos de bromuro en la alimentación. Aunque plausible, esta hipótesis sería un mecanismo agravante del mismo problema raíz (paso de cloramina por CAG agotado), no una causa raíz alternativa. La cronología del daño se correlaciona directamente con el aumento de cloramina en la red."
+    },
+    {
+      "hypothesis": "Degradación natural de membranas por envejecimiento (26 meses de servicio) combinada con compactación",
+      "why_plausible": "Las membranas tienen 26 meses de servicio y cierta pérdida de rendimiento es esperable. El operador inicialmente atribuyó la subida de conductividad al envejecimiento.",
+      "why_discardable": "La velocidad de degradación es demasiado rápida para envejecimiento normal (de 65 a 280 µS/cm en 35 días). El rechazo cayó de 95,5 % a 80,7 %, muy por debajo de lo esperable por envejecimiento. Las ΔP estables descartan compactación significativa. La correlación temporal con el aumento de cloramina y el agotamiento del CAG es demasiado fuerte."
+    },
+    {
+      "hypothesis": "Fouling orgánico o biológico que causa paso preferencial de sales (channeling) por deformación de los sellos o espaciadores",
+      "why_plausible": "El agua superficial puede tener carga orgánica variable y el biofouling es común en sistemas BWRO. El channeling puede causar aumento de conductividad de permeado.",
+      "why_discardable": "Las ΔP de ambas etapas están estables, lo cual es inconsistente con fouling significativo. El test funcional del elemento líder en banco mostró rechazo reducido (95 % vs 99 %), lo que confirma daño intrínseco a la membrana y no un problema de sellado o channeling. Además, el biofouling típicamente aumenta ΔP antes de afectar rechazo."
+    }
+  ],
+  "requested_data": "Autopsia de membrana con análisis ATR-FTIR de la capa activa de poliamida (relación de bandas amida I/amida II y presencia de grupos C-Cl) y test de tinción con cristal violeta, para confirmar y cuantificar el grado de degradación oxidativa de la poliamida y distinguirla de hidrólisis u otros mecanismos de daño.",
+  "recommended_action": "1) INMEDIATO: Instalar un sistema de dosificación de bisulfito de sodio (SBS) al 38 % en línea antes de los cartuchos de 5 µm, con dosis inicial de 3,0 mg/L de SBS (relación estequiométrica 1,34:1 respecto a Cl₂ como NH₂Cl, más margen de seguridad), controlado por ORP con setpoint ≤ +50 mV y alarma a +100 mV, para eliminar inmediatamente la cloramina residual y detener el daño adicional a las membranas. 2) CORTO PLAZO (< 7 días): Sustituir o regenerar ambos lechos de CAG, priorizando el CAG-2 (320 días de servicio) y verificar la capacidad de adsorción del CAG-1 (150 días) mediante test de número de yodo (objetivo > 900 mg/g). 3) MEDIO PLAZO: Evaluar mediante autopsia de un elemento representativo el grado de daño para decidir si es necesaria la sustitución parcial o total de los elementos de membrana. Con rechazo actual del 80,7 %, es muy probable que se requiera reemplazo completo del bastidor. 4) ADMINISTRATIVO: Establecer protocolo de comunicación formal con el proveedor regional de agua para recibir notificación anticipada de cambios en la dosificación de desinfectante.",
+  "decision_change_condition": "Si la autopsia de membrana (ATR-FTIR y tinción) mostrara la capa de poliamida intacta sin evidencia de degradación oxidativa, y en cambio revelara defectos mecánicos (delaminación, telescoping) o daño por hidrólisis ácida/alcalina, cambiaría el diagnóstico hacia fallo mecánico o de compatibilidad química no relacionado con la cloramina. Igualmente, si se demostrara que los niveles de bromuro en la alimentación superan 0,5 mg/L, el mecanismo principal se reclasificaría como ataque por bromaminas, aunque la causa raíz operativa (agotamiento de CAG) seguiría siendo la misma.",
+  "confidence": 95
+}

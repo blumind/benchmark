@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:50:40Z",
+  "main_hypothesis": "Daño oxidativo irreversible de las membranas de poliamida por exposición prolongada a cloro libre (≥0,42 mg/L durante ≈3-5 días), causado por el fallo de la dosificación de bisulfito sódico (SBS) debido a la estratificación del tanque de SBS con el agitador fuera de servicio, lo que redujo la concentración efectiva de SBS en el punto de aspiración de 25 % p/p a 0,2 % p/p, eliminando la neutralización del cloro residual antes de las membranas RO.",
+  "key_signals": [
+    "Cloro libre antes de RO = 0,42 mg/L frente a baseline < 0,02 mg/L: confirma que el cloro no está siendo neutralizado",
+    "ORP tras dosificación de SBS = +540 mV frente a baseline de -50 mV: indica ausencia total de capacidad reductora del SBS dosificado",
+    "Caudal de SBS dosificado = 0 L/h frente a baseline de 18 L/h: la bomba dosificadora no está entregando producto efectivo (o está parada)",
+    "Inspección del tanque de SBS revela agitador fuera de servicio y concentración en punto de aspiración de 0,2 % p/p vs 25 % p/p preparado: causa raíz directa de la subdosificación",
+    "Conductividad del permeado subió bruscamente de 380 a 720 µS/cm en ~2 días: consistente con degradación de la capa activa de poliamida por oxidación",
+    "Rechazo de sales cayó de 99,3 % a 98,7 %: pérdida de integridad de membrana, no explicable por fouling (ΔP estable)",
+    "ΔP de etapas 1 y 2 estables: descarta fouling/scaling como causa principal del deterioro de calidad de permeado",
+    "Secuencia temporal: mantenimiento del tanque SBS (día -8), relleno sin verificar agitador (día -7), oscilación de ORP (día -3), alarma de cloro silenciada (día -2), deterioro progresivo de conductividad (día -1 a día 0)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo mecánico de la bomba dosificadora de SBS (no solo estratificación del tanque)",
+      "why_plausible": "El caudal de SBS registrado es 0 L/h, lo que podría indicar que la bomba está parada o con válvula de aspiración obstruida, independientemente de la estratificación del tanque. El mantenimiento de día -8 pudo afectar la bomba.",
+      "why_discardable": "La inspección de día -1 identificó específicamente la estratificación del tanque y el agitador fuera de servicio como causa. Además, el operario reportó que el tanque bajó más rápido de lo esperado (día -5), lo que sugiere que la bomba sí estuvo funcionando pero aspirando solución diluida. El caudal 0 L/h del día 0 puede ser consecuencia de haber vaciado la capa diluida o de un fallo posterior. La causa raíz documentada es la estratificación."
+    },
+    {
+      "hypothesis": "Degradación de membranas por hidrólisis alcalina o defecto de fabricación, no por oxidación por cloro",
+      "why_plausible": "Las membranas tienen 14 meses y fueron sustitución parcial; un lote defectuoso podría mostrar pérdida prematura de rechazo. La hidrólisis a pH elevado también degrada poliamida.",
+      "why_discardable": "El pH de alimentación es estable a 8,1, dentro del rango operativo normal para membranas SWRO. La correlación temporal entre la exposición a cloro libre documentada (0,42 mg/L) y la caída de rechazo es muy fuerte. Un defecto de fabricación no explicaría la coincidencia con el fallo del sistema SBS."
+    },
+    {
+      "hypothesis": "Fallo de O-rings o interconectores en los pressure vessels, causando bypass interno de concentrado a permeado",
+      "why_plausible": "Un bypass mecánico explicaría el aumento de conductividad del permeado sin cambio en ΔP. Podría haber sido causado por estrés térmico o mecánico durante operación normal.",
+      "why_discardable": "Un fallo de O-rings típicamente afecta trenes individuales de forma localizada y no muestra la progresión gradual observada (380→510→720 µS/cm en 2 días). Además, no explicaría por qué el deterioro coincide exactamente con la exposición documentada a cloro libre. Se esperaría que un bypass mecánico fuera más abrupto y no correlacionado con ORP/cloro."
+    }
+  ],
+  "requested_data": "Test de sondeo de permeado (probing) elemento por elemento en al menos 2-3 trenes representativos, midiendo conductividad del permeado de cada elemento individual, para determinar si el daño oxidativo es uniforme en todos los elementos o localizado en los elementos frontales (lo que confirmaría daño por cloro y permitiría evaluar la extensión del daño y la viabilidad de sustitución parcial vs. total).",
+  "recommended_action": "1) INMEDIATO: Parar todos los trenes RO afectados para detener la exposición a cloro. 2) Reparar el agitador del tanque de SBS y verificar homogeneidad de la solución (concentración objetivo 25 % p/p, verificar con densímetro: densidad ≈1,17 g/mL a 20 °C). 3) Antes de reiniciar, confirmar que el caudal de SBS es ≥18 L/h y que el ORP post-dosificación es < +50 mV y el cloro libre residual < 0,02 mg/L. 4) Realizar flush de los bastidores con permeado libre de cloro durante 30 minutos. 5) Reiniciar un tren piloto y monitorizar conductividad de permeado: si el rechazo no recupera a ≥99,0 % en las primeras 2 horas, el daño es irreversible y se debe planificar sustitución de elementos. 6) Implementar interlock automático que pare la alimentación de alta presión si el ORP antes de RO supera +200 mV o el cloro libre supera 0,05 mg/L. 7) Revisar procedimiento de mantenimiento del tanque de SBS para incluir verificación obligatoria del agitador antes de reanudar operación.",
+  "decision_change_condition": "Si el test de probing revelara que la pérdida de rechazo está concentrada en un solo pressure vessel o en elementos de un único lote de fabricación, y no correlacionada con la posición frontal (mayor exposición a cloro), cambiaría mi diagnóstico hacia un defecto de fabricación o fallo mecánico de O-rings/interconectores en lugar de daño oxidativo generalizado por cloro.",
+  "confidence": 95
+}

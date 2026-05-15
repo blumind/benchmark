@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-007-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-007",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'bioensuciamiento cabeza primera etapa por carga orgánica biodegradable + biomasa post-temporal'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta signals con cronología post-storm."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (Fe coloidal, particulado, SCAL, compactación) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino NaOH 0.1% + SDS 0.1% pH 11.5 ≤35°C + 'sin oxidantes' explícito."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ATP foulant spacer alimentación — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ATP bajo + Fe predominante → Fe coloidal; cristalino → SCAL."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

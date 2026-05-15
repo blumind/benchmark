@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:05:57Z",
+  "main_hypothesis": "Preservación inadecuada de los elementos de membrana con bisulfito + glicerina",
+  "key_signals": [
+    "Presión diferencial en etapas elevada y estable",
+    "Caudal de permeado por debajo de lo esperado",
+    "Conductividad del permeado elevada y luego en descenso",
+    "Rechazo de sales ligeramente por debajo de lo esperado",
+    "Presencia de glicerina en permeado"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Problema de presión en el sistema de bombeo",
+      "why_plausible": "La presión de alimentación es ligeramente superior a la esperada.",
+      "why_discardable": "La presión diferencial en las etapas es estable, lo que indica un problema localizado en las membranas."
+    },
+    {
+      "hypothesis": "Contaminación de la alimentación con glicerina",
+      "why_plausible": "Se detectó glicerina en el permeado, lo que podría indicar contaminación en la alimentación.",
+      "why_discardable": "La conductividad de la alimentación es estable y no se informa de otros problemas de contaminación."
+    }
+  ],
+  "requested_data": "Concentración de bisulfito en la solución de preservación de los elementos de membrana",
+  "recommended_action": "Detener el tren T-05, drenar y reemplazar la solución de preservación de los elementos de membrana con la correcta según el proveedor habitual. Realizar el commissioning siguiendo el procedimiento recomendado por el nuevo proveedor.",
+  "decision_change_condition": "Si la concentración de bisulfito en la solución de preservación es la adecuada y no hay presencia de glicerina, se debe considerar otra causa para los problemas en el arranque del tren T-05.",
+  "confidence": 90
+}

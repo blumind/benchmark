@@ -1,0 +1,31 @@
+{
+  "case_id": "RO-NOWE-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:00:13Z",
+  "main_hypothesis": "Degradación del bisulfito sódico (SBS) en el sistema",
+  "key_signals": [
+    "Aumento marcado del sulfito residual en permeado",
+    "ORP anómalamente bajo en alimentación y permeado"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Contaminación biológica en el sistema",
+      "why_plausible": "El operario añadió SBS adicional como precaución biológica.",
+      "why_discardable": "El aumento marcado del sulfito residual en permeado es más indicativo de degradación del SBS que de contaminación biológica."
+    },
+    {
+      "hypothesis": "Fallo en el pretratamiento de filtración",
+      "why_plausible": "La subida lenta de ΔP en etapa 2 y la subida hacia lo esperado de la presión de alimentación podrían indicar una obstrucción en el sistema de filtración.",
+      "why_discardable": "El aumento marcado del sulfito residual en permeado y los valores anómalamente bajos de ORP en alimentación y permeado no son consistentes con un fallo en el pretratamiento de filtración."
+    }
+  ],
+  "requested_data": "Concentración de oxígeno disuelto en alimentación y permeado",
+  "recommended_action": "Realizar un análisis de la concentración de oxígeno disuelto en alimentación y permeado para confirmar la degradación del SBS. Si se confirma, reemplazar el SBS y monitorear el sistema para evitar futuras degradaciones.",
+  "decision_change_condition": "Si la concentración de oxígeno disuelto en alimentación y permeado es similar y no indica degradación del SBS, reconsiderar la hipótesis de degradación del SBS.",
+  "confidence": 85
+}

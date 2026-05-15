@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-MECH-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:31:02Z",
+  "main_hypothesis": "Mechanical failure of an interconnector O-ring or damage to the permeate tube coupling within the fourth pressure vessel of train T-02, likely caused by improper installation or a defective O-ring.",
+  "key_signals": [
+    "Probe test showing 4,100 µS/cm in Tubo 4 vs 380-420 µS/cm in others",
+    "Sudden increase in permeate conductivity immediately following maintenance",
+    "Operator report of a 'rigid' O-ring during installation",
+    "Pressure test confirming brine bypass in Tubo 4"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane element damage (pinhole or glue line failure) in the fourth vessel.",
+      "why_plausible": "Membrane damage causes localized high conductivity in the permeate stream.",
+      "why_discardable": "The pressure test specifically identified a brine bypass (leakage) rather than a membrane integrity issue, and the timing correlates perfectly with the O-ring replacement."
+    },
+    {
+      "hypothesis": "Improper seating of the end-cap adapter.",
+      "why_plausible": "An improperly seated end-cap can cause brine to bypass the O-ring seal.",
+      "why_discardable": "The probe test isolated the issue to the specific vessel, and the maintenance report specifically highlighted the difficulty with an interconnector O-ring, which is more prone to failure than the end-cap adapter."
+    }
+  ],
+  "requested_data": "Visual inspection report of the interconnector O-rings and the permeate tube coupling surfaces inside the fourth pressure vessel of T-02.",
+  "recommended_action": "Isolate train T-02, depressurize, open the fourth pressure vessel, inspect all interconnector O-rings and permeate tube couplings for damage or improper seating, replace any compromised O-rings with new, lubricated ones using a manufacturer-approved lubricant, and perform a vacuum decay test or low-pressure leak test before returning to service.",
+  "decision_change_condition": "If the probe test had shown elevated conductivity across all tubes in the train rather than being isolated to Tubo 4, the diagnosis would shift to a systemic issue such as chemical damage to the membranes or a failure in the CIP procedure.",
+  "confidence": 95
+}

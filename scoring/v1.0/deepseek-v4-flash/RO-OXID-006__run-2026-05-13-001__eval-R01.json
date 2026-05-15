@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-006",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'oxidative damage por ClO2 piscifactoría + SBS insuficiente' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (envejecimiento/compactación, biofouling, MECH O-ring)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Increase SBS 4→12 mg/L + verify ORP <100 + total chlorine <0.05 — match gold (aumentar SBS)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ClO2 concentration amperométrico/DPD-glicina — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: ClO2 <0.02 + conductividad rise persiste → switch a envejecimiento/non-oxidative."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

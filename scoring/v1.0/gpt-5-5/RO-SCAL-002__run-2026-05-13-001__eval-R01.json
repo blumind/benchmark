@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-002",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'sílice etapa 2 + operar 82% + sílice rechazo > límite antiincrustante sin recalcular' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (CaCO3, biofouling, particulado, daño químico)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Reducir recovery 75% manteniendo sílice ≤260 mg/L + CIP alcalino 1.0% pH 11.5-12 35°C 60 min — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide composición SEM-EDS/FTIR %SiO2/CaCO3/orgánico — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: depósito sin sílice + predominio CaCO3/biomasa/particulado → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

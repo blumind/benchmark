@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-008-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-008",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling severo primera etapa + preservación incorrecta 28d sin bisulfito'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals conectadas."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (SCAL sílice, SCAL Ca, particulado, OXID degradación) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino NaOH 0.1% + tensoactivo no iónico 0.05% pH 11.0-11.5 — gold-aligned."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ATP hisopo spacer elemento líder — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ATP bajo + material recuperado dominado por inorgánico → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

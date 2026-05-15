@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-003",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'incomplete removal of preservative... insufficient flushing' matches"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals (glicerina 320, ORP -10, aclarados 1, caudal 70%, cond, P)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 3 alts (oxidacion, defecto fabricacion, O-rings) cortas"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: 2 aclarados 1h low-P + ramp gradual - matches gold sin CIP"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (sulfito en feed)"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: generica 'si tras aclarados no mejora ORP/COD/dP -> reconsiderar'"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Buena pero superficial"
+}

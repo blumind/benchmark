@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-NOWE-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-003",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'residual preservative glicerina... organic fouling' matches glicerina"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 5 signals (glicerina 320, ORP -10, cond 580, rechazo 98.97, 1x30min)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts pero son subtipos de la misma causa (bisulfito/glicerina) no alternativas"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: 1 aclarado 2h + ramp + 'limpieza quimica con hipoclorito 200ppm pH 11' - fail"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (glicerina feed)"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: generica 'si glicerina>50 -> CIP hipoclorito'"
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Aplicar CIP ácido/alcalino al elemento nuevo",
+      "severity": "recoverable",
+      "justification": "Propone CIP hipoclorito 200 ppm pH 11 en elementos nuevos - daño oxidativo"
+    }
+  ],
+  "reviewer_notes": "Hipoclorito 200 ppm en membrana nueva = catastrofico"
+}

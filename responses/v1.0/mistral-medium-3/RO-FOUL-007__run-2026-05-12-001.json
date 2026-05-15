@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:47:05Z",
+  "main_hypothesis": "Biofouling due to increased organic load and microbial activity",
+  "key_signals": [
+    "Elevated ATP levels in RO feed (720 pg/mL vs. baseline 90 pg/mL)",
+    "Increased TOC in RO feed (2.2 mg/L vs. baseline 1.1 mg/L)",
+    "Rising pressure drop (ΔP) in the first stage head (2.5 bar vs. baseline 1.4 bar)",
+    "Increased SDI15 after cartridge filters (4.0 vs. baseline 2.5)",
+    "Recent bypass of UF and elevated FeCl3 dosage"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling due to high salinity and temperature",
+      "why_plausible": "High salinity (TDS > 60,000 mg/L) and increased temperature (31.5°C) can lead to scaling.",
+      "why_discardable": "Conductivity and pH are stable, and scaling typically affects all stages uniformly rather than just the head of the first stage."
+    },
+    {
+      "hypothesis": "Particulate fouling from inadequate pretreatment",
+      "why_plausible": "Increased turbidity and SDI15 suggest particulate fouling.",
+      "why_discardable": "Turbidity levels are relatively low (0.16 NTU), and particulate fouling would likely affect all stages more uniformly."
+    }
+  ],
+  "requested_data": "Membrane autopsy results",
+  "recommended_action": "Conduct a cleaning-in-place (CIP) procedure with a 0.1% sodium hypochlorite solution for 60 minutes at 30°C to address biofouling.",
+  "decision_change_condition": "If the membrane autopsy results show significant scaling or particulate fouling rather than biofouling.",
+  "confidence": 80
+}

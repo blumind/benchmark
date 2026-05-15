@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-005-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-005",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'sobredosificación FeCl3 4 mg/L → depósitos hidróxido férrico cabeza etapa 1'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "9 señales con cronología completa (cambio bomba → consigna olvidada → Fe en feed → ΔP)."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (bio, fallo filtros, calibración bomba, SCAL) anclados."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Cítrico 2% a pH 2.0 — borde de spec poliamida (gold expects pH 3.0-3.5); 2h recirc + 1h remojo agresivo."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide análisis elemental EDX/ICP — match SEM-EDS del gold."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición OR: depósito orgánico OR (ácido no recupera + ATP >1000) → biofouling."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Pierde C4 por pH 2.0 (gold expects pH 3.0-3.5) con duración alta."
+}

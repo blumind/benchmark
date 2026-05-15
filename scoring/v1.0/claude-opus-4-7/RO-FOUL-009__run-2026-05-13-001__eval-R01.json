@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-009-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-009",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Captura 2 de 3 hipótesis (antiespumante+polímero) en MH; covers 3rd in alts."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta TS 58 vs 72 + hidrocarburos + TOC + depósito gelatinoso descarta Fe."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (bio, hidrocarburos, polímero, coloidal inorgánico) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Reducir flux + monitoreo + coordinar refinería + planta vecina + activar bypass — gold-aligned."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia/hisopado FTIR — match accepted (identify-first approach)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: FTIR polímero predominante o Fe/Al → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

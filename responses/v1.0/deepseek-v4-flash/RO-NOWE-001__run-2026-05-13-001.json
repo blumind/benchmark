@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-NOWE-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:57:07Z",
+  "main_hypothesis": "Residual propylene glycol from preservation adsorbed on membrane surfaces, causing reduced effective permeability (non-wetting) and elevated permeate conductivity, being slowly displaced by low-pressure circulation.",
+  "key_signals": [
+    "Caudal permeado tren al 36% del nominal a presión completa post-arranque, con tendencia de subida lenta",
+    "Conductividad permeado 480 µS/cm frente a 400 µS/cm esperado, con tendencia de bajada lenta",
+    "ΔP etapa 1 (0,7 bar) y etapa 2 (0,4 bar) significativamente inferiores a los esperados (~1,2 y ~0,8 bar) con tendencia de subida lenta",
+    "Mejora progresiva de caudal y conductividad tras 24 h de circulación a baja presión (20% carga)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Compactación irreversible de las membranas por cambios de temperatura en almacenamiento (4–22 °C) y/o choque osmótico durante el arranque.",
+      "why_plausible": "La temperatura de almacenamiento alcanzó 4 °C, cerca del límite recomendado, y el cambio brusco a presión nominal pudo provocar compactación.",
+      "why_discardable": "La compactación produce pérdida permanente de flujo sin recuperación significativa, mientras que aquí el caudal mejoró del 36% al 78% en días."
+    },
+    {
+      "hypothesis": "Bioensuciamiento o incrustación durante el almacenamiento por fallo del preservante (bisulfito agotado).",
+      "why_plausible": "El bisulfito se oxida con el tiempo; si no se mantuvo la concentración, podría haber proliferación microbiana o precipitación de sales.",
+      "why_discardable": "El bioensuciamiento o scaling incrementaría la ΔP, no la reduciría; además, la mejora con circulación simple es atípica para estos fenómenos."
+    }
+  ],
+  "requested_data": "Concentración de propilenglicol (mg/L) en el permeado recogido durante el primer aclarado tras el arranque.",
+  "recommended_action": "Continuar circulación a baja presión (20–30% de la presión nominal) con permeado o agua de alimentación durante 48 horas adicionales, monitorizando cada 6 h el caudal de permeado y la conductividad. Si la mejora se estanca por debajo del 90% del caudal nominal, ejecutar una limpieza química alcalina con NaOH al 0,1% p/p y EDTA al 0,1% p/p a 35 °C durante 1 hora de recirculación a baja presión.",
+  "decision_change_condition": "Si tras 48 horas de circulación a baja presión el caudal de permeado no alcanza el 90% del nominal y la conductividad del permeado supera los 450 µS/cm, y una muestra de permeado analizada por TOC muestra menos de 1 mg/L de carbono orgánico total (indicando ausencia de propilenglicol residual), entonces el diagnóstico se desplazaría hacia daño irreversible de las membranas (compactación o degradación química).",
+  "confidence": 80
+}

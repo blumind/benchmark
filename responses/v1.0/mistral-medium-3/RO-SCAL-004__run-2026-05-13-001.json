@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:12:24Z",
+  "main_hypothesis": "Sulfato de calcio (CaSO₄) precipitando en las membranas debido a la sobresaturación causada por el aumento del recovery y la mayor concentración de sulfato en la alimentación.",
+  "key_signals": [
+    "Aumento marcado en ΔP etapa 3",
+    "Aumento en la presión de alimentación",
+    "Disminución del caudal de permeado",
+    "Aumento en la concentración de sulfato en el rechazo",
+    "Índice de saturación (SI) de CaSO₄ de 1.1 (sobresaturado)",
+    "Cambio en el mix de aguas regeneradas con mayor proporción de aguas industriales con sulfato más alto"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling orgánico o biológico en las membranas.",
+      "why_plausible": "El TOC en la alimentación es estable pero presente, y podría acumularse con el tiempo.",
+      "why_discardable": "El CIP alcalino reciente no resolvió el problema, lo que sugiere que no es fouling orgánico. Además, el cloro libre es bajo y estable, reduciendo la probabilidad de fouling biológico."
+    },
+    {
+      "hypothesis": "Fouling por sílice en las membranas.",
+      "why_plausible": "La sílice en la alimentación es relativamente alta (22 mg/L) y su concentración en el rechazo ha aumentado.",
+      "why_discardable": "Aunque la sílice puede contribuir, el aumento en el índice de saturación de CaSO₄ y la correlación con el aumento de sulfato en el rechazo sugieren que el sulfato de calcio es el principal problema."
+    }
+  ],
+  "requested_data": "Análisis de autopsia de membrana para confirmar la presencia de CaSO₄.",
+  "recommended_action": "Reducir el recovery al 80% y ajustar la dosis de antiincrustante a 3.0 ppm para manejar la mayor concentración de sulfato en la alimentación.",
+  "decision_change_condition": "Si el análisis de autopsia de membrana no muestra presencia significativa de CaSO₄, se reconsideraría la hipótesis principal.",
+  "confidence": 85
+}

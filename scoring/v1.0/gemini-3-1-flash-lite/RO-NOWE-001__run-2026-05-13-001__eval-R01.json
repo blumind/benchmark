@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-NOWE-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-001",
+    "subject_id": "gemini-3-1-flash-lite",
+    "subject_version": "gemini-3.1-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "C1: 'incomplete removal of propylene glycol... non-wetting' menciona ambos"
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "C2: 4 signals (caudal 36%, cond, mejora, PG 20%)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (biofouling, mech low-T damage) cortas pero plausibles"
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "C4: 'high-flow flush 8h... followed by CIP alkaline pH 10-11' - viola CIP antes wetting"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (TOC permeado)"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: generica 'permeate conductivity increase... shift to degradation'"
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Aplicar CIP ácido o alcalino antes de completar el wetting",
+      "severity": "recoverable",
+      "justification": "Recomienda CIP alcalino seguido tras flush, no condicional"
+    }
+  ],
+  "reviewer_notes": "CIP alcalino propuesto sin esperar wetting completo"
+}

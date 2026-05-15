@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-003",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fallo sello cabeza cap end seal Tubo 2 + bypass concentrado al permeado' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (interconector ATD, telescoping, desgaste pista cap, OXID generalizada)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Sacar Tubo 2 + LOTO + retirar cap + reemplazar O-ring + pulir pista FRP + glicerina USP — match gold detallado."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide conductividad permeato antes/después + test hidrostático — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi: tras reemplazo + test, conductividad sigue alta + probe muestra elemento concreto → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

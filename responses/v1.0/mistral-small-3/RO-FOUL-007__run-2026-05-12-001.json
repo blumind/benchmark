@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:44:35Z",
+  "main_hypothesis": "Biofouling in the first stage of the SWRO train due to elevated organic load (TOC and ATP) and reduced UF pre-treatment efficiency, exacerbated by seasonal temperature increase and suboptimal FeCl₃ dosing.",
+  "key_signals": [
+    "Sustained rise in ΔP at the head of stage 1 (2.5 bar vs baseline 1.4 bar) with stable ΔP at the tail, indicating localized fouling at the inlet of the first stage",
+    "Marked increase in TOC (2.2 mg/L vs baseline 1.1 mg/L) and ATP (720 pg/mL vs baseline 90 pg/mL) in RO feed, indicating elevated biological activity and organic matter",
+    "SDI₁₅ at 4.0 (vs baseline 2.5) and turbidity at 0.16 NTU (vs baseline 0.07 NTU) at cartridge filter outlet, suggesting poor particulate/organic removal efficiency",
+    "Temporary bypass of UF pre-treatment (days -22 to -18) during a high-turbidity event, followed by elevated FeCl₃ dosing (2 mg/L vs baseline 0.8 mg/L) which may have contributed to organic load accumulation",
+    "Seasonal temperature increase to 31.5 °C, which accelerates biological growth and reduces oxygen solubility, promoting biofouling conditions",
+    "Conductivity of permeate rising slightly (470 µS/cm vs baseline 440 µS/cm), consistent with early-stage biofouling reducing membrane efficiency"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Inorganic scaling (e.g., CaCO₃, CaSO₄) due to high TDS (>60,000 mg/L) and recovery of 40%",
+      "why_plausible": "High salinity and recovery increase scaling potential; ΔP rise could be due to scale deposition on membrane surface.",
+      "why_discardable": "Scaling typically causes uniform ΔP rise across the stage, not localized to the head. Conductivity of permeate is only slightly elevated, and anti-scalant dosing is maintained at 2.8 ppm, which is standard for this salinity. No mention of Langelier or Stiff-Davis indices."
+    },
+    {
+      "hypothesis": "Particulate fouling due to inadequate pre-treatment performance (SDI > 3.0, turbidity > 0.1 NTU)",
+      "why_plausible": "SDI and turbidity at cartridge outlet are elevated, indicating poor particulate removal. ΔP rise could be due to particle deposition on membrane surface.",
+      "why_discardable": "Particulate fouling usually causes a more uniform ΔP rise across the stage, not concentrated at the head. The marked increase in TOC and ATP suggests biological activity is a more dominant factor. FeCl₃ dosing was increased, which should help with particulate removal."
+    },
+    {
+      "hypothesis": "Chemical degradation of membranes due to chlorine or oxidants (e.g., chloramine residuals)",
+      "why_plausible": "Oxidative damage can cause ΔP rise and increased permeate conductivity. The plant reports no routine chloramination, but accidental exposure is possible.",
+      "why_discardable": "No evidence of chlorine residuals in the data. Conductivity rise is minor, and membranes are mixed-age (40% new), making uniform degradation unlikely. No mention of membrane integrity tests or chlorine breakthrough."
+    },
+    {
+      "hypothesis": "Colloidal fouling due to iron hydroxide precipitation from FeCl₃ overdosing",
+      "why_plausible": "FeCl₃ dosing was increased to 2 mg/L (from baseline 0.8 mg/L) during and after the UF bypass event, which could lead to colloidal iron hydroxide formation and fouling.",
+      "why_discardable": "While FeCl₃ overdosing can cause colloidal fouling, the marked increase in TOC and ATP suggests biological fouling is more likely. Colloidal fouling typically causes a more uniform ΔP rise and may not explain the localized head ΔP increase. Conductivity rise is minor."
+    }
+  ],
+  "requested_data": "Membrane autopsy report (e.g., % flux decline, presence of biofilm, inorganic deposits, or organic residues) from a representative element in the first stage head.",
+  "recommended_action": "Immediately reduce FeCl₃ dosing to baseline 0.8 mg/L and switch to continuous low-dose FeCl₃ (0.5–0.8 mg/L) to minimize colloidal iron hydroxide formation. Perform an emergency CIP with a high-pH bio-dispersant (e.g., 0.1 % NaOH + 0.05 % surfactant) at 30 °C for 6 hours, followed by a low-pH step (0.2 % citric acid) to remove any inorganic scale. Monitor ΔP hourly and conduct a 24-hour flux test to assess recovery.",
+  "decision_change_condition": "If the membrane autopsy report shows >50 % inorganic deposits (e.g., CaCO₃, CaSO₄) or if ΔP does not decrease by >30 % after the CIP, revise diagnosis to inorganic scaling or mixed fouling.",
+  "confidence": 85
+}

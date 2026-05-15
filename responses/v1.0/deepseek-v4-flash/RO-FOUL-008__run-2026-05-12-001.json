@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:18:55Z",
+  "main_hypothesis": "Biofouling of the RO membranes due to microbial growth during the 28-day shutdown when membranes were left stagnant in permeate without biocide preservation.",
+  "key_signals": [
+    "ATP en alimentación RO: 980 pg/mL (post-arranque) vs 60 pg/mL (baseline) – subida marcada",
+    "ΔP etapa 1: 1,5 bar (post-arranque) vs 0,9 bar (baseline) – subida del 67%",
+    "Caudal permeado planta: 192 m³/h vs 208 m³/h – bajada del 8%",
+    "Conductividad permeado: 110 µS/cm vs 95 µS/cm – subida",
+    "Turbidez salida cartuchos: 0,12 NTU vs 0,06 NTU – subida",
+    "TOC alimentación: 1,5 mg/L vs 1,2 mg/L – subida ligera",
+    "Olor sulfhídrico en concentrado al arranque"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling by silica or calcium salts on the membrane surface.",
+      "why_plausible": "Feed water has moderate hardness and silica at 32-33 mg/L; recovery is 75%, which can concentrate silica beyond saturation. The anti-scalant dose (10 ppm) may have been insufficient or degraded during the shutdown.",
+      "why_discardable": "Silica and calcium feed concentrations are stable and near baseline; no significant increase in ΔP stage 2 (only 0,1 bar above baseline) which is typical for scaling; the sharp rise in ATP and presence of hydrogen sulfide strongly point to biological activity rather than inorganic scaling."
+    },
+    {
+      "hypothesis": "Colloidal fouling from particles passing through the cartridge filters.",
+      "why_plausible": "Turbidity after cartridge filters increased from 0,06 to 0,12 NTU, indicating possible breakthrough of particulates. This could cause increased ΔP and flux decline.",
+      "why_discardable": "The turbidity increase is modest (0,06 NTU) and still well below typical fouling thresholds. The ATP spike (980 pg/mL) is orders of magnitude above baseline and cannot be explained by inert particles. Colloidal fouling would not produce hydrogen sulfide odor."
+    },
+    {
+      "hypothesis": "Membrane oxidation or hydrolysis due to chlorine or other oxidant exposure during shutdown.",
+      "why_plausible": "If the permeate used to flood the membranes contained residual chlorine or if there was cross-contamination, oxidation could increase salt passage and reduce flux.",
+      "why_discardable": "No chlorine or oxidant was reported in the feed or permeate; the plant uses groundwater with no chlorination step. The ATP spike and hydrogen sulfide odor are inconsistent with oxidation damage. Oxidation typically causes a rapid, uniform increase in salt passage, not a gradual ΔP rise."
+    }
+  ],
+  "requested_data": "ATP concentration in the RO feed water (pg/mL) measured at the same location as the baseline, with the same method, to confirm the trend and rule out a one-time spike.",
+  "recommended_action": "Initiate a low-dose chlorine dioxide (ClO2) shock treatment at 0,5 mg/L in the feed water for 30 minutes, followed by a flush to drain, to control biological growth. Then perform a low-pH cleaning (citric acid at 2% w/w, pH 2-3) to remove any biofilms and associated foulants. Monitor ΔP and permeate conductivity during and after cleaning.",
+  "decision_change_condition": "If the ATP in RO feed returns to baseline (<100 pg/mL) after a simple flush without biocide, and the hydrogen sulfide odor disappears, then the diagnosis would shift to a temporary biological contamination that was flushed out, rather than established biofouling requiring chemical cleaning.",
+  "confidence": 85
+}

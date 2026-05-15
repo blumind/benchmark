@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:46:12Z",
+  "main_hypothesis": "Biofouling en las membranas de ósmosis inversa debido a la degradación del pretratamiento y aumento de materia orgánica.",
+  "key_signals": [
+    "Aumento marcado de SDI₁₅ a la salida de cartuchos (4,8 frente a baseline de 2,5)",
+    "Aumento marcado de ATP en alimentación RO (1.200 pg/mL frente a baseline de 80 pg/mL)",
+    "Aumento de TOC en alimentación (2,8 mg/L frente a baseline de 1,4 mg/L)",
+    "Aumento progresivo de ΔP en etapa 1 (2,8 bar frente a baseline de 1,2 bar)",
+    "Disminución del caudal de permeado (245 m³/h frente a baseline de 268 m³/h)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por incrustaciones inorgánicas",
+      "why_plausible": "Aumento en la presión de alimentación y ΔP en etapa 1, junto con una ligera subida en la conductividad del permeado.",
+      "why_discardable": "El aumento de SDI, ATP y TOC sugiere un problema orgánico más que inorgánico. Además, la dosis de antiincrustante se aumentó recientemente, lo que debería mitigar incrustaciones inorgánicas."
+    },
+    {
+      "hypothesis": "Degradación física de las membranas",
+      "why_plausible": "Las membranas tienen 22 meses de uso, lo que podría indicar envejecimiento.",
+      "why_discardable": "La degradación física generalmente no explicaría el aumento en SDI, ATP y TOC, que son indicativos de problemas en el pretratamiento y biofouling."
+    }
+  ],
+  "requested_data": "Análisis microbiológico de las membranas (recuento de bacterias en la superficie de las membranas, UFC/cm²).",
+  "recommended_action": "Realizar una limpieza química de las membranas con una solución de hidróxido de sodio (NaOH) al 0,1 % y un detergente alcalino compatible con las membranas, seguido de un enjuague a fondo.",
+  "decision_change_condition": "Si el análisis microbiológico de las membranas no muestra un recuento elevado de bacterias, la hipótesis de biofouling sería menos probable y se reconsideraría la causa raíz.",
+  "confidence": 85
+}

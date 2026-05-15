@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-009-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-009",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Captura 2 de 3 hipótesis (antiespumante+hidrocarburos); polímero en alt; cubre 3 candidatos vivos."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "6 señales discriminantes con cronología; depósito gelatinoso descarta Fe explícitamente."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (bio FOUL, polímero catiónico, coloidal pretrat) con why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Parar bastidor + CIP NaOH+SDS+EDTA + coordinar con refinería (match gold) + monitor hidrocarburos + PAC."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide cromatografía GC-MS/LC-MS — identifica los 3 candidatos simultáneamente (superior a FTIR)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: >60% polímero + ausencia surfactantes → polímero con CIP diferente."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

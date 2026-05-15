@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:24:43Z",
+  "main_hypothesis": "Incomplete ripening of the replaced greensand filter bed is allowing iron and manganese breakthrough, which oxidizes and deposits on RO membranes as colloidal iron hydroxide and manganese oxide, causing stage 2 fouling, flux decline, and permeate quality degradation.",
+  "key_signals": [
+    "Fe alimentación a RO increased from 0.03 mg/L (baseline) to 0.18 mg/L (current) immediately after greensand filter replacement on day -35 without ripening completion",
+    "Mn alimentación a RO increased from 0.02 mg/L to 0.11 mg/L in parallel with Fe breakthrough",
+    "ΔP etapa 2 rose markedly from 0.8 bar to 1.8 bar while ΔP etapa 1 remained relatively stable (1.1 → 1.4 bar), indicating stage 2-specific fouling",
+    "Cartuchos showed brown discoloration and light deposit on day -12, consistent with iron hydroxide/oxide accumulation",
+    "Conductividad permeado increased from 95 to 130 µS/cm despite stable feed conductivity, indicating membrane rejection loss from fouling",
+    "Caudal permeado declined 8% despite increased feed pressure, characteristic of membrane fouling rather than feed degradation",
+    "Temporal correlation: Fe/Mn breakthrough began within 7 days of incomplete greensand ripening"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Silica polymerization and scaling on RO membranes due to elevated pH and silica concentration in reject stream.",
+      "why_plausible": "pH increased from 6.5 to 6.8 after H₂SO₄ pump maintenance (day -22), and silica in reject rose from 290 to 305 mg/L. Silica solubility decreases with pH increase. Antiincrustant dosage (5 ppm) may be insufficient at higher pH.",
+      "why_discardable": "Silica scaling typically causes gradual, uniform pressure rise across both stages. Here, stage 2 ΔP rose 125% while stage 1 rose only 27%, indicating localized fouling. Brown cartridge deposits are inconsistent with silica scale (which is colorless/translucent). Silica rejection in reject stream is only marginally elevated (5% increase), not the 50%+ drop expected from severe silica fouling. Silica-specific antiincrustant was dosed correctly."
+    },
+    {
+      "hypothesis": "Biological fouling (biofilm) on RO membranes due to residual organic matter or microbial growth in the feed.",
+      "why_plausible": "Elevated feed temperature (30.5 °C) and the geothermal source favor microbial growth. Chlorine residual is undetectable (< 0.02 mg/L), providing no biocide protection. Biofilm can cause rapid pressure rise and flux decline.",
+      "why_discardable": "Biofilm typically develops over weeks to months and causes gradual, uniform pressure rise. The sharp, stage-2-specific pressure rise over 20 days is inconsistent with biofilm kinetics. Brown deposits on cartridges are characteristic of iron oxide, not biofilm (which is typically black/dark brown and slimy). Fe and Mn breakthrough precedes the pressure rise by 7 days, indicating a particulate/colloidal cause, not biological. No odor, color change in feed, or microbial ATP data reported to support biofilm."
+    },
+    {
+      "hypothesis": "Membrane defect or partial membrane failure in stage 2 due to mechanical damage or manufacturing flaw.",
+      "why_plausible": "Membranes are 14 months old; defects can develop. Stage 2 pressure rise and permeate conductivity increase could indicate compromised rejection.",
+      "why_discardable": "Membrane defects typically cause localized, sudden conductivity spikes (> 200 µS/cm) and rapid flux loss. Here, conductivity rise is gradual (110 → 130 µS/cm over 7 days) and modest. Defects do not explain the brown cartridge deposits or the temporal correlation with Fe/Mn breakthrough. Defects would not cause stage 1 pressure to rise at all; here stage 1 ΔP increased 27%, indicating upstream fouling affecting both stages."
+    },
+    {
+      "hypothesis": "Inadequate KMnO₄ oxidation capacity due to dosing error, reagent degradation, or insufficient contact time.",
+      "why_plausible": "KMnO₄ oxidizes Fe²⁺ and Mn²⁺ to insoluble oxides. If dosing is insufficient or contact time too short, Fe/Mn breakthrough occurs. The report notes 'dosis correcta pero parece insuficiente' on day -5.",
+      "why_discardable": "KMnO₄ dosing was reported as correct. The temporal correlation with greensand filter replacement (day -35) is too strong to ignore; Fe/Mn breakthrough began within 7 days of that event, not from a gradual KMnO₄ failure. If KMnO₄ were the primary issue, Fe/Mn would have been elevated at baseline or risen gradually; instead, they were low (0.03/0.02 mg/L) and then spiked sharply. The greensand filter is the primary Fe/Mn removal stage; its incomplete ripening is a more direct cause."
+    }
+  ],
+  "requested_data": "Microscopic or SEM analysis of the brown deposit on the cartridge filters and stage 2 RO membrane surface to confirm the presence and composition of iron hydroxide/oxide and manganese oxide (vs. silica scale or biofilm).",
+  "recommended_action": "Immediately shut down the RO unit. Perform a complete backwash and ripening cycle on the replaced greensand filter bed according to the manufacturer's protocol (typically 2–4 hours of slow-rate backwash followed by 8–12 hours of low-flow operation at design conditions with continuous monitoring of Fe/Mn breakthrough). During ripening, monitor Fe and Mn in the filter effluent every 30 minutes until both drop below 0.05 mg/L. Simultaneously, replace all cartridge filters (5 µm) to remove accumulated iron oxide deposits. After ripening completion and cartridge replacement, restart the RO unit and monitor ΔP stage 2 and permeate conductivity hourly for 8 hours. If ΔP stage 2 does not return to ≤ 1.0 bar and conductivity does not drop below 110 µS/cm, perform a chemical cleaning of the RO membranes (low-pH iron oxide removal followed by high-pH silica removal per membrane manufacturer protocol). Restore H₂SO₄ dosing to achieve pH 6.5 ± 0.2 in the feed to the RO unit.",
+  "decision_change_condition": "If microscopic analysis of cartridge and membrane deposits shows silica scale (colorless, glassy, amorphous) rather than iron oxide (brown, particulate), or if Fe/Mn in the feed remain elevated (> 0.10 mg/L) after greensand ripening is completed, then the root cause would shift to inadequate KMnO₄ oxidation or greensand filter media degradation, and the recommended action would change to increasing KMnO₄ dosage by 50% and/or replacing the entire greensand filter bed.",
+  "confidence": 78
+}

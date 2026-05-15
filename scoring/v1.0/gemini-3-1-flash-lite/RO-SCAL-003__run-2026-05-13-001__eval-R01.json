@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-003",
+    "subject_id": "gemini-3-1-flash-lite",
+    "subject_version": "gemini-3.1-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'barite tail T-04 + 18 days anti-scalant starvation' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Acidic CIP citric acid 2-3% w/w 30-35°C 4-6h — sólo ácido; chemistry incorrecta para BaSO4 (insoluble en ácido)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide normalized salt passage o element ΔP profile T-04 — match accepted (verificación localizada)."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single threshold: ΔP uniforme todas etapas → particulate/biofouling."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "C4=1 por chemistry incorrecta; case_specific recoverable habla de 'alcalino suave' no ácido, strict no fail."
+}

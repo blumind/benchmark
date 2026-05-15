@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:40:34Z",
+  "main_hypothesis": "Ensuciamiento (fouling) coloidal/particulado por hidróxido de hierro en la etapa 1 cabeza, originado por sobredosificación crónica de FeCl₃ (4 mg/L) no revertida tras el episodio de turbidez del día -22, con breakthrough de Fe a través de los filtros de arena.",
+  "key_signals": [
+    "Fe total en alimentación RO subió de 0,05 a 0,42 mg/L tras mantener dosis de FeCl₃ en 4 mg/L",
+    "ΔP etapa 1 cabeza duplicado (1,1 → 2,2 bar) mientras ΔP cola permanece estable: patrón típico de fouling particulado en los primeros elementos",
+    "SDI₁₅ subió de 2,4 a 4,2 y turbidez post-cartuchos de 0,06 a 0,22 NTU",
+    "Coloración rojiza en cartuchos (día -5) y trazas amarillo-anaranjadas tras filtros de arena (día -15)",
+    "Caída de permeado 9 % con conductividad de permeado estable (descarta daño de membrana o paso de sales)",
+    "ATP estable (80 → 95 pg/mL) y ausencia de cloro: bioensuciamiento poco probable como causa dominante",
+    "Secuencia temporal: cambio de bomba (día -35) → subida a 4 mg/L (día -22) sin retorno → aparición de Fe (día -15) → subida de ΔP (día -10)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bioensuciamiento (biofouling) en etapa 1",
+      "why_plausible": "Aguas cálidas (27,8 °C), captación abierta, sin cloraminación; clásico en SWRO Caribe.",
+      "why_discardable": "ATP solo sube marginalmente (80→95 pg/mL) y la evidencia visual es rojiza (Fe), no biofilm; el detonante temporal coincide con el cambio de dosis de FeCl₃."
+    },
+    {
+      "hypothesis": "Scaling inorgánico (CaCO₃) por antiincrustante insuficiente",
+      "why_plausible": "Recovery 40 %, pH 8,0; podría elevar ΔP.",
+      "why_discardable": "El scaling se manifiesta típicamente en etapa de cola (concentración), no en cabeza; conductividad de permeado estable y ΔP de cola sin cambio."
+    },
+    {
+      "hypothesis": "Sobredosificación causó coagulación deficiente / ruptura del lecho de arena con paso de flóculos",
+      "why_plausible": "Bomba nueva de mayor caudal recalibrada; posible mezcla deficiente o tiempo de contacto insuficiente generando microflóculos que atraviesan filtros.",
+      "why_discardable": "Es en realidad un mecanismo del mismo root cause (exceso de FeCl₃); se mantiene como hipótesis matizada pero no compite con la principal."
+    },
+    {
+      "hypothesis": "Colmatación de cartuchos por sólidos naturales (no Fe)",
+      "why_plausible": "Episodio de turbidez en captación día -22.",
+      "why_discardable": "La turbidez volvió a 0,5 NTU hace 20 días; la coloración rojiza y el Fe medido en alimentación RO apuntan inequívocamente a hierro."
+    }
+  ],
+  "requested_data": "Análisis de hierro soluble vs. particulado (filtración 0,45 µm) en la alimentación a RO, en mg/L; alternativamente, autopsia/SEM-EDX de un cartucho para confirmar Fe(OH)₃ como depósito dominante.",
+  "recommended_action": "1) Reducir inmediatamente la dosis de FeCl₃ al valor base (1,5–2,0 mg/L como Fe³⁺ equivalente) y verificar calibración volumétrica de la bomba nueva; 2) Reemplazar cartuchos de 5 µm; 3) Programar limpieza química CIP de etapa 1: lavado ácido con ácido cítrico al 2 % p/p a pH 3,5–4,0, 32–35 °C, recirculación 60 min + remojo 4–8 h, seguido de enjuague y limpieza alcalina (NaOH + Na-EDTA 1 % a pH 11,5–12, 32 °C) según protocolo del fabricante; 4) Revisar tiempo de mezcla/floculación y verificar funcionamiento de filtros de arena (ΔP, retrolavado, turbidez de salida); 5) Establecer alarma de Fe en alimentación RO > 0,1 mg/L y SDI₁₅ > 3.",
+  "decision_change_condition": "Si el Fe en alimentación RO resulta ser predominantemente soluble (no particulado) o la autopsia revela biofilm/CaCO₃ como depósito dominante en lugar de Fe(OH)₃, o si el SDI₁₅ retorna a baseline tras corregir la dosis sin mejora del ΔP, la hipótesis principal debe revisarse hacia biofouling o scaling.",
+  "confidence": 88
+}

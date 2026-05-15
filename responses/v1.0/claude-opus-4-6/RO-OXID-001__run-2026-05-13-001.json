@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:37:34Z",
+  "main_hypothesis": "Daño oxidativo irreversible de las membranas de poliamida por exposición continuada a cloro libre que atraviesa el lecho de CAG agotado, provocando degradación hidrolítica de la capa activa y pérdida de rechazo salino.",
+  "key_signals": [
+    "Cloro libre antes de RO subió de <0,02 mg/L a 0,18 mg/L, indicando que el CAG ya no elimina el cloro residual.",
+    "ORP antes de RO subió de +90 mV a +320 mV, consistente con presencia de oxidante fuerte (cloro libre) en contacto con las membranas.",
+    "Capacidad residual del CAG al 25 % (día -45) y aumento simultáneo de frecuencia de cloración (de 1 a 3 veces/semana desde día -30), superando la capacidad remanente del lecho.",
+    "Conductividad de permeado subió bruscamente de 380 a 1.200 µS/cm en ~7 días, patrón típico de degradación química de la poliamida y no de biofouling o scaling.",
+    "Rechazo de sales cayó de 99,1 % a 96,2 %, indicando daño en la capa activa de la membrana, no simple compactación o ensuciamiento.",
+    "ΔP de etapa 1 y etapa 2 estables, descartando fouling particulado o biológico significativo como causa principal.",
+    "ATP de alimentación estable (~75-80 pg/mL), descartando biofouling activo como causa de la pérdida de rechazo.",
+    "Cronología coherente: el deterioro del permeado comienza tras el agotamiento funcional del CAG y el aumento de frecuencia de cloración."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño mecánico en O-rings, interconectores o tubos de permeado que permite bypass de concentrado al permeado.",
+      "why_plausible": "Un fallo mecánico (O-ring extruido, interconector agrietado) puede causar subida brusca de conductividad de permeado con ΔP estables, patrón similar al observado.",
+      "why_discardable": "La correlación temporal directa entre la aparición de cloro libre tras el CAG (día -10 a -5) y el inicio de la subida de conductividad (día -7), junto con el ORP elevado, apunta claramente a daño químico oxidativo. Un fallo mecánico no explicaría la subida simultánea de cloro y ORP antes de RO. Además, el deterioro progresivo en 7 días es más consistente con degradación química gradual que con un fallo mecánico puntual."
+    },
+    {
+      "hypothesis": "Degradación de membranas por exposición a pH extremo o ataque químico por antiincrustante sobredosificado.",
+      "why_plausible": "Algunos antiincrustantes a concentraciones elevadas o pH fuera de rango pueden dañar la poliamida. El pH de 8,1 está en el límite superior para algunas membranas SWRO.",
+      "why_discardable": "El pH de alimentación es estable en 8,1 (dentro de rango operativo normal para SWRO). La dosis de antiincrustante es 3 ppm, valor estándar. No hay reporte de cambio en dosificación de antiincrustante. La señal dominante es la presencia de cloro libre medido directamente antes de RO."
+    },
+    {
+      "hypothesis": "Biofouling severo en la superficie de membrana que reduce el rechazo por formación de canales preferenciales.",
+      "why_plausible": "La planta tiene captación abierta y el aumento de cloración se hizo precisamente por presión biológica (mejillón cebra), lo que sugiere carga biológica elevada.",
+      "why_discardable": "El ATP de alimentación es estable y bajo (75 pg/mL). Los ΔP de ambas etapas son estables, lo cual es incompatible con biofouling significativo que típicamente eleva el ΔP de etapa 1. La velocidad de deterioro del rechazo (7 días) es demasiado rápida para biofouling y más consistente con ataque químico."
+    }
+  ],
+  "requested_data": "Ensayo de tinción con colorante (prueba de Rhodamina B o test de vacío) en los elementos de membrana del tren afectado, o alternativamente, análisis destructivo (autopsia) de un elemento de cabeza de etapa 1 para confirmar degradación oxidativa de la capa de poliamida mediante microscopía SEM/ATR-FTIR y distinguirla de daño mecánico en sellos.",
+  "recommended_action": "1) Mantener detenida la dosificación de hipoclorito sódico en captación de forma inmediata (ya realizado en día -1). 2) Instalar dosificación de bisulfito sódico (NaHSO₃) al 10 % p/v antes de los cartuchos de 5 µm, con dosis de 3 mg/L de NaHSO₃ (relación estequiométrica ~1,34 mg NaHSO₃ por mg Cl₂, más margen de seguridad), controlando ORP objetivo < +250 mV (idealmente +100 a +200 mV) y cloro libre residual < 0,02 mg/L antes de membranas. 3) Programar sustitución urgente del medio de CAG (capacidad residual agotada al 25 % e insuficiente para la carga actual). 4) Realizar sondeo de conductividad de permeado tubo a tubo (probing) en el tren afectado para identificar los elementos con mayor daño. 5) Planificar sustitución de los elementos de membrana con rechazo individual inferior al 98 % según el probing. 6) No realizar CIP ácido ni alcalino hasta confirmar el estado de las membranas, ya que membranas oxidadas son más vulnerables a limpieza química agresiva. 7) Instalar analizador en línea de ORP y cloro libre tras CAG con alarma a 0,05 mg/L Cl₂ libre como sistema de protección permanente.",
+  "decision_change_condition": "Si el probing tubo a tubo revelara que la pérdida de rechazo se concentra en uno o dos tubos de presión específicos (y no de forma distribuida en todo el tren), y si la inspección de interconectores y O-rings de esos tubos mostrara daño mecánico evidente (extrusión, agrietamiento), cambiaría el diagnóstico a fallo mecánico de sellos/interconectores como causa principal, siendo el cloro libre un hallazgo concurrente pero no la causa directa de la pérdida de rechazo.",
+  "confidence": 92
+}

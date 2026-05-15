@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:44:41Z",
+  "main_hypothesis": "Biofouling of RO membranes due to absence of biocide preservation during 28-day shutdown, leading to microbial growth and subsequent fouling and performance decline.",
+  "key_signals": [
+    "ATP in feed to RO increased from 60 to 980 pg/mL (marked rise)",
+    "ΔP etapa 1 rose from 0.9 to 1.5 bar (56% increase)",
+    "Conductivity of permeate increased from 95 to 110 µS/cm (16% rise)",
+    "TOC in feed rose from 1.2 to 1.5 mg/L (25% increase)",
+    "Turbidity after cartridges increased from 0.06 to 0.12 NTU (100% increase)",
+    "Olor sulfhídrico en muestras de concentrado (sulfuro de hidrógeno, indicador de actividad microbiana)",
+    "Presión de alimentación aumentó de 14.5 a 17 bar (17% rise)",
+    "Caudal de permeado bajó un 8% (de 208 a 192 m³/h)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling due to concentration of silica and calcium during shutdown without preservation.",
+      "why_plausible": "Long shutdown with water in membranes could lead to concentration polarization and silica/calcium precipitation, especially at high recovery (75%). Silica in feed is stable but could have precipitated during stagnation.",
+      "why_discardable": "Silica and calcium concentrations in feed are stable post-startup; no rise in feed conductivity or hardness is reported. Scaling typically causes flux decline without significant ATP rise or H2S odor. ΔP increase is more consistent with biofouling than scaling."
+    },
+    {
+      "hypothesis": "Particulate fouling due to inadequate prefiltration or cartridge failure.",
+      "why_plausible": "Turbidity after cartridges increased from 0.06 to 0.12 NTU, suggesting breakthrough of particles. Particulates can increase ΔP and reduce flux.",
+      "why_discardable": "Turbidity rise is modest and likely a consequence of biofouling rather than cause. No report of cartridge replacement or cleaning. ATP rise and H2S odor are not explained by particulate fouling alone."
+    },
+    {
+      "hypothesis": "Chemical degradation of membranes due to prolonged exposure to permeate without preservation.",
+      "why_plausible": "Permeate water is low in minerals and could have low buffering capacity; prolonged stagnation might degrade membrane integrity over time.",
+      "why_discardable": "No evidence of membrane integrity loss (e.g., salt rejection drop is modest and could be due to fouling). Conductivity rise is consistent with fouling, not degradation. No report of membrane damage or leaks."
+    }
+  ],
+  "requested_data": "Concentración de biocida residual en agua de preservación durante la parada (mg/L) o presencia de sulfato en permeado (mg/L) como indicador de actividad microbiana.",
+  "recommended_action": "Realizar limpieza CIP con solución de limpieza alcalina (pH 11-12) con 0.1% dodecil sulfato de sodio (SDS) y 0.05% NaOH a 30°C durante 60 minutos, seguido de enjuague y verificación de integridad. Luego, implementar procedimiento de preservación con bisulfito de sodio al 1% con monitoreo de residual cada 7 días durante paradas.",
+  "decision_change_condition": "Si la concentración de ATP en alimentación a RO disminuye a menos de 200 pg/mL y el ΔP etapa 1 se estabiliza en ≤1.1 bar tras la limpieza CIP, el diagnóstico cambiaría a otro tipo de fouling o a un problema transitorio.",
+  "confidence": 92
+}

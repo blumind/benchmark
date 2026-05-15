@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-009-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-009",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fouling por surfactantes antiespumante AND/OR cationic polymers' captura 2 de 3."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "9 signals."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (bio, scaling, particulate, etc.) anclados."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP SDS 0.1% pH 10 + ajustar antiincrustante + coordinar refinería — coordinación parcial sin identify-first explícito."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide surfactantes específicos (LAS, quats) — sub-óptimo single-candidate."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: surfactantes <0.5 + TS recupera → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

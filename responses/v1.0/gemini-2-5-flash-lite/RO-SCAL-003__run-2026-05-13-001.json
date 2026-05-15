@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-SCAL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:07:23Z",
+  "main_hypothesis": "Precipitación de sales de bario y/o estroncio en las membranas del tren T-04 debido a la interrupción prolongada de la dosificación de antiincrustante.",
+  "key_signals": [
+    "ΔP etapa 1 cola (T-04) subida marcada",
+    "ΔP etapa 1 medio (T-04) subida ligera",
+    "Presión alimentación tren subida",
+    "Caudal permeado tren bajada",
+    "Conductividad permeado subida",
+    "Bario rechazo estable (indicando que el problema es localizado en un tren y no en la capacidad general de rechazo de la planta)",
+    "Sulfato rechazo estable (similar a bario rechazo)",
+    "Historial de interrupción de antiincrustante en T-04"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo mecánico o taponamiento severo en el tren T-04 no relacionado con antiincrustante.",
+      "why_plausible": "Las subidas de presión y bajadas de caudal son síntomas de un problema de flujo a través de las membranas. Un taponamiento físico (por ejemplo, por sedimentos o fouling biológico) o un fallo en un componente del tren (como una junta o una placa de distribución) podría causar estos síntomas.",
+      "why_discardable": "La historia clínica apunta directamente a la interrupción del antiincrustante como el evento desencadenante. Si bien un taponamiento es posible, la alta concentración de bario en el agua de captación (0.12 mg/L) y la interrupción del inhibidor específico para sulfatos y bario/estroncio hacen que la precipitación química sea una causa mucho más probable y directa. El hecho de que el problema se manifieste principalmente en la etapa 1 cola (donde la concentración de sales es mayor) también apoya la hipótesis de precipitación."
+    },
+    {
+      "hypothesis": "Dosificación incorrecta de antiincrustante en otros trenes no detectada.",
+      "why_plausible": "Si la bomba de dosificación global estuviera fallando o si hubiera un problema generalizado en la línea de inyección, podría afectar a varios trenes, aunque el reporte se centra en T-04. Sin embargo, la historia específica de T-04 y la falta de reportes de otros trenes hacen esto menos probable.",
+      "why_discardable": "El reporte indica claramente que el problema de inyección de antiincrustante fue específico del tren T-04 y fue corregido. Los datos de los otros trenes (ΔP, caudal, conductividad) no muestran desviaciones significativas respecto a la línea base, lo que sugiere que la dosificación en el resto de la planta es correcta."
+    },
+    {
+      "hypothesis": "Fallo en el sensor de ΔP de la etapa 1 cola del T-04.",
+      "why_plausible": "Una lectura errónea del sensor podría indicar una subida de presión que no existe realmente. Esto explicaría la alta lectura de ΔP cola.",
+      "why_discardable": "Si bien un fallo de sensor es posible, es poco probable que un solo sensor falle de manera que cause una subida marcada y progresiva que se correlacione con una bajada de caudal y una subida de conductividad del permeado. Además, la presión de alimentación del tren también ha subido, lo que es consistente con un aumento de la resistencia al flujo a través de las membranas. La corrección del problema de dosificación no resolvió el ΔP, lo que sugiere un problema físico en las membranas."
+    }
+  ],
+  "requested_data": "Presión diferencial (ΔP) de cada etapa (cabeza, medio, cola) para todos los trenes de RO.",
+  "recommended_action": "Aislar el tren T-04. Realizar un lavado químico de las membranas del T-04, comenzando con un lavado a baja presión y temperatura con agua de permeado para eliminar cualquier sólido suelto, seguido de un lavado ácido (pH 2-3) para disolver posibles precipitados de sales de bario/estroncio, y finalmente un lavado alcalino (pH 10-11) para eliminar fouling orgánico/biológico. Si el ΔP no se recupera tras los lavados, considerar la limpieza química intensiva o el reemplazo de las membranas de la etapa 1 del T-04.",
+  "decision_change_condition": "Si la inspección visual de las membranas del T-04 (tras su extracción) revela un taponamiento físico severo (por ejemplo, por lodo o material biológico) y no hay evidencia de precipitación de sales, la hipótesis principal cambiaría a 'Fallo mecánico o taponamiento severo en el tren T-04'.",
+  "confidence": 90
+}

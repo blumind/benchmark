@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:00:37Z",
+  "main_hypothesis": "Silica scaling on stage 2 membranes due to insufficient antiscalant dosage after increasing recovery from 75% to 82%.",
+  "key_signals": [
+    "ΔP stage 2 increased from 0.9 bar to 1.9 bar (marked rise)",
+    "Silica reject concentration 295 mg/L exceeds the antiscalant recommended limit of 260 mg/L",
+    "Permeate conductivity increased from 88 µS/cm to 105 µS/cm (salt passage increase)",
+    "Permeate flow decreased by 7% (from 250 m³/h to 232 m³/h)",
+    "CIP alkaline provided only temporary improvement (ΔP stage 2 rebounded from 1.5 bar to 1.8 bar in 72 hours)",
+    "Antiscalant dose remained at 8 ppm despite recovery increase, not recalculated for new recovery"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling in stage 2 membranes",
+      "why_plausible": "Biofouling can cause similar differential pressure increase, flux decline, and salt passage increase. The alkaline CIP may have temporarily removed some organic material but not resolved the root cause. The lack of chlorine residual before RO and possible nutrient presence could support biofilm growth.",
+      "why_discardable": "No supporting signals like elevated temperature, increased stage 1 ΔP, or signs of microbial activity (e.g., increased SDI). The strong correlation with silica reject concentration exceeding the antiscalant limit makes silica scaling more likely. Also, biofouling would not be directly tied to the recovery increase without other changes."
+    },
+    {
+      "hypothesis": "Calcium carbonate scaling in stage 2",
+      "why_plausible": "Calcium and alkalinity concentrations in the reject are elevated (540 mg/L and 320 mg/L), which could lead to CaCO₃ supersaturation at high recovery. Scaling would increase ΔP and reduce permeate quality.",
+      "why_discardable": "pH is stable at 7.1, not elevated; no pH increase is observed. The antiscalant is specific for silica, not calcium carbonate, but calcium carbonate scaling typically requires higher pH or temperature. The calculated LSI would be moderate, and the steep ΔP rise and silica exceedance point to silica as the primary foulant."
+    },
+    {
+      "hypothesis": "Organic fouling (e.g., humic acids or petroleum-derived compounds)",
+      "why_plausible": "Organic fouling can cause flux decline and pressure drop increase, especially in second stage. Alkaline CIP might partially remove organic deposits, explaining temporary improvement.",
+      "why_discardable": "No data on TOC or oil; no reported upstream events (e.g., source water contamination). The silica-specific antiscalant limit exceedance and stable temperature argue against organic fouling as the primary cause. The recovery increase directly affects silica concentration factor, while organic fouling would be less sensitive to recovery changes."
+    }
+  ],
+  "requested_data": "Silica saturation index (supersaturation ratio) in the concentrate stream, calculated from actual temperature, pH, and silica concentration, or direct analysis of membrane deposits (e.g., SEM/EDX for elemental composition).",
+  "recommended_action": "Immediately reduce recovery to 75% to lower silica concentration in the brine below the antiscalant's effective limit. Perform a modified CIP with high-pH (12.0) and extended recirculation time (90 minutes) to target silica scale removal. Recalculate antiscalant dosage (increase to at least 12 ppm) to match the new recovery and verify against manufacturer's recommendations for the actual silica level.",
+  "decision_change_condition": "If a membrane autopsy (SEM/EDX) confirms no silica deposition and instead shows high levels of organic carbon or microbiological residues, then the diagnosis would change to biofouling or organic fouling.",
+  "confidence": 85
+}

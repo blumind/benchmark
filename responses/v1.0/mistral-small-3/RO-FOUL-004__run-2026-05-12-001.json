@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:44:08Z",
+  "main_hypothesis": "Biofouling of SWRO membranes due to elevated TEP and phytoplankton-derived organic load, exacerbated by insufficient UF pretreatment performance and delayed response to rising SDI and TEP levels.",
+  "key_signals": [
+    "Súbita subida de ΔP etapa 1 (cabeza) de 1,3 a 3,1 bar en 7 días, con cola estable (0,8 bar)",
+    "Caudal permeado tren bajó un 11% (278→248 m³/h) sin cambio en conductividad permeado",
+    "Aumento marcado de TOC alimentación a RO (1,2→3,4 mg/L) y SDI₁₅ post-UF (2,3→3,1)",
+    "Subida de clorofila-a (1,5→28 µg/L) y TEP (50→320 µg/L Xeq) en captación",
+    "Presión alimentación RO subió de 60 a 67 bar, indicando mayor resistencia al flujo",
+    "Filamentos visibles en alimentación y olor terroso en sala de bastidores (señal de actividad biológica)",
+    "Aumento de frecuencia de retrolavado UF de 30 a 22 min sin control de SDI/TEP"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling inorganico por aumento de SDI y partículas inorgánicas no removidas por UF",
+      "why_plausible": "SDI aumentó de 2,3 a 3,1 y hay filamentos visibles en alimentación, lo que sugiere presencia de partículas. La presión de alimentación aumentó, compatible con obstrucción física.",
+      "why_discardable": "No explica el aumento de TOC, TEP, clorofila-a ni el patrón de ΔP (cabeza alta, cola estable). La conductividad permeado estable descarta precipitación de sales. La subida brusca de ΔP es más típica de biofouling que de fouling inorgánico."
+    },
+    {
+      "hypothesis": "Problema de coagulación insuficiente en pretratamiento, permitiendo paso de coloides orgánicos a UF/SWRO",
+      "why_plausible": "La dosificación de FeCl₃ es baja (1,5 mg/L) y el TOC aumentó significativamente. Un coagulante insuficiente puede permitir paso de materia orgánica a la RO.",
+      "why_discardable": "No explica el aumento de TEP, clorofila-a ni el patrón de ΔP (cabeza alta, cola estable). La conductividad estable y el SDI moderado no son típicos de coagulación deficiente. El olor terroso y filamentos sugieren actividad biológica, no solo coloidal."
+    },
+    {
+      "hypothesis": "Crecimiento de biofilm en el interior de los tubos líderes por falta de cloración continua",
+      "why_plausible": "No hay cloración continua y se observó olor terroso y filamentos, compatibles con biofilm. Los tubos líderes son los más recientes, lo que podría indicar colonización temprana.",
+      "why_discardable": "No explica el aumento de TEP, clorofila-a ni el patrón de ΔP (cabeza alta, cola estable). El biofilm suele causar ΔP uniforme en toda la etapa, no solo en cabeza. La subida brusca de ΔP es más típica de acumulación de biomasa en los primeros elementos."
+    },
+    {
+      "hypothesis": "Contaminación química puntual en captación (ej. derrame de hidrocarburos o pesticidas) que afecta la RO",
+      "why_plausible": "El olor terroso y la subida de TOC podrían deberse a contaminantes orgánicos. La conductividad estable descarta salinidad, pero no otros contaminantes.",
+      "why_discardable": "No explica el aumento específico de TEP y clorofila-a, ni el patrón de ΔP. La conductividad estable y la falta de cambios en pH o cloro libre no apoyan contaminación química. El SDI aumentó, pero no de forma extrema."
+    }
+  ],
+  "requested_data": "Concentración de ATP (adenosín trifosfato) en alimentación a RO, expresada en ng/L.",
+  "recommended_action": "Aplicar limpieza química CIP con solución de hipoclorito sódico (200 mg/L de cloro libre) y dodecil sulfato de sodio (SDS) al 0,1% a pH 11, durante 60 minutos a 30 °C, en el tren afectado. Paralelamente, aumentar la dosificación de coagulante FeCl₃ a 2,5 mg/L y evaluar ajuste de pH a 7,8 para mejorar la coagulación de materia orgánica. Iniciar monitoreo continuo de TEP y SDI cada 4 horas, con umbral de alarma en SDI > 3,0 y TEP > 200 µg/L Xeq.",
+  "decision_change_condition": "Si la concentración de ATP en alimentación a RO es inferior a 10 ng/L, descartar biofouling como causa principal y reevaluar hipótesis de fouling inorgánico o coagulación insuficiente.",
+  "confidence": 92
+}

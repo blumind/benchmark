@@ -1,0 +1,52 @@
+{
+  "case_id": "RO-MECH-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:34:08Z",
+  "main_hypothesis": "Daño mecánico por golpe hidráulico causado por rampa de arranque de la bomba de alta presión demasiado rápida o mal reconfigurada tras el mantenimiento del VFD, provocando telescoping del primer elemento de la etapa 1 y bypass de sales.",
+  "key_signals": [
+    "Mantenimiento del VFD de la bomba HP en día -10 seguido de reporte operativo de que la rampa de arranque se sentía más rápida en día -8.",
+    "Parada por baja de red y rearranque automático de la bomba HP en día -5, seguido de sonido anómalo de golpe en la línea de alta presión durante 2 segundos en día -4.",
+    "Subida brusca de conductividad de permeado de 92 a 950 µS/cm con conductividad de alimentación, temperatura, pH, ORP y cloro libre prácticamente estables.",
+    "Caída drástica del rechazo calculado de 97,9 % a 78,7 % sin aumento de flux ni cambio relevante de calidad de alimentación.",
+    "Descenso anómalo de ΔP en etapa 1 y especialmente etapa 2, compatible con daño físico o creación de camino de baja resistencia, no con ensuciamiento progresivo.",
+    "Probe test con conductividad extremadamente alta localizada en la cabeza de etapa 1 mientras el resto permanece por debajo de 200 µS/cm, indicando fallo localizado.",
+    "Inspección del Tubo 1 de etapa 1 con deformación visible tipo telescoping en el extremo de aguas abajo del primer elemento.",
+    "Vibraciones normales de la bomba HP, lo que reduce la probabilidad de fallo mecánico continuo de la bomba como causa primaria."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo de junta tórica, interconector o adaptador de permeado en el primer tubo de etapa 1.",
+      "why_plausible": "Un fallo de sellado interno puede causar bypass localizado de salmuera hacia el permeado, aumento brusco de conductividad y un perfil de probe test con punto de alta conductividad en un solo extremo o elemento.",
+      "why_discardable": "No explica por sí solo el antecedente de golpe hidráulico tras rearranque, la caída anómala de ΔP en ambas etapas ni la deformación visible tipo telescoping del primer elemento, que apunta a sobrecarga hidráulica mecánica."
+    },
+    {
+      "hypothesis": "Oxidación química de membranas por ingreso de cloro u otro oxidante.",
+      "why_plausible": "La oxidación puede producir pérdida rápida de rechazo salino y aumento de conductividad del permeado en membranas de poliamida.",
+      "why_discardable": "El cloro libre antes de RO permanece por debajo de 0,02 mg/L, el ORP se mantiene estable alrededor de +85 mV y el daño está localizado en la cabeza de etapa 1 con telescoping visible, no distribuido como sería esperable en una agresión oxidante general."
+    },
+    {
+      "hypothesis": "Defecto de fabricación o fatiga estructural del primer elemento tras 22 meses de operación.",
+      "why_plausible": "Un elemento individual puede fallar mecánicamente y generar alta conductividad localizada sin afectar inicialmente a todos los vasos.",
+      "why_discardable": "La coincidencia temporal con mantenimiento del VFD, sensación de rampa más rápida, rearranque automático y golpe en la línea de alta presión hace más probable un evento hidráulico externo que una falla espontánea del elemento."
+    },
+    {
+      "hypothesis": "Error de montaje o ausencia de dispositivo anti-telescoping, thrust ring o espaciador en el tubo afectado.",
+      "why_plausible": "Un montaje incorrecto puede permitir desplazamiento axial y telescoping cuando el sistema arranca o cambia de presión.",
+      "why_discardable": "El caso no reporta intervención reciente en los tubos o membranas, mientras sí reporta una intervención reciente en el VFD y un golpe hidráulico inmediatamente antes de la degradación de conductividad."
+    },
+    {
+      "hypothesis": "Incrustación o ensuciamiento severo con canalización interna.",
+      "why_plausible": "La incrustación y el fouling pueden alterar ΔP, rechazo y conductividad de permeado en sistemas BWRO.",
+      "why_discardable": "El patrón observado es una caída de ΔP, no aumento; la conductividad sube bruscamente; el probe test localiza un punto específico; y la inspección muestra telescoping, todo más compatible con daño mecánico que con fouling o scaling."
+    }
+  ],
+  "requested_data": "Registro de presión de descarga de la bomba HP durante el rearranque del día -5, en bar, con resolución temporal de 1 segundo o mejor.",
+  "recommended_action": "Parar el bastidor afectado siguiendo el procedimiento normal, bloquear el rearranque automático de la bomba HP, aplicar bloqueo-etiquetado, despresurizar el sistema, aislar el Tubo 1 de etapa 1, retirar y reemplazar el primer elemento telescopado, inspeccionar interconectores, juntas, adaptadores, thrust ring y elementos adyacentes del tubo, y antes de volver a producir permeado confirmar en el VFD que la rampa de arranque de la bomba HP esté configurada en 90 segundos y probar el arranque con la válvula de descarga en condición de arranque indicada por el manual de operación.",
+  "decision_change_condition": "La diagnosis cambiaría si el registro del rearranque confirmara una rampa real de 90 segundos sin pico de presión ni transitorio hidráulico, y la inspección mostrara un fallo localizado de junta, interconector, adaptador o montaje anti-telescoping independiente del evento de arranque.",
+  "confidence": 91
+}

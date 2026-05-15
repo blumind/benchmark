@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-OXID-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:44:40Z",
+  "main_hypothesis": "Oxidación irreversible de la capa activa de poliamida de las membranas BWRO por exposición continua a ozono residual (~0,06 mg/L) procedente del retorno de la planta vecina, sin barrera reductora (no hay bisulfito ni carbón activado) en el pretratamiento.",
+  "key_signals": [
+    "Ozono residual en alimentación a RO 0,06 mg/L vs <0,01 mg/L baseline, coincidente temporalmente con el aumento de dosis de O₃ en planta vecina (0,8 → 1,5 mg/L en día -22).",
+    "ORP alimentación +280 mV vs +110 mV baseline (subida marcada), confirmando presencia de oxidante fuerte.",
+    "Cloro libre <0,02 mg/L: descarta cloro como oxidante; el ORP elevado es atribuible al O₃.",
+    "Caída drástica del rechazo de sales (97,8 % → 88,8 %) y subida brusca de conductividad de permeado (75 → 380 µS/cm) sin cambios en alimentación, ΔP estables y temperatura estable: patrón clásico de degradación oxidativa de la barrera de poliamida (pérdida de selectividad, no de permeabilidad).",
+    "Caudal de permeado solo cae 7 % (la membrana oxidada se vuelve más permeable a sales pero el flux puede sostenerse o incluso aumentar; aquí la caída es modesta y compatible con daño oxidativo progresivo).",
+    "Ausencia de barrera reductora declarada (sin bisulfito, sin GAC) en una planta cuyo pretratamiento nunca contempló oxidantes.",
+    "Cronología coherente: incremento ozono día -22 → primera subida de conductividad día -18 → escalada hasta día 0."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga mecánica en o-rings de interconectores o vasos de presión / vaina de producto dañada.",
+      "why_plausible": "Una pérdida brusca de rechazo con ΔP estables puede deberse a bypass interno; es un fallo mecánico común en bastidores 4:2.",
+      "why_discardable": "No explica la elevación coherente y simultánea de ORP y ozono residual en alimentación, ni la cronología vinculada al cambio operativo de la planta vecina. Un bypass mecánico también suele dar incremento de conductividad por tubo concreto, no degradación generalizada."
+    },
+    {
+      "hypothesis": "Ensuciamiento/scaling con polarización iónica en cola del bastidor (recovery 78 % es alto).",
+      "why_plausible": "Recovery alto con antiincrustante poliacrílico (no necesariamente óptimo para CaSO₄/sílice) podría degradar rechazo.",
+      "why_discardable": "Scaling produciría aumento de ΔP en etapa 2 y caída pronunciada de permeado; aquí ΔP2 es estable y la caída de caudal es solo 7 %. Además no explica ORP ni O₃ residual."
+    },
+    {
+      "hypothesis": "Daño oxidativo histórico por cloro residual no detectado (sensor DPD descalibrado).",
+      "why_plausible": "El cloro es el oxidante clásico que daña poliamida y la planta no tiene bisulfito.",
+      "why_discardable": "DPD-cloro libre <0,02 mg/L confirmado de forma estable; el oxidante identificado mediante kit DPD específico es ozono, no cloro. La cronología apunta a la fuente vecina de O₃."
+    },
+    {
+      "hypothesis": "Membranas al final de su vida útil con degradación natural a los 11 meses.",
+      "why_plausible": "Pérdida progresiva de rechazo es típica del envejecimiento.",
+      "why_discardable": "11 meses está muy lejos del fin de vida típico (3-5 años); la degradación natural no es brusca ni coincide con un evento externo identificable."
+    }
+  ],
+  "requested_data": "Test de Fujiwara (o medida del índice de oxidación / contenido de cloro-equivalente) sobre una muestra de membrana extraída de la posición de cola, junto con perfil de conductividad de permeado tubo a tubo (µS/cm por vaso).",
+  "recommended_action": "1) Acción inmediata: instalar dosificación de metabisulfito sódico (SBS) aguas arriba de los cartuchos de 5 µm a una relación estequiométrica de ~3 mg SBS por mg de O₃ (dosis inicial 0,5-1,0 mg/L de SBS, solución madre al 2 % p/v), con tiempo de contacto mínimo 20 s y verificación de ORP objetivo <200 mV antes de las membranas. 2) Alternativamente o en paralelo, instalar columna temporal de carbón activado granular (GAC) en la línea de alimentación. 3) Bajar recovery temporalmente a 70 % y reducir flux mientras se estabiliza la calidad. 4) Monitoreo continuo de ORP en línea con alarma a +150 mV y parada automática a +200 mV; medición diaria de O₃ residual por DPD. 5) Escalar formalmente con la planta vecina y la dirección ambiental para garantizar barrera física/química permanente. 6) Tras estabilizar pretratamiento, realizar prueba de integridad y perfil de conductividad por vaso; planificar reposición escalonada de elementos comprometidos (probablemente etapa 1 frontal, que recibió mayor exposición). No realizar limpieza con oxidantes; las CIP deben ser alcalina (NaOH pH 11-12) y ácida (ácido cítrico 2 % p/v) sin hipoclorito.",
+  "decision_change_condition": "Cambiaría el diagnóstico si: (a) el test de Fujiwara resultara negativo y el perfil de conductividad por vaso mostrara un único vaso anómalo (apuntando a fallo mecánico/o-ring), o (b) se demostrara que el O₃ residual medido fue un falso positivo del kit DPD (interferencia) y el ORP elevado se explicara por otro oxidante (p.ej. cloraminas, permanganato) presente en el retorno.",
+  "confidence": 86
+}

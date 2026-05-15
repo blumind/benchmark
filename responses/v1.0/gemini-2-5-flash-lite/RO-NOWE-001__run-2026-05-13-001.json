@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-NOWE-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:56:35Z",
+  "main_hypothesis": "Propylene glycol residual in membrane elements causing fouling and reduced performance.",
+  "key_signals": [
+    "Caudal permeado tren: Subida lenta, solo alcanza el 36 % del nominal",
+    "Conductividad permeado: Anómalamente alta (480 µS/cm vs 400 µS/cm esperado)",
+    "ΔP etapa 1: Subida lenta (0,7 bar vs 1,2 bar esperado)",
+    "ΔP etapa 2: Subida lenta (0,4 bar vs 0,8 bar esperado)",
+    "Caudal nominal del tren al 100 % presión: 36 % del nominal",
+    "Rechazo de sales (calculado): Subida lenta (99,15 % vs 99,3 % esperado)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incomplete wetting of membrane elements after storage.",
+      "why_plausible": "The elements were stored dry (preservative removed) and then refilled. Incomplete wetting can lead to reduced flow and higher pressure drop. The slow improvement over several days is consistent with gradual wetting.",
+      "why_discardable": "The reported procedure included a 30-minute flush with permeate after draining the preservative. While not explicitly stated as a 'wetting' step, this should have initiated wetting. The persistent high conductivity of permeate and low salt rejection suggest a more fundamental issue than just initial wetting."
+    },
+    {
+      "hypothesis": "Fouling from residual bisulfite preservative.",
+      "why_plausible": "Bisulfite is a reducing agent and can potentially react with membrane materials or foul them if not completely removed. The slow improvement could be due to gradual removal of this foulant.",
+      "why_discardable": "Bisulfite is typically used at 1% concentration and is water-soluble. A 30-minute flush with permeate should have removed most of it. Propylene glycol, being a larger organic molecule, is more likely to cause persistent fouling if not fully flushed. The manufacturer's suggestion of propylene glycol residual also points away from bisulfite as the primary issue."
+    },
+    {
+      "hypothesis": "Damage to membrane elements during storage or handling.",
+      "why_plausible": "Elements stored for a long period, especially with temperature fluctuations, could potentially suffer damage (e.g., seal failure, element damage). This would manifest as reduced flow, higher pressure drop, and poor salt rejection.",
+      "why_discardable": "The slow, gradual improvement in performance over several days is less typical of catastrophic element damage and more indicative of a reversible fouling or wetting issue. If elements were damaged, the performance would likely be consistently poor or erratic, not steadily improving."
+    }
+  ],
+  "requested_data": "Concentration of propylene glycol in permeate (µS/cm or mg/L) after 24 hours of operation at 20% pressure.",
+  "recommended_action": "Continue circulation at 20% of nominal pressure for an additional 24 hours, followed by a gradual ramp-up to operating pressure over 4 hours. Monitor permeate conductivity and flow rate closely. If performance does not improve significantly, consider a low-pH flush (pH 2-3) for 1 hour to remove potential glycol fouling, followed by a thorough permeate flush.",
+  "decision_change_condition": "If permeate conductivity remains significantly elevated and flow rate does not approach nominal values after the extended circulation and potential low-pH flush, then the hypothesis of irreversible membrane damage or a more complex fouling mechanism would need to be reconsidered.",
+  "confidence": 75
+}

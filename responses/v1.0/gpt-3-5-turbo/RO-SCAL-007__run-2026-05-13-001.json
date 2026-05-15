@@ -1,0 +1,32 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:32:06Z",
+  "main_hypothesis": "Scaling in the second stage of the RO system",
+  "key_signals": [
+    "Marked increase in ΔP in stage 2",
+    "Significant rise in phosphate levels in feed water",
+    "High phosphate rejection levels"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling in the second stage",
+      "why_plausible": "The increase in ΔP could also be caused by fouling, but the significant rise in phosphate levels suggests scaling as a more likely cause.",
+      "why_discardable": "The phosphate rejection levels remaining stable do not align with typical fouling behavior."
+    },
+    {
+      "hypothesis": "Anti-incrustant degradation",
+      "why_plausible": "The anti-incrustant may have degraded, leading to scaling issues in the second stage.",
+      "why_discardable": "The phosphate levels in the feed water have significantly increased, indicating a more direct relationship with scaling."
+    }
+  ],
+  "requested_data": "Silica levels in the feed water",
+  "recommended_action": "Increase the anti-scalant dosage to mitigate scaling in the second stage of the RO system.",
+  "decision_change_condition": "If silica levels in the feed water are found to be unusually high, indicating potential silica scaling instead of phosphate scaling.",
+  "confidence": 85
+}

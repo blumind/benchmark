@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-OXID-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:07:01Z",
+  "main_hypothesis": "Oxidative damage to polyamide RO membranes due to residual hydrogen peroxide from an incompletely rinsed CIP disinfectant step, leading to loss of salt rejection.",
+  "key_signals": [
+    "Only train T-03 affected after CIP with H2O2 step",
+    "Rinse time reduced from 60 min to 45 min, and H2O2 residual was checked only with a 1 mg/L sensitivity test strip (negative, but may still be present)",
+    "Permeate conductivity rising progressively from 410 to 540 µS/cm over 5 days post-CIP",
+    "Permeate flow decreased by 4% while delta P remained stable (suggests membrane degradation rather than fouling or scaling)",
+    "Cartridge filters showing brownish stains (possible oxidation byproducts or degraded membrane material)",
+    "Feed water quality, temperature, and other process conditions stable; other trains unaffected"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "O-ring or seal failure on train T-03 causing bypass of feed to permeate side",
+      "why_plausible": "An o-ring leak would cause a sudden increase in permeate conductivity, and could be induced by CIP pressure changes. The brownish stains on cartridge filters could be from metal wear of a damaged seal.",
+      "why_discardable": "Conductivity rise is progressive over 5 days, not sudden; delta P and flow are stable, and only one train affected after CIP. O-ring failure typically causes immediate and stable conductivity increase, not a trend."
+    },
+    {
+      "hypothesis": "Scaling or fouling on membrane surface reducing rejection and flow",
+      "why_plausible": "Fouling can cause loss of rejection and flow, and the brownish stains on cartridge filters could be iron or organic foulants. The CIP might have disturbed existing foulants.",
+      "why_discardable": "Delta P is stable (fouling usually increases delta P). Fouling would typically affect all trains equally if feed water quality changed, but only T-03 is affected. Additionally, the timing immediately after a CIP with shortened rinse points to chemical damage rather than fouling."
+    },
+    {
+      "hypothesis": "Incomplete removal of alkaline CIP chemicals causing membrane hydrolysis and rejection loss",
+      "why_plausible": "If the alkaline step (pH 12) was not fully rinsed, residual caustic could hydrolyze the polyamide layer. The shortened rinse time could leave caustic behind.",
+      "why_discardable": "The H2O2 step follows the alkaline step, and the protocol includes a rinse after both. Caustic residues would be neutralized or diluted by the subsequent H2O2 step and rinse. Moreover, the progressive conductivity increase over days is more characteristic of oxidative damage than hydrolysis, which usually shows immediate effect."
+    }
+  ],
+  "requested_data": "Quantitative hydrogen peroxide concentration in the RO feed or permeate immediately after CIP (or currently), measured with a method sensitive to at least 0.1 mg/L (e.g., chemiluminescence or low-range test strips).",
+  "recommended_action": "Immediately isolate train T-03 from production. Perform a prolonged flush with permeate (at least 60 minutes) at normal operating flow rate. Measure H2O2 residual in the flush water using a sensitive method (detection limit <0.1 mg/L). Continue flushing until H2O2 is undetectable. If no H2O2 is found, collect membrane autopsy samples and analyze for oxidation (e.g., ATR-FTIR, contact angle). Do not return train to service until residual H2O2 is confirmed below 0.1 mg/L and permeate conductivity stabilizes near baseline.",
+  "decision_change_condition": "If quantitative H2O2 measurement shows residual below 0.1 mg/L and membrane autopsy reveals no signs of oxidation (e.g., intact polyamide layer on ATR-FTIR), then the diagnosis would shift toward a mechanical seal failure or scaling/fouling hypothesis.",
+  "confidence": 85
+}

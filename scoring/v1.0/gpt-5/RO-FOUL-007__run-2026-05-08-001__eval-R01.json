@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-007-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-007",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling lead stage 1 head post-storm + sustained FeCl3' — captura las 2 firmas concurrentes."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ΔP cabeza vs cola, TOC×2, ATP×8, T↑, SDI/turbidez↑, perm-8% con conductividad +ligera."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (Fe FOUL, MECH compactación, SCAL) con why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino+DBNPA+cítrico si needed; 'ensuring no oxidants reach the membranes' explícito."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide Fe total post-cartucho — match Fe total/disuelto 30d del gold."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición OR: Fe>100 + ácido recupera + alcalino no, OR ATP<200 → Fe/particulado."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

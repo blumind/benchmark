@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-001",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'improper seating O-ring interconnector Tubo 4 T-02 + brine bypass' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia: caída rechazo localizada T-02 + probe test 4100 vs 380 + post-reinstalación O-rings."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (membrane defect, permeate header reassembly, biofouling, elastomer degradation)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Isolate T-02 + remove Tube 4 + inspect O-rings + replace + leak test — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide visual inspection física O-rings + extrusion damage — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi-condición: si O-rings intactos + seals correctos → switch a membrane defect."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

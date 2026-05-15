@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:38:26Z",
+  "main_hypothesis": "Fouling orgánico-coloidal en la etapa 1 de la membrana RO causado por la irrupción de materia orgánica natural (NOM) de origen fluvial tras el episodio de lluvias intensas, que el pretratamiento existente (coagulación-decantación-filtración-cartuchos) no logra eliminar adecuadamente, resultando en deposición preferente de coloides orgánicos y compuestos húmicos en los elementos de cabecera.",
+  "key_signals": [
+    "ΔP etapa 1 duplicado (1,9 bar vs 0,9 bar baseline) con etapas 2 y 3 estables, patrón clásico de fouling de cabecera por coloides/materia orgánica",
+    "TOC alimentación a RO elevado a 4,1 mg/L frente a baseline de 1,8 mg/L (incremento >125 %), indicando carga orgánica no retenida por el pretratamiento",
+    "SDI₁₅ salida de cartuchos de 3,9 frente a baseline de 2,2, confirmando paso de coloides al bastidor RO",
+    "Turbidez salida cartuchos subida de 0,08 a 0,18 NTU, coherente con sobrecarga coloidal",
+    "Episodio de lluvias intensas (día -28) con caudal del río de 8 a 65 m³/s, fuente de arrastre de NOM y coloides al sistema de captación",
+    "Coloración marrón anaranjada de los cartuchos retirados, compatible con materia orgánica húmica y/o coloides de hierro residual del coagulante",
+    "Caída temporal de ΔP etapa 1 tras cambio de cartuchos (día -10) con recuperación en 48 h, indicando que la fuente de fouling es continua y no resuelta por el pretratamiento",
+    "Presión de alimentación subida de 16,5 a 19,8 bar con caudal de permeado reducido un 8 %, consistente con pérdida de permeabilidad por fouling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por hierro coloidal residual procedente de la sobredosificación de FeCl₃ durante el episodio de turbidez",
+      "why_plausible": "La dosis de FeCl₃ se incrementó a 8 mg/L durante 5 días; un exceso de hierro no flocado puede pasar como coloide férrico a través de la filtración y depositarse en las membranas. La coloración marrón anaranjada de los cartuchos es compatible con óxidos/hidróxidos de hierro.",
+      "why_discardable": "La sobredosificación cesó en el día -20 y el ΔP siguió subiendo de forma sostenida durante 14 días posteriores; además, el TOC elevado persistente (4,1 mg/L) indica una fuente orgánica continua como driver principal. Si fuera hierro residual puro, el TOC no debería estar tan elevado. No obstante, es probable que exista un componente mixto orgánico-férrico."
+    },
+    {
+      "hypothesis": "Biofouling bacteriano favorecido por el aumento de nutrientes orgánicos post-crecida",
+      "why_plausible": "El incremento de TOC proporciona sustrato para crecimiento bacteriano; la planta no dispone de UF y la cloraminación intermitente puede ser insuficiente. El biofouling típicamente afecta primero la etapa 1.",
+      "why_discardable": "El biofouling suele manifestarse con un aumento más gradual y con incremento de ΔP también en etapas posteriores conforme la biopelícula madura. La conductividad del permeado permanece prácticamente estable (95 vs 88 µS/cm), sin el patrón de aumento de paso de sal típico de biofouling avanzado. Además, el marco temporal de 14 días con subida sostenida tras un evento puntual es más consistente con fouling coloidal-orgánico que con colonización biológica."
+    },
+    {
+      "hypothesis": "Scaling (incrustación mineral) en etapa 1 por cambio en la composición del agua tras la crecida",
+      "why_plausible": "Las lluvias pueden alterar la composición iónica del agua de captación; un cambio en índices de saturación podría provocar precipitación mineral.",
+      "why_discardable": "El scaling afecta preferentemente la última etapa (etapa 3) donde la concentración de sales es máxima, no la etapa 1. Las etapas 2 y 3 están estables. Además, el pH es estable a 7,4 y la conductividad de alimentación apenas ha variado. El antiincrustante fosfonato está dosificado a 2,0 ppm."
+    }
+  ],
+  "requested_data": "Análisis de hierro total y hierro disuelto (mg/L Fe) en la alimentación actual al bastidor RO, para discriminar entre fouling orgánico puro (NOM/húmicos) y fouling mixto orgánico-férrico coloidal procedente de coagulante residual.",
+  "recommended_action": "Realizar un CIP alcalino de la etapa 1 con solución de NaOH al 0,1 % p/v (pH 12,0 ± 0,2) a 35 °C durante 4 horas con recirculación, seguido de un enjuague y un segundo paso con solución de ácido cítrico al 2,0 % p/v (pH 2,0–2,5) a 35 °C durante 2 horas para eliminar el componente férrico probable. Paralelamente, incrementar la dosis de FeCl₃ a 6–7 mg/L Fe y optimizar el pH de coagulación (ensayos jar-test con el agua actual de mayor TOC) para mejorar la eliminación de NOM en el pretratamiento. Considerar la adición temporal de carbón activo en polvo (PAC) a 10–15 mg/L antes de la decantación lamelar mientras el TOC de captación permanezca por encima de 3 mg/L. Reducir el intervalo de sustitución de cartuchos a 5 días hasta que el SDI₁₅ retorne a valores < 3,0.",
+  "decision_change_condition": "Si el análisis de hierro total en la alimentación al RO mostrara valores > 0,5 mg/L Fe y el TOC retornara a valores cercanos al baseline (< 2,5 mg/L), cambiaría el diagnóstico principal a fouling por hierro coloidal residual de la sobredosificación de coagulante, y priorizaría el CIP ácido con ácido cítrico al 2 % como paso principal en lugar del alcalino.",
+  "confidence": 78
+}

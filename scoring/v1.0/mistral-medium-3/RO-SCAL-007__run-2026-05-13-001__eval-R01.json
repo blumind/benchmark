@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-007-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-007",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fosfato calcio etapa 2 + aumento concentración fosfatos alimentación' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP específica fosfato pH 2 60 min — sólo CIP, sin cambiar antiincrustante explícito; el rebote es inevitable sin cambio de producto."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide análisis composición fouling etapa 2 — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: si no presencia significativa fosfato → reconsiderar."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "ACT no cambia el antiincrustante. Reconoce problema fosfato (MH dice fosfato) → strict no es el case_specific Critical 'mantener sin reconocer'."
+}

@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:43:59Z",
+  "main_hypothesis": "Fouling of first-stage RO membranes due to incomplete removal of iron-based coagulant residues and organic matter, exacerbated by the recent high-turbidity event and suboptimal coagulant dosing strategy.",
+  "key_signals": [
+    "Sustained rise in ΔP etapa 1 (1.9 bar vs baseline 0.9 bar) while ΔP in stages 2 and 3 remain stable",
+    "Increase in pressure feed (19.8 bar vs baseline 16.5 bar) indicating higher resistance in the first stage",
+    "Decrease in permeate flow by 8% (575 m³/h vs baseline 625 m³/h)",
+    "Elevated TOC in RO feed (4.1 mg/L vs baseline 1.8 mg/L) and rising trend since day -15",
+    "Increased turbidity (0.18 NTU) and SDI (3.9) at cartridge filter outlet, indicating poor particulate/organic removal",
+    "Visual observation of brown-orange discoloration on replaced cartridges, consistent with iron oxide/hydroxide deposition",
+    "Post-cartridge replacement, ΔP stage 1 initially dropped but rebounded within 48 hours, suggesting transient improvement followed by rapid re-fouling",
+    "High coagulant dose (8 mg/L FeCl₃) applied during high-turbidity event (-25 d) likely led to residual iron in feed, forming fouling layer on first-stage membranes"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Organic fouling due to increased natural organic matter (NOM) load from surface runoff during heavy rainfall.",
+      "why_plausible": "TOC in RO feed has risen significantly (from 1.8 to 4.1 mg/L) and SDI increased, both indicators of organic loading. Rainfall events can introduce terrestrial NOM into surface water.",
+      "why_discardable": "Organic fouling typically affects all stages uniformly or later stages more severely. Here, only stage 1 shows significant ΔP rise, and TOC increase is moderate. Also, pH and conductivity are stable, which is inconsistent with strong organic acid presence."
+    },
+    {
+      "hypothesis": "Biofouling due to inadequate disinfection or nutrient increase in feed water.",
+      "why_plausible": "TOC increase and stable chlorine residual suggest potential for microbial growth. Biofouling often starts in first stage due to nutrient concentration.",
+      "why_discardable": "No increase in pressure drop across later stages, no slime formation reported, and SDI rise is more consistent with particulate fouling than biological. Also, chlorine levels are stable and low, which would limit microbial activity."
+    },
+    {
+      "hypothesis": "Scaling due to calcium carbonate or sulfate precipitation under high recovery conditions.",
+      "why_plausible": "High recovery (80%) and rising feed pressure could indicate scaling tendency, especially if pH or LSI is favorable.",
+      "why_discardable": "Conductivity and pH are stable; no change in permeate conductivity suggests no salt rejection loss typical of scaling. Also, scaling usually affects all stages progressively, not isolated to stage 1."
+    },
+    {
+      "hypothesis": "Particulate fouling from incomplete removal of suspended solids despite increased coagulant dose.",
+      "why_plausible": "Turbidity spiked to 38 NTU during rainfall, and coagulant dose was increased to 8 mg/L, but residual turbidity and SDI remain elevated. Cartridge filters showed brown deposits.",
+      "why_discardable": "While particulate fouling is plausible, the rapid rebound of ΔP after cartridge replacement suggests the issue is not just particulate but involves a sticky fouling layer (e.g., iron hydroxide) that re-accumulates quickly."
+    }
+  ],
+  "requested_data": "Iron concentration in RO feed water (mg/L) measured at the same time as TOC and SDI.",
+  "recommended_action": "Perform an emergency clean-in-place (CIP) on the first stage using a low-pH iron removal step (e.g., 0.5% citric acid at pH 2.5–3.0, 30 °C, 60 min recirculation) followed by standard alkaline CIP. After CIP, adjust coagulant dose to 6 mg/L FeCl₃ and optimize flocculation pH to 6.8–7.2. Increase monitoring of cartridge filter differential pressure and SDI₁₅ to 2-hour intervals.",
+  "decision_change_condition": "If iron concentration in RO feed is below 0.1 mg/L and TOC remains elevated (>3.5 mg/L), then the diagnosis shifts toward organic fouling as the primary cause.",
+  "confidence": 88
+}

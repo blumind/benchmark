@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:21:51Z",
+  "main_hypothesis": "Biological fouling (biofilm formation) on RO membrane surfaces caused by elevated ATP and organic matter (TOC) in the feed water, exacerbated by DAF operational degradation and reduced pretreatment efficacy following the air saturation pump failure.",
+  "key_signals": [
+    "ATP in RO feed increased from 80 pg/mL to 1,200 pg/mL (15-fold rise) over 10 days",
+    "TOC in feed increased from 1.4 mg/L to 2.8 mg/L (2-fold rise) coinciding with ATP spike",
+    "SDI₁₅ at cartridge outlet increased from 2.5 to 4.8 over 10 days, indicating degraded particle removal",
+    "ΔP stage 1 increased from 1.2 bar to 2.8 bar (133% rise) while stage 2 remained stable, suggesting fouling localized to first-pass membranes",
+    "Permeate flow declined 8% (268 to 245 m³/h) despite 6 bar increase in feed pressure, indicating membrane resistance increase",
+    "Permeate conductivity increased from 360 to 380 µS/cm despite stable feed conductivity, consistent with membrane integrity loss from biofilm",
+    "DAF air saturation pump failure on day -12 preceded SDI rise on day -8 by 4 days, allowing biological regrowth in pretreatment",
+    "Temporal correlation: DAF degradation → increased SDI and ATP → membrane ΔP rise"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Colloidal/particulate fouling (inorganic scaling or suspended solids accumulation) without biological component",
+      "why_plausible": "SDI rise and ΔP increase are consistent with particulate loading; sea state episode on day -14 introduced elevated turbidity (1.8 NTU); cartridge filters may not fully recover after DAF degradation.",
+      "why_discardable": "ATP elevation to 1,200 pg/mL is a specific biomarker for microbial activity and cannot be explained by inorganic particles alone; TOC doubling suggests organic matter accumulation, not mineral scaling; inorganic scaling would not typically cause ATP spikes; permeate conductivity increase is inconsistent with pure particulate fouling (which does not degrade salt rejection)."
+    },
+    {
+      "hypothesis": "Chemical scaling (calcium carbonate or silica) triggered by increased feed salinity or pH drift",
+      "why_plausible": "Feed conductivity is stable at 56,200 µS/cm, but localized concentration in membrane pores could occur; pH is stable at 8.1, but antiincrustant dose increase on day -3 might indicate operator concern about scaling.",
+      "why_discardable": "Feed conductivity and pH are both stable, ruling out the primary drivers of inorganic scaling; antiincrustant dose increase occurred after SDI and ATP had already begun rising (day -8), so it is a response, not a cause; chemical scaling would not explain the ATP spike or TOC doubling; stage 2 ΔP remains stable, whereas chemical scaling typically affects all stages."
+    },
+    {
+      "hypothesis": "Membrane degradation or defect (tears, pinholes) in first-pass elements allowing salt passage",
+      "why_plausible": "Permeate conductivity increase and ΔP rise could indicate membrane damage; membranes are 22 months old, within expected service life but not new.",
+      "why_discardable": "Membrane defects would cause rapid, non-progressive salt passage and would typically manifest in one or two elements, not across all 56 first-pass elements simultaneously; the 10-day progressive trend in ΔP and flow is inconsistent with sudden mechanical failure; ATP and TOC spikes are not explained by membrane tears; defects would not cause SDI increase upstream of the membrane."
+    },
+    {
+      "hypothesis": "Inadequate chlorine residual allowing microbial growth in the feed system (intake, DAF, cartridge housing)",
+      "why_plausible": "Chlorine is dosed intermittently only under defined conditions; free chlorine is < 0.02 mg/L (below typical residual targets of 0.5–1.0 mg/L for biofouling prevention); ATP spike suggests microbial proliferation.",
+      "why_discardable": "Intermittent chlorination is a design choice for this plant (to protect membranes from oxidative damage); the timing of the ATP spike (day -8) correlates with DAF pump failure (day -12) and SDI rise, not with a change in chlorination protocol; if inadequate residual were the root cause, ATP would have been elevated at baseline; the spike is acute and tied to a specific operational event (DAF degradation)."
+    }
+  ],
+  "requested_data": "Microscopic examination (optical or electron microscopy) of a membrane sample from stage 1 to confirm presence of biofilm (extracellular polysaccharide matrix, bacterial cells, or diatoms) versus inorganic deposits or particulate matter.",
+  "recommended_action": "Perform an immediate chemical cleaning of the first-pass RO train using a low-pH (pH 3.5–4.0) biocide-compatible cleaning solution containing 0.5–1.0% citric acid or equivalent, followed by a high-pH (pH 10.5–11.0) alkaline clean with 0.1–0.2% sodium hydroxide and 200–500 mg/L sodium hypochlorite (as available chlorine) to remove biofilm and restore membrane flux. Before cleaning, verify that the DAF air saturation pump is fully operational and that SDI at the cartridge outlet has returned to ≤ 3.0. Do not resume full RO operation until post-cleaning ΔP stage 1 returns to ≤ 1.5 bar and permeate conductivity returns to baseline (≤ 365 µS/cm). Simultaneously, increase the frequency of DAF air saturation pump maintenance inspections to weekly and consider implementing continuous low-level chlorination (0.3–0.5 mg/L free chlorine) upstream of the cartridge filters if plant design permits, with dechlorination by bisulfite immediately before the RO feed pump.",
+  "decision_change_condition": "If microscopic examination of the membrane sample reveals no biofilm but instead shows inorganic deposits (calcium carbonate, silica, or iron hydroxide), or if the ATP and TOC levels return to baseline within 48 hours without cleaning and ΔP stage 1 stabilizes below 1.8 bar, then the diagnosis would shift toward chemical scaling or a transient pretreatment upset unrelated to biofilm, and the recommended action would change to optimization of antiscalant dosing and enhanced DAF monitoring rather than chemical cleaning.",
+  "confidence": 78
+}

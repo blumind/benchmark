@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:58:16Z",
+  "main_hypothesis": "Silica scaling on stage 2 membranes due to undersized antiscalant dosage for the elevated recovery rate (82%), combined with insufficient pH adjustment to maintain silica solubility in the concentrate stream.",
+  "key_signals": [
+    "ΔP stage 2 increased from 0.9 bar to 1.9 bar over 15 days following recovery increase from 75% to 82%",
+    "Silica in reject stream rose to 295 mg/L, exceeding the antiscalant's recommended saturation limit of 260 mg/L",
+    "Antiscalant dosage remained fixed at 8 ppm despite 7% increase in recovery and corresponding increase in concentrate TDS and silica concentration",
+    "Stage 1 ΔP remained stable (1.2 bar) while stage 2 ΔP rose markedly, indicating localized fouling in stage 2",
+    "Permeate conductivity increased from 88 to 105 µS/cm despite stable feed conductivity, indicating membrane degradation or bypass",
+    "CIP alkaline treatment provided only temporary relief (ΔP dropped to 1.5 bar then rebounded to 1.8 bar in 72 h), consistent with silica scale reformation rather than organic fouling",
+    "Feed pH remained at 7.1 (unadjusted), which does not suppress silica polymerization in the high-concentration reject stream"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling by colloidal silica or iron oxide particles due to inadequate pretreatment",
+      "why_plausible": "Feed SiO₂ is naturally high (52–53 mg/L) and minimal pretreatment (5 µm cartridges only) is in place. Colloidal silica can pass 5 µm filters and accumulate on membranes.",
+      "why_discardable": "Stage 1 ΔP is stable, indicating no significant particle accumulation in the first stage. If colloidal fouling were the primary cause, stage 1 would show pressure rise first. The rapid rebound of ΔP after CIP (72 h) is inconsistent with particle fouling, which typically requires days to weeks to re-accumulate. Silica scale, by contrast, reforms rapidly once saturation is re-established."
+    },
+    {
+      "hypothesis": "Membrane degradation or defect in stage 2 elements",
+      "why_plausible": "Membranes have 18 months of service; degradation is possible. Rising permeate conductivity (88 → 105 µS/cm) could indicate membrane breach or loss of rejection.",
+      "why_discardable": "Degradation would be gradual and would not correlate precisely with the recovery increase on day −23. The timing of ΔP rise (day −15, 5 days after recovery change) and the rapid response to CIP (temporary relief) are inconsistent with membrane material failure. Degradation would not be reversible by chemical cleaning."
+    },
+    {
+      "hypothesis": "Biological fouling or biofilm formation in stage 2",
+      "why_plausible": "Chlorine residual is < 0.02 mg/L (below typical biocide threshold), and stage 2 concentrate is a high-nutrient, low-flow environment conducive to biofilm growth.",
+      "why_discardable": "Biological fouling typically develops over weeks to months and does not rebound within 72 h of alkaline CIP. Alkaline CIP is not the standard treatment for biofilm; acid or enzymatic cleaning would be more effective. The tight correlation between recovery increase and ΔP rise (5-day lag) is too rapid for biofilm initiation."
+    },
+    {
+      "hypothesis": "Calcium carbonate scaling due to elevated pH or alkalinity in concentrate",
+      "why_plausible": "Alkalinity in reject stream rose from 240 to 320 mg/L; calcium rose from 380 to 540 mg/L. At pH 7.1 and high concentration, CaCO₃ saturation is possible.",
+      "why_discardable": "Calcium and alkalinity increases are expected and proportional to the recovery increase (75% → 82%). The Langelier Saturation Index at pH 7.1 and 16.8 °C does not favor CaCO₃ precipitation in the concentrate. The antiscalant used is specific for silica, not calcium carbonate. The rapid rebound after alkaline CIP (which would dissolve CaCO₃) contradicts calcium scaling as the primary cause."
+    }
+  ],
+  "requested_data": "Silica concentration (mg/L SiO₂) in the stage 2 concentrate (reject stream from stage 2 only, not the overall plant reject), measured within the last 48 hours.",
+  "recommended_action": "Immediately increase antiscalant dosage from 8 ppm to 12 ppm (assuming the same sulfonato modificado product at the same concentration as supplied) to account for the elevated recovery and silica concentration in the concentrate. Simultaneously, increase feed pH from 7.1 to 7.8–8.0 using sodium hydroxide (NaOH) at 0.5–1.0 mL/min (or equivalent to achieve target pH) to suppress silica polymerization in the concentrate. Monitor ΔP stage 2 hourly for 24 h; if ΔP does not stabilize or continues to rise, perform an acid CIP (pH 3.5–4.0, 60 min) to dissolve any silica scale already formed, followed by a second alkaline CIP. Recalculate antiscalant dosage using the membrane manufacturer's software for 82% recovery and 2,800 mg/L feed TDS before returning to normal operation.",
+  "decision_change_condition": "If the stage 2 reject silica concentration is found to be below 200 mg/L (well below the antiscalant saturation limit), or if stage 1 ΔP rises above 1.5 bar while stage 2 ΔP remains stable, the diagnosis would shift toward pretreatment inadequacy or particle fouling, and the recommended action would change to enhanced pretreatration (addition of coagulation/flocculation or cartridge upgrade to 1 µm) rather than antiscalant adjustment.",
+  "confidence": 78
+}

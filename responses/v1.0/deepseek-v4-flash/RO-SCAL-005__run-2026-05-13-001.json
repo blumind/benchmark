@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:20:46Z",
+  "main_hypothesis": "Inadequate anti-scalant dosage (1.2 ppm of phosphonate) for the high-scaling feed water, leading to accelerated scaling (likely calcium carbonate and potentially calcium phosphate) in the second stage, causing progressive ΔP increase and permeate flow decline.",
+  "key_signals": [
+    "ΔP stage 2 progressive rise (0.9 → 1.7 bar) while ΔP stage 1 remains stable at 1.2 bar",
+    "Rapid re-fouling after acid CIP (ΔP returned to 1.7 bar in 5 days)",
+    "Permeate flow reduction of 8% (305 vs 333 m³/h)",
+    "Permeate conductivity increase (88 vs 78 µS/cm)",
+    "Change in anti-scalant type from polyacrylic (3 ppm) to phosphonate (1.2 ppm) 40 days ago",
+    "Stable feed water quality and other operational parameters (pH, temperature, chlorine, calcium/silica rejection)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Colloidal fouling (e.g., clay or silt) in stage 2",
+      "why_plausible": "Colloidal particles could accumulate preferentially in the rear elements of stage 2, and the acid CIP might have partially removed some deposits, but the rapid recurrence could be due to continued particle loading.",
+      "why_discardable": "Stage 1 ΔP remained stable, indicating no significant particulate load reaching the first stage; feed water is from a well with typically low turbidity; no change in feed conductivity or other indicators."
+    },
+    {
+      "hypothesis": "Biofouling due to bacterial regrowth on stage 2 membranes",
+      "why_plausible": "Biofilms can cause rapid pressure drop and are not effectively removed by acid CIP; the quick re-fouling after cleaning could be regrowth.",
+      "why_discardable": "Chlorine residual is consistently below detection (<0.02 mg/L); biofouling usually affects lead elements more; there is no evidence of biological activity (TOC, Silt Density Index) and no operational change that would introduce nutrients."
+    },
+    {
+      "hypothesis": "Precipitation of the new phosphonate anti-scalant itself due to incompatibility with high calcium levels",
+      "why_plausible": "Phosphonates can form insoluble calcium-phosphonate complexes at high concentrations, leading to scaling; the reduced dosage (1.2 ppm) might have caused local overdosing of active species.",
+      "why_discardable": "If the anti-scalant were precipitating, scaling would likely occur in the first stage as well; the rapid re-fouling after acid CIP is more consistent with inadequate inhibition of natural scalants rather than anti-scalant precipitation."
+    }
+  ],
+  "requested_data": "Measured Langelier Saturation Index (LSI) and Stiff-Davis Saturation Index (S&DSI) of the concentrate stream at current operating conditions (temperature 22.5°C, pH 6.5, TDS ~6300 µS/cm, calcium ~2450 mg/L, alkalinity ~1080 mg/L as CaCO₃) to determine the scaling potential of calcium carbonate.",
+  "recommended_action": "Revert to the previous polyacrylic anti-scalant at a dosage of 3 ppm (if available) to restore proven scaling inhibition. If the old product is unavailable, temporarily reduce plant recovery from 78% to 65% to lower concentration factors, and increase the current phosphonate anti-scalant dosage to 3 ppm pending a dynamic scale loop test on the actual feed water.",
+  "decision_change_condition": "If the concentrate LSI is below 0.5 and the S&DSI is negative (indicating that calcium carbonate scaling is thermodynamically unfavorable), then the hypothesis of scaling due to inadequate anti-scalant would be weakened, and investigation would shift toward colloidal fouling or biofouling as primary causes.",
+  "confidence": 85
+}

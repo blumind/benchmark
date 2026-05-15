@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-004",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'residual air trapped... incomplete purging' matches air entrampado anchor"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals (borboteo, balance 92%, dP bajos, cond 380, rechazo 95.4, caudal 270)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (debris PVC, biofouling) - no incluye fuga ni wetting parcial como tales"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: vent 5 bar + ramp 14.5 bar 10 min + monitoring + criterios numericos - matches gold"
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "C5: 3 anchors (presion vent, criterios continuacion, balance closure)"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit: cond>250 + dP no recupera + balance<95% 4h -> daño/fouling"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Claude conflict; respuesta solida"
+}

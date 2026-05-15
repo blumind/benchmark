@@ -1,0 +1,49 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:15:22Z",
+  "main_hypothesis": "Inhibición de incrustaciones insuficiente tras el cambio de antiincrustante (de poliacrílico 3 mg/L a fosfonado 1,2 mg/L) que resulta en incrustación de carbonato cálcico localizada en la 2ª etapa.",
+  "key_signals": [
+    "ΔP etapa 2 sube de 0,9 a 1,7 bar mientras ΔP etapa 1 permanece estable (~1,2 bar), patrón típico de incrustación en la cola (alta concentración).",
+    "La CIP ácida (HCl pH 2, 60 min) reduce temporalmente ΔP etapa 2 de 1,7 a 1,1 bar, consistente con eliminación de incrustación carbonatada.",
+    "El problema inicia ~2 semanas después de implementar el nuevo antiincrustante a menor dosis (1,2 mg/L) y el proveedor recomendó dosis genérica sin proyección.",
+    "Aumento de presión de alimentación (+3 bar), caída de caudal de permeado (−8 %) y ligera subida de conductividad de permeado, síntomas de ensuciamiento/incrustación.",
+    "Composición del rechazo (Ca, alcalinidad, sílice) y pH/temperatura de alimentación estables, descartando cambio de agua bruta y señalando al cambio químico como detonante."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación de sulfato cálcico (yeso) favorecida por el uso de H2SO4 y dosis/ química de antiincrustante inadecuadas.",
+      "why_plausible": "Alta dureza y posible sulfato elevan el riesgo de CaSO4 en la 2ª etapa a 78 % de recuperación; el cambio a fosfonado a baja dosis puede no controlar yeso.",
+      "why_discardable": "La CIP ácida devolvió casi a baseline el ΔP, respuesta más propia de CaCO3 que de yeso (el yeso suele ser más resistente a ácido); además la cronología coincide con la reducción de dosis."
+    },
+    {
+      "hypothesis": "Fallo del ablandador parcial (breakthrough de dureza) incrementando Ca a la ósmosis.",
+      "why_plausible": "Operación en arranque-paro puede causar canales o regeneraciones incompletas, elevando Ca y propiciando incrustación aguas abajo.",
+      "why_discardable": "Los niveles de Ca y alcalinidad en rechazo se mantienen similares al baseline y no hay subida de ΔP en la 1ª etapa; el inicio del problema tras cambiar el antiincrustante es más coherente."
+    },
+    {
+      "hypothesis": "Ensuciamiento particulado en 2ª etapa por bypass de cartuchos o arrastre de medio filtrante.",
+      "why_plausible": "Un bypass podría aumentar sólidos en la 2ª etapa y elevar ΔP.",
+      "why_discardable": "El ensuciamiento particulado afectaría primero a la 1ª etapa; además la CIP ácida no es especialmente eficaz para sólidos inertes y, sin embargo, redujo ΔP de forma marcada."
+    },
+    {
+      "hypothesis": "Bioensuciamiento en 2ª etapa.",
+      "why_plausible": "ΔP creciente y pérdida de flujo pueden darse por biofilm.",
+      "why_discardable": "Agua de pozo con cloro libre <0,02 mg/L y baja materia orgánica, patrón localizado en 2ª etapa, y mejora con CIP ácida (la biológica responde mejor a cáustico), lo hacen poco probable."
+    },
+    {
+      "hypothesis": "Incrustación por sílice/polisilicato.",
+      "why_plausible": "Sílice en rechazo ~145 mg/L puede ser riesgosa en altas recuperaciones.",
+      "why_discardable": "La CIP ácida suele ser poco eficaz frente a sílice; aquí redujo notablemente ΔP, y la sílice en rechazo está estable respecto al baseline."
+    }
+  ],
+  "requested_data": "Dureza total en la alimentación a RO después del ablandador, mg/L como CaCO3 (medida el día -25).",
+  "recommended_action": "1) Realizar de inmediato una CIP ácida para remover la incrustación: preparar solución con HCl ajustada a pH 2,0 ±0,2 y 25–30 °C; recircular 60–90 min por el bastidor (con especial atención a la 2ª etapa), con enjuague hasta pH ~6,5 al finalizar. 2) Restablecer el programa de antiincrustante que funcionaba: dosificar antiincrustante poliacrílico a 3,0 mg/L (ppm) como producto, inyección aguas arriba de cartuchos; si no está disponible de inmediato, aumentar temporalmente el fosfonado actual a 2,5–3,0 mg/L mientras llega el producto previo y se realiza una proyección química. 3) Reducir temporalmente la recuperación de planta al 70–72 % (incrementando el caudal de concentrado) durante 48–72 h tras la CIP para minimizar la sobresaturación en la 2ª etapa y estabilizar ΔP.",
+  "decision_change_condition": "Si la dureza postablandador en la alimentación a RO durante el periodo de la falla fuese sustancialmente mayor que el histórico (p. ej., >2× el baseline), cambiaría el diagnóstico a fallo del ablandador como causa raíz principal.",
+  "confidence": 75
+}

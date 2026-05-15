@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-005",
+    "subject_id": "gpt-3-5-turbo",
+    "subject_version": "gpt-3.5-turbo-0125",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "MH 'scaling por dosis inadecuada antiincrustante' — genérico, no menciona cambio proveedor ni mecanismo específico."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Aumentar antiincrustante 3 ppm — solo operacional, sin CIP."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide 'resultados análisis del proveedor' — indirecto."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: si dosis actual adecuada → descartar."
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

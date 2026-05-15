@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-NOWE-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-002",
+    "subject_id": "gemini-3-1-flash-lite",
+    "subject_version": "gemini-3.1-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 0,
+      "justification": "C1: 'membrane oxidation/degradation... bisulfite reacting' - OXID-like critical fail"
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "C2: 5 signals listados (ORP, sulfito, rejection, cond, agua bruta)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts cortas (raw fouling, daño quimico) - segunda dice 'compatible no flushed'"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: extended flush con permeado hasta ORP>+50 sulfito<0.5 - matches gold"
+    },
+    "requested_data": {
+      "score": 0,
+      "justification": "C5: 1 anchor (SDI) - irrelevante"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: generica 'si cond stable + dP rising -> physical fouling'"
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Diagnosticar como OXID (oxidación de membrana)",
+      "severity": "critical",
+      "justification": "Diagnostica 'membrane oxidation/degradation' caused by bisulfito"
+    }
+  ],
+  "reviewer_notes": "Diagnostico OXID-like critico aunque accion correcta"
+}

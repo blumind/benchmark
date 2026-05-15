@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-OXID-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:04:43Z",
+  "main_hypothesis": "Daño oxidativo incipiente de la capa de poliamida de las membranas del tren T-03 por exposición a H₂O₂ residual tras un aclarado post-CIP insuficiente.",
+  "key_signals": [
+    "El paso de H₂O₂ al 0,1 % p/p fue seguido por solo 45 min de aclarado, frente a los 60 min exigidos por el protocolo.",
+    "La verificación de H₂O₂ fue solo con tira reactiva de sensibilidad 1 mg/L, justo en el límite del criterio de retorno, sin medición cuantitativa.",
+    "La conductividad del permeado subió progresivamente de 410 a 540 µS/cm en los 5 días posteriores al CIP.",
+    "El rechazo de sales bajó de 99,28 % a 99,05 % sin cambios relevantes en conductividad de alimentación, temperatura, pH ni presión.",
+    "Los ΔP de etapa 1 y etapa 2 permanecen estables, lo que no sugiere ensuciamiento hidráulico como causa principal.",
+    "Los trenes vecinos no presentan desviación, lo que localiza el evento en el tren intervenido con CIP.",
+    "El cloro libre antes de RO permanece < 0,02 mg/L, haciendo menos probable una oxidación por cloro libre en la alimentación normal."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga mecánica en interconectores, juntas tóricas o adaptadores de presión del tren T-03 tras el CIP.",
+      "why_plausible": "Un defecto de sellado puede aumentar la conductividad del permeado con ΔP estable y sin cambios en la alimentación; además, el evento aparece tras una intervención de mantenimiento.",
+      "why_discardable": "La subida progresiva durante varios días tras un paso oxidante mal aclarado encaja mejor con deterioro químico de membrana que con una fuga mecánica, que suele producir un salto más abrupto de conductividad."
+    },
+    {
+      "hypothesis": "Ensuciamiento orgánico o biológico residual posterior al CIP.",
+      "why_plausible": "Una pérdida de caudal de permeado del 4 % podría observarse con ensuciamiento, y el tren acaba de pasar por un CIP.",
+      "why_discardable": "Los ΔP de ambas etapas están estables y no se reporta aumento hidráulico característico; además, el síntoma dominante es pérdida de rechazo de sales, no incremento de pérdida de carga."
+    },
+    {
+      "hypothesis": "Incrustación mineral o precipitación inducida por cambios químicos del CIP.",
+      "why_plausible": "Después de un CIP pueden movilizarse especies o alterarse condiciones locales que generen depósitos, y la caída de caudal podría ser compatible con incrustación ligera.",
+      "why_discardable": "No hay incremento de ΔP, la alimentación mantiene pH, temperatura y salinidad estables, y la pérdida de rechazo localizada tras H₂O₂ insuficientemente aclarado es más consistente con oxidación de membrana."
+    },
+    {
+      "hypothesis": "Oxidación catalizada por metales, especialmente hierro, durante o después del contacto con H₂O₂.",
+      "why_plausible": "Se observaron rastros marrones en cartuchos de mantenimiento y el hierro puede catalizar radicales a partir de H₂O₂, agravando el daño oxidativo a la poliamida.",
+      "why_discardable": "El hierro disuelto reportado en alimentación a RO es bajo y estable, 0,03 mg/L frente a 0,02 mg/L de línea base; por tanto, parece más un posible factor agravante que la causa raíz principal."
+    }
+  ],
+  "requested_data": "Concentración cuantitativa de H₂O₂ residual en el enjuague final o alimentación al T-03 antes de retornar a producción, en mg/L, medida con método con límite de detección inferior a 0,1 mg/L.",
+  "recommended_action": "Retirar inmediatamente el tren T-03 de producción y desviar su permeado a drenaje; ejecutar un aclarado con permeado a baja presión conforme al procedimiento del fabricante durante al menos 60 min y no retornar el tren a servicio hasta confirmar H₂O₂ residual < 1 mg/L mediante medición cuantitativa, seguido de prueba de rechazo/salt passage del tren.",
+  "decision_change_condition": "Cambiaría el diagnóstico si una medición cuantitativa demostrara H₂O₂ residual < 0,1 mg/L al final del aclarado antes del retorno a servicio y una prueba por vaso o por elemento mostrara un aumento localizado y abrupto de conductividad compatible con fuga de junta o interconector.",
+  "confidence": 78
+}

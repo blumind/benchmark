@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-FOUL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:44:14Z",
+  "main_hypothesis": "Bioincrustación en los elementos líderes de la etapa 1 causada por la reducción de la dosificación preventiva de biocida (DBNPA), con aumento de materia orgánica disponible.",
+  "key_signals": [
+    "Cambio operativo: reducción de la frecuencia de biocida tras la auditoría (día -90/-85).",
+    "ATP en alimentación RO elevado y creciente (110 → 480 pg/mL) sin alcanzar el umbral de dosificación, favoreciendo crecimiento biológico.",
+    "ΔP etapa 1 sube de 0,8 → 1,7 bar en 60 días (característico de biofilm en elementos líderes).",
+    "ΔP etapa 3 estable (0,4 bar), lo que desincentiva hipótesis de incrustación mineral en cola.",
+    "CIP ácido (día -30) sólo alivió temporalmente la ΔP y rebotó en 12 días, típico de bioincrustación no removida por ácido.",
+    "TOC en alimentación aumenta (1,3 → 1,9 mg/L), aportando sustrato para biofilm.",
+    "Color amarillento en concentrado (compatibles con orgánicos/húmicos), junto con ligera subida de conductividad de permeado y caída de caudal (8 %), consistentes con ensuciamiento biológico."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento por partículas/óxidos (MnO2/Fe) por arrastre de greensand o sobreoxidación con KMnO4.",
+      "why_plausible": "Incremento de ΔP en la etapa 1 puede deberse a sólidos finos que impactan elementos líderes; el sistema usa KMnO4 y greensand que pueden liberar finos si hay fallos de retrolavado.",
+      "why_discardable": "Fe y Mn disueltos en alimentación al RO se mantienen bajos y estables; la ΔP de etapas 2–3 no replica el aumento (si fueran sólidos persistentes, afectaría más etapas); el CIP ácido debió resolver de forma más sostenida si el principal foulant fuese óxido metálico, pero el rebote rápido es más típico de biofilm activo."
+    },
+    {
+      "hypothesis": "Ensuciamiento coloidal/orgánico no biológico (húmicos/sílice coloidal).",
+      "why_plausible": "Aumento de TOC y color amarillento del concentrado apuntan a mayor carga de orgánicos naturales que pueden adsorberse en la etapa 1.",
+      "why_discardable": "El disparador temporal (reducción de biocida) y el aumento de ATP indican actividad biológica; la respuesta pobre a CIP ácido y el patrón de ΔP son más consistentes con biofilm que con sólo orgánico coloidal, que mejoraría con CIP alcalino pero no requiere biocida."
+    },
+    {
+      "hypothesis": "Incrustación inorgánica (carbonato/sulfatos) por recuperación alta o subdosificación de antiincrustante.",
+      "why_plausible": "Recuperación del 78 % en BWRO puede acercar índices de saturación a condiciones de incrustación.",
+      "why_discardable": "La incrustación aparece típicamente en cola (etapa 3) con aumento de ΔP y paso de sales; aquí la etapa 3 está estable y el antiincrustante se mantiene a 1,8 ppm."
+    },
+    {
+      "hypothesis": "Daño oxidativo de membranas (carryover de oxidante) con aumento de paso de sales.",
+      "why_plausible": "Uso de oxidantes en pretratamiento podría, si hay arrastre, afectar rechazo salino.",
+      "why_discardable": "El síntoma dominante es el aumento de ΔP en la etapa 1, no una pérdida marcada de rechazo; la conductividad de permeado sólo sube levemente, lo que no encaja con daño oxidativo significativo."
+    }
+  ],
+  "requested_data": "SDI15 de la alimentación al RO (índice adimensional, valor a 15 min).",
+  "recommended_action": "Ejecutar de inmediato un CIP alcalino específico para bioincrustación y restablecer el régimen preventivo de biocida: 1) Aislar el bastidor y enjuagar con permeado. 2) Preparar solución de limpieza con NaOH 1,0–2,0 g/L (0,10–0,20 % p/p) + tensioactivo no iónico 0,5–1,0 g/L, ajustar pH 11–12 y calentar a 30–35 °C. 3) Recircular por la etapa 1 a bajo ΔP (<2 bar) durante 45–60 min, con inversión de flujo si está permitido, seguido de remojo 30 min; repetir para etapas 2 y 3. 4) Enjuagar hasta pH ~7. 5) Desinfección con DBNPA (activo) 20–30 mg/L en agua permeado: recircular 30 min y remojar 60 min; luego enjuagar hasta <1 mg/L de DBNPA antes de volver a servicio. 6) Restablecer dosificación preventiva de DBNPA en línea a 20–30 mg/L (activo) durante 60 min cada 3 días por 4 semanas, y luego ajustar frecuencia para mantener ATP en alimentación <200 pg/mL y ΔP estable. No dosificar oxidantes al RO y verificar compatibilidad de químicos con poliamida.",
+  "decision_change_condition": "Si el SDI15 de alimentación es alto (≥5) con ATP bajo (<150 pg/mL), o si un CIP alcalino + biocida no recupera la ΔP pero un CIP ácido sí lo hace de forma sostenida, cambiaría el diagnóstico a ensuciamiento particulado/óxidos como causa raíz.",
+  "confidence": 78
+}

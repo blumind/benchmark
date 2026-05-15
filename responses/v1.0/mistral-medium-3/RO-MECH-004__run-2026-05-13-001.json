@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-MECH-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:44:30Z",
+  "main_hypothesis": "Defecto en la línea de pegamento (glue line) de los elementos de membrana del lote afectado en el tren T-04",
+  "key_signals": [
+    "Tres tubos en T-04 con conductividad de permeado elevada (1.500–2.200 µS/cm) mientras que el resto están en rango normal",
+    "Distribución del lote sospechoso coincide con los tubos afectados en T-04",
+    "Conductividad del permeado en aumento progresivo en el tren T-04",
+    "Bajada del 3% en el caudal de permeado del tren",
+    "Bajada lenta en el rechazo de sales"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling o ensuciamiento de las membranas",
+      "why_plausible": "El aumento en la presión de alimentación y la disminución en el caudal de permeado podrían indicar fouling.",
+      "why_discardable": "La conductividad del permeado no es típica de fouling y el ORP y el cloro libre están estables, lo que sugiere que no hay ensuciamiento biológico."
+    },
+    {
+      "hypothesis": "Degradación general de las membranas por edad",
+      "why_plausible": "Las membranas tienen 36 meses de servicio, cerca del fin de su vida útil.",
+      "why_discardable": "La degradación general afectaría a todos los trenes por igual, no solo a tubos específicos en T-04."
+    }
+  ],
+  "requested_data": "Resultados de la autopsia del elemento extraído del tren T-04",
+  "recommended_action": "Continuar con la autopsia programada del elemento extraído del tren T-04 y preparar la sustitución de los elementos del lote afectado en los tubos identificados.",
+  "decision_change_condition": "Si la autopsia no revela defectos en la línea de pegamento y muestra otro tipo de fallo, como rotura de fibras o ensuciamiento severo.",
+  "confidence": 85
+}

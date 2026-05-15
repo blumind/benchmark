@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-MECH-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:40:46Z",
+  "main_hypothesis": "Falla del sello de la tapa (end cap) o del adaptador de interconexión en el Tubo 2, permitiendo el bypass de agua de alimentación hacia el permeado.",
+  "key_signals": [
+    "Probe test con conductividad de 1.250 µS/cm en el Tubo 2 frente a 100-130 µS/cm en otros tubos",
+    "Test de presión del Tubo 2 con pérdida de presión a 1 bar",
+    "Protrusión anómala del sello frontal y junta tórica marcada en el Tubo 2",
+    "Aumento progresivo de la conductividad del permeado total coincidente con la cronología de la fuga reportada"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Degradación química o física de las membranas en el Tubo 2",
+      "why_plausible": "La pérdida de rechazo de sales es un síntoma clásico de integridad comprometida de la membrana.",
+      "why_discardable": "El test de presión del Tubo 2 confirmó una falla mecánica en el sello de la cabeza/cap, lo cual explica el bypass de agua de alimentación directamente al permeado sin necesidad de degradación de la membrana."
+    },
+    {
+      "hypothesis": "Fisura estructural en la vaina FRP (Pressure Vessel)",
+      "why_plausible": "La vaina tiene 5 años de servicio y el desgaste en la pista del cap fue reportado.",
+      "why_discardable": "La inspección visual no detectó grietas y la falla de presión fue aislada al sello de la cabeza, no a la integridad del cuerpo del recipiente."
+    }
+  ],
+  "requested_data": "Medición de conductividad del permeado específico de cada elemento individual dentro del Tubo 2 mediante muestreo de los puertos de permeado de los acoples.",
+  "recommended_action": "Reemplazar el kit de sellos (O-rings) de la tapa y el adaptador de interconexión del Tubo 2, aplicando lubricante de silicona grado alimenticio, y realizar una prueba de presión hidrostática a 1,5 veces la presión de operación antes de reiniciar el flujo.",
+  "decision_change_condition": "Si el reemplazo de los sellos y adaptadores no corrige la alta conductividad en el permeado del Tubo 2, la hipótesis cambiaría a una falla de integridad en los elementos de membrana (telescopado o daño en el sello del elemento).",
+  "confidence": 95
+}

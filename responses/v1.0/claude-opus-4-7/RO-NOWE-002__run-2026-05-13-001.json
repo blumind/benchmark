@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-NOWE-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:59:26Z",
+  "main_hypothesis": "Aclarado insuficiente del SBS de preservación combinado con el llenado con agua bruta (no permeado): el bisulfito residual aún está siendo desplazado de las membranas y, sobre todo, el agua bruta cargada de sales quedó retenida en el bastidor durante la preservación, provocando un pico de conductividad en permeado que decae lentamente conforme se barre. No hay daño real de membrana; es un fenómeno de purga/dilución del fluido de preservación contaminado con sales.",
+  "key_signals": [
+    "Sulfito residual en permeado 8,5 mg/L (vs <0,5 baseline) y ORP permeado -180 mV: confirma presencia de SBS aún siendo barrido a través/alrededor de las membranas.",
+    "Conductividad permeado en descenso lento (1.500 → 850 µS/cm en 4 h) y rechazo subiendo lentamente: comportamiento típico de barrido de solución concentrada retenida, no de daño permanente.",
+    "ΔP por etapa prácticamente igual al baseline: descarta ensuciamiento/incrustación significativos.",
+    "Cloro libre <0,02 mg/L antes y después: descarta oxidación por cloro como causa del bajo rechazo.",
+    "Desviación de procedimiento documentada: llenado con agua bruta en lugar de permeado el día -2, y aclarado pre-arranque de sólo 15 min con agua bruta (insuficiente).",
+    "Presión de alimentación elevada (16,8 vs 14,5 bar) para producir menos caudal: consistente con mayor presión osmótica transitoria por alta concentración salina atrapada en el lado de rechazo."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño oxidativo/químico de membrana por SBS en condiciones anóxicas prolongadas (degradación de poliamida por sulfito en ausencia total de O2 no es típica, pero sobredosis repetida 1,5 % y estancamiento 8 días pudo favorecer crecimiento microbiológico y subproductos).",
+      "why_plausible": "Se sobredosificó SBS dos veces, se mantuvo bastidor sellado 8 días a temperatura templada, ORP muy reductor sostenido.",
+      "why_discardable": "El rechazo está mejorando con el tiempo de operación; un daño real de membrana daría una pérdida de rechazo estable o creciente, no decreciente. ΔP normales."
+    },
+    {
+      "hypothesis": "Crecimiento biológico durante la preservación (biofouling incipiente) que altera transporte y rechazo.",
+      "why_plausible": "Agua bruta cruda introducida en el bastidor aporta nutrientes y microorganismos; SBS se consume y deja de proteger; 8 días sellado.",
+      "why_discardable": "ΔP etapa 1 sólo +0,1 bar y etapa 2 incluso menor que baseline; el biofouling típicamente eleva ΔP. Además la conductividad mejora, no empeora."
+    },
+    {
+      "hypothesis": "O-rings/interconectores dañados o mal asentados tras manipulación durante la parada eléctrica, provocando bypass de salmuera a permeado.",
+      "why_plausible": "Hubo intervención mecánica/eléctrica; un bypass explicaría alta conductividad permeado con ΔP normal.",
+      "why_discardable": "Un bypass mecánico no se 'autorrepara' con el tiempo; aquí la conductividad baja progresivamente, lo que es incompatible."
+    },
+    {
+      "hypothesis": "Precipitación leve de carbonatos/sulfatos por concentración del agua bruta estancada con antiincrustante agotado.",
+      "why_plausible": "Agua bruta TDS 3.800 estancada 2 días sin antiincrustante activo en recovery efectivo nulo durante reposo.",
+      "why_discardable": "ΔP etapa 2 no aumentado; rechazo recuperándose; no hay evidencia de scaling."
+    }
+  ],
+  "requested_data": "Perfil de conductividad de permeado por tubo de presión (sonda probing) y muestreo de conductividad y sulfito residual cada 30 min durante las próximas 4 h, junto con conductividad de rechazo concentrado (µS/cm).",
+  "recommended_action": "Mantener el bastidor operando en modo aclarado/flush a baja recuperación (≤25 %) con permeado o agua de alimentación bien filtrada y enviando permeado a drenaje hasta que: (a) sulfito residual en permeado <0,5 mg/L, (b) ORP permeado vuelva a rango habitual (~-20 mV), y (c) conductividad permeado <150 µS/cm y rechazo >97 %. No subir presión por encima de 15 bar durante el flush. Verificar dosificación de antiincrustante a 2 ppm activa antes de volver a recovery 78 %. Si tras 8 h de flush continuo el rechazo no supera 95 %, parar y realizar probing por tubo para localizar elemento/o-ring sospechoso. Revisar y actualizar el procedimiento de preservación prohibiendo explícitamente el uso de agua bruta para llenado del bastidor (sólo permeado).",
+  "decision_change_condition": "Si tras 8 horas de flush continuo el sulfito residual en permeado ya está <0,5 mg/L y el ORP normalizado, pero la conductividad de permeado se estabiliza por encima de 300 µS/cm y el rechazo no supera 95 %, entonces la hipótesis cambia a daño real de membrana o bypass mecánico (o-rings/interconectores) y procede probing por tubo e inspección de juntas.",
+  "confidence": 72
+}

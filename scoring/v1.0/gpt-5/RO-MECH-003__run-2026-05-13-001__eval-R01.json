@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-003",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fallo sello cabeza end-cap + juntas vaina FRP Tubo 2 etapa 1 + bypass cabeza' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (rotura lámina/pegado, juntas interconexión, microrrotura FRP, envejecimiento generalizado)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "LOTO + desmontar cabeza + inspeccionar pista FRP + sustituir todas juntas cap + sellos puerto permeado + lubricante apropiado — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide conductividad permeado desde tubo colector interno antes cabeza — match accepted (probe)."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi: conductividad antes cabeza igualmente elevada o no baja tras estanqueidad → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-006",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'ensuciamiento inorgánico etapa 2 + arrastre Fe/Mn greensand mal acondicionados + co-precipitación sílice y carbonatos + pH↑' — captura las 3 hipótesis."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (CaCO3 primary, sílice primary, finos greensand, biofouling)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Sacar bastidor + restablecer pH 6.5 + no operar greensand hasta ripening + CIP etapa 2 con limpiador ácido compatible PA — ácido solo (gold expects secuencial cítrico+alcalino+EDTA+tensoactivo)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide composición SEM-EDS depósito etapa 2 %Fe/Mn/Si/Ca — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: Ca/Si predominante + Fe+Mn minoritarios → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

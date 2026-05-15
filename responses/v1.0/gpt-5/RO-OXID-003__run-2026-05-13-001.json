@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:49:59Z",
+  "main_hypothesis": "Fallo del sistema de decloración por bisulfito tras mantenimiento (agitador averiado y dosificación efectiva nula/diluida), que permitió el paso de cloro libre a la alimentación RO y produjo oxidación de las membranas de poliamida con aumento del paso de sales.",
+  "key_signals": [
+    "Cloro libre antes RO = 0,42 mg/L (baseline < 0,02 mg/L): clara ruptura de decloración.",
+    "ORP antes y después de la dosificación de SBS = +540 mV (baseline tras SBS ≈ -50 mV): el SBS no está reduciendo.",
+    "Caudal de SBS dosificado = 0 L/h (baseline 18 L/h): no hay inyección.",
+    "Histórico: agitador del tanque de SBS averiado y solución estratificada (0,2 % p/p en toma vs 25 % p/p preparado).",
+    "Subida brusca de conductividad de permeado (380 → 720 µS/cm) y caída de rechazo (99,3 % → 98,7 %) con ΔP estables: degradación de selectividad sin indicios de ensuciamiento/escala.",
+    "Presión de alimentación algo más alta (62 vs 60 bar) con ΔP estables: consistente con cambio de propiedades de membrana más que con obstrucción."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bypass mecánico local (brine seal volteado u O-ring dañado) en una o varias presiones-vessel.",
+      "why_plausible": "Un fallo de estanqueidad puede causar aumento repentino de conductividad de permeado sin elevar ΔP.",
+      "why_discardable": "No explica el aumento marcado de cloro libre y ORP tras el punto de dosificación de SBS ni el caudal de SBS = 0 L/h; además el problema parece sistémico, no localizado."
+    },
+    {
+      "hypothesis": "Deriva/calibración errónea de los sensores de ORP y cloro.",
+      "why_plausible": "Se reportó oscilación del ORP y el operador atribuyó alarmas a “calibración del sensor”.",
+      "why_discardable": "Hay evidencia independiente de fallo del sistema de SBS (agitador roto, solución al 0,2 %, caudal 0 L/h) y degradación real del rechazo; múltiples señales coherentes entre sí hacen improbable un error simultáneo de sensores."
+    },
+    {
+      "hypothesis": "Ensuciamiento o incrustación que reduce el rendimiento y empeora el rechazo.",
+      "why_plausible": "Cambios de rendimiento pueden afectar rechazo y caudal.",
+      "why_discardable": "ΔP de ambas etapas estables y alimentación/pH/temperatura estables; el patrón observado es de selectividad degradada sin penalización hidráulica, más propio de oxidación de la poliamida."
+    }
+  ],
+  "requested_data": "Cloro libre por DPD (método colorimétrico) en cabecera de alimentación RO, mg/L como Cl2, en el momento del evento.",
+  "recommended_action": "Proteger inmediatamente las membranas: 1) Parar los HPP de RO o desviar la alimentación y purgar con permeado/agua declorada hasta que el cloro libre a la entrada RO sea < 0,02 mg/L y el ORP esté entre -50 y -100 mV. 2) Aislar, vaciar y enjuagar el tanque de SBS; reparar/cambiar el agitador; preparar lote nuevo de NaHSO3 al 25 % p/p; cebar líneas y verificar caudal real. 3) Reanudar la dosificación de SBS de forma estequiométrica y con exceso de seguridad: 1 mg/L de Cl2 requiere 1,78 mg/L de NaHSO3 (100 %). Para 0,42 mg/L de Cl2, dosis objetivo = 0,75 mg/L como NaHSO3; iniciar con 10–20 % de exceso (0,83–0,90 mg/L como NaHSO3) y ajustar para mantener residual de sulfito 0,2–0,5 mg/L como SO3^2− y cloro libre < 0,02 mg/L en la entrada RO. 4) Confirmar con DPD y ORP en continuo tras la inyección; documentar la CT (mg·h/L) de exposición. 5) Tras restablecer decloración, enjuagar los trenes 30–60 min a baja presión con agua declorada y reevaluar rechazo; si el rechazo sigue degradado, realizar test Fujiwara en elementos cola y planificar sustitución escalonada de elementos dañados. (No utilizar oxidantes en CIP).",
+  "decision_change_condition": "Si un muestreo manual por DPD mostrase cloro libre ≤ 0,02 mg/L en la entrada RO (con residual de sulfito presente) durante el periodo del evento, reconsideraría la causa principal hacia un bypass mecánico/local de elementos u otro defecto físico de sellado en lugar de oxidación por cloro.",
+  "confidence": 88
+}

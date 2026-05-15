@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-003",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'incomplete removal of bisulfito and glicerina... insufficient rinsing' matches"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 7 signals: glicerina 320, ORP -10, caudal 70%, cond 580, rechazo 98.97, 1x30min, dP"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (defecto fabricacion, oxidante) - falta 3a normal variabilidad"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: 3 aclarados 60 min + low P 5-10 bar + criterios glicerina<50 ORP>+50 - matches gold"
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "C5: 3 anchors (bisulfito permeado, criterios continuacion, procedimiento OEM)"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit: bisulfito<5 + glicerina descenso -> diferir; o dP>2 caudal<150 -> defecto"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Claude conflict; respuesta excelente"
+}

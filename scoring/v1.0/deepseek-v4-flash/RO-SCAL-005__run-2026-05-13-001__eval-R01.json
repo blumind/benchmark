@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-005",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'inadequate phosphonate dosage 1.2 ppm + high-scaling feed + CaCO3 y/o CaPO4 etapa 2' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (coloidal, biofouling, precipitación antiincrustante)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Revertir poliacrílico anterior 3 ppm + reducir recovery 78→65% + aumentar fosfonato 3 ppm pending test — match gold (revertir o aumentar)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide LSI y S&DSI en concentrate — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: LSI <0.5 y S&DSI negativo → descartar CaCO3."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

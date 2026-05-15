@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-002",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'arranque tras preservacion incorrecta... bisulfito y agua bruta' matches"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals: ORP -120/-180, sulfito 8.5, cond 1500->850, rechazo 85.3, P 16.8, agua bruta"
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "C3: 4+ alts (oxid, bypass O-rings, biofouling, scaling) todas descartadas"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: enjuague 0% recovery con permeado hasta sulfito<1 ORP>-50 + rampa - matches gold"
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "C5: 3 anchors (cond tras enjuague, prohibicion agua bruta, no recargas SBS implicito)"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit: sulfito<1 + cond>400 + rechazo<95% -> daño/bypass mecanico"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Excelente, sin CIP, todas las alternativas"
+}

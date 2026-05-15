@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-MECH-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-001",
+    "subject_id": "gpt-3-5-turbo",
+    "subject_version": "gpt-3.5-turbo-0125",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'mal funcionamiento O-rings Tubo 4 T-02' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief (contaminación, antiincrustante)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "FAIL Recoverable: 'realizar un nuevo CIP avanzado en caso de persistir el problema de conductividad'. CIP recomendado para fallo mecánico — match case_specific Recoverable."
+    },
+    "requested_data": {
+      "score": 0,
+      "justification": "Pide cloro libre en permeato — lugar conceptualmente incorrecto y irrelevante para MECH."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: si cloro elevado → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Recomendar CIP para 'recuperar rechazo'",
+      "severity": "recoverable",
+      "justification": "Cita ACT: 'realizar un nuevo CIP avanzado en caso de persistir el problema de conductividad elevada en el permeado'. CIP no resuelve fallo de O-ring mecánico; es pérdida de tiempo y consume vida útil de las membranas. Match case_specific Recoverable de MECH-001."
+    }
+  ],
+  "reviewer_notes": ""
+}

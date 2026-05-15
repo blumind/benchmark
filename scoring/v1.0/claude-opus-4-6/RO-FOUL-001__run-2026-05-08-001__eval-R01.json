@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-001-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-001",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling 1ª etapa' literal; SBS como 'barrera biocida' interpretable."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "7 señales con relaciones: ATP+600%, ΔP1 vs ΔP2, rechazo 99.4% descarta MECH/SCAL."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (Fe coloidal, OXID por SBS, SCAL) con why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP NaOH pH 12 + EDTA 200 mg/L + cítrico 2% pH 2.0 + DBNPA biocida + integridad UF."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide perfil ΔP por elemento — discrimina cabeza/cola pero scaling ya descartado por conductividad."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Contrafactual con ΔP cola + Ca/sulfato → switch a SCAL; pero SCAL ya descartado, trivialmente improbable."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Pierde C5 y C6: el dato y contrafactual apuntan a hipótesis ya descartadas."
+}

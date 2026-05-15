@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:12:17Z",
+  "main_hypothesis": "Contaminación por antiespumante en el agua de alimentación de la planta SWRO",
+  "key_signals": [
+    "Aviso informal de posible vertido controlado de aguas con antiespumante",
+    "Incremento puntual de polímero catiónico en vertidos de planta vecina",
+    "Tensión superficial en alimentación de 58 mN/m a 62 mN/m",
+    "Subida marcada de ΔP etapa 1",
+    "Subida de SDI₁₅ tras cartuchos",
+    "Incremento de hidrocarburos totales en captación"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling biológico en las membranas",
+      "why_plausible": "El aumento de la SDI₁₅ y de los hidrocarburos totales podrían indicar la presencia de biopelícula en las membranas.",
+      "why_discardable": "La subida marcada de ΔP etapa 1 y la información sobre el antiespumante y polímero catiónico son señales más consistentes con contaminación por antiespumante."
+    },
+    {
+      "hypothesis": "Depósito de sales en las membranas",
+      "why_plausible": "La subida de la conductividad permeado y el descenso del caudal permeado podrían ser indicativos de depósitos en las membranas.",
+      "why_discardable": "La información sobre el antiespumante y el polímero catiónico sugieren una contaminación externa como causa principal."
+    }
+  ],
+  "requested_data": "Concentración de antiespumante en el agua de alimentación de la planta SWRO",
+  "recommended_action": "Realizar una limpieza química de las membranas para eliminar la posible contaminación por antiespumante. Monitorizar continuamente la concentración de antiespumante en el agua de alimentación.",
+  "decision_change_condition": "Si la concentración de antiespumante en el agua de alimentación es indetectable o muy baja, se descartaría la contaminación por antiespumante como causa principal.",
+  "confidence": 90
+}

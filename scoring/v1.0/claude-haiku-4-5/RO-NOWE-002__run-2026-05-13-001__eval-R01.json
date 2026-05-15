@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-002",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'excessive residual SBS... osmotic imbalance' matches SBS no-purgado anchor"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals: sulfito 8.5, ORP -120/-180, rechazo 85.3, cond 850, caudal 220, dP"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (biofouling SRB, cartridge SBS) - cartridge es subtipo no alternativa real"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: flush permeado 2h hasta sulfito<1 mg/L - matches gold sin CIP, con criterios"
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "C5: 3 anchors (sulfito feed, restart conditions, agua bruta protocol update)"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit: sulfito feed<1 mg/L + flush sin mejora <200 µS/cm 4h -> daño"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Claude conflict; respuesta solida"
+}

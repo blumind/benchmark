@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:50:35Z",
+  "main_hypothesis": "Subdosificación sostenida de antiincrustante por fallo de cebado/aspiración con aire en la bomba peristáltica tras el cambio de manguera, que ha provocado incrustación de CaCO3 predominantemente en la etapa 2.",
+  "key_signals": [
+    "ΔP etapa 2 elevado (2,1 bar) y en subida marcada, con ΔP etapa 1 estable (1,1 bar): incrustación localizada en la segunda etapa.",
+    "Caudal de antiincrustante medido muy por debajo de consigna (0,3 L/h vs 1,8 L/h): evidencia directa de subdosificación.",
+    "Observación de “espuma” en el tanque y bombeo irregular: indicios de aire en la línea/succión deficiente y pérdida de cebado.",
+    "pH de alimentación aumentó de 6,7 a 7,3: mayor LSI en el rechazo y mayor propensión a incrustación de CaCO3.",
+    "Aumento de presión de alimentación (18,5 vs 15,8 bar) y caída del caudal de permeado (−8%): coherente con ensuciamiento/incrustación.",
+    "Conductividad de permeado al alza (92 vs 80 µS/cm): pérdida de rendimiento asociada a depósito en membranas.",
+    "Cambio de cartuchos sin alivio de ΔP: descarta ensuciamiento particulado aguas arriba como causa principal.",
+    "Sílice en rechazo estable (89 mg/L): poco compatible con incrustación por sílice."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación de CaCO3 causada principalmente por el aumento de pH (subdosificación de ácido), con antiincrustante correcto.",
+      "why_plausible": "El pH de alimentación subió a 7,3, elevando el LSI del rechazo y favoreciendo la precipitación de carbonato cálcico en la etapa 2.",
+      "why_discardable": "La evidencia más fuerte es la subdosificación medida de antiincrustante (0,3 L/h) y los síntomas de la bomba; además, la subida de ΔP comenzó antes del cambio de dosificación ácida, apuntando a la pérdida de antiincrustante como detonante principal."
+    },
+    {
+      "hypothesis": "Bioensuciamiento en etapa 2.",
+      "why_plausible": "El aumento de ΔP y la caída de flujo pueden deberse a biofilm; el cloro libre es bajo de forma sostenida.",
+      "why_discardable": "El bioensuciamiento suele manifestarse primero en etapa 1; el cambio de cartuchos no tuvo efecto, y la cronología coincide con la intervención en la bomba de antiincrustante y su mal funcionamiento reportado."
+    },
+    {
+      "hypothesis": "Incrustación por sulfato cálcico/baño (CaSO4/BaSO4).",
+      "why_plausible": "La incrustación por sulfatos aparece típicamente en la segunda etapa y no depende del pH.",
+      "why_discardable": "No hay datos de sulfato/Ba/Sr elevados ni señales específicas; la correlación temporal con pérdida de antiincrustante y aumento de pH favorece fuertemente CaCO3. Además, el antiincrustante era ‘específico CaCO3’, por lo que la señal de subdosificación explica mejor el fenómeno observado."
+    },
+    {
+      "hypothesis": "Ensuciamiento particulado/coloidal en etapa 2 por bypass de filtración.",
+      "why_plausible": "Un aumento de ΔP podría deberse a sólidos atrapados en los espaciadores.",
+      "why_discardable": "ΔP de etapa 1 normal y sustitución de cartuchos sin mejora descartan un aporte significativo de sólidos desde el pretratamiento."
+    }
+  ],
+  "requested_data": "Concentración residual de antiincrustante en el concentrado del RO (mg/L de activo como fosfonato).",
+  "recommended_action": "1) Restablecer de inmediato el control de incrustación: a) Ajustar la dosificación de H2SO4 para retornar el pH de alimentación a 6,7 ± 0,1 (verificar y calibrar el lazo de pH). b) Parar, cebar correctamente y purgar aire de la bomba peristáltica de antiincrustante; revisar válvulas de pie y de inyección; eliminar la espuma y posibles entradas de aire; calibrar la bomba con prueba de decantación/gravimétrica y fijar el caudal a 1,8 L/h para alcanzar 2,5 mg/L de producto en la alimentación (verificar por residuo químico). 2) Ejecutar limpieza química ácida de la etapa 2 para disolver CaCO3: preparar solución de ácido cítrico al 2% p/p en permeado (pH 2,0–2,5), temperatura 25–30 °C; recircular 45–60 min por la etapa 2 (caudal de limpieza bajo para evitar ΔP > 1,0 bar), realizar remojo 30–60 min y repetir si es necesario hasta reducir ΔP; enjuagar hasta pH ~6–7 antes de retorno a servicio. Confirmar Cl2 libre < 0,02 mg/L antes y después de la CIP. 3) Reanudar operación inicialmente con recuperación reducida (por ejemplo, −5 puntos) durante 12–24 h y monitorizar ΔP y conductividad de permeado.",
+  "decision_change_condition": "Si el residual de antiincrustante en el concentrado es ≥ 2 mg/L de activo (dentro de objetivo) con la bomba verificada, cambiaría el diagnóstico a ‘incrustación por CaCO3 debida principalmente al aumento de pH (insuficiente acidificación)’ o a otra forma de ensuciamiento no relacionada con subdosificación del antiincrustante.",
+  "confidence": 88
+}

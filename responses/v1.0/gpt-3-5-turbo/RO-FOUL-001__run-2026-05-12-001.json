@@ -1,0 +1,32 @@
+{
+  "case_id": "RO-FOUL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:11:29Z",
+  "main_hypothesis": "Fouling of the 1st stage RO membranes",
+  "key_signals": [
+    "Increase in ΔP 1st stage RO",
+    "Significant increase in ATP in RO feed",
+    "Significant increase in SDI15 in RO feed"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling on the 1st stage RO membranes",
+      "why_plausible": "The reported ΔP increase could also be caused by scaling, especially considering the routine dosing of antiscalant.",
+      "why_discardable": "The significant increase in ATP and SDI15 levels are more indicative of fouling rather than scaling."
+    },
+    {
+      "hypothesis": "Biofouling in the 1st stage RO membranes",
+      "why_plausible": "The recent increase in turbidity at the intake could have promoted biofouling in the membranes.",
+      "why_discardable": "The significant increase in ATP and SDI15 levels are more indicative of particulate fouling rather than biofouling."
+    }
+  ],
+  "requested_data": "Visual inspection of the 1st stage RO membranes for fouling or scaling",
+  "recommended_action": "Perform a chemical cleaning of the 1st stage RO membranes following standard operating procedures.",
+  "decision_change_condition": "If visual inspection reveals heavy scaling on the membranes, the diagnosis would change to scaling as the root cause.",
+  "confidence": 85
+}

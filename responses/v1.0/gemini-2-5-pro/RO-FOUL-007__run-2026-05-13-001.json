@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T08:51:02Z",
+  "main_hypothesis": "Biofouling on the lead elements of the first stage, accelerated by a combination of high organic nutrient load (TOC) and carryover of iron coagulant (FeCl₃) from the pre-treatment.",
+  "key_signals": [
+    "An 8-fold increase in ATP in the RO feed (`ATP en alimentación RO` to 720 pg/mL), indicating a massive increase in biological activity.",
+    "Fouling localized at the front of the train, evidenced by a near-doubling of `ΔP etapa 1 cabeza` to 2.5 bar while `ΔP etapa 1 cola` remained stable.",
+    "A doubling of the organic food source (`TOC alimentación a RO` to 2.2 mg/L).",
+    "A history of overdosing FeCl₃ coagulant for several days immediately prior to the onset of the pressure increase, creating conditions for iron-based colloidal fouling and providing a substrate for biofilm.",
+    "Degradation of pre-treatment performance, shown by increased `SDI₁₅` (4.0) and `Turbidez` (0.16 NTU) post-cartridge filters."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Pure colloidal fouling from pre-treatment upset.",
+      "why_plausible": "The storm event, increased SDI, and increased turbidity all point to particulate matter reaching the RO. The fouling is also localized at the front of the train, which is consistent with this mechanism.",
+      "why_discardable": "This hypothesis fails to explain the exceptionally high ATP measurement (720 pg/mL), which is a direct indicator of biological activity, not just inert particles."
+    },
+    {
+      "hypothesis": "Mineral scaling.",
+      "why_plausible": "The plant operates with very high salinity feedwater (TDS > 60,000 mg/L), which inherently carries a risk of scaling if antiscalant dosing is compromised.",
+      "why_discardable": "Scaling typically occurs at the tail end of the RO train where salt concentration is highest. The operational data clearly shows the problem is at the head of the first stage, not the tail."
+    },
+    {
+      "hypothesis": "Pure organic fouling by adsorption.",
+      "why_plausible": "The TOC in the feed has doubled, and organic molecules can adsorb onto the membrane surface, causing flux decline and increased differential pressure.",
+      "why_discardable": "While organic matter is present, the 8-fold increase in ATP suggests the primary issue is a living biofilm consuming these organics, not just passive adsorption of organic molecules."
+    }
+  ],
+  "requested_data": "Elemental analysis of the foulant from a lead element, specifically the concentration of Iron (Fe) as a percentage of dry weight.",
+  "recommended_action": "Immediately perform an offline Clean-In-Place (CIP) on the most affected trains. The procedure should be a two-step process: first, a high-pH (target 11.5) cleaning with a certified membrane detergent to remove the biofilm, followed by a low-pH (target 2.5) cleaning with a citric acid based solution to remove iron deposits. Follow membrane manufacturer's guidelines for temperature, flow, and duration.",
+  "decision_change_condition": "My diagnosis would change if a new, properly collected and analyzed water sample from the RO feed showed an ATP concentration close to the baseline value (<100 pg/mL), indicating the initial measurement was erroneous.",
+  "confidence": 95
+}

@@ -1,0 +1,43 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:17:31Z",
+  "main_hypothesis": "Fouling orgánico por materia orgánica natural (NOM) precipitada sobre las membranas de la primera etapa, agravado por la dosis elevada de coagulante férrico durante el episodio de lluvias.",
+  "key_signals": [
+    "ΔP etapa 1 subida sostenida de 0,9 a 1,9 bar (más del doble del baseline)",
+    "ΔP etapas 2 y 3 estables",
+    "TOC alimentación a RO subida marcada de 1,8 a 4,1 mg/L",
+    "SDI₁₅ salida cartuchos subida de 2,2 a 3,9",
+    "Turbidez salida cartuchos subida ligera de 0,08 a 0,18 NTU",
+    "Caudal permeado planta bajada del 8 %",
+    "Presión alimentación subida de 16,5 a 19,8 bar",
+    "Coloración marrón anaranjada en cartuchos retirados",
+    "Episodio de lluvias intensas día -28 seguido de aumento de turbidez y dosis extra de FeCl₃"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por hidróxido férrico coloidal (Fe(OH)₃) arrastrado desde el pretratamiento por sobredosificación de coagulante.",
+      "why_plausible": "La dosis de FeCl₃ se incrementó a 8 mg/L durante 5 días, y el color marrón anaranjado de los cartuchos sugiere presencia de hierro. El hierro coloidal puede depositarse en las membranas y aumentar ΔP.",
+      "why_discardable": "El ΔP solo sube en etapa 1, no en etapas posteriores, lo que indica que el material se retiene en los primeros elementos. Si fuera hierro coloidal, tendería a distribuirse más uniformemente o a pasar a etapas posteriores. Además, el TOC elevado apunta a materia orgánica como componente principal del fouling."
+    },
+    {
+      "hypothesis": "Biofouling por proliferación bacteriana en la primera etapa debido a nutrientes aportados por el aumento de TOC.",
+      "why_plausible": "El TOC elevado (4,1 mg/L) puede servir como sustrato para microorganismos. El aumento de ΔP en etapa 1 es típico de biofouling incipiente.",
+      "why_discardable": "No hay señales de aumento de conductividad en permeado (estable en 95 µS/cm), lo que es atípico en biofouling avanzado. Además, el cloro libre antes de RO se mantiene <0,02 mg/L, pero no hay evidencia de cloraminación o biocida en operación. La ausencia de deterioro en calidad de permeado hace menos probable biofouling significativo."
+    },
+    {
+      "hypothesis": "Fouling por partículas finas (arcillas o limos) que atravesaron los cartuchos tras el episodio de lluvias.",
+      "why_plausible": "La turbidez de captación alcanzó 38 NTU, y aunque se aumentó coagulante, la turbidez a la salida de cartuchos subió ligeramente (0,18 NTU) y el SDI subió a 3,9. Partículas finas podrían depositarse en la membrana.",
+      "why_discardable": "El color marrón anaranjado de los cartuchos no es típico de arcillas (que suelen ser grises o marrones claros). El TOC elevado sugiere que el material es predominantemente orgánico, no inorgánico. Además, el ΔP en etapa 1 subió rápidamente incluso después del cambio de cartuchos, lo que indica que el fouling es por material soluble o coloidal que no se retiene en los cartuchos."
+    }
+  ],
+  "requested_data": "Análisis de microscopía electrónica de barrido con espectroscopía de rayos X (SEM-EDX) de un elemento de membrana de la primera etapa, o análisis de autopsia de membrana (fouling layer composition, % orgánico vs inorgánico).",
+  "recommended_action": "Realizar un CIP alcalino con hidróxido de sodio (NaOH) a pH 11,5-12,0 y temperatura máxima 35 °C, con recirculación durante 60 minutos, seguido de enjuague con agua permeada hasta pH neutro. No realizar CIP ácido hasta confirmar la naturaleza del fouling, para evitar fijar materia orgánica.",
+  "decision_change_condition": "Si el análisis de autopsia de membrana mostrara un contenido de hierro >30% en peso de la capa de fouling, la hipótesis principal cambiaría a fouling por hidróxido férrico coloidal.",
+  "confidence": 75
+}

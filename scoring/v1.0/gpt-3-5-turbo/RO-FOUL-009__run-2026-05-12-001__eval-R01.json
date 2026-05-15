@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-009-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-009",
+    "subject_id": "gpt-3-5-turbo",
+    "subject_version": "gpt-3.5-turbo-0125",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "MH 'Contaminación por antiespumante' captura 1 de 3."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals listados (TS 58→62 incorrecto, case dice 58 vs 72)."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "Alts breves."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP genérico + monitorizar."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide 'antiespumante concentration' — single candidate."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-005",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'bypass alimentación/concentrado al permeado Tubo 5 + ausencia brine seal primer elemento + operador nuevo' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts (O-rings interconnector, defectuosos fabricación, telescoping instalación)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Parar bastidor + abrir Tubo 5 + instalar brine seal nuevo correcto orientado + verificar todos — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide conductividad permeado Tubo 5 tras reinstalación — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: conductividad permeado Tubo 5 >150 µS/cm → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

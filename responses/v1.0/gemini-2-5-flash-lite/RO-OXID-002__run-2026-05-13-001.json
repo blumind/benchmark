@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-OXID-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:48:17Z",
+  "main_hypothesis": "Daño oxidativo de las membranas de ósmosis inversa debido a la presencia de ozono residual en el agua de alimentación.",
+  "key_signals": [
+    "Ozono residual alimentación: 0,06 mg/L (subida marcada)",
+    "ORP alimentación a RO: +280 mV (subida marcada)",
+    "Conductividad permeado: 380 µS/cm (subida brusca)",
+    "Rechazo de sales (calculado): 88,8 % (bajada drástica)",
+    "Caudal permeado planta: 232 m³/h (bajada del 7 %)",
+    "Historial: Aumento de dosis de ozono en planta vecina y posterior detección de ozono residual en alimentación a RO."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling severo de las membranas de ósmosis inversa.",
+      "why_plausible": "Un fouling severo podría causar un aumento en la caída de presión (aunque aquí es estable) y una disminución en el caudal de permeado, además de una reducción en el rechazo de sales y un aumento en la conductividad del permeado.",
+      "why_discardable": "La caída de presión a través de las etapas de la RO (ΔP etapa 1 y 2) se mantiene estable y dentro de los límites esperados. El fouling típicamente aumenta el ΔP. Además, el ATP en la alimentación se mantiene estable, lo que no sugiere un fouling biológico significativo."
+    },
+    {
+      "hypothesis": "Degradación o fallo de las membranas por causas no oxidativas (ej. hidrólisis alcalina o ácida, o envejecimiento prematuro).",
+      "why_plausible": "Las membranas de RO tienen una vida útil y pueden degradarse con el tiempo, lo que resultaría en una menor capacidad de rechazo de sales y, por ende, un aumento en la conductividad del permeado y una disminución en el rechazo de sales. El hecho de que las membranas tengan 11 meses de uso es relevante.",
+      "why_discardable": "La degradación por causas no oxidativas no explicaría la marcada subida del ORP en la alimentación ni la presencia de ozono residual, que son señales directas de un agente oxidante. Si bien el envejecimiento es posible, el cambio drástico y la correlación temporal con el aumento de ozono apuntan a una causa externa."
+    },
+    {
+      "hypothesis": "Problema con el sensor de conductividad del permeado.",
+      "why_plausible": "Una lectura errónea del sensor de conductividad del permeado podría hacer parecer que la calidad del agua ha empeorado drásticamente, mientras que el rechazo de sales calculado también se vería afectado.",
+      "why_discardable": "La subida de conductividad del permeado se correlaciona fuertemente con la bajada drástica en el rechazo de sales y la presencia de ozono residual en la alimentación. Además, el caudal de permeado también ha disminuido, lo cual es consistente con un problema de membrana y no solo de sensor. El operador ya había considerado 'ruido del sensor' inicialmente, pero la tendencia y otros datos confirman un problema real."
+    }
+  ],
+  "requested_data": "Estado de las membranas de ósmosis inversa (ej. inspección visual, pruebas de integridad, o análisis de muestras de permeado para detectar fragmentos de polímero).",
+  "recommended_action": "Detener la operación de la planta de BWRO inmediatamente. Realizar una inspección visual de las membranas y, si es posible, iniciar un proceso de limpieza o reemplazo de los elementos de membrana afectados. Si la operación debe continuar, considerar la instalación de un sistema de neutralización de ozono (ej. bisulfito de sodio) en la línea de alimentación a la BWRO antes de la instalación de membranas, a una dosis inicial de 0.5 mg/L de bisulfito por cada mg/L de ozono residual medido, ajustando según mediciones de ORP y ozono residual en la alimentación a RO.",
+  "decision_change_condition": "Si la inspección de las membranas revela que están intactas y sin signos de degradación química o física, y si la instalación de un neutralizador de ozono no mejora la calidad del permeado, entonces se debería reevaluar la hipótesis principal y considerar otras causas de pérdida de rechazo de sales.",
+  "confidence": 95
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-001",
+    "subject_id": "gemini-2-5-pro",
+    "subject_version": "gemini-2.5-pro",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'CaCO3 etapa 2 + fallo combinado dosificación y control pH' — match exacto."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals listados sin explicar relación."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "Solo 2 alts (biofouling, particulado) brief."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Parada emergencia + CIP cítrico 2% pH 3.5-4.0 30-35°C 4-6h — match exacto gold ACT 1."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide LSI rechazo etapa 2 — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single threshold: si autopsia muestra mayoritario no-CaCO3 → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "RO-FOUL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T08:48:50Z",
+  "main_hypothesis": "Severe biofouling of the lead RO membrane elements caused by the breakthrough of Transparent Exopolymer Particles (TEP) and other organic matter from a coastal algal bloom, which has overwhelmed the existing pre-treatment capacity.",
+  "key_signals": [
+    "A sharp increase in differential pressure localized to the lead end of the first stage (ΔP etapa 1 cabeza: 3.1 bar vs 1.3 bar baseline), while the tail end remains stable.",
+    "A massive increase in raw water Chlorophyll-a (28 µg/L vs 1.5 µg/L baseline) and TEP (320 µg/L Xeq vs < 50 µg/L Xeq), indicating a severe algal bloom.",
+    "A significant rise in Total Organic Carbon (TOC) in the RO feed (3.4 mg/L vs 1.2 mg/L), confirming organic matter is passing through the pre-treatment.",
+    "The timeline of events, starting with a state warning of a phytoplankton bloom and followed by progressive increases in Chlorophyll-a, SDI, and finally a rapid spike in differential pressure."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Colloidal fouling due to coagulant (FeCl₃) carryover from the pre-treatment.",
+      "why_plausible": "Coagulant carryover can cause rapid fouling of the lead RO elements, leading to a high differential pressure at the front of the train, similar to what is observed.",
+      "why_discardable": "This hypothesis does not account for the dramatic increase in Chlorophyll-a, TEP, and TOC, nor the reported 'earthy smell' and 'filaments', which are all strong indicators of a biological event, not a chemical one."
+    },
+    {
+      "hypothesis": "Mechanical failure of the Ultrafiltration (UF) membranes, such as broken fibers.",
+      "why_plausible": "A loss of UF integrity would allow particulate and colloidal matter to pass through to the RO, increasing SDI and causing rapid fouling of the lead elements.",
+      "why_discardable": "While the SDI has increased (to 3.1), it is not indicative of a catastrophic failure. This is more likely a symptom of the UF system being overloaded by the high organic load from the bloom, rather than the root cause of the problem itself."
+    },
+    {
+      "hypothesis": "Failure or channeling in the 1 µm cartridge filters.",
+      "why_plausible": "If the cartridge filters failed, they could allow particles that passed the UF to reach the RO membranes, or they could unload previously captured material, causing a sudden fouling event.",
+      "why_discardable": "This would be a secondary event. The primary cause is the exceptionally high foulant load (TEP, organics) reaching the filters in the first place. There is no direct evidence of filter failure, and the root cause lies upstream in the raw water quality and pre-treatment performance."
+    }
+  ],
+  "requested_data": "Adenosine Triphosphate (ATP) concentration in the RO feed water (in pg/mL).",
+  "recommended_action": "Immediately shut down the affected RO trains and perform an emergency Clean-In-Place (CIP). Initiate cleaning with a high-pH solution (target pH 11.5-12.0) containing a manufacturer-approved biocide to remove the organic and biological foulants. Follow with a low-pH cleaning (target pH 2.0-2.5) if necessary. In parallel, immediately optimize the pre-treatment by performing jar tests to determine the appropriate FeCl₃ dose to manage the high raw water TEP and TOC concentrations before restarting.",
+  "decision_change_condition": "My diagnosis would change if an autopsy of a lead membrane element revealed the foulant to be predominantly inorganic, such as iron hydroxide from coagulant carryover, rather than a biofilm matrix.",
+  "confidence": 95
+}

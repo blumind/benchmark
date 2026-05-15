@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-NOWE-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:55:17Z",
+  "main_hypothesis": "Incomplete removal of propilenglicol residual from the membrane pores and feed spacer after preservation, causing partial membrane wetting loss and flow channel obstruction that is slowly reversing through extended low-pressure circulation.",
+  "key_signals": [
+    "Caudal permeado at only 36% of nominal immediately post-startup despite correct feed pressure (64 bar ≈ nominal 60 bar), indicating severe flow restriction or wetting loss",
+    "Conductividad permeado elevated at 480 µS/cm vs. expected 400 µS/cm post-startup, consistent with incomplete salt rejection due to partial membrane non-wetting",
+    "ΔP etapa 1 and ΔP etapa 2 both significantly below expected values (0.7 vs 1.2 bar, 0.4 vs 0.8 bar), indicating reduced flow through stages due to viscous residual fluid or incomplete pore filling",
+    "Slow monotonic improvement in caudal (36% → 48% → 65% → 78% over 4 days) and conductivity (480 → 460 µS/cm) following low-pressure circulation, consistent with gradual displacement of hydrophobic residual",
+    "Rechazo de sales improving from 99.15% toward 99.3%, confirming progressive membrane re-wetting",
+    "Propilenglicol 20% v/v used as preservation fluid is hydrophobic and has high viscosity (40–50 cP at 17 °C), making it difficult to displace from microporous membrane structure"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling by residual bisulfito or oxidation products formed during storage at variable temperature (4–22 °C).",
+      "why_plausible": "Bisulfito at 1% p/p can oxidize to sulfate over 5 months, especially with temperature cycling and residual dissolved oxygen in sealed headspace. Sulfate deposits could reduce permeability and increase ΔP.",
+      "why_discardable": "Fouling would not explain the monotonic recovery trend over 4 days with low-pressure circulation alone; chemical fouling typically requires chemical cleaning (citric acid, EDTA, or enzymatic). The stable ORP (+90 mV) and absence of color change in permeate argue against significant oxidation products. Bisulfito is a reducing agent and would not form insoluble deposits under anaerobic storage conditions."
+    },
+    {
+      "hypothesis": "Membrane element mechanical damage or seal degradation during storage due to freeze-thaw cycles or pressure transients.",
+      "why_plausible": "Temperature reached 4 °C; if any residual water remained in pores despite propilenglicol, ice formation could rupture membrane structure. Damaged seals would cause bypass and elevated permeate conductivity.",
+      "why_discardable": "No freeze event was recorded (minimum 4 °C, not below 0 °C). Propilenglicol at 20% v/v lowers the freezing point of water to approximately −5 °C, providing protection. Mechanical damage would cause rapid, non-improving conductivity; the observed slow improvement contradicts this. Bypass from seal damage would not improve with circulation."
+    },
+    {
+      "hypothesis": "Incomplete flushing of preservation fluid during the 30-minute rinse post-storage; residual propilenglicol in feed spacer and membrane pores causing viscous drag and reduced effective membrane area.",
+      "why_plausible": "30 minutes of permeate rinse may be insufficient to displace 20% v/v propilenglicol from tortuous feed spacer channels and hydrophobic membrane pores. Propilenglicol is miscible with water but has high viscosity and surface tension, slowing displacement kinetics.",
+      "why_discardable": "This is not discardable; it is the same mechanism as the main hypothesis. It is listed as an alternative only to distinguish between 'incomplete initial rinse' (procedural failure) vs. 'inherent difficulty of displacing hydrophobic residual' (physical chemistry). Both lead to the same diagnosis and action."
+    },
+    {
+      "hypothesis": "Membrane element air entrapment (non-wetting) due to rapid pressure ramp (2 minutes to nominal) after storage, trapping air pockets in feed spacer and preventing water from re-entering pores.",
+      "why_plausible": "Rapid pressurization can trap air bubbles in feed channels if the membrane surface is not fully wetted. Non-wetting is a known failure mode in RO restart after storage, especially if hydrophobic residuals are present.",
+      "why_discardable": "Air entrapment alone would not explain the slow, continuous improvement over 4 days; air pockets would either persist or be dislodged within hours. The low-pressure circulation (20% pressure for 24 h) would not systematically displace air. The gradual recovery pattern is more consistent with viscous displacement of a liquid residual than with air bubble migration."
+    }
+  ],
+  "requested_data": "Viscosity of the permeate exiting the train at the current operating point (measure at 17 °C using a capillary viscometer or inline viscosity sensor, report in cP or mPa·s). A value >1.2 cP would confirm residual propilenglicol; a value ≈1.0 cP would rule it out.",
+  "recommended_action": "Continue low-pressure circulation at 15–25% of nominal feed pressure (9–15 bar) for a total of 48–72 hours, monitoring caudal permeado and conductividad permeado every 12 hours. If caudal reaches ≥90% of nominal and conductividad permeado drops to ≤410 µS/cm within 72 hours, resume normal operation. If improvement stalls before 90% recovery, perform a chemical cleaning with 2% citric acid solution (pH 3.5–4.0) at 20 bar for 1 hour to remove any residual organic deposits, followed by a 30-minute permeate rinse at low pressure before returning to service. Do not exceed 64 bar feed pressure until full recovery is confirmed.",
+  "decision_change_condition": "If permeate conductivity remains >450 µS/cm or caudal remains <85% of nominal after 72 hours of low-pressure circulation, or if ΔP etapa 1 exceeds 1.5 bar while caudal is still <90%, then the diagnosis would shift toward membrane fouling (bisulfito oxidation products or biofilm) or mechanical damage, requiring chemical cleaning or element replacement.",
+  "confidence": 78
+}

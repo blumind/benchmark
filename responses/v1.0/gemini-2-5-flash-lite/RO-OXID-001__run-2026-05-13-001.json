@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:41:18Z",
+  "main_hypothesis": "El lecho de carbón activado granular (CAG) está saturado y no está eliminando eficazmente el cloro residual, lo que provoca la oxidación y el daño de las membranas de ósmosis inversa (RO).",
+  "key_signals": [
+    "Cloro libre antes RO: 0,18 mg/L (subida marcada)",
+    "ORP antes RO: +320 mV (subida marcada)",
+    "Cloro libre tras CAG: 0,18 mg/L (subida marcada)",
+    "ORP tras CAG: +110 y +180 mV (oscilante), luego +280 mV",
+    "Conductividad permeado: 1.200 µS/cm (subida brusca)",
+    "Rechazo de sales (calculado): 96,2 % (bajada marcada)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo de las membranas de RO debido a incrustaciones o ensuciamiento biológico no relacionado con el cloro.",
+      "why_plausible": "La bajada en el rechazo de sales y el aumento de la conductividad del permeado son síntomas directos de un fallo en las membranas. El aumento de ATP en la alimentación (aunque reportado como estable) podría indicar un crecimiento biológico que, si no se controla, podría afectar a las membranas.",
+      "why_discardable": "La correlación temporal con el aumento del cloro libre antes y después del CAG, junto con el aumento del ORP, sugiere fuertemente que el cloro es el agente causante del deterioro de las membranas. El ATP se reporta como estable, lo que debilita la hipótesis de un biofouling primario."
+    },
+    {
+      "hypothesis": "Fallo en el sistema de dosificación de hipoclorito, resultando en una dosificación excesiva y continua.",
+      "why_plausible": "Un fallo en el control de la dosificación podría llevar a niveles de cloro más altos de lo esperado. Sin embargo, el reporte indica que la dosificación es intermitente y se detuvo el día -1. La presencia de cloro libre después del CAG y el ORP elevado sugieren que el problema está en la capacidad de eliminación del cloro, no en su dosificación inicial.",
+      "why_discardable": "El cloro libre se detecta *después* del CAG, lo que implica que el CAG no está cumpliendo su función de dechloración. Si el problema fuera solo la dosificación, el CAG debería haber eliminado el cloro. Además, el operador detuvo el choque de hipoclorito el día -1, pero los problemas persistieron y empeoraron."
+    },
+    {
+      "hypothesis": "Contaminación del agua de mar de captación con un compuesto que reacciona con el cloro o que las membranas no rechazan.",
+      "why_plausible": "Un cambio en la calidad del agua de mar podría afectar el rendimiento de la planta. Sin embargo, la conductividad de alimentación y la temperatura se reportan como estables, lo que hace menos probable un cambio drástico en la salinidad o composición general del agua de mar.",
+      "why_discardable": "La estabilidad de los parámetros de alimentación (conductividad, temperatura, pH, ATP) y la correlación directa con el aumento del cloro libre y ORP antes y después del CAG apuntan a un problema de tratamiento de cloro, no a una contaminación del agua de mar."
+    }
+  ],
+  "requested_data": "Concentración de cloro libre residual en la salida del lecho de CAG, medida inmediatamente después de la detención del choque de hipoclorito el día -1.",
+  "recommended_action": "Detener inmediatamente la dosificación de hipoclorito en la captación. Realizar un lavado de las membranas de RO con una solución de limpieza apropiada para oxidantes (si está disponible y es seguro según el manual de operación de las membranas) o, si no es posible, proceder a la sustitución del medio del lecho de CAG y, posteriormente, realizar un lavado de las membranas de RO.",
+  "decision_change_condition": "Si el cloro libre y el ORP antes de RO fueran bajos (<0.05 mg/L y <100 mV respectivamente) y la conductividad del permeado siguiera aumentando, la hipótesis principal cambiaría a un fallo de membrana no relacionado con el cloro, como incrustaciones o ensuciamiento biológico severo.",
+  "confidence": 90
+}

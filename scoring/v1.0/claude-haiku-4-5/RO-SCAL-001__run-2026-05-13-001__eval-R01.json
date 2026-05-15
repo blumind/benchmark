@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-001",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "MH captura ambas mitades: 'priming pump after hose replacement + air entrainment + pH drift' — match anchor 'scaling por fallo de antiincrustante'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta cebado + pH + caudal real + ΔP etapa 2 con relación causal."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (biofouling, MECH blockage, hose chem incompat, calibration drift) con why_discardable."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Operacional: reducir flux + cebado completo bomba; NO se ve CIP ácido para el depósito CaCO3 ya formado en el truncated."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide presión succión bomba (vacío) — discriminador operacional, similar a trasiego accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-umbral: succión <0.1 bar + caudal restaurado pero ΔP persiste → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "C4=1 por no ver CIP para depósito ya formado; el reviewer puede subir si el truncated oculta el paso CIP."
+}

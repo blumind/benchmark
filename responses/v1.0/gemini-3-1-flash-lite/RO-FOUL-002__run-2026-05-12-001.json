@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:16:55Z",
+  "main_hypothesis": "Biofouling de las membranas de la primera etapa debido a una deficiente eliminación de materia orgánica y microorganismos durante el episodio de mar gruesa y la posterior degradación del rendimiento de la DAF.",
+  "key_signals": [
+    "Aumento marcado de ATP en alimentación (1.200 pg/mL vs 80 pg/mL)",
+    "Aumento de TOC en alimentación (2,8 mg/L vs 1,4 mg/L)",
+    "Subida progresiva de ΔP en etapa 1 (2,8 bar vs 1,2 bar)",
+    "Aumento marcado de SDI15 (4,8 vs 2,5)",
+    "Antecedente de operación de DAF al 60% de capacidad tras mar gruesa"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling coloidal/particulado por ineficiencia de la DAF tras mar gruesa.",
+      "why_plausible": "El aumento de SDI y la turbidez puntual tras la mar gruesa sugieren un paso de sólidos a través de los filtros de cartucho.",
+      "why_discardable": "El aumento masivo de ATP es un indicador específico de actividad biológica, lo cual es más consistente con biofouling que con fouling puramente inorgánico/coloidal."
+    },
+    {
+      "hypothesis": "Incrustación química por sobre-dosificación de antiincrustante.",
+      "why_plausible": "El aumento de la dosis de antiincrustante de 2,5 a 3,2 ppm coincide temporalmente con la aceleración del problema.",
+      "why_discardable": "La incrustación química suele afectar a la última etapa (donde la concentración de sales es mayor) y no explicaría el aumento de ATP ni el incremento de ΔP concentrado en la etapa 1."
+    }
+  ],
+  "requested_data": "Análisis microbiológico de recuento de bacterias heterótrofas (HPC) en el agua de alimentación a las membranas (UFC/mL).",
+  "recommended_action": "Realizar una limpieza química (CIP) utilizando un biocida alcalino específico para biofouling (ej. solución de dodecilguanidina clorhidrato al 0,1% o similar según manual del fabricante) tras verificar la integridad de los filtros de cartucho.",
+  "decision_change_condition": "Si el análisis de ATP fuera bajo y el análisis de metales (Fe, Al) en el agua de alimentación fuera elevado, el diagnóstico cambiaría a fouling inorgánico derivado de la DAF.",
+  "confidence": 85
+}

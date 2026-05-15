@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-006-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-006",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling DBNPA insufficient frequency + elevated TOC/ATP'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ATP×4 + ΔP1 + ΔP3 estable + protocolo change + TOC↑."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (coloidal, SCAL, MECH defect, NOM organic) anclados."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "DBNPA + CIP ácido (gold expects alcalino primero para biofouling) — sub-óptimo."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide HPC CFU/mL feed — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: HPC <1000 + ATP <300 + ΔP <1.0 en 14d → biofouling descartado."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "CIP ácido primario para biofouling es sub-óptimo (gold expects alcalino)."
+}

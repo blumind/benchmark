@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-002",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biológico-orgánico coloidal cabeza primera etapa + ruptura pretreatment + DAF'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals conectadas con cronología."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts de 4 familias (SCAL, MECH cartridge, OXID, inorgánico/coloidal) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino pH 11.0 + tensoactivo no iónico 0.1% + manufacturer-approved — completo."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ATP material raspado spacer — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ATP bajo + sales minerales + ΔP en etapa 2 → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

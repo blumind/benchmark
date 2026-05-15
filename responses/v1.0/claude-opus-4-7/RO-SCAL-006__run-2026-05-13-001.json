@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:23:24Z",
+  "main_hypothesis": "Ensuciamiento (fouling) de membranas de la etapa 2 por óxidos de Fe/Mn debidos a fuga de hierro y manganeso desde el filtro de greensand que se devolvió a servicio sin completar el ripening, agravado por la elevación del pH de alimentación de 6,5 a 6,8 (que aumenta la oxidación y precipitación de Fe/Mn y reduce el margen frente a CaCO₃/sílice).",
+  "key_signals": [
+    "Fe en alimentación a RO subió de 0,03 a 0,18 mg/L y Mn de 0,02 a 0,11 mg/L tras el cambio de medio en greensand sin ripening (día -35)",
+    "ΔP etapa 2 se duplicó largamente (0,8 → 1,8 bar) mientras ΔP etapa 1 sólo subió ligeramente: patrón típico de fouling progresivo hacia colas",
+    "Cartuchos de 5 µm con tonalidad marrón clara (día -12), consistente con óxidos de Fe/Mn",
+    "pH alimentación subió a 6,8 tras mantenimiento de bomba de H₂SO₄ y no se corrigió, favoreciendo oxidación de Fe²⁺/Mn²⁺ y precipitación",
+    "Caída del 8 % en caudal de permeado y subida de presión de alimentación a 17,5 bar (pérdida de permeabilidad)",
+    "Subida de conductividad de permeado (95 → 130 µS/cm) compatible con daño/ensuciamiento que altera el rechazo en etapa 2",
+    "Cloro libre < 0,02 mg/L descarta oxidación por cloro residual"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Escalado de CaCO₃ en etapa 2 por aumento de pH (6,5 → 6,8) e incremento de LSI en el rechazo",
+      "why_plausible": "Alcalinidad de rechazo subió (1.020 → 1.150 mg/L), Ca de rechazo 1.260 mg/L, recovery 75 % y pH más alto elevan el índice de saturación de calcita; ΔP de cola y caída de flujo son compatibles.",
+      "why_discardable": "La secuencia temporal arranca con la fuga de Fe/Mn desde greensand antes del cambio de pH; los cartuchos muestran color marrón (Fe/Mn) y no blanquecino (CaCO₃); el antiincrustante específico cubre sílice/Fe, pero el cambio de pH probablemente actúa como agravante, no como causa primaria."
+    },
+    {
+      "hypothesis": "Escalado de sílice en etapa 2",
+      "why_plausible": "Sílice alimentación 78 mg/L, sílice rechazo 305 mg/L cerca del límite de solubilidad a 30 °C, recovery 75 %.",
+      "why_discardable": "La sílice de rechazo sólo subió ligeramente y se mantiene por debajo del umbral típico (≈ 300–350 mg/L) con antiincrustante específico; el color marrón de cartuchos y la trazabilidad con Fe/Mn no encajan con escalado silíceo."
+    },
+    {
+      "hypothesis": "Subdosificación o pérdida de eficacia del antiincrustante",
+      "why_plausible": "Fenómeno simultáneo de fouling y posible scaling sugiere fallo de la línea de antiincrustante.",
+      "why_discardable": "No se reporta incidencia en la bomba de antiincrustante; la causa primaria identificable es la fuga documentada desde greensand y la deriva de pH."
+    },
+    {
+      "hypothesis": "Oxidación de membrana por KMnO₄ residual pasando el greensand",
+      "why_plausible": "El filtro retornó a servicio sin ripening, podría haber liberado KMnO₄ no reducido, oxidante para poliamida; explicaría aumento de paso de sales.",
+      "why_discardable": "No se reporta ORP elevado ni medición de KMnO₄ residual; el patrón principal es ΔP creciente (fouling), no únicamente pérdida de rechazo; el daño oxidativo típicamente no eleva ΔP de forma tan marcada."
+    }
+  ],
+  "requested_data": "Análisis SDI15 y composición elemental (Fe, Mn, Si, Ca) del depósito sobre cartuchos de 5 µm y/o autopsia de un elemento de cola de etapa 2 (mg de Fe/Mn por m² de membrana)",
+  "recommended_action": "1) Restablecer dosificación de H₂SO₄ para llevar pH de alimentación a 6,5 ±0,1. 2) Sacar de servicio el filtro de greensand recién cargado y completar el ciclo de ripening con regeneración con KMmO₄ al 0,2 % (2 g/L) y enjuague hasta Fe < 0,05 mg/L y Mn < 0,02 mg/L a la salida; mantener la planta con el filtro en servicio antiguo o reducir caudal. 3) Sustituir cartuchos de 5 µm. 4) Programar limpieza CIP en dos etapas: primero ácida con ácido cítrico al 2 % (20 g/L) a pH 2,5 y 35 °C durante 2 h en recirculación + remojo, seguida de alcalina con NaOH al 0,1 % (1 g/L) + EDTA al 1 % a pH 11–12 y 35 °C para Fe/Mn y materia orgánica, según protocolo del fabricante. 5) Verificar dosis de antiincrustante (5 ppm) y compatibilidad con Fe > 0,1 mg/L.",
+  "decision_change_condition": "Si el análisis del depósito sobre cartuchos/membrana muestra predominio de CaCO₃ (Ca alto, Fe/Mn bajos) o de sílice amorfa, o si se confirma residual oxidante (KMnO₄/ORP elevado) aguas abajo del greensand, la hipótesis principal cambiaría a escalado de CaCO₃ por desviación de pH, escalado de sílice u oxidación de membrana, respectivamente.",
+  "confidence": 78
+}

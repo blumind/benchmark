@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-004",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'air trapped... inadequate venting' matches air anchor"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 4 signals (borboteo, dP bajos, balance 92%, cond 380)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (O-rings, concentrate obstruction) discriminadas"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: reduce P 5 bar + vents 5 min + ramp 10 min - matches sin CIP"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (O2 disuelto permeado)"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit: dP baseline + cond<150 2h + balance>98% -> air confirmed"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Adecuada, accion correcta"
+}

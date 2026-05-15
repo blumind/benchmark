@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-004",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'orgánico/biológico elementos líderes por biopolímeros y TEP' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (particulate UF breakthrough, biofouling no asociado, scaling, hierro/coagulante) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino pH 11.0 + tensoactivo no iónico 0.10% + recirc + remojo según manual — gold-aligned."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide porcentaje LOI del depósito — match accepted (autopsia FTIR+LOI)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: bajo LOI + dominado por sales/Fe/minerales + TEP bajo → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

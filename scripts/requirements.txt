@@ -1,0 +1,5 @@
+jsonschema>=4.0
+PyYAML>=6.0
+litellm>=1.50
+python-dotenv>=1.0
+tenacity>=8.0

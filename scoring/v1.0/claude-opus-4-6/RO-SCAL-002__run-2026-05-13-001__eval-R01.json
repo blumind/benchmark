@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-002",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'sílice coloidal/polimerizada etapa 2 + recovery 75→82 sin recalcular' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals conectados."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (CaCO3, biofouling, compactación MECH)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Reducir recovery 75% + CIP NaOH pH 12 35-40°C 4-6h — match gold ACT 1."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia + análisis lavado CIP sílice — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: depósito CaCO3 o biológico (alto orgánico/ATP) → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

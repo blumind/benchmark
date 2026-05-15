@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:41:00Z",
+  "main_hypothesis": "Breakthrough of free chlorine due to exhaustion of the Granular Activated Carbon (GAC) bed, leading to oxidative degradation of the polyamide RO membranes.",
+  "key_signals": [
+    "Cloro libre tras CAG de 0,18 mg/L (frente a < 0,02 mg/L baseline)",
+    "ORP tras CAG de +320 mV (frente a +90 mV baseline)",
+    "Subida brusca de conductividad del permeado (380 a 1.200 µS/cm)",
+    "Bajada marcada del rechazo de sales (99,1 % a 96,2 %)",
+    "Análisis de yodo de poros del CAG al 25 % de capacidad residual (Día -45)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Mechanical failure of O-rings or interconnector seals in the RO pressure vessels.",
+      "why_plausible": "Seal failure causes immediate salt passage and increased permeate conductivity.",
+      "why_discardable": "Seal failure does not explain the presence of free chlorine or the elevated ORP in the feed water."
+    },
+    {
+      "hypothesis": "Membrane scaling due to anti-scalant under-dosing.",
+      "why_plausible": "Scaling can lead to flux loss and potential salt passage if crystals damage the membrane surface.",
+      "why_discardable": "Scaling typically causes a significant increase in differential pressure (ΔP), which remains stable in this case."
+    }
+  ],
+  "requested_data": "Concentración de cloro libre en el agua de rechazo (concentrado) de la primera etapa (mg/L).",
+  "recommended_action": "Detener inmediatamente la dosificación de hipoclorito sódico, realizar un reemplazo total del medio de carbón activado granular (CAG) y realizar una prueba de integridad de los elementos de membrana (vacuum decay test o análisis de conductividad por vaso).",
+  "decision_change_condition": "Si la conductividad del permeado hubiera aumentado sin la presencia de cloro libre detectable tras el CAG, la causa raíz se atribuiría a un fallo mecánico o físico de las membranas (ej. degradación por hidrólisis o fallo de sellos) en lugar de oxidación química.",
+  "confidence": 95
+}

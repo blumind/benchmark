@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:09:12Z",
+  "main_hypothesis": "Oxidación de las membranas SWRO por dióxido de cloro (ClO₂) introducido en la captación desde la descarga de la piscifactoría vecina; el SBS a 4 mg/L es insuficiente y/o ineficaz para neutralizar ClO₂ (la reducción de ClO₂ por bisulfito es lenta y produce clorito), permitiendo el paso de oxidante residual a las membranas.",
+  "key_signals": [
+    "Cloro total DPD 0,15 mg/L con cloro libre <0,02 mg/L (oxidante no-cloro presente)",
+    "Clorito (ClO₂⁻) 0,08 mg/L confirmado por laboratorio externo en alimentación a RO (firma analítica de ClO₂)",
+    "ORP de alimentación subió de +50 a +180 mV (oxidante residual atravesando el pretratamiento pese a SBS)",
+    "Conductividad de permeado 400→590 µS/cm y caída de rechazo de 99,29% a 98,95% sin cambios de presión, temperatura ni salinidad de alimentación (patrón clásico de daño oxidativo de poliamida)",
+    "Caudal de permeado cae 6% con ΔP estables (no es fouling/scaling, es pérdida de selectividad)",
+    "Antecedente día -45: aumento de descargas de ClO₂ por la piscifactoría; día -18: olor a cloro en captación",
+    "ATP estable (90 pg/mL): no es biofouling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Envejecimiento normal/compactación de membranas tras 12 meses",
+      "why_plausible": "Aumento progresivo de conductividad y leve caída de flujo pueden ocurrir con la edad.",
+      "why_discardable": "La magnitud del deterioro en 25 días (400→590 µS/cm) es excesiva para envejecimiento; además coincide con marcadores oxidativos (ORP↑, cloro total↑, clorito detectado)."
+    },
+    {
+      "hypothesis": "Cloraminas formadas por reacción de amoniaco marino con trazas de cloro",
+      "why_plausible": "También producirían cloro total > cloro libre por DPD y daño oxidativo lento.",
+      "why_discardable": "El laboratorio externo identificó específicamente clorito, subproducto inequívoco de ClO₂, no de cloraminas; y no hay dosificación de hipoclorito en la planta."
+    },
+    {
+      "hypothesis": "Daño mecánico/o-ring o fuga interna en tubos de presión (by-pass de salmuera al permeado)",
+      "why_plausible": "Provocaría subida de conductividad de permeado y caída de rechazo.",
+      "why_discardable": "No explica la firma oxidante (ORP, cloro total, clorito) ni el patrón progresivo; típicamente daría salto más brusco y localizado a un tren/tubo."
+    },
+    {
+      "hypothesis": "Scaling o fouling incipiente",
+      "why_plausible": "Pérdida de flujo del 6%.",
+      "why_discardable": "ΔP de ambas etapas estables y ATP estable; el scaling/fouling se manifestaría con ΔP creciente, no con caída de rechazo."
+    }
+  ],
+  "requested_data": "Medida directa de ClO₂ residual en alimentación a RO (método DPD-glicina o amperométrico, en mg/L), tomada aguas abajo de la dosificación de SBS",
+  "recommended_action": "1) Realizar perfilado por tubo de presión (probe testing) y muestreo de conductividad por tren para localizar elementos dañados. 2) Aumentar inmediatamente la dosis de SBS hasta lograr ORP <+200 mV y preferiblemente <+150 mV en alimentación a RO, dosificando con un mínimo de 3 mg SBS por mg de oxidante equivalente y un margen de seguridad (subir de 4 a 8–10 mg/L de SBS como punto de partida) con tiempo de contacto ≥20 s antes de cartuchos. 3) Instalar monitorización continua de ORP con enclavamiento de parada del tren si ORP >+250 mV, y medición específica de ClO₂ (DPD-glicina) diaria. 4) Coordinar con la piscifactoría un protocolo de aviso de descargas y evaluar reubicación/profundización de la toma o instalación de filtro de carbón activo granular (GAC) como barrera frente a ClO₂. 5) Programar test de integridad y, según perfilado, sustituir elementos oxidados.",
+  "decision_change_condition": "Si una medida directa de ClO₂ residual en alimentación a RO resulta <0,05 mg/L y el clorito detectado se explica por origen distinto (p.ej. agua de servicio), y/o el perfilado muestra un único tubo con salto abrupto de conductividad, la hipótesis cambiaría a fuga mecánica/o-ring; si el ORP retorna a baseline al aumentar SBS pero el rechazo no se recupera, se confirma daño oxidativo ya consumado.",
+  "confidence": 82
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-002",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'telescoping mecánico primer elemento por golpe ariete + rampa VFD mal reconfigurada' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (OXID, O-ring interconector, ATD, válvula control concentrado)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Sacar bastidor + retirar elemento telescopiado + probe vacuum decay + bloqueo VFD con contraseña — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide trend VFD tiempo real rampa + curva presión-tiempo — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: rampa ≥90s sin transitorio + ATD intacto pero O-rings degradados → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

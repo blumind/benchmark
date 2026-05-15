@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-001",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'propylene glycol... partial membrane wetting loss' matches no-wetting + PG anchors"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: cites 6 signals (caudal 36%, cond 480, dP low, mejora 36->78%, PG 20%, rechazo)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (bisulfito oxidation, freeze-thaw damage) but freeze not deeply justified"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: continues low-P circulation but suggests citric acid CIP at 20 bar if stalls"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: only 1 anchor (viscosity), no fabricante consult, no propilenglicol residual analysis"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit thresholds: cond >450, caudal <85% after 72h, dP >1.5 bar -> shift"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Claude conflict of interest; CIP suggestion is conditional not immediate"
+}

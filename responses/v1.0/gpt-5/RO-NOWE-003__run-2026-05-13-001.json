@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:04:04Z",
+  "main_hypothesis": "Arranque con aclarado insuficiente y ramp-up demasiado rápido de elementos nuevos preservados con 1% bisulfito + glicerina, provocando arrastre de conservante (bisulfito/glicerina) desde los elementos al tren y a permeado, con ORP anómalamente bajo, mayor viscosidad en los canales, ΔP elevado, menor flujo y rechazo temporalmente degradado.",
+  "key_signals": [
+    "ORP alimentación -10 mV (esperado +90 mV): indica exceso de agente reductor (bisulfito) entrando a la RO desde los elementos.",
+    "Glicerina/COD en permeado 320 mg/L con pico transitorio: evidencia de arrastre del conservante hacia el permeado.",
+    "Pasos de aclarado ejecutados 1×30 min vs 3×60 min recomendados y ramp-up de 5 min vs 30 min: procedimiento inadecuado para este proveedor.",
+    "Caudal de permeado bajo (175 m³/h, ~70% del esperado) con mejora lenta: típico de conservante remanente/viscosidad elevada y mojado/compactación incompletos.",
+    "ΔP etapa 1 y 2 más altos de lo esperado (1,5 y 0,9 bar): compatible con aumento de viscosidad por glicerina en los canales de alimentación.",
+    "Conductividad de permeado alta al inicio (720→580 µS/cm) y rechazo 98,97% subiendo lentamente: consistente con paso inicial de sales por mojado/compactación acelerada y presencia de bisulfito iónico."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Mojado/compactación incompletos por ramp-up demasiado rápido, aun sin efecto del conservante.",
+      "why_plausible": "El ramp-up de 5 min puede causar rechazo bajo y caudal subóptimo hasta que la membrana se compacte y se moje plenamente.",
+      "why_discardable": "El ORP muy negativo y la glicerina en permeado apuntan a arrastre de conservante, no solo a compactación."
+    },
+    {
+      "hypothesis": "Membranas del nuevo proveedor con menor permeabilidad (A-valor) y mayor paso de sal intrínsecos.",
+      "why_plausible": "Cambio de proveedor puede traer diferencias de desempeño nominal (mayor presión necesaria y algo menos de rechazo).",
+      "why_discardable": "No explica el ORP negativo ni la presencia de glicerina en permeado ni la tendencia de mejora al irse purgando el tren."
+    },
+    {
+      "hypothesis": "Desalineación/montaje incorrecto (O-rings, brine seal) que cause bypass interno y mayor conductividad de permeado.",
+      "why_plausible": "Instalación de elementos nuevos puede introducir fugas internas con aumento de sal en permeado y caídas de rendimiento.",
+      "why_discardable": "No justificaría ORP bajo ni glicerina en permeado; además el patrón de mejora progresiva sugiere purga de conservante más que un defecto mecánico estático."
+    }
+  ],
+  "requested_data": "Sulfito residual en la alimentación a la RO del tren T-05, mg/L como SO3^2-, medido a las 8 h post-arranque.",
+  "recommended_action": "Aislar el tren T-05 y desviar permeado y concentrado a drenaje. Detener temporalmente la dosificación externa de bisulfito a este tren (ajustar a 0 mg/L) mientras se confirma cloro libre <0,02 mg/L en la entrada de RO. Ejecutar 3 enjuagues sucesivos con permeado, 60 min cada uno, recirculando a baja presión (4–6 bar) con válvula de concentrado totalmente abierta para maximizar el flujo de barrido y sin contrpresión en permeado; continuar cada enjuague hasta que el ORP de alimentación se estabilice entre 0 y +100 mV. Reiniciar con ramp-up controlado de 30 minutos hasta la presión de operación, manteniendo recuperación reducida durante el ramp-up y monitorizando ΔP, caudal y conductividad de permeado. Reanudar la dosificación de bisulfito solo según necesidad para mantener ORP de entrada +50 a +100 mV y cloro libre <0,02 mg/L. Si tras 4–6 h no se alcanzan ≥240 m³/h y ≥99,3% de rechazo, programar inspección de montaje (O-rings, brine seals) del tren.",
+  "decision_change_condition": "Si el sulfito residual en la entrada de T-05 es <0,1 mg/L (como SO3^2-) y el ORP de alimentación se mantiene ≥+50 mV durante el arranque, sin glicerina detectable en permeado (<50 mg/L), pero el caudal y el rechazo siguen anómalos, cambiaría el diagnóstico hacia baja permeabilidad intrínseca del nuevo elemento o un defecto de instalación.",
+  "confidence": 82
+}

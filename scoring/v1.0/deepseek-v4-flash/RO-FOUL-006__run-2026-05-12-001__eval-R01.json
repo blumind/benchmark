@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-006-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-006",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling first stage reduced biocide dosing frequency'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta cambio protocolo + ATP×4 + ΔP1 + CIP ácido alivio temporal."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (SCAL, coloidal, MECH compactación) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino SDS 0.1% + EDTA 0.2% + DBNPA 2 mg/L cada 3 días — completo, sin oxidante."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ATP en superficie membrana — match exacto accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Specific: ATP superficie <100 → inorgánico/coloidal."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

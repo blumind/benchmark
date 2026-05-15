@@ -1,0 +1,38 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:59:38Z",
+  "main_hypothesis": "Silica scaling in the second stage of the RO system, caused by operating at an elevated recovery rate (82%) without a corresponding increase in the silica-specific antiscalant dosage.",
+  "key_signals": [
+    "The differential pressure (ΔP) increase is localized and severe in the second stage (1.9 bar vs 0.9 bar baseline), where solute concentration is highest.",
+    "The calculated silica concentration in the reject stream (295 mg/L) explicitly exceeds the documented operational limit of the antiscalant in use (260 mg/L).",
+    "The antiscalant dosage was not adjusted from 8 ppm after the recovery rate was increased, which significantly raised the concentration factor.",
+    "A standard alkaline CIP provided only temporary relief for the ΔP, which is characteristic of tenacious, rapidly re-forming inorganic scale like silica, as opposed to biofouling."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling in the second stage.",
+      "why_plausible": "Biofouling can cause a progressive increase in differential pressure, particularly in the tail-end elements of an array where nutrient concentrations are higher and flow velocities can be lower.",
+      "why_discardable": "The source water is from deep wells, which typically have low biological activity. Furthermore, the standard alkaline CIP performed (pH 11.5) should have been effective at removing biofilm; the rapid rebound of ΔP suggests an ongoing inorganic precipitation process."
+    },
+    {
+      "hypothesis": "Calcium carbonate scaling.",
+      "why_plausible": "Increasing the recovery rate also concentrates calcium and alkalinity, potentially exceeding the saturation point for calcium carbonate in the reject stream.",
+      "why_discardable": "A standard alkaline CIP would be ineffective against calcium carbonate scale; an acid cleaning would be required for its removal. The fact that the alkaline CIP had a temporary positive effect points towards a foulant like silica, whose solubility increases at high pH."
+    },
+    {
+      "hypothesis": "Colloidal or particulate fouling.",
+      "why_plausible": "The plant has minimal pretreatment, and a breakthrough of suspended solids could cause fouling and an increase in differential pressure.",
+      "why_discardable": "Particulate fouling typically manifests primarily in the first stage of the RO system by blocking the feed channels of the lead elements. The operational data shows the first stage ΔP is stable, while the second stage ΔP has more than doubled."
+    }
+  ],
+  "requested_data": "Concentration of Magnesium (Mg) and Iron (Fe) in the reject stream in mg/L.",
+  "recommended_action": "Immediately reduce the system recovery rate to the previous stable setpoint of 75% to stop further scale formation by lowering the silica concentration in the concentrate below its supersaturation threshold.",
+  "decision_change_condition": "A membrane autopsy or foulant analysis reveals the dominant fouling material is biological (biofilm) or a different inorganic scale not primarily composed of silica.",
+  "confidence": 95
+}

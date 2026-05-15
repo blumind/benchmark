@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-MECH-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:40:59Z",
+  "main_hypothesis": "Fallo del sello frontal (cap seal) en el Tubo 2 de la Etapa 1, causando recirculación interna de permeado y/o fuga de concentrado hacia el permeado.",
+  "key_signals": [
+    "Conductividad permeado subida progresiva (de 110 a 480 µS/cm)",
+    "Rechazo de sales (calculado) bajada (de 97,8 % a 90,3 %)",
+    "Probe test perfil de permeado por tubo (etapa 1) Tubo 2: 1.250 µS/cm (anomalía severa)",
+    "ΔP etapa 1 estable (1,1 bar) a pesar de la caída de caudal",
+    "Fuga de agua dulce reportada en la cabeza de un tubo (Día -22), reapretada (Día -20)",
+    "Sello frontal (cap final) del Tubo 2 muestra cierta protrusión anómala y la junta tórica está marcada (Día -4)",
+    "Test de presión del Tubo 2 con elementos extraídos: pérdida de presión a 1 bar, consistente con sello de cabeza/cap defectuoso (Día -2)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo de membrana(s) en el Tubo 2 de la Etapa 1, resultando en paso de sales.",
+      "why_plausible": "Un fallo de membrana puede causar un aumento en la conductividad del permeado y una disminución en el rechazo de sales. El probe test localizando la anomalía en el Tubo 2 apoya esta idea.",
+      "why_discardable": "El historial de mantenimiento (fuga en la cabeza, sello frontal anómalo, prueba de presión indicando fallo de sello) apunta más fuertemente a un problema de sellado. Un fallo de membrana típicamente no se manifestaría con una fuga visible en la cabeza del tubo ni con una prueba de presión de sello defectuosa. Además, el ΔP de la etapa 1 se mantiene estable, lo cual sería menos probable con un fallo severo de membrana que podría causar un bypass o una obstrucción localizada."
+    },
+    {
+      "hypothesis": "Obstrucción parcial del Tubo 2 de la Etapa 1, causando recirculación de concentrado y/o menor flux efectivo.",
+      "why_plausible": "Una obstrucción podría afectar el flujo y la calidad del permeado. El probe test mostrando alta conductividad en el Tubo 2 podría ser un síntoma de esto.",
+      "why_discardable": "La evidencia directa del fallo del sello frontal (protrusión, junta tórica marcada, prueba de presión) es más específica y explica mejor la alta conductividad del permeado del Tubo 2. Una obstrucción no explicaría la fuga en la cabeza del tubo ni la prueba de presión del sello. El ΔP de la etapa 1 se mantiene relativamente estable, lo cual no es típico de una obstrucción severa que aumentaría el ΔP."
+    },
+    {
+      "hypothesis": "Contaminación biológica o incrustación en el Tubo 2 de la Etapa 1.",
+      "why_plausible": "La incrustación o el crecimiento biológico pueden afectar el rendimiento de la membrana, aumentando la conductividad del permeado y reduciendo el rechazo de sales. El probe test podría detectar esto.",
+      "why_discardable": "No hay señales directas de incrustación (como aumento de ΔP o problemas de limpieza previos) ni de contaminación biológica (como olor o problemas de pretratamiento). La evidencia del fallo del sello frontal es mucho más directa y explica los síntomas observados, incluyendo la alta conductividad localizada en el Tubo 2."
+    }
+  ],
+  "requested_data": "Presión de sellado del cap final del Tubo 2 durante la prueba de presión con elementos extraídos (en bar).",
+  "recommended_action": "Aislar y retirar el Tubo 2 de la Etapa 1. Inspeccionar y reemplazar el sello frontal (cap seal) y la junta tórica del Tubo 2. Realizar una prueba de presión del tubo reparado antes de reintroducirlo en el sistema. Si el sello no puede ser reparado o reemplazado in situ, se debe reemplazar el tubo completo o el elemento de membrana afectado.",
+  "decision_change_condition": "Si la prueba de presión del Tubo 2 con elementos extraídos muestra que el sello frontal está intacto y no hay pérdida de presión, entonces la hipótesis principal sería descartada y se consideraría un fallo de membrana o una obstrucción severa dentro del Tubo 2.",
+  "confidence": 95
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-002-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-002",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofilm formation por elevated ATP+TOC' + DAF degradation."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ATP+1100%+TOC×2+SDI×2+ΔP+caudal."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (coloidal/scaling, scaling, MECH, OXID) anclados."
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "ACCIÓN DAÑINA: hipoclorito 200-500 mg/L en CIP — destruye PA."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide microscopic examination membrane → autopsy match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single condition: microscopic no biofilm → reconsider. Limitado."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "hipoclorito 200-500 mg/L en CIP. Case-specific 002 dice 'línea continua', CIP no — strict no fail trigger pero acción dañina."
+}

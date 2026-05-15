@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-MECH-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:49:16Z",
+  "main_hypothesis": "Incorrect installation of the brine seal (salmuera seal) on the first element of Tube 5, Stage 1 during membrane replacement 25 days ago, resulting in direct bypass of feed water to permeate without proper rejection, causing progressive salt leakage.",
+  "key_signals": [
+    "Permeate conductivity from Tube 5 measured at 850 µS/cm versus 90–115 µS/cm in other tubes (9.3× higher), indicating localized rejection failure",
+    "Progressive increase in plant permeate conductivity from 95 µS/cm (baseline) to 220 µS/cm (current) over 25 days, correlating temporally with membrane replacement",
+    "Salt rejection calculated at 96.5% (current) versus 98.5% (baseline), a 2% absolute decline consistent with bypass in one tube of a 3:2 configuration",
+    "Visual inspection confirmed missing brine seal on first element of Tube 5, with seal found rolled outside the element",
+    "Operator admission that brine seal was removed during installation because 'it did not fit well' and was not reinstalled",
+    "Slight decrease in Stage 1 differential pressure (0.9 bar current versus 1.0 bar baseline) consistent with reduced effective membrane area due to bypass",
+    "Stable permeate flow (245 m³/h) despite degraded rejection, indicating bypass rather than membrane fouling or scaling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane defect or manufacturing fault in Tube 5 elements introduced during replacement",
+      "why_plausible": "New membranes were installed 25 days ago; defects in membrane material or structure could cause localized salt passage. The timing and localization to Tube 5 are consistent.",
+      "why_discardable": "Manufacturing defects typically affect multiple elements or present as sudden rejection loss, not progressive degradation. Visual inspection directly identified the missing brine seal as the cause, making a coincidental membrane defect implausible. The operator's admission of seal removal provides a documented mechanical explanation."
+    },
+    {
+      "hypothesis": "Improper element orientation or seating during installation, causing feed-to-permeate bypass at the element interface",
+      "why_plausible": "A new operator installed the membranes; misalignment or incomplete seating could create a bypass path. This would explain localized high conductivity in Tube 5.",
+      "why_discardable": "The probe test shows conductivity in Tube 5 at 850 µS/cm, far higher than would result from partial bypass at an interface. The missing brine seal is a more direct and complete bypass mechanism. Reapretation of the tube head (Day -5) did not resolve the issue, suggesting the problem is not at the tube interface but within the element itself."
+    },
+    {
+      "hypothesis": "Biofouling or biofilm growth in Tube 5 causing localized permeability increase and salt passage",
+      "why_plausible": "The plant operates without oxidant; biofilm could develop preferentially in one tube if flow distribution is uneven. Biofilm can increase salt passage by degrading membrane integrity.",
+      "why_discardable": "Biofouling typically increases differential pressure and reduces permeate flow; neither is observed here. The plant shows stable flow and slightly lower ΔP. Biofilm develops over weeks to months, not 25 days in a new membrane. The direct visual evidence of a missing brine seal is a more parsimonious explanation."
+    },
+    {
+      "hypothesis": "Incorrect antiscalant dosing or formulation change post-replacement, affecting rejection in new membranes",
+      "why_plausible": "Antiscalant at 2 ppm is reported; if dosing was altered or the product changed during the maintenance window, new membranes might respond differently.",
+      "why_discardable": "Antiscalant affects scaling and fouling, not salt rejection. The conductivity of the feed is stable (6,250 µS/cm), and pH and temperature are unchanged. Antiscalant does not explain why only Tube 5 is affected. The missing brine seal is a direct mechanical cause."
+    },
+    {
+      "hypothesis": "Partial membrane element cracking or delamination in Tube 5 due to installation stress or defective batch",
+      "why_plausible": "A new operator may have applied excessive force during installation, or the batch of replacement elements may have had latent defects. Cracking would allow bypass.",
+      "why_discardable": "Cracking would typically present as sudden rejection loss or visible damage during inspection. The progressive increase in conductivity over 25 days suggests a mechanical seal failure rather than structural damage. The missing brine seal is a documented mechanical cause that fully explains the observations."
+    }
+  ],
+  "requested_data": "Differential pressure across the first element of Tube 5 (measured at element inlet and outlet) compared to the first element of an adjacent tube with original membranes, to confirm whether the bypass is occurring at the element level or at the tube interface.",
+  "recommended_action": "Immediately shut down the plant and isolate Tube 5 from Stage 1. Remove all 12 elements from Tube 5 and inspect each for correct brine seal installation and proper seating. Reinstall all elements with documented verification that each brine seal is correctly positioned and seated in the element groove before assembly into the tube. Use a checklist signed by both the installing technician and a supervisor. After reassembly, perform a 2-hour low-pressure flush at 5 bar with feed water, then resume normal operation at full pressure. Monitor permeate conductivity from Tube 5 hourly for 24 hours; if conductivity does not return to <120 µS/cm, inspect for additional installation defects or element damage.",
+  "decision_change_condition": "If the differential pressure across the first element of Tube 5 is normal (within 0.1 bar of adjacent tubes) and permeate conductivity from Tube 5 remains >500 µS/cm after brine seal reinstallation and flushing, the diagnosis would shift to a membrane material defect or manufacturing fault, requiring element replacement with a different batch and possible supplier investigation.",
+  "confidence": 94
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-001",
+    "subject_id": "gpt-3-5-turbo",
+    "subject_version": "gpt-3.5-turbo-0125",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "C1: 'propilenglicol residual' menciona pero no menciona 'no-wetting' explicitamente"
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "C2: 3 signals vagos (arranque anomalo, caudal bajo, circulacion lenta)"
+    },
+    "alternatives": {
+      "score": 0,
+      "justification": "C3: alts son la propia hipotesis principal mal redactada; no son alternativas"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: circulacion 12h baja presion - direccionalmente correcto, sin condiciones"
+    },
+    "requested_data": {
+      "score": 0,
+      "justification": "C5: 1 anchor (PG en permeado) pero impreciso"
+    },
+    "decision_change_condition": {
+      "score": 0,
+      "justification": "C6: ausente: 'si no mejora reconsiderar' sin umbrales"
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Respuesta muy escueta, baja calidad"
+}

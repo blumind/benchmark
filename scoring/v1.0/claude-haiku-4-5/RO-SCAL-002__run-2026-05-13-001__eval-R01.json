@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-002",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'sílice scaling stage 2 + undersized antiscalant for elevated recovery 82%' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación causal."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (sílice coloidal, MECH defect, biofouling, CaCO3)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Aumentar antiscalant 8→12 ppm + aumentar pH 7.1→7.8-8.0 con NaOH — match gold ACT 2 y ACT 3 (subir pH para solubilidad sílice)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide sílice en concentrate etapa 2 — match accepted (sílice rechazo)."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single threshold: si stage 2 reject silica <200 mg/L → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T08:49:32Z",
+  "main_hypothesis": "Colloidal iron fouling of the lead RO membrane elements due to a sustained overdose of ferric chloride (FeCl₃) coagulant, which has exceeded the removal capacity of the sand filtration pre-treatment system.",
+  "key_signals": [
+    "The total iron in the RO feed is extremely high at 0.42 mg/L, an almost tenfold increase from the baseline of 0.05 mg/L.",
+    "The differential pressure in the first stage head has doubled (2.2 bar vs 1.1 bar baseline), while the tail end remains stable, indicating fouling is concentrated at the front of the train.",
+    "The history log confirms the FeCl₃ dose was raised to 4 mg/L and left at that high level for 20 days, coinciding with the onset of performance decline.",
+    "Visual evidence of intense reddish coloration on cartridge filters and yellow-orange traces post-sand filters confirms iron carryover.",
+    "The Silt Density Index (SDI₁₅) has risen sharply to 4.2, indicating a high concentration of colloidal/particulate foulants reaching the membranes."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling",
+      "why_plausible": "The plant is in a warm climate, and increased differential pressure is a primary symptom of biofouling.",
+      "why_discardable": "The ATP level, a direct indicator of biological activity, is stable and relatively low (95 pg/mL). Also, biofouling typically causes a more distributed pressure drop increase, not one so heavily concentrated in the lead elements."
+    },
+    {
+      "hypothesis": "Particulate/silt fouling from the intake",
+      "why_plausible": "The plant has an open intake, and a recent turbidity event occurred. High SDI and turbidity are consistent with this type of fouling.",
+      "why_discardable": "The intake turbidity event ended 20 days ago, while the fouling trend began 10 days ago and continues. The primary foulant identified analytically and visually is iron, not general silt."
+    },
+    {
+      "hypothesis": "Corrosion of upstream carbon steel piping or equipment",
+      "why_plausible": "Corrosion could be a source of dissolved and particulate iron, leading to the high iron levels measured in the RO feed.",
+      "why_discardable": "This would be a gradual process or linked to a specific failure. The problem's onset is perfectly correlated with the sustained coagulant overdose, making the operational error a much more direct and likely cause."
+    }
+  ],
+  "requested_data": "Actual ferric chloride dosage rate verified by a timed drawdown test of the dosing pump (in L/h) to compare against the calculated setpoint.",
+  "recommended_action": "Immediately reduce the ferric chloride (FeCl₃) dosage setpoint from 4.0 mg/L to the baseline operational value of 2.5 mg/L. Concurrently, initiate planning for a low-pH Cleaning-In-Place (CIP) of the affected RO train to restore performance.",
+  "decision_change_condition": "My diagnosis would change if a drawdown test confirmed the FeCl₃ pump was delivering a dose significantly lower than the 4.0 mg/L setpoint (e.g., < 2.0 mg/L), which would indicate an alternative source of iron contamination.",
+  "confidence": 95
+}

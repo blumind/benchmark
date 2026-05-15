@@ -1,0 +1,53 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:05:50Z",
+  "main_hypothesis": "Acondicionamiento insuficiente de membranas nuevas por no seguir el procedimiento específico del proveedor, dejando residuos de bisulfito y glicerina de preservación dentro de los elementos y provocando arranque lento con bajo caudal, menor rechazo y mayor pérdida de carga.",
+  "key_signals": [
+    "Se ejecutó solo 1 aclarado de 30 min con permeado frente a los 3 aclarados de 1 h recomendados por el nuevo proveedor.",
+    "El ramp-up se hizo en 5 min frente a los 30 min recomendados.",
+    "Los elementos nuevos venían preservados con 1 % bisulfito + glicerina, distinto al producto habitual de la planta.",
+    "Glicerina/COD en permeado de 320 mg/L, muy por encima del valor esperado <50 mg/L.",
+    "ORP de alimentación anómalamente bajo, -10 mV frente a +90 mV esperado, coherente con arrastre de bisulfito reductor.",
+    "La conductividad de permeado está elevada pero muestra bajada lenta desde 720 a 580 µS/cm, compatible con lavado progresivo de preservante y estabilización de membrana nueva.",
+    "El rechazo de sales está bajo, 98,97 % frente a 99,4 %, pero con subida lenta.",
+    "El caudal permeado está al 70 % del esperado y sube lentamente, patrón compatible con acondicionamiento incompleto más que con fallo súbito irreversible.",
+    "La presión de alimentación y la calidad de agua de alimentación se mantienen estables, reduciendo la probabilidad de una perturbación externa de proceso."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño físico o hidráulico de los elementos por ramp-up demasiado rápido.",
+      "why_plausible": "El tren se llevó a presión nominal en 5 min cuando el proveedor recomendaba 30 min; un arranque brusco puede causar desplazamiento de espaciadores, telescoping, compactación o daño mecánico, con aumento de ΔP, bajo caudal y peor rechazo.",
+      "why_discardable": "La tendencia reportada es de mejora gradual de conductividad, rechazo y caudal, no de deterioro progresivo o fallo persistente; además hay evidencia directa de preservante residual por COD/glicerina elevado y ORP bajo."
+    },
+    {
+      "hypothesis": "Ensuciamiento orgánico o coloidal temprano por fallo del pretratamiento.",
+      "why_plausible": "Una captación abierta con DAF, filtros bicapa y cartuchos puede sufrir episodios de sólidos o materia orgánica que eleven ΔP y reduzcan caudal en RO.",
+      "why_discardable": "No se reporta cambio en alimentación, temperatura, pH, cloro o presión general; el evento coincide exactamente con elementos nuevos, preservante distinto y aclarado insuficiente, y el permeado contiene glicerina elevada."
+    },
+    {
+      "hypothesis": "Variación intrínseca de permeabilidad o especificación de los elementos del nuevo proveedor.",
+      "why_plausible": "Los elementos proceden de un proveedor diferente al habitual y podrían tener distinta permeabilidad inicial, necesidad de acondicionamiento o curva de estabilización.",
+      "why_discardable": "La desviación es grande para membrana SWRO nueva, con caudal solo al 70 % y COD/glicerina alto; además el proveedor ya indicó un procedimiento de puesta en marcha más exigente que no se siguió."
+    },
+    {
+      "hypothesis": "Oxidación o ataque químico de membrana por cloro.",
+      "why_plausible": "El aumento de conductividad de permeado y menor rechazo pueden aparecer por daño oxidativo en membranas de poliamida.",
+      "why_discardable": "El cloro libre antes de RO está reportado como <0,02 mg/L y el ORP está anómalamente bajo, no alto; esto apunta a exceso de reductor residual, no a oxidación."
+    },
+    {
+      "hypothesis": "Incrustación mineral temprana por operación a recovery elevado o dosificación insuficiente de antiincrustante.",
+      "why_plausible": "La planta opera a 44 % de recovery y 3 ppm de antiincrustante; una desviación en química podría elevar ΔP y reducir caudal.",
+      "why_discardable": "El fenómeno aparece inmediatamente tras instalar elementos preservados, con glicerina en permeado y ORP bajo; la mejora lenta durante 8 h no es el patrón principal de incrustación mineral activa."
+    }
+  ],
+  "requested_data": "Glicerina/COD en permeado del Tren T-05 después de completar tres aclarados adicionales con permeado a baja presión, expresado en mg/L.",
+  "recommended_action": "Sacar temporalmente el permeado del Tren T-05 de la línea de producción y enviarlo a drenaje o recirculación no potable; parar el tren de forma controlada y ejecutar el procedimiento del proveedor: tres aclarados sucesivos con permeado a baja presión de 1 h cada uno, sin adición de oxidantes ni cloro, manteniendo el concentrado y el permeado a drenaje; después reiniciar con ramp-up gradual de 30 min hasta presión nominal y mantener fuera de producción hasta que el COD/glicerina del permeado sea <50 mg/L y la conductividad/rechazo se estabilicen.",
+  "decision_change_condition": "Cambiaría el diagnóstico si, tras completar los tres aclarados recomendados y el ramp-up de 30 min, la glicerina/COD del permeado fuese <50 mg/L pero el caudal normalizado siguiera cerca del 70 % del esperado o el rechazo no mejorara, porque entonces sería más probable daño físico de membrana, incompatibilidad de elementos o ensuciamiento no asociado al preservante.",
+  "confidence": 87
+}

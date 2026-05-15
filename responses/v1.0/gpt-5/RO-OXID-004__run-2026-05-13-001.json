@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:55:41Z",
+  "main_hypothesis": "Oxidative degradation of the RO polyamide membranes caused by monochloramine breakthrough due to exhausted/overloaded GAC pretreatment after the upstream increase in chloramine, compounded by the absence of sodium bisulfite reduction.",
+  "key_signals": [
+    "Total chloramine after GAC-1 and GAC-2 now ~0.38–0.42 mg/L as Cl2 versus <0.05 mg/L baseline (documented breakthrough across both beds).",
+    "ORP at RO feed rose from +60 mV to +210 mV, consistent with oxidant presence.",
+    "Sharp decline in overall salt rejection from 95.5% to 80.7% while ΔP in both stages remains stable (rules out fouling/scaling as primary cause).",
+    "Permeate conductivity increased from 65 to 280 µS/cm with feed conductivity stable (loss of membrane selectivity).",
+    "No SBS dosing in service despite reliance on GAC for chloramine removal.",
+    "Upstream event: municipal chloramine raised to ~3.2 mg/L at day -45; plant was not notified; subsequent stepwise rise in permeate conductivity tracks this change.",
+    "Bench test of a lead element shows reduced NaCl rejection (95% vs 99% new), indicative of oxidation damage rather than purely mechanical bypass."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Mechanical bypass (O-ring/interconnector/endcap seal failure) causing internal leakage and high salt passage.",
+      "why_plausible": "Large increase in permeate conductivity with only small hydraulic changes can result from internal bypass; system rejection (80.7%) is worse than the single lead element bench test (95%), which could suggest localized leaks.",
+      "why_discardable": "Direct evidence of oxidant exposure (chloramine 0.38 mg/L post-GAC and ORP +210 mV) aligns temporally with the rejection collapse. Bypass does not explain elevated oxidant residuals or their timeline; bench test already shows intrinsic rejection loss, not just a leak."
+    },
+    {
+      "hypothesis": "Normal membrane aging/compaction over 26 months.",
+      "why_plausible": "Some loss of permeability and modest rejection decline is expected with age; the bench test showing 95% vs 99% new could be interpreted as aging.",
+      "why_discardable": "The magnitude and rapidity of rejection drop (to ~81%) over ~45 days is inconsistent with typical aging, and it coincides with a documented oxidant breakthrough and ORP rise; ΔP is stable and feed conductivity unchanged."
+    },
+    {
+      "hypothesis": "Scaling or organic/biofouling reducing performance and apparent rejection.",
+      "why_plausible": "At 75% recovery, scaling risk exists if antiscalant underdosed; fouling can alter transport properties and increase salt passage.",
+      "why_discardable": "Stage ΔP is stable and feed pressure only slightly higher; fouling/scaling normally increases ΔP and depresses flux rather than causing an isolated drastic salt rejection loss. High ORP and chloramine residual also suppress biofouling."
+    },
+    {
+      "hypothesis": "Transient free chlorine spike (rather than chloramine) caused oxidation.",
+      "why_plausible": "Free chlorine is more aggressive and brief spikes could severely damage PA.",
+      "why_discardable": "Free chlorine at RO feed remained <0.02 mg/L; the persistent oxidant detected is chloramine, and the timeline of rejection decline tracks the chloramine increase and GAC exhaustion."
+    }
+  ],
+  "requested_data": "C·T exposure to total chloramine at the RO feed over the last 45 days (mg·h/L as Cl2).",
+  "recommended_action": "Immediately stop RO feed until oxidant is controlled. Restore protection by replacing/rebedding both GAC filters (verify EBCT for 3.5 mg/L chloramine) and implement continuous total chlorine monitoring with an interlock (<0.05 mg/L as Cl2 at RO inlet). Before restart, begin chemical reduction: dose sodium bisulfite (NaHSO3) 38% w/w solution to achieve 3.0 mg/L as SO2 at the RO feed (≈4.9 mg/L as NaHSO3; ≈13 mg/L as 38% solution), then adjust to maintain total chlorine nondetect (<0.02 mg/L) and a small residual bisulfite of 0.5–1.0 mg/L. Confirm ORP at RO inlet ≤+100 mV. After protection is in place, perform vessel-by-vessel salt passage checks and plan replacement of oxidized elements that test <97% NaCl rejection at standard conditions.",
+  "decision_change_condition": "If total chloramine at the RO feed had remained <0.05 mg/L (and ORP near +60 mV) throughout the period, yet rejection still dropped to ~81%, I would shift the main diagnosis to mechanical bypass (O-ring/interconnector failure) or another non-oxidative integrity issue rather than oxidant damage.",
+  "confidence": 88
+}

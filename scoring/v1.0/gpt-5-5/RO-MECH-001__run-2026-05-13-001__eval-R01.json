@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-001",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fallo estanqueidad junta interna T-02 Tubo 4 + O-ring inter-elemento mal asentado/rígido tras reinstalación' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia incluyendo 'rígido'."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (daño membrana, O-ring cabeza/cola, OXID, scaling)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Sacar T-02 + aislar + abrir Tubo 4 + sustituir todos O-rings con repuestos OEM — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide perfil conductividad permeado por posición elemento (probing interno) — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi: probing por posición demuestra estanqueidad → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

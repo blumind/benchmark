@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-005",
+    "subject_id": "gemini-3-1-flash-lite",
+    "subject_version": "gemini-3.1-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'incompatibilidad o dosis insuficiente nuevo antiincrustante → CaCO3 o CaSO4 etapa 2' — match parcial."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief (biológico, coloidal)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Revertir poliacrílico 3 ppm + CIP alcalino pH 11-12 — alcalino solo para CaCO3 es chemistry incorrecta (case_specific recoverable 'fouling + alcalino única' — model diagnostica scaling no fouling, strict no match)."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide SDI + análisis scale — generic, no es trigger LSI."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: SDI >5 → particulate."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "ACT con alcalino única para scaling es subóptimo químicamente. Strict no fail por wording del case_specific."
+}

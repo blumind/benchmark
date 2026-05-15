@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-NOWE-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:54:01Z",
+  "main_hypothesis": "Membranas parcialmente deshidratadas/no-wetted con propilenglicol residual ocluido en la capa activa de poliamida tras 5 meses en preservación con PG al 20%; el rampado rápido de arranque (2 min) no permitió el rehumectado completo, lo que reduce la permeabilidad efectiva del agua y aumenta el paso de sales transitoriamente.",
+  "key_signals": [
+    "Caudal de permeado al 36% del nominal a presión completa tras arranque, recuperándose progresivamente (48%→65%→78%) con circulación a baja presión",
+    "ΔP de ambas etapas por debajo del esperado (0,7 y 0,4 bar vs 1,2 y 0,8 bar), incompatible con ensuciamiento/scaling",
+    "Presión de alimentación elevada (64 bar vs 60) consistente con baja permeabilidad de la membrana, no con pérdida de área activa",
+    "Conductividad de permeado elevada (480 µS/cm) que disminuye lentamente en paralelo al aumento de caudal, patrón típico de rehumectación progresiva de la poliamida",
+    "Historia explícita: preservación con propilenglicol 20% durante 5 meses, vaina vacía parte del tiempo, temperaturas hasta 4 °C (PG más viscoso, difusión más lenta)",
+    "Aclarado de arranque corto (30 min) e insuficiente para desplazar PG retenido",
+    "Ausencia de cloro libre, ORP normal y conductividad de alimentación normal: descarta oxidación y cambio de salinidad"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Aclarado insuficiente de bisulfito/PG con bolsas de aire atrapadas en vainas que estuvieron parcialmente vacías",
+      "why_plausible": "El historial menciona que la vaina estuvo vacía en algún momento; aire atrapado reduce área activa y mejora con circulación",
+      "why_discardable": "El aire normalmente se purga en minutos de operación, no requiere 5+ días de mejora progresiva; el patrón temporal encaja mejor con rehumectación de poliamida"
+    },
+    {
+      "hypothesis": "Compactación o daño físico de la membrana por ciclos térmicos/secado parcial durante almacenamiento",
+      "why_plausible": "Temperaturas variables (4–22 °C) y posible exposición a aire si la vaina se vació podrían dañar la capa activa",
+      "why_discardable": "El daño irreversible no mostraría recuperación progresiva del caudal ni descenso de conductividad; la tendencia de mejora lo descarta"
+    },
+    {
+      "hypothesis": "Biofouling incipiente desarrollado durante almacenamiento prolongado por degradación del bisulfito",
+      "why_plausible": "Bisulfito se oxida con el tiempo perdiendo capacidad biostática; 5 meses es largo",
+      "why_discardable": "El biofouling cursa con ΔP elevado y caudal decreciente, no con ΔP bajo y caudal creciente; signos opuestos a los observados"
+    },
+    {
+      "hypothesis": "Daño oxidativo de la poliamida por contaminación con oxidante durante el almacenamiento o arranque",
+      "why_plausible": "Aumentaría el paso de sales (conductividad 480 vs 400)",
+      "why_discardable": "El daño oxidativo es irreversible y empeora con el tiempo; aquí el rechazo mejora progresivamente. ORP y cloro libre normales"
+    }
+  ],
+  "requested_data": "Concentración residual de propilenglicol (mg/L) o COT en el permeado y en el rechazo medida ahora, comparada con agua de alimentación",
+  "recommended_action": "Continuar el protocolo de rehumectación: circulación en lazo cerrado con permeado a baja presión (5–10 bar, sin producción a red) durante 24–48 h adicionales a temperatura ≥20 °C; alternativamente, remojo estático con permeado durante 1 h seguido de flush a 4 bar antes de presurizar. Si tras 48 h no se alcanza ≥95% del caudal nominal y rechazo ≥99,3%, ejecutar limpieza alcalina suave CIP con NaOH a pH 11,5–12 + 0,1% p/v de surfactante no iónico aprobado por el fabricante (p.ej. Na-EDTA 1% p/v + STPP 1% p/v) a 35 °C durante 4 h, seguido de aclarado exhaustivo. No enviar permeado a red hasta que conductividad <420 µS/cm y rechazo >99,25%.",
+  "decision_change_condition": "Si el COT/PG en permeado es indistinguible del de alimentación y la tendencia de mejora se detiene o revierte, descartaría no-wetting/PG residual y reorientaría el diagnóstico hacia daño estructural irreversible de la membrana durante el almacenamiento (compactación por secado o degradación química del bisulfito agotado).",
+  "confidence": 78
+}

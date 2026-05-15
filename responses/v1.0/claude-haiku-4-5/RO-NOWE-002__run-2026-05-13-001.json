@@ -1,0 +1,53 @@
+{
+  "case_id": "RO-NOWE-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:00:34Z",
+  "main_hypothesis": "Excessive residual sodium bisulfite (SBS) in the RO elements and feed water, causing osmotic imbalance, temporary membrane swelling, and reduced salt rejection during the post-startup transient phase.",
+  "key_signals": [
+    "Sulfito residual permeado 8.5 mg/L vs. baseline <0.5 mg/L (17-fold increase)",
+    "ORP alimentación -120 mV vs. baseline +50 mV (strongly reducing environment)",
+    "ORP permeado -180 mV vs. baseline -20 mV (excessive reducing conditions)",
+    "Rechazo de sales calculado 85.3% vs. baseline 98.3% (12.5 percentage point drop)",
+    "Conductividad permeado 850 µS/cm vs. baseline 95 µS/cm (9-fold increase)",
+    "Caudal permeado 220 m³/h vs. baseline 290 m³/h (24% reduction)",
+    "ΔP etapa 2 subida lenta (0.7 bar vs. 0.8 bar baseline, but trending upward)",
+    "Multiple SBS additions: 1% + 1.5% + 1% over 3 days without intermediate rinsing",
+    "Pre-arranque aclarado parcial insuficiente (15 minutos con agua bruta, no permeado)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling or microbial growth during the 8-day shutdown despite SBS preservation.",
+      "why_plausible": "An 8-day idle period with raw water (added on day -2) and elevated SBS concentrations could create anaerobic conditions favoring sulfate-reducing bacteria (SRB), which produce H₂S and biofilm. The negative ORP is consistent with anaerobic metabolism.",
+      "why_discardable": "Biofouling typically manifests as sustained ΔP rise and gradual conductivity degradation over hours/days, not the rapid transient recovery observed (conductivity dropping from 1500 to 850 µS/cm in 4 hours). Cloro libre is <0.02 mg/L (no oxidant present), but the SBS itself is a biocide at high concentration. The sulfito residual is far too high to be explained by microbial consumption alone. Biofilm would not explain the rapid improvement in salt rejection."
+    },
+    {
+      "hypothesis": "Incomplete rinsing of SBS from the cartridge prefilters (5 µm stage), causing SBS breakthrough into the RO feed.",
+      "why_plausible": "The 15-minute partial rinse with raw water (not permeate) on day -1 may not have displaced all SBS from the cartridge pores. SBS is highly soluble and can persist in dead legs and cartridge media.",
+      "why_discardable": "Cartridge fouling would increase ΔP in the pretreatment stage, not decrease it. The reported ΔP etapa 1 is stable at 1.1 bar (only 0.1 bar above baseline), suggesting the cartridges are not significantly fouled. The sulfito residual in the permeate (8.5 mg/L) indicates SBS is passing through the RO membrane, not being retained by the cartridges. This is consistent with SBS already in the feed water, not cartridge breakthrough."
+    },
+    {
+      "hypothesis": "Membrane compaction or temporary swelling due to osmotic shock from high SBS concentration in the feed.",
+      "why_plausible": "SBS at 1.5–2.5% p/p (cumulative from three additions) creates a high osmotic pressure gradient. Upon startup, the membrane may swell transiently, reducing effective pore size and salt rejection. The slow recovery of conductivity and salt rejection over 4 hours is consistent with membrane relaxation.",
+      "why_discardable": "Membrane swelling alone would not explain the sustained high sulfito residual in the permeate (8.5 mg/L). If swelling were the only issue, sulfito would be rejected more effectively as the membrane relaxes. The fact that sulfito is still high after 4 hours suggests active transport or diffusion of SBS through the membrane, not just osmotic transient effects. Swelling is reversible and would not require corrective action beyond flushing."
+    },
+    {
+      "hypothesis": "Oxidative damage to the membrane from residual chlorine or other oxidants introduced during the pre-arranque rinse.",
+      "why_plausible": "If the raw water used for the 15-minute rinse contained residual chlorine (not measured), it could have oxidized the polyamide membrane, increasing its permeability to salt.",
+      "why_discardable": "Cloro libre before RO is reported as <0.02 mg/L, which is below the detection limit and consistent with baseline. The plant has no oxidant dosing system (stated: 'Sin oxidante'). The negative ORP values are inconsistent with oxidative damage; oxidative conditions would show positive ORP. Oxidative damage would manifest as sustained high conductivity, not the slow recovery observed."
+    },
+    {
+      "hypothesis": "Incorrect pressure ramp-up or transient hydraulic shock during startup.",
+      "why_plausible": "A 1-minute ramp to nominal pressure (16.8 bar) could cause transient membrane deformation or particle mobilization, temporarily increasing salt passage.",
+      "why_discardable": "The pressure ramp is standard and matches the baseline startup procedure. The slow recovery of conductivity and salt rejection over 4 hours is inconsistent with a purely mechanical transient, which would resolve in minutes. The sustained high sulfito residual (8.5 mg/L) is not explained by pressure shock alone."
+    }
+  ],
+  "requested_data": "Concentración de sulfito residual en el agua de alimentación (feed water) medida inmediatamente antes del arranque, en mg/L.",
+  "recommended_action": "Immediately stop the RO unit and perform an extended flushing protocol: (1) Depressurize the system safely. (2) Flush the entire RO skid (feed lines, cartridges, and membrane elements) with permeate water (not raw water) at low pressure (2–3 bar) for a minimum of 2 hours, monitoring sulfito residual in the permeate outlet until it drops below 1 mg/L. (3) Drain and refill the feed tank with fresh raw water from the well. (4) Restart the unit at nominal pressure with a standard 1-minute ramp. (5) Monitor permeate conductivity and sulfito residual every 15 minutes for the first 2 hours; do not resume normal operation until conductivity returns to <150 µS/cm and sulfito residual is <0.5 mg/L. (6) Document the SBS concentrations used during preservation and establish a written protocol limiting SBS to 1.0% p/p without additional dosing during the preservation period.",
+  "decision_change_condition": "If the sulfito residual in the feed water (measured before the extended flush) is <1 mg/L, or if after the extended flush the permeate conductivity does not improve below 200 µS/cm within 4 hours, the diagnosis would shift toward membrane damage (oxidative or mechanical) or a separate fouling mechanism (biofouling, colloidal, or scaling), requiring membrane inspection or replacement.",
+  "confidence": 78
+}

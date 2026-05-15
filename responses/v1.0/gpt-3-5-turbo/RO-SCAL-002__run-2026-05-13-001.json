@@ -1,0 +1,32 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:57:59Z",
+  "main_hypothesis": "Scaling on the RO membranes due to high silica concentration in the reject stream",
+  "key_signals": [
+    "Marked increase in silica rejection from 208 mg/L to 295 mg/L",
+    "Anti-scalant dosage not adjusted for the increased recovery rate",
+    "Reported silica concentration in the reject stream above the recommended limit for the anti-scalant"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling",
+      "why_plausible": "The decrease in permeate flow rate and increase in reject stream conductivity could be indicative of fouling.",
+      "why_discardable": "The significant increase in silica rejection and the specific anti-scalant dosage issue point more towards scaling as the primary issue."
+    },
+    {
+      "hypothesis": "Inadequate pre-treatment for silica removal",
+      "why_plausible": "The high silica concentration in the reject stream could suggest that the pre-treatment methods are not effectively removing silica.",
+      "why_discardable": "The sudden increase in silica rejection after the recovery rate adjustment indicates a scaling issue rather than a pre-treatment problem."
+    }
+  ],
+  "requested_data": "Silica concentration in the permeate stream",
+  "recommended_action": "Adjust the anti-scalant dosage to account for the increased recovery rate and the higher silica rejection. Consider conducting a more thorough cleaning procedure for the RO membranes.",
+  "decision_change_condition": "If the silica concentration in the permeate stream is found to be significantly high, indicating breakthrough of silica, the diagnosis would change to inadequate pre-treatment for silica removal.",
+  "confidence": 90
+}

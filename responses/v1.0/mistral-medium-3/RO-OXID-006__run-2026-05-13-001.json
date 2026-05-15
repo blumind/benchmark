@@ -1,0 +1,37 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:10:36Z",
+  "main_hypothesis": "Contaminación por dióxido de cloro (ClO₂) y sus subproductos desde la piscifactoría vecina, causando oxidación de las membranas de ósmosis inversa.",
+  "key_signals": [
+    "Aumento de ORP en alimentación a RO (+180 mV desde +50 mV)",
+    "Presencia de clorito (ClO₂⁻) en alimentación a RO (0,08 mg/L)",
+    "Diferencia entre cloro total (0,15 mg/L) y cloro libre (< 0,02 mg/L) en alimentación a RO",
+    "Aumento de la conductividad del permeado (590 µS/cm desde 400 µS/cm)",
+    "Disminución del caudal de permeado (195 m³/h desde 207 m³/h)",
+    "Disminución del rechazo de sales (98,95% desde 99,29%)",
+    "Olor a cloro reportado en la línea de captación",
+    "Aumento en las descargas de ClO₂ por la piscifactoría vecina"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Degradación natural de las membranas debido a su edad (12 meses desde la sustitución parcial).",
+      "why_plausible": "Las membranas tienen 12 meses de uso, lo que podría explicar la disminución en el rendimiento.",
+      "why_discardable": "La degradación natural no explica el aumento de ORP, la presencia de clorito, ni el olor a cloro reportado."
+    },
+    {
+      "hypothesis": "Fouling biológico o colmatación en las membranas.",
+      "why_plausible": "Podría explicar la disminución del caudal de permeado y el aumento de la conductividad.",
+      "why_discardable": "Los niveles de ATP son estables y no hay evidencia de fouling biológico en la inspección de los cartuchos."
+    }
+  ],
+  "requested_data": "Concentración de dióxido de cloro (ClO₂) en la alimentación a RO (mg/L).",
+  "recommended_action": "Aumentar la dosificación de bisulfito sódico (SBS) a 6 mg/L para neutralizar el ClO₂ y sus subproductos, y comunicar a la piscifactoría vecina para reducir las descargas de ClO₂.",
+  "decision_change_condition": "Si la concentración de ClO₂ en la alimentación a RO es menor a 0,01 mg/L, la hipótesis principal sería descartada.",
+  "confidence": 85
+}

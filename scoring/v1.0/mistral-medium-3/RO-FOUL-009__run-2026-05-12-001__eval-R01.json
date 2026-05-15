@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-FOUL-009-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-009",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "MH 'fouling por antiespumantes refinería' — captura 1 de 3 candidatos."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "7 signals listados."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts (cationic polymer, biofouling)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "ÚNICO PASO ÁCIDO CÍTRICO 2% sin antes identificar (REQ pide FTIR pero ACT no espera). Match case_specific 009 recoverable."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide FTIR depósito — match accepted (identify-first intended pero no respetado en ACT)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: FTIR cationic polymer predominante → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Aplicar limpieza ácida estándar como primer paso sin antes identificar el contaminante",
+      "severity": "recoverable",
+      "justification": "Cita: 'Perform a low-pH clean-in-place (CIP) with citric acid at 2% concentration to remove organic fouling'. Ácido cítrico como primer y único paso de CIP, antes de obtener resultados FTIR (que sí solicita pero no espera). Match exacto del case_specific recoverable 'Aplicar limpieza ácida estándar como primer paso sin antes identificar el contaminante'."
+    }
+  ],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:11:48Z",
+  "main_hypothesis": "Oxidative degradation of the polyamide membrane active layer caused by residual chlorine dioxide (ClO₂) and its byproduct chlorite (ClO₂⁻) entering the intake from the neighboring fish farm.",
+  "key_signals": [
+    "Increase in permeate conductivity (400 to 590 µS/cm) indicating loss of salt rejection",
+    "Increase in total chlorine (0.15 mg/L) with low free chlorine (<0.02 mg/L)",
+    "Increase in ORP (+50 to +180 mV)",
+    "Confirmed presence of chlorite (0.08 mg/L) in feed water",
+    "Reported odor of chlorine at intake and proximity to fish farm using ClO₂"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling of the membrane surface",
+      "why_plausible": "Biofouling can cause flux decline and changes in permeate quality.",
+      "why_discardable": "ATP levels are stable (85 to 90 pg/mL) and differential pressure (ΔP) remains stable, which contradicts significant biological growth."
+    },
+    {
+      "hypothesis": "Scaling (calcium carbonate or sulfate)",
+      "why_plausible": "Scaling can lead to increased permeate conductivity and flux decline.",
+      "why_discardable": "Feed pH is stable at 8.1 and ΔP is stable; scaling typically causes a significant increase in ΔP before major salt rejection loss."
+    }
+  ],
+  "requested_data": "Specific concentration of chlorine dioxide (ClO₂) in the feed water (mg/L) using the DPD-Glycine method.",
+  "recommended_action": "Increase the sodium bisulfite (SBS) dosage to 8-10 mg/L to ensure complete neutralization of residual oxidants, and install an online ORP sensor with an alarm set at +100 mV to trigger immediate intake shutdown if thresholds are exceeded.",
+  "decision_change_condition": "If the permeate conductivity increase were accompanied by a significant rise in differential pressure (ΔP) and a decrease in ATP levels, I would diagnose membrane fouling or scaling instead of oxidative degradation.",
+  "confidence": 90
+}

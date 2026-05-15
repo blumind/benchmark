@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-MECH-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:43:20Z",
+  "main_hypothesis": "Defecto de fabricación en la línea de pegamento (glue line) de elementos del lote bajo reclamación de garantía instalados en T-04, que provoca bypass interno de salmuera al permeado en los 3 tubos afectados.",
+  "key_signals": [
+    "5 elementos del lote sospechoso concentrados en 3 tubos de T-04, coincidiendo exactamente con los tubos que muestran desviación en el probe test (1.500–2.200 µS/cm)",
+    "Conductividad de permeado del tren subiendo progresivamente de 470 a 720 µS/cm y rechazo cayendo de 99,17 % a 98,72 %, mientras la conductividad de alimentación se mantiene estable (56.300→56.500 µS/cm)",
+    "ΔP de ambas etapas y presión de alimentación esencialmente estables (no hay fouling/scaling significativo)",
+    "Cloro libre <0,02 mg/L y ORP +95 mV estables: no hay evidencia de oxidación química de la membrana",
+    "Reapretado de cabezas y verificación de O-rings de cap finales (Día -5) sin alivio: descarta fugas en conexiones externas/interconectores accesibles",
+    "Notificación previa del fabricante (Día -180) advirtiendo defecto específico de glue line en ese lote y recomendando autopsia ante anomalías"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga en O-rings de interconectores entre elementos dentro de los tubos sospechosos",
+      "why_plausible": "Produciría el mismo patrón: aumento localizado de conductividad de permeado en tubos específicos sin cambio de ΔP, y un test de presión por tubo con 'ligera pérdida' sería compatible.",
+      "why_discardable": "El reapretado de cabezas y verificación de O-rings de cap no alivió; además, la coincidencia espacial exacta con los elementos del lote defectuoso es estadísticamente improbable como casualidad."
+    },
+    {
+      "hypothesis": "Degradación por envejecimiento/fin de vida útil de membranas (36 meses)",
+      "why_plausible": "La edad está cerca del fin de vida; una pérdida gradual de rechazo es típica del envejecimiento.",
+      "why_discardable": "La degradación por edad sería homogénea entre tubos y trenes, no localizada en 3 tubos específicos de un solo tren que casualmente contienen elementos del lote defectuoso."
+    },
+    {
+      "hypothesis": "Daño oxidativo histórico de la capa activa de poliamida",
+      "why_plausible": "Causa clásica de pérdida de rechazo sin aumento de ΔP.",
+      "why_discardable": "ORP estable en +95 mV, cloro libre <0,02 mg/L sostenido, sin oxidante dosificado, y patrón localizado en tubos específicos (la oxidación afectaría a todo el tren o varios trenes)."
+    },
+    {
+      "hypothesis": "Telescoping o daño mecánico de elementos en cola de etapa 2",
+      "why_plausible": "Causa fugas internas y pérdida de rechazo localizada.",
+      "why_discardable": "ΔP de etapa 2 prácticamente estable (0,8→0,9 bar) y el probe test ubica la desviación en 3 tubos específicos correlacionados con el lote, no en posiciones de cola."
+    }
+  ],
+  "requested_data": "Resultado de la autopsia del elemento extraído del tubo sospechoso (Día -1), específicamente inspección de la línea de pegamento (glue line) con test de burbuja/vacío y prueba de integridad de la unión membrana–tubo central, además del número de serie/lote del elemento.",
+  "recommended_action": "Aislar T-04 de servicio o reducir su recuperación mientras se completa la autopsia. Retirar y reemplazar los 5 elementos del lote afectado en los 3 tubos identificados por elementos nuevos calificados (mismo modelo/área), realizar enjuague con permeado de baja conductividad y, si la planta lo requiere por bioactividad, una limpieza alcalina suave (NaOH 0,1 % p/p, pH ≤12, 35 °C máx., 1 h de recirculación) antes de la puesta en servicio. Documentar números de serie y tramitar reclamación de garantía con el fabricante. Reanudar el tren con probe test de verificación tras el reemplazo.",
+  "decision_change_condition": "Si la autopsia no muestra defecto en la glue line ni fuga interna del elemento del lote sospechoso, y en cambio revela daño oxidativo de la poliamida, fouling biológico/scaling, o si el probe test post-reemplazo sigue mostrando alta conductividad, la hipótesis principal deberá descartarse a favor de degradación generalizada o fuga en O-rings/interconectores.",
+  "confidence": 86
+}

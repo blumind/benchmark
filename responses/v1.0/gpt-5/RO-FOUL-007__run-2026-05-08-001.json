@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:46:25Z",
+  "main_hypothesis": "Biofouling of the lead RO elements (stage 1 head) driven by a sharp increase in biodegradable organic load and microbial activity after the storm and UF bypass, compounded by warm feed and sustained high FeCl3 dosing without residual disinfectant.",
+  "key_signals": [
+    "ΔP stage 1 head rose from 1.4 to 2.5 bar while mid rose slightly and tail stayed flat (typical of biofilm accumulation on lead elements)",
+    "TOC to RO feed jumped from 1.1 to 2.2 mg/L (substrate for biofilm)",
+    "ATP to RO feed escalated from 90 to 720 pg/mL (high biological load)",
+    "Seasonal temperature increase to 31.5 °C (accelerates bio growth)",
+    "SDI15 at cartridge outlet increased to 4.0 and turbidity to 0.16 NTU (poorer pretreatment quality consistent with bio/colloid breakthrough)",
+    "Permeate flow down 8% with slight increase in permeate conductivity (consistent with biofilm-driven concentration polarization at the lead)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Particulate/iron hydroxide fouling at the lead elements due to FeCl3 overdosage and media filter carryover after returning from UF bypass.",
+      "why_plausible": "FeCl3 was held at 2 mg/L when turbidity had dropped; SDI15 and turbidity increased; lead-element ΔP rise matches particulate deposition behavior.",
+      "why_discardable": "Marked increases in TOC and ATP point to biological load as the dominant driver; the ΔP increase developed gradually over ~2 weeks rather than an acute step change typical of a particulate slug; warm temperature further favors biofouling."
+    },
+    {
+      "hypothesis": "Osmotic/temperature effects and membrane compaction causing lower flux and higher feed pressure.",
+      "why_plausible": "Very high TDS intake (>60,000 mg/L) and seasonal temperature shift can alter NDP and required feed pressure.",
+      "why_discardable": "These effects do not selectively elevate ΔP at the stage-1 head; they cannot explain the pronounced head-only ΔP rise alongside high ATP/TOC."
+    },
+    {
+      "hypothesis": "Inorganic scaling due to antiscalant underdose or chemistry change.",
+      "why_plausible": "High salinity operation at 40% recovery is scaling-prone if control slips.",
+      "why_discardable": "Scaling typically manifests deeper in the array (mid/tail), not confined to lead vessels; antiscalant is maintained at 2.8 ppm and pH is stable."
+    }
+  ],
+  "requested_data": "Total iron concentration in the RO feed after cartridge filters (µg/L, as total Fe).",
+  "recommended_action": "1) Isolate one affected train and perform biocleaning first: prepare alkaline cleaning solution with 0.1% w/w NaOH (1 g/L) plus 0.1% w/w non-ionic surfactant (or manufacturer-approved alkaline cleaner at equivalent strength); use permeate water, heat to 30–35 °C, adjust pH 11–11.5; recirculate at recommended crossflow for 45–60 min, soak 30–60 min, then flush to neutral conductivity and pH. 2) Follow with acid clean only if iron/particulate is suspected or if ΔP recovery is <50% after alkaline: use 2% w/w citric acid (20 g/L), pH 2.0–3.0, 25–30 °C, recirculate 30–45 min, soak 30 min, then flush thoroughly. 3) Immediately restore pretreatment control: reduce FeCl3 dose to the baseline 0.8 mg/L (product) for turbidity ~1 NTU and re-optimize by jar testing daily; operate UF backup whenever SDI15 after cartridges >3 or ATP in RO feed >200 pg/mL until both are sustained below these thresholds for 72 h. 4) Implement short, periodic non-oxidizing biocide shocks upstream of the RO (e.g., DBNPA 20–30 mg/L for 60 min with normal flow, per supplier guidance) until RO-feed ATP returns to baseline, ensuring no oxidants reach the membranes and thoroughly flushing after each application. 5) Monitor ΔP by section, permeate flow/conductivity, RO-feed ATP, SDI15, and total Fe daily for two weeks; repeat alkaline CIP on trains with <70% ΔP recovery after the first cycle.",
+  "decision_change_condition": "If total iron in the RO feed after cartridges is >100 µg/L and an acid-only CIP (2% citric) restores the ΔP while alkaline cleaning does not, or if RO-feed ATP remains low (<200 pg/mL), then the primary diagnosis would shift to iron/particulate fouling from FeCl3 carryover rather than biofouling.",
+  "confidence": 74
+}

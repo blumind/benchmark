@@ -1,0 +1,32 @@
+{
+  "case_id": "RO-MECH-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:48:58Z",
+  "main_hypothesis": "Falta de sello de salmuera (brine seal) en elemento del Tubo 5 de etapa 1",
+  "key_signals": [
+    "Probe test localiza desviación en Tubo 5",
+    "Sello de salmuera del primer elemento NO está instalado",
+    "Operario admitió haber quitado el brine seal durante reinstalación"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Obstrucción en el Tubo 5 de etapa 1",
+      "why_plausible": "La conductividad permeado ha aumentado progresivamente desde la reinstalación de los elementos en el Tubo 5, lo que podría indicar una obstrucción.",
+      "why_discardable": "La falta de sello de salmuera en el elemento es una causa más directa y respaldada por evidencia directa."
+    },
+    {
+      "hypothesis": "Problema de sellado en otro elemento del Tubo 5",
+      "why_plausible": "El operario admitió haber olvidado reponer el brine seal en otro elemento, lo que podría causar un problema de sellado y afectar la permeabilidad.",
+      "why_discardable": "La falta de sello de salmuera en el primer elemento es una causa más grave y directamente relacionada con la desviación detectada."
+    }
+  ],
+  "requested_data": "Conductividad permeado del Tubo 5 de etapa 1",
+  "recommended_action": "Reinstalar el sello de salmuera (brine seal) en el primer elemento del Tubo 5 de etapa 1 de manera adecuada siguiendo los procedimientos del fabricante.",
+  "decision_change_condition": "Si la conductividad permeado del Tubo 5 de etapa 1 no muestra una mejora significativa después de reinstalar el sello de salmuera, reconsiderar la hipótesis principal.",
+  "confidence": 90
+}

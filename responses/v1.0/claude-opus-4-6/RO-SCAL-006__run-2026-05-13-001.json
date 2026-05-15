@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:22:57Z",
+  "main_hypothesis": "Fouling combinado de hierro/manganeso coloidal y precipitación de sílice en la segunda etapa de la membrana RO, causado por la puesta en servicio prematura (sin ciclo de ripening completo) del filtro de greensand sustituido, que permite el paso de Fe y Mn no oxidados/no retenidos al sistema RO, agravado por la subida de pH de alimentación de 6,5 a 6,8 tras el mantenimiento deficiente de la bomba de H₂SO₄, lo que reduce la solubilidad de la sílice y favorece la co-precipitación Fe-sílice en la zona de alta concentración (etapa 2).",
+  "key_signals": [
+    "Fe alimentación a RO subió de 0,03 a 0,18 mg/L (6x) y Mn de 0,02 a 0,11 mg/L (5,5x) tras la sustitución del medio greensand sin ripening completo",
+    "ΔP etapa 2 subió de 0,8 a 1,8 bar (incremento del 125%), mucho más pronunciado que etapa 1, indicando fouling concentrado en la cola del sistema donde los factores de concentración son máximos",
+    "pH alimentación subió de 6,5 a 6,8 tras mantenimiento de bomba de H₂SO₄, reduciendo la solubilidad de sílice y favoreciendo la oxidación/precipitación de Fe residual",
+    "Sílice en rechazo 305 mg/L (subida ligera) con recovery 75% implica concentración cercana al límite de saturación de sílice (~300 mg/L a pH 6,8 y 30°C), zona de riesgo de precipitación",
+    "Inspección visual de cartuchos de 5 µm muestra tonalidad marrón clara y depósito, consistente con óxidos de hierro/manganeso pasando el pretratamiento",
+    "Caída de caudal permeado del 8% (167→153 m³/h) y aumento de presión de alimentación (14→17,5 bar) indican pérdida de permeabilidad por fouling/scaling",
+    "Aumento de conductividad de permeado (95→130 µS/cm, +37%) sugiere efecto de concentración de polarización aumentada y/o daño incipiente por fouling que altera el rechazo de sales",
+    "Cronología coherente: sustitución greensand (día -35) → aumento Fe (día -28) → subida pH (día -22) → inicio subida ΔP etapa 2 (día -18)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling de CaCO₃ en etapa 2 por subida de pH de alimentación",
+      "why_plausible": "El pH subió de 6,5 a 6,8, la alcalinidad en rechazo es alta (1.150 mg/L) y el calcio en rechazo es 1.260 mg/L. El índice de Langelier a estas concentraciones y 30°C podría ser positivo, favoreciendo precipitación de CaCO₃. El patrón de ΔP en etapa 2 es consistente con scaling.",
+      "why_discardable": "El antiincrustante está dosificado a 5 ppm y el pH sigue siendo relativamente bajo (6,8). El calcio en rechazo está estable (no en aumento), lo que sugiere que no hay precipitación masiva de CaCO₃. Además, el scaling de CaCO₃ puro no explicaría la tonalidad marrón en los cartuchos ni la correlación temporal con el fallo del greensand."
+    },
+    {
+      "hypothesis": "Biofouling en membranas favorecido por hierro como nutriente",
+      "why_plausible": "El hierro disuelto que pasa al sistema RO puede servir como nutriente para bacterias ferro-oxidantes. La temperatura de 30°C favorece el crecimiento biológico. El aumento de ΔP y la pérdida de flujo son consistentes con biofouling.",
+      "why_discardable": "El biofouling típicamente afecta más la etapa 1 (donde hay mayor concentración de nutrientes y flujo), pero aquí el ΔP de etapa 1 solo subió ligeramente mientras que etapa 2 subió marcadamente. La cronología de 35 días es corta para biofouling severo sin señales previas. No se reportan olores ni aumento de recuento bacteriano."
+    },
+    {
+      "hypothesis": "Agotamiento o envenenamiento del antiincrustante de sílice por interferencia con Fe/Mn elevados",
+      "why_plausible": "Los antiincrustantes específicos para sílice pueden perder eficacia cuando hay concentraciones elevadas de metales de transición (Fe, Mn) que consumen o interfieren con el polímero dispersante. Esto provocaría precipitación de sílice amorfa incluso con dosis nominalmente correcta de antiincrustante.",
+      "why_discardable": "Esta hipótesis es en realidad un mecanismo complementario al diagnóstico principal más que una causa raíz alternativa. La causa raíz sigue siendo el paso excesivo de Fe/Mn por el greensand deficiente y la subida de pH. Sin embargo, si el antiincrustante fuera el único problema (por ejemplo, lote defectuoso), se esperaría que Fe/Mn en alimentación permanecieran bajos."
+    },
+    {
+      "hypothesis": "Degradación oxidativa de membranas por trazas de KMnO₄ residual",
+      "why_plausible": "El KMnO₄ es un oxidante fuerte. Si el greensand no retiene adecuadamente el exceso de permanganato, podría llegar a las membranas y causar degradación oxidativa, explicando el aumento de conductividad de permeado.",
+      "why_discardable": "El cloro libre antes de RO es <0,02 mg/L (estable), lo que sugiere que no hay oxidante residual significativo. La degradación oxidativa por KMnO₄ causaría aumento de paso de sales sin necesariamente aumentar ΔP de forma tan marcada. Además, la dosis de KMnO₄ se reporta como correcta."
+    }
+  ],
+  "requested_data": "Análisis de autopsia de un elemento de membrana de la última posición de la etapa 2 (análisis EDXRF o ICP del depósito) para determinar la composición elemental del fouling (proporción de Fe, Mn, Si, Ca, materia orgánica) y confirmar si es fouling metálico-silíceo o scaling de CaCO₃.",
+  "recommended_action": "1) Detener la planta RO y realizar limpieza química en dos pasos: primero limpieza ácida con ácido cítrico al 2% (w/w) a pH 2,0-2,5 y temperatura 35°C durante 4 horas con recirculación para disolver depósitos de Fe/Mn, seguida de limpieza alcalina con NaOH al 0,1% (w/w) a pH 11,5 y temperatura 35°C durante 2 horas para remover sílice precipitada. 2) Corregir inmediatamente el pH de alimentación a 6,5 recalibrando/reparando la bomba dosificadora de H₂SO₄. 3) Sacar de servicio el filtro de greensand sustituido y completar el ciclo de ripening/acondicionamiento con solución de KMnO₄ según especificaciones del fabricante del medio antes de retornarlo a servicio. 4) Monitorizar Fe y Mn en alimentación a RO diariamente hasta confirmar valores <0,05 mg/L. 5) Reemplazar los cartuchos de 5 µm antes de reiniciar.",
+  "decision_change_condition": "Si la autopsia de membrana revelara que el depósito es predominantemente CaCO₃ (>70% calcio/carbonato) con mínima presencia de Fe/Mn/Si, cambiaría el diagnóstico principal a scaling de CaCO₃ causado por la subida de pH, y la prioridad sería exclusivamente restaurar el pH a 6,5 y revisar la dosis de antiincrustante para carbonato. Igualmente, si los valores de Fe y Mn en alimentación a RO se normalizaran (<0,05 mg/L) tras completar el ripening del greensand pero el ΔP continuara subiendo, reconsideraría hacia scaling puro de sílice o CaCO₃.",
+  "confidence": 82
+}

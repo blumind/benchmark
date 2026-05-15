@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:49:06Z",
+  "main_hypothesis": "Incomplete removal of preservation chemicals (bisulfito and glicerina) from new membrane elements due to insufficient pre-startup rinsing (1 × 30 min instead of 3 × 60 min per manufacturer protocol), causing residual bisulfite and glycerin to leach into permeate and suppress oxidation-reduction potential, which delays membrane conditioning and reduces initial flux and salt rejection.",
+  "key_signals": [
+    "Glicerina/COD in permeate 320 mg/L vs. expected <50 mg/L, indicating incomplete flushing of preservation glycerin",
+    "ORP alimentación -10 mV (anomalously low) vs. expected +90 mV, consistent with residual bisulfite reducing agent in feed or membrane pores",
+    "Caudal permeado at 70% of expected (175 vs. 250 m³/h) 8 hours post-startup, typical of membrane fouling by organic residues or incomplete activation",
+    "Conductividad permeado elevated at 580 µS/cm vs. expected 350 µS/cm, consistent with incomplete salt rejection during membrane conditioning phase",
+    "Rechazo de sales at 98.97% vs. expected 99.4%, indicating suboptimal membrane performance during early operation",
+    "Procedimiento histórico followed (1 × 30 min rinse) instead of manufacturer-specified 3 × 60 min rinse protocol",
+    "Glicerina detectable in permeate on day -1 afternoon (720 µS/cm conductivity spike), confirming preservation chemical breakthrough"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane element manufacturing defect or damage during transport/installation",
+      "why_plausible": "New elements from different supplier; rapid ΔP rise in stage 1 (1.5 bar vs. 1.1 bar expected) could indicate membrane defect or micro-tears; conductivity and flux degradation consistent with compromised barrier",
+      "why_discardable": "Manufacturing defects typically manifest as immediate, severe salt leakage (conductivity >1000 µS/cm) and rapid flux decline, not gradual improvement over 8 hours. Glicerina spike and ORP depression are chemical signals, not mechanical failure signatures. All four other trains operating normally argues against systemic supplier quality issue."
+    },
+    {
+      "hypothesis": "Inadequate dechlorination or residual oxidant in feed water damaging new membrane polymer",
+      "why_plausible": "Cloro libre <0.02 mg/L is within spec, but new membranes may be more sensitive to trace oxidants; ORP anomaly could reflect oxidant-reductant imbalance",
+      "why_discardable": "Cloro libre is confirmed <0.02 mg/L (below detection), and ORP is anomalously negative (reducing), not positive. Oxidant damage would elevate ORP and cause immediate, irreversible flux loss, not gradual recovery. Glicerina in permeate is unrelated to chlorine exposure."
+    },
+    {
+      "hypothesis": "Incorrect antiscalant dosing or incompatibility with new membrane polymer",
+      "why_plausible": "Antiscalant 3 ppm is standard, but new supplier elements may have different polymer chemistry; antiscalant can affect initial flux and salt rejection kinetics",
+      "why_discardable": "Antiscalant incompatibility would not explain elevated glicerina in permeate or depressed ORP. Flux and salt rejection are improving over time, not degrading, which is inconsistent with antiscalant fouling. All other trains use same antiscalant without issue."
+    },
+    {
+      "hypothesis": "Biofilm or microbial growth on new membrane elements during storage or pre-startup",
+      "why_plausible": "New elements stored for 10 days before startup; bisulfite preservative may have been partially depleted; biofilm could increase ΔP and reduce flux",
+      "why_discardable": "Biofilm would not explain elevated glicerina or depressed ORP. Biofilm growth is slow and would not show gradual improvement over 8 hours. Cloro libre <0.02 mg/L and no biocide dosing history reported; biofilm would require weeks to establish."
+    },
+    {
+      "hypothesis": "Slow membrane hydration and conditioning due to rapid ramp-up (5 min vs. 30 min recommended)",
+      "why_plausible": "Rapid pressure increase can trap air in membrane pores and delay water wetting; slower ramp-up allows gradual hydration and salt rejection recovery",
+      "why_discardable": "Rapid ramp-up alone does not explain glicerina in permeate or ORP depression. These are chemical signals, not hydration artifacts. Flux and salt rejection are improving, which is consistent with normal conditioning, not air entrapment. Manufacturer protocol specifies 30 min ramp-up, but plant used 5 min; however, this is a secondary factor, not the root cause of preservation chemical breakthrough."
+    }
+  ],
+  "requested_data": "Concentration of bisulfite ion (SO₃²⁻ or HSO₃⁻) in permeate sample collected at 8 hours post-startup, measured by ion chromatography or titration (mg/L as SO₂ equivalent).",
+  "recommended_action": "Immediately execute three successive 60-minute rinse cycles with product water (permeate) at low pressure (5–10 bar) and maximum available flow rate (target >200 m³/h if possible) to flush residual bisulfite and glycerin from membrane pores and element housings. Monitor glicerina/COD and ORP in permeate after each rinse cycle. Resume normal operation only when glicerina/COD drops below 50 mg/L and ORP stabilizes above +50 mV. Do not increase feed pressure above 30 bar during rinsing. Document actual rinse volumes and chemistry before resuming production.",
+  "decision_change_condition": "If bisulfite concentration in permeate is <5 mg/L (indicating preservation chemicals have already been substantially cleared) and glicerina/COD continues to decline at current rate (reaching <50 mg/L within 12 hours without additional rinsing), then the diagnosis would shift to 'slow but adequate natural flushing during normal operation' and rinsing would be deferred in favor of continued monitoring. Alternatively, if ΔP stage 1 continues to rise above 2.0 bar or flux declines below 150 m³/h despite rinsing, a membrane defect hypothesis would be elevated and element replacement would be considered.",
+  "confidence": 82
+}

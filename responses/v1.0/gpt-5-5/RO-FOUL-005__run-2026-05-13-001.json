@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:48:28Z",
+  "main_hypothesis": "Ensuciamiento particulado/inorgánico por arrastre de hierro férrico desde una sobredosificación sostenida de FeCl₃, con precipitación/retención de hidróxidos de hierro en los elementos de cabeza de la primera etapa.",
+  "key_signals": [
+    "La dosis de FeCl₃ se elevó manualmente a 4 mg/L el día -22 y se mantuvo por olvido después de que la turbidez de captación retornó a su valor anterior.",
+    "El Fe total en alimentación a RO subió de 0,05 mg/L a 0,42 mg/L.",
+    "El SDI₁₅ a la salida de cartuchos aumentó de 2,4 a 4,2 y la turbidez de 0,06 a 0,22 NTU, indicando peor remoción de partículas antes de RO.",
+    "Se observaron trazas amarillo-anaranjadas de Fe después de filtros de arena y coloración rojiza intensa en los cartuchos.",
+    "El aumento de ΔP está localizado en la cabeza de etapa 1, de 1,1 a 2,2 bar, mientras la cola de etapa 1 permanece estable en 0,7 bar, patrón típico de depósito en elementos líderes.",
+    "La presión de alimentación aumentó y el caudal de permeado cayó 9 %, sin cambio relevante en conductividad de alimentación, temperatura o conductividad de permeado.",
+    "ATP en alimentación RO se mantuvo estable, lo que hace menos dominante una causa biológica."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling en los elementos de cabeza de primera etapa.",
+      "why_plausible": "El biofouling suele manifestarse primero como aumento de ΔP en la cabeza del tren, con caída de caudal y conductividad de permeado inicialmente estable.",
+      "why_discardable": "El ATP se reporta estable, no hay cambio de cloro libre, y el evento temporal dominante es el aumento de Fe total, SDI, turbidez y coloración rojiza después de mantener FeCl₃ a 4 mg/L."
+    },
+    {
+      "hypothesis": "Paso de sólidos por fallo o canalización en filtros de arena/cartuchos independiente de la dosificación de FeCl₃.",
+      "why_plausible": "El SDI₁₅ y la turbidez a salida de cartuchos aumentaron, y se observaron cartuchos con coloración intensa, compatible con pérdida de eficiencia de pretratamiento.",
+      "why_discardable": "La cronología muestra una sobredosificación sostenida de FeCl₃ seguida por aparición de trazas de hierro y aumento de ΔP; el contaminante reportado específicamente es Fe, no una carga general de sólidos sin relación química."
+    },
+    {
+      "hypothesis": "Fouling por episodio de turbidez de captación del día -22.",
+      "why_plausible": "Un incremento de turbidez en captación puede sobrecargar filtros de arena y cartuchos y causar ensuciamiento de elementos líderes.",
+      "why_discardable": "La turbidez de captación volvió a 0,5 NTU el día -20, mientras la dosis de FeCl₃ permaneció en 4 mg/L; las señales posteriores son de hierro elevado y depósitos rojizos, más consistentes con arrastre de coagulante."
+    },
+    {
+      "hypothesis": "Incrustación mineral por sales en primera etapa.",
+      "why_plausible": "La caída de caudal y el aumento de presión de alimentación pueden observarse en incrustación.",
+      "why_discardable": "El patrón de ΔP localizado en cabeza de etapa 1 y el hierro elevado favorecen fouling particulado; además pH, temperatura, conductividad de alimentación y recovery reportado permanecen estables, sin señal de cambio de régimen de supersaturación."
+    }
+  ],
+  "requested_data": "Fracción másica de Fe en el depósito recuperado de un elemento líder de primera etapa o de cartuchos, expresada como % de peso seco por ICP/SEM-EDS.",
+  "recommended_action": "Corregir inmediatamente la dosificación de FeCl₃ desde 4 mg/L al punto previamente calibrado de 2,5 mg/L, sustituir los cartuchos de 5 µm coloreados, enjuagar el tren afectado a baja presión con permeado y realizar CIP de la primera etapa con solución de ácido cítrico al 2,0 % p/p ajustada a pH 3,0-3,5, manteniendo la temperatura por debajo de 35 °C y siguiendo los límites de caudal, presión y pH del fabricante de membranas.",
+  "decision_change_condition": "Cambiaría el diagnóstico principal si el análisis del depósito de los elementos líderes mostrara bajo contenido de Fe y predominio de biomasa/orgánicos o carbonatos, junto con Fe total en alimentación RO retornando a valores cercanos a 0,05 mg/L sin mejora del ΔP tras corregir la dosis de FeCl₃.",
+  "confidence": 88
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-001-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-001",
+    "subject_id": "gemini-2-5-flash-lite",
+    "subject_version": "gemini-2.5-flash-lite",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling 1ª etapa' literal pero corto."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "3 alts breves; signals scaffolding débil."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "Alts presentes pero why_discardable corto."
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "ACCIÓN DAÑINA: 'desinfección con peracético o similar' — peracético = oxidante incompatible PA."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide biomasa SSV — dato no estándar bio."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial threshold biomasa <1 + análisis incrustaciones → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Peracético en CIP - oxidante sobre PA. No match case-specific exact pero acción potencialmente dañina (C4=0)."
+}

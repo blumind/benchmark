@@ -1,0 +1,283 @@
+# BluMind Benchmark — Subject registry
+#
+# Canonical list of subjects (LLMs, expert systems, human baselines) registered
+# for evaluation. Validated against system/schemas/v1.0/registry.schema.json.
+#
+# Cross-entry invariants enforced by scripts/validate_registry.py (pending):
+#   - subject_id is unique across the 'subjects' array.
+#   - subject_version is unique within each subject's 'versions' array.
+#
+# To register a new subject or version, add an entry here via pull request.
+# See README.md § "How to submit a model for evaluation" for the full process.
+
+subjects:
+
+  - subject_id: human-senior-baseline
+    kind: human_baseline
+    provider: BluMind Committee
+    description: >
+      Reference baseline produced by senior domain experts (≥10 years of
+      operational experience in reverse-osmosis desalination plants) solving
+      each case under benchmark conditions: no internet, time-boxed, single
+      shot, no consultation with other reviewers. Establishes the ceiling
+      reference of the leaderboard. Recomputed at the start of each new
+      benchmark version.
+    contact: revisores@blumind.es
+    versions:
+      - subject_version: human-senior-baseline-2026-pilot
+        registered_at: "2026-05-07"
+        access_type: manual
+        notes: >
+          Pilot baseline scheduled to be established during the v1.0 release
+          candidate phase, prior to the public leaderboard launch.
+
+  - subject_id: gpt-5
+    kind: llm
+    provider: OpenAI
+    description: >
+      OpenAI's GPT-5 frontier model evaluated via the public Chat Completions
+      API. Sampling parameters fixed by the platform (temperature=0, top_p=1)
+      per system/prompts/v1.0/prompt_template.md.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: gpt-5-2025-08-07
+        registered_at: "2026-04-22"
+        access_type: api
+        sampling_policy:
+          kind: classic
+        notes: First v1.0 evaluation snapshot served by OpenAI's gpt-5 alias on 2026-05-08.
+
+  - subject_id: claude-opus-4-6
+    kind: llm
+    provider: Anthropic
+    description: >
+      Anthropic's Claude Opus 4.6 evaluated via the public Messages API.
+      Sampling parameters fixed by the platform (temperature=0, top_p=1)
+      per system/prompts/v1.0/prompt_template.md.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: claude-opus-4-6
+        registered_at: "2026-04-23"
+        access_type: api
+        provider_pins_id: true
+        sampling_policy:
+          kind: classic
+        notes: Anthropic pins the model ID since Opus 4.6, so subject_version equals subject_id by design (no date suffix is appended on the provider side).
+
+  - subject_id: claude-opus-4-7
+    kind: llm
+    provider: Anthropic
+    description: >
+      Anthropic's Claude Opus 4.7, the next-generation frontier reasoning
+      model from Anthropic. Included to measure intra-provider generational
+      uplift on the benchmark (Opus 4.6 → 4.7). Opus 4.7 rejects temperature,
+      top_p and top_k outright, and replaces the old thinking.budget_tokens
+      mechanism with thinking.adaptive + output_config.effort. The runner
+      uses sampling_policy kind=reasoning; LiteLLM translates reasoning_effort
+      into Anthropic's native control.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: claude-opus-4-7
+        registered_at: "2026-05-13"
+        access_type: api
+        provider_pins_id: true
+        sampling_policy:
+          kind: reasoning
+          reasoning_effort: medium
+        notes: Anthropic pins the model ID for Opus 4.x, so subject_version equals subject_id. Temperature/top_p/top_k are forbidden by Anthropic for this model; the runner controls cost/quality via reasoning_effort only.
+
+  - subject_id: gpt-5-5
+    kind: llm
+    provider: OpenAI
+    description: >
+      OpenAI's GPT-5.5 reasoning model, the next iteration of the GPT-5
+      family. Included to measure intra-provider generational uplift on
+      the benchmark (GPT-5 → GPT-5.5). GPT-5.5 only accepts the default
+      temperature (1), so the runner uses sampling_policy kind=reasoning
+      and instead controls determinism via reasoning_effort/verbosity per
+      OpenAI's GPT-5.5 migration guide.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: gpt-5.5-2026-04-23
+        registered_at: "2026-05-13"
+        access_type: api
+        sampling_policy:
+          kind: reasoning
+          reasoning_effort: medium
+        notes: Frozen April 23 2026 snapshot of GPT-5.5. Temperature must not be sent; LiteLLM translates reasoning_effort into OpenAI's reasoning.effort parameter.
+
+  - subject_id: gpt-3-5-turbo
+    kind: llm
+    provider: OpenAI
+    description: >
+      OpenAI's GPT-3.5 Turbo, included as a historical lower-bound reference
+      to test that the rubric discriminates across the quality spectrum.
+      Sampling parameters fixed by the platform (temperature=0, top_p=1) per
+      system/prompts/v1.0/prompt_template.md.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: gpt-3.5-turbo-0125
+        registered_at: "2026-05-12"
+        access_type: api
+        sampling_policy:
+          kind: classic
+        notes: Frozen January 2024 snapshot of GPT-3.5 Turbo. Used as discrimination probe.
+
+  - subject_id: claude-haiku-4-5
+    kind: llm
+    provider: Anthropic
+    description: >
+      Anthropic's Claude Haiku 4.5, the small and cheap workhorse of the
+      Claude 4.5 generation. Included as the Anthropic "floor" probe to
+      test that the rubric discriminates across the quality spectrum.
+      Sampling parameters fixed by the platform (temperature=0, top_p=1)
+      per system/prompts/v1.0/prompt_template.md.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: claude-haiku-4-5-20251001
+        registered_at: "2026-05-12"
+        access_type: api
+        sampling_policy:
+          kind: classic
+        notes: Frozen October 2025 snapshot of Claude Haiku 4.5 served behind the 'claude-haiku-4-5' alias.
+
+  - subject_id: mistral-medium-3
+    kind: llm
+    provider: Mistral
+    description: >
+      Mistral Medium 3, the mid-tier frontier model from Mistral evaluated
+      via the official Mistral API. Included as the European frontier
+      reference point on the leaderboard.
+      Sampling parameters fixed by the platform (temperature=0, top_p=1)
+      per system/prompts/v1.0/prompt_template.md.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: mistral-medium-2505
+        registered_at: "2026-05-12"
+        access_type: api
+        sampling_policy:
+          kind: classic
+        notes: Frozen May 2025 snapshot of Mistral Medium 3.
+
+  - subject_id: mistral-small-3
+    kind: llm
+    provider: Mistral
+    description: >
+      Mistral Small 3, the small and cheap workhorse of the Mistral
+      family. Included as the Mistral "floor" probe to test that the
+      rubric discriminates across the quality spectrum.
+      Sampling parameters fixed by the platform (temperature=0, top_p=1)
+      per system/prompts/v1.0/prompt_template.md.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: mistral-small-2603
+        registered_at: "2026-05-12"
+        access_type: api
+        sampling_policy:
+          kind: classic
+        notes: Frozen March 2026 snapshot of Mistral Small 3. Used as discrimination probe.
+
+  - subject_id: gemini-3-1-pro-preview
+    kind: llm
+    provider: Google
+    description: >
+      Google's Gemini 3.1 Pro (preview tier). Registered for evaluation
+      but NOT included in the v1.0 leaderboard: as of 2026-05-12, the
+      Google AI Studio Tier-1 capacity gating returned 503 for 8 of 9
+      FOUL cases. The model will be re-attempted once Google releases
+      Tier-2 capacity or a stable (non-preview) snapshot.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: gemini-3.1-pro-preview
+        registered_at: "2026-05-12"
+        access_type: api
+        provider_pins_id: true
+        sampling_policy:
+          kind: classic
+        notes: Pending full evaluation. Google AI Studio Tier-1 capacity gate returned 503 on 8/9 FOUL cases on 2026-05-12; the single completed response was discarded to avoid a partial entry on the leaderboard.
+
+  - subject_id: gemini-2-5-pro
+    kind: llm
+    provider: Google
+    description: >
+      Google's Gemini 2.5 Pro, frontier stable model evaluated via the
+      official Google AI Studio API. Included as the Google frontier
+      reference point on the leaderboard. Gemini 3.x Pro previews are
+      capacity-gated by tier on AI Studio (Tier 1 accounts hit 503 well
+      below their nominal quota), so the stable 2.5 Pro is used as the
+      reliable Google frontier entry for v1.0.
+      Sampling parameters fixed by the platform (temperature=0, top_p=1)
+      per system/prompts/v1.0/prompt_template.md.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: gemini-2.5-pro
+        registered_at: "2026-05-13"
+        access_type: api
+        provider_pins_id: true
+        sampling_policy:
+          kind: classic
+        notes: Google pins this id; response.modelVersion returned is 'gemini-2.5-pro' verbatim.
+
+  - subject_id: gemini-3-1-flash-lite
+    kind: llm
+    provider: Google
+    description: >
+      Google's Gemini 3.1 Flash-Lite, the small and cheap model of the
+      Gemini 3.1 generation. Included as the Google mid-tier probe.
+      Sampling parameters fixed by the platform (temperature=0, top_p=1)
+      per system/prompts/v1.0/prompt_template.md.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: gemini-3.1-flash-lite
+        registered_at: "2026-05-12"
+        access_type: api
+        provider_pins_id: true
+        sampling_policy:
+          kind: classic
+        notes: Initial placeholder. The runner served_model check will pin to the exact dated snapshot on first call.
+
+  - subject_id: gemini-2-5-flash-lite
+    kind: llm
+    provider: Google
+    description: >
+      Google's Gemini 2.5 Flash-Lite, the small and cheap workhorse of the
+      Gemini 2.5 generation. Included as the Google "previous-generation"
+      probe (since Gemini 2.0 Flash-Lite was retired for new users).
+      Sampling parameters fixed by the platform (temperature=0, top_p=1)
+      per system/prompts/v1.0/prompt_template.md.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: gemini-2.5-flash-lite
+        registered_at: "2026-05-12"
+        access_type: api
+        provider_pins_id: true
+        sampling_policy:
+          kind: classic
+        notes: Initial placeholder using the bare alias. The runner served_model check will pin to the exact dated snapshot if Google returns one.
+
+  - subject_id: deepseek-v4-flash
+    kind: llm
+    provider: DeepSeek
+    description: >
+      DeepSeek V4 Flash, the model actually served today behind the public
+      'deepseek-chat' alias on the DeepSeek API. Open-weights frontier
+      reference point to compare against closed frontier models. The
+      served snapshot is recorded here verbatim because DeepSeek does not
+      expose dated snapshot identifiers in the public API; the runner
+      enforces traceability via the response.model verification at call
+      time.
+      Sampling parameters fixed by the platform (temperature=0, top_p=1)
+      per system/prompts/v1.0/prompt_template.md.
+    contact: benchmark@blumind.es
+    versions:
+      - subject_version: deepseek-v4-flash
+        registered_at: "2026-05-12"
+        access_type: api
+        provider_pins_id: true
+        sampling_policy:
+          kind: classic
+        notes: >
+          The API is called with the alias 'deepseek/deepseek-chat' (the only
+          model id the DeepSeek API accepts publicly), but the provider
+          reports response.model='deepseek-v4-flash'. The runner verifies
+          this match before persisting the response.

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-003",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'pérdida dosificación T-04 + desconexión solenoide + precipitación BaSO4/CaSO4 cola' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación causal."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (particulado/coloidal, biofouling, MECH compaction/telescoping)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Aislar T-04 + CIP HCl 1% pH 1.5-2 25-30°C 60 min — HCl puro para BaSO4 es químicamente subóptimo; BaSO4 es prácticamente insoluble en ácido (gold prescribe DTPA/EDTA alcalino)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide bario en depósito por SEM-EDS — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: Ba <0.5% + predominio orgánicos/Fe/Al o registro independiente → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "C4=1 por chemistry HCl no efectiva para BaSO4. Strict no fail porque la case_specific habla de 'alcalino suave única acción', no de ácido."
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-001",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor literal 'daño oxidativo irreversible poliamida por cloro libre + CAG agotado'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta cloro libre + ORP +320 + caída rechazo 99.1→96.2 + conductividad triplica + estable ΔP."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (MECH O-ring, OXID por pH extremo, biofouling) con why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Mantener parada hipoclorito + SBS NaHSO3 3 mg/L + probing tubo a tubo — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide Rhodamina B / vacuum test + autopsia — match accepted (test funcional + autopsia FTIR)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: probing localiza pérdida en pocos vasos → MECH switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

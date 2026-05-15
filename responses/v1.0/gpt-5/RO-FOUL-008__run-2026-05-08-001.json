@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:48:58Z",
+  "main_hypothesis": "Bioincrustación en los elementos de cabecera (etapa 1) originada por proliferación bacteriana durante 28 días de estancamiento en agua de permeado sin biocida, con actividad de bacterias sulfato-reductoras (SRB) y formación de biofilm/slime.",
+  "key_signals": [
+    "Parada de 28 días con membranas inundadas en permeado sin preservación (bisulfito 1 % no ejecutado).",
+    "Olor a H2S en concentrado al arranque (día -3), indicativo de actividad SRB.",
+    "ATP en alimentación RO muy elevado: 980 pg/mL vs 60 pg/mL baseline.",
+    "ΔP etapa 1 sube de 0,9 a 1,5 bar y sigue en alza; etapa 2 con aumento menor, patrón típico de biofouling en cabecera.",
+    "Caída de caudal de permeado (−8 %) y necesidad de mayor presión de alimentación (+2,5 bar) a T estable, consistente con ensuciamiento superficial.",
+    "Conductividad de permeado sube (95 → 110 µS/cm), compatible con biofilm que deteriora rechazo/mezcla lateral.",
+    "Turbidez post-cartucho aumenta (0,06 → 0,12 NTU) y TOC sube (1,2 → 1,5 mg/L), coherentes con carga biológica/particulada tras el estancamiento."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento particulado/coloidal de cabecera por arrastre de sólidos finos tras el reinicio (filtros insuficientes).",
+      "why_plausible": "Aumento de turbidez post-cartucho (0,12 NTU) y solo 4 h de enjuague previo; ΔP más alto en etapa 1 concuerda con depósito de sólidos.",
+      "why_discardable": "ATP extremadamente alto y olor a H2S apuntan fuertemente a biología; 0,12 NTU sigue siendo bajo; el patrón de tendencia (rápido tras arranque) y señales biológicas superan la hipótesis particulada."
+    },
+    {
+      "hypothesis": "Ensuciamiento por sulfuros/metales (p. ej., precipitado FeS) en cabecera durante el arranque.",
+      "why_plausible": "Olor a H2S y contexto minero hacen plausible la formación de sulfuros metálicos negros que elevan ΔP en elementos líderes.",
+      "why_discardable": "No hay datos de Fe/Mn disueltos; el marcado incremento de ATP y el historial de estancamiento sin biocida son más explicativos; además la ligera pérdida de rechazo es típica de biofilm."
+    },
+    {
+      "hypothesis": "Incrustación por sílice o carbonato por fallo de antiincrustante en el arranque.",
+      "why_plausible": "Recuperación 75 % y sílice 33 mg/L podrían escalar si hubiese sobredemanda o dosificación deficiente.",
+      "why_discardable": "La incrustación por sílice/CaCO3 suele manifestarse en cola/etapa 2; aquí el mayor ΔP es en etapa 1. La dosificación de antincrustante (10 ppm) y química de alimentación están estables; además hay claras señales biológicas."
+    }
+  ],
+  "requested_data": "Recuento de bacterias sulfato-reductoras (SRB) en el concentrado de la RO, MPN/mL.",
+  "recommended_action": "Ejecutar CIP orientado a biofouling y desinfección, con seguridad y compatibilidad de poliamida: 1) Parar el bastidor y reemplazar los cartuchos de 5 µm; drenar y enjuagar con permeado hasta turbidez <0,1 NTU. 2) Limpieza alcalina: preparar solución de NaOH al 0,1–0,2 % p/p (1–2 g/L) en agua de permeado con tensioactivo compatible para RO (p. ej., 0,1 % v/v de limpiador alcalino propietario); calentar a 30–35 °C; recircular a baja presión (<4 bar) por etapa 1 y luego etapa 2 durante 45 min cada una, invirtiendo el sentido a mitad del tiempo; realizar remojo de 30–60 min; mantener pH 11–12 añadiendo NaOH si cae. 3) Enjuagar con permeado hasta pH ~7. 4) Desinfección no oxidante: dosificar DBNPA a 200 mg/L (como activo) en el bucle de CIP, recircular 30 min y dejar en remojo 60 min; luego enjuagar hasta residual de DBNPA <1 mg/L. 5) (Opcional si se observan depósitos negros/sospecha de FeS): limpieza ácida suave con ácido cítrico al 2 % p/p (20 g/L), pH 3–4, 25–30 °C, recircular 30–45 min y remojar 30 min; enjuagar a neutro. 6) Reiniciar a recuperación reducida según OEM (p. ej., 10–15 puntos menos que nominal) durante 12 h, vigilando ΔP normalizado y paso de sales; volver gradualmente a 75 % si los parámetros se estabilizan. Precauciones: verificar 0 mg/L de cloro libre antes de CIP; ventilar por posible H2S; usar EPP; respetar límites de T y presión del fabricante.",
+  "decision_change_condition": "Si el recuento de SRB en el concentrado es <10 MPN/mL, reevaluaría la causa principal hacia ensuciamiento particulado/coloidal del tren en lugar de biofouling.",
+  "confidence": 85
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:41:53Z",
+  "main_hypothesis": "Biofouling masivo en etapa 1 de las membranas RO causado por el fallo de preservación: las membranas permanecieron 28 días estancadas en agua de permeado sin bisulfito, generando crecimiento microbiano (incluyendo actividad sulfato-reductora evidenciada por olor a H2S).",
+  "key_signals": [
+    "Fallo documentado del procedimiento de preservación con bisulfito al 1% durante parada de 28 días",
+    "ATP en alimentación RO subió de 60 a 980 pg/mL (×16), indicador directo de proliferación microbiana",
+    "Olor sulfhídrico (H2S) en concentrado, típico de bacterias sulfato-reductoras anaerobias en biofilm",
+    "ΔP etapa 1 aumentó 67% (0,9→1,5 bar) mientras etapa 2 apenas cambió: patrón clásico de biofouling en cabeza del bastidor",
+    "Presión de alimentación subió de 14,5 a 17 bar y caudal de permeado cayó 8%",
+    "Conductividad de permeado subió de 95 a 110 µS/cm (daño/concentración-polarización por biofilm)",
+    "TOC y turbidez post-cartuchos en ligero ascenso, consistentes con arrastre de biomasa desde tuberías/membranas"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling por sílice o carbonato de calcio durante el estancamiento",
+      "why_plausible": "Sílice 32-33 mg/L está en rango de precipitación; agua estancada sin recirculación ni antiscalant puede favorecer polimerización de sílice y precipitación de CaCO3",
+      "why_discardable": "El ATP elevado y el olor a H2S apuntan inequívocamente a actividad biológica; el scaling no explica el aumento de ATP ×16 ni el H2S, y típicamente afecta más a etapa 2 (último elemento, mayor concentración) que a etapa 1"
+    },
+    {
+      "hypothesis": "Fouling coloidal/orgánico por arrastre desde pretratamiento deteriorado",
+      "why_plausible": "Turbidez post-cartuchos subió de 0,06 a 0,12 NTU y TOC ligeramente elevado, sugiriendo posible degradación de filtros multimedia",
+      "why_discardable": "La magnitud del cambio en turbidez/TOC es pequeña comparada con el salto de ATP; el evento de preservación fallida es la causa próxima dominante y explica todos los síntomas"
+    },
+    {
+      "hypothesis": "Daño oxidativo a membranas durante enjuague con agua de pozo",
+      "why_plausible": "El aumento de conductividad de permeado podría indicar pérdida de rechazo por daño a capa activa",
+      "why_discardable": "No hay reporte de cloro residual ni oxidantes en el agua de pozo; el aumento de conductividad es modesto y se explica mejor por concentración-polarización inducida por biofilm que reduce flux local"
+    }
+  ],
+  "requested_data": "Cultivo microbiológico cuantitativo (UFC/mL) o secuenciación específica para bacterias sulfato-reductoras en muestra de concentrado, junto con autopsia/hisopado de elemento líder de etapa 1 para confirmar biofilm",
+  "recommended_action": "Detener producción y ejecutar limpieza CIP en dos pasos según manual del fabricante: (1) limpieza alcalina con NaOH a pH 11-12 + EDTA 1% + surfactante (SDS 0,025%) a 35°C durante 1-2 h con recirculación y remojo; (2) seguido de limpieza ácida con ácido cítrico 2% a pH 2-3 para retirar precipitados secundarios. Enjuagar con permeado entre pasos. Tras CIP, desinfectar con DBNPA 100-200 mg/L durante 30 min. Reestablecer protocolo de preservación con bisulfito de sodio 1% y verificar dosificación documentalmente. Revisar y reemplazar cartuchos de 5 µm.",
+  "decision_change_condition": "Si el ATP en alimentación volviera a niveles basales (<100 pg/mL) tras enjuague extendido y persistiera el ΔP elevado, o si una autopsia revelara depósitos predominantemente inorgánicos (Si, Ca) sin biofilm, la hipótesis cambiaría a scaling por sílice/CaCO3 favorecido por estancamiento",
+  "confidence": 88
+}

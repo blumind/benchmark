@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-NOWE-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-002",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 0,
+      "justification": "C1: 'calcium sulfite scaling' DIAGNOSTICO ERRONEO - no es scaling, off-family"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 7 signals correctos (sulfito 8.5, ORP -120/-180, dP, rejection, flow)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (O-rings, rinsing) - rinsing es la real causa pero descarta erroneamente"
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "C4: reduce P 13 bar + recovery 70% + 'low-pH cleaning citric acid 2%' - CIP fail"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (calcium en permeado) - irrelevante"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: explicit: Ca permeado~Ca feed -> bypass mecanico"
+    }
+  },
+  "correctness": 0,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Hacer CIP ácido/alcalino para 'limpiar el sulfito'",
+      "severity": "recoverable",
+      "justification": "Propone CIP acido citrico 2% para CaSO3 scale"
+    }
+  ],
+  "reviewer_notes": "Diagnostico erroneo + CIP acido"
+}

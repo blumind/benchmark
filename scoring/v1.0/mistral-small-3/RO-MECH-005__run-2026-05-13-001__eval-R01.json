@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-005",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fallo brine seal primer elemento Tubo 5 + instalado incorrectamente + bypass concentrado permeado' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (fouling, daño físico instalación, scaling, antiincrustante)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Reinstalar brine seal + verificar todos seals + probe test post-reparación + antiincrustante OK (operacional) — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide conductividad permeado por elemento (no solo por tubo) — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi: conductividad normaliza tras reinstalación → confirmar error instalación."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

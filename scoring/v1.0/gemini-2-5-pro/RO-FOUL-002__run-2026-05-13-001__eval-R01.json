@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-002",
+    "subject_id": "gemini-2-5-pro",
+    "subject_version": "gemini-2.5-pro",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'severe biofouling lead elements + raw water + DAF failure'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Cronología explícita."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (coloidal, scaling, organic non-bio) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino pH 11.5-12 + DBNPA 150 ppm + 'Strictly adhere...' — completo, no oxidantes."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide microscopic foulant scrapped cartridge — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Specific: ATP <200 → coloidal/orgánico."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

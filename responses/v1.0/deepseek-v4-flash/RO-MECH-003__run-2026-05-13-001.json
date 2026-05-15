@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-MECH-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:41:18Z",
+  "main_hypothesis": "Failure of the O-ring seal at the cap (head) of pressure vessel Tube 2 in stage 1, allowing feed water to bypass the membrane and contaminate the permeate.",
+  "key_signals": [
+    "Localized high permeate conductivity (1,250 µS/cm) in Tube 2 only, while other tubes show 100–130 µS/cm (probe test).",
+    "Progressive rise in overall permeate conductivity from 110 to 480 µS/cm over 15 days, with stable feed conductivity and temperature.",
+    "Pressure drop stable across stages (ΔP1 1.1 bar vs baseline 1.0 bar; ΔP2 0.8 bar constant), indicating the leak is at a seal, not through a damaged membrane.",
+    "Visual inspection of Tube 2 cap showing anomalous protrusion and marked O-ring.",
+    "Pressure test of Tube 2 (elements removed) showing loss at 1 bar, consistent with a defective cap/head seal.",
+    "History of a small leak at the cap flange 22 days ago that was tightened and temporarily stopped."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "A cracked FRP pressure vessel in Tube 2, allowing feed water to mix with permeate.",
+      "why_plausible": "A crack could also cause a localized high conductivity and a pressure loss. The vessel is 5 years old and the inspection was 30 months ago.",
+      "why_discardable": "Inspection on Day -1 found no visible crack, and the pressure test loss at 1 bar is more characteristic of a seal failure than a structural crack (which would likely show slow weep or catastrophic failure). Also, the leak history started at the cap, not at the vessel body."
+    },
+    {
+      "hypothesis": "A damaged or compromised membrane element in Tube 2 (e.g., oxidation or mechanical damage).",
+      "why_plausible": "Membrane damage can also increase salt passage and cause high permeate conductivity.",
+      "why_discardable": "Membrane damage would typically show an increase in pressure drop (due to fouling or scaling) or a drop in permeate flow. Here, ΔP is stable and permeate flow has decreased only 6%, which is not consistent with a large hole or tear. Also, the pressure test localized the issue to the cap/seal, not the elements."
+    },
+    {
+      "hypothesis": "Incorrect seating or damage to the permeate tube connector at the end cap of Tube 2.",
+      "why_plausible": "A faulty permeate tube connection could allow feed-concentrate brine to enter the permeate stream.",
+      "why_discardable": "The visual inspection reported protrusion and marked O-ring, pointing to the cap seal rather than the permeate tube. The pressure test loss at 1 bar is consistent with a seal leak, not a permeate tube connector issue (which would typically show loss at lower pressure if at all)."
+    }
+  ],
+  "requested_data": "Photographs or a detailed inspection report of the removed O-ring from Tube 2 cap, including its condition (cuts, deformation, or foreign material) and confirmation of correct O-ring size and material.",
+  "recommended_action": "Replace the O-ring on the cap of pressure vessel Tube 2, stage 1. Use a new O-ring of identical size and compatible EPDM material (or the manufacturer's specified elastomer). Lubricate with a thin layer of silicone grease approved for membrane systems. Reinstall the cap, torque bolts to manufacturer specification, and perform a low-pressure leak test (1–2 bar) before returning to service. After startup, monitor permeate conductivity from Tube 2 individually for 24 hours to confirm repair.",
+  "decision_change_condition": "If the new O-ring is installed and a pressure test shows the leak persists, then the diagnosis would shift to a damaged FRP vessel or cracked permeate tube in Tube 2, requiring vessel replacement or repair.",
+  "confidence": 95
+}

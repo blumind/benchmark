@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:55:59Z",
+  "main_hypothesis": "Incrustación de sílice (polímero/silicato) en la etapa 2 por aumento de recovery al 82 % que elevó la sílice en rechazo por encima del umbral de control del antiincrustante (dosis y producto insuficientes).",
+  "key_signals": [
+    "ΔP etapa 2 sube de 0,9 → 1,9 bar mientras ΔP etapa 1 se mantiene ~estable (1,2 bar): incrustación localizada al final del tren.",
+    "Sílice en rechazo 295 mg/L (>260 mg/L límite del antiincrustante usado) tras subir recovery.",
+    "Inicio de la subida de ΔP etapa 2 a los pocos días de aumentar el recovery (correlación temporal con el cambio operativo).",
+    "CIP alcalino estándar (pH 11,5, 60 min) apenas reduce ΔP y rebota en 72 h: típico de incrustación de sílice difícil de remover con caústico moderado.",
+    "Aumento de presión de alimentación (14,5 → 18,2 bar), caída de caudal permeado (−7 %) y subida de conductividad de permeado: pérdida de permeabilidad y rechazo por incrustación.",
+    "Parámetros de alimentación estables (T, pH, conductividad, sílice en feed): el cambio detonante es el incremento de recovery, no la calidad del pozo."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación de carbonato de calcio en la etapa 2 por mayor concentración de Ca y alcalinidad con el nuevo recovery.",
+      "why_plausible": "El rechazo muestra Ca (540 mg/L) y alcalinidad (320 mg/L) altos; el scaling de CaCO3 ocurre típicamente en la etapa final y explicaría la subida de ΔP y de presión de alimentación.",
+      "why_discardable": "pH de alimentación 7,1 reduce el riesgo de CaCO3; el evento coincide con superar el límite de control de sílice del antiincrustante; el CIP alcalino no resolvió (esperable) pero la señal más fuerte es la sílice en rechazo por encima del rango del producto."
+    },
+    {
+      "hypothesis": "Ensuciamiento por sílice coloidal/aluminosilicatos provenientes del acuífero volcánico (carried-over por pretratamiento mínimo).",
+      "why_plausible": "Agua de pozo con sílice alta y pretratamiento básico pueden permitir paso de coloides finos; el ensuciamiento podría concentrarse en etapa 2.",
+      "why_discardable": "El salto de ΔP es posterior al aumento de recovery; la etapa 1 no muestra incremento de ΔP (típico en fouling particulado); un CIP alcalino debería haber mejorado más si fuese principalmente coloide."
+    },
+    {
+      "hypothesis": "Bioensuciamiento en etapa 2.",
+      "why_plausible": "Ausencia de desinfección continua y mayor concentración de nutrientes en el rechazo pueden favorecer biofilm.",
+      "why_discardable": "Pozos profundos suelen tener baja carga biológica; el biofouling normalmente inicia en etapa 1; la correlación con el cambio de recovery y la superación del umbral de sílice apunta más a scaling que a biofilm."
+    },
+    {
+      "hypothesis": "Compactación/edad de membranas.",
+      "why_plausible": "Aumento de presión y empeoramiento de rechazo pueden verse con membranas envejecidas (18 meses de servicio).",
+      "why_discardable": "La compactación no explica el aumento abrupto y localizado de ΔP en etapa 2 ni la respuesta parcial al CIP; afectaría ambas etapas de forma más uniforme."
+    }
+  ],
+  "requested_data": "Fracción atómica de Si (%) en un raspado de depósito del lado de entrada del primer elemento de la etapa 2, medida por SEM-EDS.",
+  "recommended_action": "Detener la progresión del scaling y remover la incrustación de sílice: 1) Bajar inmediatamente el recovery del tren del 82 % al 75 % para que la sílice en rechazo vuelva ≤ ~210 mg/L (dentro del rango del antiincrustante actual). 2) Ejecutar un CIP específico para sílice en la etapa 2 y luego en todo el tren: preparar solución de NaOH al 1,5 % p/p con tensioactivo no iónico al 0,1 % p/p; calentar a 30–35 °C; recircular a bajo cizallamiento 60–90 min manteniendo pH 12,0–12,5; realizar un remojo de 30 min; enjuagar hasta pH neutro y permeado claro; repetir el ciclo si el ΔP no se normaliza. 3) Volver a servicio a 75 % de recovery y mantener hasta rediseñar el programa anti-incrustante (producto con control de sílice ≥300 mg/L en rechazo y/o ajuste de pH de alimentación a 6,2–6,5 con HCl 31 % para aumentar el margen de solubilidad), validado con proyecciones del proveedor antes de cualquier intento de volver al 82 %.",
+  "decision_change_condition": "Si un análisis del depósito muestra Si < 5 at.% y Ca > 20 at.% o si un CIP ácido estándar (pH ≈2 con HCl, 60 min, 25 °C) reduce el ΔP de la etapa 2 ≥50 % y normaliza el flujo, cambiaría el diagnóstico principal a incrustación de carbonato de calcio.",
+  "confidence": 78
+}

@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-FOUL-008-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-008",
+    "subject_id": "gemini-2-5-flash-lite",
+    "subject_version": "gemini-2.5-flash-lite",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "MH 'biofouling' demasiado generic, no menciona parada."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals listados."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts breves."
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "ACCIÓN CRÍTICA: 'hipoclorito 0.5-1.0% de cloro activo, pH 9-10, 1-2 hours' — match exact case-specific 'choque con hipoclorito en alimentación a RO'."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide microscopic membrane bio — match autopsia."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Generic threshold."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Recomendar choque con hipoclorito en alimentación a RO para 'desinfectar la membrana'",
+      "severity": "critical",
+      "justification": "Cita: 'cleaning solution containing a biocide (e.g., sodium hypochlorite at a concentration of 0.5-1.0% active chlorine, pH adjusted to 9-10 with NaOH) for 1-2 hours' — hipoclorito 5000-10000 mg/L durante 1-2h en CIP = choque con hipoclorito en alimentación a la membrana RO. Destruye PA irreversiblemente."
+    }
+  ],
+  "reviewer_notes": ""
+}

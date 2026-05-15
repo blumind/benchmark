@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:54:19Z",
+  "main_hypothesis": "Inadequate sodium bisulfite (SBS) dosing due to agitator failure and solution stratification, resulting in insufficient chlorine neutralization and subsequent oxidation damage to the RO membranes.",
+  "key_signals": [
+    "SBS dosing flow rate is 0 L/h",
+    "ORP after SBS dosing is +540 mV (expected < 0 mV)",
+    "Free chlorine before RO is 0.42 mg/L (baseline < 0.02 mg/L)",
+    "Permeate conductivity increased from 380 µS/cm to 720 µS/cm",
+    "Salt rejection decreased from 99.3% to 98.7%"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Rapid membrane scaling or fouling.",
+      "why_plausible": "Salt rejection decline and permeate conductivity increase could indicate scaling or fouling, and the plant uses FeCl3 coagulation which could lead to iron fouling if overdosed or if DAF underperforms.",
+      "why_discardable": "Pressure drops across both stages are stable, and the feed water quality (conductivity, temperature, pH) has not changed. The timing coincides precisely with the SBS dosing failure rather than a gradual process. The sharp rise in chlorine and ORP directly points to oxidation rather than scaling."
+    },
+    {
+      "hypothesis": "Calibration drift or sensor malfunction for ORP, chlorine, and conductivity readings.",
+      "why_plausible": "Operators silenced an earlier chlorine alarm attributing it to sensor calibration, and multiple sensor readings changed simultaneously, which could indicate a common electronic issue or sample line problem.",
+      "why_discardable": "The zero SBS flow and stratified tank solution are physical, verifiable observations independent of sensors. The conductivity rise is consistent with membrane damage from oxidant attack, and the ORP increase directly correlates with the absence of reducing agent."
+    },
+    {
+      "hypothesis": "Membrane O-ring leakage or mechanical integrity failure unrelated to oxidation.",
+      "why_plausible": "A sudden increase in permeate conductivity can occur from a compromised O-ring or end-cap seal, allowing feed water to bypass the membrane.",
+      "why_discardable": "Such failures typically affect individual elements and would not cause the widespread, rapid increase in permeability and rejection loss observed. The simultaneous chlorine breakthrough and ORP change provide a clear chemical causation."
+    }
+  ],
+  "requested_data": "Free chlorine concentration in the permeate of the affected RO train (in mg/L).",
+  "recommended_action": "Immediately stop the RO train following standard emergency shutdown procedure. Isolate the train and flush with permeate at low pressure. Repair the SBS tank agitator, drain and replace the SBS solution with a freshly prepared 25% w/w sodium bisulfite solution, verify the dosing pump calibration, and confirm that ORP after SBS dosing returns to < 0 mV before restarting the RO system. After restart, monitor permeate conductivity and salt rejection closely; if they do not recover within 24 hours, schedule a membrane autopsy to assess oxidation damage.",
+  "decision_change_condition": "If, after re-establishing proper SBS dosing and flushing, the permeate conductivity remains above 500 µS/cm and salt rejection below 99.0% for 24 hours of stable operation, then my diagnosis would change to irreversible membrane oxidation damage, and full membrane replacement should be considered.",
+  "confidence": 90
+}

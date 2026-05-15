@@ -1,0 +1,36 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:52:31Z",
+  "main_hypothesis": "Dosificación insuficiente de bisulfito sódico (SBS) debido a estratificación en el tanque de almacenamiento, resultando en oxidación de las membranas RO por cloro libre.",
+  "key_signals": [
+    "Cloro libre antes RO elevado (0,42 mg/L vs < 0,02 mg/L)",
+    "ORP antes RO elevado (+540 mV vs +120 mV)",
+    "ORP tras dosificación SBS elevado (+540 mV vs -50 mV)",
+    "Caudal de SBS dosificado 0 L/h vs 18 L/h",
+    "Conductividad permeado elevada (720 µS/cm vs 380 µS/cm)",
+    "Rechazo de sales reducido (98,7 % vs 99,3 %)",
+    "Estratificación confirmada en el tanque de SBS (0,2 % p/p vs 25 % p/p)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo en el sensor de cloro libre antes RO",
+      "why_plausible": "El operador reportó alarmas intermitentes atribuidas a calibración del sensor.",
+      "why_discardable": "El aumento de conductividad en el permeado y la reducción en el rechazo de sales son consistentes con daño por oxidación, no con un fallo de sensor."
+    },
+    {
+      "hypothesis": "Contaminación en la línea de dosificación de SBS",
+      "why_plausible": "Podría explicar la falta de dosificación efectiva de SBS.",
+      "why_discardable": "La inspección del tanque de SBS reveló estratificación, lo que explica directamente la falta de dosificación efectiva."
+    }
+  ],
+  "requested_data": "Concentración de cloro libre en el permeado (mg/L)",
+  "recommended_action": "Detener inmediatamente la alimentación a los trenes RO, drenar y limpiar el tanque de SBS, reponer con solución fresca de SBS al 25 % p/p, y verificar el funcionamiento del agitador antes de reiniciar la dosificación. Realizar un lavado químico de las membranas RO con una solución de bisulfito sódico al 0,5 % p/p para neutralizar el cloro residual.",
+  "decision_change_condition": "Si la concentración de cloro libre en el permeado es menor a 0,02 mg/L, la hipótesis principal sería descartada.",
+  "confidence": 90
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-002",
+    "subject_id": "gemini-2-5-flash-lite",
+    "subject_version": "gemini-2.5-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'daño oxidativo por ozono residual' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts brief (fouling, degradación no oxidativa, sensor)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Detener BWRO + inspección visual + 'limpieza o reemplazo membranas + sistema neutralización ozono'. 'Limpieza' para OXID es subóptimo pero no exacto match Critical wording ('o reemplazo' como opción)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide estado membranas por inspección o pruebas integridad — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: membranas intactas + neutralizador no mejora → nuevo diagnóstico."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "ACT menciona 'limpieza o reemplazo' — la limpieza para OXID es subóptima pero al presentarse como opción con reemplazo, strict no fail."
+}

@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:01:22Z",
+  "main_hypothesis": "Oxidative damage to the polyamide membrane active layer caused by chloramine breakthrough through exhausted granular activated carbon (GAC) beds.",
+  "key_signals": [
+    "Chloramine after CAG-2: 0.38 mg/L (baseline <0.05 mg/L)",
+    "ORP feed to RO: +210 mV (baseline +60 mV)",
+    "Permeate conductivity: 280 µS/cm (baseline 65 µS/cm)",
+    "Calculated salt rejection: 80.7% (baseline 95.5%)",
+    "Stable delta P across stages (no fouling/scaling indication)",
+    "Free chlorine at RO feed: <0.02 mg/L (consistent with chloramine species)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane scaling (e.g., CaCO₃, CaSO₄)",
+      "why_plausible": "Scaling can cause rejection loss and permeate conductivity increase in later stages, and anti-scalant failure might occur.",
+      "why_discardable": "Scaling typically increases feed pressure and delta P across stages; both remain stable. pH is stable and anti-scalant is dosed. No turbidity or SDI data provided but delta P is most indicative."
+    },
+    {
+      "hypothesis": "O-ring or seal failure on a membrane element or interconnector",
+      "why_plausible": "A bypass due to failed O-rings can cause a localized increase in permeate conductivity.",
+      "why_discardable": "The conductivity increase is progressive and plant-wide (over 30 days), not sudden. A single O-ring failure would typically affect only one vessel or a small number of elements and would not explain the presence of chloramine and elevated ORP."
+    },
+    {
+      "hypothesis": "Membrane compaction due to high pressure or temperature",
+      "why_plausible": "Compaction can reduce membrane permeability and slightly alter rejection, and feed temperature has increased slightly.",
+      "why_discardable": "Compaction primarily reduces flux, not rejection; here rejection dropped drastically while delta P and feed pressure are nearly unchanged. Temperature increase is only 0.4 °C, insufficient to cause such a rejection decline."
+    }
+  ],
+  "requested_data": "Membrane autopsy result from a lead element: ATR-FTIR spectrum showing reduction of amide II peak (1540 cm⁻¹) or XPS analysis indicating oxidation of polyamide.",
+  "recommended_action": "Initiate sodium bisulfite (SBS) dosing at the RO feed at a stoichiometric ratio of 3:1 based on measured total chlorine (0.38 mg/L as Cl₂), i.e., 1.14 mg/L SBS, targeting a residual total chlorine <0.05 mg/L as Cl₂. Verify with online chlorine analyzer and adjust dose accordingly.",
+  "decision_change_condition": "If, after SBS dosing and chloramine control, permeate conductivity does not stabilize or continues to rise over 7–14 days, and membrane autopsy shows no evidence of polyamide oxidation (e.g., intact amide peaks on ATR-FTIR), then the hypothesis would shift to irreversible mechanical damage or osmotic backflow failure.",
+  "confidence": 85
+}

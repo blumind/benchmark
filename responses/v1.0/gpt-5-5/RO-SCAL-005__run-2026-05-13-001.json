@@ -1,0 +1,56 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:17:38Z",
+  "main_hypothesis": "El nuevo programa antiincrustante fosfonado, aplicado a 1,2 mg/L como producto comercial sin verificación específica para esta agua de alta dureza/alcalinidad y 78 % de recuperación, es insuficiente o inadecuado y está causando incrustación inorgánica, principalmente carbonato cálcico, en los elementos de cola de la etapa 2.",
+  "key_signals": [
+    "La subida de ΔP ocurre casi exclusivamente en etapa 2, de 0,9 a 1,7 bar, mientras la etapa 1 permanece prácticamente estable, patrón típico de incrustación en elementos de cola.",
+    "La presión de alimentación sube de 14,8 a 17,8 bar y el caudal de permeado baja 8 %, compatible con pérdida de permeabilidad por depósito mineral.",
+    "La conductividad de alimentación y la temperatura permanecen estables, por lo que el deterioro no se explica por mayor salinidad o menor temperatura.",
+    "El cambio operacional relevante fue el cambio de antiincrustante 40 días antes, de poliacrílico 3 mg/L a fosfonado 1,2 mg/L.",
+    "La dosis del nuevo producto fue confirmada para 'agua estándar' sin análisis específico, pese a rechazo con calcio 2.450 mg/L, alcalinidad 1.080 mg/L y sílice 145 mg/L.",
+    "La limpieza ácida con HCl a pH 2 redujo temporalmente el ΔP de etapa 2 de 1,4 a 1,1 bar, lo que favorece una incrustación mineral acidoluble.",
+    "El ΔP volvió a aumentar rápidamente en 5 días después del CIP, indicando que la causa de formación del depósito sigue presente."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Precipitación de complejo calcio-fosfonato inducida por incompatibilidad del nuevo antiincrustante con el agua concentrada.",
+      "why_plausible": "El inicio coincide con la introducción de una formulación fosfonada en un agua con calcio muy alto en el rechazo, y algunos fosfonatos pueden formar depósitos con calcio bajo condiciones de alta concentración.",
+      "why_discardable": "Sigue siendo una falla del nuevo programa antiincrustante; los datos disponibles no muestran fósforo en el depósito ni análisis del retorno de CIP que permita distinguirlo de carbonato cálcico, y la alcalinidad elevada hace más probable la incrustación carbonatada."
+    },
+    {
+      "hypothesis": "Fuga de dureza del ablandador parcial por operación arranque-paro o regeneración deficiente.",
+      "why_plausible": "El pretratamiento incluye ablandador parcial operado en arranque-paro, una condición que puede producir golpes de dureza y acelerar incrustación en RO.",
+      "why_discardable": "El calcio en rechazo se reporta estable frente a la línea base y el evento temporal dominante es el cambio de antiincrustante; no se reporta aumento de dureza de alimentación o rechazo."
+    },
+    {
+      "hypothesis": "Ensuciamiento coloidal o particulado por falla de filtros multicapa o cartuchos.",
+      "why_plausible": "El ensuciamiento por sólidos puede elevar ΔP y reducir caudal de permeado.",
+      "why_discardable": "Normalmente afectaría primero la etapa 1 y los elementos de entrada; aquí la etapa 1 está estable y la respuesta a CIP ácido apunta más a depósito mineral en etapa 2."
+    },
+    {
+      "hypothesis": "Biofouling en la segunda etapa.",
+      "why_plausible": "El biofouling puede producir incremento progresivo de ΔP y pérdida de caudal.",
+      "why_discardable": "No se reportan señales microbiológicas, aumento en etapa 1, ni respuesta típica a limpieza alcalina/biocida; además, la recuperación tras CIP ácido y la localización en cola favorecen incrustación inorgánica."
+    },
+    {
+      "hypothesis": "Incrustación por sílice en los elementos de cola.",
+      "why_plausible": "La sílice en rechazo es alta, 145 mg/L, y la segunda etapa opera con mayor concentración.",
+      "why_discardable": "La limpieza con HCl a pH 2 redujo significativamente el ΔP, mientras que la sílice suele responder peor a limpieza ácida simple; la alcalinidad y calcio altos explican mejor una incrustación acidoluble."
+    },
+    {
+      "hypothesis": "Restricción hidráulica o problema de instrumentación en la etapa 2.",
+      "why_plausible": "Una válvula parcialmente cerrada, espaciador obstruido mecánicamente o sensor de presión descalibrado podría aparentar aumento de ΔP.",
+      "why_discardable": "La caída de ΔP tras CIP ácido y la recurrencia progresiva después de operar indican depósito real más que error de medición o restricción fija."
+    }
+  ],
+  "requested_data": "Incremento de calcio disuelto en el retorno del CIP ácido de etapa 2 respecto al blanco de solución CIP, expresado en mg/L como CaCO3.",
+  "recommended_action": "Sacar de servicio el bastidor afectado y realizar CIP ácido de la etapa 2 conforme al manual del fabricante con HCl ajustado a pH 2,0, recirculación 60 min y enjuague hasta pH y conductividad estables; al reiniciar, operar temporalmente a recuperación máxima 70 % y restituir el antiincrustante previamente validado a 3,0 mg/L como producto comercial en la alimentación RO hasta que el nuevo proveedor entregue cálculo de dosificación específico para esta agua.",
+  "decision_change_condition": "Cambiaría el diagnóstico si el retorno del CIP ácido de etapa 2 no mostrara incremento significativo de calcio disuelto sobre el blanco de CIP, porque ello debilitaría la hipótesis de incrustación cálcica acidoluble y orientaría el análisis hacia biofouling, ensuciamiento coloidal o restricción hidráulica.",
+  "confidence": 84
+}

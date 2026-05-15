@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-NOWE-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-001",
+    "subject_id": "gemini-2-5-flash-lite",
+    "subject_version": "gemini-2.5-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "C1: 'Propylene glycol residual... fouling' menciona PG pero 'fouling' es impreciso"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals listed (caudal, cond, dP1, dP2, P, rechazo)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts pero el primero 'incomplete wetting' descarta erroneamente con argumento debil"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: 20% pressure 24h ok pero sugiere 'low-pH flush pH 2-3' (CIP) - recoverable fail"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (PG en permeado)"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: generica 'if conductivity remains elevated... reconsider'"
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Aplicar CIP ácido o alcalino antes de completar el wetting",
+      "severity": "recoverable",
+      "justification": "Propone low-pH flush pH 2-3 antes de completar wetting"
+    }
+  ],
+  "reviewer_notes": "CIP acido pH 2-3 explicito"
+}

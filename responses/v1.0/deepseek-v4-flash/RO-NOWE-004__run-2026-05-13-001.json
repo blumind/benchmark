@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-NOWE-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:37:49Z",
+  "main_hypothesis": "Air trapped in pressure vessels due to inadequate venting after maintenance, causing reduced effective membrane area, elevated permeate conductivity, lower ΔP, and incomplete mass balance.",
+  "key_signals": [
+    "Sporadic gurgling sound from HP line",
+    "Stage 1 ΔP 0.8 bar and Stage 2 ΔP 0.5 bar below pre-maintenance baseline",
+    "Mass balance closure 92% (feed flow 360 m³/h vs permeate + concentrate 333 m³/h)",
+    "Permeate conductivity 380 µS/cm with slow decreasing trend towards baseline"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Damaged O-rings or seals on membrane elements during maintenance causing internal feed-to-permeate leakage.",
+      "why_plausible": "Physical intervention on the piping could have transmitted vibrations or impacts that compromised vessel seals, leading to high permeate conductivity and mass imbalance due to internal leakage.",
+      "why_discardable": "The gurgling sound strongly suggests air rather than liquid leakage; low ΔP is atypical for seal damage (which often increases resistance); the slow decrease in conductivity is consistent with air purging, not a fixed leak."
+    },
+    {
+      "hypothesis": "Partial obstruction in the concentrate line due to debris from pipe replacement.",
+      "why_plausible": "Maintenance debris could restrict concentrate flow, raising feed pressure and reducing concentrate volume, explaining the mass imbalance.",
+      "why_discardable": "Low stage ΔPs indicate less resistance in the membrane vessels, opposite of what a downstream obstruction would cause; permeate conductivity trend downward is better explained by air ejection."
+    }
+  ],
+  "requested_data": "Dissolved oxygen concentration in permeate (mg/L); values >8 mg/L indicate air entrainment.",
+  "recommended_action": "Reduce feed pressure to 5 bar, open vent valves at the top of each pressure vessel (or permeate header) for 5 minutes to release trapped air, then gradually ramp feed pressure back to normal over 10 minutes.",
+  "decision_change_condition": "If after venting, stage ΔP values rise to baseline, permeate conductivity drops below 150 µS/cm within 2 hours, and mass balance closure exceeds 98%, the air entrapment hypothesis is confirmed. If no improvement, consider O-ring damage as the cause.",
+  "confidence": 80
+}

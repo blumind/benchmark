@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-NOWE-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:23:42Z",
+  "main_hypothesis": "Aire atrapado en el circuito de alta presión (tubos de presión y/o línea de alimentación) debido a una purga insuficiente tras el mantenimiento con la línea abierta a la atmósfera durante 18 horas. Las bolsas de aire residuales comprimen el espacio disponible para el flujo, reducen el área efectiva de membrana, generan bypass interno en los elementos y provocan paso elevado de sales.",
+  "key_signals": [
+    "Línea de alimentación abierta a la atmósfera durante 18 horas de mantenimiento, permitiendo entrada masiva de aire",
+    "Sonido de 'borboteo' intermitente en la línea HP durante y después del arranque, indicativo clásico de aire atrapado en circuito presurizado",
+    "Balance de caudales no cierra: alimentación 360 m³/h vs concentrado+permeado 333 m³/h (92 %), los 27 m³/h faltantes corresponden a volumen ocupado por aire comprimido que distorsiona la medición de caudal",
+    "ΔP etapa 1 y etapa 2 por debajo del baseline (0,8 vs 1,0 bar y 0,5 vs 0,8 bar), consistente con menor caudal efectivo de líquido atravesando las membranas por presencia de fase gaseosa",
+    "Conductividad de permeado elevada (380 vs 110 µS/cm) con rechazo de sales reducido (95,4 % vs 98,7 %), explicable por telescoping o desplazamiento de sellos O-ring por golpe de ariete de aire y/o bypass de salmuera por canales de aire entre elementos",
+    "Caudal de permeado reducido (270 vs 295 m³/h) pese a presión de alimentación ligeramente superior (14,5 vs 14,2 bar), indicando pérdida de área efectiva de membrana",
+    "Tendencia de recuperación lenta de todos los parámetros hacia baseline, consistente con disolución y evacuación gradual del aire residual",
+    "Rampa de presión de solo 2 minutos en el arranque, insuficiente para evacuar aire de forma controlada de un sistema BWRO 3:2 con 12 elementos por tubo"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño mecánico en sellos O-ring o adaptadores de interconexión de elementos por golpe de ariete durante el arranque con aire",
+      "why_plausible": "El arranque con aire atrapado puede generar pulsos de presión que desplacen O-rings o dañen adaptadores, causando bypass interno de concentrado a permeado, lo que explicaría la alta conductividad de permeado y el bajo rechazo de sales.",
+      "why_discardable": "Si hubiera daño permanente en O-rings, la conductividad de permeado no mostraría tendencia descendente; permanecería estable o empeoraría. La mejora progresiva observada es más consistente con evacuación gradual de aire que con daño mecánico permanente."
+    },
+    {
+      "hypothesis": "Fuga externa en la nueva junta de PVC instalada durante el mantenimiento",
+      "why_plausible": "Una junta mal instalada podría explicar el desbalance de caudales (8 % de pérdida) y la presión de alimentación ligeramente elevada si el sistema compensa la fuga. También explicaría la reducción de caudal de permeado.",
+      "why_discardable": "Una fuga externa no explicaría el sonido de borboteo en la línea HP, ni la conductividad elevada del permeado, ni los ΔP reducidos en ambas etapas. Además, la prueba de presión post-instalación fue positiva. El desbalance de caudales por fuga sería constante, no intermitente como el borboteo."
+    },
+    {
+      "hypothesis": "Contaminación de membranas por partículas o residuos de la obra de mantenimiento (virutas de PVC, pegamento, residuos de junta)",
+      "why_plausible": "La sustitución de tubería de PVC con junta puede liberar partículas y residuos de adhesivo que pasen los cartuchos y ensucien las membranas, aumentando ΔP y reduciendo flux.",
+      "why_discardable": "El ΔP está por debajo del baseline, no por encima, lo cual es contrario al patrón de fouling por partículas. Además, el fouling particulado no explicaría el borboteo ni el desbalance de caudales del 8 %."
+    }
+  ],
+  "requested_data": "Inspección visual del permeado de cada tubo de presión del bastidor mediante probeta transparente para detectar presencia de burbujas de aire, complementada con medición de conductividad individual por tubo para identificar si el bypass de sales está localizado en tubos específicos o es generalizado.",
+  "recommended_action": "Parar el bastidor de forma controlada y ejecutar un procedimiento completo de purga de aire: 1) Abrir todas las válvulas de venteo (vent valves) en la parte superior de cada tubo de presión y en los puntos altos de la línea HP. 2) Llenar el sistema lentamente a baja presión (< 2 bar) con la bomba de baja presión o mediante gravedad, manteniendo las válvulas de venteo abiertas hasta que fluya agua sin burbujas por cada una. 3) Cerrar las válvulas de venteo secuencialmente desde el punto más bajo al más alto. 4) Realizar una rampa de presión lenta (mínimo 30-60 segundos por bar) hasta alcanzar presión operativa. 5) Verificar el cierre del balance de caudales (alimentación vs concentrado + permeado) dentro del ±3 % antes de declarar operación normal. 6) Monitorizar conductividad de permeado durante las primeras 2 horas; si no baja a < 150 µS/cm, realizar sondeo de tubos individuales para descartar daño en O-rings.",
+  "decision_change_condition": "Si tras la purga completa de aire y re-arranque controlado la conductividad de permeado permanece por encima de 200 µS/cm y el rechazo de sales no recupera al menos 98 %, cambiaría el diagnóstico a daño mecánico en O-rings o adaptadores de interconexión causado por el golpe de ariete del arranque con aire, lo que requeriría sondeo de tubos y apertura de los tubos de presión afectados para inspección y reemplazo de sellos.",
+  "confidence": 88
+}

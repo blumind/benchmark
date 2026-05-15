@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-008-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-008",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling absence biocide preservation 28-day shutdown'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "8 signals conectadas."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (SCAL, particulate, OXID) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino SDS 0.1% + 0.05% NaOH 30°C 60 min + implementar bisulfito 1% — completo."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide concentración biocida residual o sulfato permeado — match parcial (registro preservación)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ATP <200 + ΔP <1.1 estabiliza → resuelto."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

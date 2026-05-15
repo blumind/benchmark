@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:24:19Z",
+  "main_hypothesis": "Ensuciamiento/incrustación inorgánica de la segunda etapa por arrastre de Fe/Mn desde los filtros de greensand mal acondicionados, con co-precipitación de sílice y carbonatos favorecida por el aumento de pH tras el mantenimiento de dosificación de ácido.",
+  "key_signals": [
+    "El Fe a la entrada de RO subió de 0,03 a 0,18 mg/L y el Mn de 0,02 a 0,11 mg/L tras la sustitución de medio greensand sin completar el ripening.",
+    "Los cartuchos presentaron tonalidad marrón clara y depósito ligero, consistente con arrastre de óxidos/hidróxidos de Fe/Mn.",
+    "La subida de ΔP es mucho más marcada en etapa 2, de 0,8 a 1,8 bar, patrón típico de depósito concentrado en los últimos elementos por concentración de sales y metales.",
+    "La presión de alimentación aumentó de 14,0 a 17,5 bar y el caudal de permeado bajó 8 %, compatibles con pérdida de permeabilidad por ensuciamiento/incrustación.",
+    "La conductividad de permeado subió de 95 a 130 µS/cm, señal de deterioro de rechazo por depósito o daño localizado asociado al fouling.",
+    "El pH de alimentación quedó elevado en 6,8 frente a 6,5 tras mantenimiento de H2SO4, aumentando el riesgo de precipitación de carbonatos y de co-depósito con sílice/metales.",
+    "La alcalinidad en rechazo subió de 1.020 a 1.150 mg/L y la sílice en rechazo de 290 a 305 mg/L, incrementando la sobresaturación en la segunda etapa."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación primaria de carbonato cálcico por subdosificación de H2SO4 y pH de alimentación elevado.",
+      "why_plausible": "El pH aumentó de 6,5 a 6,8 después del mantenimiento de la bomba de ácido, la alcalinidad del rechazo subió y el ΔP de etapa 2 aumentó, lo que encaja con precipitación en la zona de mayor concentración.",
+      "why_discardable": "El aumento marcado de Fe/Mn hacia RO y los depósitos marrones en cartuchos preceden y explican mejor el patrón de ensuciamiento; el calcio de rechazo permanece relativamente estable y el cambio de pH es moderado."
+    },
+    {
+      "hypothesis": "Incrustación primaria de sílice en segunda etapa.",
+      "why_plausible": "El agua tiene sílice alta, el rechazo alcanza 305 mg/L, la temperatura es elevada y el recovery es 75 %, condiciones que aumentan el riesgo de depósito de sílice en elementos finales.",
+      "why_discardable": "La sílice solo muestra una subida ligera, existe antiincrustante específico para sílice + Fe, y el evento operativo más fuerte es el arrastre de Fe/Mn desde pretratamiento; la sílice parece más probablemente co-depositada que causa única."
+    },
+    {
+      "hypothesis": "Ensuciamiento por finos de medio greensand o partículas de pretratamiento independientes de precipitación química.",
+      "why_plausible": "El filtro con medio nuevo volvió a servicio sin ripening completo y los cartuchos mostraron depósito marrón, por lo que podría haber paso de finos o partículas al RO.",
+      "why_discardable": "El ensuciamiento más severo en etapa 2 y el aumento de Fe/Mn medido en alimentación a RO apuntan a precipitación/concentración dentro del bastidor, no solo a retención física de partículas que afectaría más claramente la primera etapa."
+    },
+    {
+      "hypothesis": "Biofouling del bastidor RO.",
+      "why_plausible": "El aumento de ΔP, caída de producción y aumento de presión de alimentación pueden aparecer con crecimiento biológico.",
+      "why_discardable": "No se reportan señales microbiológicas, nutrientes, ORP, ATP o episodios de desinfección; los datos dominantes son inorgánicos: Fe/Mn altos, cartuchos marrones, alcalinidad/sílice elevadas y pH desplazado."
+    },
+    {
+      "hypothesis": "Daño oxidativo de membranas por oxidante residual.",
+      "why_plausible": "El sistema usa KMnO4 en pretratamiento y la conductividad de permeado aumentó, lo que podría sugerir pérdida de rechazo por oxidación.",
+      "why_discardable": "El cloro libre antes de RO permanece <0,02 mg/L y estable, y el síntoma dominante es el aumento de ΔP de etapa 2; el daño oxidativo explicaría peor la fuerte pérdida hidráulica."
+    }
+  ],
+  "requested_data": "Composición elemental por SEM-EDS del depósito tomado del elemento final de etapa 2, reportada como % en peso de Fe, Mn, Si y Ca.",
+  "recommended_action": "Sacar de servicio el bastidor afectado o reducirlo a carga segura, restablecer inmediatamente el set point de pH de alimentación a 6,5 con H2SO4 y no operar el filtro de greensand con medio nuevo hasta completar backwash/ripening según manual. Ejecutar una limpieza CIP de la etapa 2 con limpiador ácido compatible para membranas de poliamida, por ejemplo ácido cítrico al 2 % p/p ajustado a pH 3,0-3,5, a 30 °C o menos, recirculando según el caudal especificado por el fabricante y con enjuague hasta pH neutro antes de retorno a servicio.",
+  "decision_change_condition": "La diagnosis cambiaría a incrustación primaria de carbonato/sílice por control químico de pH si el SEM-EDS del depósito de etapa 2 mostrara predominio de Ca/Si con Fe+Mn minoritarios y no hubiera enriquecimiento significativo de Fe/Mn en el depósito.",
+  "confidence": 74
+}

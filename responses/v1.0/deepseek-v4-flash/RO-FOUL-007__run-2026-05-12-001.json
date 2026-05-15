@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:18:39Z",
+  "main_hypothesis": "Biofouling in the lead elements of the first stage due to a biological bloom triggered by the storm event and sustained by inadequate pretreatment conditions.",
+  "key_signals": [
+    "ΔP etapa 1 cabeza subida de 1,4 a 2,5 bar",
+    "ATP en alimentación RO subida marcada de 90 a 720 pg/mL",
+    "TOC alimentación a RO subida marcada de 1,1 a 2,2 mg/L",
+    "SDI₁₅ salida cartuchos subida de 2,5 a 4,0",
+    "Turbidez salida cartuchos subida de 0,07 a 0,16 NTU",
+    "Caudal permeado tren bajada del 8%",
+    "Presión alimentación tren subida de 64 a 70 bar"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling (inorganic precipitation) in the lead elements due to high salinity and inadequate antiscalant dosing.",
+      "why_plausible": "Feed TDS >60,000 mg/L and recovery 40% create high concentration polarization; antiscalant at 2.8 ppm may be insufficient for such high salinity, especially with pH 8.2 favoring carbonate scaling.",
+      "why_discardable": "Scaling typically causes a more uniform ΔP increase across the stage, not a sharp rise only in the lead elements; the ATP and TOC spikes strongly point to biological activity rather than inorganic precipitation."
+    },
+    {
+      "hypothesis": "Colloidal fouling from iron hydroxide (Fe(OH)₃) due to elevated FeCl₃ dosing (2 mg/L) after the storm.",
+      "why_plausible": "FeCl₃ dose was increased from 0.8 to 2 mg/L; iron carryover can form colloidal deposits that increase ΔP and SDI.",
+      "why_discardable": "Iron fouling would not explain the dramatic rise in ATP (720 pg/mL) and TOC (2.2 mg/L); these are biological indicators. Also, turbidity at cartridge outlet is only 0.16 NTU, which is low for significant iron floc carryover."
+    },
+    {
+      "hypothesis": "Organic fouling from natural organic matter (NOM) introduced during the storm.",
+      "why_plausible": "TOC doubled from 1.1 to 2.2 mg/L; NOM can foul membranes and increase ΔP.",
+      "why_discardable": "The ATP spike (720 pg/mL) indicates active microbial growth, not just passive organic adsorption. Biofouling is a more complete explanation for the combination of ΔP rise, ATP, and TOC increase."
+    }
+  ],
+  "requested_data": "ATP concentration in the brine stream of the first stage (pg/mL) to confirm if biological growth is concentrated in the lead elements.",
+  "recommended_action": "Initiate a low-dose chlorine dioxide (ClO₂) shock treatment at 0.5 mg/L for 30 minutes on the feed side, followed by a flush with permeate, to control biofouling without damaging the membranes (since no routine chloramination is used).",
+  "decision_change_condition": "If the ATP in the brine stream is below 100 pg/mL, indicating that biological activity is not concentrated in the first stage, then the main hypothesis would shift to colloidal fouling from iron hydroxide.",
+  "confidence": 85
+}

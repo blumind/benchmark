@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-MECH-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:43:54Z",
+  "main_hypothesis": "Falla mecánica interna de membranas por defecto de línea de pegamento en elementos del lote afectado instalados en T-04, provocando bypass localizado de salmuera hacia permeado.",
+  "key_signals": [
+    "La conductividad de permeado aumenta progresivamente de 470 a 720 µS/cm mientras la conductividad de alimentación permanece estable alrededor de 56.500 µS/cm.",
+    "El rechazo de sales cae lentamente de 99,17 % a 98,72 % sin cambios relevantes de temperatura, pH, ORP ni cloro libre.",
+    "Los ΔP de etapa 1 y etapa 2 permanecen prácticamente estables, lo que no apoya ensuciamiento o incrustación como causa principal.",
+    "El probe test localiza conductividades elevadas de 1.500–2.200 µS/cm en tres tubos específicos de T-04, con el resto en rango normal.",
+    "Los cinco elementos del lote con incidencia de garantía conocida están distribuidos en los mismos tres tubos sospechosos de T-04.",
+    "El reapriete de cabezas y la verificación de O-rings de cap finales no produjo alivio significativo.",
+    "El fabricante había notificado un defecto potencial de glue line y recomendó autopsia ante síntomas anómalos."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga en O-rings, adaptadores o interconectores de los tubos sospechosos.",
+      "why_plausible": "Una fuga de sellos en tubos de presión puede producir aumento localizado de conductividad de permeado y una ligera pérdida en prueba de presión por tubo.",
+      "why_discardable": "La verificación y reapriete de cabezas y O-rings de cap finales no generó alivio significativo, y la coincidencia con elementos del lote afectado hace más probable una falla interna de elemento que una fuga externa de sellado."
+    },
+    {
+      "hypothesis": "Envejecimiento general de membranas por 36 meses de servicio.",
+      "why_plausible": "Las membranas están cerca del fin de vida útil y pueden presentar pérdida gradual de rechazo de sales.",
+      "why_discardable": "El patrón no es generalizado: el probe test concentra la desviación en tres tubos de T-04, mientras el resto de los trenes permanece en rango normal."
+    },
+    {
+      "hypothesis": "Daño oxidativo de membranas.",
+      "why_plausible": "La oxidación puede aumentar el paso de sales y elevar la conductividad de permeado sin necesariamente aumentar el ΔP.",
+      "why_discardable": "El cloro libre antes de RO se reporta estable en <0,02 mg/L y el ORP estable cerca de +95 mV; además, un daño oxidativo tendería a afectar más ampliamente, no solo tres tubos con elementos de un lote específico."
+    },
+    {
+      "hypothesis": "Incrustación o ensuciamiento de membranas.",
+      "why_plausible": "La caída de caudal permeado del 3 % y el aumento de presión de alimentación podrían ser compatibles con pérdida de productividad.",
+      "why_discardable": "Los ΔP de ambas etapas están estables y la señal dominante es aumento localizado de conductividad, no pérdida hidráulica progresiva; además, la alimentación, pH y recuperación no muestran un cambio reportado que apunte a incrustación reciente."
+    },
+    {
+      "hypothesis": "Daño mecánico por desplazamiento o telescopado de elementos.",
+      "why_plausible": "Un daño mecánico interno puede causar bypass y conductividad alta localizada en tubos específicos.",
+      "why_discardable": "No se reporta evento hidráulico, parada brusca ni incremento de ΔP que sugiera telescopado; la asociación con un lote con defecto de glue line es una explicación más directa."
+    }
+  ],
+  "requested_data": "Resultado de autopsia del elemento extraído: presencia o ausencia de fuga en la línea de pegamento mediante prueba de colorante o vacío, reportada como fuga glue line sí/no.",
+  "recommended_action": "Sacar T-04 de servicio de forma controlada, extraer y poner en cuarentena los 5 elementos del lote afectado ubicados en los tres tubos sospechosos, reemplazarlos por elementos SWRO compatibles y sellos/interconectores nuevos según manual OEM, reiniciar con rampa normal de presión y caudal, y repetir probe test y conductividad de permeado antes de devolver el tren a operación plena.",
+  "decision_change_condition": "La diagnosis cambiaría si la autopsia del elemento sospechoso no muestra fuga ni defecto de línea de pegamento y, tras reemplazar o probar sellos/interconectores, la conductividad elevada desaparece o se demuestra fuga en el hardware del tubo.",
+  "confidence": 86
+}

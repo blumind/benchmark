@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-OXID-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:06:39Z",
+  "main_hypothesis": "Contaminación del tren T-03 por peróxido de hidrógeno residual o subproductos de su degradación, que ha causado un daño leve a las membranas de SWRO.",
+  "key_signals": [
+    "Conductividad permeado: Subida progresiva de 410 µS/cm (baseline) a 540 µS/cm (actual).",
+    "Rechazo de sales (calculado): Bajada del 99,28 % (baseline) a un valor inferior (implícito por la subida de conductividad del permeado).",
+    "Caudal permeado tren: Bajada del 4 % respecto al baseline, indicando una posible obstrucción o degradación de la capacidad de flujo de las membranas.",
+    "Historial de CIP: Uso de H₂O₂ al 0,1 % y aclarado incompleto (45 min vs 60 min) seguido de una verificación de H₂O₂ residual con tira reactiva de baja sensibilidad (<1 mg/L).",
+    "Manchas marrones en cartuchos de mantenimiento: Sugiere la presencia de material oxidado o precipitado, posiblemente relacionado con la degradación del H₂O₂ o la oxidación de contaminantes."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling biológico o de materia orgánica en las membranas del tren T-03.",
+      "why_plausible": "Un aumento en la conductividad del permeado y una disminución en el rechazo de sales son síntomas clásicos de fouling. La presencia de manchas marrones podría indicar crecimiento biológico o acumulación de materia orgánica.",
+      "why_discardable": "El fouling biológico típicamente se manifestaría con un aumento más rápido del ΔP y una disminución más pronunciada del caudal permeado. Además, el historial reciente de uso de H₂O₂ como desinfectante y el aclarado incompleto apuntan más directamente a un problema relacionado con el H₂O₂."
+    },
+    {
+      "hypothesis": "Daño mecánico o defecto en las membranas del tren T-03 (ej. rotura de un elemento).",
+      "why_plausible": "Una rotura en una membrana puede causar un aumento significativo en la conductividad del permeado y una disminución en el rechazo de sales. El aumento del ΔP, aunque leve en este caso, podría ser un indicio.",
+      "why_discardable": "El aumento del ΔP es mínimo (0.1 bar), lo cual no es típico de una rotura mecánica significativa. La progresión gradual de la conductividad del permeado y la correlación temporal con el CIP de H₂O₂ hacen que esta hipótesis sea menos probable que la contaminación por H₂O₂."
+    },
+    {
+      "hypothesis": "Problema con la calibración del sensor de conductividad del permeado del tren T-03.",
+      "why_plausible": "Un sensor defectuoso o descalibrado podría mostrar lecturas de conductividad erróneas, simulando un problema de rendimiento de las membranas.",
+      "why_discardable": "La tendencia observada en la conductividad del permeado, junto con la bajada en el caudal y la presencia de manchas marrones, sugiere un problema real en el tren. Si solo fuera el sensor, no se esperarían los otros síntomas."
+    }
+  ],
+  "requested_data": "Concentración de H₂O₂ residual en el permeado del tren T-03 medida con un método analítico cuantitativo (ej. titulación o espectrofotometría UV-Vis) en mg/L.",
+  "recommended_action": "Retirar el tren T-03 de servicio inmediatamente. Realizar un lavado de emergencia con permeado durante al menos 60 minutos para intentar eliminar cualquier residuo de H₂O₂. Si el problema persiste tras el lavado, considerar un CIP específico para la eliminación de H₂O₂ residual o subproductos, seguido de un aclarado exhaustivo y verificación de H₂O₂ residual < 0.5 mg/L antes de la reincorporación. Si las manchas marrones persisten o el rendimiento no se recupera, se deberá considerar la inspección y posible reemplazo de elementos de membrana.",
+  "decision_change_condition": "Si la medición de H₂O₂ residual en el permeado es consistentemente < 0.5 mg/L y el problema de conductividad y caudal persiste, la hipótesis principal se debilitaría, y se debería investigar más a fondo el fouling o el daño mecánico de las membranas.",
+  "confidence": 85
+}

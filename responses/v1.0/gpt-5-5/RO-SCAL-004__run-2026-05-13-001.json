@@ -1,0 +1,52 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:11:47Z",
+  "main_hypothesis": "Incrustación de sulfato cálcico en los elementos de cola de la etapa 3 causada por operar a 83 % de recovery con mayor carga de sulfato y sin recalcular la dosificación de antiincrustante.",
+  "key_signals": [
+    "La subida de ΔP está concentrada en la etapa 3: de 0,5 a 1,5 bar, mientras la etapa 1 permanece prácticamente estable.",
+    "El aumento de recovery de 80 % a 83 % precede temporalmente al inicio de la subida de ΔP en etapa 3.",
+    "La dosis de antiincrustante poliacrílico se mantuvo en 2,2 ppm pese al aumento de recovery.",
+    "El rechazo muestra sulfato elevado, 1.290 mg/L frente a 1.100 mg/L de baseline, y calcio elevado, 460 mg/L frente a 390 mg/L.",
+    "El cálculo reportado de saturación de CaSO4 da SI ≈ 1,1, indicando sobresaturación.",
+    "Se reporta cambio de mix de aguas regeneradas con mayor proporción de aguas industriales con sulfato más alto.",
+    "La presión de alimentación sube de 12,5 a 14,8 bar y el caudal de permeado baja 8 %, coherente con pérdida hidráulica y ensuciamiento/incrustación.",
+    "El CIP alcalino estándar solo redujo parcialmente y de forma temporal el ΔP de etapa 3, compatible con una incrustación inorgánica no resuelta por limpieza alcalina."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación de sílice en los elementos de cola.",
+      "why_plausible": "La sílice en rechazo aumentó de 110 a 130 mg/L y la incrustación por sílice suele aparecer en las últimas etapas con recovery alto.",
+      "why_discardable": "El dato explícito de SI de CaSO4 ≈ 1,1, junto con el aumento marcado de sulfato y calcio en rechazo, apunta más directamente a sulfato cálcico; además la subida de sulfato es más marcada que la de sílice."
+    },
+    {
+      "hypothesis": "Biofouling u orgánico residual procedente del agua regenerada.",
+      "why_plausible": "La planta trata agua regenerada y el TOC de alimentación es medible, 1,8 mg/L, por lo que el biofouling siempre es técnicamente posible en BWRO de reúso.",
+      "why_discardable": "El TOC está estable, el cloro libre antes de RO está estable por debajo de 0,02 mg/L y el patrón principal es de cola de sistema, no de primera etapa; además el disparador temporal fue el aumento de recovery y la sobresaturación de CaSO4."
+    },
+    {
+      "hypothesis": "Fouling coloidal o arrastre de sólidos desde la UF.",
+      "why_plausible": "Un deterioro de la UF o eventos de calidad de agua podrían aumentar el ensuciamiento y elevar ΔP en RO.",
+      "why_discardable": "El ΔP de etapa 1 está estable, lo que no encaja con un arrastre particulado dominante, que típicamente afecta primero a los elementos de entrada; no se reporta cambio de conductividad de alimentación ni otro indicador de evento de pretratamiento."
+    },
+    {
+      "hypothesis": "Incrustación de carbonato cálcico.",
+      "why_plausible": "El calcio y la alcalinidad están presentes y el aumento de recovery eleva las concentraciones en rechazo.",
+      "why_discardable": "La alimentación está acidificada a pH 6,8 con H2SO4 y el caso aporta específicamente sobresaturación de CaSO4; no se reporta LSI positivo ni evidencia dominante de carbonato."
+    },
+    {
+      "hypothesis": "Compactación o envejecimiento irreversible de membranas.",
+      "why_plausible": "Las membranas tienen 30 meses de servicio y se observa aumento de presión de alimentación con menor caudal de permeado.",
+      "why_discardable": "La evolución es rápida en 12 días y localizada en ΔP de etapa 3, lo que es más característico de incrustación localizada que de envejecimiento uniforme de membranas."
+    }
+  ],
+  "requested_data": "Composición mineralógica del depósito tomado del elemento de cola de la etapa 3, expresada como porcentaje en masa de CaSO4, SiO2 y materia orgánica.",
+  "recommended_action": "Reducir inmediatamente el recovery del bastidor afectado de 83 % al valor histórico de 80 %, mantener la dosis actual de antiincrustante mientras se estabiliza la operación, enjuagar el bastidor con permeado a baja presión según el manual del fabricante y no volver a 83 % hasta que una proyección de escala con el nuevo mix de alimentación confirme SI de CaSO4 menor o igual que 1,0 en el concentrado.",
+  "decision_change_condition": "Cambiaría el diagnóstico si el análisis del depósito de la etapa 3 mostrara predominio de SiO2 o materia orgánica y ausencia de CaSO4 significativo, o si una proyección validada con la química real demostrara SI de CaSO4 menor que 1,0 al 83 % de recovery.",
+  "confidence": 88
+}

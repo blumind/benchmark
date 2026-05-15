@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:47:59Z",
+  "main_hypothesis": "Subdosificación de antiincrustante: la nueva formulación fosfonada a 1,2 ppm es insuficiente para el LSI/índice de saturación de CaCO₃ del rechazo de esta agua (dureza 920 mg/L, alcalinidad 240 mg/L, recovery 78 %), provocando precipitación de carbonato cálcico en la etapa 2.",
+  "key_signals": [
+    "ΔP etapa 2 sube de 0,9 a 1,7 bar mientras ΔP etapa 1 permanece estable (1,1→1,2 bar): ensuciamiento localizado en la cola del bastidor, típico de scaling por concentración.",
+    "Calcio en rechazo 2.450 mg/L y alcalinidad rechazo 1.080 mg/L con pH alimentación 6,5: agua altamente sobresaturada en CaCO₃ a recovery 78 %.",
+    "CIP ácida (HCl pH 2) recuperó parcialmente el ΔP (1,7→1,1 bar) y reincrustó en 5 días: comportamiento característico de scaling carbonático recurrente.",
+    "Cambio de antiincrustante hace 42 días con reducción de dosis (3→1,2 ppm) sin análisis específico del agua; correlación temporal con inicio del problema en día -25.",
+    "Caudal de permeado cae 8 % y presión de alimentación sube de 14,8 a 17,8 bar: pérdida de área activa por incrustación.",
+    "Conductividad de permeado sube ligeramente (78→88 µS/cm): consistente con daño/bypass por scaling en membranas de cola.",
+    "Cloro libre <0,02 mg/L y temperatura estable descartan oxidación y efecto térmico."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling de sulfato cálcico promovido por dosificación de H₂SO₄ a pH 6,5.",
+      "why_plausible": "El H₂SO₄ aporta sulfato; con Ca²⁺ alto en rechazo y recovery 78 % puede superarse Ksp de CaSO₄, y el ensuciamiento sería también en etapa 2.",
+      "why_discardable": "La CIP ácida con HCl no disuelve eficazmente CaSO₄ y, sin embargo, recuperó el ΔP; la respuesta a ácido apunta a carbonato, no sulfato."
+    },
+    {
+      "hypothesis": "Incompatibilidad/precipitación del propio antiincrustante fosfonado (p.ej. fosfonato cálcico) por sobredosis o mala mezcla.",
+      "why_plausible": "Algunos fosfonatos precipitan con Ca²⁺ alto formando depósitos en cola; el cambio de producto coincide en el tiempo.",
+      "why_discardable": "La dosis es baja (1,2 ppm) y la CIP ácida limpió el depósito; precipitados de Ca-fosfonato suelen requerir limpiezas combinadas alcalinas/quelantes."
+    },
+    {
+      "hypothesis": "Fallo intermitente del ablandador (operación arranque-paro) con fugas de dureza no compensadas por el antiincrustante.",
+      "why_plausible": "Ablandador parcial en arranque-paro puede dar picos de dureza; el nuevo antiincrustante a 1,2 ppm tendría menos margen.",
+      "why_discardable": "Calcio y alcalinidad en rechazo se mantienen estables vs baseline, sin evidencia de picos; el mecanismo seguiría siendo CaCO₃ pero la causa raíz primaria es la dosis insuficiente."
+    },
+    {
+      "hypothesis": "Ensuciamiento por sílice coloidal/biofouling en etapa 2.",
+      "why_plausible": "Sílice en rechazo 145 mg/L está cerca de límites; biofouling también afecta cola.",
+      "why_discardable": "Sílice estable y por debajo de saturación típica con antiincrustantes; biofouling no responde tan rápido a HCl pH 2."
+    }
+  ],
+  "requested_data": "Cálculo del índice de saturación (LSI y S&DSI) de CaCO₃ y Ksp de CaSO₄ en el rechazo a 78 % de recovery, junto con la dosis mínima recomendada por el fabricante del nuevo antiincrustante para ESTA composición de agua (ppm), obtenida mediante su software de proyección.",
+  "recommended_action": "1) Ejecutar CIP en dos pasos según manual: limpieza alcalina (NaOH + detergente, pH 11-12, 35 °C, 1-2 h) seguida de limpieza ácida (ácido cítrico 2 % p/p o HCl a pH 2, 35 °C, 1-2 h) con recirculación y remojo, en cada etapa por separado. 2) Bajar provisionalmente recovery de 78 % a 72-74 % hasta estabilizar. 3) Subir dosis del antiincrustante fosfonado al valor que arroje el software del fabricante con los datos reales de agua (típicamente 2,5-4 ppm para este TDS/dureza), verificando límite de solubilidad Ca-fosfonato. 4) Mantener pH alimentación 6,5 con H₂SO₄ y reforzar control del ablandador (dureza salida <5 mg/L como CaCO₃). 5) Monitorizar ΔP etapa 2, normalizar caudal/presión diariamente y exigir al proveedor proyección formal por escrito antes de fijar dosis definitiva.",
+  "decision_change_condition": "Si el análisis del depósito (autopsia o muestra de CIP) revela predominio de sulfato cálcico, sílice, fosfonato cálcico o materia orgánica/biofilm en lugar de CaCO₃, o si el software del fabricante demuestra que 1,2 ppm cubre el LSI real del rechazo, la hipótesis principal cambiaría hacia el contaminante dominante identificado.",
+  "confidence": 78
+}

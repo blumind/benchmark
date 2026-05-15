@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-007-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-007",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fosfato cálcico Ca3(PO4)2 etapa 2 + aumento estacional P + incapacidad antiincrustante poliacrílico inhibir fosfatos a 78% recovery' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (biofouling con P nutriente, CaCO3, particulado)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Reducir recovery 78→70-72% + cambiar antiincrustante a formulación con inhibición fosfato (fosfonatos/polímeros explícito) — match gold ACT 2 y ACT 3."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide análisis depósito P y Ca por ICP/SEM-EDS — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: <5% P + materia orgánica → biofouling."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

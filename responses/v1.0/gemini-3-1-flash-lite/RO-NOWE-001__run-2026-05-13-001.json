@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-NOWE-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:56:30Z",
+  "main_hypothesis": "Incomplete removal of residual propylene glycol and bisulfite from the membrane surface and feed spacers, causing localized osmotic pressure imbalances and partial membrane dehydration (non-wetting).",
+  "key_signals": [
+    "Caudal de permeado al 36% del nominal tras el arranque",
+    "Conductividad de permeado superior a la esperada (480 vs 400 µS/cm)",
+    "Mejora progresiva del caudal y la conductividad tras circulación prolongada a baja presión",
+    "Uso de propilenglicol al 20% v/v durante el almacenamiento"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling due to biological growth during storage.",
+      "why_plausible": "Long storage duration (5 months) could allow biofilm development if the preservative concentration was compromised.",
+      "why_discardable": "The gradual improvement in performance (caudal increasing from 36% to 78%) is characteristic of chemical washout rather than the irreversible nature of biofouling."
+    },
+    {
+      "hypothesis": "Mechanical damage to membrane elements due to low-temperature exposure (4 °C).",
+      "why_plausible": "The storage temperature reached 4 °C, which is near the limit for some membrane materials.",
+      "why_discardable": "The performance is trending toward nominal values; physical damage to the membrane structure would result in a permanent, non-recovering loss of salt rejection and flow."
+    }
+  ],
+  "requested_data": "Total Organic Carbon (TOC) concentration in the permeate stream (mg/L).",
+  "recommended_action": "Perform a high-flow, low-pressure flush (at 2-3 bar) using permeate water for 8 hours, followed by a chemical cleaning (CIP) using an alkaline surfactant-based cleaner (pH 10-11) to ensure complete removal of residual propylene glycol.",
+  "decision_change_condition": "If the permeate conductivity were to increase significantly while the flow rate stabilizes, I would shift the diagnosis to membrane degradation or seal bypass.",
+  "confidence": 85
+}

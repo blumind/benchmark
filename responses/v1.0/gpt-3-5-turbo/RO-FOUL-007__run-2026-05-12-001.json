@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:12:03Z",
+  "main_hypothesis": "Fouling in the first stage of SWRO membranes",
+  "key_signals": [
+    "Increasing ΔP in stage 1 head",
+    "Significant increase in TOC in RO feed",
+    "Marked increase in ATP in RO feed",
+    "Elevated SDI₁₅ and turbidity in cartridge outlet"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling in the first stage of SWRO membranes",
+      "why_plausible": "High salinity feedwater with TDS > 60,000 mg/L",
+      "why_discardable": "No significant change in conductivity of feedwater"
+    },
+    {
+      "hypothesis": "Biofouling in the first stage of SWRO membranes",
+      "why_plausible": "Significant increase in ATP in RO feed",
+      "why_discardable": "No reported unusual odor or taste in permeate"
+    }
+  ],
+  "requested_data": "Silt density index (SDI) of the RO feedwater",
+  "recommended_action": "Increase the dosage of FeCl₃ back to the baseline of 0.8 mg/L and conduct a chemical cleaning of the SWRO membranes",
+  "decision_change_condition": "If the SDI of the RO feedwater is significantly high",
+  "confidence": 90
+}

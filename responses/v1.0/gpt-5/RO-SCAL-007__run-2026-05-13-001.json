@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:30:03Z",
+  "main_hypothesis": "Incrustación por fosfato cálcico (Ca3(PO4)2) en la segunda etapa, inducida por el aumento de PO4³⁻ en el agua de pozo y la falta de inhibición del antiincrustante actual, a alta recuperación (78%) y pH 6,8.",
+  "key_signals": [
+    "ΔP etapa 2 sube de 0,9 a 1,9 bar en 12 días, mientras la etapa 1 permanece estable (1,2 bar).",
+    "Aumento marcado de PO4³⁻ en alimentación (1,8 → 2,8 mg/L) y en rechazo (7,8 → 12,5 mg/L).",
+    "Cálculo previo (día -12) indica alto riesgo de Ca3(PO4)2.",
+    "CIP ácido con HCl (pH 2, 60 min) redujo temporalmente la ΔP de etapa 2 (prueba de depósito parcialmente soluble en ácido) pero la ΔP volvió a subir rápidamente (reformación bajo sobresaturación).",
+    "Subida de presión de alimentación (15,5 → 19 bar), caída de caudal permeado (−8%) y aumento de conductividad de permeado (95 → 110 µS/cm), coherentes con incrustación.",
+    "El fabricante del antiincrustante confirma que la formulación no contempla control de fósforo.",
+    "Conductividad de alimentación y temperatura estables, y sílice en rechazo estable (descarta cambio de matriz general o incrustación por sílice)."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación por carbonato cálcico (CaCO3) en segunda etapa por control de pH insuficiente.",
+      "why_plausible": "La ΔP alta en segunda etapa y la respuesta a CIP ácido son compatibles con CaCO3; recuperación elevada y alta alcalinidad en rechazo podrían favorecer carbonato en la interfase.",
+      "why_discardable": "El pH de alimentación está en 6,8 (normalmente suprime CaCO3), el antiincrustante sí cubre carbonatos, y la cronología coincide con el aumento de fosfato y aviso regulatorio; además, el detonante identificado es PO4³⁻."
+    },
+    {
+      "hypothesis": "Incrustación por sulfato cálcico (CaSO4) en segunda etapa.",
+      "why_plausible": "TDS y calcio altos, recuperación 78% y ΔP localizada en segunda etapa son compatibles con sulfatos.",
+      "why_discardable": "El antiincrustante cubre sulfatos; no hay evidencia de aumento de sulfato; CaSO4 es poco soluble en ácido y la CIP ácida produjo una mejora notable, lo que no encaja con CaSO4."
+    },
+    {
+      "hypothesis": "Ensuciamiento coloidal/particulado por rotura de filtración previa.",
+      "why_plausible": "Caída de flujo y aumento de presión podrían deberse a arrastre de finos.",
+      "why_discardable": "El ensuciamiento particulado suele manifestarse primero en la etapa 1; aquí la etapa 1 está estable, y no hay señal de aumento de turbidez/SDI ni eventos de filtración reportados."
+    },
+    {
+      "hypothesis": "Bioincrustación en segunda etapa favorecida por nutrientes (P).",
+      "why_plausible": "Aumento de fósforo puede alimentar biofilm; caída de flujo y subida de ΔP pueden verse en bioensuciamiento.",
+      "why_discardable": "La mejora con limpieza ácida (no alcalina) y la localización en segunda etapa apuntan más a incrustación inorgánica; la bioincrustación suele iniciarse en la primera etapa."
+    }
+  ],
+  "requested_data": "Contenido de fósforo en el depósito de la primera presión de la etapa 2 medido por SEM-EDS: P (% en peso) en el fouling retirado.",
+  "recommended_action": "Actuar en dos frentes, operación y limpieza: (1) Reducir recuperación de 78% a 70% de inmediato y bajar pH de alimentación a 6,2–6,4 con H2SO4 para disminuir la sobresaturación de fosfato cálcico (verificar que la ΔP y la calidad del permeado se mantienen dentro de límites y que no aparece riesgo de CaSO4 según el proveedor). (2) Sustituir el antiincrustante por una formulación específica que inhiba fosfato cálcico y dispersantes, dosificar 4,0 mg/L (ppm, como producto) aguas arriba de cartuchos de 5 µm y ajustar según recomendación del proveedor para 70% de recuperación. (3) Ejecutar CIP dirigido en la etapa 2 con ácido cítrico al 2% p/p (20 g/L), pH ≈ 3, a 30–35 °C: recircular 45–60 min con caudal cruzado, realizar remojo 30 min y enjuagar hasta permeado neutro/conductividad estable; reinstaurar gradualmente la recuperación y, tras estabilizar, optimizarla en función del índice de saturación de Ca3(PO4)2.",
+  "decision_change_condition": "Si el SEM-EDS del depósito en la etapa 2 no muestra fósforo significativo (>1–2% en peso) y, en cambio, predomina carbonato (alto C con Ca) o material orgánico, y la limpieza alcalina resulta más efectiva que la ácida en reducir la ΔP, cambiaría el diagnóstico desde fosfato cálcico a carbonato cálcico o bioensuciamiento.",
+  "confidence": 78
+}

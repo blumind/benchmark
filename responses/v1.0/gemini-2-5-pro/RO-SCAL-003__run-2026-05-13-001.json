@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-SCAL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:06:01Z",
+  "main_hypothesis": "Barium sulfate (BaSO4) scaling in the tail-end membrane elements of train T-04, caused by the prolonged interruption of antiscalant dosing.",
+  "key_signals": [
+    "The documented interruption of antiscalant dosing to train T-04 for approximately 18 days.",
+    "A severe and localized increase in differential pressure at the tail end of the train (ΔP etapa 1 cola increased from 0.9 bar to 2.3 bar).",
+    "The feed water chemistry is high-risk, containing both 0.12 mg/L of Barium and 3,150 mg/L of Sulfate.",
+    "The operational issue is isolated to train T-04, which corresponds to the specific point of the dosing failure.",
+    "The high differential pressure did not decrease after antiscalant dosing was restored, which is characteristic of a precipitated mineral scale."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Severe localized biofouling.",
+      "why_plausible": "Biofouling can also cause a significant increase in differential pressure, a decrease in permeate flow, and an increase in permeate conductivity.",
+      "why_discardable": "The pressure drop is overwhelmingly concentrated at the tail end of the train, whereas biofouling typically begins and is most severe at the lead elements. The timeline of the event correlates perfectly with the antiscalant dosing failure, not with a biological event."
+    },
+    {
+      "hypothesis": "Colloidal or particulate fouling due to a pretreatment failure.",
+      "why_plausible": "A failure in the DAF or media filters could allow particulates to enter the RO system, causing fouling and increased pressure drop.",
+      "why_discardable": "Particulate fouling characteristically causes the highest pressure drop across the lead elements of a train, not the tail elements. Furthermore, a significant pretreatment failure would likely affect all operating trains, not just T-04."
+    },
+    {
+      "hypothesis": "Strontium sulfate (SrSO4) scaling.",
+      "why_plausible": "The symptoms of SrSO4 scaling are identical to BaSO4 scaling, and the antiscalant used is also designed to inhibit it. It is a common scale in SWRO plants.",
+      "why_discardable": "While plausible, the feed water has an unusually high and explicitly noted concentration of barium (0.12 mg/L). Barium sulfate is significantly less soluble than strontium sulfate, making it the most probable scaling species under these conditions, especially following the failure of a Ba/Sr-specific inhibitor."
+    }
+  ],
+  "requested_data": "Elemental analysis results (e.g., via SEM-EDX or XRF) of a foulant sample taken from the feed spacer of a tail-end membrane element from train T-04.",
+  "recommended_action": "Immediately perform a controlled shutdown of train T-04. Isolate the train from the feed and brine headers and keep the membranes wetted with unchlorinated permeate. Do not attempt any in-situ chemical cleaning until the foulant has been positively identified by inspection and analysis.",
+  "decision_change_condition": "My diagnosis would change if an analysis of the foulant from a tail-end membrane showed its primary composition to be organic (biofilm) or aluminosilicate (colloidal), rather than being rich in barium and sulfur.",
+  "confidence": 95
+}

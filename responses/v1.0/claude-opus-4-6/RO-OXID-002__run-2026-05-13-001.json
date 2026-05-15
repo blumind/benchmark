@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-OXID-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:44:08Z",
+  "main_hypothesis": "Degradación oxidativa irreversible de las membranas de poliamida por exposición prolongada a ozono residual proveniente de la planta vecina, cuya dosis de O₃ aumentó de 0,8 a 1,5 mg/L en el día -22, sin que la BWRO disponga de ninguna barrera reductora (ni bisulfito ni carbón activado) para eliminar el oxidante antes de las membranas.",
+  "key_signals": [
+    "Subida drástica de conductividad de permeado de 75 a 380 µS/cm (factor ×5) con conductividad de alimentación estable, indicando pérdida de integridad de la capa activa de poliamida",
+    "Caída del rechazo de sales del 97,8 % al 88,8 %, consistente con degradación química de la poliamida y no con fouling o scaling",
+    "ORP de alimentación subió de +110 mV a +280 mV, señal inequívoca de presencia de un oxidante fuerte en el agua de alimentación",
+    "Ozono residual medido en alimentación a RO = 0,06 mg/L vs baseline < 0,01 mg/L, confirmando la llegada de O₃ a las membranas",
+    "Cloro libre indetectable (<0,02 mg/L), descartando al cloro como agente oxidante responsable",
+    "Correlación temporal: la planta vecina duplicó la dosis de ozono (día -22) y la conductividad de permeado comenzó a subir (día -18), con progresión continua hasta el día 0",
+    "ΔP de etapas 1 y 2 estables y ATP estable, descartando biofouling o fouling coloidal como causa de la pérdida de rendimiento",
+    "Ausencia total de barreras reductoras en el pretratamiento (sin bisulfito, sin carbón activado) que pudieran neutralizar el ozono antes de las membranas"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño por radicales hidroxilo (·OH) generados a partir de la descomposición del ozono en presencia de materia orgánica o metales de transición del agua de retorno siderúrgico",
+      "why_plausible": "El ozono en agua con materia orgánica y metales (Fe, Mn típicos de siderurgia) genera radicales ·OH que son aún más agresivos que el O₃ molecular para la poliamida; el ORP elevado (+280 mV) es compatible con la presencia de estas especies.",
+      "why_discardable": "El mecanismo final es el mismo (oxidación de la poliamida por especies derivadas del ozono); la distinción entre O₃ molecular y ·OH no cambia el diagnóstico operativo ni la acción correctiva. Además, a pH 7,5 y sin catalizadores confirmados, la vía molecular del O₃ predomina."
+    },
+    {
+      "hypothesis": "Fallo mecánico de O-rings o interconectores de los elementos de membrana causando bypass interno",
+      "why_plausible": "Un bypass mecánico también produce aumento de conductividad de permeado con ΔP estable; membranas con 11 meses podrían tener deformación de O-rings.",
+      "why_discardable": "Un fallo mecánico de O-rings típicamente afecta uno o pocos tubos y no produce una subida progresiva y generalizada de conductividad en toda la planta durante 18 días; además, no explica el ORP elevado ni el ozono residual medido. El patrón gradual y continuo es consistente con degradación química progresiva, no con un evento mecánico discreto."
+    },
+    {
+      "hypothesis": "Hidrólisis alcalina o degradación química de la poliamida por pH elevado puntual",
+      "why_plausible": "La poliamida es sensible a pH > 10-11; si hubiera excursiones de pH no registradas, podría haber degradación similar.",
+      "why_discardable": "El pH de alimentación reportado es estable en 7,5, muy lejos del rango de hidrólisis alcalina. No hay evidencia de dosificación de álcali ni de eventos de pH alto en el historial."
+    },
+    {
+      "hypothesis": "Degradación de membranas por cloro combinado (cloraminas) no detectado por el método DPD de cloro libre",
+      "why_plausible": "Las cloraminas degradan la poliamida a largo plazo y no se detectan con el test de cloro libre estándar; el agua de retorno industrial podría contener nitrógeno amoniacal.",
+      "why_discardable": "El ORP de +280 mV es demasiado alto para cloraminas (típicamente +200-250 mV en concentraciones bajas), y se ha confirmado ozono residual de 0,06 mg/L. La correlación temporal con el aumento de dosis de ozono de la planta vecina apunta directamente al O₃ como agente causal."
+    }
+  ],
+  "requested_data": "Ensayo de sondeo (probing) de conductividad de permeado tubo por tubo en ambas etapas para determinar si la degradación de membrana es uniforme en todo el bastidor o localizada en tubos específicos, lo que discriminaría entre daño oxidativo generalizado (uniforme) y fallo mecánico de O-rings o daño localizado.",
+  "recommended_action": "1) INMEDIATO (horas): Instalar un sistema de dosificación de metabisulfito de sodio (SMBS) al 10 % p/v en la línea de alimentación a la RO, aguas abajo de los cartuchos de 5 µm, con dosis inicial de 3 mg/L de SMBS (relación estequiométrica ~1,5:1 respecto al O₃ residual medido, con margen de seguridad), controlando ORP en línea con set-point objetivo de +100 a +150 mV; verificar que el ORP baje por debajo de +150 mV antes de permitir paso a membranas. 2) CORTO PLAZO (días): Realizar probing de conductividad por tubo para mapear el daño; extraer un elemento de cabecera de etapa 1 y uno de cola de etapa 2 para autopsia de membrana (test de tinción con cristal violeta y análisis ATR-FTIR de la capa de poliamida) para cuantificar el grado de degradación oxidativa. 3) MEDIO PLAZO: Evaluar la instalación de un lecho de carbón activado granular (GAC) como barrera permanente contra oxidantes residuales. 4) Planificar el reemplazo de los elementos de membrana cuyo rechazo individual sea inferior al 95 %, ya que el daño oxidativo de la poliamida es irreversible.",
+  "decision_change_condition": "Si el probing tubo por tubo revelara que la pérdida de rechazo está concentrada en uno o dos tubos específicos (con el resto manteniendo rechazo > 96 %), y si la autopsia de membrana no mostrara evidencia de degradación oxidativa de la poliamida (ATR-FTIR sin pérdida de banda amida), cambiaría el diagnóstico a fallo mecánico de O-rings/interconectores en esos tubos, a pesar de la presencia de ozono residual.",
+  "confidence": 95
+}

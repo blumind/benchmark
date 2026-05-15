@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://benchmark.blumind.es/schemas/v1.0/evaluation.schema.json",
+  "title": "BluMind Benchmark — Evaluation schema v1.0",
+  "description": "Structured scoring produced by a human reviewer on a single (case, subject, run) response. Source of truth lives under scoring/v1.0/<subject_id>/<case_id>__<run_id>__eval-<reviewer_id>.json. Philosophy: the reviewer declares inputs (per-criterion scores, automatic fails triggered, correctness for calibration, notes). Derived outputs (raw_score 0-12, clipped_score after rubric_ceiling, Pass/Conditional/Fail classification, ECE/Brier contributions) are NOT stored here — they are computed downstream by scripts/aggregate_scoring.py and scripts/compute_metrics.py from this file plus the gold, and written to results/. This separation guarantees a single source of truth per computed value.",
+  "type": "object",
+  "required": [
+    "evaluation_id",
+    "benchmark_version",
+    "response_ref",
+    "reviewer_id",
+    "scoring_timestamp_utc",
+    "criterion_scores",
+    "automatic_fails_triggered",
+    "correctness",
+    "reviewer_notes"
+  ],
+  "properties": {
+    "evaluation_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for this scoring. Recommended convention: eval-<case_id>-<run_id>-<reviewer_id> (e.g. 'eval-RO-FOUL-001-run-2026-04-22-001-R01'). Must be unique across scoring/ for the same benchmark_version."
+    },
+    "benchmark_version": {
+      "type": "string",
+      "pattern": "^v[0-9]+\\.[0-9]+$",
+      "description": "Benchmark version this scoring is bound to (e.g. 'v1.0'). Must match the response's benchmark_version; CI enforces the cross-file coherence."
+    },
+    "response_ref": {
+      "type": "object",
+      "required": ["case_id", "subject_id", "subject_version", "run_id"],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "pattern": "^RO-(OXID|SCAL|FOUL|MECH|NOWE)-[0-9]{3}$",
+          "description": "Case identifier of the response being scored."
+        },
+        "subject_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Identifier of the evaluated subject (e.g. 'gpt-5', 'claude-opus-4-6')."
+        },
+        "subject_version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Specific version or snapshot of the evaluated subject (e.g. 'gpt-5-2026-03-15')."
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^run-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{3}$",
+          "description": "Run identifier of the response being scored."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Denormalized pointer to the scored response. Redundant with the response file but kept explicit to enable independent queries against scoring/ without joining responses/."
+    },
+    "reviewer_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Anonymized reviewer identifier (e.g. 'R01', 'R02'). v1.0 accepts any non-empty string; v2.0 will bind this to a reviewer registry (see README 'Scope explicitly deferred to v2.0')."
+    },
+    "scoring_timestamp_utc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Moment at which the reviewer finalized the scoring, in UTC ISO 8601."
+    },
+    "criterion_scores": {
+      "type": "object",
+      "required": [
+        "main_hypothesis",
+        "key_signals",
+        "alternatives",
+        "recommended_action",
+        "requested_data",
+        "decision_change_condition"
+      ],
+      "properties": {
+        "main_hypothesis": { "$ref": "#/definitions/criterion_score" },
+        "key_signals": { "$ref": "#/definitions/criterion_score" },
+        "alternatives": { "$ref": "#/definitions/criterion_score" },
+        "recommended_action": { "$ref": "#/definitions/criterion_score" },
+        "requested_data": { "$ref": "#/definitions/criterion_score" },
+        "decision_change_condition": { "$ref": "#/definitions/criterion_score" }
+      },
+      "additionalProperties": false,
+      "description": "One score 0-2 per rubric criterion, each with mandatory justification. Field names mirror the response schema fields they evaluate (see rubric's 'Design rule' mapping table)."
+    },
+    "automatic_fails_triggered": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["type", "reference", "severity", "justification"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["generic", "case_specific"],
+            "description": "Whether this fail is defined in the generic rubric or in the gold of the specific case."
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 1,
+            "description": "For type='generic': the fail number from the rubric's 'Generic automatic fails' section (e.g. '1', '2', '5'). For type='case_specific': the exact 'description' string from the gold's case_specific_automatic_fails entry that was triggered."
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["critical", "recoverable"],
+            "description": "Severity applied. Must match either the generic rubric default or the gold's declared severity. The gold may escalate (but never downgrade) the generic severity; severity stored here is the effective one after that override."
+          },
+          "justification": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Reviewer's technical justification for triggering this fail on this specific response."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Zero or more automatic fails triggered by the response. Empty array is valid (response free of fails). Coherence with the gold (for case_specific) and the rubric (for generic) is enforced by scripts/validate_evaluation.py, not by this schema."
+    },
+    "correctness": {
+      "type": "number",
+      "enum": [0, 0.5, 1],
+      "description": "Main hypothesis correctness against the gold, for longitudinal calibration only: 1 = correct, 0.5 = partially correct, 0 = incorrect. This feeds ECE and Brier score computation paired with the response's 'confidence' field. Per-case Pass/Conditional/Fail classification does NOT use this value (it uses criterion_scores + automatic_fails_triggered + gold's rubric_floor/ceiling)."
+    },
+    "reviewer_notes": {
+      "type": "string",
+      "description": "Free-form notes from the reviewer: context, doubts, cross-references to similar cases, concerns about the rubric itself. May be empty string. Not parsed by any downstream pipeline; preserved for future committee review and rubric refinement."
+    }
+  },
+  "additionalProperties": false,
+
+  "definitions": {
+    "criterion_score": {
+      "type": "object",
+      "required": ["score", "justification"],
+      "properties": {
+        "score": {
+          "type": "integer",
+          "enum": [0, 1, 2],
+          "description": "0, 1, or 2 per the rubric's scoring criteria table."
+        },
+        "justification": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Reviewer's technical justification for the score. Required even for a score of 2 (to enable later audit and inter-reviewer comparison)."
+        },
+        "justification_long": {
+          "type": "string",
+          "minLength": 50,
+          "description": "PREMIUM / EXPLANATIONS-tier field — OPTIONAL. Long-form expert critique in rich prose (3-6 sentences) explaining the engineering reasoning behind the score: what the model got right, what an expert would add or correct, and the technical context (thresholds, mechanisms, trade-offs, non-obvious anchors) needed for an auto-judge to learn from this case. This field is the per-criterion training material for BluMind's commercial evaluator dataset (`explanations.jsonl`). It is INTENTIONALLY OMITTED from the public benchmark export by `scripts/export_public.py` — only the schema is public, the content is not. Reviewers fill it for top-3 and bottom-3 responses per case (the highest-signal items for evaluator training); leaving it absent is valid and means the entry is not part of the commercial export."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

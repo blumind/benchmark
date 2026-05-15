@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-002-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-002",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling severo etapa 1 por DAF degradada al 60% + mar gruesa'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "8 señales conectadas con cronología; CP por biofilm explica conductividad +ligera."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (particulado, NOM no-bio, SCAL, OXID) con why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino NaOH+EDTA+SDS+DBNPA+restaurar DAF+DBNPA continuo 1-2 ppm (no oxidante)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia + microbiología + EPS — match accepted requested_data."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-umbral: >70% inorgánico + ATP <500 → coloidal inorgánico."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

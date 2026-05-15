@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:34:47Z",
+  "main_hypothesis": "Incrustación de fosfato cálcico (Ca₃(PO₄)₂) en las membranas de la segunda etapa, impulsada por el aumento de fosfato en la alimentación debido a escorrentías agrícolas, y no controlada por el antiincrustante estándar que no está formulado para fosfatos.",
+  "key_signals": [
+    "ΔP etapa 2 aumenta de 0,9 bar a 1,9 bar en 12 días (subida marcada)",
+    "ΔP etapa 1 permanece estable (1,1 bar)",
+    "Presión de alimentación sube de 15,5 a 19 bar",
+    "Caudal de permeado cae un 8%",
+    "Conductividad del permeado aumenta de 95 a 110 µS/cm",
+    "PO₄³⁻ en alimentación sube de 1,8 a 2,8 mg/L",
+    "CIP ácido (HCl pH 2) proporciona una mejora temporal breve (ΔP baja a 1,2 bar y rebota en 72 h)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bioensuciamiento (biofouling) en la segunda etapa debido al aumento de nutrientes (fosfato y nitratos).",
+      "why_plausible": "El incremento de fosfato puede estimular el crecimiento biológico, y el biofouling típicamente eleva ΔP en etapas posteriores.",
+      "why_discardable": "El biofouling responde pobremente a una CIP ácida; generalmente requiere limpieza alcalina o con biocidas. La rápida recurrencia tras la CIP sugiere una incrustación inorgánica que se redisuelve parcialmente y vuelve a precipitar. Además, ΔP subió rápidamente (12 días), más típico de scaling que de biofouling."
+    },
+    {
+      "hypothesis": "Incrustación de sílice (SiO₂) o silicatos.",
+      "why_plausible": "La sílice en rechazo es de 64 mg/L, y puede precipitar si se concentra y el pH es favorable.",
+      "why_discardable": "El nivel de sílice es estable, no ha aumentado en el período. La CIP ácida no disuelve sílice de forma significativa; no se observaría una mejora temporal. Además, la marcada subida de PO₄³⁻ apunta a fosfato."
+    },
+    {
+      "hypothesis": "Incrustación de carbonato cálcico (CaCO₃).",
+      "why_plausible": "El agua tiene calcio y alcalinidad elevados, y el antiincrustante poliacrílico está formulado para carbonatos y sulfatos.",
+      "why_discardable": "El pH se mantiene en 6,8 (ajustado con H₂SO₄ para reducir el riesgo de CaCO₃). La CIP ácida eliminó el ΔP temporalmente, lo que también ocurriría con CaCO₃, pero la recurrencia en 72 h sería muy rápida si el antiincrustante manejara los carbonatos. La predicción de saturación indicó alto riesgo de Ca₃(PO₄)₂, no de CaCO₃."
+    }
+  ],
+  "requested_data": "Concentración de fosfato en el efluente de la CIP ácida del día -8 (mg/L PO₄³⁻), para confirmar que la limpieza removió fosfato de las membranas.",
+  "recommended_action": "Reducir el % de recuperación de la planta al 65 % temporalmente para disminuir el factor de concentración de fosfato en la segunda etapa. Contactar al proveedor de antiincrustante para cambiar a un producto que específicamente inhiba fosfato cálcico (ej. formulación basada en fosfonatos). Programar una limpieza CIP combinada: primero ácido (HCl pH 2, 30 min recirculación) seguida de limpieza alcalina con NaOH pH 10,5 y 0,2 % de EDTA para eliminar restos de fosfato y materia orgánica, evaluando la eficacia con análisis del efluente.",
+  "decision_change_condition": "Si el análisis del efluente de la CIP ácida muestra una concentración de fosfato inferior a 5 mg/L o predominantemente hierro u otros metales, la hipótesis cambiaría hacia biofouling o incrustación de hierro, requiriendo una limpieza alcalina con secuestrante y posible cloración controlada.",
+  "confidence": 85
+}

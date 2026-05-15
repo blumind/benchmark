@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-008-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-008",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'bioincrustación + BSR durante 28d estancamiento' — captura 2 de 3 hipótesis Open."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta parada 28d sin preservación + olor H2S + ATP×16 + ΔP1 vs ΔP2 + conductividad +ligera."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (particulado FOUL, FeS híbrido, sílice/CaCO3 SCAL) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino+DBNPA biocida + cítrico opcional para FeS + reemplazo cartuchos."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide BSR concentrado (MPN/mL) — match accepted requested_data."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single threshold SRB <10 → particulado/coloidal. Para Open, single-threshold limita discriminación."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Pierde C6 por contrafactual single-threshold limitado para Open con 3 hipótesis."
+}

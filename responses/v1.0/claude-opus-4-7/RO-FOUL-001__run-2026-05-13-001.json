@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-FOUL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:32:21Z",
+  "main_hypothesis": "Bioensuciamiento (biofouling) de las membranas de 1ª etapa de RO, desencadenado por aporte de materia orgánica/biomasa viable tras el fallo de UF/pretratamiento y agravado por la parada de SBS que pudo permitir un pulso de cloro seguido de recolonización microbiana.",
+  "key_signals": [
+    "ATP en alimentación a RO subió de 1,2 a 8,5 ng/L (+600%), indicador directo de biomasa viable",
+    "SDI15 pasó de 2,3 a 4,1 (+78%), indicando aumento de material coloidal/biológico que atraviesa la UF",
+    "ΔP de 1ª etapa +45% (2,2 → 3,2 bar) con caudal estable, típico de ensuciamiento en cabeza de etapa",
+    "Rechazo salino y conductividad de permeado estables: no hay daño químico ni escalado significativo, consistente con fouling superficial/biológico",
+    "Parada de 6 h de la línea de SBS (día -3) que pudo permitir paso transitorio de cloro y posterior crecimiento microbiano (regrowth)",
+    "Membranas con 4 años de servicio, susceptibles a biofouling acumulativo"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento coloidal por arrastre de hierro del coagulante de DAF",
+      "why_plausible": "La dosis de FeCl3 se incrementó de 1,5 a 2,8 mg/L como Fe el día -14, y un breakthrough de Fe coloidal explicaría el aumento de SDI15 y ΔP",
+      "why_discardable": "El incremento de ATP x7 es desproporcionado para un fouling puramente inorgánico; el Fe residual normalmente no genera tal señal biológica"
+    },
+    {
+      "hypothesis": "Ensuciamiento orgánico/coloidal por episodio de turbidez estacional no totalmente retenido por UF",
+      "why_plausible": "Subida de turbidez de 8 a 22 NTU en captación (día -21) coincide temporalmente con el aumento posterior de SDI y ΔP",
+      "why_discardable": "Por sí solo no justifica el salto de ATP; sería más bien el sustrato que alimenta el biofouling, no la causa principal del ensuciamiento actual"
+    },
+    {
+      "hypothesis": "Escalado (scaling) por carbonatos o sulfatos en cola de etapa",
+      "why_plausible": "Recovery del 45% y antiescalante no fosfonato podrían tener margen reducido si cambió la química del agua bruta",
+      "why_discardable": "El rechazo salino y la conductividad de permeado permanecen estables, y el escalado típicamente afecta más a la última etapa y al paso de sales, no a ΔP de 1ª etapa con ATP elevado"
+    },
+    {
+      "hypothesis": "Daño oxidativo por cloro durante la parada de SBS",
+      "why_plausible": "Parada de 6 h de SBS el día -3 podría haber permitido cloro libre hacia las membranas",
+      "why_discardable": "Cloro libre y ORP en alimentación a RO se mantienen estables y dentro de rango; el rechazo salino no ha caído, lo cual descarta oxidación significativa de la poliamida"
+    }
+  ],
+  "requested_data": "Perfil de ΔP por etapa/elemento y, sobre todo, análisis de autopsia o cupón: recuento heterotrófico (HPC, UFC/mL) y caracterización del depósito (LOI / pérdida por ignición %, % materia orgánica vs. inorgánica) en el primer elemento de cabeza",
+  "recommended_action": "Programar limpieza CIP en dos pasos sobre la 1ª etapa: (1) limpieza alcalina con NaOH al 0,1% p/p (pH 11,5–12, máx. 35 °C) más detergente surfactante compatible (p. ej. EDTA 1,0% p/p) durante 2 h de recirculación + remojo, seguida de enjuague; (2) limpieza ácida con ácido cítrico al 2,0% p/p (pH 2,5–3,0, máx. 35 °C) durante 1 h, según manual del fabricante de membrana. Verificar continuidad de SBS (residual SO3 0,5–1,5 mg/L) y considerar choque preventivo con bisulfito o limpieza biocida no oxidante (DBNPA 10–20 mg/L durante 30–60 min) en pretratamiento UF. Revisar dosis de coagulante y retrolavados de UF; mantener ATP y SDI15 monitorizados diariamente hasta retorno a baseline.",
+  "decision_change_condition": "Si la autopsia/cupón muestra depósito predominantemente inorgánico (Fe > 30% en peso seco, baja LOI <15%, HPC bajo) o si aparece escalado cristalino (CaCO3/BaSO4), la hipótesis principal cambiaría a fouling coloidal por Fe o a scaling, respectivamente; igualmente cambiaría si se detectara caída de rechazo salino > 0,5 puntos (apuntaría a daño oxidativo).",
+  "confidence": 78
+}

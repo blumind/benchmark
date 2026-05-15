@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-NOWE-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-001",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'incomplete removal of propilenglicol... wetting issues' matches"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 7 signals (caudal, dP low, cond, mejora, PG 20%, 30 min, 4°C)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (daño bisulfito, biofilm) justificadas"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: flush 48h + 'limpieza quimica alcalina pH 11-12' - CIP alcalino recoverable fail"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (PG en permeado)"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: generica 'si PG<5 y cond no mejora descartar humectacion'"
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Aplicar CIP ácido o alcalino antes de completar el wetting",
+      "severity": "recoverable",
+      "justification": "Propone CIP alcalino pH 11-12 con SDS tras 48h flush"
+    }
+  ],
+  "reviewer_notes": "CIP alcalino + SDS explicito"
+}

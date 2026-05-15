@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-001",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'subdosificación antiincrustante + fallo cebado/aire bomba + cambio manguera → CaCO3 etapa 2' literal completo."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta señales con relación causal explícita."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (CaCO3 por pH alto principalmente, biofouling, CaSO4/BaSO4, particulado)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Restablecer H2SO4 pH 6.7 + cebar bomba + purgar aire + revisar válvulas pie/inyección + eliminar espuma — match gold operacional."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide concentración residual antiincrustante en concentrado RO — discriminador específico match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Single threshold: si residual ≥2 mg/L y bomba verificada → switch a 'CaCO3 por pH solamente'. Multi-implícito."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

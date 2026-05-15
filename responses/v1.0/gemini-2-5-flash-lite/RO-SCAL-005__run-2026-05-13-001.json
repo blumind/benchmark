@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:19:41Z",
+  "main_hypothesis": "Fouling de membranas por precipitación de sales de calcio y fosfonatos debido a dosis insuficiente de antiincrustante.",
+  "key_signals": [
+    "ΔP etapa 2: Subida progresiva de 0,9 bar a 1,7 bar en 40 días, con una recuperación parcial tras limpieza ácida.",
+    "Presión alimentación: Subida de 14,8 bar a 17,8 bar, indicando mayor resistencia al flujo.",
+    "Caudal permeado planta: Bajada del 8% (de 333 a 305 m³/h), consistente con un aumento de la resistencia de las membranas.",
+    "Conductividad permeado: Ligera subida (de 78 a 88 µS/cm), sugiriendo una menor eficiencia de rechazo de sales por las membranas, posiblemente debido a la formación de incrustaciones.",
+    "Dosis antiincrustante: Reducción de 3 ppm a 1,2 ppm, lo cual es un cambio significativo y coincide con el inicio de los problemas."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling biológico.",
+      "why_plausible": "El fouling biológico puede causar un aumento progresivo de la ΔP y una disminución del caudal permeado. La presencia de agua de pozo puede ser una fuente de materia orgánica.",
+      "why_discardable": "No hay señales directas de crecimiento biológico (ej. aumento de turbidez, olores, o problemas en el pretratamiento). La limpieza ácida tuvo un efecto temporal, lo cual es menos típico del fouling biológico que de incrustaciones minerales. La conductividad del permeado, aunque subió ligeramente, no es un indicador fuerte de fouling biológico."
+    },
+    {
+      "hypothesis": "Incrustación de carbonato de calcio (CaCO₃) debido a pH inadecuado o alcalinidad alta.",
+      "why_plausible": "La dureza total (920 mg/L) y la alcalinidad (240 mg/L) son altas, lo que aumenta el riesgo de precipitación de CaCO₃. El pH de alimentación es 6,5, que podría ser demasiado alto para prevenir la precipitación de CaCO₃ en ciertas condiciones de operación de la RO.",
+      "why_discardable": "Aunque la dureza y alcalinidad son altas, el cambio a un antiincrustante fosfonado y la reducción de dosis son los eventos más recientes y coincidentes con el problema. El antiincrustante anterior (poliacrílico) podría haber sido más efectivo para controlar el CaCO₃, o la dosis reducida del nuevo antiincrustante es insuficiente para prevenir la precipitación de sales de calcio, incluyendo las que forman complejos con fosfonatos."
+    },
+    {
+      "hypothesis": "Fouling por sílice.",
+      "why_plausible": "La sílice en el agua de alimentación es de 145 mg/L en el rechazo, lo que indica una concentración significativa. La sílice puede precipitar y formar incrustaciones.",
+      "why_discardable": "La concentración de sílice en el rechazo se ha mantenido relativamente estable, y no hay una tendencia clara de aumento que sugiera un problema de precipitación de sílice como causa principal. El antiincrustante fosfonado debería ayudar a dispersar la sílice."
+    }
+  ],
+  "requested_data": "Análisis de incrustaciones en las membranas de la etapa 2 (composición química).",
+  "recommended_action": "Realizar una limpieza química de las membranas (CIP) utilizando una solución alcalina (ej. NaOH 1-2%) para disolver incrustaciones de fosfonatos y sales de calcio, seguida de un enjuague exhaustivo. Si la limpieza no restaura el rendimiento, considerar un aumento temporal de la dosis del antiincrustante a 1.5-2.0 ppm hasta que se obtenga el análisis de incrustaciones y se ajuste la dosis de forma definitiva.",
+  "decision_change_condition": "Si el análisis de incrustaciones revela una alta proporción de sílice o material biológico, la hipótesis principal se descartaría y se enfocaría en el control de sílice o biológico.",
+  "confidence": 85
+}

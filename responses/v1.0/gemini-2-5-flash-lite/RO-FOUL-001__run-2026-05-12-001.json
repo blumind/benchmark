@@ -1,0 +1,37 @@
+{
+  "case_id": "RO-FOUL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:51:22Z",
+  "main_hypothesis": "Biofouling en las membranas de la 1ª etapa de RO",
+  "key_signals": [
+    "ΔP 1ª etapa: 3,2 bar (baseline 2,2 bar, tendencia +45%)",
+    "ATP en alimentación a RO: 8,5 ng/L (baseline 1,2 ng/L, tendencia +600%)",
+    "SDI15 alimentación a RO: 4,1 (baseline 2,3, tendencia +78%)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling inorgánico (incrustación) en las membranas de la 1ª etapa de RO",
+      "why_plausible": "El aumento de ΔP puede ser causado por la precipitación de sales en la superficie de la membrana. La subida de turbidez en la captación y el aumento de coagulante en DAF podrían haber llevado a una mayor carga de sólidos suspendidos o disueltos que, con el tiempo, podrían precipitar.",
+      "why_discardable": "La conductividad del permeado y el rechazo salino global se mantienen estables, lo cual es inconsistente con un fouling inorgánico significativo que típicamente afecta la capacidad de rechazo de sales. Además, el ATP en la alimentación a RO está muy elevado, indicando una causa biológica."
+    },
+    {
+      "hypothesis": "Fouling por partículas finas (particulado) en las membranas de la 1ª etapa de RO",
+      "why_plausible": "El aumento del SDI15 en la alimentación a RO (de 2,3 a 4,1) indica una peor calidad del agua de alimentación en términos de partículas retenidas por un filtro de 0,45 micras. Esto podría estar contribuyendo al aumento de ΔP.",
+      "why_discardable": "Si bien el SDI ha aumentado, el aumento drástico de ATP sugiere que la causa principal no es solo el particulado inerte. El fouling por partículas finas suele ir acompañado de una disminución en el rechazo salino o un aumento en la conductividad del permeado, lo cual no se observa aquí. El aumento de ATP es un indicador mucho más fuerte de biofouling."
+    },
+    {
+      "hypothesis": "Obstrucción parcial de la línea de SBS y posterior descloración insuficiente",
+      "why_plausible": "La parada de la línea de SBS por mantenimiento podría haber llevado a una descloración incompleta temporalmente, lo que podría haber favorecido el crecimiento biológico en las membranas de RO. Sin embargo, el cloro libre y el ORP en la alimentación a RO se reportan estables y bajos (<0.02 mg/L), lo que sugiere que la descloración es efectiva.",
+      "why_discardable": "Los datos de cloro libre y ORP en la alimentación a RO son estables y bajos, lo que indica que la descloración es efectiva y no hay un problema de cloro residual que pudiera estar causando el biofouling. El aumento de ATP es el principal indicador de crecimiento biológico, no de un problema de descloración."
+    }
+  ],
+  "requested_data": "Concentración de biomasa (SSV o VSS) en el agua de alimentación a RO (mg/L)",
+  "recommended_action": "Realizar una limpieza química de las membranas de la 1ª etapa de RO, incluyendo un ciclo de desinfección con peracético o similar, seguido de un enjuague y puesta en marcha según el manual de operación del fabricante de membranas. Considerar un aumento temporal de la dosis de biocida en el pretratamiento si el biofouling se confirma como recurrente.",
+  "decision_change_condition": "Si la concentración de biomasa en la alimentación a RO es baja (< 1 mg/L) y el análisis de incrustaciones en las membranas revela una composición predominantemente inorgánica (ej. carbonato de calcio, sulfato de calcio), entonces la hipótesis principal cambiaría a fouling inorgánico.",
+  "confidence": 85
+}

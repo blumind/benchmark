@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:24:23Z",
+  "main_hypothesis": "Fouling in the second stage of the RO membranes",
+  "key_signals": [
+    "Significant increase in ΔP in stage 2",
+    "Decrease in permeate flow rate",
+    "Increase in permeate conductivity",
+    "Significant increase in Fe and Mn in RO feed"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling on the RO membranes",
+      "why_plausible": "High TDS feedwater and elevated temperature favor scaling",
+      "why_discardable": "No significant increase in Ca rejection, stable Si rejection"
+    },
+    {
+      "hypothesis": "Membrane degradation",
+      "why_plausible": "Membranes are 14 months old, ΔP increase in stage 1 as well",
+      "why_discardable": "Specific increase in Fe and Mn levels in feedwater"
+    }
+  ],
+  "requested_data": "Visual inspection of the RO membranes for fouling or scaling",
+  "recommended_action": "Perform a chemical cleaning of the RO membranes following manufacturer guidelines",
+  "decision_change_condition": "If visual inspection shows significant scaling on the membranes",
+  "confidence": 85
+}

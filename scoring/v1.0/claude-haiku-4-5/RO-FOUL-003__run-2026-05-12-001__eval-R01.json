@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-003-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-003",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "MH 'organic fouling DOC/TOC breakthrough' captura mitad orgánica, falta Fe explícito."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ΔP1 + TOC×125% + SDI + turbidez + cronología."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (bio, Fe/silica coloidal, MECH, antiscalant) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP dos pasos: NaOH 0.5-1.0% pH 11-11.5 + cítrico/HCl pH 3-3.5 — NaOH alta concentración pero gold-compatible."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide DOC por UV-VIS — dato estándar; trigger gold es Fe total/autopsia."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición OR: ΔP elevado + TOC no declina + LC-OCD → reclasificar."
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

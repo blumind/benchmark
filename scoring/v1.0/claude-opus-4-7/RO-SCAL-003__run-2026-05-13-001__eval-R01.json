@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-003",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'sulfato bario barita cola etapa 1 T-04 + 19 días sin antiincrustante + desconexión solenoide' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación causal."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (SrSO4, fouling coloidal/biológico, MECH telescoping, CaCO3 LSI)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP dos pasos: alcalino NaOH pH 11-12 + EDTA/surfactante + ácido específico BaSO4 con DTPA/EDTA tetrasódico 2% — match exacto gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia/SEM-EDS Ba/Sr/Ca/SO4 mg/g — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: depósito orgánico/sílice/aluminosilicatos en lugar de Ba+SO4 → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

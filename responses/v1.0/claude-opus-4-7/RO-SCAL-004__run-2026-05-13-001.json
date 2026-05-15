@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:11:02Z",
+  "main_hypothesis": "Precipitación de sulfato de calcio (CaSO₄) en la etapa 3, causada por el aumento de recovery al 83% combinado con un mix de alimentación con mayor sulfato, sin recálculo de la dosis de antiincrustante (subsaturación excedida, SI≈1,1).",
+  "key_signals": [
+    "ΔP etapa 3 sube marcadamente (0,5 → 1,5 bar) mientras etapas 1 y 2 permanecen relativamente estables",
+    "CIP alcalino solo recupera parcialmente y el ΔP rebota en 48 h (típico de scaling mineral, no de fouling orgánico/biológico)",
+    "Cálculo de SI de CaSO₄ ≈ 1,1 (sobresaturado) en el rechazo",
+    "Sulfato en rechazo subió de 1.100 a 1.290 mg/L tras cambio de mix con aguas industriales",
+    "Recovery elevado de 80% a 83% sin recálculo de antiincrustante (2,2 ppm mantenido)",
+    "Caída de caudal de permeado 8% y aumento de presión de alimentación a 14,8 bar consistente con pérdida de área activa en cola",
+    "Calcio en rechazo 460 mg/L; producto iónico Ca·SO₄ elevado en últimos elementos"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling de sílice en etapa 3 (sílice rechazo 130 mg/L cerca del límite de solubilidad ~150 mg/L a 28 °C)",
+      "why_plausible": "Sílice en rechazo subió a 130 mg/L con recovery 83%; la sílice precipita preferentemente en la cola y no responde a CIP alcalino corto a pH 11,5",
+      "why_discardable": "El CIP alcalino sí logró bajada temporal del ΔP, lo cual es atípico para sílice polimerizada; además sílice 130 mg/L aún está bajo el límite con antiincrustante poliacrílico; el disparador temporal coincide con el cambio de sulfato, no de sílice"
+    },
+    {
+      "hypothesis": "Fouling biológico/orgánico en cola por agua de reúso con TOC variable",
+      "why_plausible": "Agua NEWater con TOC 1,8 mg/L y temperatura 28,5 °C favorece biofilm; CIP alcalino mejoró parcialmente",
+      "why_discardable": "El rebote del ΔP en solo 48 h tras CIP alcalino es demasiado rápido para recrecimiento biológico; TOC estable; el patrón coincide temporalmente con el aumento de sulfato y de recovery, no con un evento microbiológico"
+    },
+    {
+      "hypothesis": "Precipitación de carbonato de calcio (CaCO₃)",
+      "why_plausible": "Calcio elevado (460 mg/L) y alcalinidad 95 mg/L en alimentación concentrados en etapa 3",
+      "why_discardable": "pH 6,8 con dosificación de H₂SO₄ mantiene LSI bajo en el rechazo; además el CIP alcalino habría empeorado o no removido CaCO₃, y se observó mejora temporal"
+    }
+  ],
+  "requested_data": "Análisis por ICP/DRX de un cupón o de los sólidos extraídos de un elemento de etapa 3 (composición de depósito: %Ca, %S, %Si, %Fe) o, alternativamente, índice de saturación LSI/S&DSI calculado en el rechazo de etapa 3.",
+  "recommended_action": "Reducir inmediatamente el recovery de 83% a 80% (o inferior) hasta que SI(CaSO₄) en rechazo < 0,8. Ejecutar CIP ácido en etapa 3 con ácido cítrico al 2% (20 g/L) ajustado a pH 4,0 con NH₄OH, a 35 °C, recirculación 60 min + remojo 4 h, seguido de enjuague y CIP alcalino con NaOH pH 12 + EDTA 1% (10 g/L). Recalcular dosis de antiincrustante poliacrílico específico para CaSO₄ con software del proveedor a la nueva composición y recovery objetivo (probablemente 3,5–4,5 ppm); verificar compatibilidad con sulfato. Implementar monitoreo diario de sulfato y calcio en rechazo y recálculo de SI cuando cambie el mix de fuentes.",
+  "decision_change_condition": "Si el análisis del depósito muestra predominancia de sílice amorfa (>50% Si) o material orgánico/biológico (alta pérdida por ignición, ATP elevado) en lugar de Ca/S, la hipótesis principal cambiaría a scaling de sílice o biofouling respectivamente.",
+  "confidence": 82
+}

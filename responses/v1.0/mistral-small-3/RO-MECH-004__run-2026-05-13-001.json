@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-MECH-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:44:37Z",
+  "main_hypothesis": "Defect in the glue line of the membrane elements in the affected lot, leading to progressive delamination and increased salt passage through compromised barrier layers.",
+  "key_signals": [
+    "Conductividad permeado con tendencia al alza progresiva (470 → 720 µS/cm) en el tren T-04, donde se ubican los 5 elementos del lote afectado",
+    "Rechazo de sales calculado bajando lentamente (99,17 % → 98,72 %) en el tren T-04",
+    "Probe test perfil de permeado por tubo identificando tres tubos en T-04 con conductividades anómalas (1.500–2.200 µS/cm) en el permeado",
+    "Distribución del lote sospechoso: T-04 con 5 elementos del lote afectado por defecto en la línea de pegamento",
+    "Presión de alimentación y ΔP estables, descartando obstrucción o fouling significativo",
+    "Sin cambios en cloro libre, ORP, pH o temperatura que justifiquen degradación de membranas por oxidación"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling orgánico o biológico en las membranas del tren T-04, no relacionado con el defecto del lote.",
+      "why_plausible": "El fouling puede aumentar la conductividad del permeado al reducir la eficiencia de rechazo y generar zonas de estancamiento. La estabilidad en ΔP y presión de alimentación no descarta fouling incipiente.",
+      "why_discardable": "No hay evidencia de aumento en turbidez, SDI o pérdida de presión diferencial. Además, el defecto específico del lote (glue line) está documentado y localizado en T-04, lo que no se explica por fouling general."
+    },
+    {
+      "hypothesis": "Daño físico en las membranas por manipulación incorrecta durante mantenimiento o instalación.",
+      "why_plausible": "Manipulación brusca o reapretado de cabezas podría dañar las membranas, especialmente en elementos con defectos previos. La pérdida de presión por tubo ligera (día -3) sugiere posible desajuste.",
+      "why_discardable": "El daño físico suele manifestarse con aumentos abruptos en conductividad o ΔP, no con una tendencia progresiva. Además, el defecto del lote (glue line) está documentado y es consistente con los síntomas observados."
+    },
+    {
+      "hypothesis": "Degradación química de las membranas por exposición a oxidantes no detectados en el pretratamiento.",
+      "why_plausible": "Aunque no hay cloro libre reportado, oxidantes como cloraminas o peróxidos podrían estar presentes en trazas y degradar las membranas con el tiempo, reduciendo su rechazo de sales.",
+      "why_discardable": "El ORP estable (+95 mV) y la ausencia de cloro libre (<0,02 mg/L) hacen poco probable la presencia de oxidantes. Además, la degradación química suele afectar a todas las membranas por igual, no solo a un lote específico."
+    }
+  ],
+  "requested_data": "Resultado de la autopsia del elemento extraído del tren T-04: estado de la línea de pegamento (glue line), integridad de la capa de barrera y presencia de delaminación o fisuras en la membrana.",
+  "recommended_action": "Suspender inmediatamente el tren T-04 y proceder con la autopsia del elemento extraído para confirmar el defecto en la glue line. Si se confirma, reemplazar los 5 elementos del lote afectado en T-04 con unidades nuevas del mismo modelo y lote no afectado. Ajustar la dosificación de antiincrustante a 3,5 ppm temporalmente para compensar la posible mayor sensibilidad de las membranas nuevas. Monitorear conductividad del permeado cada 2 horas en T-04 y en un tren de referencia (ej. T-01) durante 48 horas.",
+  "decision_change_condition": "Si la autopsia del elemento extraído del tren T-04 no muestra defectos en la glue line (ej. delaminación, fisuras o degradación de la capa de barrera) y la conductividad del permeado en T-04 se estabiliza sin reemplazo de elementos, entonces el diagnóstico cambiaría a un fallo no relacionado con el lote afectado (ej. fouling incipiente o daño físico menor).",
+  "confidence": 92
+}

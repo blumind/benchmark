@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-FOUL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:34:10Z",
+  "main_hypothesis": "Biofouling de las membranas RO de 1ª etapa, desencadenado por el paso de materia orgánica/nutrientes asociados al evento estacional de turbidez en captación, con proliferación bacteriana favorecida por la insuficiente barrera biocida (descloración con SBS) y posible aporte adicional de nutrientes del coagulante férrico incrementado, que ha generado biofilm en los espaciadores de las membranas de poliamida.",
+  "key_signals": [
+    "ATP en alimentación a RO de 8,5 ng/L frente a baseline de 1,2 ng/L (+600%), indicador directo de actividad biológica elevada",
+    "ΔP de 1ª etapa incrementado de 2,2 a 3,2 bar (+45% en 7 días), patrón típico de obstrucción de espaciadores por biofilm",
+    "SDI15 de 4,1 frente a baseline de 2,3 (+78%), indicando aumento de partículas/coloides/material biológico en la alimentación",
+    "Conductividad de permeado y rechazo salino estables (99,4%), lo que descarta daño de membrana o scaling (que típicamente aumentaría el paso de sales)",
+    "Caudal de alimentación estable a 850 m³/h, lo que confirma que el aumento de ΔP no se debe a cambio de caudal sino a resistencia hidráulica adicional en los elementos",
+    "Subida estacional de turbidez en captación (8→22 NTU) en día -21, aportando carga orgánica y nutrientes que favorecen crecimiento biológico",
+    "Parada de 6 h de la línea de SBS en día -3, que pudo permitir paso transitorio de cloro residual insuficiente para biocida pero que al restaurarse dejó condiciones reductoras favorables para biofilm ya establecido"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling coloidal/particulado por arrastre de flóculos de hierro del DAF debido al aumento de dosis de coagulante (2,8 mg/L Fe)",
+      "why_plausible": "El aumento de dosis de coagulante en día -14 coincide temporalmente con el inicio de la subida de ΔP. Un exceso de coagulante o una floculación deficiente puede generar micro-flóculos de hierro que atraviesan la UF y depositan en las membranas RO, elevando ΔP y SDI15.",
+      "why_discardable": "El fouling coloidal por hierro no explicaría el aumento dramático de ATP (+600%), que es un marcador específico de actividad biológica. Además, las membranas UF de PVDF deberían retener la mayor parte de los flóculos de hierro. Sin embargo, no se puede descartar completamente un componente mixto (biofouling + hierro coloidal)."
+    },
+    {
+      "hypothesis": "Daño oxidativo a membranas de poliamida por exposición transitoria a cloro libre durante la parada de SBS de 6 h en día -3",
+      "why_plausible": "La parada de la bomba de SBS durante 6 horas pudo permitir que cloro libre residual de la línea de pretratamiento alcanzara las membranas de poliamida, causando degradación parcial.",
+      "why_discardable": "Un daño oxidativo se manifestaría como aumento de conductividad de permeado y disminución del rechazo salino, pero ambos permanecen estables (380 µS/cm y 99,4%). Además, el cloro libre medido sigue siendo <0,02 mg/L y el ORP es estable en +180 mV, sin evidencia de condiciones oxidantes. El patrón de aumento de ΔP sin cambio en rechazo es inconsistente con daño oxidativo."
+    },
+    {
+      "hypothesis": "Scaling (incrustación mineral) en membranas de 1ª etapa",
+      "why_plausible": "Con 4 años de servicio y recovery del 45%, la concentración de sales en el rechazo podría favorecer precipitación de CaCO3, CaSO4 o sílice, especialmente si el antiescalante no está correctamente dosificado.",
+      "why_discardable": "El scaling típicamente se manifiesta primero en los últimos elementos de los tubos de presión con aumento de paso de sales (disminución de rechazo), pero el rechazo salino es estable en 99,4%. Además, el scaling no explica el aumento de ATP ni el SDI15 elevado. La tendencia aguda (+45% ΔP en 7 días) es más consistente con biofouling que con scaling, que suele ser más gradual."
+    }
+  ],
+  "requested_data": "Perfil de ΔP por posición de elemento dentro de los tubos de presión (ΔP del elemento de cabecera vs. elementos de cola), ya que el biofouling se concentra típicamente en los primeros elementos (cabecera) mientras que el scaling se concentra en los últimos elementos (cola), lo que permitiría discriminar definitivamente entre ambos mecanismos.",
+  "recommended_action": "Realizar una limpieza química alcalina de las membranas de 1ª etapa con solución de NaOH a pH 12,0 (máximo permitido por fabricante para poliamida) a temperatura de 35°C durante 60 minutos de recirculación, seguida de un remojo de 60 minutos adicionales. Si el fabricante lo permite, añadir 200 mg/L de un agente quelante tipo EDTA tetrasódico para potenciar la remoción de biofilm y depósitos orgánicos. Tras el enjuague, realizar una segunda etapa de limpieza ácida con ácido cítrico al 2% (w/v) a pH 2,0 durante 30 minutos para eliminar posibles depósitos de hierro coloidal del coagulante. Paralelamente, verificar la integridad y rendimiento de las membranas UF aguas arriba (test de integridad por presión de aire) y revisar la dosificación de coagulante en el DAF para asegurar que no hay arrastre de flóculos. Implementar dosificación de biocida no oxidante (por ejemplo, DBNPA a 20-50 mg/L durante 30 minutos) como tratamiento de choque periódico en la alimentación a RO, según recomendaciones del fabricante de membranas.",
+  "decision_change_condition": "Si el perfil de ΔP por posición mostrara que el aumento de presión diferencial se concentra exclusivamente en los últimos elementos de los tubos de presión (cola) y no en cabecera, y si además el análisis de la solución de limpieza revelara concentraciones elevadas de calcio, sulfato o sílice sin componente orgánico/biológico significativo, cambiaría el diagnóstico a scaling mineral y recomendaría limpieza ácida como paso primario con revisión de la dosificación de antiescalante.",
+  "confidence": 82
+}

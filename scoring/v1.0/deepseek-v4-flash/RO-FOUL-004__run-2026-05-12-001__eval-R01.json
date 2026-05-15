@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-004-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-004",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling lead elements por phytoplankton bloom + TEP + organic'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ΔP cabeza + TOC + TEP + clorofila + bloom."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (SCAL, particulate, Fe coloidal) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP dos pasos: alcalino NaOH+Na-DSS 60 min + ácido HCl 0.2% — protocolo completo, sin oxidantes a RO."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide ATP feed — discriminador bio pero no el trigger gold (taxonomía/autopsia FTIR)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Specific: ATP <10 pg/mL → particulate."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

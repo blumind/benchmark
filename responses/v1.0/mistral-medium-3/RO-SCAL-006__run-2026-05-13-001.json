@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:24:55Z",
+  "main_hypothesis": "Incomplete ripening of the greensand filter after media replacement, leading to inadequate Fe/Mn removal and subsequent fouling of RO membranes.",
+  "key_signals": [
+    "Increase in Fe and Mn levels in RO feedwater (0.18 mg/L and 0.11 mg/L respectively)",
+    "Marked increase in ΔP across stage 2 of RO (1.8 bar from baseline 0.8 bar)",
+    "Visual inspection of cartridges showing light brown deposits",
+    "Recent greensand media replacement with incomplete ripening cycle"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Inadequate acidification due to H₂SO₄ dosing pump maintenance, leading to scaling.",
+      "why_plausible": "pH increased to 6.8 from baseline 6.5, and alkalinity in reject increased.",
+      "why_discardable": "Calcium rejection is stable, and the primary issue is ΔP increase, not scaling symptoms."
+    },
+    {
+      "hypothesis": "Insufficient KMnO₄ dosing leading to poor oxidation of Fe/Mn.",
+      "why_plausible": "Fe and Mn levels in RO feedwater have increased despite correct KMnO₄ dosage.",
+      "why_discardable": "KMnO₄ dosage is reported as correct, and the issue started after greensand filter media replacement."
+    }
+  ],
+  "requested_data": "Iron and manganese levels in the RO feedwater immediately after the greensand filter replacement (-35 days).",
+  "recommended_action": "Perform a full ripening cycle on the greensand filter that underwent media replacement, followed by a backwash and rinse to ensure proper Fe/Mn removal.",
+  "decision_change_condition": "If the Fe and Mn levels in the RO feedwater were high immediately after the greensand filter replacement, the main hypothesis would change to insufficient KMnO₄ dosing.",
+  "confidence": 85
+}

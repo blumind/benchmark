@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-NOWE-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:00:53Z",
+  "main_hypothesis": "Incomplete removal of sodium bisulfite (SBS) preservative during pre-arranque flush, leading to residual SBS in the feedwater causing reducing conditions, membrane fouling, and reduced salt rejection.",
+  "key_signals": [
+    "ORP alimentación y permeado anómalamente bajo (-120 mV y -180 mV, respectivamente)",
+    "Sulfito residual en permeado elevado (8,5 mg/L)",
+    "Rechazo de sales bajo (85,3 %) y tendencia de mejora lenta",
+    "Conductividad de permeado alta (850 µS/cm) y tendencia de mejora lenta",
+    "Presión de alimentación elevada (16,8 bar) y tendencia al alza",
+    "Caudal de permeado bajo (220 m³/h) y tendencia de mejora lenta",
+    "Preservación con SBS al 1,5 % p/p tras cambios de agua en bastidor (días -3 y -2)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biological fouling due to inadequate preservation or post-preservation contamination during the 8-day shutdown.",
+      "why_plausible": "Prolonged shutdown without oxidant could allow biofilm growth; low ORP suggests reducing conditions favorable for microbes.",
+      "why_discardable": "No evidence of biofilm (e.g., pressure drop increase in stage 2, organic carbon spikes, or microbial counts). ORP and sulfite residuals point to chemical reducing agent rather than biological activity. Biological fouling typically shows increasing ΔP and organic signatures, which are not reported."
+    },
+    {
+      "hypothesis": "Scaling due to insufficient anti-scalant dosing or pH shift during shutdown/startup.",
+      "why_plausible": "High recovery (78 %) and TDS (3,800 mg/L) make scaling plausible; pH stable but anti-scalant dosing not reported post-shutdown.",
+      "why_discardable": "No reported pH shift, and scaling would typically show increasing ΔP and stable or improving salt rejection (not the case here). ORP and sulfite residuals are inconsistent with scaling mechanisms."
+    },
+    {
+      "hypothesis": "Oxidant demand from residual organic matter or iron/manganese in feedwater causing membrane damage or fouling.",
+      "why_plausible": "Feedwater from well may contain reduced species; low ORP suggests reducing conditions, but no oxidant is dosed.",
+      "why_discardable": "No evidence of oxidant demand (e.g., chlorine residual drop, iron/manganese breakthrough). ORP and sulfite residuals indicate presence of SBS, not oxidant demand. Conductivity and rejection trends are inconsistent with membrane damage."
+    },
+    {
+      "hypothesis": "Inadequate flushing of SBS preservative leading to chemical reduction of membrane surface or fouling layer.",
+      "why_plausible": "SBS is a strong reducing agent; incomplete flushing could leave residual SBS in feedwater, reducing ORP and affecting membrane performance.",
+      "why_discardable": "This is a variant of the main hypothesis and overlaps significantly. The main hypothesis is more specific: incomplete removal of SBS during pre-arranque flush, with supporting evidence from sulfite residual in permeate and ORP anomalies."
+    }
+  ],
+  "requested_data": "Concentración de sulfito en alimentación (mg/L) inmediatamente antes del arranque del bastidor.",
+  "recommended_action": "Realizar un aclarado intensivo del bastidor con agua bruta a bajo flujo (50 % caudal nominal) durante 30 minutos, seguido de un aclarado con permeado durante 15 minutos. Dosificar hipoclorito sódico (NaClO) a 1 mg/L como Cl2 en alimentación durante el aclarado para oxidar el SBS residual. Monitorear ORP en alimentación y permeado hasta alcanzar valores > +100 mV. Tras aclarado, reiniciar operación con antiincrustante al 2 ppm y ajustar presión de alimentación a 14,5 bar.",
+  "decision_change_condition": "Si la concentración de sulfito en alimentación antes del arranque es < 0,5 mg/L y los valores de ORP en alimentación y permeado se normalizan (> +100 mV) tras el aclarado sin dosificación de hipoclorito, entonces el diagnóstico cambiaría a posible contaminación biológica residual o error en la preservación inicial.",
+  "confidence": 92
+}

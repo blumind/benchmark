@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:39:08Z",
+  "main_hypothesis": "Bioensuciamiento (biofouling) en etapa 1 de la primera pasada, originado por una carga orgánica/biológica elevada que atravesó el pretratamiento durante el periodo de DAF degradada tras el temporal",
+  "key_signals": [
+    "ATP en alimentación RO subió de 80 a 1.200 pg/mL (×15)",
+    "TOC en alimentación duplicado (1,4 → 2,8 mg/L)",
+    "SDI15 post-cartuchos subió de 2,5 a 4,8 desde día -8",
+    "ΔP etapa 1 más que duplicado (1,2 → 2,8 bar) mientras ΔP etapa 2 permanece estable, patrón típico de fouling frontal",
+    "Caída de caudal permeado 8% y ligero aumento de conductividad de permeado (compactación/fouling de la capa frontal)",
+    "Secuencia temporal: mar gruesa día -14 → DAF al 60% días -12 a -8 → inicio de subida de SDI día -8",
+    "Cloro libre <0,02 mg/L antes RO (no hay efecto biocida residual, ambiente propicio a crecimiento microbiano)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento coloidal/particulado (sílice-aluminosilicatos, arcillas) arrastrado durante el temporal y filtración deficiente",
+      "why_plausible": "Turbidez DAF puntual 1,8 NTU, SDI elevado y ΔP concentrado en etapa 1 son compatibles con fouling particulado en cabeza",
+      "why_discardable": "La elevación de ATP ×15 y TOC ×2 apuntan claramente a componente biológico/orgánico; el fouling puramente coloidal no explicaría el salto de ATP"
+    },
+    {
+      "hypothesis": "Scaling (CaCO3 u otras sales) en etapa 1",
+      "why_plausible": "Aumento reciente de presión y conductividad de permeado podría sugerir incrustación",
+      "why_discardable": "El scaling típicamente afecta a la última etapa (mayor concentración), no a la etapa 1; pH estable, recovery 45% sin cambios y antiincrustante incluso reforzado lo hace poco probable"
+    },
+    {
+      "hypothesis": "Sobredosificación/precipitación del antiincrustante poliacrílico combinado con coagulante residual de la DAF, formando geles orgánicos",
+      "why_plausible": "Se subió la dosis a 3,2 ppm el día -3; los policarboxilatos pueden formar complejos con cationes/coagulante catiónico residual",
+      "why_discardable": "La subida de ΔP y SDI comenzó el día -8, antes del incremento de antiincrustante; ATP elevado no se explica por este mecanismo"
+    }
+  ],
+  "requested_data": "Análisis de autopsia no destructiva o hisopado de un elemento líder de etapa 1: relación pérdida por calcinación (LOI) vs material inorgánico, y recuento microbiológico/proteínas en el depósito (mg/cm²)",
+  "recommended_action": "Programar CIP en dos etapas en el bastidor afectado siguiendo manual del fabricante: (1) limpieza alcalina con NaOH a pH 11,5–12 + EDTA 1,0% p/p + surfactante (p.ej. Na-DSS 0,025%) a 30–35 °C, recirculación 1 h + remojo 4–8 h + recirculación 1 h; (2) enjuague y limpieza ácida con ácido cítrico 2% p/p ajustado a pH 2,5 con NaOH si procede. Mientras tanto: reducir flujo del tren afectado un 10–15%, restaurar capacidad plena de DAF y verificar dosis de coagulante, reforzar monitorización de ATP/SDI tras cartuchos diariamente, y evaluar choque preventivo con bisulfito (DBNPA 15–20 mg/L durante 30 min, conforme a compatibilidad de membrana indicada por fabricante) en línea de alimentación. No incrementar cloración directa por riesgo de oxidación de membranas.",
+  "decision_change_condition": "Si la autopsia/hisopado muestra predominio inorgánico (Si, Fe, Al) con LOI <35% y ATP/biomasa bajos en el depósito, la hipótesis principal cambiaría a fouling coloidal-particulado y la limpieza primaria sería ácida en lugar de alcalina-biocida",
+  "confidence": 78
+}

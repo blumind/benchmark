@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-005",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'nuevo programa antiincrustante fosfonado 1.2 mg/L sin verificación para esta agua + alta dureza/alcalinidad + 78% recovery insuficiente' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "6 alts (complejo Ca-fosfonato, fallo ablandador, coloidal, biofouling)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP ácido HCl pH 2 60 min + operar recovery max 70% + restituir antiincrustante 3.0 mg/L producto previo — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide incremento Ca en retorno CIP ácido vs blanco — discriminador específico match."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: CIP ácido sin incremento Ca → debilita hipótesis CaCO3."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

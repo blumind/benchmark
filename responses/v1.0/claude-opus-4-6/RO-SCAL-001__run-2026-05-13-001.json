@@ -1,0 +1,49 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:51:25Z",
+  "main_hypothesis": "Incrustación por CaCO₃ en la etapa 2 de la membrana RO, causada por el fallo de la bomba peristáltica de antiincrustante (manguera no cebada correctamente tras sustitución en día -25, provocando cavitación/pérdida de caudal) combinado con la elevación no corregida del pH de alimentación de 6,7 a 7,3 (día -15), lo que elevó drásticamente el LSI en el concentrado de la segunda etapa muy por encima del umbral de precipitación de carbonato cálcico.",
+  "key_signals": [
+    "Caudal de antiincrustante medido 0,3 L/h frente a consigna de 1,8 L/h — subdosificación del 83 %, confirmada por trasiego del tanque (día -2)",
+    "pH de alimentación a RO subió de 6,7 a 7,3 tras mantenimiento de bomba ácida (día -15) y no se restauró la consigna, elevando el LSI del rechazo significativamente (con Ca 380 mg/L y alcalinidad 280 mg/L, un LSI>>0,3 en rechazo es altamente incrustante)",
+    "ΔP etapa 2 aumentó de 0,8 bar (baseline) a 2,1 bar (incremento >160 %), mientras ΔP etapa 1 permanece estable — patrón clásico de incrustación mineral en la cola del sistema donde la concentración de sales es máxima",
+    "Presión de alimentación subió de 15,8 a 18,5 bar para compensar la pérdida de permeabilidad por fouling/scaling",
+    "Caudal de permeado bajó un 8 % (de 500 a 460 m³/h) indicando pérdida de flujo por bloqueo de membrana",
+    "Conductividad del permeado subió de 80 a 92 µS/cm, consistente con aumento de paso de sal por concentración polarizada y/o daño incipiente por cristales de CaCO₃",
+    "Alcalinidad del rechazo subió ligeramente (1.110 → 1.220 mg/L CaCO₃), coherente con mayor disponibilidad de carbonato a pH más alto",
+    "Operario reportó espuma y pulsación irregular de la bomba peristáltica (día -10), indicativo de cavitación por aire atrapado en la manguera no cebada",
+    "El cambio de cartuchos (día -5) no alivió el ΔP, descartando fouling en el pretratamiento como causa",
+    "La cronología coincide: sustitución de manguera sin cebado (día -25) → inicio de subida de ΔP etapa 2 (día -18) → elevación de pH (día -15) → aceleración del scaling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling en etapa 2",
+      "why_plausible": "El biofouling también produce aumento de ΔP preferentemente en la segunda etapa y pérdida de flujo. La subdosificación de antiincrustante podría enmascarar un problema biológico subyacente. El agua de pozo costero puede contener microorganismos.",
+      "why_discardable": "El biofouling típicamente afecta primero la etapa 1 (mayor nutriente disponible) y produce aumento de ΔP en ambas etapas. Aquí la etapa 1 está estable. Además, la cronología correlaciona perfectamente con el fallo de dosificación de antiincrustante y la subida de pH, no con un evento biológico. No se reportan olores ni aumento de SDI. El cloro libre está controlado, lo que sugiere pretratamiento biológico adecuado."
+    },
+    {
+      "hypothesis": "Incrustación por sílice en etapa 2",
+      "why_plausible": "Con recovery 80 % y sílice de alimentación 18 mg/L, la sílice en rechazo alcanza ~89 mg/L, cercana al límite de solubilidad (~120-150 mg/L a pH neutro). La subdosificación de antiincrustante podría permitir precipitación de sílice.",
+      "why_discardable": "La sílice en rechazo (89 mg/L) está por debajo del límite de solubilidad típico y se mantiene estable. El antiincrustante dosificado es específico para CaCO₃, no para sílice, por lo que su subdosificación no cambiaría el riesgo de sílice. Además, la subida de pH favorece la solubilidad de sílice (no su precipitación), lo cual es inconsistente con esta hipótesis."
+    },
+    {
+      "hypothesis": "Incrustación por sulfato de calcio (CaSO₄) debido a sobredosificación previa de H₂SO₄",
+      "why_plausible": "La acidificación con H₂SO₄ incrementa la concentración de sulfato en el agua de alimentación. Con Ca 380 mg/L y recovery 80 %, el producto iónico de CaSO₄ en el rechazo podría acercarse a la saturación.",
+      "why_discardable": "El pH actual es 7,3 (más alto que el baseline de 6,7), lo que indica menor dosificación de ácido sulfúrico, no mayor. Esto reduce el aporte de sulfato. Además, el CaSO₄ es mucho menos sensible al pH que el CaCO₃, y el patrón temporal correlaciona con la pérdida de antiincrustante y subida de pH, no con un cambio en sulfato."
+    },
+    {
+      "hypothesis": "Compactación mecánica de membranas por sobrepresión",
+      "why_plausible": "La presión de alimentación ha subido a 18,5 bar. Si el sistema de control aumentó la presión para mantener producción, podría haber compactación irreversible de las membranas, especialmente en etapa 2 donde la presión neta es mayor.",
+      "why_discardable": "Las membranas brackish típicamente toleran hasta 41 bar; 18,5 bar está dentro del rango operativo. La compactación produciría pérdida de flujo uniforme en ambas etapas, no un aumento selectivo de ΔP en etapa 2. Además, la compactación no explica el aumento de conductividad del permeado ni la cronología asociada al fallo de dosificación."
+    }
+  ],
+  "requested_data": "Análisis de autopsia o inspección visual de un elemento de membrana de la última posición de la etapa 2 (tubo de cola), incluyendo análisis por difracción de rayos X (XRD) o espectroscopía de energía dispersiva (EDS) del depósito para confirmar composición (CaCO₃ vs. otros precipitados).",
+  "recommended_action": "1) INMEDIATO: Reducir recovery al 70 % para disminuir la sobresaturación en el rechazo. 2) Corregir el pH de alimentación a la consigna de 6,7 verificando y reajustando la bomba dosificadora de H₂SO₄ (solución al 98 % w/w, ajustar caudal según demanda para alcanzar pH 6,7 ± 0,1 medido en línea antes de la RO). 3) Reparar la bomba peristáltica de antiincrustante: purgar aire de la manguera, ejecutar procedimiento completo de cebado, verificar caudal de 1,8 L/h con medición volumétrica directa, y confirmar ausencia de pulsación irregular. 4) Realizar limpieza química (CIP) de la etapa 2 con solución de ácido clorhídrico al 0,2 % (pH 1,0-2,0) a temperatura de 25-30 °C durante 2-4 horas en recirculación a bajo caudal (según recomendación del fabricante de membranas), seguida de enjuague con permeado hasta pH neutro. El ácido clorhídrico es el agente estándar para disolución de incrustaciones de CaCO₃. 5) Tras el CIP, verificar normalización de ΔP etapa 2, flujo de permeado y conductividad antes de retornar a recovery 80 %.",
+  "decision_change_condition": "Si la autopsia o análisis del depósito de membrana revelara composición predominantemente orgánica/biológica (polisacáridos, biomasa) en lugar de CaCO₃ mineral, cambiaría el diagnóstico a biofouling y la limpieza recomendada pasaría a ser alcalina (NaOH pH 12 + detergente) en lugar de ácida. Igualmente, si al restaurar el caudal de antiincrustante a 1,8 L/h y el pH a 6,7 no se observara estabilización del ΔP en etapa 2 tras el CIP ácido, reconsideraría la hipótesis hacia fouling coloidal o biológico.",
+  "confidence": 92
+}

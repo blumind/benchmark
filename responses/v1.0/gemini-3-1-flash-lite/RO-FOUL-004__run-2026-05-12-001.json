@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-FOUL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:17:02Z",
+  "main_hypothesis": "Biofouling orgánico severo en los elementos líderes de la etapa 1 causado por la proliferación de fitoplancton y la acumulación de partículas poliméricas extracelulares (TEP).",
+  "key_signals": [
+    "Aumento brusco de ΔP en la cabeza de la etapa 1 (3,1 bar vs 1,3 bar baseline)",
+    "Incremento marcado de TOC en alimentación (3,4 mg/L vs 1,2 mg/L)",
+    "Elevada concentración de clorofila-a (28 µg/L) y TEP (320 µg/L Xeq)",
+    "Presencia de filamentos visibles y olor terroso en la alimentación",
+    "Aumento del SDI tras UF (3,1 vs 2,3)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento inorgánico (scaling) por carbonato de calcio o sulfatos.",
+      "why_plausible": "El aumento de la presión de alimentación y la caída de caudal de permeado son síntomas comunes de incrustación.",
+      "why_discardable": "La conductividad del permeado se mantiene estable; el scaling suele provocar un aumento inmediato en el paso de sales (salto de conductividad) que no se observa aquí."
+    },
+    {
+      "hypothesis": "Fallo en la integridad de las membranas de ultrafiltración (UF).",
+      "why_plausible": "El aumento del SDI tras UF sugiere que el pretratamiento está dejando pasar material coloidal.",
+      "why_discardable": "El aumento de ΔP es específico de la cabeza de la etapa 1 de RO, lo cual es característico de biofouling por TEP/fitoplancton, mientras que un fallo de UF causaría un ensuciamiento más distribuido o rápido en todo el tren."
+    }
+  ],
+  "requested_data": "Análisis de microscopía de los elementos líderes de la etapa 1 para identificar la presencia de biopelícula o especies de algas específicas.",
+  "recommended_action": "Realizar un lavado químico (CIP) de emergencia en los trenes afectados utilizando una solución alcalina (pH 11-12) con detergente tensioactivo (ej. 0,1% p/p de dodecil sulfato sódico) para solubilizar los TEP y la materia orgánica, seguido de una desinfección no oxidante compatible con las membranas.",
+  "decision_change_condition": "Si la conductividad del permeado aumentara significativamente (> 10% sobre baseline) junto con el ΔP, mi diagnóstico cambiaría a una combinación de biofouling con degradación física o scaling de las membranas.",
+  "confidence": 90
+}

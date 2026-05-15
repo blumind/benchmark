@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-FOUL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:40:45Z",
+  "main_hypothesis": "Biofouling orgánico acelerado en los elementos de cabeza de la etapa 1, causado por el paso masivo de partículas exopoliméricas transparentes (TEP) y materia orgánica asociada a un bloom de fitoplancton, que no fue retenida eficazmente por la UF ni los cartuchos de 1 µm debido a su naturaleza coloidal/gel deformable.",
+  "key_signals": [
+    "Clorofila-a en captación disparada de 1,5 a 28 µg/L, confirmando un bloom algal costero activo",
+    "TEP a 320 µg/L Xeq frente a <50 µg/L Xeq de referencia: las TEP son precursores directos de biofouling en membranas RO al formar una capa gel adhesiva",
+    "TOC en alimentación a RO triplicado (3,4 vs 1,2 mg/L), indicando que la materia orgánica del bloom atraviesa el pretratamiento",
+    "ΔP de etapa 1 cabeza subió de 1,3 a 3,1 bar (incremento del 138 %) con subida brusca en 7 días, patrón típico de fouling orgánico/biológico en elementos de cabeza",
+    "ΔP de etapa 1 cola estable (0,8 vs 0,7 bar), confirmando que el ensuciamiento se concentra en los primeros elementos del vessel — patrón clásico de biofouling/organic fouling",
+    "Filamentos visibles y olor terroso en sala de bastidores (día -12), indicativos de materia biológica/algal en la alimentación",
+    "SDI₁₅ post-UF subió de 2,3 a 3,1, evidenciando que la UF no retiene completamente la carga coloidal/TEP del bloom",
+    "Conductividad de permeado prácticamente estable (410 vs 395 µS/cm), descartando daño de membrana o degradación química significativa; el fouling es predominantemente hidráulico",
+    "Cronología coherente: aviso de bloom (día -30) → aumento clorofila (día -25) → aumento SDI (día -18) → filamentos (día -12) → subida ΔP (día -10) → aceleración ΔP (día -2)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling inorgánico (CaCO₃, BaSO₄ o SiO₂) en elementos de cabeza",
+      "why_plausible": "Un aumento de ΔP en cabeza puede ocurrir por precipitación de sales poco solubles si el LSI o la saturación de sulfatos cambia; el pH de 8,1 podría favorecer CaCO₃.",
+      "why_discardable": "El scaling típicamente afecta más a los elementos de cola (mayor concentración de sales) y no a los de cabeza. Además, el ΔP de cola es estable, la conductividad de alimentación no ha cambiado significativamente, y no se reportan cambios en dosificación de antiescalante ni en recovery. La correlación temporal con el bloom algal y las TEP apunta claramente a fouling orgánico."
+    },
+    {
+      "hypothesis": "Fouling coloidal inorgánico (sílice coloidal, hidróxidos de hierro del coagulante FeCl₃)",
+      "why_plausible": "Un arrastre de hierro coloidal por sobredosificación de FeCl₃ o fallo de la UF podría causar aumento de ΔP en cabeza y subida de SDI. La dosis de FeCl₃ pudo no ajustarse al cambio de calidad del agua cruda.",
+      "why_discardable": "La dosis de FeCl₃ reportada (1,5 mg/L) es baja y no se reportan cambios en la dosificación. El TOC elevado y las TEP son indicadores específicos de materia orgánica biogénica, no de coloides de hierro. El patrón temporal sigue al bloom, no a un cambio de dosificación química."
+    },
+    {
+      "hypothesis": "Fallo mecánico parcial de cartuchos de 1 µm (rotura o bypass) permitiendo paso de partículas gruesas",
+      "why_plausible": "Un cartucho roto permitiría el paso de partículas que normalmente serían retenidas, causando fouling rápido en cabeza de los vessels.",
+      "why_discardable": "Un fallo de cartuchos causaría un aumento más abrupto y no correlacionado temporalmente con el bloom. Además, las TEP son partículas deformables de tamaño submicrométrico que atraviesan cartuchos de 1 µm incluso intactos. El SDI post-UF ya muestra degradación, indicando que el problema está aguas arriba de los cartuchos."
+    },
+    {
+      "hypothesis": "Degradación oxidativa de membranas por exposición accidental a cloro libre",
+      "why_plausible": "Si hubiera habido un choque CIP reciente con hipoclorito mal neutralizado, podría haber dañado la capa activa de poliamida, alterando el rendimiento.",
+      "why_discardable": "El cloro libre antes de RO es <0,02 mg/L (estable), la conductividad de permeado apenas ha variado (410 vs 395 µS/cm) — una degradación oxidativa produciría un aumento marcado de paso de sal, no un aumento de ΔP con rechazo de sal conservado."
+    }
+  ],
+  "requested_data": "Resultado de autopsia de un elemento de cabeza del tren más afectado, incluyendo análisis FTIR y pérdida por ignición (LOI) del depósito, para confirmar la naturaleza orgánica/biológica del fouling y descartar componentes inorgánicos (hierro, sílice, carbonatos).",
+  "recommended_action": "Realizar inmediatamente un CIP alcalino a los trenes más afectados con solución de NaOH al 0,1 % p/v (pH 12,0 ± 0,2) a 35 °C durante 1 hora de recirculación, seguido de un segundo paso con solución de NaOH 0,1 % p/v + Na-SDS (dodecilsulfato sódico) a 0,025 % p/v o, preferiblemente, un limpiador enzimático/surfactante aprobado por el fabricante de membranas (p. ej., solución de 0,3 % p/v de limpiador tipo Avista RoClean L403 o equivalente) a pH 12 y 35 °C durante 2 horas, para disolver la matriz de TEP y biofilm. Paralelamente: (1) aumentar la dosis de FeCl₃ a 3-4 mg/L para mejorar la coagulación de materia orgánica del bloom, (2) reducir el intervalo de retrolavado de UF a 15-18 minutos y realizar un CEB (chemically enhanced backwash) con NaOCl a 200 mg/L cada 6 horas, (3) considerar la dosificación de bisulfito de sodio (NaHSO₃) a 3-5 mg/L en la alimentación a RO como biostático temporal, y (4) monitorizar diariamente TOC, SDI₁₅ y TEP hasta que el bloom remita.",
+  "decision_change_condition": "Si la autopsia del elemento de cabeza revelara un depósito predominantemente inorgánico (>60 % en peso de Fe, Si o Ca en el análisis elemental, con LOI <30 %), cambiaría el diagnóstico a fouling coloidal inorgánico (probablemente arrastre de hierro del coagulante o sílice coloidal) y la estrategia de limpieza se modificaría a un CIP ácido con ácido cítrico al 2 % p/v a pH 2,0.",
+  "confidence": 92
+}

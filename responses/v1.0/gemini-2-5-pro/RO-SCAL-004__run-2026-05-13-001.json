@@ -1,0 +1,38 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:13:09Z",
+  "main_hypothesis": "Calcium sulfate (CaSO₄) scaling, concentrated in the third stage, caused by an insufficient antiscalant dosage for the increased recovery rate and higher feed sulfate levels.",
+  "key_signals": [
+    "Marked and rapid increase of pressure drop (ΔP) specifically in the third stage (from 0.5 bar to 1.5 bar), which is the point of highest salt concentration.",
+    "Calculated supersaturation of calcium sulfate (Saturation Index ≈ 1.1) in the reject stream, providing direct chemical evidence of scaling risk.",
+    "The operational decision to increase recovery from 80% to 83% without recalculating and adjusting the antiscalant dosage.",
+    "The ineffectiveness of the standard alkaline CIP to permanently resolve the high ΔP, which is expected for mineral scales like calcium sulfate that are not soluble at high pH."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Silica scaling.",
+      "why_plausible": "Silica is present in the feed (22 mg/L) and concentrates in the reject (130 mg/L). Scaling would manifest in the final stage where concentration is highest.",
+      "why_discardable": "The reject silica concentration is likely below the solubility limit for the operating pH (6.8) and temperature (28.5 °C). Furthermore, a standard alkaline CIP should have been more effective at removing or controlling silica deposits than what was observed."
+    },
+    {
+      "hypothesis": "Biofouling.",
+      "why_plausible": "The plant treats reclaimed water, and biofouling typically affects the tail-end elements of an RO system most severely due to higher nutrient concentration and lower flow velocities.",
+      "why_discardable": "The feed is UF permeate with low TOC (1.8 mg/L), making severe biofouling less probable. The extremely rapid return of high ΔP after a CIP points more towards mineral scaling providing a rough surface for growth, rather than biofouling being the primary root cause. The strong evidence for CaSO₄ supersaturation is a more direct explanation."
+    },
+    {
+      "hypothesis": "Calcium carbonate (CaCO₃) scaling.",
+      "why_plausible": "Calcium and alkalinity are present in the feed water, which are the precursors for calcium carbonate scale.",
+      "why_discardable": "The feed pH is actively controlled at 6.8 with sulfuric acid, a measure specifically designed to prevent calcium carbonate precipitation. At this pH, the Langelier Saturation Index (LSI) would be strongly negative, making carbonate scaling highly unlikely."
+    }
+  ],
+  "requested_data": "Chemical and microscopic analysis of the foulant/scale from a dissected lead membrane element of the third stage.",
+  "recommended_action": "Immediately reduce the plant recovery rate to the historical baseline of 80% to halt further scale formation. Subsequently, perform a specialized cleaning-in-place (CIP) using a chelant-based formulation effective for calcium sulfate scale removal, such as one containing EDTA.",
+  "decision_change_condition": "If a membrane autopsy of an element from the third stage reveals the predominant foulant is biological matter or polymerized silica, not crystalline calcium sulfate.",
+  "confidence": 95
+}

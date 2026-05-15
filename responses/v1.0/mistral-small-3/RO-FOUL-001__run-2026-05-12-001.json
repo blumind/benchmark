@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-FOUL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:43:39Z",
+  "main_hypothesis": "Fouling of 1st-stage RO membranes due to incomplete removal of organic matter in pre-treatment, evidenced by elevated ATP and SDI15 in RO feed despite stable salt rejection and chlorine levels.",
+  "key_signals": [
+    "ΔP 1ª etapa increased by 45% (3.2 bar vs baseline 2.2 bar)",
+    "ATP in RO feed increased by 600% (8.5 ng/L vs baseline 1.2 ng/L)",
+    "SDI15 in RO feed increased by 78% (4.1 vs baseline 2.3)",
+    "Subida estacional de turbidez en captación (8 → 22 NTU) on day -21",
+    "Aumento de dosis de coagulante en DAF (de 1,5 a 2,8 mg/L como Fe) on day -14"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling due to residual chlorine depletion in SBS line during maintenance shutdown (day -3).",
+      "why_plausible": "Chlorine is critical for biofouling control; a 6-hour SBS shutdown could allow biofilm regrowth or organic accumulation, leading to increased ATP and SDI15.",
+      "why_discardable": "Chlorine levels are stable (<0.02 mg/L) and ORP is stable (+180 mV), indicating no residual chlorine depletion or biofilm activity. ATP and SDI15 increases are more consistent with organic fouling than biofouling."
+    },
+    {
+      "hypothesis": "Scaling due to insufficient antiescalante dosage or changes in feedwater chemistry.",
+      "why_plausible": "Scaling can increase ΔP and reduce membrane performance, though salt rejection is stable here.",
+      "why_discardable": "Salt rejection is stable at 99.4%, and scaling typically causes a gradual decline in rejection. No changes in feedwater chemistry or antiescalante dosage are reported."
+    },
+    {
+      "hypothesis": "Particulate fouling due to inadequate UF membrane performance or DAF malfunction.",
+      "why_plausible": "Increased turbidity in feedwater (8 → 22 NTU) and higher coagulant dose suggest potential stress on DAF/UF, leading to particulate breakthrough.",
+      "why_discardable": "UF membranes are hydrophilic PVDF with stable performance, and SDI15 is elevated (4.1), which is more indicative of organic fouling than particulate fouling. ΔP increase is gradual, not sudden as expected with particulate fouling."
+    }
+  ],
+  "requested_data": "Diferencia de presión (ΔP) entre entrada y salida de cada módulo de la 1ª etapa RO (bar).",
+  "recommended_action": "Realizar limpieza química de la 1ª etapa RO con solución de limpieza alcalina (pH 10-11, 1-2% de dodecil sulfato de sodio) a 30-35 °C durante 4-6 horas, seguido de enjuague con permeado. Verificar que la dosificación de antiescalante sea correcta (2-3 mg/L) y ajustar si es necesario.",
+  "decision_change_condition": "Si la ΔP entre módulos de la 1ª etapa RO muestra un patrón de obstrucción localizada (ej. módulos finales con ΔP >5 bar) en lugar de un aumento uniforme, se reconsideraría la hipótesis de fouling orgánico y se evaluaría la presencia de incrustaciones o daño en membranas.",
+  "confidence": 90
+}

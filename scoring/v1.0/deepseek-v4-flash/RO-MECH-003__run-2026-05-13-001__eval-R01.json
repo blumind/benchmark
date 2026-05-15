@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-003",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'failure O-ring seal cap pressure vessel Tube 2 + feed water bypass' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (cracked FRP, damaged membrane OXID/MECH, permeate tube connector)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Replace O-ring cap Tube 2 + EPDM + silicone grease + torque + reinstall — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide photo/inspection O-ring removed — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: leak persiste tras O-ring nuevo → FRP/permeate tube switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

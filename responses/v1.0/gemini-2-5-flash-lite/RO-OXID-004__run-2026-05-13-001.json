@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:00:12Z",
+  "main_hypothesis": "Degradación de membranas de ósmosis inversa debido a la penetración de cloramina, exacerbada por la saturación de los lechos de carbón activado.",
+  "key_signals": [
+    "Conductividad permeado subida progresiva (280 µS/cm vs 65 µS/cm baseline)",
+    "Rechazo de sales (calculado) bajada drástica (80,7 % vs 95,5 % baseline)",
+    "Cloramina total alimentación a RO subida (0,38 mg/L vs < 0,05 mg/L baseline)",
+    "Cloramina tras CAG-1 subida (0,42 mg/L vs < 0,05 mg/L baseline)",
+    "Cloramina tras CAG-2 subida (0,38 mg/L vs < 0,05 mg/L baseline)",
+    "ORP alimentación a RO subida marcada (+210 mV vs +60 mV baseline)",
+    "Caudal permeado planta bajada del 6 % (470 m³/h vs 500 m³/h baseline)",
+    "ΔP etapa 1 subida (1,3 bar vs 1,2 bar baseline)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Envejecimiento normal de las membranas de ósmosis inversa.",
+      "why_plausible": "Las membranas tienen 26 meses de servicio, lo cual es una edad considerable para membranas de BWRO, y el envejecimiento natural puede causar una disminución en el rechazo de sales y un aumento en la conductividad del permeado. El operador inicialmente lo atribuyó a esto.",
+      "why_discardable": "El rápido deterioro observado, especialmente el aumento drástico en la conductividad del permeado y la caída en el rechazo de sales, es mucho más pronunciado de lo que se esperaría por envejecimiento normal en 26 meses. Además, la presencia y penetración de cloramina, evidenciada por las mediciones de cloramina y ORP, proporciona un mecanismo de degradación más agresivo y específico que explica la severidad del problema."
+    },
+    {
+      "hypothesis": "Fallo o bypass en el primer lecho de carbón activado (CAG-1).",
+      "why_plausible": "La cloramina está pasando a través de CAG-1 (0,42 mg/L vs <0,05 mg/L baseline), lo que indica que el primer lecho no está funcionando correctamente. Esto podría deberse a la saturación del medio o a un problema de channeling. El primer lecho se cambió hace 150 días, lo que podría ser un ciclo de vida normal para la carga de cloramina.",
+      "why_discardable": "Aunque CAG-1 no está eliminando la cloramina, CAG-2 tampoco lo está haciendo (0,38 mg/L vs <0,05 mg/L baseline), y la cloramina llega a la alimentación de RO. Esto sugiere que el problema de la cloramina no se limita a CAG-1, sino que ambos lechos están comprometidos o que la carga de cloramina excede la capacidad de ambos lechos. La degradación de membranas es el resultado final más crítico que se observa."
+    },
+    {
+      "hypothesis": "Problema con el segundo lecho de carbón activado (CAG-2).",
+      "why_plausible": "La cloramina está pasando a través de CAG-2 (0,38 mg/L vs <0,05 mg/L baseline), lo que indica que el segundo lecho tampoco está eliminando la cloramina. El segundo lecho se cambió hace 320 días, lo que podría indicar que está saturado o al final de su vida útil.",
+      "why_discardable": "Si bien CAG-2 no está funcionando, el problema principal es la cloramina que llega a las membranas y causa su degradación, lo cual se manifiesta en la alta conductividad del permeado y bajo rechazo de sales. El fallo de CAG-2 por sí solo no explica la degradación de las membranas, solo la presencia de cloramina en la alimentación de RO. La cloramina también está pasando por CAG-1, lo que sugiere un problema más amplio con la eliminación de cloramina."
+    }
+  ],
+  "requested_data": "Concentración de cloramina en la alimentación de RO antes de la dosificación de antiincrustante (mg/L Cl₂).",
+  "recommended_action": "Detener la operación de la planta BWRO. Realizar un lavado químico de las membranas con una solución de bisulfito de sodio (SBS) para neutralizar cualquier cloramina residual y luego un lavado con ácido cítrico o similar para eliminar depósitos y restaurar la superficie de la membrana. Si el lavado no restaura el rendimiento, considerar la sustitución de las membranas. Reemplazar el medio de ambos lechos de carbón activado y verificar la dosificación de SBS si se reanuda la operación con cloramina en la alimentación.",
+  "decision_change_condition": "Si la concentración de cloramina en la alimentación de RO fuera consistentemente baja (< 0.05 mg/L) a pesar de las mediciones actuales, y el test de elemento líder mostrara un rechazo de sales normal, entonces la hipótesis principal cambiaría a un fallo mecánico o de sellado en el bastidor de membranas o en los elementos individuales, o un problema de calibración de los sensores de conductividad.",
+  "confidence": 90
+}

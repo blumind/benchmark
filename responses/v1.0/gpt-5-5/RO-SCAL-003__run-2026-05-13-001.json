@@ -1,0 +1,53 @@
+{
+  "case_id": "RO-SCAL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:04:26Z",
+  "main_hypothesis": "Incrustación de sulfato de bario, posiblemente acompañada de sulfato de estroncio, en los elementos de cola de la etapa 1 del tren T-04 causada por pérdida local de inyección de antiincrustante durante aproximadamente 18 días tras quedar desenergizado el solenoide de la válvula de inyección.",
+  "key_signals": [
+    "El punto de inyección de antiincrustante del T-04 fue inspeccionado el día -5 y se confirmó que el solenoide estaba desenergizado y que el antiincrustante no entraba en ese tren.",
+    "El caudal global de antiincrustante medido permaneció estable, por lo que la pérdida fue local del T-04 y no visible desde la bomba dosificadora común.",
+    "La subida de ΔP está concentrada en la cola de la etapa 1: 2,3 bar frente a baseline de 0,9 bar, mientras la cabeza de etapa 1 permanece prácticamente estable.",
+    "La desviación comenzó progresivamente después del evento eléctrico: de 0,9 a 1,2 bar desde el día -16 y hasta 2,0 bar el día -8.",
+    "Otros trenes mantuvieron ΔP normal en la comparación cruzada del día -12, lo que apunta a una causa específica del T-04.",
+    "El agua presenta riesgo alto de sulfatos con bario: bario en captación 0,12 mg/L y sulfato 3.150 mg/L, con antiscalante específicamente formulado para inhibir bario y estroncio.",
+    "La corrección del cableado y restablecimiento de dosificación el día -3 no redujo el ΔP, consistente con incrustación ya precipitada y adherida.",
+    "Aumentó la presión de alimentación del tren de 60 a 67 bar y cayó el caudal de permeado 9 %, compatible con pérdida hidráulica y reducción de productividad por incrustación.",
+    "La conductividad de alimentación y temperatura se mantienen estables, descartando que el cambio principal sea una variación del agua bruta."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento biológico localizado en T-04.",
+      "why_plausible": "El biofouling puede producir incremento de ΔP, pérdida de caudal de permeado y aumento de presión de alimentación en membranas con 26 meses de servicio.",
+      "why_discardable": "El patrón dominante está en la cola de la etapa 1 y se correlaciona temporalmente con ausencia confirmada de antiincrustante en un agua con alto riesgo de BaSO4; además, otros trenes no muestran el mismo comportamiento y no se reporta deterioro del control de cloro antes de RO."
+    },
+    {
+      "hypothesis": "Ensuciamiento particulado o coloide por fallo de DAF, filtros bicapa o cartuchos.",
+      "why_plausible": "La entrada de partículas o coloides a RO puede elevar ΔP y reducir producción.",
+      "why_discardable": "Un problema de pretratamiento afectaría preferentemente la cabeza de la primera etapa y tendería a impactar varios trenes; aquí la cabeza está estable y el problema se concentra en la cola del T-04."
+    },
+    {
+      "hypothesis": "Subdosificación global de antiincrustante o fallo de la bomba dosificadora.",
+      "why_plausible": "Una subdosificación de antiincrustante frente a agua con bario y sulfato elevados puede provocar incrustación de sulfatos.",
+      "why_discardable": "El caudal medido global de antiincrustante se mantiene estable en 4,1–4,2 L/h y el incidente documentado fue una interrupción local en T-04; otros trenes conservaron ΔP normal."
+    },
+    {
+      "hypothesis": "Incrustación de carbonato cálcico o hidróxidos metálicos en la cola.",
+      "why_plausible": "Las sales poco solubles pueden precipitar más hacia la cola por concentración del rechazo y producir aumento de ΔP y pérdida de flujo.",
+      "why_discardable": "El caso destaca bario alto, sulfato alto y uso de antiincrustante específico para sulfatos; no se reportan cambios de pH ni datos de calcio, alcalinidad o metales que apunten preferentemente a carbonatos o hidróxidos."
+    },
+    {
+      "hypothesis": "Daño oxidativo de membranas por entrada de cloro.",
+      "why_plausible": "El daño por oxidante puede aumentar la conductividad del permeado.",
+      "why_discardable": "El cloro libre antes de RO se reporta estable en <0,02 mg/L y el síntoma principal es aumento localizado de ΔP en cola, no una pérdida generalizada de rechazo sin obstrucción hidráulica."
+    }
+  ],
+  "requested_data": "Composición mineral del depósito raspado del elemento de cola de etapa 1 del T-04 por SEM-EDS/XRD, reportando fracción másica de BaSO4 en % p/p.",
+  "recommended_action": "Sacar el tren T-04 de servicio, aislarlo y realizar un CIP específico para incrustación de sulfatos siguiendo el manual del fabricante: enjuague inicial con permeado, recirculación a bajo caudal con limpiador alcalino quelante compatible con poliamida al 2 % p/p en agua de permeado, pH 10,5, temperatura 30–35 °C, remojo y recirculación por etapas hasta que ΔP y conductividad del retorno se estabilicen; después enjuagar con permeado hasta pH de salida cercano al de entrada y verificar físicamente flujo de antiincrustante en el punto de inyección del T-04 antes de volver a operar.",
+  "decision_change_condition": "Cambiaría el diagnóstico si el análisis del depósito del elemento de cola del T-04 no mostrara sulfato de bario o sulfatos de bario/estroncio como componente dominante y, en cambio, predominara material biológico, orgánico, particulado o carbonato.",
+  "confidence": 92
+}

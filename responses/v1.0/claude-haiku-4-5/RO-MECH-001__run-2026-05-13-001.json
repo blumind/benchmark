@@ -1,0 +1,50 @@
+{
+  "case_id": "RO-MECH-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:29:20Z",
+  "main_hypothesis": "Improper seating or damage to an inter-element O-ring (interconnector) in Tube 4 of Train T-02 during reinstallation, resulting in internal brine bypass from the high-pressure side to the permeate collection header.",
+  "key_signals": [
+    "Probe test shows Tube 4 permeate conductivity of 4,100 µS/cm versus 380–420 µS/cm in other tubes of the same train, indicating localized salt passage in a single tube.",
+    "Conductivity spike in T-02 permeate from 390 µS/cm (baseline) to 1,350 µS/cm (current) occurred immediately after reinstallation on Day -18, with rapid rise over 24 hours (Day -17: 720 µS/cm).",
+    "Pressure test on Tube 4 showed anomaly consistent with brine bypass through an internal junction (inter-element or head/tail seal).",
+    "Operator report on Day -19 noted one new O-ring 'seemed rigid but went in well,' suggesting potential misalignment or incomplete seating during assembly.",
+    "Salt rejection in T-02 dropped from 99.3% to 97.6%, consistent with localized bypass in one of eight tubes (1/8 ≈ 1.7% loss in rejection).",
+    "Stage 1 ΔP in T-02 is stable at 1.3 bar (only 0.1 bar above baseline and neighboring trains), ruling out membrane fouling or feed-side blockage as primary cause."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane defect (pinhole or crack) in Tube 4 introduced during CIP or handling.",
+      "why_plausible": "Membranes can be damaged by mechanical stress, pressure spikes, or chemical attack during aggressive CIP. The timing (post-CIP) and localization to one tube fit this scenario.",
+      "why_discardable": "A membrane pinhole would produce a gradual, progressive increase in salt passage over days to weeks as the defect enlarges. The observed spike is abrupt (24 hours) and stable thereafter, which is inconsistent with membrane degradation. Additionally, pressure test anomaly was attributed to 'brine bypass through a junta interna' (internal junction), not a membrane defect. Membrane defects also typically show higher conductivity (>5,000 µS/cm) due to complete loss of rejection."
+    },
+    {
+      "hypothesis": "Incorrect reassembly of the permeate collection header or tubing on Tube 4, allowing cross-contamination from reject or feed lines.",
+      "why_plausible": "Visual inspection on Day -3 reported connections 'correctas,' but misrouting of permeate tubing could cause high-salinity water to enter the permeate stream.",
+      "why_discardable": "The probe test result (4,100 µS/cm in Tube 4 permeate) is far below feed conductivity (56,500 µS/cm) and reject-side salinity (typically 85,000–100,000 µS/cm at 44% recovery), indicating partial rejection is still occurring. Complete cross-connection would show conductivity near feed or reject levels. The pressure test specifically identified 'brine bypass through an internal junction,' not external tubing misrouting."
+    },
+    {
+      "hypothesis": "Biofouling or biofilm growth on the feed spacer of Tube 4 post-reinstallation, causing localized flux loss and concentration polarization.",
+      "why_plausible": "Biofilm can develop rapidly in warm seawater (20.8 °C) if residual biocide is absent. Concentration polarization can increase local salt passage.",
+      "why_discardable": "Biofouling would increase ΔP in the affected tube; Tube 4 ΔP is not reported as anomalous. Biofouling also develops over days to weeks, not within 24 hours. No oxidant dosing is in place, but chlorine residual is <0.02 mg/L across the plant, and the 18-day interval is insufficient for significant biofilm accumulation in a newly cleaned system. The pressure test result pointing to 'internal junction' bypass is incompatible with feed-side fouling."
+    },
+    {
+      "hypothesis": "Incompatibility or degradation of the new O-ring material (elastomer) under operating conditions, causing swelling or shrinkage.",
+      "why_plausible": "If replacement O-rings were of different material or batch, thermal or chemical incompatibility could cause seal failure. The operator noted one O-ring 'seemed rigid,' suggesting possible material issue.",
+      "why_discardable": "O-ring material incompatibility would affect multiple tubes (all 4 reinstalled tubes or all 28 elements), not just Tube 4. The problem is isolated to one tube. Additionally, 18 days of stable operation before the spike argues against material degradation; if the O-ring were incompatible, failure would occur within hours to days of exposure, not after 18 days of normal operation. The 'rigid' comment likely refers to normal new elastomer stiffness, not a material defect."
+    },
+    {
+      "hypothesis": "Incomplete flushing or residual CIP chemical (e.g., caustic or acid) in Tube 4 causing temporary membrane damage or swelling.",
+      "why_plausible": "Residual alkaline or acidic CIP solution could damage the polyamide membrane or cause temporary swelling, increasing salt passage.",
+      "why_discardable": "Residual CIP chemicals would affect all 4 reinstalled tubes, not just Tube 4. The conductivity spike is stable over 15 days, not declining as would be expected if residual chemicals were being flushed out. Additionally, the pressure test result ('brine bypass through internal junction') points to a mechanical seal failure, not chemical damage."
+    }
+  ],
+  "requested_data": "Visual inspection and physical removal of Tube 4 from Train T-02 to directly examine the inter-element O-ring (interconnector) seals for misalignment, incomplete seating, visible damage, or extrusion; photograph and measure O-ring compression set and cross-section.",
+  "recommended_action": "Immediately isolate Train T-02 from service. Remove Tube 4 from the pressure vessel and inspect all inter-element O-rings (interconnectors) and head/tail O-rings for misalignment, incomplete seating, extrusion, or damage. If the O-ring in the first inter-element junction (between elements 1 and 2) or at the tube head is found to be improperly seated or damaged, replace it with a new O-ring of the same specification, ensuring proper lubrication (silicone grease per manufacturer specification) and correct seating depth. Reassemble Tube 4 with witness marks and torque verification. Perform a bench pressure test (20 bar) on the reassembled tube before reinstallation. Reinstall Tube 4 into the pressure vessel, verify all connections, and conduct a 2-hour trial run at 50% nominal flux before returning to full operation. Monitor permeate conductivity of Tube 4 continuously for 48 hours post-restart.",
+  "decision_change_condition": "If visual inspection of Tube 4 reveals no O-ring damage or misalignment, and the inter-element seals are confirmed properly seated, the diagnosis would shift toward membrane defect (pinhole/crack) or external tubing misrouting. In that case, the tube should be removed from service, the membrane elements replaced, and the permeate tubing re-verified before reinstallation. Alternatively, if the pressure test on the reassembled tube shows no anomaly and permeate conductivity normalizes after reinstallation, the root cause would be confirmed as O-ring misalignment that was corrected by proper reassembly.",
+  "confidence": 82
+}

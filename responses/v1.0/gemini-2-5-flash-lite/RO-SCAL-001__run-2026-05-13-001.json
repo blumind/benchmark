@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:54:17Z",
+  "main_hypothesis": "La bomba dosificadora de antiincrustante no está inyectando la dosis correcta debido a un problema de cebado o aspiración, lo que lleva a la sobresaturación y precipitación de sales en las membranas.",
+  "key_signals": [
+    "Caudal antiincrustante (medido) bajada drástica (0,3 L/h vs 1,8 L/h)",
+    "ΔP etapa 2 subida marcada (2,1 bar vs 0,8 bar)",
+    "pH alimentación a RO subida marcada (7,3 vs 6,7)",
+    "Conductividad permeado subida (92 µS/cm vs 80 µS/cm)",
+    "Presión alimentación subida (18,5 bar vs 15,8 bar)",
+    "Caudal permeado planta bajada del 8 % (460 m³/h vs 500 m³/h)",
+    "Operario observa 'espuma' en el tanque del antiincrustante y registra que 'la bomba parece pulsar irregular'"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo de membrana o ensuciamiento severo no relacionado con la dosificación.",
+      "why_plausible": "El aumento de ΔP en la etapa 2, la bajada del caudal de permeado y la subida de la conductividad del permeado son síntomas clásicos de ensuciamiento o fallo de membrana. El cambio de cartuchos sin alivio de ΔP podría haber enmascarado un problema preexistente.",
+      "why_discardable": "La bajada drástica en el caudal medido de antiincrustante y la observación de 'espuma' y pulsaciones irregulares en la bomba son señales muy fuertes que apuntan a un problema en el sistema de dosificación, que a su vez explicaría la precipitación en las membranas. Si la dosificación fuera correcta, el LSI en el rechazo (calculado con el pH de alimentación de 7.3 y la alcalinidad de rechazo de 1220 mg/L) sería significativamente mayor que el baseline, indicando una sobresaturación."
+    },
+    {
+      "hypothesis": "Problema con la manguera de la bomba antiincrustante, a pesar de ser nueva.",
+      "why_plausible": "La manguera fue reemplazada hace 25 días, y el problema comenzó a manifestarse poco después. Podría haber un defecto en la manguera nueva, una obstrucción parcial o una fuga.",
+      "why_discardable": "La observación de 'espuma' en el tanque y las pulsaciones irregulares de la bomba sugieren un problema más relacionado con la aspiración o el funcionamiento de la bomba en sí, más que un simple bloqueo en la manguera. Además, la manguera nueva debería ser menos propensa a obstrucciones que una vieja."
+    },
+    {
+      "hypothesis": "Ajuste incorrecto del pH de alimentación después del mantenimiento de la bomba ácida.",
+      "why_plausible": "El pH de alimentación subió de 6.7 a 7.3, lo cual aumenta el LSI y la tendencia a la precipitación de carbonatos. Si el antiincrustante no se está dosificando correctamente, este cambio de pH agravaría el problema.",
+      "why_discardable": "Si bien el cambio de pH es un factor contribuyente, la causa raíz más probable es la falta de antiincrustante. El pH por sí solo no explicaría la bajada drástica en el caudal de la bomba dosificadora ni la espuma observada. El problema de dosificación es el factor primario que, exacerbado por el pH más alto, lleva a la precipitación."
+    }
+  ],
+  "requested_data": "Caudal de antiincrustante medido directamente en la línea de inyección a la entrada de la planta (L/h).",
+  "recommended_action": "Detener la operación de la planta. Realizar un procedimiento completo de cebado de la bomba dosificadora de antiincrustante. Verificar la integridad de la manguera de aspiración y la válvula de pie (si existe). Si el problema persiste, considerar la sustitución de la bomba dosificadora o la manguera de impulsión. Una vez confirmada la correcta dosificación, proceder a la limpieza química de las membranas si es necesario.",
+  "decision_change_condition": "Si el caudal de antiincrustante medido en la línea de inyección es el correcto (1.8 L/h) y el problema de ΔP y permeado persiste, la hipótesis principal se descartaría y se consideraría un fallo o ensuciamiento severo de membrana como causa principal.",
+  "confidence": 90
+}

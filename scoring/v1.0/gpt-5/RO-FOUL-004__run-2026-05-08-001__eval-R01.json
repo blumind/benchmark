@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-004-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-004",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'orgánico-biológico agudo por TEP/alginatos del bloom' — match con anchors TEP/HAB."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ΔP1 cabeza vs cola, TOC×3, TEP 320 vs <50, clorofila×18, T no explica salto."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts de 3 familias con why_discardable anclado: no Fe alto, SDI ligero, rejection estable."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Reducir flux + CIP alcalino + cítrico si needed; NaOCl SOLO en UF con 'Cl2 libre <0.02' explícito."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide Fe total — alt-discriminator; trigger gold es taxonomía fitoplancton o autopsia."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: Fe >100 + depósito férrico → switch a coagulante."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

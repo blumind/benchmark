@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:18:22Z",
+  "main_hypothesis": "Insufficient anti-scalant dosing due to inadequate inhibitor performance of the new phosphonate-based formulation at the applied dosage of 1.2 ppm, leading to progressive scaling in Stage 2 membranes.",
+  "key_signals": [
+    "ΔP Stage 2 increased from 0.9 bar to 1.7 bar over 40 days with the new anti-scalant (stable ΔP Stage 1)",
+    "Pressure feed increased from 14.8 bar to 17.8 bar (8% flux reduction)",
+    "Conductivity of permeate rose slightly (78 → 88 µS/cm)",
+    "CIP acid wash temporarily reduced ΔP Stage 2 from 1.4 to 1.1 bar, indicating removable foulant",
+    "Stable feed water quality (TDS, Ca, alkalinity, pH) rules out feed changes as cause"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling due to inadequate chlorine residual or nutrient availability in feed water.",
+      "why_plausible": "ΔP increase and partial CIP response could align with biofilm accumulation; stable chlorine <0.02 mg/L is low but typical for RO systems using polyamide membranes.",
+      "why_discardable": "No evidence of microbial activity (e.g., ATP, SDI increase, or foulant analysis); stable silica and Ca in reject stream suggest mineral scaling rather than biological deposit; CIP acid wash would not typically remove biofilm effectively."
+    },
+    {
+      "hypothesis": "Colloidal or particulate fouling due to changes in pre-treatment performance.",
+      "why_plausible": "Pre-treatment includes multimedia filters and 5 µm cartridges; partial softener operation could allow hardness breakthrough.",
+      "why_discardable": "Feed turbidity and SDI not reported; stable Ca and alkalinity in reject stream indicate no significant hardness breakthrough; ΔP Stage 1 stable, suggesting no upstream fouling."
+    },
+    {
+      "hypothesis": "Membrane degradation or compaction due to pH or temperature stress.",
+      "why_plausible": "pH 6.5 with H2SO4 is within typical range; temperature stable at 22.5 °C.",
+      "why_discardable": "No reported membrane age or failure history; stable permeate conductivity trend does not support membrane integrity loss; pressure increase is localized to Stage 2, inconsistent with uniform compaction."
+    }
+  ],
+  "requested_data": "Silica concentration in permeate (mg/L) to assess scaling severity and inhibitor effectiveness.",
+  "recommended_action": "Increase anti-scalant dose to 2.5 ppm (phosphonate-based) and maintain for 72 hours while monitoring ΔP Stage 2; if ΔP stabilizes, return to 1.2 ppm only after confirming inhibitor performance via jar test or supplier analysis.",
+  "decision_change_condition": "If silica in permeate remains below 10 mg/L and ΔP Stage 2 continues to rise after 72 hours at 2.5 ppm, the diagnosis would shift to biofouling or particulate fouling.",
+  "confidence": 92
+}

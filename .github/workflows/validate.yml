@@ -1,0 +1,37 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-schemas:
+    name: Validate schemas, registry, responses, golds, evaluations
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install validator dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Validate subject registry
+        run: python scripts/validate_registry.py
+
+      - name: Validate responses
+        run: python scripts/validate_response.py
+
+      - name: Validate golds
+        run: python scripts/validate_gold.py
+
+      - name: Validate evaluations
+        run: python scripts/validate_evaluation.py

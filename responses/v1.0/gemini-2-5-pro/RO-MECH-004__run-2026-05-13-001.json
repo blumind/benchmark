@@ -1,0 +1,38 @@
+{
+  "case_id": "RO-MECH-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:45:22Z",
+  "main_hypothesis": "Failure of the permeate tube glue line in one or more membrane elements from the known defective batch, causing a direct leak from the feed/brine side to the permeate stream.",
+  "key_signals": [
+    "The high permeate conductivity is localized to three pressure vessels within Train T-04, as confirmed by the probe test.",
+    "Train T-04 is documented to contain all five elements from the manufacturer's batch with a known potential for glue line defects.",
+    "The progressive increase in permeate conductivity and decrease in salt rejection are classic symptoms of a worsening physical membrane defect.",
+    "Standard troubleshooting for external leaks, such as re-tightening end caps and checking O-rings, did not resolve the issue."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Failure of an interconnector O-ring between elements within one of the affected pressure vessels.",
+      "why_plausible": "This is a common mechanical failure mode that produces identical symptoms: a localized, high-conductivity leak of brine into the permeate tube.",
+      "why_discardable": "While plausible, the perfect correlation between the location of the fault (Train T-04) and the documented location of all known defective membrane elements makes a manufacturing defect the much more probable cause."
+    },
+    {
+      "hypothesis": "Oxidative damage to the membrane elements in Train T-04.",
+      "why_plausible": "Oxidant exposure (e.g., from a pretreatment failure) can chemically damage the membrane's polyamide layer, leading to increased salt passage.",
+      "why_discardable": "The operational data shows no evidence of an oxidant, with free chlorine consistently < 0.02 mg/L and a stable ORP. Furthermore, such damage would likely affect more than just three specific vessels in a single train."
+    },
+    {
+      "hypothesis": "Telescoping or other physical damage to an element from operational stress.",
+      "why_plausible": "Excessive differential pressure or hydraulic shock can cause mechanical damage to elements, leading to compromised integrity and salt passage.",
+      "why_discardable": "The plant data shows stable feed pressure and differential pressures across the stages, with no reported incidents of water hammer or abrupt pressure changes that would typically cause such damage."
+    }
+  ],
+  "requested_data": "Results of the autopsy of the extracted element, specifically the visual inspection report of the brine-seal-to-permeate-tube glue line integrity.",
+  "recommended_action": "Immediately isolate and shut down Train T-04 to prevent contamination of the plant's final product water. Proceed to replace all five membrane elements identified as part of the defective batch within that train. Retain the removed elements for autopsy and warranty claim purposes.",
+  "decision_change_condition": "If the autopsy of the extracted element shows it to be structurally sound (i.e., no glue line failure) and a different root cause is found upon disassembly of the pressure vessel, such as a failed interconnector O-ring.",
+  "confidence": 95
+}

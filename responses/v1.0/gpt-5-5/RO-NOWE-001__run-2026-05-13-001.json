@@ -1,0 +1,53 @@
+{
+  "case_id": "RO-NOWE-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:54:53Z",
+  "main_hypothesis": "Rehumectación incompleta y presencia residual de propilenglicol tras una preservación prolongada, causada por un aclarado inicial insuficiente y un arranque demasiado rápido del tren T-04 después de 5 meses de almacenamiento.",
+  "key_signals": [
+    "El tren estuvo preservado 5 meses con bisulfito al 1 % p/p y propilenglicol al 20 % v/v.",
+    "El aclarado previo al arranque fue solo de 30 minutos.",
+    "El arranque se hizo con rampa a presión nominal en 2 minutos.",
+    "El caudal de permeado inicial fue muy bajo, 36 % del nominal a presión completa.",
+    "La presión de alimentación fue superior a la esperada, 64 bar frente a aproximadamente 60 bar, con caudal de permeado bajo.",
+    "Los diferenciales de presión de etapa 1 y etapa 2 fueron inferiores a los esperados, 0,7 bar frente a 1,2 bar y 0,4 bar frente a 0,8 bar, lo que no apunta a ensuciamiento hidráulico severo.",
+    "El caudal de permeado mejora lentamente tras circulación a baja presión, pasando de 36 % a 78 % del nominal.",
+    "La conductividad de permeado y el rechazo de sales también mejoran lentamente, de 480 a 460 µS/cm y rechazo en aumento.",
+    "La alimentación, temperatura, pH, ORP y cloro libre permanecen estables, reduciendo la probabilidad de un cambio externo de calidad de agua."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño irreversible por desecación parcial de las membranas durante el almacenamiento.",
+      "why_plausible": "Una pérdida de humectación durante varios meses puede reducir la permeabilidad y aumentar el paso de sales en membranas de ósmosis inversa.",
+      "why_discardable": "La mejora progresiva del caudal y de la conductividad durante varios días tras circulación a baja presión indica un fenómeno reversible, más compatible con rehumectación gradual o eliminación de propilenglicol residual que con daño irreversible."
+    },
+    {
+      "hypothesis": "Ensuciamiento biológico o químico desarrollado durante el almacenamiento.",
+      "why_plausible": "Un tren parado durante 5 meses puede desarrollar contaminación si la preservación pierde eficacia.",
+      "why_discardable": "El diferencial de presión es inferior al esperado, no superior, y el caudal mejora con simple circulación a baja presión; un ensuciamiento significativo normalmente elevaría el ΔP y no se resolvería de forma tan marcada sin limpieza química."
+    },
+    {
+      "hypothesis": "Incrustación mineral al rearranque.",
+      "why_plausible": "El tren opera con agua de mar a 43 % de recuperación y depende de antiincrustante, por lo que la incrustación siempre es una posibilidad operativa.",
+      "why_discardable": "La anomalía aparece inmediatamente tras el arranque del tren preservado, con alimentación estable y antiincrustante reportado; además, los ΔP no están elevados y la tendencia es de recuperación, no de deterioro."
+    },
+    {
+      "hypothesis": "Daño oxidativo de membranas por exposición a cloro.",
+      "why_plausible": "El daño oxidativo puede aumentar la conductividad del permeado y reducir el rechazo de sales.",
+      "why_discardable": "El cloro libre antes de RO se reporta estable por debajo de 0,02 mg/L y el ORP estable en +90 mV; además, el problema dominante es bajo caudal con recuperación gradual, no un aumento persistente de paso de sales."
+    },
+    {
+      "hypothesis": "Aire atrapado o purga hidráulica incompleta en el tren tras el arranque.",
+      "why_plausible": "Tras vaciado y llenado de un tren preservado, bolsas de aire pueden reducir el área efectiva mojada y causar bajo caudal inicial.",
+      "why_discardable": "La duración de la recuperación durante varios días y el antecedente específico de propilenglicol al 20 % hacen más probable una rehumectación lenta por preservante residual que una simple purga de aire."
+    }
+  ],
+  "requested_data": "Concentración de propilenglicol en el efluente de aclarado o permeado del tren T-04 durante la circulación actual, en mg/L.",
+  "recommended_action": "Mantener el permeado y el concentrado del T-04 a drenaje y continuar la circulación/aclareo con permeado o agua de alimentación declorada a baja presión, aproximadamente 20 % de la presión nominal del tren, es decir cerca de 12 bar, durante 12 a 24 horas adicionales; después incrementar la presión gradualmente en una rampa mínima de 30 minutos, verificando caudal normalizado, conductividad de permeado y ΔP antes de poner el tren en producción.",
+  "decision_change_condition": "Cambiaría el diagnóstico si la concentración de propilenglicol en el aclarado fuese no detectable y, tras 24 horas adicionales de circulación a baja presión, el caudal normalizado y el rechazo no siguieran recuperándose o apareciera un aumento claro de ΔP; en ese caso priorizaría daño irreversible de membrana o ensuciamiento interno.",
+  "confidence": 84
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-001",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fuga salmuera al colector permeado T-02 Tubo 4 + O-ring interconector/adaptador mal asentado/dañado/spec incorrecta' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (grieta permeate tube, brine seal u-cup, rotura hoja, conexión externa)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Parar tren + LOTO + abrir Tubo 4 + extraer + inspeccionar + sustituir todos O-rings lado permeado — match gold detallado."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide inspección estado O-ring del adaptador permeado — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi: O-rings intactos + estanqueidad persiste fuga → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

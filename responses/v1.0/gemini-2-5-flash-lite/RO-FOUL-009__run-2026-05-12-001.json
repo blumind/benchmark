@@ -1,0 +1,43 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:53:10Z",
+  "main_hypothesis": "Contaminación orgánica y/o tensioactiva en la alimentación a ósmosis inversa, probablemente relacionada con el vertido de la refinería y exacerbada por la vecina.",
+  "key_signals": [
+    "TOC alimentación a RO (2,9 mg/L vs 1,2 mg/L baseline, subida)",
+    "SDI₁₅ salida cartuchos (4,5 vs 2,5 baseline, subida marcada)",
+    "Hidrocarburos totales captación (2,1 mg/L vs < 1 mg/L baseline, subida)",
+    "Tensión superficial alimentación (58 mN/m vs 72 mN/m baseline, bajada marcada)",
+    "ATP en alimentación RO (240 pg/mL vs 90 pg/mL baseline, subida moderada)",
+    "ΔP etapa 1 (2,4 bar vs 1,2 bar baseline, subida brusca)",
+    "Caudal permeado tren (192 m³/h vs 218 m³/h baseline, bajada del 12 %)",
+    "Conductividad permeado (410 µS/cm vs 380 µS/cm baseline, subida)",
+    "Presión alimentación tren (65 bar vs 59 bar baseline, subida)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling biológico severo en las membranas de RO.",
+      "why_plausible": "El aumento de TOC y ATP en la alimentación, junto con la subida de ΔP y la bajada de caudal de permeado, son indicativos de crecimiento microbiano. La inspección de los cartuchos con depósito gelatinoso también podría ser compatible con biomasa.",
+      "why_discardable": "La bajada marcada de la tensión superficial y la presencia de hidrocarburos en la captación apuntan más a una contaminación química/orgánica externa que a un problema primario de crecimiento biológico dentro del sistema de RO. El cloro libre residual es nulo, lo que podría favorecer el crecimiento biológico, pero la causa inicial parece ser externa."
+    },
+    {
+      "hypothesis": "Fouling inorgánico (incrustaciones) en las membranas de RO.",
+      "why_plausible": "El aumento de ΔP en la etapa 1 y la subida de presión de alimentación son síntomas típicos de incrustaciones en las membranas. La conductividad del permeado también podría aumentar si las incrustaciones afectan la capacidad de rechazo de sales.",
+      "why_discardable": "La inspección de los cartuchos no describe depósitos calcáreos o de óxidos (marrón/rojizo), sino un depósito gelatinoso. El TOC elevado, la bajada de tensión superficial y los hidrocarburos en captación no son característicos de fouling inorgánico."
+    },
+    {
+      "hypothesis": "Fouling por coloides o materia orgánica disuelta no identificada.",
+      "why_plausible": "El aumento del TOC y del SDI sugiere la presencia de materia orgánica o coloides que están obstruyendo los prefiltros y potencialmente las membranas. La bajada de tensión superficial podría ser causada por surfactantes orgánicos.",
+      "why_discardable": "Aunque plausible, la combinación de todos los indicadores (hidrocarburos, ATP, espuma, tensión superficial) apunta más específicamente a una contaminación por hidrocarburos y/o antiespumantes, que son tipos de contaminantes orgánicos con propiedades tensioactivas."
+    }
+  ],
+  "requested_data": "Análisis de composición detallada del depósito gelatinoso de los cartuchos (GC-MS para hidrocarburos, análisis de proteínas/polisacáridos, etc.)",
+  "recommended_action": "Detener la operación del tren de RO. Realizar una limpieza química de las membranas de RO y de los prefiltros de cartucho. La limpieza debe incluir un detergente alcalino para materia orgánica y grasas, seguido de un enjuague y, si es necesario, una limpieza ácida suave para eliminar posibles incrustaciones residuales. Considerar la sustitución de los cartuchos de 5 µm si la limpieza no es efectiva.",
+  "decision_change_condition": "Si el análisis del depósito de los cartuchos revela una composición predominantemente inorgánica (sales, óxidos metálicos) o si la limpieza química no revierte la subida de ΔP y la bajada de caudal, la hipótesis principal debería ser reevaluada hacia un fouling inorgánico o un problema de diseño/operación de pretratamiento no relacionado con la contaminación externa.",
+  "confidence": 85
+}

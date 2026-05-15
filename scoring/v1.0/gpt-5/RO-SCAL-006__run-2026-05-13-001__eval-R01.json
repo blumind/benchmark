@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-006",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fallo pretratamiento greensand sin ripening + oxidación KMnO4 insuficiente → arrastre Fe/Mn óxidos' — captura una de 3."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (CaCO3 pH↑, sílice, OXID KMnO4/Cl, biofouling)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Restablecer pH 6.5 + sacar greensand + completar ripening con KMnO4 estequiometría + ORP >+400 mV + verificación — operacional + ripening detallado; CIP membrana no visible truncated."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide fracción másica Fe+Mn (wt%) SEM-EDS depósito espaciador etapa 2 — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: Ca/CO3 o SiO2 >70% wt y Fe+Mn <5% wt → switch a CaCO3/sílice."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

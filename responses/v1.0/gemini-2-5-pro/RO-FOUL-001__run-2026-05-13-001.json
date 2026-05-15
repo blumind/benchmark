@@ -1,0 +1,38 @@
+{
+  "case_id": "RO-FOUL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T08:46:54Z",
+  "main_hypothesis": "Biofouling of the first-stage RO membranes, accelerated by a temporary interruption of the biostatic (SBS) dosing.",
+  "key_signals": [
+    "Massive increase in ATP in RO feed (+600% to 8.5 ng/L), indicating high biological activity.",
+    "Significant increase in differential pressure (ΔP) across the first stage (+45% in 7 days) without changes in flow or temperature.",
+    "Sharp rise in Silt Density Index (SDI15) to 4.1, indicating high fouling potential consistent with biomass and extracellular polymeric substances (EPS).",
+    "Temporal correlation with a 6-hour shutdown of the SBS dosing pump 3 days prior, which removed a key biostatic barrier against aerobic bacterial growth."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Colloidal fouling from pre-treatment carryover.",
+      "why_plausible": "The high SDI15 value (4.1) and the recent increase in raw water turbidity and coagulant dosage are consistent with colloidal fouling.",
+      "why_discardable": "This hypothesis does not adequately explain the exceptionally large and rapid increase in ATP, which is a specific indicator of biological matter, not just inert colloids."
+    },
+    {
+      "hypothesis": "Coagulant (iron) fouling.",
+      "why_plausible": "The coagulant dose (iron-based) was recently increased, creating a risk of carryover from the DAF/UF pre-treatment which could foul the membranes.",
+      "why_discardable": "While plausible as a contributor, it fails to be the primary cause because it cannot, by itself, explain the +600% increase in biological activity indicated by the ATP measurement."
+    },
+    {
+      "hypothesis": "Inorganic scaling.",
+      "why_plausible": "Scaling is a common cause of increased differential pressure in RO systems, and could be caused by a failure in the antiscalant dosing system.",
+      "why_discardable": "Permeate conductivity and salt rejection are stable, which is inconsistent with significant scaling. Furthermore, this hypothesis does not account for the high ATP and SDI values."
+    }
+  ],
+  "requested_data": "Total iron concentration in the RO feed water (µg/L).",
+  "recommended_action": "Immediately perform an emergency Clean-In-Place (CIP) on the first RO pass. Use a high-pH cleaning solution (target pH 11.5, adjusted with a membrane-compatible cleaner like NaOH) at 30-35°C. Circulate for 60-90 minutes, followed by a soak and flush according to the membrane manufacturer's specifications.",
+  "decision_change_condition": "The diagnosis would change if an analysis of the foulant (e.g., from a membrane autopsy or feed spacer sample) showed a composition dominated by iron oxides and/or silicates with minimal biological material.",
+  "confidence": 95
+}

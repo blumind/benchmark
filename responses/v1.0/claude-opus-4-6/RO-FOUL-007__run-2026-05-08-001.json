@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:47:06Z",
+  "main_hypothesis": "Biofouling acelerado en los elementos de cabeza de etapa 1, iniciado por el aporte masivo de materia orgánica y nutrientes durante el temporal (día -25) y sostenido por la sobredosificación residual de FeCl₃ (2 mg/L en lugar de 0,8 mg/L), que aporta hierro residual como nutriente/soporte para la biopelícula, en ausencia de biocida (sin cloraminación rutinaria) y favorecido por la temperatura estacional elevada (31,5 °C).",
+  "key_signals": [
+    "ATP en alimentación RO multiplicado por 8 (de 90 a 720 pg/mL), indicador directo de actividad biológica elevada",
+    "TOC en alimentación RO duplicado (de 1,1 a 2,2 mg/L), fuente de carbono orgánico para crecimiento microbiano",
+    "ΔP de cabeza de etapa 1 casi duplicado (2,5 vs 1,4 bar) con gradiente decreciente hacia cola (medio y cola mucho menos afectados), patrón clásico de biofouling que se concentra en los primeros elementos",
+    "Subida de presión de alimentación del tren (+6 bar) y caída de caudal de permeado (-8 %), consistentes con pérdida de permeabilidad por ensuciamiento biológico",
+    "Temporal severo (día -25) con turbidez puntual de 6 NTU que movilizó materia orgánica y microorganismos hacia la captación",
+    "Sobredosificación de FeCl₃ mantenida en 2 mg/L desde día -18 (debería haberse reducido a 0,8 mg/L), aportando hierro residual que favorece la formación y estabilización de biopelícula",
+    "Ausencia de cloraminación rutinaria, sin barrera biocida contra el crecimiento biológico",
+    "SDI₁₅ elevado (4,0 vs 2,5 baseline) y turbidez post-cartuchos elevada (0,16 vs 0,07 NTU), indicando paso de material particulado/biológico al RO",
+    "Temperatura estacional de 31,5 °C que acelera la cinética de crecimiento microbiano"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling coloidal/particulado por arrastre de flóculos de hierro (FeCl₃ sobredosificado) y partículas residuales del temporal",
+      "why_plausible": "La sobredosificación de FeCl₃ (2 mg/L mantenidos innecesariamente) puede generar flóculos de hidróxido férrico que atraviesan los cartuchos de 1 µm, depositándose en los elementos de cabeza. El SDI₁₅ y la turbidez elevados post-cartuchos son consistentes. El patrón de ΔP concentrado en cabeza también es compatible con fouling particulado.",
+      "why_discardable": "El fouling puramente coloidal/férrico no explica el aumento drástico de ATP (×8) ni la duplicación de TOC en la alimentación. Además, el hierro coloidal típicamente no produce incrementos de ATP de esta magnitud. El componente biológico es dominante, aunque el hierro puede actuar como cofactor agravante."
+    },
+    {
+      "hypothesis": "Fouling orgánico (organic fouling) por adsorción de materia orgánica natural (NOM) movilizada por el temporal",
+      "why_plausible": "El TOC duplicado indica mayor carga orgánica. La NOM (ácidos húmicos/fúlvicos) puede adsorberse sobre la superficie de membrana, reduciendo flux y aumentando ΔP. El patrón de cabeza es parcialmente compatible.",
+      "why_discardable": "El fouling orgánico por NOM puro no produce incrementos de ATP de 90 a 720 pg/mL; el ATP es un marcador específico de biomasa activa, no de materia orgánica adsorbida. Además, el fouling orgánico puro tiende a distribuirse más uniformemente y no produce gradientes de ΔP tan pronunciados entre cabeza y cola."
+    },
+    {
+      "hypothesis": "Scaling incipiente (precipitación de sales) por la salinidad extrema (TDS > 60.000 mg/L) y el aumento de temperatura",
+      "why_plausible": "Con TDS > 60.000 mg/L y recovery 40 %, la concentración en cola es muy elevada. El aumento de temperatura puede reducir la solubilidad de CaCO₃ y favorecer precipitación. El pH de 8,2 es ligeramente alcalino.",
+      "why_discardable": "El scaling se manifiesta predominantemente en los últimos elementos (cola) donde la concentración de sales es máxima, pero el ΔP de cola está estable (0,6 bar). El patrón de ΔP concentrado en cabeza es opuesto al esperado para scaling. Además, se dosifica antiincrustante a 2,8 ppm y la conductividad de permeado solo ha subido ligeramente."
+    }
+  ],
+  "requested_data": "Resultado de autopsia o análisis de depósito (pérdida por ignición / LOI a 550 °C, contenido de Fe, recuento de ATP en el depósito, y microscopía) de un elemento de cabeza de etapa 1, o en su defecto, concentración de hierro disuelto y total (mg/L) en la alimentación post-cartuchos para discriminar entre biofouling puro y biofouling catalizado por depósitos férricos.",
+  "recommended_action": "1) Reducir inmediatamente la dosis de FeCl₃ a 0,8 mg/L (baseline pre-temporal). 2) Realizar una limpieza química alcalina de los trenes afectados con solución de NaOH al 0,1 % p/v (pH 12, 35 °C, recirculación 60 min) seguida de un paso biocida con solución de DBNPA (2,2-dibromo-3-nitrilopropionamida) a 100 mg/L durante 30 minutos en recirculación, conforme a las recomendaciones del fabricante de membranas para biofouling en SWRO. 3) Tras la limpieza, evaluar la recuperación de ΔP y flux; si la recuperación es < 80 %, repetir con un paso ácido (HCl 0,2 % p/v, pH 2, 30 °C, 60 min) para eliminar depósitos férricos residuales. 4) Implementar monitoreo semanal de ATP en alimentación y considerar la instalación de dosificación intermitente de DBNPA a 10-20 mg/L como biocida preventivo en línea.",
+  "decision_change_condition": "Si el análisis de depósitos de un elemento de cabeza revelara que el componente principal es hidróxido férrico (Fe > 30 % en peso seco) con ATP en depósito < 1.000 pg/cm² y LOI < 25 %, cambiaría el diagnóstico a fouling coloidal férrico por sobredosificación de FeCl₃, y priorizaría la limpieza ácida (HCl pH 2) sobre la alcalina/biocida.",
+  "confidence": 82
+}

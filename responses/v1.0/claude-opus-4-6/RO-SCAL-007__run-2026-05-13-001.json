@@ -1,0 +1,48 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:30:46Z",
+  "main_hypothesis": "Incrustación por fosfato de calcio (Ca₃(PO₄)₂) en los elementos de cola de la etapa 2, causada por el aumento estacional de fósforo en el agua de alimentación combinado con la alta concentración de calcio y un antiincrustante que no contempla la inhibición de fosfatos.",
+  "key_signals": [
+    "ΔP etapa 2 duplicada (1,9 bar vs 0,9 bar baseline) con ΔP etapa 1 estable, patrón típico de incrustación en cola donde la sobresaturación es máxima.",
+    "PO₄³⁻ alimentación subió de 1,8 a 2,8 mg/L (+56 %) y PO₄³⁻ rechazo de 7,8 a 12,5 mg/L (+60 %), indicando concentración creciente de fosfato en el concentrado.",
+    "Calcio en alimentación muy alto (360 mg/L) y en rechazo 1.580 mg/L, proporcionando el catión necesario para la precipitación de Ca₃(PO₄)₂.",
+    "Cálculo de saturación del día -12 confirma riesgo alto de Ca₃(PO₄)₂.",
+    "El fabricante del antiincrustante confirmó que la formulación poliacrílica estándar NO inhibe fosfatos.",
+    "CIP ácida con HCl pH 2 logró reducción parcial y temporal del ΔP (de 1,9 a 1,2 bar), pero la incrustación recurrió en 72 h, consistente con fosfato de calcio que se disuelve parcialmente en ácido clorhídrico pero se re-deposita rápidamente si la causa raíz persiste.",
+    "Presión de alimentación subió de 15,5 a 19 bar y caudal de permeado bajó un 8 %, indicando pérdida de permeabilidad por fouling/scaling.",
+    "Conductividad de permeado subió de 95 a 110 µS/cm, consistente con efecto de concentración de polarización aumentada por la incrustación.",
+    "Episodio estacional de fertilización (día -30) y aviso de la confederación hidrográfica correlacionan temporalmente con el inicio del problema."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación por carbonato de calcio (CaCO₃)",
+      "why_plausible": "Calcio 360 mg/L y alcalinidad 220 mg/L son valores altos; a pH 6,8 y 78 % de recuperación, el índice de Langelier en el concentrado podría ser positivo, favoreciendo precipitación de CaCO₃.",
+      "why_discardable": "El antiincrustante poliacrílico sí inhibe carbonatos según el fabricante. Además, la alcalinidad en rechazo (880 mg/L) se mantiene estable sin tendencia al alza, y el CIP ácido con HCl habría disuelto eficazmente CaCO₃ con recuperación duradera, no transitoria como se observó. La correlación temporal con el aumento de fosfato es mucho más fuerte."
+    },
+    {
+      "hypothesis": "Biofouling en etapa 2",
+      "why_plausible": "El fosfato elevado en alimentación puede actuar como nutriente limitante para biofilm; la etapa 2 con menor velocidad de flujo cruzado es más susceptible a biofouling. El aumento de ΔP en etapa 2 es compatible.",
+      "why_discardable": "El biofouling típicamente no responde a CIP ácida (HCl pH 2) sino a CIP alcalina con biocida; sin embargo, se observó reducción parcial con ácida. No se reportan olores, aumento de recuento microbiológico ni slime. La temperatura estable a 17,5 °C no favorece crecimiento explosivo. La cronología se correlaciona mejor con el aumento de PO₄³⁻ que con un evento biológico."
+    },
+    {
+      "hypothesis": "Incrustación por sulfato de calcio (CaSO₄)",
+      "why_plausible": "Se dosifica H₂SO₄ para ajuste de pH, lo que incrementa sulfatos en el sistema. Con calcio alto y 78 % de recuperación, la saturación de CaSO₄ podría alcanzarse.",
+      "why_discardable": "El antiincrustante poliacrílico estándar sí contempla inhibición de sulfatos según el fabricante. CaSO₄ es muy poco soluble en HCl diluido, por lo que el CIP ácido no habría producido la reducción parcial observada. No se reporta aumento de sulfatos ni cambio en la dosificación de H₂SO₄."
+    },
+    {
+      "hypothesis": "Incrustación por sílice",
+      "why_plausible": "Sílice en rechazo a 64 mg/L se acerca al límite de solubilidad (~120-150 mg/L a pH neutro y temperatura baja), y a 17,5 °C la solubilidad de sílice disminuye.",
+      "why_discardable": "64 mg/L en rechazo está por debajo del umbral crítico de precipitación de sílice amorfa. La sílice en rechazo se mantiene estable sin tendencia al alza. La sílice no se disuelve con HCl a pH 2, por lo que el CIP ácido no habría producido la mejora parcial observada."
+    }
+  ],
+  "requested_data": "Análisis por difracción de rayos X (XRD) o espectroscopía de energía dispersiva (EDS) de un depósito extraído de la superficie de un elemento de cola de la etapa 2, para confirmar la composición mineralógica (presencia de Ca₃(PO₄)₂ / hidroxiapatita vs. CaCO₃ u otros precipitados).",
+  "recommended_action": "1) Realizar CIP específica para fosfato de calcio: solución de ácido cítrico al 2 % (p/v) a pH 2,0 ajustado con HCl, temperatura 35-40 °C, recirculación durante 4 horas con remojo intermitente de 1 hora, enfocada en la etapa 2. 2) Inmediatamente después, cambiar el antiincrustante a una formulación que incluya inhibición específica de fosfatos (por ejemplo, un producto basado en fosfonatos/polímeros con eficacia demostrada contra Ca₃(PO₄)₂), dosificado según recomendación del fabricante para las condiciones actuales de PO₄³⁻ 2,8 mg/L y Ca²⁺ 360 mg/L. 3) Considerar reducir la recuperación del sistema de 78 % a 72-74 % temporalmente para disminuir la concentración de fosfato en el rechazo por debajo del umbral de saturación de Ca₃(PO₄)₂. 4) Monitorizar ΔP etapa 2 diariamente y PO₄³⁻ en alimentación y rechazo dos veces por semana hasta estabilización.",
+  "decision_change_condition": "Si el análisis del depósito (XRD/EDS) revelara ausencia de fósforo y calcio en el precipitado, y en su lugar mostrara predominancia de material orgánico/biológico (polisacáridos, proteínas) o de CaCO₃, cambiaría el diagnóstico a biofouling o incrustación por carbonato de calcio respectivamente, y modificaría el protocolo de limpieza y la estrategia de antiincrustante en consecuencia.",
+  "confidence": 92
+}

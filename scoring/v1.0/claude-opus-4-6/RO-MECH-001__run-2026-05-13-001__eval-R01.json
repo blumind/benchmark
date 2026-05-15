@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-001",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fallo sellado O-ring inter-elemento T-02 Tubo 4 + bypass salmuera' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia con cronología post-reinstalación."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts (daño membrana adyacente, OXID, adaptador permeado)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Aislar Tubo 4 + abrir 24-48h + inspección O-rings + atención especial al 'rígido' reportado — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide identificación posición exacta O-ring rígido — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi: O-rings intactos + sin daño visible → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

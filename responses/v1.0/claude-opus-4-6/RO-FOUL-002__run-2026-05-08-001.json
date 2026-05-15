@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:36:29Z",
+  "main_hypothesis": "Biofouling severo en la etapa 1 de los trenes RO, originado por el paso de materia orgánica y biomasa a través de un pretratamiento DAF degradado (operación al 60 % de capacidad por avería de bomba de aire saturado), agravado por el episodio previo de mar gruesa que incrementó la carga orgánica y particulada en la captación.",
+  "key_signals": [
+    "ATP en alimentación RO de 1.200 pg/mL frente a baseline de 80 pg/mL (incremento de 15x), indicador directo de actividad biológica elevada.",
+    "TOC alimentación duplicado (2,8 mg/L vs 1,4 mg/L baseline), consistente con mayor carga orgánica que alimenta el crecimiento biológico.",
+    "SDI₁₅ post-cartuchos de 4,8 vs baseline 2,5, indicando que el pretratamiento no está eliminando adecuadamente partículas y coloides (incluyendo biomasa).",
+    "ΔP etapa 1 de 2,8 bar vs baseline 1,2 bar (incremento >130 %) con etapa 2 estable (0,9 vs 0,8 bar), patrón clásico de fouling en elementos de cabecera donde se deposita preferentemente el biofilm.",
+    "Subida progresiva de ΔP etapa 1 en 10 días, consistente con crecimiento exponencial de biofilm.",
+    "Caída de caudal permeado del 8 % y aumento de presión de alimentación de 58 a 64 bar, consistentes con pérdida de permeabilidad por fouling.",
+    "Ligero aumento de conductividad de permeado (380 vs 360 µS/cm), compatible con efecto de concentración de polarización incrementada por biofilm y/o paso preferencial por sellos degradados por la biopelícula.",
+    "Cronología coherente: mar gruesa (día -14) → avería DAF (día -12, operación degradada 4 días) → aumento SDI (día -8) → fouling progresivo hasta día 0."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling coloidal/particulado inorgánico (limo, arcilla) por fallo de pretratamiento",
+      "why_plausible": "La avería de la DAF y el episodio de mar gruesa podrían haber permitido el paso de partículas inorgánicas finas. El SDI elevado y el patrón de ΔP en etapa 1 son también consistentes con fouling particulado.",
+      "why_discardable": "El ATP extremadamente elevado (1.200 pg/mL) y el TOC duplicado apuntan claramente a componente biológico como factor dominante. Un fouling puramente particulado inorgánico no explicaría el incremento de ATP de 15x. Además, la turbidez del efluente DAF ya se normalizó tras el episodio de mar gruesa, pero el SDI siguió subiendo, lo que sugiere que la carga es predominantemente biológica/orgánica."
+    },
+    {
+      "hypothesis": "Fouling orgánico no biológico (NOM, sustancias húmicas) por bloom fitoplanctónico estacional",
+      "why_plausible": "En el Mediterráneo en abril puede haber blooms primaverales. El TOC elevado y el SDI alto son compatibles. La materia orgánica natural puede causar fouling en etapa 1 con patrón similar de ΔP.",
+      "why_discardable": "El nivel de ATP de 1.200 pg/mL indica actividad biológica activa, no solo materia orgánica pasiva. Si fuera NOM pasivo, el ATP no habría subido 15x. Además, no se reporta alerta de bloom ni cambios en color/olor del agua de captación."
+    },
+    {
+      "hypothesis": "Scaling (incrustación mineral) en elementos de cabecera",
+      "why_plausible": "El aumento de presión de alimentación y la caída de permeado podrían ser consistentes con scaling. El supervisor aumentó la dosis de antiincrustante, lo que sugiere preocupación por este mecanismo.",
+      "why_discardable": "El scaling típicamente afecta más a la etapa 2 (cola) donde la concentración de sales es máxima, no a la etapa 1. El ΔP de etapa 2 está estable. Además, el pH es 8,1 (estable), la recovery es moderada (45 %), y el antiincrustante ya estaba dosificado. El ATP y TOC elevados no se explican por scaling. El patrón de ΔP concentrado en etapa 1 descarta scaling como causa principal."
+    },
+    {
+      "hypothesis": "Daño oxidativo a membranas por exposición a cloro residual",
+      "why_plausible": "Se dosifica hipoclorito intermitente en captación. Si el bisulfito no neutralizara completamente el cloro, podría haber daño oxidativo que aumente el paso de sales (conductividad permeado subió).",
+      "why_discardable": "El cloro libre antes de RO es <0,02 mg/L (estable y dentro de límites seguros). El daño oxidativo causaría aumento de paso de sales sin necesariamente aumentar ΔP; aquí el síntoma dominante es el ΔP de etapa 1. Además, el aumento de conductividad es ligero y explicable por concentración de polarización incrementada por biofilm."
+    }
+  ],
+  "requested_data": "Resultado de autopsia o al menos inspección visual y análisis microbiológico (recuento de colonias, identificación de EPS/polisacáridos) de un elemento de membrana de cabecera de la etapa 1, para confirmar la presencia y composición del biofilm frente a fouling particulado inorgánico.",
+  "recommended_action": "Realizar limpieza química in situ (CIP) de emergencia en todos los trenes afectados con protocolo específico anti-biofouling: (1) Enjuague inicial con permeado a baja presión. (2) Recirculación de solución alcalina de NaOH al 0,1 % p/v (pH 12,0 ± 0,2) a 35 °C con adición de 200 ppm de Na-EDTA durante 60 minutos, seguida de remojo de 60 minutos. (3) Segundo paso con solución de NaOH 0,1 % p/v combinada con Na-SBS (dodecilsulfato sódico) al 0,025 % p/v a 35 °C, recirculación 45 minutos. (4) Enjuague intermedio con permeado. (5) Opcionalmente, si el fabricante de membranas lo autoriza, paso biocida con solución de DBNPA a 100 ppm durante 20 minutos a temperatura ambiente para desinfección del biofilm residual. (6) Enjuague final extenso con permeado hasta conductividad estable. Paralelamente, verificar y restaurar la operación completa de la DAF (confirmar que ambas bombas de aire saturado funcionan al 100 %), revisar y reemplazar los cartuchos de 5 µm si el SDI post-cartucho no baja de 3,0 tras restaurar la DAF, y considerar implementar dosificación continua de biocida no oxidante (DBNPA a 1-2 ppm) en la alimentación RO hasta estabilizar el ATP por debajo de 100 pg/mL.",
+  "decision_change_condition": "Si el análisis del depósito de membrana de etapa 1 revelara composición predominantemente inorgánica (>70 % sílice, aluminosilicatos o hierro/manganeso) con ausencia significativa de materia orgánica y EPS, y si el ATP en la superficie de membrana fuera bajo (<500 pg/cm²), cambiaría el diagnóstico a fouling coloidal inorgánico y modificaría el protocolo CIP a limpieza ácida (HCl 0,2 % p/v, pH 2,0) en lugar del protocolo alcalino/biocida.",
+  "confidence": 88
+}

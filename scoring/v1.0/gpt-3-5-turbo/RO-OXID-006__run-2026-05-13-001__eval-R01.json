@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-OXID-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-006",
+    "subject_id": "gpt-3-5-turbo",
+    "subject_version": "gpt-3.5-turbo-0125",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'contaminación clorito' captura una de 3 hipótesis (Open accepts any)."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief."
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "FAIL CRÍTICO: 'Detener dosificación SBS como medida preventiva y realizar lavado químico de membranas para eliminar clorito presente'. Detener SBS expone + lavado químico para eliminar daño OXID — match case_specific Critical 'CIP para recuperar rechazo'."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide cloramina en alimentación — diferente oxidante, single candidate."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: si cloramina significativa y no clorito → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Recomendar CIP para 'recuperar el rechazo'",
+      "severity": "critical",
+      "justification": "Cita ACT: 'Detener la dosificación de bisulfito sódico (SBS) como medida preventiva y realizar un lavado químico de las membranas para eliminar el clorito presente'. Doble fail: (1) detener SBS expone la membrana al oxidante, (2) lavado químico para eliminar clorito = CIP para recuperar daño oxidativo irreversible. Match exacto case_specific Critical."
+    }
+  ],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:16:58Z",
+  "main_hypothesis": "Fouling orgánico y coloidal derivado de la ineficiencia en la eliminación de materia orgánica y coagulante residual tras el episodio de lluvias intensas.",
+  "key_signals": [
+    "Aumento marcado del TOC en alimentación (1,8 a 4,1 mg/L)",
+    "Aumento del SDI15 (2,2 a 3,9)",
+    "Coloración marrón anaranjada en cartuchos (indicativo de arrastre de hierro/coagulante)",
+    "ΔP etapa 1 en aumento sostenido mientras etapas 2 y 3 permanecen estables",
+    "Turbidez de salida de cartuchos en aumento (0,08 a 0,18 NTU)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación inorgánica (scaling) por sales de hierro",
+      "why_plausible": "El uso de cloruro férrico y la coloración de los cartuchos sugieren precipitación de hierro.",
+      "why_discardable": "El pH de alimentación es 7,4 y estable; la conductividad y el rechazo de sales son estables, lo que no concuerda con una cristalización masiva de sales en la etapa 1."
+    },
+    {
+      "hypothesis": "Biofouling",
+      "why_plausible": "El aumento de TOC proporciona sustrato para el crecimiento microbiológico.",
+      "why_discardable": "El aumento de ΔP es muy rápido tras el episodio de lluvias y el TOC elevado, y la conductividad del permeado no muestra el deterioro típico de la integridad de membrana por biofouling avanzado."
+    }
+  ],
+  "requested_data": "Análisis de hierro total y hierro disuelto en la alimentación a las membranas (mg/L).",
+  "recommended_action": "Realizar un CIP (Clean-in-Place) de dos etapas: primero una limpieza ácida (ácido cítrico al 2% p/p, pH 2,5-3,0) para eliminar depósitos de hierro/coloides, seguida de una limpieza alcalina (detergente de alto pH, pH 11,0-11,5) para eliminar la materia orgánica acumulada.",
+  "decision_change_condition": "Si el análisis de hierro en la alimentación resultara despreciable y el TOC se mantuviera elevado, la causa principal se reclasificaría como fouling orgánico puro derivado de la ineficiencia del pretratamiento (coagulación/decantación).",
+  "confidence": 85
+}

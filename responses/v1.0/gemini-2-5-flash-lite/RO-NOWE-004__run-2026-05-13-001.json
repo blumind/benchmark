@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-NOWE-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:37:13Z",
+  "main_hypothesis": "Presencia de aire en el sistema RO, específicamente en los elementos filtrantes, debido a un purgado inadecuado durante el arranque post-mantenimiento.",
+  "key_signals": [
+    "Sonido en bastidor durante arranque: \"Borboteo\" intermitente reportado",
+    "Conductividad permeado: 380 µS/cm (post-arranque, 6 h) vs 110 µS/cm (Baseline pre-mantenimiento)",
+    "Rechazo de sales (calculado): 95,4 % (post-arranque, 6 h) vs 98,7 % (Baseline pre-mantenimiento)",
+    "Caudal volumétrico alimentación vs concentrado + permeado: Cierra el balance al 92 % (post-arranque, 6 h) vs 100 % (Baseline pre-mantenimiento)",
+    "ΔP etapa 1: 0,8 bar (post-arranque, 6 h) vs 1,0 bar (Baseline pre-mantenimiento)",
+    "ΔP etapa 2: 0,5 bar (post-arranque, 6 h) vs 0,8 bar (Baseline pre-mantenimiento)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo o ensuciamiento parcial de los elementos de ósmosis inversa.",
+      "why_plausible": "La conductividad del permeado elevada y el menor rechazo de sales son indicadores directos de un problema con los elementos RO. El menor ΔP también podría ser un síntoma de ensuciamiento o daño que reduce el flujo a través de los elementos.",
+      "why_discardable": "El mantenimiento reciente en la línea de alimentación y la descripción del arranque (purga de aire, borboteo) sugieren un problema transitorio relacionado con la entrada de aire. Si fuera un fallo de los elementos, la conductividad del permeado probablemente no mostraría una tendencia descendente y el ΔP podría ser más alto si el ensuciamiento es severo. El balance de caudales anómalo también es más consistente con aire atrapado que con un fallo de membrana simple."
+    },
+    {
+      "hypothesis": "Fuga en el sistema de alta presión (HP) o en las juntas de los elementos.",
+      "why_plausible": "Una fuga podría explicar la pérdida de caudal y la posible entrada de aire, lo que afectaría la conductividad del permeado y el balance de caudales. El sonido de borboteo podría ser indicativo de aire entrando o escapando.",
+      "why_discardable": "Si hubiera una fuga significativa en el sistema HP, se esperaría una caída de presión más pronunciada y posiblemente un ΔP más bajo en las etapas afectadas. El hecho de que el borboteo haya cesado y reaparecido, junto con la tendencia descendente de la conductividad del permeado, es menos típico de una fuga estática y más de aire que se mueve dentro del sistema. El balance de caudales al 92% es una pérdida, pero no necesariamente una fuga externa obvia."
+    },
+    {
+      "hypothesis": "Problema con la dosificación del antiincrustante.",
+      "why_plausible": "Una dosificación incorrecta o inefectiva del antiincrustante podría llevar a una incrustación rápida de las membranas, afectando el ΔP y la calidad del permeado. Sin embargo, la tendencia descendente de la conductividad del permeado y la subida lenta del ΔP no son típicas de una incrustación aguda.",
+      "why_discardable": "La conductividad del permeado está mejorando (bajando), lo cual es contrario a lo que se esperaría con un fallo del antiincrustante. Además, el historial reciente no menciona problemas con la dosificación, y el arranque post-mantenimiento con purga de aire es un evento más probable para introducir aire. El ΔP está por debajo del baseline, no por encima, lo que no encaja con incrustación."
+    }
+  ],
+  "requested_data": "Presión diferencial entre la entrada y la salida del primer elemento del bastidor 1 (ΔP elemento 1).",
+  "recommended_action": "Realizar un ciclo de purga de aire controlado en el bastidor afectado. Abrir lentamente las válvulas de drenaje del bastidor (si existen y son seguras de operar) o reducir temporalmente el caudal de alimentación y/o la presión de operación para permitir que el aire atrapado escape, monitorizando la conductividad del permeado y el ΔP. Si el borboteo persiste o la conductividad del permeado no mejora, considerar la parada segura del bastidor para inspección visual de los elementos y juntas.",
+  "decision_change_condition": "Si la conductividad del permeado deja de mejorar o comienza a empeorar, y el ΔP aumenta significativamente por encima del baseline, mi diagnóstico cambiaría a un posible ensuciamiento o fallo de los elementos de RO.",
+  "confidence": 85
+}

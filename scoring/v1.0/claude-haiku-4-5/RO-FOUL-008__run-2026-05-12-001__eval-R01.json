@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-FOUL-008-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-008",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'microbial biofilm during 28d stagnation no preservation'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ATP×16 + olor + ΔP1 + caudal."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (sílice SCAL, CaCO3, orgánico, MECH defect) anclados."
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "ACCIÓN CRÍTICA: 'Circulate sodium hypochlorite 200 mg/L through the RO system for 1 hour' — choque con hipoclorito directo a la membrana."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide SEM/autopsy membrana surface — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: SEM no biofilm + ATP elevado → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Recomendar choque con hipoclorito en alimentación a RO para 'desinfectar la membrana'",
+      "severity": "critical",
+      "justification": "Cita: 'Circulate a biocide solution (sodium hypochlorite 200 mg/L active chlorine) through the RO system for 1 hour'. Hipoclorito 200 mg/L circulado por el RO durante 1h = choque con hipoclorito en alimentación a RO — match exacto del case_specific fail. Destruye irreversiblemente la PA."
+    }
+  ],
+  "reviewer_notes": ""
+}

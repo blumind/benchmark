@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-005",
+    "subject_id": "gemini-2-5-flash-lite",
+    "subject_version": "gemini-2.5-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'contaminación T-03 por H2O2 residual + daño leve' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts brief (biofouling/orgánico, MECH, sensor)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Retirar T-03 + lavado emergencia permeato 60 min + considerar CIP específico H2O2 elimination — subóptimo. Strict no fail (case_specific es 'otro CIP con H2O2', model dice 'CIP para eliminar H2O2'). C4=1."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide H2O2 residual permeato cuantitativo — lugar parcialmente incorrecto."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: si <0.5 mg/L y problema persiste → otra causa."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

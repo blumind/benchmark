@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-002",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'mechanical damage RO first-stage telescoping + transient overpressure VFD ramp-up + Day -5 restoration' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia incluyendo VFD intervention."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (biofouling, cartridge, defect, PRV malfunction, scaling)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Shutdown + isolate + inspect 12 elements + replace damaged + verify VFD — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide VFD ramp setting before/after Day -10 — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: VFD no altered + no telescoping pero scaling/biofouling → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

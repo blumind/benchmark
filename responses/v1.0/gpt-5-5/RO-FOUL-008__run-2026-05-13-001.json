@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:51:19Z",
+  "main_hypothesis": "Biofouling severo de las membranas, principalmente en la primera etapa, originado por la preservación incorrecta durante la parada: las membranas permanecieron 28 días estancadas en permeado sin bisulfito ni biocida.",
+  "key_signals": [
+    "Las membranas quedaron inundadas con agua de permeado sin biocida durante 28 días y no se ejecutó la preservación con bisulfito al 1 %",
+    "ATP en alimentación RO aumentó de 60 pg/mL a 980 pg/mL, con incremento ya observado a 720 pg/mL antes del reporte",
+    "Olor sulfhídrico observado en muestras de concentrado al arranque, compatible con actividad microbiológica anaerobia durante estancamiento",
+    "ΔP de etapa 1 aumentó de 0,9 bar a 1,5 bar y seguía subiendo, patrón típico de ensuciamiento biológico inicial en elementos líderes",
+    "Presión de alimentación aumentó de 14,5 bar a 17 bar con caída del caudal de permeado de 208 a 192 m³/h",
+    "Conductividad de permeado subió de 95 a 110 µS/cm sin cambio relevante en conductividad, temperatura, pH, sílice ni calcio de alimentación",
+    "TOC y turbidez a salida de cartuchos aumentaron ligeramente, lo que favorece crecimiento o arrastre de material biológico hacia RO"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación por sílice",
+      "why_plausible": "La planta opera a 75 % de recovery con sílice de alimentación cercana a 32-33 mg/L, lo que puede concentrar sílice en rechazo y producir pérdida de flujo y aumento de presión.",
+      "why_discardable": "La sílice de alimentación se mantuvo estable, existe dosificación de antiincrustante específico para sílice, el deterioro apareció inmediatamente tras una parada larga sin biocida y los indicadores microbiológicos son mucho más fuertes."
+    },
+    {
+      "hypothesis": "Incrustación por carbonato de calcio u otra sal de dureza",
+      "why_plausible": "El agua tiene dureza moderada y calcio de 275-280 mg/L; a recovery alto puede formarse incrustación si falla el control químico.",
+      "why_discardable": "El calcio y pH se mantuvieron estables, no se reporta falla de antiincrustante ni cambio de recuperación, y el aumento predominante de ΔP en etapa 1 junto con ATP alto y olor sulfhídrico apunta más a biofouling que a scaling inorgánico."
+    },
+    {
+      "hypothesis": "Fouling particulado por desempeño deficiente de filtros multimedia o cartuchos",
+      "why_plausible": "La turbidez a salida de cartuchos aumentó de 0,06 a 0,12 NTU y el ΔP de etapa 1 subió, lo que puede ocurrir por arrastre de sólidos hacia los elementos líderes.",
+      "why_discardable": "La turbidez absoluta sigue siendo baja y no explica por sí sola el ATP muy elevado ni el olor sulfhídrico tras estancamiento sin preservante."
+    },
+    {
+      "hypothesis": "Daño químico o degradación de membrana por exposición indebida durante la parada",
+      "why_plausible": "El aumento de conductividad de permeado puede ocurrir si hay daño irreversible en la capa activa o sellos, y la parada larga fue un evento operacional anómalo.",
+      "why_discardable": "No se reporta exposición a oxidantes, pH extremo ni químicos incompatibles; además el aumento de ΔP y la pérdida de flujo son más consistentes con ensuciamiento que con daño químico primario."
+    }
+  ],
+  "requested_data": "ATP medido por hisopo en el spacer de alimentación del elemento líder de la etapa 1, expresado en pg ATP/cm².",
+  "recommended_action": "Sacar de servicio el bastidor afectado y ejecutar una limpieza CIP biológica de la etapa 1 siguiendo límites del fabricante: enjuague inicial con permeado a baja presión, luego recircular solución alcalina de limpieza con NaOH al 0,1 % p/p más surfactante no iónico compatible con poliamida al 0,05 % p/p, ajustada a pH 11,0-11,5 y 30-35 °C, durante 60 minutos, seguida de remojo de 2 horas, nueva recirculación de 30 minutos y enjuague con permeado hasta pH y conductividad estables; repetir por etapa si el ΔP no recupera y preservar con metabisulfito de sodio al 1,0 % p/p si el bastidor queda nuevamente detenido.",
+  "decision_change_condition": "Cambiaría el diagnóstico principal si el hisopo del spacer del elemento líder de etapa 1 mostrara ATP bajo, sin biopelícula visible, y el análisis del material recuperado en CIP estuviera dominado por sílice o carbonatos inorgánicos.",
+  "confidence": 88
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-OXID-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:45:18Z",
+  "main_hypothesis": "Presence of ozone in the feed water to the BWRO plant",
+  "key_signals": [
+    "Sudden increase in permeate conductivity",
+    "Drastic decrease in salt rejection",
+    "Marked increase in ORP in the RO feed water",
+    "Significant rise in residual ozone concentration in the RO feed water"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling",
+      "why_plausible": "Could explain the decrease in salt rejection and rise in permeate conductivity.",
+      "why_discardable": "Does not explain the increase in ORP and residual ozone concentration in the feed water."
+    },
+    {
+      "hypothesis": "Change in membrane properties",
+      "why_plausible": "Could lead to altered rejection rates and permeate quality.",
+      "why_discardable": "Does not account for the increase in ORP and residual ozone concentration."
+    }
+  ],
+  "requested_data": "Ozone concentration in the feed water to the BWRO plant",
+  "recommended_action": "Immediately halt the operation of the BWRO plant to prevent further membrane damage and investigate the source of ozone contamination. Implement corrective measures once the ozone concentration in the feed water is determined.",
+  "decision_change_condition": "If the ozone concentration in the feed water is found to be negligible or absent.",
+  "confidence": 90
+}

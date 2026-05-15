@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-004",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'CaSO4 etapa 3 + recovery 80→83 sin aumentar antiincrustante proporcional + sulfato↑ por mix' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (sílice, biofouling, MECH compactación, source water change)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Aumentar antiscalant 2.2→3.2 ppm + reducir recovery 81% + 'if acid CIP fails' (implícito); CIP secuencial explícito no visible."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide molar antiscalant concentration en concentrate + LSI — match accepted (SI yeso)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ΔP no decrece 48h + ácido CIP falla → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

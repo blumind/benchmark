@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-FOUL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T08:50:12Z",
+  "main_hypothesis": "Biofouling of the first stage RO membranes, caused by the discontinuation of the prophylactic, time-based biocide dosing regimen.",
+  "key_signals": [
+    "The significant increase in Stage 1 differential pressure (from 0.8 bar to 1.7 bar), which is characteristic of fouling at the front end of the RO train.",
+    "The quadrupling of ATP levels in the RO feed (from 110 pg/mL to 480 pg/mL), indicating a substantial increase in biological activity.",
+    "The rapid rebound of differential pressure after a scheduled acidic CIP, which is ineffective against established biofilm.",
+    "The operational problems (rising ΔP) began approximately one month after the prophylactic biocide dosing was stopped.",
+    "The reported yellowish color in the concentrate, which can be indicative of sloughed-off biofilm."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Organic fouling",
+      "why_plausible": "The feed water TOC has increased from 1.3 to 1.9 mg/L, providing a source for organic foulants. This type of fouling also primarily affects the first stage.",
+      "why_discardable": "This hypothesis does not adequately explain the massive increase in ATP, which is a direct measure of biological mass. The rapid rebound after cleaning is also more characteristic of living organisms regenerating than of simple organic layer re-compaction."
+    },
+    {
+      "hypothesis": "Colloidal or particulate fouling",
+      "why_plausible": "This type of fouling from a pretreatment breakthrough would manifest as an increased differential pressure in the first stage.",
+      "why_discardable": "There are no direct indicators of a pretreatment failure. Feed iron and manganese levels are stable and low. This hypothesis also fails to account for the high ATP levels and the specific ineffectiveness of an acidic CIP."
+    },
+    {
+      "hypothesis": "Mineral scaling",
+      "why_plausible": "Scaling can cause increased feed pressure and reduced permeate flow.",
+      "why_discardable": "Scaling typically occurs in the final stage of an RO system where salt concentration is highest. In this case, the Stage 3 ΔP is stable, while the Stage 1 ΔP has more than doubled. Furthermore, the acidic CIP performed should have been effective against common carbonate scales."
+    }
+  ],
+  "requested_data": "Silt Density Index (SDI-15) of the RO feed water.",
+  "recommended_action": "Perform an immediate two-stage Clean-In-Place (CIP) on the first stage. Stage 1: High-pH alkaline cleaning (target pH 11.0-11.5) to remove the biofilm's organic matrix. Stage 2: Disinfection step using a non-oxidizing biocide (e.g., DBNPA-based product at 150-200 mg/L). After a successful cleaning, immediately reinstate the prophylactic, time-based biocide dosing every 3 days to prevent recurrence.",
+  "decision_change_condition": "My diagnosis would change if the Silt Density Index (SDI-15) of the RO feed was found to be consistently high (> 5.0) over the last 60 days, indicating a persistent pretreatment failure is the primary source of the fouling material.",
+  "confidence": 95
+}

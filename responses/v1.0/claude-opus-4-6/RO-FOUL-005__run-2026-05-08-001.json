@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:42:51Z",
+  "main_hypothesis": "Sobredosificación sostenida de FeCl₃ (4 mg/L mantenidos tras resolverse el episodio de turbidez) que supera la capacidad de retención de los filtros de arena, provocando paso de hierro coloidal/particulado a través de los cartuchos de 5 µm y fouling inorgánico por depósitos de hidróxido férrico en los elementos de cabeza de la etapa 1 de RO.",
+  "key_signals": [
+    "Fe total en alimentación RO subió de 0,05 a 0,42 mg/L, coincidiendo temporalmente con el mantenimiento de la dosis de FeCl₃ en 4 mg/L tras la resolución del episodio de turbidez (día -20).",
+    "SDI₁₅ salida de cartuchos subió de 2,4 a 4,2, indicando paso de coloides/partículas finas no retenidas por el pretratamiento.",
+    "Turbidez salida de cartuchos subió de 0,06 a 0,22 NTU, consistente con arrastre de flóculos de hierro.",
+    "ΔP de cabeza de etapa 1 se duplicó (1,1 → 2,2 bar) mientras ΔP de cola permanece estable (0,7 bar), patrón clásico de fouling por deposición de partículas/coloides en los primeros elementos del bastidor.",
+    "Coloración rojiza intensa en cartuchos (día -5), evidencia directa de acumulación de óxidos/hidróxidos de hierro.",
+    "Trazas de color amarillo-anaranjado post-filtros de arena (día -15), indicando que los filtros no retienen todo el hierro dosificado.",
+    "La consigna de FeCl₃ se mantuvo en 4 mg/L por olvido del operador tras normalización de turbidez en captación (día -20), estableciendo la causa raíz operativa.",
+    "ATP estable (~95 pg/mL) descarta biofouling como causa principal del aumento de ΔP.",
+    "Conductividad de permeado prácticamente estable (380 vs 365 µS/cm), consistente con fouling particulado/coloidal más que con scaling o degradación de membrana."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling en elementos de cabeza de etapa 1",
+      "why_plausible": "La planta opera en aguas cálidas del Caribe (27,8 °C) sin cloraminación continua, condiciones propicias para crecimiento biológico. El patrón de ΔP elevado en cabeza con cola estable también es compatible con biofouling.",
+      "why_discardable": "El ATP en alimentación es bajo y estable (95 pg/mL, sin tendencia al alza), no hay reporte de olores ni de aumento de recuento microbiológico. La cronología correlaciona perfectamente con la sobredosificación de FeCl₃ y la evidencia visual (coloración rojiza en cartuchos) apunta a hierro, no a biofilm."
+    },
+    {
+      "hypothesis": "Fallo de los filtros de arena (canalización, pérdida de medio filtrante) que permite paso de partículas independientemente de la dosis de coagulante",
+      "why_plausible": "Un filtro de arena con medio degradado o canalizado podría dejar pasar partículas y coloides, elevando SDI y turbidez post-filtro. Esto explicaría el arrastre de hierro.",
+      "why_discardable": "El problema apareció tras el aumento de dosis de FeCl₃ y no antes; la turbidez post-filtro era excelente (0,06 NTU) con la dosis anterior. Si los filtros estuvieran dañados, el deterioro habría sido evidente antes del cambio de dosis. No obstante, no se puede descartar completamente sin inspección de los filtros."
+    },
+    {
+      "hypothesis": "Calibración incorrecta de la nueva bomba dosificadora de FeCl₃ (dosis real superior a la indicada)",
+      "why_plausible": "La bomba fue reemplazada (día -35) y calibrada (día -30). Si la calibración fue errónea, la dosis real podría ser significativamente mayor que los 4 mg/L nominales, agravando el problema de arrastre de hierro.",
+      "why_discardable": "Esta hipótesis no contradice sino que refuerza la hipótesis principal (sobredosificación de FeCl₃); sería un factor agravante más que una causa raíz alternativa. La causa raíz sigue siendo el exceso de coagulante no corregido."
+    },
+    {
+      "hypothesis": "Scaling inorgánico (CaCO₃, BaSO₄, SrSO₄) en elementos de cabeza",
+      "why_plausible": "La presión de alimentación ha subido y el flux ha bajado, lo cual también ocurre con scaling. El pH de 8,0 podría favorecer precipitación de carbonatos.",
+      "why_discardable": "El scaling típicamente afecta más a los elementos de cola (mayor concentración de sales) y no a los de cabeza. El ΔP de cola es estable. Además, la conductividad de permeado no muestra el aumento que se esperaría con scaling severo, y hay antiincrustante dosificado a 2,5 ppm. La evidencia visual (coloración rojiza) apunta claramente a hierro."
+    }
+  ],
+  "requested_data": "Análisis elemental (EDX o ICP) de un depósito raspado de la superficie de un cartucho de 5 µm con coloración rojiza, para confirmar composición predominante de hierro (Fe) y descartar presencia significativa de materia orgánica, sílice u otros inorgánicos.",
+  "recommended_action": "1) Reducir inmediatamente la dosis de FeCl₃ a 2,0 mg/L (o al valor óptimo determinado por jar test con la turbidez actual de captación ~0,5 NTU) y verificar la calibración de la nueva bomba dosificadora midiendo el caudal volumétrico real contra la concentración de la solución madre. 2) Reemplazar los cartuchos de 5 µm contaminados. 3) Realizar una limpieza química (CIP) de los trenes afectados con una solución de ácido cítrico al 2 % (peso/volumen) a pH 2,0 (ajustado con HCl o con el propio ácido), temperatura 35 °C, recirculando durante 2 horas con remojo intermitente de 1 hora, siguiendo las recomendaciones del fabricante de membranas para eliminación de depósitos de hierro. Monitorizar Fe total post-filtros de arena y en alimentación RO diariamente hasta confirmar retorno a valores baseline (<0,05 mg/L). 4) Implementar un protocolo de revisión de consignas de dosificación tras eventos de turbidez para evitar recurrencia.",
+  "decision_change_condition": "Si el análisis elemental del depósito de los cartuchos mostrara predominancia de materia orgánica o biomasa (y no de hierro), o si tras reducir la dosis de FeCl₃ a niveles óptimos y realizar CIP ácido el ΔP de cabeza no se recuperara y el ATP en la superficie de membrana resultara >1.000 pg/cm², cambiaría el diagnóstico a biofouling como causa principal y recomendaría CIP alcalino con NaOH 0,1 % + Na-SDS 0,025 % a pH 12 y 35 °C.",
+  "confidence": 93
+}

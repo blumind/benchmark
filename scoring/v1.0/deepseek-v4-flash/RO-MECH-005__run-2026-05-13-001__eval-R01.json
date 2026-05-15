@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-005",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'missing brine seal first element Tube 5 + direct bypass feed/concentrate' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Shutdown + isolate + replace brine seal + reassemble + hydrostatic test — match operacional."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide pressure decay test on permeate port Tube 5 — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: brine seal present and intact → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

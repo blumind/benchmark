@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:39:45Z",
+  "main_hypothesis": "Saturación y agotamiento prematuro del lecho de carbón activado granular (CAG) por sobreexposición a hipoclorito sódico, reduciendo su capacidad de dechloración y permitiendo cloro libre residual que daña las membranas SWRO.",
+  "key_signals": [
+    "Subida marcada de cloro libre antes RO (0,18 mg/L vs <0,02 mg/L baseline)",
+    "Subida marcada de ORP antes RO (+320 mV vs +90 mV baseline)",
+    "Subida marcada de cloro libre tras CAG (0,18 mg/L vs <0,02 mg/L baseline)",
+    "Subida brusca de conductividad de permeado (1.200 µS/cm vs 380 µS/cm baseline)",
+    "Bajada marcada de rechazo de sales (96,2% vs 99,1% baseline)",
+    "Aumento de frecuencia de choque con hipoclorito (3 veces/semana vs 1 vez/semana)",
+    "Capacidad residual del CAG reducida al 25% (vs 70% en cambio)",
+    "ORP tras CAG oscilando entre +110 y +180 mV antes de la detención del choque"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling orgánico o biológico en membranas SWRO por aumento de ATP en alimentación.",
+      "why_plausible": "El ATP en alimentación está estable (75 pg/mL vs 80 pg/mL baseline), lo que no apoya un aumento significativo de materia orgánica o biomasa. Además, el fouling orgánico no explicaría el aumento de cloro libre residual ni la caída abrupta en rechazo de sales.",
+      "why_discardable": "No hay evidencia de aumento de ATP ni de presión diferencial en etapas 1 y 2, que serían esperables en fouling orgánico o biológico."
+    },
+    {
+      "hypothesis": "Fallo en la dosificación de antiincrustante, causando fouling inorgánico en membranas.",
+      "why_plausible": "El antiincrustante se dosifica a 3 ppm, pero no hay datos de su concentración real en alimentación ni de su efectividad. Un fallo en la dosificación podría causar fouling inorgánico, reduciendo el rechazo de sales.",
+      "why_discardable": "No hay señales de aumento de presión diferencial ni de caída en flujo de permeado que sugieran fouling inorgánico. Además, el fouling inorgánico no explicaría el aumento de cloro libre residual ni la subida de ORP."
+    },
+    {
+      "hypothesis": "Contaminación química en alimentación por arrastre de hipoclorito desde captación sin degradación en CAG.",
+      "why_plausible": "El aumento de cloro libre antes y después del CAG sugiere que el lecho no está degradando el hipoclorito como debería. Esto podría deberse a saturación del CAG o a un fallo en su operación.",
+      "why_discardable": "Esta hipótesis es compatible con la principal, ya que la saturación del CAG es la causa más probable de la contaminación química. No es un alternativa independiente, sino un síntoma de la misma causa raíz."
+    },
+    {
+      "hypothesis": "Fallo en la instrumentación de medición de cloro libre y ORP, dando lecturas falsamente altas.",
+      "why_plausible": "Los sensores de cloro libre y ORP podrían estar descalibrados o contaminados, dando lecturas incorrectas. Esto explicaría el aumento aparente de cloro libre y ORP.",
+      "why_discardable": "No hay evidencia de fallo en la instrumentación en los datos reportados. Además, la caída en rechazo de sales y el aumento de conductividad de permeado son consistentes con daño por cloro en membranas, lo que apoya la hipótesis principal."
+    }
+  ],
+  "requested_data": "Capacidad de adsorción de cloro del lecho de CAG (g Cl₂/kg CAG) medido en laboratorio tras muestreo del lecho.",
+  "recommended_action": "Sustituir inmediatamente el lecho de CAG del tren afectado, siguiendo el protocolo de seguridad para manejo de carbón activado. Dosificar hipoclorito sódico en captación a dosis máxima de 0,5 mg/L Cl₂ con exposición máxima de 15 min, y verificar cloro libre tras CAG < 0,02 mg/L antes de reiniciar el tren. Aumentar frecuencia de análisis de cloro libre y ORP tras CAG a cada 4 horas durante 72 horas.",
+  "decision_change_condition": "Si la capacidad de adsorción de cloro del lecho de CAG medida en laboratorio es superior al 50% de su vida útil nominal, reconsiderar la hipótesis principal y evaluar otras causas como fallo en instrumentación o contaminación química externa.",
+  "confidence": 92
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-001",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'rehumectación incompleta y propilenglicol' matches anchors"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 8+ signals: 5 meses, aclarado 30min, rampa 2min, caudal 36%, P 64, dP bajos, mejora"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 3 alts (desecacion, biofouling, scaling) - primera es subtipo, mas estrecho"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: 20% presion 12-24h + rampa 30 min - matches gold sin CIP"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (PG en aclarado)"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit: PG no detectable + 24h sin recuperacion + dP en aumento -> daño"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Buena, sin CIP, respeta wetting"
+}

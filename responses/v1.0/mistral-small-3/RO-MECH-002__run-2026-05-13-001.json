@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-MECH-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:34:52Z",
+  "main_hypothesis": "Daño físico en el primer elemento de la etapa 1 (telescoping) debido a sobrepresión transitoria durante el rearranque automático post-parada eléctrica, agravado por la rampa de arranque del VFD posiblemente ajustada incorrectamente tras el mantenimiento del VFD.",
+  "key_signals": [
+    "Deformación visible (telescoping) en el extremo aguas abajo del primer elemento del Tubo 1 de etapa 1",
+    "Conductividad de permeado con subida brusca de 92 a 950 µS/cm (bajada drástica en rechazo de sales del 97,9% al 78,7%)",
+    "ΔP etapa 1 y etapa 2 con bajada marcada (0,8 bar y 0,4 bar vs baseline 1,0 bar y 0,8 bar), indicando posible bypass de flujo por daño en membrana",
+    "Sonido anómalo de 'golpe' en la línea de alta presión durante rearranque post-parada eléctrica (Día -4)",
+    "Probe test que localiza alta conductividad en cabeza de etapa 1 (6.500 µS/cm vs resto < 200 µS/cm)",
+    "Mantenimiento del VFD de la HP pump 10 días antes (Día -10) y reporte de rampa de arranque 'más rápida' (Día -8)",
+    "Parada no programada por baja en red eléctrica (Día -5) con rearranque automático de la HP pump"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling severo en membranas por acumulación de materia orgánica o inorgánica en la superficie, causando aumento de conductividad y cambios en ΔP.",
+      "why_plausible": "El fouling puede reducir el rechazo de sales y aumentar la conductividad del permeado. También puede alterar los patrones de ΔP entre etapas.",
+      "why_discardable": "No hay evidencia de aumento de ΔP en las etapas (de hecho, hay una bajada marcada), lo cual es inconsistente con fouling típico que suele aumentar la resistencia al flujo. Además, el probe test localiza el problema en la cabeza de la etapa 1, sugiriendo un daño localizado más que un fouling generalizado."
+    },
+    {
+      "hypothesis": "Fuga en el sistema de sellado o en las conexiones entre elementos, permitiendo bypass de agua no tratada al permeado.",
+      "why_plausible": "Una fuga en sellos o conexiones podría explicar el aumento de conductividad en el permeado y la localización de alta conductividad en la cabeza de la etapa 1.",
+      "why_discardable": "No se reportan fugas visibles ni cambios en el caudal de permeado (estable en 410 m³/h). Además, el daño físico visible (telescoping) en el primer elemento es consistente con una causa mecánica más que con una fuga en sellos."
+    },
+    {
+      "hypothesis": "Daño químico en las membranas por exposición a oxidantes o condiciones de pH extremo no detectadas.",
+      "why_plausible": "El daño químico puede reducir el rechazo de sales y aumentar la conductividad del permeado. La estabilidad reportada en pH, cloro libre y ORP hace que esta hipótesis sea menos probable, pero no imposible.",
+      "why_discardable": "No hay cambios reportados en pH, cloro libre (< 0,02 mg/L) ni ORP (+85 mV estable), lo que descarta exposición a oxidantes. Además, el daño químico suele manifestarse de manera más uniforme en todas las membranas, no de forma localizada en un solo elemento."
+    },
+    {
+      "hypothesis": "Problema en el VFD de la HP pump que causa pulsaciones de presión durante el arranque, dañando las membranas.",
+      "why_plausible": "El mantenimiento del VFD y el reporte de una rampa de arranque 'más rápida' podrían indicar un mal funcionamiento que genera pulsaciones de presión, causando daño mecánico en las membranas.",
+      "why_discardable": "Aunque el VFD podría ser una causa indirecta, la evidencia directa de daño físico (telescoping) en el primer elemento apunta a un evento de sobrepresión transitoria durante el rearranque, más que a un mal funcionamiento continuo del VFD."
+    }
+  ],
+  "requested_data": "Perfil de presión en la línea de alta presión durante el rearranque automático post-parada eléctrica (registrado en el sistema SCADA), con resolución de 1 segundo y rango de 0 a 25 bar.",
+  "recommended_action": "Aislar y reemplazar el primer elemento del Tubo 1 de la etapa 1, seguido de un probe test post-reemplazo para verificar la integridad del resto de elementos. Realizar un rearranque controlado de la planta con rampa de arranque del VFD ajustada a 120 segundos (según manual de operación) y monitoreo en tiempo real de presión y conductividad. Dosificar antiincrustante a 2,5 ppm durante 24 horas post-reparación.",
+  "decision_change_condition": "Si el perfil de presión durante el rearranque automático post-parada eléctrica muestra pulsaciones inferiores a 20 bar y sin picos superiores a 22 bar, el daño en las membranas no sería atribuible a sobrepresión transitoria, requiriendo reevaluar otras causas como fouling severo o daño químico.",
+  "confidence": 92
+}

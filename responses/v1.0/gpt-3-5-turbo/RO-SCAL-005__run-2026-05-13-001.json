@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:17:41Z",
+  "main_hypothesis": "Scaling in the RO membrane elements due to inadequate antiscalant dosage",
+  "key_signals": [
+    "Progressive increase in ΔP stage 2",
+    "Increase in feed pressure",
+    "Decrease in permeate flow rate",
+    "Slight increase in permeate conductivity"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling",
+      "why_plausible": "Membrane fouling could also lead to an increase in pressure drop and a decrease in permeate flow rate.",
+      "why_discardable": "The slight increase in permeate conductivity suggests scaling rather than fouling."
+    },
+    {
+      "hypothesis": "Membrane damage",
+      "why_plausible": "Membrane damage could cause an increase in pressure drop and a decrease in permeate flow rate.",
+      "why_discardable": "The stable values of calcium and alkalinity rejection indicate that membrane damage is less likely."
+    }
+  ],
+  "requested_data": "Results of the analysis requested to the antiscalant supplier",
+  "recommended_action": "Increase the antiscalant dosage to the previous level of 3 ppm as a temporary measure until analysis results are obtained.",
+  "decision_change_condition": "If the analysis results show that the current antiscalant dosage is adequate for the new formulation.",
+  "confidence": 85
+}

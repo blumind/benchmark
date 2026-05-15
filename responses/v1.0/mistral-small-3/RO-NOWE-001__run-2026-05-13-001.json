@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-NOWE-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:55:35Z",
+  "main_hypothesis": "Incomplete removal of propilenglicol-based preservative solution during the pre-start flushing procedure, causing membrane wetting issues and reduced flux due to increased surface tension and viscosity of the residual fluid in the membrane channels.",
+  "key_signals": [
+    "Lenta recuperación del caudal de permeado (solo 90 m³/h vs 250 m³/h esperado) tras 5 días de operación",
+    "Subida lenta de ΔP en ambas etapas (0,7 bar y 0,4 bar vs 1,2 bar y 0,8 bar esperados)",
+    "Conductividad de permeado anómalamente alta (480 µS/cm vs 400 µS/cm esperado) con rechazo de sales bajo (99,15% vs 99,3%)",
+    "Mejora progresiva pero insuficiente tras circulación a baja presión (20% presión durante 24h) y posterior aumento gradual de caudal",
+    "Preservación previa con propilenglicol 20% v/v en el tren T-04 durante 5 meses",
+    "Procedimiento de arranque incluyó aclarado con permeado durante solo 30 minutos, insuficiente para eliminar propilenglicol viscoso",
+    "Temperatura de almacenamiento mínima de 4 °C, que puede aumentar la viscosidad del propilenglicol residual"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño osmótico o degradación de las membranas por exposición prolongada a bisulfito durante la preservación.",
+      "why_plausible": "El bisulfito es un agente reductor que puede dañar las membranas poliamida si no se elimina completamente, especialmente en condiciones de almacenamiento prolongado. La exposición a 1% de bisulfito durante 5 meses podría comprometer la integridad de la capa activa de las membranas.",
+      "why_discardable": "No hay evidencia de aumento anómalo de cloro libre o ORP que sugiera oxidación. Además, el rechazo de sales (99,15%) sigue siendo alto, lo que no es consistente con daño osmótico severo. La mejora progresiva con circulación sugiere un problema reversible, no un daño estructural."
+    },
+    {
+      "hypothesis": "Contaminación microbiológica en el tren preservado, formando biofilm en las membranas.",
+      "why_plausible": "El propilenglicol es un nutriente para algunos microorganismos, y la preservación prolongada en condiciones no estériles podría favorecer el crecimiento de biofilm. Esto reduciría el flujo y aumentaría la ΔP por obstrucción de los canales.",
+      "why_discardable": "No se reportan cambios en el cloro libre (<0,02 mg/L) ni en el ORP (+90 mV), lo que sugiere ausencia de actividad biológica. Además, la mejora progresiva con circulación a baja presión es más consistente con un problema de humectación que con biofilm, que suele requerir limpieza química específica."
+    },
+    {
+      "hypothesis": "Fuga interna en el tren T-04 que reduce la eficiencia de conversión.",
+      "why_plausible": "Una fuga en el sistema de membranas o en las conexiones podría explicar la baja recuperación de permeado y el aumento anómalo de ΔP. Las fugas son comunes en trenes que han estado fuera de servicio por largos periodos.",
+      "why_discardable": "No se reportan anomalías en la presión de alimentación (64 bar vs 60 bar esperado) ni en el caudal de rechazo. Además, la mejora progresiva con circulación sugiere un problema en las membranas, no una fuga estructural que no mejoraría con este procedimiento."
+    },
+    {
+      "hypothesis": "Precipitación de sales o incrustaciones en las membranas por incompatibilidad del propilenglicol con el antiincrustante residual.",
+      "why_plausible": "El propilenglicol puede interactuar con el antiincrustante (3 ppm) y formar compuestos insolubles que obstruyan los poros de las membranas, reduciendo el flujo y aumentando la ΔP.",
+      "why_discardable": "No hay evidencia de cambios en la conductividad de alimentación (56.300 µS/cm estable) ni en el pH (8,1 estable), que serían indicativos de precipitación. Además, la mejora progresiva con circulación sugiere un problema de humectación, no de incrustación química."
+    }
+  ],
+  "requested_data": "Concentración de propilenglicol residual en el permeado del tren T-04 tras el aclarado inicial (mg/L)",
+  "recommended_action": "Realizar un aclarado prolongado con permeado a baja presión (15-20% de presión nominal) durante 48 horas, seguido de un enjuague con agua osmotizada a 30 °C para reducir la viscosidad del propilenglicol residual. Posteriormente, aplicar una limpieza química con solución de limpieza alcalina (pH 11-12, 0,1% de dodecil sulfato de sodio) durante 2 horas a 30 °C y 20% de presión, para eliminar cualquier residuo orgánico. Finalmente, reiniciar el tren a condiciones nominales y monitorear ΔP, flujo y conductividad de permeado cada 2 horas.",
+  "decision_change_condition": "Si la concentración de propilenglicol residual en el permeado tras el aclarado inicial es inferior a 5 mg/L y la conductividad de permeado no mejora por debajo de 400 µS/cm tras 48 horas de circulación a baja presión, descartar el problema de humectación y reconsiderar daño osmótico o contaminación microbiológica.",
+  "confidence": 92
+}

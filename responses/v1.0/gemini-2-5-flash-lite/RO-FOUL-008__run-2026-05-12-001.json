@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:53:02Z",
+  "main_hypothesis": "Biofouling of RO membranes",
+  "key_signals": [
+    "ATP en alimentación RO: 980 pg/mL (marcada subida)",
+    "ATP en alimentación RO (Día -2): 720 pg/mL",
+    "Olor sulfhídrico en muestras de concentrado",
+    "ΔP etapa 1: 1,5 bar (subida marcada desde 0,9 bar baseline)",
+    "Conductividad permeado: 110 µS/cm (subida desde 95 µS/cm baseline)",
+    "Turbidez salida cartuchos: 0,12 NTU (subida desde 0,06 NTU baseline)",
+    "TOC alimentación: 1,5 mg/L (subida ligera)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Inorganic scaling (silica or calcium carbonate)",
+      "why_plausible": "The feed water has moderate hardness and high silica content (32 mg/L). Silica scaling is a known issue in BWRO, especially if anti-scalant dosing is compromised or ineffective. The elevated ΔP could indicate scaling. However, the silica and calcium levels in the feed are reported as stable and close to baseline.",
+      "why_discardable": "The significant increase in ATP and the presence of hydrogen sulfide odor strongly suggest biological activity, which is not directly explained by inorganic scaling alone. While scaling can occur, the primary driver appears to be biological. The anti-scalant for silica was dosed at 10 ppm, which is a typical concentration, and no issues were reported prior to the shutdown."
+    },
+    {
+      "hypothesis": "Particulate fouling from cartridge filters",
+      "why_plausible": "The turbidity after the cartridge filters has increased, which could indicate a problem with the filters themselves or the upstream pre-treatment. Increased turbidity in the feed to the RO membranes would lead to higher ΔP and potentially reduced permeate flow.",
+      "why_discardable": "While cartridge filter turbidity is up, the primary indicator of biofouling (ATP) is extremely high, and the hydrogen sulfide odor is a strong indicator of anaerobic bacterial activity, which is characteristic of biofouling. The cartridge filter issue might be a secondary effect or a contributing factor, but not the root cause of the overall performance degradation."
+    },
+    {
+      "hypothesis": "Membrane degradation or damage",
+      "why_plausible": "A long shutdown period, especially without proper preservation, could potentially damage membranes. This could manifest as increased ΔP and reduced salt rejection (indicated by higher permeate conductivity).",
+      "why_discardable": "Membrane degradation typically leads to a more uniform increase in ΔP across all stages and a consistent drop in salt rejection. The extreme ATP levels and the specific odor of hydrogen sulfide point strongly towards a biological cause, which would precede or exacerbate any potential membrane damage. The fact that the issue became apparent immediately post-startup also aligns better with a biological bloom that was dormant during shutdown."
+    }
+  ],
+  "requested_data": "Microscopic examination of RO membrane samples for the presence of biomass and identification of microbial species.",
+  "recommended_action": "Initiate a chemical cleaning procedure for the RO membranes, including a pre-rinse with permeate, followed by a cleaning solution containing a biocide (e.g., sodium hypochlorite at a concentration of 0.5-1.0% active chlorine, pH adjusted to 9-10 with NaOH) for 1-2 hours at a temperature not exceeding 30°C, followed by thorough rinsing. If the odor persists or ΔP does not improve significantly, consider a second cleaning step with an acid cleaner to address potential inorganic scaling exacerbated by biofouling.",
+  "decision_change_condition": "If the microscopic examination reveals no significant biomass and the cleaning procedure does not improve performance, the hypothesis would shift towards inorganic scaling or membrane damage as the primary cause.",
+  "confidence": 90
+}

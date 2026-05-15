@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-002",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'oxidación irreversible poliamida por O3 residual ~0.06 mg/L sin barrera reductora' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia con cuantificación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (MECH, scaling/polarización, oxidación histórica, envejecimiento)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "SBS metabisulfito 0.5-1.0 mg/L + ORP <200 mV + tiempo contacto ≥20s — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide test Fujiwara (índice oxidación) en muestra cola + perfil conductividad — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: Fujiwara negativo + perfil único anómalo → MECH."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

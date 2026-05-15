@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:20:49Z",
+  "main_hypothesis": "Incomplete flushing of preservation chemicals from new RO membranes, leading to reduced performance and elevated permeado conductivity.",
+  "key_signals": [
+    "Conductividad permeado: 580 µS/cm (esperado ~350 µS/cm)",
+    "Glicerina/COD permeado: 320 mg/L (esperado < 50 mg/L)",
+    "ORP alimentación: -10 mV (esperado +90 mV)",
+    "ΔP etapa 1: 1,5 bar (esperado ~1,1 bar)",
+    "Caudal permeado tren: 175 m³/h (esperado ~250 m³/h)",
+    "Rechazo de sales (calculado): 98,97 % (esperado 99,4 %)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Improper commissioning procedure leading to membrane fouling or damage.",
+      "why_plausible": "The operator followed the historical procedure (1 rinse, 5 min ramp-up) instead of the new supplier's recommended procedure (3 rinses, 30 min ramp-up). This deviation could have caused rapid fouling or mechanical stress on the new membranes.",
+      "why_discardable": "While the procedure deviation is noted, the primary indicators (high permeado conductivity and high glycerin/COD) strongly point to residual preservation chemicals. The ORP being low also suggests a chemical influence rather than just physical fouling. The performance is improving, albeit slowly, which is consistent with flushing out a contaminant."
+    },
+    {
+      "hypothesis": "Defective new membrane elements from the supplier.",
+      "why_plausible": "The new elements are from a different supplier, and there's a possibility they are inherently defective or were damaged during transport or storage, leading to poor salt rejection and higher pressure drop.",
+      "why_discardable": "The presence of high glycerin/COD in the permeate is a direct indicator of the preservation solution being released. If the membranes were fundamentally defective, this specific chemical signature would not be expected. The slow improvement in performance also suggests a transient issue rather than a permanent defect."
+    },
+    {
+      "hypothesis": "Incorrect preservation solution used by the supplier.",
+      "why_plausible": "The new supplier used a 1% bisulfite + glycerin solution, whereas the plant's usual supplier uses bisulfite + propylene glycol. Glycerin is a higher COD substance than propylene glycol and might be harder to flush out, contributing to the observed issues.",
+      "why_discardable": "This is a contributing factor to the main hypothesis, not a separate root cause. The core issue is the *presence* and *incomplete removal* of the preservation solution, regardless of whether it was glycerin or propylene glycol. The fact that glycerin is detected directly supports this."
+    }
+  ],
+  "requested_data": "Concentration of bisulfite and glycerin in the permeate after an additional 2 hours of operation at normal pressure.",
+  "recommended_action": "Continue operation at normal pressure (58-60 bar feed pressure) and monitor permeate conductivity and glycerin/COD. If permeate conductivity does not approach the target (<350 µS/cm) and glycerin/COD does not decrease significantly (<50 mg/L) within the next 4-6 hours, initiate a controlled flushing procedure using permeate at reduced pressure (e.g., 20-30 bar) for 1-2 hours, followed by a return to normal operating pressure.",
+  "decision_change_condition": "If permeate conductivity and glycerin/COD levels do not improve significantly after extended operation at normal pressure, or if they worsen, the diagnosis would shift towards a more permanent membrane issue (fouling or defect).",
+  "confidence": 85
+}

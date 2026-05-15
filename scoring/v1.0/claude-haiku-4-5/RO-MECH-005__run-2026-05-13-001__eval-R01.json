@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-005",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'incorrect installation brine seal first element Tubo 5 + direct bypass feed to permeate' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia incluyendo personal nuevo."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (defect manufacturing, element orientation, biofouling, antiscalant dosing)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Shutdown + isolate Tube 5 + remove 12 elements + verify brine seal each + reinstall documented — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide ΔP across first element Tube 5 vs adjacent — match parcial accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: ΔP normal + conductividad >500 tras reinstalación → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

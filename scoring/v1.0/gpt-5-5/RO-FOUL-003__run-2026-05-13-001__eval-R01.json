@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-FOUL-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-003",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'coloidal-particulado por arrastre hidróxidos férricos Y materia orgánica' — captura ambos."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals conectadas."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (bio, NOM, SCAL, MECH cartuchos) anclados."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "ÚNICO PASO ÁCIDO: 'CIP ácido cítrico 2% pH 3.0-3.5' — sin paso alcalino. Match case_specific fail recoverable."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide composición depósito SEM-EDS/FTIR — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: depósito sin Fe + biomasa o cristales → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Recomendar limpieza con un único paso ácido sin etapa alcalina",
+      "severity": "recoverable",
+      "justification": "Cita: 'ejecutar un CIP específico... limpieza ácida con ácido cítrico al 2,0 % p/p ajustado a pH 3,0-3,5'. Solo paso ácido sin etapa alcalina — match exacto del case_specific recoverable fail. Para orgánico-coloidal el gold expects alcalino primero."
+    }
+  ],
+  "reviewer_notes": ""
+}

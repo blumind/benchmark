@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-004",
+    "subject_id": "gpt-3-5-turbo",
+    "subject_version": "gpt-3.5-turbo-0125",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "MH 'Degradation of the first GAC bed' — síntoma operacional, no menciona cloramina breakthrough ni oxidación poliamida."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Replace first GAC bed — solo operacional, sin SBS install, sin test membrana."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide cloramina concentration after second GAC bed — match parcial accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single trivial: if elevated → ..."
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

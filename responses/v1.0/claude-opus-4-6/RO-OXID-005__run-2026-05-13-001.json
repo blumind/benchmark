@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-OXID-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:03:45Z",
+  "main_hypothesis": "Daño oxidativo parcial de la capa activa de poliamida de las membranas del Tren T-03 por exposición residual a H₂O₂, causado por un aclarado insuficiente (45 min en lugar de 60 min) tras el paso de oxidación del CIP, lo que dejó peróxido de hidrógeno retenido en los elementos que continuó degradando la poliamida tras la reincorporación a producción.",
+  "key_signals": [
+    "Aclarado con permeado de solo 45 min frente a los 60 min requeridos por protocolo, motivado por urgencia operativa",
+    "Verificación de H₂O₂ residual realizada con tira reactiva de sensibilidad limitada (1 mg/L), insuficiente para confirmar ausencia de oxidante a niveles dañinos para poliamida",
+    "Subida progresiva y sostenida de conductividad del permeado del T-03 de 410 a 540 µS/cm en 5 días post-CIP, indicando degradación del rechazo de sales (de 99,28 % a 99,05 %)",
+    "Caída del caudal de permeado del 4 % (de 280 a 268 m³/h), consistente con daño oxidativo que altera la estructura de la membrana",
+    "Presiones diferenciales (ΔP) estables en ambas etapas, lo que descarta fouling o scaling como causa principal del deterioro de rechazo",
+    "Problema aislado al Tren T-03 (trenes vecinos sin desviación), correlacionado temporalmente con el CIP de ese tren",
+    "Rastros marrones en cartuchos de mantenimiento, posiblemente productos de degradación de la poliamida o de sellos/espaciadores expuestos al oxidante",
+    "H₂O₂ residual antes de RO no medido de forma rutinaria, lo que impide detectar exposición continuada"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño por exposición a cloro libre residual no detectado durante o después del CIP",
+      "why_plausible": "El cloro es el oxidante más común que daña membranas de poliamida y podría haberse introducido inadvertidamente con el agua de aclarado o por contaminación cruzada del sistema de dosificación; los síntomas (aumento de paso de sales con ΔP estable) serían idénticos.",
+      "why_discardable": "El cloro libre antes de RO se reporta consistentemente < 0,02 mg/L y estable, y el ORP no muestra picos anómalos (+95 mV es bajo para presencia de cloro libre significativo). No hay evidencia de fallo en el sistema de decloración."
+    },
+    {
+      "hypothesis": "Daño mecánico a O-rings o interconectores durante la manipulación del CIP, generando bypass interno de concentrado a permeado",
+      "why_plausible": "La manipulación de elementos durante CIP puede dañar sellos; un bypass interno explicaría el aumento de conductividad del permeado y los rastros marrones en cartuchos podrían ser fragmentos de O-rings degradados.",
+      "why_discardable": "Un bypass mecánico típicamente produce un salto abrupto de conductividad desde el primer momento de operación, no una subida progresiva durante 5 días. Además, la caída simultánea de caudal de permeado es más consistente con daño químico a la capa activa que con un bypass puntual."
+    },
+    {
+      "hypothesis": "Scaling incipiente (CaCO₃ o BaSO₄) en la segunda etapa tras el CIP alcalino a pH 12 que no fue completamente aclarado",
+      "why_plausible": "El paso alcalino a pH 12 podría precipitar carbonatos si el aclarado fue insuficiente; el scaling reduciría flujo y podría afectar rechazo aparente.",
+      "why_discardable": "El ΔP de etapa 2 permanece estable en 0,8 bar (igual al baseline), lo cual es inconsistente con scaling significativo. Además, el scaling típicamente aumenta la presión de alimentación necesaria sin degradar el rechazo de sales de forma progresiva como se observa."
+    },
+    {
+      "hypothesis": "Biofouling post-CIP por recolonización bacteriana acelerada tras la limpieza",
+      "why_plausible": "Tras un CIP, las membranas pueden ser recolonizadas rápidamente; el biofouling puede aumentar ΔP y reducir flujo.",
+      "why_discardable": "Los ΔP de ambas etapas están estables y prácticamente en baseline, lo cual es incompatible con biofouling significativo. Además, el biofouling no explica la degradación progresiva del rechazo de sales (conductividad subiendo) sin aumento de ΔP."
+    }
+  ],
+  "requested_data": "Medición cuantitativa de H₂O₂ residual en el permeado y concentrado del Tren T-03 mediante método colorimétrico con límite de detección ≤ 0,1 mg/L (no tiras reactivas), para confirmar si persiste exposición oxidante a las membranas.",
+  "recommended_action": "Sacar inmediatamente el Tren T-03 de producción. Realizar un aclarado prolongado con permeado RO (libre de oxidantes) durante un mínimo de 90 minutos a caudal nominal de recirculación. Verificar H₂O₂ residual con método colorimétrico cuantitativo (límite de detección ≤ 0,1 mg/L) en el permeado y concentrado del tren, confirmando < 0,1 mg/L antes de cualquier reincorporación. Si el residual es confirmado < 0,1 mg/L y la conductividad del permeado no mejora tras 2 horas de operación, realizar un test de sondeo (probing) con elementos individuales para identificar y reemplazar los elementos con mayor paso de sales. Documentar el incidente y revisar el protocolo CIP para establecer que el aclarado de 60 min es un mínimo no negociable y que la verificación de H₂O₂ residual debe realizarse con método cuantitativo (no tiras reactivas).",
+  "decision_change_condition": "Si la medición cuantitativa de H₂O₂ residual en permeado y concentrado del T-03 resulta indetectable (< 0,1 mg/L) y un test de sondeo (probing) revela que el paso de sales elevado se concentra en un solo elemento o posición específica (no distribuido), cambiaría mi diagnóstico hacia daño mecánico en O-rings o interconectores en esa posición, en lugar de daño oxidativo generalizado.",
+  "confidence": 82
+}

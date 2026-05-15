@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-006",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'contaminación ClO2 + subproductos piscifactoría' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Aumentar SBS 6 mg/L + comunicar piscifactoría — match gold operacional (aumentar SBS)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ClO2 alimentación RO — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: ClO2 <0.01 → descarta."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

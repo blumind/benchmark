@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:48:19Z",
+  "main_hypothesis": "Oxidación irreversible de las membranas SWRO por ruptura del lecho de CAG: el medio agotado (capacidad residual 25%) combinado con el aumento de frecuencia de choque con hipoclorito permitió fuga de cloro libre (0,18 mg/L) y ORP elevado (+320 mV) aguas arriba de las membranas, dañando la capa de poliamida.",
+  "key_signals": [
+    "Cloro libre tras CAG subió de <0,02 a 0,18 mg/L y ORP de +90 a +320 mV (breakthrough del lecho)",
+    "Capacidad residual del CAG en 25% (día -45) tras 6 meses de uso",
+    "Aumento de frecuencia de choque con hipoclorito de 1 a 3 veces/semana en día -30",
+    "Caída marcada del rechazo de sales (99,1% → 96,2%) con conductividad de permeado multiplicada por 3 en pocos días",
+    "ΔP por etapas estable y ATP estable: descarta fouling/biofouling como causa de la pérdida de rechazo",
+    "Secuencia temporal: oscilación de ORP (día -10) → cloro detectable (día -5) → degradación de rechazo (días -7 a -1)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño mecánico/rotura de o-rings o tubos de permeado (bypass interno)",
+      "why_plausible": "Explicaría una subida brusca de conductividad de permeado sin variación de ΔP",
+      "why_discardable": "No explica el breakthrough simultáneo de cloro y ORP; la coincidencia temporal con el aumento de hipoclorito es muy fuerte"
+    },
+    {
+      "hypothesis": "Fouling/scaling con polarización de concentración",
+      "why_plausible": "Podría reducir rechazo y caudal de permeado",
+      "why_discardable": "ΔP de ambas etapas estable, ATP estable, antiscalant dosificado; no hay firma de ensuciamiento"
+    },
+    {
+      "hypothesis": "Defecto de fabricación o envejecimiento prematuro de elementos sustituidos hace 8 meses",
+      "why_plausible": "Membranas relativamente nuevas pueden tener defectos",
+      "why_discardable": "No explica la correlación temporal con el ORP/cloro ni la afectación generalizada"
+    }
+  ],
+  "requested_data": "Test de oxidación de membrana mediante prueba de fugitive dye (Rodamina B) o análisis de grupos carbonilo por FTIR en un elemento testigo, o al menos perfil de conductividad por elemento (probe testing) en un tren para confirmar daño oxidativo distribuido vs. localizado",
+  "recommended_action": "1) Mantener detenida la cloración de choque en captación. 2) Inyectar bisulfito sódico (SBS) como barrera redundante aguas arriba de los cartuchos, dosificando 3–5 mg/L de NaHSO3 con consigna de ORP <200 mV antes de RO. 3) Sustituir/regenerar inmediatamente el medio de CAG (vida útil agotada funcionalmente). 4) Instalar monitorización continua de ORP y cloro libre tras CAG con enclavamiento de parada del tren a ORP >200 mV o Cl libre >0,05 mg/L. 5) Realizar probe testing por elemento para identificar y sustituir los elementos con rechazo degradado; las membranas oxidadas no son recuperables por limpieza química.",
+  "decision_change_condition": "Si el probe testing muestra que la pérdida de rechazo está localizada en uno o dos elementos puntuales (no distribuida) y el FTIR no detecta degradación de poliamida, la hipótesis cambiaría a daño mecánico/defecto de elemento, no oxidación generalizada",
+  "confidence": 86
+}

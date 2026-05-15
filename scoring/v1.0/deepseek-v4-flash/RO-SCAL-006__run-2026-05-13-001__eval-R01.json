@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-006",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'inadequate ripening greensand → Fe/Mn breakthrough + metal oxide fouling' — captura Fe/Mn (una de 3)."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (CaCO3 pH↑, sílice, biológico)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Reducir pH 6.5 + reducir recovery 65% + aumentar antiincrustante 6 ppm + CIP cítrico 2% pH 3.5 — operacional + CIP cítrico solo (gold expects secuencial cítrico + alcalino)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide Fe/Mn/Ca/Si en depósito cartuchos o membrana stage 2 lead — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: depósito CaCO3 o sílice amorfa predominante → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

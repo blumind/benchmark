@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-MECH-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:34:14Z",
+  "main_hypothesis": "Daño mecánico en los elementos de membrana de la etapa 1",
+  "key_signals": [
+    "Deformación visible (telescoping) en el extremo de aguas abajo del primer elemento de la etapa 1",
+    "Alta conductividad en cabeza de etapa 1",
+    "Bajada moderada en ΔP etapa 1",
+    "Bajada marcada en ΔP etapa 2",
+    "Bajada drástica en el rechazo de sales"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Obstrucción en los cartuchos de 5 µm",
+      "why_plausible": "Podría causar aumento de la conductividad y disminución del rechazo de sales.",
+      "why_discardable": "La deformación visible en el elemento de membrana sugiere un daño físico más que una obstrucción."
+    },
+    {
+      "hypothesis": "Fallo en el sistema de coagulación",
+      "why_plausible": "Podría provocar un aumento de la conductividad y una disminución del rechazo de sales.",
+      "why_discardable": "La deformación visible en el elemento de membrana es una señal más directa de un problema mecánico."
+    }
+  ],
+  "requested_data": "Perfil de permeado por etapa para confirmar alta conductividad en cabeza de etapa 1 y descartar problemas en otras etapas.",
+  "recommended_action": "Reemplazar el primer elemento de la etapa 1 que muestra deformación visible (telescoping) y realizar una inspección visual de los demás elementos de la misma etapa.",
+  "decision_change_condition": "Si el perfil de permeado muestra alta conductividad en otras etapas y no en la etapa 1, se deberá reconsiderar la hipótesis de daño mecánico en los elementos de membrana de la etapa 1.",
+  "confidence": 90
+}

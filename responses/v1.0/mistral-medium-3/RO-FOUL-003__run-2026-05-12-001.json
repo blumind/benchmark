@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:46:24Z",
+  "main_hypothesis": "Fouling orgánico en las membranas de la etapa 1 debido a la entrada de materia orgánica natural (NOM) tras el episodio de lluvias intensas.",
+  "key_signals": [
+    "Aumento sostenido de ΔP en la etapa 1",
+    "Aumento del TOC en la alimentación a RO",
+    "Subida de la presión de alimentación",
+    "Disminución del caudal de permeado",
+    "Aumento del SDI₁₅ y turbidez en la salida de cartuchos",
+    "Coloración marrón anaranjada en los cartuchos retirados"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling inorgánico por precipitación de hierro",
+      "why_plausible": "Se incrementó la dosis de FeCl₃ a 8 mg/L durante 5 días, lo que podría haber causado precipitación de hierro en las membranas.",
+      "why_discardable": "El ΔP en la etapa 1 comenzó a subir después de volver a la dosis estándar de coagulante y no se estabilizó tras el cambio de cartuchos, lo que sugiere un problema orgánico más que inorgánico."
+    },
+    {
+      "hypothesis": "Fouling microbiológico",
+      "why_plausible": "La coloración marrón anaranjada en los cartuchos podría indicar presencia de biofilm.",
+      "why_discardable": "El cloro libre antes de RO es estable y muy bajo (< 0,02 mg/L), y no hay evidencia de un aumento en la actividad microbiológica."
+    }
+  ],
+  "requested_data": "Análisis de la composición de la materia orgánica en la alimentación a RO (espectro UV-Vis o análisis de fracciones de NOM).",
+  "recommended_action": "Realizar un CIP con solución alcalina (pH 11-12) y detergente específico para materia orgánica, siguiendo las recomendaciones del fabricante de las membranas.",
+  "decision_change_condition": "Si el análisis de la materia orgánica muestra una predominancia de compuestos inorgánicos o si hay evidencia de precipitación de hierro en las membranas.",
+  "confidence": 80
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-006-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-006",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling Stage 1 por insufficient biocide dosing frequency' — match exacto."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "6 señales con relación: ATP×4.3 correlacionado con cambio protocolo, CIP ácido alivio transitorio (firma específica)."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (NOM, Fe/Mn, particulado, SCAL) con why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP NaOH+SDS+DBNPA biocida + HCl 0.2% paso final + restaurar 3 días + bajar umbral ATP a 200."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia biofilm thickness + ATP/cm² + TOC depósito — match exacto ATP membrana + autopsia FTIR."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: depósito inorgánico + ATP superficie <100 → inorgánico/coloidal."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

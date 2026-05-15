@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:59:53Z",
+  "main_hypothesis": "Irreversible oxidative damage to the RO membranes caused by chloramine breakthrough from exhausted Granular Activated Carbon (GAC) beds, a situation initiated by an uncommunicated increase in chloramine dosage from the municipal water supplier.",
+  "key_signals": [
+    "Cloramina total alimentación a RO rising to 0.38 mg/L from a baseline of < 0.05 mg/L, indicating a failure in the dechlorination pretreatment.",
+    "ORP alimentación a RO increasing to +210 mV from a +60 mV baseline, confirming a strong oxidizing environment at the membrane inlet.",
+    "Rechazo de sales (calculado) dropping drastically from 95.5% to 80.7%, which is characteristic of chemical damage to the membrane's polyamide layer rather than fouling.",
+    "Caudal permeado planta decreasing by 6% despite a slight increase in feed pressure and temperature, consistent with membrane damage.",
+    "The timeline of events, where the performance decline began shortly after the municipal supplier increased the chloramine dose in the feed water."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Severe biological fouling of the membranes.",
+      "why_plausible": "The upstream coliform outbreak could have seeded the system with bacteria, and the slight increase in ΔP for stage 1 (1.2 to 1.3 bar) could be an early sign of biofilm formation.",
+      "why_discardable": "The increase in differential pressure is minimal and not commensurate with the catastrophic loss of salt rejection. Severe biofouling would typically cause a much larger ΔP increase across both stages. This hypothesis also fails to explain the high chloramine and ORP readings."
+    },
+    {
+      "hypothesis": "Mechanical failure of inter-element O-rings or permeate tube seals.",
+      "why_plausible": "A seal failure would allow high-conductivity feed or brine to leak directly into the permeate stream, causing a sharp rise in permeate conductivity and a drop in calculated salt rejection.",
+      "why_discardable": "The performance degradation was progressive over more than 30 days, which is uncharacteristic of a sudden mechanical failure. Furthermore, this would not explain the systemic issue across the plant or the direct evidence of an oxidizing agent (high chloramine and ORP) reaching the membranes."
+    }
+  ],
+  "requested_data": "Permeate conductivity profile per pressure vessel (µS/cm).",
+  "recommended_action": "Immediately perform a controlled shutdown of the reverse osmosis system to halt further membrane exposure to chloramine. Do not restart until the media in both GAC filters has been replaced and the chloramine concentration in the RO feed is confirmed to be below 0.05 mg/L.",
+  "decision_change_condition": "My diagnosis would change if an independent, calibrated analysis of the RO feed water confirmed a total chloramine concentration below 0.1 mg/L and an ORP below +100 mV, which would indicate a critical sensor malfunction and point towards a non-oxidative failure mechanism.",
+  "confidence": 95
+}

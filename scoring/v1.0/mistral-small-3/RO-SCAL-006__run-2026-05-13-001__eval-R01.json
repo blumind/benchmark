@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-006",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fouling stage 2 Fe/Mn oxides + incomplete ripening greensand' literal — captura una de 3."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (CaCO3/CaSO4, biofouling, KMnO4 deficiency, sílice)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Emergency backwash greensand + ripening with elevated KMnO4 + online cleaning stage 2 low-pH 0.2% citric — operacional + cítrico solo (gold expects secuencial)."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide Fe en reject stream stage 2 — discriminador parcial."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: Fe reject <0.5 y Fe feed >0.15 post-ripening → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

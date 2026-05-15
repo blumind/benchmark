@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-SCAL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:08:35Z",
+  "main_hypothesis": "Barium sulfate scaling in the tail elements of stage 1 of train T-04 due to 17 days without antiscalant dosing after solenoid disconnection during electrical panel work.",
+  "key_signals": [
+    "ΔP cola etapa 1 subida marcada de 0,9 a 2,3 bar",
+    "Presión alimentación tren subida de 60 a 67 bar",
+    "Caudal permeado tren bajada del 9%",
+    "Conductividad permeado subida de 405 a 460 µS/cm",
+    "Antiestracante no dosificado en T-04 durante 17 días (día -22 a -5)",
+    "Subida progresiva de ΔP cola iniciando en día -16, dos días después de la desconexión del solenoide",
+    "Otros trenes sin anomalías, descartando un problema global de alimentación"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento orgánico por materia orgánica natural (MON) de la captación abierta",
+      "why_plausible": "La captación abierta en costa de Omán puede presentar bloom estacional de MON. El fallo del cuadro eléctrico no está relacionado, pero el T-04 podría haber recibido un pulso de MON si hubo una inyección local durante el mantenimiento.",
+      "why_discardable": "No hay otros trenes afectados. El ensuciamiento orgánico suele ser más gradual y afectar a todos los trenes. La correlación temporal con la pérdida de antiincrustante es muy fuerte, y la MON no produce un perfil de ΔP tan concentrado en la cola."
+    },
+    {
+      "hypothesis": "Ensuciamiento coloidal por ruptura de filtros DAF o bicapa",
+      "why_plausible": "Una mala coagulación o sobrecarga hidráulica podría liberar coloides. Los coloides tienden a depositarse en las primeras etapas, pero si la filtración es deficiente podrían llegar a la etapa 1.",
+      "why_discardable": "No hay datos de aumento de SDI ni de turbiedad. Un ensuciamiento coloidal masivo afectaría a todo el tren y no solo a la cola. Además, la progresión del ΔP fue lenta y sostenida, no abrupta como un breakthrough."
+    },
+    {
+      "hypothesis": "Bioincrustación (biofouling) por crecimiento microbiano en condiciones de temperatura elevada",
+      "why_plausible": "La temperatura de 28,2°C es favorable para el crecimiento microbiano. La parada del antiincrustante pudo haber alterado la biocapa protectora y favorecido un crecimiento localizado.",
+      "why_discardable": "La bioincrustación suele tardar más de 2 semanas en manifestarse con aumentos significativos de ΔP, y afectaría a todo el sistema. No se reportó aumento en ATP ni en conteo de bacterias. El T-04 comenzó a subir ΔP apenas 6 días después de la desconexión, lo cual es demasiado rápido para biofouling con el cloro residual <0,02 ppm."
+    }
+  ],
+  "requested_data": "Concentración de bario en el concentrado (rechazo) del T-04 durante el período de falta de antiincrustante (día -16 a -5). En su defecto, análisis SEM/EDX de un coupon de membrana del elemento de cola de la etapa 1 del T-04 para confirmar presencia de cristales de sulfato de bario.",
+  "recommended_action": "Aislar el tren T-04 y realizar un lavado a baja presión (5 bar) con agua de permeado durante 30 minutos para eliminar depósitos sueltos. Si el ΔP no disminuye significativamente, proceder a realizar una autopsia de membrana del elemento de cola de la etapa 1. En caso de confirmarse incrustaciones de sulfato de bario, contactar al fabricante de membranas para obtener un protocolo específico de limpieza con un disolvente de sulfato (p. ej., solución de EDTA disódico a pH 12 con aditivo surfactante). No realizar limpiezas ácidas, pues el sulfato de bario es insoluble en ácido y podría dañar la membrana.",
+  "decision_change_condition": "Si la autopsia de membrana no revela cristales de sulfato de bario y en cambio muestra depósitos amorfos o biopelícula, entonces la hipótesis principal cambiaría a ensuciamiento orgánico o bioincrustación.",
+  "confidence": 80
+}

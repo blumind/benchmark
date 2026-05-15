@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-MECH-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:40:08Z",
+  "main_hypothesis": "Fallo en el sello frontal (cap final) del Tubo 2 de etapa 1, permitiendo la mezcla de permeado con agua de alimentación debido a la protrusión anómala y desgaste en la pista del cap y junta tórica dañada.",
+  "key_signals": [
+    "Probe test perfil de permeado por tubo (etapa 1): Tubo 2 con 1.250 µS/cm (vs. 100–130 µS/cm en otros tubos)",
+    "Conductividad de permeado en aumento progresivo (de 110 a 480 µS/cm en 15 días)",
+    "Rechazo de sales calculado bajando de 97,8 % a 90,3 %",
+    "Caudal de permeado bajando un 6 % (de 333 a 312 m³/h)",
+    "Inspección visual: protrusión anómala en sello frontal del Tubo 2 y junta tórica marcada",
+    "Test de presión del Tubo 2: pérdida de presión a 1 bar (consistente con sello defectuoso)",
+    "Caída ligera en caudal de concentrado (de 75 a 70 m³/h)",
+    "Estabilidad en ΔP etapa 1 y 2, presión de alimentación y otros parámetros operativos"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling severo en membrana del Tubo 2 que reduce selectividad sin afectar flujo hidráulico.",
+      "why_plausible": "El fouling puede reducir el rechazo de sales y aumentar la conductividad del permeado. La estabilidad en ΔP y flujo hidráulico no descarta fouling incipiente.",
+      "why_discardable": "No explica la protrusión anómala en el sello frontal ni la pérdida de presión en el test del Tubo 2. Además, el fouling no suele causar mezclas directas de permeado con alimentación."
+    },
+    {
+      "hypothesis": "Rotura o perforación en la membrana del Tubo 2 que permite paso directo de agua de alimentación al permeado.",
+      "why_plausible": "Una rotura en la membrana explicaría el aumento de conductividad y la caída en rechazo de sales. Sin embargo, no justifica la protrusión anómala en el sello frontal ni la pérdida de presión en el test del Tubo 2.",
+      "why_discardable": "La inspección visual del Tubo 2 no reportó grietas visibles en la vaina FRP, y el test de presión con elementos extraídos mostró pérdida de presión consistente con un sello defectuoso, no con una rotura en la membrana."
+    },
+    {
+      "hypothesis": "Fuga en la vaina FRP del Tubo 2 que permite entrada de agua de alimentación al permeado.",
+      "why_plausible": "Una fuga en la vaina podría mezclar agua de alimentación con permeado, aumentando la conductividad. La inspección de la vaina mostró desgaste en la pista del cap, lo que podría permitir fugas.",
+      "why_discardable": "El test de presión del Tubo 2 con elementos extraídos mostró pérdida de presión a 1 bar, consistente con un sello de cabeza/cap defectuoso, no con una fuga en la vaina FRP. Además, la protrusión anómala en el sello frontal es más específica que una fuga genérica en la vaina."
+    }
+  ],
+  "requested_data": "Resultado del test de integridad de la membrana (prueba de burbuja o presión diferencial) en el Tubo 2, expresado en bar y tiempo de retención.",
+  "recommended_action": "Aislar el Tubo 2 de la etapa 1 y realizar un test de integridad de membrana con presión de 15 bar durante 10 minutos. Si se confirma la pérdida de integridad, reemplazar el cap frontal, la junta tórica y revisar el estado de los elementos de membrana en el Tubo 2. Dosificar antiincrustante poliacrílico a 2 ppm en la alimentación para prevenir fouling durante la operación.",
+  "decision_change_condition": "Si el test de integridad de membrana en el Tubo 2 muestra una retención de presión estable (sin pérdida significativa) durante 10 minutos a 15 bar, la hipótesis principal se descarta y se debe investigar otra causa para el aumento de conductividad del permeado.",
+  "confidence": 95
+}

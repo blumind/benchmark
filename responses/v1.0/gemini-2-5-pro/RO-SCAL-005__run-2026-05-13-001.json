@@ -1,0 +1,38 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:19:27Z",
+  "main_hypothesis": "Underdosing of the new phosphonate-based antiscalant, which is insufficient for the high hardness, alkalinity, and recovery rate of the plant, leading to calcium carbonate scaling in the second stage.",
+  "key_signals": [
+    "The sharp increase in differential pressure is localized to the second stage (ΔP stage 2 rose from 0.9 bar to 1.7 bar) while the first stage remains stable.",
+    "The problem began approximately two weeks after switching to a new antiscalant at a significantly lower dose (1.2 ppm vs 3.0 ppm).",
+    "An acid CIP (HCl pH 2) temporarily reduced the second stage differential pressure, indicating the foulant is an acid-soluble mineral scale.",
+    "The fouling recurred very rapidly, with ΔP returning to high levels within 5 days after the cleaning, confirming an ongoing and aggressive scaling condition."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Calcium phosphate scaling.",
+      "why_plausible": "The new antiscalant is phosphonate-based, which can degrade into orthophosphate. This orthophosphate can then precipitate with calcium, which is abundant in the feed water. This type of scale is also acid-soluble and would manifest in the second stage.",
+      "why_discardable": "While plausible, calcium carbonate scaling is a more direct consequence of the known feed water chemistry (very high hardness and alkalinity). Without data confirming the presence of orthophosphate or conditions favoring rapid phosphonate degradation, carbonate scaling is the more probable primary mechanism."
+    },
+    {
+      "hypothesis": "Biofouling.",
+      "why_plausible": "A change in the chemical regime, such as a new antiscalant, can sometimes trigger a biological bloom within the system.",
+      "why_discardable": "Biofouling typically impacts the lead elements of the first stage most severely, but the first stage differential pressure is reported as stable. Additionally, a simple acid-only CIP is generally ineffective at removing biofilm."
+    },
+    {
+      "hypothesis": "Fouling by precipitated antiscalant.",
+      "why_plausible": "The new antiscalant could be incompatible with the feed water chemistry or other dosed chemicals (like sulfuric acid), causing it to precipitate on the membrane surface.",
+      "why_discardable": "This is less common than mineral scaling from the source water itself. The strong correlation with the known high scaling potential of the feed water makes direct mineral scaling a more likely cause than a chemical incompatibility."
+    }
+  ],
+  "requested_data": "Concentration of orthophosphate (PO₄³⁻) in the RO feed water (mg/L).",
+  "recommended_action": "Immediately increase the dosage of the current phosphonate antiscalant to 3.0 ppm as a temporary measure to halt further scaling. Concurrently, send a complete feed water analysis to the supplier and demand a formal, written dosage recommendation based on a scaling projection for the plant's specific operating conditions.",
+  "decision_change_condition": "My diagnosis would change if an analysis of the foulant (e.g., from a membrane autopsy or collected during a CIP) revealed it was not primarily calcium carbonate or calcium phosphate, but rather precipitated antiscalant or another unexpected compound.",
+  "confidence": 95
+}

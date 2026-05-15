@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-006-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-006",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'bioincrustación etapa 1 por reducción DBNPA' + TOC secundario — match dominante+secundario."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta cambio operativo → ATP×4 → ΔP1↑ + ΔP3 estable + CIP ácido alivio+rebote 12d (firma específica)."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (MnO2/Fe FOUL, húmicos FOUL, carbonatos SCAL, OXID) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP alcalino+tensoactivo+DBNPA + restablecer dosificación periódica; 'No oxidantes a RO' explícito."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide SDI15 alimentación — dato estándar; trigger gold es HPC/ATP en superficie o autopsia."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición OR: SDI≥5+ATP<150 OR (alcalino+biocida no funciona y ácido sí) → particulado/óxidos."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Pierde C5 por dato estándar en vez del trigger bio-en-superficie."
+}

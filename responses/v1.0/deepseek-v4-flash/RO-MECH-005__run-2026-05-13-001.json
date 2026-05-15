@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-MECH-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:51:07Z",
+  "main_hypothesis": "Missing brine seal on the first element of Tube 5, stage 1, causing direct bypass of feed/concentrate into the permeate stream.",
+  "key_signals": [
+    "Probe test showing Tube 5 permeate conductivity at 850 µS/cm vs other tubes 90–115 µS/cm",
+    "Operator admission that the brine seal was removed and not replaced",
+    "Apparent bypass of concentrate to permeate in Tube 5",
+    "Progressive increase in plant permeate conductivity from 95 to 220 µS/cm over 20 days",
+    "Stable feed conductivity and pressure while permeate quality degrades"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "O-ring failure on the permeate adapter of the first element in Tube 5",
+      "why_plausible": "O-rings can be damaged during installation, especially by an inexperienced operator, leading to a seal breach and high permeate conductivity.",
+      "why_discardable": "The operator specifically stated the brine seal was missing, and a missing brine seal directly causes the observed bypass; O-ring failure would not typically explain the very high single-tube conductivity difference (850 vs 90–115 µS/cm) as clearly as a missing brine seal, and the pressure differentials are consistent with a brine seal bypass."
+    },
+    {
+      "hypothesis": "Incorrect element orientation or missing interconnector between elements in Tube 5",
+      "why_plausible": "A new operator might have misaligned elements or omitted an interconnector, causing internal leakage.",
+      "why_discardable": "The probe test pinpoints the first element (head of stage 1) as the source, and the operator admission directly addresses the brine seal; missing interconnector would likely cause different pressure behavior and is less consistent with the observed bypass pattern."
+    }
+  ],
+  "requested_data": "Pressure decay test (or vacuum test) on the permeate port of Tube 5 to quantify seal integrity (pass/fail and pressure loss rate in mbar/min).",
+  "recommended_action": "Shut down the train, isolate Tube 5, remove the first element, install a new brine seal (correct size and orientation per manufacturer specification), reassemble, and conduct a low-pressure hydrostatic test before restart to confirm seal integrity.",
+  "decision_change_condition": "If the brine seal is found to be present and intact upon physical inspection, then the diagnosis would change to a damaged O-ring or permeate tube leak on the first element.",
+  "confidence": 90
+}

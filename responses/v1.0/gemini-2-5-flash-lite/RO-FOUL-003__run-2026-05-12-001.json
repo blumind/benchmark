@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:51:43Z",
+  "main_hypothesis": "Biofouling de las membranas de ósmosis inversa, exacerbado por el aumento de TOC en la alimentación.",
+  "key_signals": [
+    "ΔP etapa 1 (4 tubos) 1,9 bar (subida sostenida)",
+    "Caudal permeado planta 575 m³/h (bajada del 8 %)",
+    "TOC alimentación a RO 4,1 mg/L (subida marcada)",
+    "SDI₁₅ salida cartuchos 3,9 (subida)",
+    "Turbidez salida cartuchos 0,18 NTU (subida ligera)",
+    "Presión alimentación 19,8 bar (subida)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling inorgánico (incrustación) de las membranas.",
+      "why_plausible": "El aumento de la presión de alimentación y la caída del caudal de permeado son síntomas típicos de incrustaciones en las membranas. La subida de ΔP en la etapa 1 también puede ser un indicio.",
+      "why_discardable": "La conductividad del permeado se mantiene relativamente estable y por debajo de la de alimentación, lo que sugiere que la integridad de las membranas para rechazar sales no está comprometida significativamente. El aumento de TOC y SDI en la alimentación son más indicativos de fouling orgánico o biológico. La coloración marrón anaranjada de los cartuchos retirados podría ser óxido de hierro, pero no explica directamente el fouling de membranas sin una causa subyacente de crecimiento biológico o materia orgánica."
+    },
+    {
+      "hypothesis": "Fouling por partículas finas (lodos) debido a un pretratamiento ineficiente.",
+      "why_plausible": "El aumento de la turbidez y el SDI en la salida de los cartuchos, junto con la subida de ΔP en la etapa 1, podrían indicar que partículas finas están pasando el pretratamiento y obstruyendo las membranas. El episodio de lluvias intensas y el aumento de turbidez en captación podrían haber sobrecargado el pretratamiento.",
+      "why_discardable": "Aunque el pretratamiento pudo verse afectado temporalmente, el aumento sostenido y marcado del TOC en la alimentación (de 1.9 a 3.2 y luego a 4.1 mg/L) es un factor más directo y persistente que favorece el biofouling. El SDI, aunque sube, no alcanza valores extremadamente altos que indicarían un fallo catastrófico del pretratamiento de partículas finas. La conductividad del permeado estable no es típica de un fouling severo por partículas que comprometa la capacidad de separación."
+    },
+    {
+      "hypothesis": "Daño o fallo de las membranas (rotura, despegado).",
+      "why_plausible": "Una rotura o despegado de las membranas podría causar un aumento de la conductividad del permeado y una caída del caudal. El aumento de ΔP podría ser secundario a la recirculación interna o a la obstrucción de otras partes del sistema.",
+      "why_discardable": "La conductividad del permeado se mantiene estable y dentro de los límites esperados, lo cual es un fuerte indicativo de que la integridad de las membranas para la separación de sales no está comprometida. El aumento de ΔP y la caída de caudal son más consistentes con una obstrucción (fouling) que con un daño estructural generalizado."
+    }
+  ],
+  "requested_data": "Análisis microbiológico del permeado y del agua de alimentación a RO (recuento total de bacterias y presencia de biofilms).",
+  "recommended_action": "Realizar un ciclo de limpieza de membranas (CIP) con una solución alcalina (ej. NaOH 0.5-1.0% a 40-50°C) seguido de un CIP ácido (ej. ácido cítrico o fosfórico 0.5-1.0% a 30-40°C), según las recomendaciones del fabricante de membranas, para eliminar el biofouling y cualquier depósito inorgánico o de materia orgánica.",
+  "decision_change_condition": "Si el análisis microbiológico revela una carga bacteriana muy baja y el CIP no mejora significativamente el ΔP y el caudal, se debería reconsiderar la hipótesis de fouling inorgánico o daño mecánico de las membranas.",
+  "confidence": 85
+}

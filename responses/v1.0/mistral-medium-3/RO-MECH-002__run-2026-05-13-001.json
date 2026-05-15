@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-MECH-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:34:44Z",
+  "main_hypothesis": "Daño mecánico en el primer elemento de la etapa 1 debido a un golpe de ariete causado por un mal funcionamiento del VFD de la bomba de alta presión",
+  "key_signals": [
+    "Deformación visible (telescoping) en el primer elemento de la etapa 1",
+    "Sonido anómalo de 'golpe' en la línea de alta presión durante 2 segundos tras el rearranque",
+    "Conductividad de permeado en la cabeza de la etapa 1 de 6.500 µS/cm, mientras que el resto es < 200 µS/cm",
+    "Bajada marcada en ΔP de la etapa 2",
+    "Rampa de arranque reportada como 'más rápida' después del mantenimiento del VFD"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Falla en el sellado de los O-rings del primer elemento de la etapa 1",
+      "why_plausible": "La alta conductividad en la cabeza de la etapa 1 podría indicar un bypass del agua de alimentación debido a un sellado defectuoso.",
+      "why_discardable": "No explica el sonido de 'golpe' ni la deformación visible en el elemento, que son señales claras de un evento mecánico."
+    },
+    {
+      "hypothesis": "Contaminación química de las membranas",
+      "why_plausible": "La conductividad del permeado ha aumentado drásticamente, lo que podría indicar una degradación química de las membranas.",
+      "why_discardable": "No hay cambios reportados en el pH, ORP o cloro libre que sugieran un evento químico. Además, no explica la deformación física observada."
+    }
+  ],
+  "requested_data": "Registro de la rampa de arranque del VFD (tiempo real vs. programado)",
+  "recommended_action": "Inspeccionar y reemplazar el primer elemento de la etapa 1, y revisar y recalibrar el VFD de la bomba de alta presión para asegurar que la rampa de arranque cumpla con los 90 segundos programados.",
+  "decision_change_condition": "Si el registro de la rampa de arranque del VFD muestra que la rampa se ejecutó correctamente en los 90 segundos programados, se reconsideraría la hipótesis de daño mecánico por golpe de ariete.",
+  "confidence": 85
+}

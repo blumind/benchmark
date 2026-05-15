@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-008-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-008",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling severo 28d sin preservante (bisulfito no dosificado)' — match dominante del gold."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "6 señales con relación: ATP×16, preservación falló (causa raíz), ΔP1 67% vs ΔP2 ligera, olor H2S anaerobio."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts de 2 familias diferentes (sílice SCAL, CaCO3 SCAL, OXID) con why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP NaOH+DBNPA biocida + SDS si <80% + restablecer preservación 1% bisulfito + actualizar procedimiento."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia microbiológica UFC/cm²+EPS o ATP concentrado — match accepted requested_data."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ATP <100 + depósito inorgánico → SCAL con CIP ácido."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

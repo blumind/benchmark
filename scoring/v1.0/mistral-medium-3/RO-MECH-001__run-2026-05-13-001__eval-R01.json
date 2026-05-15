@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-001",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'defective O-ring interconnector Tubo 4 T-02' literal corto."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief (daño membrana, sellado permeate carriers)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Isolate T-02 + replace O-rings + pressure test — match operacional."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide pressure decay test results — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: si pressure decay sin anomalía → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

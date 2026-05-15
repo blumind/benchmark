@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-004",
+    "subject_id": "gemini-2-5-flash-lite",
+    "subject_version": "gemini-2.5-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'CaSO4 etapa 3 + recovery + cambio química agua' — match parcial."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts brief."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP ácido cítrico 1-2% o fosfórico 1-2% 30-40°C 60-120 min + CIP alcalino opcional — secuencia razonable pero sin EDTA y sin reducir recovery."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide composición sarro etapa 3 SEM/EDX — match parcial."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Generic: sarro predominantemente sílice u orgánico → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

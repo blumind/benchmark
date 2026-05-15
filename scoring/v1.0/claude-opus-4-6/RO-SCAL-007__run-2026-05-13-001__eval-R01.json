@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-007-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-007",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fosfato calcio Ca3(PO4)2 cola etapa 2 + aumento estacional P + antiincrustante incompatible' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (CaCO3, biofouling, CaSO4, sílice)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP cítrico 2% pH 2.0 35-40°C 4h + cambiar antiincrustante a formulación con inhibición fosfato — match gold (CIP cítrico + cambiar producto)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide XRD/EDS depósito elemento cola etapa 2 — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ausencia P y Ca + orgánico/CaCO3 → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

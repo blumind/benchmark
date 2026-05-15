@@ -1,0 +1,52 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:32:02Z",
+  "main_hypothesis": "Incrustación de fosfato cálcico, probablemente Ca3(PO4)2, en la segunda etapa de RO causada por el aumento estacional de fosfato en el agua de alimentación y por un programa antiincrustante no formulado para controlar fosfatos a la recuperación operada.",
+  "key_signals": [
+    "El aumento de ΔP se concentra en la etapa 2, de 0,9 a 1,9 bar, mientras la etapa 1 permanece prácticamente estable.",
+    "El fosfato en alimentación sube de 1,8 a 2,8 mg/L y el fosfato en rechazo sube de 7,8 a 12,5 mg/L.",
+    "La planta opera a recuperación alta, 78 %, con calcio y alcalinidad elevados, favoreciendo sobresaturación en el rechazo de la segunda etapa.",
+    "El cálculo reportado el día -12 indica alto riesgo de saturación de Ca3(PO4)2.",
+    "El fabricante del antiincrustante indicó que el producto inhibe carbonatos y sulfatos, pero no contempla fósforo en la formulación.",
+    "La limpieza ácida con HCl a pH 2 redujo temporalmente el ΔP de etapa 2 de forma significativa, compatible con disolución de una incrustación mineral ácida-soluble.",
+    "El ΔP volvió a subir rápidamente después de la limpieza, lo que indica que la causa de sobresaturación persiste en la operación.",
+    "La conductividad de alimentación y la temperatura están estables, reduciendo la probabilidad de que el deterioro se deba a un cambio general de salinidad o viscosidad."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación de carbonato cálcico en segunda etapa.",
+      "why_plausible": "Hay calcio y alcalinidad altos, alta recuperación y aumento de presión de alimentación con pérdida de caudal permeado; además una limpieza ácida puede reducir incrustaciones de carbonato.",
+      "why_discardable": "El pH de alimentación se mantiene en 6,8, el antiincrustante sí está formulado para carbonatos, calcio y alcalinidad de rechazo están estables, y la señal nueva dominante es el aumento marcado de fosfato con cálculo específico de riesgo de Ca3(PO4)2."
+    },
+    {
+      "hypothesis": "Incrustación de sílice en la segunda etapa.",
+      "why_plausible": "La sílice en rechazo es relativamente alta y las incrustaciones de sílice suelen manifestarse en las zonas de mayor concentración, como la segunda etapa.",
+      "why_discardable": "La sílice de rechazo está estable, la limpieza ácida estándar no suele revertir de forma marcada una incrustación de sílice, y la cronología coincide mucho mejor con el incremento de fosfato."
+    },
+    {
+      "hypothesis": "Biofouling o ensuciamiento orgánico-biológico.",
+      "why_plausible": "El aumento de ΔP y la caída de permeado pueden ocurrir por crecimiento biológico, y el agua de pozo agrícola con nutrientes podría favorecer actividad biológica.",
+      "why_discardable": "El ensuciamiento biológico suele afectar primero la entrada o la etapa 1, mientras aquí la etapa 1 está estable; además la respuesta a limpieza ácida y el aumento de fosfato con riesgo de precipitación mineral explican mejor el patrón."
+    },
+    {
+      "hypothesis": "Ensuciamiento particulado o coloidal por fallo del pretratamiento.",
+      "why_plausible": "Un fallo de filtros multicapa o cartuchos de 5 µm puede elevar ΔP y reducir caudal permeado.",
+      "why_discardable": "El ensuciamiento particulado normalmente se manifiesta primero en la etapa 1, pero el ΔP de etapa 1 está estable; no se reporta cambio de conductividad de alimentación ni evento de turbidez, y la segunda etapa es la zona esperada para precipitación por concentración."
+    },
+    {
+      "hypothesis": "Degradación oxidativa de membranas.",
+      "why_plausible": "El aumento de conductividad de permeado podría aparecer si hubiera daño oxidativo de membranas.",
+      "why_discardable": "El cloro libre antes de RO se mantiene por debajo de 0,02 mg/L, y la señal principal es aumento de ΔP en etapa 2 con presión de alimentación creciente, más compatible con incrustación que con oxidación."
+    }
+  ],
+  "requested_data": "Análisis mineralógico del depósito retirado del elemento de cola de la segunda etapa mediante SEM-EDS o XRD, reportando porcentaje en peso de Ca y P y fase cristalina identificada.",
+  "recommended_action": "Reducir inmediatamente la recuperación del bastidor de 78 % a 70 % siguiendo el SOP de ajuste de válvula de rechazo para disminuir la sobresaturación en segunda etapa, mantener vigilancia horaria de ΔP por etapa, y realizar limpieza CIP ácida del bastidor afectado con solución de ácido cítrico al 2,0 % p/p ajustada a pH 2,0-2,5, a 30-35 °C, recirculando 60 minutos por etapa dentro de los límites del fabricante de membranas; no volver a 78 % hasta sustituir el programa antiincrustante por uno validado para fosfato cálcico.",
+  "decision_change_condition": "Cambiaría el diagnóstico si el análisis del depósito de la segunda etapa no mostrara enriquecimiento en calcio y fósforo ni fase de fosfato cálcico, y en su lugar identificara como componente dominante carbonato cálcico, sílice, material biológico u otro foulant.",
+  "confidence": 90
+}

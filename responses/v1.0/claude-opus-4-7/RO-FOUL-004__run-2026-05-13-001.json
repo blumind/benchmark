@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:40:08Z",
+  "main_hypothesis": "Bioensuciamiento orgánico/gelatinoso (biofouling) en cabeza de etapa 1 por bloom algal: paso de TEP y materia orgánica disuelta a través de la UF durante una proliferación de fitoplancton, formando una capa gel/biofilm sobre los elementos líderes.",
+  "key_signals": [
+    "Clorofila-a en captación subió de 1,5 a 28 µg/L (bloom confirmado)",
+    "TEP en alimentación a RO en 320 µg/L Xeq frente a <50 baseline",
+    "TOC en alimentación a RO casi triplicado (1,2 → 3,4 mg/L), evidenciando paso de orgánicos a través de UF",
+    "ΔP etapa 1 cabeza disparado (1,3 → 3,1 bar) mientras ΔP cola permanece estable: ensuciamiento localizado en elementos líderes",
+    "Caída de caudal de permeado 11% y subida de presión de alimentación con conductividad de permeado estable (no es daño de membrana ni scaling salino)",
+    "SDI tras UF subió de 2,3 a 3,1 pese a aumentar frecuencia de retrolavado",
+    "Filamentos visibles y olor terroso (geosmina/2-MIB típicos de cianobacterias)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling inorgánico (CaCO₃) en etapa 1",
+      "why_plausible": "Subida de ΔP y presión de alimentación con caída de caudal son compatibles con scaling; temperatura estacional al alza favorece CaCO₃.",
+      "why_discardable": "El scaling se manifiesta típicamente en la cola de etapa (zona de mayor concentración), no en cabeza; aquí ΔP cola está estable. Además, la conductividad de permeado no cae como cabría esperar con scaling masivo y no hay indicios de saturación reportados."
+    },
+    {
+      "hypothesis": "Fallo/colmatación de cartuchos de 1 µm aguas arriba del bastidor",
+      "why_plausible": "Aumentaría la presión de alimentación al tren y podría arrastrar partículas si hay bypass.",
+      "why_discardable": "No explicaría el incremento marcado de TOC y TEP en la alimentación a RO ni el ensuciamiento localizado en cabeza; el aumento de ΔP de los cartuchos se vería como caída de presión antes del booster, no como ΔP de etapa 1."
+    },
+    {
+      "hypothesis": "Daño/oxidación de membrana por exposición a oxidante",
+      "why_plausible": "Subida estacional y CIPs con cloro podrían oxidar la poliamida.",
+      "why_discardable": "La conductividad de permeado se mantiene estable (410 µS/cm), descartando pérdida de rechazo característica de oxidación; cloro libre <0,02 mg/L."
+    },
+    {
+      "hypothesis": "Coagulación deficiente con FeCl₃ provocando paso de flóculos finos",
+      "why_plausible": "Dosis fija de 1,5 mg/L podría ser insuficiente con la nueva carga orgánica.",
+      "why_discardable": "Es contribuyente, no causa raíz; sin el bloom y los TEP la dosis era adecuada (SDI baseline 2,3)."
+    }
+  ],
+  "requested_data": "Análisis de autopsia no destructiva (o muestreo de superficie) del elemento líder de etapa 1: ATP biológico (pg/cm²) y pérdida por ignición (LOI, % orgánico) del depósito; alternativamente, recuento de heterótrofos (HPC, UFC/cm²) en el elemento líder.",
+  "recommended_action": "1) Reducir flux del tren afectado en ~15-20% (de 12 a ~10 L/m²·h) para limitar el ensuciamiento por convección. 2) Ejecutar CIP en dos etapas sobre los trenes con ΔP elevado: lavado alcalino con NaOH al 0,1% (pH 12, máx) + EDTA 1,0% + SDS 0,025% a 30-35 °C, recirculación 1 h + remojo 4-6 h; seguido de lavado ácido con ácido cítrico 2,0% (pH 4) si hay co-precipitación de Fe. 3) Aumentar dosis de FeCl₃ a 2,5-3,0 mg/L y ajustar pH de coagulación a 6,5-7,0 para mejorar remoción de TEP/AOM en UF. 4) Reducir tiempo de filtración UF y considerar CEB diario con NaOCl 100-200 mg/L + NaOH (pH 12) durante el bloom. 5) Monitorizar diariamente TEP, TOC, SDI₁₅ y ATP en alimentación a RO; mantener cartuchos 1 µm con cambio acortado. 6) No introducir cloración continua antes de RO sin SBS de respaldo (riesgo de oxidación de poliamida).",
+  "decision_change_condition": "Si la autopsia/ATP del elemento líder muestra depósito predominantemente inorgánico (LOI <20%, alto Ca/Fe, ATP bajo <1.000 pg/cm²) o si la conductividad de permeado comienza a degradarse de forma asimétrica entre trenes, la hipótesis cambiaría a scaling o a daño mecánico/oxidativo respectivamente.",
+  "confidence": 86
+}

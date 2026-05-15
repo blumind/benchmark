@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-SCAL-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-004",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'CaSO4 + sulfato↑ + recovery↑ + antiincrustante insuficiente' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (orgánico, sílice, biofouling, MECH compactación)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "FAIL: Reducir recovery 80% + ajustar antiincrustante 2.8 ppm + CIP HCl pH 2.5 60 min — HCl puro como único agente para yeso, match exacto case_specific recoverable."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide SI CaSO4 rechazo etapa 3 — match accepted (SI sulfato cálcico)."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single threshold: SI <0.8 → descartar scaling."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Usar HCl puro como único agente de limpieza para el yeso",
+      "severity": "recoverable",
+      "justification": "Cita ACT: 'Realizar CIP ácido (HCl pH 2,5, 60 min) en etapa 3 para eliminar incrustaciones de CaSO4'. HCl como único agente sin EDTA ni alcalino — match exacto case_specific recoverable."
+    }
+  ],
+  "reviewer_notes": ""
+}

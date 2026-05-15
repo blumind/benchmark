@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:40:22Z",
+  "main_hypothesis": "Daño oxidativo irreversible de la capa de poliamida de las membranas de ósmosis inversa por exposición al cloro, causado por el agotamiento del lecho de carbón activado granular (CAG) utilizado para la decloración.",
+  "key_signals": [
+    "Presencia de cloro libre (0,18 mg/L) y ORP elevado (+320 mV) en la alimentación a la ósmosis inversa, lo que confirma la llegada de un agente oxidante a las membranas.",
+    "Aumento drástico y simultáneo de la conductividad del permeado (de 380 a 1.200 µS/cm) con una caída marcada del rechazo de sales (de 99,1 % a 96,2 %), síntoma clásico de daño químico a la membrana.",
+    "Niveles idénticos de cloro libre medidos antes y después del lecho de CAG (0,18 mg/L), demostrando su completo agotamiento y fallo en la función de decloración.",
+    "El historial reciente muestra un aumento en la carga de cloro (aumento de frecuencia de choques) sobre un lecho de CAG cuya capacidad residual ya era baja (25 % hace 45 días)."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo mecánico de O-rings o sellos internos en los tubos de presión (vessels).",
+      "why_plausible": "Un fallo de este tipo puede causar una fuga de agua de alimentación de alta salinidad directamente al colector de permeado, resultando en un aumento brusco y significativo de la conductividad del permeado.",
+      "why_discardable": "No explica la presencia confirmada de cloro y el ORP elevado antes de la RO. Este fallo mecánico es independiente del fallo del sistema de decloración, que es un evento grave por sí mismo. Además, un fallo de O-ring suele ser más localizado."
+    },
+    {
+      "hypothesis": "Biofouling severo y agudo de las membranas.",
+      "why_plausible": "El biofouling puede, en casos extremos, dañar la capa de la membrana y aumentar el paso de sales, además de requerir presiones de alimentación más altas.",
+      "why_discardable": "Los indicadores clave de biofouling son negativos: la presión diferencial (ΔP) a través de las etapas está estable, y el nivel de ATP en la alimentación no ha aumentado. La presencia de un oxidante fuerte como el cloro es incompatible con un evento de biofouling agudo."
+    }
+  ],
+  "requested_data": "Conductividad del permeado por tubo de presión en uno de los trenes afectados (µS/cm).",
+  "recommended_action": "Detener de inmediato todos los trenes de ósmosis inversa para prevenir daños adicionales. Iniciar el procedimiento de parada segura y enjuague con agua de permeado sin cloro. Planificar la sustitución inmediata del medio de carbón activado granular (CAG) y realizar una autopsia de una membrana del primer elemento para confirmar y cuantificar el daño.",
+  "decision_change_condition": "Si un análisis de laboratorio independiente y calibrado del agua de alimentación a la RO (tomado durante el evento) demostrara que el cloro libre es < 0.02 mg/L y el ORP es < 200 mV, mi diagnóstico cambiaría hacia un fallo mecánico masivo.",
+  "confidence": 95
+}

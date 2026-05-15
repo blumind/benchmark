@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-OXID-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:03:06Z",
+  "main_hypothesis": "Daño oxidativo de la capa de poliamida por remanentes de H2O2 en los elementos tras un aclarado insuficiente del paso oxidante del CIP, lo que aumentó el paso de sales en el tren T-03.",
+  "key_signals": [
+    "Aclarado con permeado acortado a 45 min frente a los 60 min del protocolo tras aplicar H2O2 al 0,1 % p/p.",
+    "Verificación de residual con tira de 1 mg/L (“negativo”) sin medición cuantitativa sensible; posibilidad de H2O2 remanente adsorbido en la espiral.",
+    "Incremento progresivo de la conductividad de permeado de 410 a 540 µS/cm en 4–5 días post-CIP (típico de degradación química que avanza con el tiempo).",
+    "Bajada del rechazo de sales calculado de 99,28 % a 99,05 % sin cambio en la conductividad de alimentación.",
+    "ΔP de etapa 1 y 2 estables y presión de alimentación estable (descarta ensuciamiento/colmatación como causa primaria).",
+    "Solo afecta al T-03 (coincide con el tren que recibió el CIP); trenes vecinos sin desviación.",
+    "Cartuchos con rastros marrones tras la reincorporación (compatible con oxidación/precipitación de hierro por interacción con H2O2)."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga interna por mal asiento de brine seals/interconectores u O-ring dañado durante el CIP.",
+      "why_plausible": "Manipulación en CIP puede provocar derivaciones internas que aumentan la conductividad de permeado sin elevar ΔP de forma apreciable.",
+      "why_discardable": "Una fuga mecánica suele manifestarse como salto inmediato en conductividad al arranque; aquí el aumento fue progresivo durante varios días."
+    },
+    {
+      "hypothesis": "Daño por exposición alcalina (pH 12 a 30 °C durante 60 min) en la etapa cáustica del CIP.",
+      "why_plausible": "pH altos pueden acelerar la hidrólisis de la poliamida y aumentar el paso de sales.",
+      "why_discardable": "Condiciones dentro de las prácticas habituales y usadas históricamente sin problemas; la única desviación del protocolo fue el aclarado insuficiente del paso oxidante."
+    },
+    {
+      "hypothesis": "Ensuciamiento coloidal (p. ej., hierro) o breakthrough de pretratamiento que cause polarización de concentración y mayor paso de sales.",
+      "why_plausible": "Manchas marrones en cartuchos sugieren presencia de hierro/particulados.",
+      "why_discardable": "El ensuciamiento típicamente eleva ΔP y reduce más el caudal; aquí ΔP es estable y la pérdida de caudal es leve (≈4 %) y posterior al CIP."
+    },
+    {
+      "hypothesis": "Ataque por cloro libre no detectado en la alimentación a RO.",
+      "why_plausible": "Oxidantes halogenados dañan la poliamida produciendo aumento de paso salino.",
+      "why_discardable": "Cloro libre medido < 0,02 mg/L y estable; solo un tren afectado tras un CIP con oxidante, lo que apunta al H2O2 y no a cloro en alimentación."
+    }
+  ],
+  "requested_data": "Perfil de conductividad de permeado por vessel del T-03 (µS/cm) medido el mismo día, para identificar si el incremento es uniforme (daño químico global) o localizado (fuga/defecto en un vessel).",
+  "recommended_action": "Retirar de servicio el T-03 y realizar un aclarado extendido con permeado desclorado a baja presión durante 120 min, monitorizando H2O2 con método fotométrico (LOD ≤ 0,1 mg/L) en permeado y concentrado hasta < 0,1 mg/L. Para acelerar la eliminación del oxidante, recircular una solución de NaHSO3 a 5 mg/L como NaHSO3 en permeato durante 30 min a ~25–30 °C y luego enjuagar con permeato al menos 60 min adicionales. Antes de volver a producir, efectuar un perfil de conductividad de permeado por vessel; si se detecta un vessel anómalo, revisar/reamentar interconectores y sustituir elementos dañados; si el aumento es uniforme y el rechazo sigue degradado >10 % respecto a baseline, planificar sustitución escalonada (empezando por la 1ª etapa).",
+  "decision_change_condition": "Si el perfil por vessel muestra uno o dos vasos con conductividades de permeado significativamente más altas que el resto, o una prueba de integridad/aislamiento confirma una fuga localizada, cambiaría el diagnóstico a defecto de montaje/sello en lugar de daño oxidativo global por H2O2.",
+  "confidence": 75
+}

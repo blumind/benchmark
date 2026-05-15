@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:11:58Z",
+  "main_hypothesis": "Contaminación del agua de mar por dióxido de cloro (ClO₂) o sus subproductos, proveniente de la piscifactoría vecina, que está afectando el rendimiento de las membranas de ósmosis inversa.",
+  "key_signals": [
+    "Conductividad permeado subida progresiva",
+    "Rechazo de sales bajada",
+    "Cloro total (DPD) alimentación a RO subida",
+    "ORP alimentación a RO subida",
+    "Presencia de clorito (ClO₂⁻) en alimentación a RO confirmada por laboratorio externo",
+    "Información sobre cambio en programa de desinfección de la piscifactoría vecina con aumento de descargas de ClO₂",
+    "Olor a cloro intenso en la línea de captación"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Envejecimiento y ensuciamiento de las membranas de ósmosis inversa.",
+      "why_plausible": "La conductividad del permeado ha aumentado progresivamente y el rechazo de sales ha disminuido, lo cual es típico del envejecimiento y la pérdida de eficiencia de las membranas. Las membranas tienen 12 meses de uso, lo que podría ser un punto de reemplazo o limpieza.",
+      "why_discardable": "El aumento de ORP y cloro total, junto con la confirmación de clorito, son indicadores de una causa externa y química que está afectando el agua de alimentación, no solo el estado intrínseco de las membranas. El olor a cloro y la comunicación con la piscifactoría apuntan fuertemente a una fuente externa."
+    },
+    {
+      "hypothesis": "Fallo en la dosificación de bisulfito sódico (SBS).",
+      "why_plausible": "El bisulfito sódico se usa para eliminar el cloro residual. Si la dosificación fallara o fuera insuficiente, el cloro residual podría afectar las membranas. Sin embargo, el caso indica dosificación continua y no hay datos que sugieran un fallo en la dosificación.",
+      "why_discardable": "Los datos de cloro libre son bajos (<0.02 mg/L), lo que sugiere que el SBS está funcionando para eliminar el cloro libre. El problema parece estar relacionado con un oxidante diferente (ClO₂ o sus subproductos) que el SBS podría no eliminar eficazmente o que está presente en concentraciones muy altas. El aumento de ORP y la presencia de clorito son más consistentes con la contaminación externa."
+    },
+    {
+      "hypothesis": "Contaminación biológica en la línea de captación o pretratamiento.",
+      "why_plausible": "Un aumento en la carga biológica podría causar ensuciamiento de las membranas y afectar la calidad del permeado. El ATP en alimentación está estable.",
+      "why_discardable": "Aunque el ATP está estable, un crecimiento biológico podría manifestarse con el tiempo. Sin embargo, la presencia de cloro total elevado, el olor a cloro, el aumento de ORP y la confirmación de clorito son fuertes indicadores de una causa química externa, no puramente biológica. El ClO₂ es un biocida, por lo que su presencia podría estar relacionada con la piscifactoría."
+    }
+  ],
+  "requested_data": "Concentración de ClO₂ residual en la alimentación a RO (mg/L).",
+  "recommended_action": "Suspender temporalmente la dosificación de bisulfito sódico y monitorizar la concentración de ClO₂ y sus subproductos en la alimentación a RO. Si la concentración de ClO₂ es significativa, contactar a la piscifactoría para discutir la gestión de sus descargas y considerar la implementación de un sistema de neutralización de oxidantes más robusto en la planta SWRO, como metabisulfito de sodio o una dosis mayor de bisulfito sódico, ajustada para neutralizar ClO₂.",
+  "decision_change_condition": "Si la concentración de ClO₂ residual en la alimentación a RO es indetectable o muy baja, y el análisis de clorito también es bajo, entonces la hipótesis principal se debilitaría, y se debería investigar más a fondo el envejecimiento de las membranas y posibles ensuciamientos no detectados visualmente.",
+  "confidence": 90
+}

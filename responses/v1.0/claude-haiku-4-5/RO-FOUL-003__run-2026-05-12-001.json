@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:22:11Z",
+  "main_hypothesis": "Organic fouling of the first-stage RO membranes caused by elevated dissolved organic carbon (DOC/TOC) breakthrough from the pretreatment system, exacerbated by inadequate coagulation recovery after the flood event and subsequent membrane surface colonization.",
+  "key_signals": [
+    "TOC in RO feed increased markedly from 1.8 mg/L (baseline) to 4.1 mg/L (current), a 128 % rise over 14 days",
+    "ΔP stage 1 rose from 0.9 bar (baseline) to 1.9 bar (current), a 111 % increase, with sustained upward trend over 14 days",
+    "Turbidity and SDI₁₅ at cartridge outlet both increased (0.08 → 0.18 NTU; 2.2 → 3.9), indicating incomplete particle removal",
+    "Cartridges replaced at day -10 showed orange-brown discoloration, consistent with iron hydroxide and organic matter co-precipitation",
+    "Permeate flow declined 8 % despite stable feed pressure baseline; feed pressure rose to 19.8 bar to maintain throughput",
+    "Stages 2 and 3 ΔP remained stable, indicating fouling is localized to stage 1 (first-pass membranes)",
+    "Flood event 28 days ago introduced high suspended solids and likely elevated humic/fulvic acids; coagulation dose was increased then normalized, but organic breakthrough persisted"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling of stage 1 membranes due to microbiological growth",
+      "why_plausible": "Intermittent chloramination upstream of UF (not present here) means no residual biocide protection; elevated TOC provides substrate for biofilm; orange-brown discoloration on cartridges could indicate iron-oxidizing bacteria; sustained ΔP rise is consistent with biofilm accumulation.",
+      "why_discardable": "Cloro libre is < 0.02 mg/L (undetectable), which would inhibit biofilm initiation; biofouling typically develops over weeks to months and shows non-linear ΔP rise with sudden jumps; the 14-day trend is linear and correlates directly with TOC rise, not with time alone; no ATP or heterotrophic plate count data provided, but the rapid onset (4 days) and correlation with organic load favor organic fouling over biofilm."
+    },
+    {
+      "hypothesis": "Colloidal silica or metal hydroxide fouling from inadequate coagulation during and after the flood",
+      "why_plausible": "Flood introduced high turbidity (4 → 38 NTU); FeCl₃ dose was increased to 8 mg/L then normalized; if coagulation pH or mixing was suboptimal, colloidal iron hydroxide could pass cartridges and foul membranes; SDI₁₅ rise supports particle breakthrough.",
+      "why_discardable": "Turbidity at cartridge outlet is only 0.18 NTU (low), and SDI₁₅ of 3.9 is elevated but not extreme (threshold is typically 5); colloidal fouling would show more uniform ΔP rise across all stages, but stage 2 and 3 are stable; the orange-brown cartridge discoloration and marked TOC rise point to organic matter, not inorganic colloids alone; colloidal fouling would not explain the 128 % TOC increase."
+    },
+    {
+      "hypothesis": "Membrane degradation or defect in stage 1 elements (e.g., membrane tears, seal failure)",
+      "why_plausible": "Membranes are 3 years old; ΔP rise in stage 1 only could indicate localized damage; permeate conductivity is stable (95 µS/cm), but a small tear might not yet show salt passage.",
+      "why_discardable": "Permeate conductivity is stable and low (95 µS/cm vs. 3,250 µS/cm feed), indicating no salt passage; a membrane tear would cause rapid conductivity rise; ΔP rise is gradual and linear over 14 days, not sudden; the cartridge discoloration and TOC correlation are inconsistent with membrane defect; last CIP was 6 months ago, and membranes are not at end-of-life."
+    },
+    {
+      "hypothesis": "Inadequate antiscalant dosing or antiscalant degradation allowing mineral scale precipitation",
+      "why_plausible": "Antiscalant is dosed at 2.0 ppm; if degraded or insufficient, calcium/magnesium salts could precipitate on membranes; ΔP rise would follow.",
+      "why_discardable": "Conductivity of feed is stable (3,180 → 3,250 µS/cm), indicating no change in ionic strength; pH is stable at 7.4; no hardness data provided, but scale would typically show ΔP rise across all stages proportionally, not isolated to stage 1; TOC rise is orthogonal to scaling; permeate conductivity is stable, ruling out salt passage from scale-induced defects."
+    }
+  ],
+  "requested_data": "Dissolved organic carbon (DOC) concentration in the RO feed measured by UV-VIS absorbance at 254 nm (mg/L) or total organic carbon (TOC) speciation (humic acids, fulvic acids, biopolymers) via liquid chromatography–organic carbon detection (LC-OCD) to confirm the nature and source of the organic load.",
+  "recommended_action": "Perform an emergency chemical cleaning (CIP) of stage 1 membranes using a two-step protocol: (1) Alkaline clean at pH 11–11.5 using 0.5–1.0 % sodium hydroxide (NaOH) at 40–45 °C for 60 minutes at 10–15 L/m²·h to remove organic matter and iron hydroxide; (2) Acid clean at pH 3–3.5 using 1–2 % citric acid or 0.5–1.0 % hydrochloric acid (HCl) at 40–45 °C for 60 minutes at 10–15 L/m²·h to dissolve residual iron and mineral deposits. Monitor ΔP stage 1 during and after cleaning; if ΔP does not return to ≤ 1.1 bar (baseline + 20 %), escalate to membrane replacement. Simultaneously, increase coagulation pH control to 6.8–7.2 (verify with jar test) and consider temporary increase of FeCl₃ to 5.5–6.0 mg/L with enhanced mixing to improve organic matter removal in the decanter and cartridge stage. Retest TOC and SDI₁₅ at cartridge outlet daily for 5 days post-CIP.",
+  "decision_change_condition": "If post-CIP ΔP stage 1 remains above 1.5 bar, or if TOC in RO feed does not decline below 2.5 mg/L within 7 days despite coagulation optimization, or if LC-OCD analysis reveals that the organic load is primarily biopolymers or polysaccharides (not humic acids), the diagnosis would shift toward biofouling or a source-water quality change requiring pretreatment redesign (e.g., addition of ultrafiltration or activated carbon) rather than membrane cleaning alone.",
+  "confidence": 72
+}

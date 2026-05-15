@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-001",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling 1ª etapa' + DAF + SBS captura múltiples factores."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ATP+600%+ΔP1+rejection estable+conductividad+ORP estable."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts de 3 familias (Fe coloidal, orgánico, SCAL, OXID) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP dos pasos canónico: alcalino NaOH+EDTA+surfactante 35°C + cítrico 2% pH 2.5-3.0."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide perfil ΔP por elemento + autopsia HPC+LOI — multi-trigger match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-umbral: Fe>30% + LOI<15% + HPC bajo → switch a Fe/SCAL."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

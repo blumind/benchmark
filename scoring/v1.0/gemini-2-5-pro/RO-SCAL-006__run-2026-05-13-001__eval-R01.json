@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-006",
+    "subject_id": "gemini-2-5-pro",
+    "subject_version": "gemini-2.5-pro",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'iron and manganese hydroxides + greensand sin ripening + elevated feed pH 6.8' literal — captura 2 de 3."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts brief (CaCO3, sílice, biofouling)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Stop RO + isolate greensand + correct acid pH 6.5 + CIP cítrico 2% pH 3.5-4.0 — operacional + cítrico solo (gold expects secuencial)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide chemical analysis deposit cartridges %Fe/Mn/Ca/Si — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-umbral: deposit primary >70% Ca o Si en lugar de Fe/Mn → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

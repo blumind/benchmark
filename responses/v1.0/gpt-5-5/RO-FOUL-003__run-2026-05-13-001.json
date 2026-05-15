@@ -1,0 +1,52 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:46:55Z",
+  "main_hypothesis": "Ensuciamiento coloidal-particulado de los elementos de entrada de la primera etapa por arrastre de hidróxidos férricos y materia orgánica tras el episodio de lluvia y el desajuste temporal de coagulación/decantación.",
+  "key_signals": [
+    "El aumento de ΔP está concentrado en la etapa 1: 1,9 bar frente a 0,9 bar de baseline, mientras las etapas 2 y 3 permanecen prácticamente estables.",
+    "La presión de alimentación sube de 16,5 a 19,8 bar y el caudal permeado baja un 8 %, patrón compatible con obstrucción hidráulica en cabecera del bastidor.",
+    "La conductividad de permeado se mantiene casi estable, lo que apunta más a ensuciamiento hidráulico que a daño químico generalizado de membrana.",
+    "El TOC a RO aumenta marcadamente de 1,8 a 4,1 mg/L después del evento de lluvias.",
+    "El SDI15 a la salida de cartuchos sube de 2,2 a 3,9 y la turbidez de 0,08 a 0,18 NTU, indicando mayor carga coloidal/particulada hacia RO.",
+    "Hubo un episodio de alta turbidez en captación tras lluvias, con incremento temporal de FeCl3 a 8 mg/L durante 5 días.",
+    "Los cartuchos retirados presentaron coloración marrón anaranjada, compatible con retención de sólidos férricos u óxidos/hidróxidos de hierro.",
+    "El cambio de cartuchos solo redujo el ΔP de etapa 1 en 0,15 bar y el aumento reapareció en 48 h, indicando que la fuente de ensuciamiento sigue aguas arriba y ya afecta a los elementos de entrada."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bioensuciamiento en la primera etapa favorecido por aumento de TOC y ausencia de cloro libre antes de RO.",
+      "why_plausible": "El aumento de TOC proporciona sustrato biodegradable y el biofouling suele manifestarse primero como incremento de ΔP en la primera etapa, con conductividad de permeado inicialmente estable.",
+      "why_discardable": "La cronología está más ligada al episodio de lluvia, aumento de turbidez, sobredosificación de FeCl3 y cartuchos marrón anaranjados; además el incremento rápido de SDI/turbidez sugiere una carga coloidal-inorgánica más que crecimiento biológico como causa primaria."
+    },
+    {
+      "hypothesis": "Fouling orgánico por materia natural del río tras el evento de lluvias.",
+      "why_plausible": "El TOC a la alimentación de RO aumentó de forma marcada y la materia orgánica natural puede bloquear espaciadores y superficie de membrana en los elementos de cabecera.",
+      "why_discardable": "La evidencia de coloración marrón anaranjada en cartuchos y el antecedente de aumento de FeCl3 hacen más probable un fouling mixto férrico-orgánico/coloidal que un fouling orgánico puro."
+    },
+    {
+      "hypothesis": "Incrustación mineral por operación a 80 % de recuperación.",
+      "why_plausible": "La recuperación elevada aumenta la concentración de sales en las últimas etapas y puede producir pérdida de caudal y aumento de presión.",
+      "why_discardable": "La incrustación por concentración debería afectar preferentemente a las etapas finales, pero las etapas 2 y 3 están estables y el aumento de ΔP se limita a la etapa 1; pH, temperatura y conductividad de alimentación también están estables."
+    },
+    {
+      "hypothesis": "Fallo o bypass de cartuchos de 5 µm después del cambio programado.",
+      "why_plausible": "Un montaje defectuoso o bypass permitiría entrada de partículas a RO y causaría aumento rápido de ΔP en la primera etapa.",
+      "why_discardable": "Los cartuchos retirados ya mostraban coloración marrón anaranjada y el SDI/turbidez venían aumentando antes, lo que apunta a sobrecarga o fuga de pretratamiento aguas arriba más que a un fallo aislado del cambio de cartuchos."
+    },
+    {
+      "hypothesis": "Degradación o envejecimiento de membranas por 3 años de servicio.",
+      "why_plausible": "Membranas envejecidas pueden requerir mayor presión para mantener producción y presentar pérdida de rendimiento.",
+      "why_discardable": "El cambio es rápido en 14 días, localizado en ΔP de etapa 1 y coincide con un evento de calidad de agua; la conductividad de permeado permanece estable, lo que no sugiere deterioro general de la capa activa."
+    }
+  ],
+  "requested_data": "Composición del depósito tomado del extremo de entrada del primer elemento de la etapa 1 mediante autopsia/SEM-EDS/FTIR, reportada como % en peso de Fe y fracción orgánica.",
+  "recommended_action": "Sacar de servicio el bastidor afectado, enjuagar con permeado a baja presión y ejecutar un CIP específico de primera etapa conforme al manual del fabricante: limpieza ácida con ácido cítrico al 2,0 % p/p ajustado a pH 3,0-3,5 a 30-35 °C, recirculación y remojo dentro de los límites de caudal, presión y pH del fabricante; enjuagar hasta pH neutro y, si el ΔP normalizado no se recupera, continuar con limpieza alcalina de NaOH al 0,1 % p/p más tensioactivo no iónico al 0,1 % p/p a pH 10,5-11,0 y 30-35 °C. No aplicar cloro ni oxidantes sobre las membranas.",
+  "decision_change_condition": "Si la autopsia del depósito de entrada de la etapa 1 no muestra enriquecimiento férrico/coloidal y en cambio identifica predominio de biomasa/EPS viable o incrustación cristalina, cambiaría el diagnóstico principal a bioensuciamiento o incrustación mineral respectivamente.",
+  "confidence": 80
+}

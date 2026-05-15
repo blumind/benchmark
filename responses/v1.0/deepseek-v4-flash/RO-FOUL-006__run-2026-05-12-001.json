@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-FOUL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:18:25Z",
+  "main_hypothesis": "Biofouling in the first stage of the RO system due to reduced biocide dosing frequency, allowing microbial growth on the membrane surface.",
+  "key_signals": [
+    "ΔP etapa 1 subida progresiva de 0,8 bar a 1,7 bar",
+    "ATP en alimentación RO subida marcada de 110 pg/mL a 480 pg/mL",
+    "TOC alimentación subida moderada de 1,3 mg/L a 1,9 mg/L",
+    "Caudal permeado planta bajada del 8 %",
+    "Conductividad permeado subida ligera de 68 µS/cm a 78 µS/cm",
+    "Presión alimentación subida lenta de 14,2 bar a 17,5 bar",
+    "CIP ácida no recuperó completamente ΔP etapa 1 (bajó a 0,9 bar y rebotó a 1,3 bar en 12 días)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Inorganic scaling (e.g., calcium carbonate or sulfate) in the first stage.",
+      "why_plausible": "ΔP etapa 1 elevado y respuesta parcial a CIP ácida son consistentes con precipitación de sales. La recuperación del 78 % y el uso de antiincrustante poliacrílico no garantizan protección total si el índice de saturación es alto.",
+      "why_discardable": "El ATP elevado (480 pg/mL) y el TOC en aumento indican actividad biológica, no inorgánica. El Mn y Fe en alimentación son bajos y estables, descartando precipitación de óxidos metálicos. La CIP ácida reciente debería haber disuelto incrustaciones carbonatadas, pero el ΔP rebotó rápidamente, lo que sugiere un mecanismo biológico recurrente."
+    },
+    {
+      "hypothesis": "Colloidal fouling (e.g., clay, silt, or organic colloids) in the first stage.",
+      "why_plausible": "El aumento de TOC (1,3 a 1,9 mg/L) podría reflejar coloides orgánicos. El ΔP etapa 1 elevado y la respuesta parcial a CIP ácida son compatibles con fouling coloidal.",
+      "why_discardable": "El ATP elevado es un indicador directo de biomasa activa, no de coloides inertes. El cambio de color amarillento en el concentrado sugiere biopelícula o materia orgánica microbiana. Además, no hay reporte de turbidez o SDI elevados en la alimentación."
+    },
+    {
+      "hypothesis": "Membrane compaction due to high pressure or temperature.",
+      "why_plausible": "La presión de alimentación ha subido a 17,5 bar, lo que podría causar compactación y aumento de ΔP con pérdida de permeado.",
+      "why_discardable": "La temperatura es estable (24,5 °C), y la compactación afectaría uniformemente a todas las etapas, no solo a la primera. El ΔP etapa 3 permanece estable (0,4 bar), lo que descarta un fenómeno generalizado. Además, el ATP elevado apunta a biofouling."
+    }
+  ],
+  "requested_data": "Resultado de un ensayo de bioluminiscencia ATP en la superficie de un elemento de membrana de la primera etapa (muestra de autopsia o hisopo de tubo de presión), en pg/cm².",
+  "recommended_action": "Iniciar una limpieza CIP alcalina con dodecilsulfato de sodio (SDS) al 0,1 % p/v y EDTA al 0,2 % p/v a pH 11-12, temperatura máxima 35 °C, recirculando durante 45 minutos, seguida de enjuague con permeado hasta pH neutro. Posteriormente, reanudar la dosificación de DBNPA a 2 mg/L cada 3 días hasta que el ATP en alimentación se estabilice por debajo de 200 pg/mL.",
+  "decision_change_condition": "Si el ATP en la superficie de la membrana de la primera etapa es inferior a 100 pg/cm², entonces la hipótesis principal cambiaría a incrustación inorgánica o coloidal, y se requeriría un análisis de lodos (SDI y composición elemental) para confirmar.",
+  "confidence": 85
+}

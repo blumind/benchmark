@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:12:13Z",
+  "main_hypothesis": "Calcium sulfate (CaSO₄) scaling on stage 3 membranes caused by increased recovery (80% → 83%) without proportional increase in antiscalant dosage, combined with elevated sulfate concentration in the reject stream due to a shift in the municipal water source mix toward higher-sulfate industrial wastewater.",
+  "key_signals": [
+    "ΔP stage 3 increased markedly from 0.5 bar (baseline) to 1.5 bar (current) over 12 days at 83% recovery",
+    "Sulfate in reject stream rose from 1,100 mg/L to 1,290 mg/L (17% increase), indicating higher feed sulfate concentration or concentration polarization",
+    "Calcium saturation index (SI) calculated at 1.1 (supersaturated) on day -3, confirming CaSO₄ scaling risk",
+    "Permeate flow declined 8% (833 → 770 m³/h) despite stable feed pressure initially, consistent with membrane fouling",
+    "Antiscalant dosage remained fixed at 2.2 ppm when recovery increased from 80% to 83%, reducing effective inhibitor concentration in the concentrate",
+    "Temporary ΔP reduction after alkaline CIP (day -7) followed by rapid re-increase (day -5) indicates scaling recurrence, not organic fouling",
+    "Operational change on day -18 (recovery increase) preceded ΔP rise on day -10 by 8 days, consistent with scaling kinetics",
+    "Feed conductivity and temperature stable; chlorine residual undetectable; TOC stable—ruling out biofouling, oxidative damage, or colloidal fouling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Silica scaling (amorphous silica polymerization) on stage 3 membranes",
+      "why_plausible": "Feed silica is 22 mg/L; at 83% recovery, silica concentration in reject approaches 130 mg/L (reported). Silica solubility decreases with pH and temperature. Stage 3 operates at lower pH (post-H₂SO₄ dosing) and higher concentration, creating conditions for silica precipitation.",
+      "why_discardable": "Silica scaling typically manifests as gradual, uniform ΔP rise across all stages and is not reversed by alkaline CIP (NaOH dissolves silica poorly). Here, stage 3 ΔP dropped from 0.8 to 0.9 bar after alkaline CIP (day -7), indicating partial removal by base, which is inconsistent with silica scale. Silica saturation index is not reported as supersaturated; CaSO₄ SI is explicitly 1.1."
+    },
+    {
+      "hypothesis": "Organic fouling or biofilm formation on stage 3 membranes",
+      "why_plausible": "TOC in feed is 1.8 mg/L (slightly elevated from 1.6 mg/L baseline). Stage 3 operates at highest concentration and lowest flux, creating conditions for organic accumulation and biofilm growth.",
+      "why_discardable": "Chlorine residual is undetectable (< 0.02 mg/L) at RO inlet, indicating effective dechlorination upstream; no biocide dosing changes reported. Alkaline CIP would not effectively remove biofilm; acid CIP would be more appropriate. The rapid re-increase in ΔP after alkaline CIP (48 h recovery to 1.2 bar) is inconsistent with biofilm, which would require longer to re-establish. Stable TOC and no reported color or odor changes argue against active biofilm."
+    },
+    {
+      "hypothesis": "Membrane degradation or compaction due to elevated operating pressure (14.8 bar vs. 12.5 bar baseline)",
+      "why_plausible": "Feed pressure increased 2.3 bar (18.4% rise) to achieve 83% recovery. Brackish membranes (400 ft² elements) are rated for typical operation at 12–16 bar; 14.8 bar is within range but elevated. Compaction reduces permeability and increases ΔP.",
+      "why_discardable": "Membrane compaction is irreversible and would not be reversed by CIP. The temporary ΔP reduction after alkaline CIP (day -7) contradicts compaction as the primary cause. Compaction would affect all stages proportionally; here, stage 3 is disproportionately affected (ΔP 1.5 bar vs. stages 1 and 2 at 1.3 and 1.1 bar). Membranes are 30 months old, within typical service life (4–5 years)."
+    },
+    {
+      "hypothesis": "Inadequate antiscalant coverage due to source water composition change (higher sulfate, lower pH buffering)",
+      "why_plausible": "Day -2 reports a shift in the municipal water source mix toward higher-sulfate industrial wastewater. Sulfate in reject rose 17%. Antiscalant poliacrylate is dosed at fixed 2.2 ppm; if feed sulfate increased, the molar ratio of antiscalant to divalent cations (Ca²⁺, Ba²⁺) may have deteriorated, reducing inhibition efficacy.",
+      "why_discardable": "This is not a distinct root cause but rather a contributing factor to CaSO₄ scaling. The primary root cause is the combination of increased recovery (which concentrates all ions) and fixed antiscalant dosage. The source water change amplifies the problem but does not explain why stage 3 alone is affected or why CIP provided temporary relief."
+    }
+  ],
+  "requested_data": "Molar concentration of antiscalant (mg/L as active polymer) in the concentrate stream at current 83% recovery, and the calculated Langelier Saturation Index (LSI) or Stiff & Davis Index for CaSO₄ at the outlet of stage 3 (not just the feed).",
+  "recommended_action": "Immediately increase antiscalant dosage from 2.2 ppm to 3.2 ppm (45% increase) to restore the molar ratio of inhibitor to divalent cations at the new 83% recovery. Simultaneously, reduce recovery to 81% (intermediate setpoint) for 48 hours while the dosage adjustment stabilizes, to lower the driving force for CaSO₄ precipitation. Monitor ΔP stage 3 every 4 hours. If ΔP stage 3 remains above 1.2 bar after 24 hours at 3.2 ppm and 81% recovery, perform an acid CIP (HCl 2–3% v/v, pH 2–3, 60 min at 10 m³/h) to dissolve residual CaSO₄ scale. Verify that feed sulfate concentration has not exceeded 250 mg/L; if it has, consult with the municipal water supplier to confirm the source mix and consider temporary blending with lower-sulfate sources. Recalculate antiscalant dosage weekly based on measured reject-stream composition until source water composition stabilizes.",
+  "decision_change_condition": "If ΔP stage 3 does not decrease below 1.0 bar within 48 hours of increasing antiscalant to 3.2 ppm and reducing recovery to 81%, or if acid CIP fails to reduce ΔP below 0.8 bar, then the diagnosis would shift toward irreversible membrane damage (compaction, chemical degradation, or crystalline scale too dense to dissolve), requiring element replacement. Alternatively, if the reject-stream sulfate concentration is found to exceed 1,500 mg/L and feed sulfate exceeds 300 mg/L, the diagnosis would shift toward a systemic source water quality issue requiring upstream treatment (e.g., ion exchange or lime softening) rather than antiscalant adjustment alone.",
+  "confidence": 78
+}

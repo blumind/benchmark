@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-004",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'CaSO4 cola etapa 3 + operar 83% + mayor sulfato sin recalcular antiincrustante' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (sílice, biofouling/orgánico, coloidal/UF, CaCO3)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Reducir recovery 83→80% + mantener antiincrustante + enjuagar baja presión — operacional + investigación; no CIP químico explícito."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide composición mineralógica depósito etapa 3 % CaSO4/SiO2/orgánico — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: depósito sílice o orgánico → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

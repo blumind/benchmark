@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:51:32Z",
+  "main_hypothesis": "Contaminación biológica de las membranas de ósmosis inversa, probablemente exacerbada por el evento de mar gruesa y la operación reducida de la DAF.",
+  "key_signals": [
+    "SDI₁₅ a la salida de cartuchos: 4,8 (subida marcada)",
+    "ATP en alimentación RO: 1.200 pg/mL (subida marcada)",
+    "TOC alimentación: 2,8 mg/L (subida)",
+    "ΔP etapa 1: 2,8 bar (subida progresiva)",
+    "Presión alimentación: 64 bar (subida lenta)",
+    "Caudal permeado tren: 245 m³/h (bajada del 8 %)",
+    "Conductividad permeado: 380 µS/cm (ligero aumento)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling inorgánico o de materia orgánica precipitada en las membranas.",
+      "why_plausible": "El aumento del ΔP en la etapa 1 y la presión de alimentación, junto con la disminución del caudal de permeado, son síntomas típicos de fouling. El evento de mar gruesa pudo haber introducido más materia orgánica o partículas finas que contribuyeron a este fouling.",
+      "why_discardable": "La señal de ATP en la alimentación RO es extremadamente alta (1.200 pg/mL vs 80 pg/mL baseline), lo que indica una carga biológica significativa que no se explica únicamente por fouling inorgánico o de materia orgánica inerte. El aumento del TOC también apoya una fuente orgánica, pero la alta señal de ATP apunta a un origen biológico activo."
+    },
+    {
+      "hypothesis": "Obstrucción de los filtros de cartucho de 5 µm.",
+      "why_plausible": "Los filtros de cartucho se sustituyeron hace 22 días, y el aumento del SDI a la salida de los cartuchos (4.8 vs 2.5 baseline) sugiere que están reteniendo más partículas. Si los filtros estuvieran saturados, podrían estar contribuyendo al aumento de la presión y al ΔP general del sistema RO.",
+      "why_discardable": "Aunque los filtros de cartucho pueden estar contribuyendo al aumento del SDI, el ΔP en la etapa 1 (membranas) es el que ha aumentado significativamente (2.8 bar vs 1.2 bar baseline), y la presión de alimentación también ha subido. Si el problema principal fueran los cartuchos, esperaríamos ver un ΔP más elevado en ellos y un impacto menos pronunciado en las membranas, además de que el ATP y TOC elevados apuntan a un problema más allá de la simple filtración de partículas."
+    },
+    {
+      "hypothesis": "Dosificación inadecuada o ineficaz de antiincrustante.",
+      "why_plausible": "El aumento de la dosis de antiincrustante se realizó hace solo 3 días, y el problema se ha desarrollado progresivamente. Si el antiincrustante no es efectivo contra los tipos de incrustaciones presentes, o si la dosificación es insuficiente para la carga de agua de mar, podría contribuir al fouling.",
+      "why_discardable": "La señal de ATP es muy alta, lo que sugiere un problema biológico primario. Si bien el antiincrustante es importante, no aborda directamente la causa raíz biológica. El aumento de la dosis se realizó recientemente, y el problema ya estaba en desarrollo, lo que hace menos probable que sea la causa principal."
+    }
+  ],
+  "requested_data": "Análisis microbiológico (recuento total de bacterias y detección de biofilms) en muestras de membranas de la etapa 1.",
+  "recommended_action": "Realizar un ciclo de limpieza química de las membranas de ósmosis inversa, priorizando un programa de limpieza anti-biofouling (por ejemplo, con peróxido de hidrógeno o un biocida compatible con membranas, seguido de un enjuague y posible limpieza ácida/alcalina si se sospecha fouling inorgánico/orgánico adicional). Monitorizar de cerca el ΔP y el caudal de permeado durante y después de la limpieza. Si la limpieza no es efectiva, considerar la sustitución de las membranas de la etapa 1.",
+  "decision_change_condition": "Si el análisis microbiológico revela una carga bacteriana mínima o ausencia de biofilm, y las pruebas de solubilidad de incrustaciones indican principalmente fouling inorgánico, la hipótesis principal cambiaría a fouling inorgánico severo.",
+  "confidence": 85
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-002",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'oxidative damage por ozono residual elevado' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (orgánico, oxidantes distintos, pretratamiento)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Detener bastidor + aislar + aumentar SBS 2 ppm + 'lavado químico de emergencia con SBS 0.1% pH 5.5'. SBS lavado es protectivo (no recovery CIP) pero wording lavado químico de membranas para OXID es subóptimo."
+    },
+    "requested_data": {
+      "score": 0,
+      "justification": "Pide concentración ozono residual en permeato — lugar conceptualmente incorrecto (ozono se mide en alimentación, no permeato)."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: ozono permeato <0.01 + rechazo recupera 95% en 24h → switch — basada en REQ incorrecto."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "REQ permeato es incorrecto conceptualmente. ACT 'lavado químico con SBS' es protective intent pero wording ambiguo."
+}

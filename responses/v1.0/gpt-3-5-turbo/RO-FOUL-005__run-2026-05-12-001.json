@@ -1,0 +1,32 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:11:54Z",
+  "main_hypothesis": "Overdosing of FeCl₃ in the RO feed",
+  "key_signals": [
+    "Marked increase in Fe total in RO feed",
+    "Significant rise in SDI₁₅ of cartridge outlet",
+    "Intense reddish coloration observed in cartridge outlet"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling",
+      "why_plausible": "The SDI₁₅ and turbidity values have increased significantly, indicating fouling.",
+      "why_discardable": "The substantial rise in Fe total in the RO feed and the intense reddish coloration in the cartridge outlet point more towards FeCl₃ overdosing."
+    },
+    {
+      "hypothesis": "Biological growth in the system",
+      "why_plausible": "The observed coloration in the cartridge outlet could be attributed to biological growth.",
+      "why_discardable": "The significant increase in Fe total in the RO feed and the rise in SDI₁₅ suggest FeCl₃ overdosing as a more likely cause."
+    }
+  ],
+  "requested_data": "Iron concentration in the RO permeate",
+  "recommended_action": "Adjust the FeCl₃ dosing back to the baseline of 2.5 mg/L as per the pump calibration.",
+  "decision_change_condition": "If the iron concentration in the RO permeate is found to be within the normal range despite the high Fe total in the feed, membrane fouling could be considered as the root cause.",
+  "confidence": 90
+}

@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:58:45Z",
+  "main_hypothesis": "Pérdida de capacidad de adsorción de cloramina en los lechos de carbón activado granular (CAG) debido a saturación progresiva y posible agotamiento del medio, permitiendo el paso de cloramina a la etapa de RO y dañando las membranas (oxidación de la capa de poliamida).",
+  "key_signals": [
+    "Subida progresiva de cloramina tras CAG-1 (0,42 mg/L) y CAG-2 (0,38 mg/L) frente a baseline <0,05 mg/L",
+    "Aumento de ORP en alimentación a RO (+210 mV vs +60 mV baseline), indicativo de presencia de oxidantes",
+    "Caída drástica del rechazo de sales (80,7% vs 95,5% baseline) y aumento de conductividad de permeado (280 µS/cm vs 65 µS/cm)",
+    "Reducción del caudal de permeado (470 m³/h vs 500 m³/h baseline, -6%)",
+    "Test funcional de elemento líder con rechazo NaCl del 95% (vs 99% en membrana nueva), sugiriendo daño por oxidación",
+    "Cloramina en alimentación a RO subiendo a 0,38 mg/L (vs <0,05 mg/L baseline) a pesar de doble lecho de CAG"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo en la dosificación de antiincrustante, permitiendo incrustación en membranas y reducción de flujo y rechazo.",
+      "why_plausible": "La incrustación puede reducir el flujo de permeado y aumentar la conductividad del permeado por compactación de la capa de polarización. El antiincrustante se dosifica a 2,2 ppm, pero no se reporta verificación de concentración en el tanque o en línea.",
+      "why_discardable": "No hay evidencia de aumento de presión diferencial en etapas (ΔP estable en 1,3 bar y 0,9 bar), lo que es inconsistente con incrustación severa. Además, el rechazo de sales ha caído drásticamente, lo que no es típico de incrustación sino de daño por oxidación."
+    },
+    {
+      "hypothesis": "Contaminación biológica en el segundo lecho de CAG, generando biofilm y reduciendo su capacidad de adsorción de cloramina.",
+      "why_plausible": "El segundo lecho tiene 320 días de servicio y no se ha reemplazado. La cloramina tras CAG-2 es alta (0,38 mg/L), lo que sugiere que el biofilm podría estar consumiendo cloramina sin adsorberla eficientemente, permitiendo su paso a la RO.",
+      "why_discardable": "No hay reporte de aumento de presión diferencial en los lechos de CAG ni de crecimiento de presión en la etapa de RO, lo que sería esperado con biofilm severo. Además, el ORP elevado y la caída del rechazo de sales apuntan más a daño químico (oxidación) que a obstrucción biológica."
+    },
+    {
+      "hypothesis": "Fallo en la integridad de las membranas (rotura o pinholes) debido a envejecimiento (26 meses de servicio), permitiendo paso de sales y reducción de rechazo.",
+      "why_plausible": "Las membranas tienen 26 meses de servicio y el rechazo ha caído de 95,5% a 80,7%. El envejecimiento puede causar degradación de la capa de poliamida, reduciendo el rechazo de sales.",
+      "why_discardable": "El envejecimiento no explica el aumento de cloramina en alimentación a RO ni el ORP elevado. Además, el test funcional del elemento líder mostró un rechazo del 95%, lo que sugiere que el daño no es uniforme en todos los elementos, sino localizado en zonas expuestas a oxidantes."
+    },
+    {
+      "hypothesis": "Contaminación química en el agua de alimentación (ej. metales pesados o compuestos orgánicos) que envenenan las membranas y reducen su rechazo.",
+      "why_plausible": "La presencia de contaminantes puede reducir el rechazo de sales y afectar la integridad de las membranas. El aumento de ORP sugiere presencia de oxidantes, que podrían ser metales en forma oxidada.",
+      "why_discardable": "No hay reporte de análisis de metales pesados ni de compuestos orgánicos en el agua de alimentación. Además, el aumento de cloramina tras los lechos de CAG apunta más a un fallo en el pretratamiento que a una contaminación en la fuente."
+    }
+  ],
+  "requested_data": "Concentración de cloramina libre y combinada en el permeado de la RO (mg/L Cl₂).",
+  "recommended_action": "Suspender inmediatamente la operación de la planta y realizar un lavado químico de emergencia con solución de bisulfito de sodio (SBS) al 0,5% (pH 5-6) durante 60 minutos a 25 °C, seguido de un lavado con agua desionizada. Paralelamente, preparar un reemplazo inmediato del medio del primer lecho de CAG (saturado) y evaluar el estado del segundo lecho. Dosificar SBS en la alimentación a RO a 2,0 mg/L Cl₂ hasta confirmar la estabilización del rechazo de sales.",
+  "decision_change_condition": "Si la concentración de cloramina en el permeado de la RO es <0,05 mg/L Cl₂ y el rechazo de sales se recupera a ≥90%, el diagnóstico de daño por oxidación en membranas sería incorrecto y se debería investigar fallos en el pretratamiento o en la integridad de las membranas.",
+  "confidence": 92
+}

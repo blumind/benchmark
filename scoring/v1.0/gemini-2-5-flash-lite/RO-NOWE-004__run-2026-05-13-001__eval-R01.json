@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-004",
+    "subject_id": "gemini-2-5-flash-lite",
+    "subject_version": "gemini-2.5-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'aire en sistema RO... purgado inadecuado' matches anchor"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals (borboteo, cond 380, rechazo 95.4, balance 92%, dP1, dP2)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (fallo elementos, fuga HP) cortas"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: 'purga aire... abrir valvulas drenaje... reducir caudal/presion' - vago sin numeros"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (dP elemento 1) - tangencial"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: generica 'si cond no mejora o dP sube -> fallo elementos'"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Diagnostico correcto pero accion vaga"
+}

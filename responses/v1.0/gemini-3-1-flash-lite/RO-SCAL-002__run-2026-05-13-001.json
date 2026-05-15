@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:49:24Z",
+  "main_hypothesis": "Incrustación de sílice polimerizada en la segunda etapa debido a la superación del límite de solubilidad tras el incremento del recovery al 82% sin ajuste proporcional de la dosificación de antiincrustante.",
+  "key_signals": [
+    "Aumento marcado de ΔP en la etapa 2 (0,9 a 1,9 bar)",
+    "Concentración de sílice en rechazo (295 mg/L) superior al límite del antiincrustante (260 mg/L)",
+    "Falla del CIP alcalino para restaurar el ΔP (rebote rápido a 1,8 bar)",
+    "Aumento de la conductividad del permeado indicando posible daño o bypass por alta presión diferencial"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación de carbonato de calcio",
+      "why_plausible": "El aumento del recovery incrementa la concentración de iones formadores de incrustación (calcio y alcalinidad).",
+      "why_discardable": "El CIP alcalino (pH 11,5) es altamente efectivo para remover carbonatos; el hecho de que el ΔP rebotara rápidamente sugiere una naturaleza de incrustación diferente (sílice)."
+    },
+    {
+      "hypothesis": "Biofouling en la segunda etapa",
+      "why_plausible": "El aumento de ΔP en la segunda etapa es un síntoma clásico de crecimiento biológico.",
+      "why_discardable": "No hay reportes de aumento en la presión diferencial de la primera etapa ni cambios en la calidad microbiológica del agua de alimentación; además, el CIP alcalino suele mitigar parcialmente el biofouling, lo cual no ocurrió."
+    }
+  ],
+  "requested_data": "Análisis de composición química (espectroscopía o microscopía electrónica) de los depósitos extraídos de un cartucho de filtro o elemento de membrana de la segunda etapa.",
+  "recommended_action": "Reducir inmediatamente el recovery al 75% para estabilizar la concentración de sílice por debajo del límite de saturación y realizar un CIP ácido (ácido cítrico al 2% p/v) seguido de un CIP con un agente quelante específico para sílice a pH 10,5-11,0 según recomendación del proveedor de químicos.",
+  "decision_change_condition": "Si el análisis de los depósitos revelara una composición mayoritaria de carbonato de calcio o materia orgánica en lugar de sílice amorfa.",
+  "confidence": 90
+}

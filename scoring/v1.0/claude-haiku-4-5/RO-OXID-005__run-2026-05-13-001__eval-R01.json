@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-005",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'incomplete removal H2O2 + oxidative degradation polyamide + defectos paso sales' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (biofouling post-CIP, corrosión soporte, MECH defect, contaminación Fe)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "ACT 'CIP de recuperación completo (NaOH + ácido)' — subóptimo: la oxidación es irreversible, CIP no recupera. Strict no fail (case_specific 005 ban 'otro CIP con H2O2', claude-haiku usa NaOH+ácido)."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide H2O2 residual en permeato — wrong location (gold expects bastidor o autopsia)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: H2O2 <0.05 + tras CIP recovery conductividad normaliza 7 días → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "C4=1: CIP NaOH+ácido para OXID damage es subóptimo aunque no match exacto del case_specific (H2O2-CIP). El daño es irreversible."
+}

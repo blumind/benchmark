@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:27:58Z",
+  "main_hypothesis": "Fallo en la etapa de pretratamiento de oxidación y filtración de Fe/Mn, resultando en el paso de Fe y Mn disueltos a la etapa de ósmosis inversa, lo que causa ensuciamiento de las membranas y un aumento de la presión de operación y la salinidad del permeado.",
+  "key_signals": [
+    "Fe alimentación a RO: 0,18 mg/L (vs 0,03 mg/L baseline)",
+    "Mn alimentación a RO: 0,11 mg/L (vs 0,02 mg/L baseline)",
+    "ΔP etapa 2: 1,8 bar (vs 0,8 bar baseline)",
+    "Conductividad permeado: 130 µS/cm (vs 95 µS/cm baseline)",
+    "pH alimentación: 6,8 (vs 6,5 baseline)",
+    "Inspección visual de cartuchos: tonalidad marrón clara y depósito ligero"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento de membranas por sílice debido a la subida del pH de alimentación.",
+      "why_plausible": "El pH de alimentación ha subido de 6,5 a 6,8. El sílice es menos soluble a pH más altos, pero la sílice disuelta puede precipitar y formar incrustaciones en las membranas, especialmente si la concentración de sílice en el rechazo también ha aumentado ligeramente. El aumento de ΔP y la bajada de caudal son consistentes con ensuciamiento.",
+      "why_discardable": "Aunque el pH ha subido, la concentración de sílice en el rechazo solo ha aumentado ligeramente, lo que sugiere que la sílice no es el principal agente de ensuciamiento. El aumento significativo de Fe y Mn en la alimentación a RO, junto con la inspección visual de los cartuchos, apunta más fuertemente a un problema de pretratamiento de Fe/Mn."
+    },
+    {
+      "hypothesis": "Incrustación por carbonato de calcio o sulfato de calcio.",
+      "why_plausible": "El aumento de la alcalinidad en el rechazo podría indicar una mayor precipitación de carbonatos. El aumento de la presión de alimentación también podría ser un factor contribuyente a la incrustación si las condiciones de sobresaturación se alcanzan.",
+      "why_discardable": "Los datos de calcio en el rechazo son estables. Si bien la alcalinidad ha aumentado, no hay una indicación clara de sobresaturación de carbonato de calcio o sulfato de calcio que explique el rápido aumento de ΔP y la degradación del permeado. El problema principal parece estar relacionado con la presencia de Fe y Mn."
+    },
+    {
+      "hypothesis": "Fallo en la dosificación del antiincrustante.",
+      "why_plausible": "Si el antiincrustante no se está dosificando correctamente, podría permitir la formación de incrustaciones, incluyendo sílice. El aumento de ΔP y la bajada de caudal son síntomas de ensuciamiento.",
+      "why_discardable": "No hay datos que sugieran un fallo en la dosificación del antiincrustante. El problema principal parece ser la entrada de Fe y Mn a la RO, que el antiincrustante específico para Fe no puede prevenir si el Fe y Mn ya están presentes en la alimentación a RO en altas concentraciones."
+    }
+  ],
+  "requested_data": "Concentración de Fe y Mn disueltos en el agua de salida de los filtros de greensand (antes de los filtros pulidores y cartuchos).",
+  "recommended_action": "Realizar un lavado químico de las membranas de ósmosis inversa (RO) utilizando una solución de limpieza ácida (ej. ácido cítrico al 1-2% o ácido fosfórico al 0.5-1%) a una temperatura controlada (ej. 25-30 °C) y un caudal bajo, seguido de un lavado con agua de baja salinidad. Paralelamente, investigar y corregir la causa raíz del fallo en el pretratamiento de Fe/Mn (ej. verificar la regeneración de los filtros de greensand, la dosis y el tiempo de contacto del KMnO₄, y el estado del medio filtrante).",
+  "decision_change_condition": "Si la concentración de Fe y Mn disueltos en la salida de los filtros de greensand es baja (< 0.05 mg/L para Fe y < 0.01 mg/L para Mn), entonces la hipótesis principal se descartaría y se investigaría un problema de ensuciamiento por sílice o carbonatos en las membranas de RO.",
+  "confidence": 90
+}

@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-MECH-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:49:35Z",
+  "main_hypothesis": "Fallo en el sello de salmuera (brine seal) del primer elemento del Tubo 5 en etapa 1, instalado incorrectamente durante la sustitución de membranas hace 25 días, permitiendo bypass de agua concentrada a permeado.",
+  "key_signals": [
+    "Conductividad de permeado del Tubo 5: 850 µS/cm (vs. 90–115 µS/cm en el resto de tubos)",
+    "Conductividad de permeado de la planta en aumento progresivo desde 95 µS/cm hasta 220 µS/cm (20 días)",
+    "Rechazo de sales calculado bajando de 98.5% a 96.5%",
+    "Inspección visual confirma ausencia del brine seal en el primer elemento del Tubo 5",
+    "Bypass aparente concentrado→permeado en Tubo 5 confirmado por probe test",
+    "ΔP etapa 1 estable/bajando ligeramente (no indica fouling o incrustación)",
+    "Presión de alimentación estable/bajando ligeramente (no indica obstrucción)",
+    "Caudal de permeado estable (no indica restricción en flujo)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling orgánico o inorgánico en las membranas del Tubo 5 por mala limpieza post-instalación o residuos de antiincrustante.",
+      "why_plausible": "El fouling puede reducir el rechazo de sales y aumentar la conductividad de permeado. La sustitución reciente de membranas podría haber introducido contaminantes si no se siguió el protocolo de limpieza.",
+      "why_discardable": "No hay evidencia de aumento de ΔP (típico en fouling), ni cambios en pH, ORP o cloro libre que sugieran contaminación orgánica. Además, el fouling no explicaría el bypass específico en un solo tubo detectado por probe test."
+    },
+    {
+      "hypothesis": "Daño físico en las membranas del Tubo 5 durante la instalación (ej. pliegues, cortes o sellos mal ajustados en los elementos).",
+      "why_plausible": "Un daño físico puede reducir el rechazo de sales y aumentar la conductividad de permeado. La instalación reciente por un operador nuevo aumenta el riesgo de errores mecánicos.",
+      "why_discardable": "El daño físico no explicaría el bypass específico de agua concentrada a permeado detectado por probe test. Además, no hay reportes de variaciones en ΔP o presión de alimentación que sugieran obstrucción o restricción."
+    },
+    {
+      "hypothesis": "Incrustación (scaling) en las membranas del Tubo 5 por dosificación insuficiente de antiincrustante o condiciones de operación fuera de rango.",
+      "why_plausible": "El scaling puede reducir el rechazo de sales y aumentar la conductividad de permeado. La recuperación del 76% y TDS de alimentación de 4.100 mg/L son condiciones propensas a scaling.",
+      "why_discardable": "No hay evidencia de aumento de ΔP (típico en scaling), ni cambios en pH o temperatura que indiquen condiciones favorables para scaling. Además, el scaling no explicaría el bypass específico en un solo tubo detectado por probe test."
+    },
+    {
+      "hypothesis": "Fallo en el sistema de dosificación de antiincrustante, resultando en dosificación insuficiente para el Tubo 5.",
+      "why_plausible": "Una dosificación insuficiente de antiincrustante puede causar incrustación localizada en el Tubo 5, reduciendo el rechazo de sales.",
+      "why_discardable": "No hay evidencia de cambios en la dosificación de antiincrustante (2 ppm reportado como estable). Además, el fallo en dosificación no explicaría el bypass específico de agua concentrada a permeado detectado por probe test."
+    }
+  ],
+  "requested_data": "Conductividad de permeado por elemento en el Tubo 5 (no solo por tubo), para confirmar si el bypass se limita al primer elemento o afecta a varios.",
+  "recommended_action": "Reinstalar correctamente el brine seal en el primer elemento del Tubo 5, asegurando que quede bien ajustado y sellado. Verificar el estado de los sellos en todos los elementos del Tubo 5. Realizar un probe test post-reparación para confirmar la normalización de la conductividad de permeado en el Tubo 5. Si la conductividad de permeado del Tubo 5 no se normaliza (<120 µS/cm), reemplazar el primer elemento.",
+  "decision_change_condition": "Si la conductividad de permeado del Tubo 5 se normaliza (<120 µS/cm) tras la reinstalación del brine seal, el diagnóstico cambiaría a error de instalación corregido. Si persiste la alta conductividad, se requeriría investigar daño físico en las membranas o fouling no detectado.",
+  "confidence": 98
+}

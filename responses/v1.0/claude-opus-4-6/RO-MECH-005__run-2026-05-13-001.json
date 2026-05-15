@@ -1,0 +1,43 @@
+{
+  "case_id": "RO-MECH-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:47:32Z",
+  "main_hypothesis": "Bypass de agua de alimentación/concentrado hacia el canal de permeado en el Tubo 5 de etapa 1 debido a la ausencia del sello de salmuera (brine seal) en el primer elemento, causado por error de instalación del operador nuevo que retiró el sello y no lo repuso.",
+  "key_signals": [
+    "Conductividad de permeado del Tubo 5 extremadamente elevada (850 µS/cm) frente al resto de tubos (90–115 µS/cm), indicando paso directo de agua de alimentación sin rechazar sales.",
+    "Inspección visual confirmó que el brine seal del primer elemento del Tubo 5 no estaba instalado, encontrado enrollado fuera del elemento.",
+    "Subida progresiva de conductividad de permeado de planta desde 95 a 220 µS/cm coincidiendo temporalmente con la reinstalación de elementos en Tubo 5 (día -25).",
+    "Rechazo de sales global cayó de 98,5% a 96,5%, consistente con dilución del permeado limpio con agua de alimentación bypaseada en un tubo.",
+    "Indicación de 'bypass aparente concentrado→permeado en T-5 compatible' en el probe test.",
+    "ΔP de etapa 1 ligeramente inferior al baseline (0,9 vs 1,0 bar), consistente con menor resistencia hidráulica por flujo bypaseando la membrana en el espacio anular del primer elemento.",
+    "Presión de alimentación ligeramente inferior (14,5 vs 14,8 bar), coherente con menor resistencia total al existir un camino de baja resistencia en Tubo 5.",
+    "El operador nuevo admitió haber retirado el brine seal porque 'no entraba bien' y olvidó reponerlo.",
+    "Conductividad de permeado del Tubo 5 fue anormalmente alta desde el día -24 (primer día post-instalación), descartando degradación progresiva de membrana."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "O-rings de interconector dañados o ausentes entre elementos del Tubo 5, permitiendo paso de concentrado a permeado.",
+      "why_plausible": "Un operador inexperto pudo también dañar o no instalar correctamente los O-rings de los adaptadores/interconectores durante el montaje, lo que generaría un bypass interno similar con alta conductividad en el permeado del tubo afectado.",
+      "why_discardable": "La inspección visual del día -3 identificó específicamente el brine seal ausente como la anomalía; además, un fallo de O-ring de interconector típicamente produce un bypass más localizado entre elementos y no necesariamente el patrón de bypass anular completo observado. El operador confirmó la omisión del brine seal. No se reportaron O-rings dañados en la inspección."
+    },
+    {
+      "hypothesis": "Elementos de membrana defectuosos de fábrica instalados en Tubo 5 (fallo de integridad de membrana).",
+      "why_plausible": "Elementos nuevos ocasionalmente pueden tener defectos de fabricación (pegado deficiente de hojas, daño en el tubo colector de permeado) que resultan en alto paso de sales desde el inicio de operación.",
+      "why_discardable": "Es estadísticamente improbable que los 12 elementos nuevos tengan defectos simultáneos. Además, la inspección física encontró el brine seal ausente, lo cual explica completamente la anomalía. El patrón de conductividad (850 µS/cm, cercano a la alimentación diluida) es más consistente con bypass mecánico que con degradación de membrana, donde se esperaría un rechazo parcial mayor."
+    },
+    {
+      "hypothesis": "Daño mecánico a las membranas del Tubo 5 durante la instalación (telescoping, aplastamiento de hojas) por técnica incorrecta del operador nuevo.",
+      "why_plausible": "Un operador inexperto puede forzar los elementos durante la carga, causando daño físico a las hojas de membrana o al tubo colector, resultando en paso elevado de sales.",
+      "why_discardable": "El daño mecánico por instalación típicamente no produce conductividades tan altas como 850 µS/cm (cercanas a un bypass total); además, la causa raíz ya fue identificada físicamente como la ausencia del brine seal. Si hubiera daño mecánico adicional, se esperaría que persista incluso tras reponer el sello, lo cual se verificará en la acción recomendada."
+    }
+  ],
+  "requested_data": "Conductividad del permeado del Tubo 5 medida inmediatamente después de reinstalar correctamente el brine seal y los O-rings, para confirmar que el bypass era la única causa y descartar daño adicional a las membranas (valor esperado: 90–115 µS/cm si el sello era la única causa).",
+  "recommended_action": "Parar el bastidor de forma controlada. Abrir el Tubo 5 de etapa 1. Instalar correctamente un brine seal nuevo (verificar que sea del diámetro correcto para el tubo de presión, típicamente 8 pulgadas) en el primer elemento, asegurando que quede orientado hacia el lado de alimentación y completamente asentado en la ranura del elemento. Inspeccionar simultáneamente todos los O-rings de interconectores y adaptadores del Tubo 5 para verificar su presencia, integridad y correcta lubricación con lubricante de silicona aprobado. Verificar el torque de cierre de las tapas del tubo de presión según especificaciones del fabricante. Tras el reensamblaje, realizar un flush a baja presión (3–5 bar) durante 15–30 minutos y luego arrancar gradualmente midiendo la conductividad del permeado del Tubo 5 con probe test para confirmar valores dentro del rango normal (90–115 µS/cm). Documentar el procedimiento e implementar una lista de verificación (checklist) obligatoria para futuras sustituciones de elementos que incluya verificación de brine seals y O-rings, con firma del instalador y del supervisor.",
+  "decision_change_condition": "Si tras la correcta instalación del brine seal y verificación de todos los O-rings, la conductividad del permeado del Tubo 5 permanece significativamente elevada (por ejemplo, >150 µS/cm), el diagnóstico cambiaría hacia daño mecánico de las membranas durante la instalación o defecto de fábrica en uno o más elementos, requiriendo pruebas de sondeo individual (probing) de cada elemento y posible sustitución de los dañados.",
+  "confidence": 97
+}

@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-NOWE-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:00:03Z",
+  "main_hypothesis": "Arranque inadecuado tras preservación con exceso de bisulfito sódico y enjuague insuficiente, dejando solución de SBS y sales dentro del bastidor que están atravesando al permeado y elevando transitoriamente la conductividad.",
+  "key_signals": [
+    "Sulfito residual en permeado de 8,5 mg/L frente a baseline <0,5 mg/L.",
+    "ORP de alimentación -120 mV y ORP de permeado -180 mV, ambos anómalamente reductores respecto a baseline.",
+    "El bastidor fue rellenado con agua bruta y SBS adicional, con concentración estimada hasta 1,5 % p/p y posterior adición al 1 % p/p.",
+    "Solo se realizó un aclarado parcial de 15 minutos con agua bruta antes de arrancar.",
+    "La conductividad de permeado baja lentamente de 1.500 a 850 µS/cm y el rechazo calculado sube lentamente, patrón compatible con lavado progresivo de conservante y sales retenidas.",
+    "ΔP de etapa 1 y etapa 2 están cercanos al baseline y sin incremento brusco, lo que no sugiere obstrucción severa inmediata.",
+    "Cloro libre antes de RO <0,02 mg/L, sin señal de exposición oxidante aguda."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño irreversible de membranas por oxidación.",
+      "why_plausible": "Una pérdida de rechazo con conductividad de permeado alta puede ser consecuencia de daño químico de la capa activa.",
+      "why_discardable": "No hay oxidante reportado, el cloro libre es <0,02 mg/L y el ORP es fuertemente negativo, no positivo; además la conductividad mejora lentamente, lo que encaja mejor con arrastre de SBS que con daño oxidativo permanente."
+    },
+    {
+      "hypothesis": "Fuga mecánica por junta tórica, interconector o adaptador de permeado desplazado durante la parada.",
+      "why_plausible": "Una fuga de salmuera hacia el permeado puede elevar mucho la conductividad con poco cambio en ΔP.",
+      "why_discardable": "No explica por sí sola el ORP muy bajo ni el sulfito residual elevado en permeado; la mejora gradual durante operación también favorece un arrastre químico transitorio."
+    },
+    {
+      "hypothesis": "Ensuciamiento biológico iniciado durante la parada.",
+      "why_plausible": "Una parada de 8 días y manipulación del bastidor pueden favorecer crecimiento microbiológico si la preservación o sellado fueron deficientes.",
+      "why_discardable": "La preservación con SBS fue excesiva, el ΔP no muestra aumento significativo característico de biofouling y el problema aparece inmediatamente con señales químicas reductoras claras."
+    },
+    {
+      "hypothesis": "Incrustación mineral por contacto con agua bruta concentrada durante la preservación.",
+      "why_plausible": "El bastidor fue llenado con agua bruta de alta salinidad y el sistema opera a recovery alto, lo que puede favorecer precipitación si hay sobresaturación local.",
+      "why_discardable": "La presión y los ΔP están cerca del baseline y la tendencia dominante es recuperación lenta de caudal y rechazo, no pérdida progresiva típica de incrustación; además el sulfito residual elevado apunta a lavado insuficiente del conservante."
+    }
+  ],
+  "requested_data": "Conductividad normalizada del permeado tras enjuague completo a drenaje hasta sulfito residual en permeado <0,5 mg/L, en µS/cm.",
+  "recommended_action": "Sacar el bastidor de servicio de producción, enviar permeado y concentrado a drenaje, detener cualquier adición de SBS y realizar un enjuague a baja presión con permeado RO o agua de alimentación declorada conforme al manual, manteniendo baja recuperación y sin presurizar a producción, hasta que el sulfito residual en permeado sea <0,5 mg/L y ORP/conductividad se estabilicen; después reiniciar con rampa gradual y mantener el permeado a drenaje hasta cumplir especificación.",
+  "decision_change_condition": "Cambiaría el diagnóstico si, tras un enjuague completo con sulfito residual en permeado <0,5 mg/L, la conductividad normalizada del permeado siguiera muy por encima del baseline y el rechazo no recuperase, especialmente si una prueba por tubo indicara fuga localizada o daño permanente.",
+  "confidence": 88
+}

@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-OXID-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:45:50Z",
+  "main_hypothesis": "Oxidative damage to RO membranes due to elevated ozone residual in feedwater from the neighboring plant's tertiary treatment discharge.",
+  "key_signals": [
+    "Ozono residual alimentación sube marcada de <0,01 a 0,06 mg/L",
+    "ORP alimentación a RO sube marcada de +110 mV a +280 mV",
+    "Rechazo de sales calculado baja drásticamente de 97,8 % a 88,8 %",
+    "Conductividad permeado sube bruscamente de 75 a 380 µS/cm",
+    "Caudal permeado planta baja un 7 % sin cambios en ΔP o presión de alimentación",
+    "Historial de aumento de dosis de ozono en planta vecina (0,8 a 1,5 mg/L) sin aviso formal hasta día -15"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por materia orgánica o biológica en membranas debido a aumento de nutrientes en alimentación.",
+      "why_plausible": "Podría explicar la caída en flujo de permeado y el aumento de conductividad por obstrucción parcial de membranas, aunque no justifica el aumento de ORP ni la presencia de ozono residual.",
+      "why_discardable": "No hay señales de aumento de ATP ni cambios en ΔP que indiquen fouling biológico o orgánico. Además, el rechazo de sales no es típico en fouling."
+    },
+    {
+      "hypothesis": "Degradación química de membranas por exposición prolongada a oxidantes distintos al cloro (ej. peróxidos o cloraminas).",
+      "why_plausible": "Explica la caída en rechazo de sales y el aumento de conductividad, pero no justifica el aumento específico de ORP ni la detección de ozono residual en alimentación.",
+      "why_discardable": "El kit DPD específico para ozono confirmó su presencia, y no hay evidencia de otros oxidantes en la alimentación."
+    },
+    {
+      "hypothesis": "Falla en el pretratamiento (ej. saturación de cartuchos de 5 µm o dosificación insuficiente de antiincrustante) que permite paso de partículas o coloides a membranas.",
+      "why_plausible": "Podría explicar la caída en flujo y el aumento de conductividad por daño físico a membranas, pero no justifica el aumento de ORP ni la presencia de ozono residual.",
+      "why_discardable": "No hay cambios en ΔP en etapas ni en presión de alimentación que indiquen obstrucción en pretratamiento. Además, la dosificación de antiincrustante se mantiene estable."
+    }
+  ],
+  "requested_data": "Concentración de ozono residual en permeado (mg/L) para confirmar si el oxidante está atravesando las membranas y causando daño directo.",
+  "recommended_action": "Detener inmediatamente la operación del bastidor afectado (Bastidor 4) y aislarlo del sistema. Aumentar la dosificación de bisulfito de sodio en alimentación a RO a 2 ppm (como NaHSO3) para neutralizar el ozono residual. Realizar lavado químico de emergencia con solución de bisulfito de sodio al 0,1 % (pH 5,5) durante 30 minutos en el bastidor afectado. Notificar a la planta vecina para que suspenda el aumento de dosis de ozono hasta nueva coordinación.",
+  "decision_change_condition": "Si la concentración de ozono residual en permeado es <0,01 mg/L y el rechazo de sales se recupera al 95 % en 24 horas tras la neutralización, la causa principal no sería el ozono sino otro factor no identificado.",
+  "confidence": 95
+}

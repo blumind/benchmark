@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:52:56Z",
+  "main_hypothesis": "Incomplete priming of the antiscalant peristaltic pump after hose replacement on day -25, combined with subsequent pH drift, has resulted in air entrainment and cavitation in the pump, causing loss of suction and dramatic reduction in antiscalant delivery from 1.8 L/h to 0.3 L/h. The undersaturated antiscalant dose has allowed CaCO₃ scaling to initiate in stage 2 membranes, manifesting as elevated ΔP stage 2 (2.1 bar vs. 0.8 bar baseline) and declining permeate flux (8% reduction).",
+  "key_signals": [
+    "Caudal antiincrustante measured at 0.3 L/h vs. setpoint 1.8 L/h (83% reduction) following incomplete pump priming on day -22",
+    "ΔP etapa 2 elevated to 2.1 bar (163% increase from 0.8 bar baseline) with onset 3 days post-priming failure",
+    "Operario observation of 'espuma' (foam) in antiscalant tank and irregular pump pulsing on day -10, consistent with air entrainment and cavitation",
+    "pH alimentación drift from 6.7 to 7.3 on day -15 (0.6 unit increase), raising LSI in reject stream and reducing antiscalant efficacy margin",
+    "Permeate conductivity increase from 80 to 92 µS/cm despite stable feed conductivity, indicating membrane passage of ions due to scaling-induced flux decline",
+    "Caudal permeado decline of 8% (500 to 460 m³/h) consistent with membrane fouling/scaling",
+    "Presión alimentación increase from 15.8 to 18.5 bar (17% rise) to maintain reduced flux through fouled membranes"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane biofouling or organic fouling in stage 2 due to inadequate pretreatment or chlorine residual loss",
+      "why_plausible": "Biofouling causes rapid ΔP rise and flux decline; cloro libre remains <0.02 mg/L throughout, suggesting potential for microbial growth if pretreatment cartridges are compromised",
+      "why_discardable": "Cartridge replacement on day -5 did not relieve ΔP (ΔP continued to rise), which would be expected if cartridge fouling were the primary cause. Sílice rechazo and calcio rechazo remain stable, inconsistent with biofilm accumulation. Foam in antiscalant tank and irregular pump pulsing are not explained by biofouling."
+    },
+    {
+      "hypothesis": "Mechanical failure or blockage in the antiscalant injection line downstream of the pump",
+      "why_plausible": "Blockage would reduce measured antiscalant flow and allow scaling to proceed; the new hose installed on day -25 could contain manufacturing debris or kinks",
+      "why_discardable": "Foam and irregular pulsing in the antiscalant tank itself (day -10 observation) indicate the problem originates in the pump suction/priming, not in the discharge line. A blockage downstream would not produce cavitation symptoms in the tank."
+    },
+    {
+      "hypothesis": "Antiscalant product degradation or chemical incompatibility with the new hose material",
+      "why_plausible": "New hose material could leach compounds or absorb active antiscalant, reducing effective dose; product degradation could reduce inhibitor potency",
+      "why_discardable": "Measured flow rate is 0.3 L/h (17% of setpoint), a volumetric loss, not a potency loss. If the product were degraded, the pump would still deliver 1.8 L/h of weakened inhibitor; instead, the pump is delivering only 17% of volume. Foam and pulsing indicate mechanical air entrainment, not chemical degradation."
+    },
+    {
+      "hypothesis": "Antiscalant pump calibration drift or setpoint error introduced during day -15 acid pump maintenance",
+      "why_plausible": "Maintenance on day -15 could have inadvertently altered the antiscalant pump setpoint or flow meter calibration",
+      "why_discardable": "The timeline shows antiscalant flow was normal until day -22 (incomplete priming), then began declining by day -10 (foam/pulsing observed). The day -15 event was acid pump maintenance, not antiscalant pump maintenance. Foam and irregular pulsing are mechanical symptoms of air entrainment, not calibration drift."
+    },
+    {
+      "hypothesis": "Increased feed TDS or ionic strength reducing antiscalant efficacy without pump failure",
+      "why_plausible": "Higher ionic strength can reduce antiscalant performance; conductivity alimentación is 7.250 µS/cm vs. 7.150 µS/cm baseline",
+      "why_discardable": "The 100 µS/cm increase (1.4%) is within normal variation and does not explain an 83% reduction in antiscalant delivery volume. Measured antiscalant flow is 0.3 L/h, a volumetric deficit, not a potency issue. pH drift to 7.3 would worsen scaling risk, but the primary signal is pump flow loss."
+    }
+  ],
+  "requested_data": "Presión de succión (vacío) en la entrada de la bomba peristáltica del antiincrustante, medida en bar (gauge), con la bomba en operación a setpoint nominal de 1,8 L/h. Un vacío >0,3 bar indicaría cavitación; <0,1 bar indicaría cebado correcto.",
+  "recommended_action": "1. Detener inmediatamente la operación de la planta RO o reducir a caudal mínimo de supervivencia (≤200 m³/h) para minimizar flux y estrés en membranas. 2. Ejecutar procedimiento completo de cebado de la bomba peristáltica: (a) llenar manualmente el tubo de succión y la cámara de la bomba con solución de antiincrustante puro (sin aire); (b) accionar la bomba a 0,5 L/h durante 5 minutos para expulsar aire residual; (c) incrementar gradualmente a setpoint de 1.8 L/h y verificar flujo estable sin pulsaciones irregulares. 3. Restaurar inmediatamente el pH alimentación a 6,7 ± 0,2 ajustando la consigna de H₂SO₄ (revisar la bomba ácida para confirmar que la consigna se restableció correctamente en día -15). 4. Verificar que la conductividad del permeado retorne a ≤85 µS/cm dentro de 4 horas de operación normal; si no, proceder a limpieza química de membranas (CIP) con soluciones ácida (pH 3,5–4,0, 500 ppm HCl equivalente) y alcalina (pH 10,5–11,0, 500 ppm NaOH equivalente) según protocolo del fabricante. 5. Monitorear ΔP etapa 2 cada 30 minutos; si ΔP no desciende por debajo de 1,5 bar dentro de 8 horas post-cebado, escalar a CIP.",
+  "decision_change_condition": "Si la presión de succión medida en la bomba peristáltica es <0,1 bar (indicando cebado correcto) y el caudal de antiincrustante se restaura a ≥1,6 L/h tras el cebado, pero ΔP etapa 2 permanece >1,8 bar y la conductividad del permeado no desciende por debajo de 90 µS/cm dentro de 12 horas, entonces la hipótesis principal cambiaría a 'escalado de CaCO₃ irreversible en membranas de etapa 2 que requiere CIP inmediata' o 'daño permanente de membranas por sobrepresión (>2,5 bar sostenido)'. Alternativamente, si la presión de succión es >0,3 bar incluso tras cebado manual, la hipótesis cambiaría a 'fallo mecánico de la bomba peristáltica (rotor desgastado, válvulas de retención bloqueadas) que requiere sustitución de la bomba'.",
+  "confidence": 82
+}

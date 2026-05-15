@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-OXID-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:05:30Z",
+  "main_hypothesis": "Incomplete removal of H₂O₂ during the CIP's post-oxidation rinse, leading to oxidative damage to the SWRO membranes and increased salt passage.",
+  "key_signals": [
+    "Conductividad permeado con tendencia al alza progresiva (410 → 540 µS/cm) tras CIP con H₂O₂",
+    "Rechazo de sales calculado bajando (99,28 % → 99,05 %) tras CIP",
+    "H₂O₂ residual no medido con método cuantitativo (solo tira reactiva con sensibilidad 1 mg/L)",
+    "Aclarado post-CIP reducido a 45 min (vs. 60 min de protocolo) por urgencia",
+    "Presencia de rastros marrones en cartuchos de mantenimiento (posible precipitación de óxidos por oxidación residual)",
+    "ORP estable (+95 mV) pero no indica ausencia de H₂O₂ en membrana (ORP mide potencial redox global, no residual específico)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling orgánico o biológico en membranas por insuficiente limpieza alcalina previa al paso de H₂O₂.",
+      "why_plausible": "El paso alcalino (pH 12, 60 min) es estándar para eliminar materia orgánica, pero si no fue efectivo, el H₂O₂ podría reaccionar con residuos orgánicos formando subproductos que obstruyen membranas y aumentan la conductividad.",
+      "why_discardable": "No hay señales de aumento de ΔP ni caída de caudal significativa (solo 4 % en permeado), lo que es inconsistente con fouling severo. Además, los cartuchos marrones sugieren oxidación, no fouling orgánico."
+    },
+    {
+      "hypothesis": "Degradación térmica o química de las membranas por exposición prolongada a H₂O₂ durante el CIP (30 min a 30 °C).",
+      "why_plausible": "El fabricante acepta H₂O₂ al 0,1 % p/p con compatibilidad limitada y tiempo de contacto controlado. Exposición excesiva podría dañar la capa de poliamida de las membranas, aumentando el paso de sales.",
+      "why_discardable": "La temperatura y concentración están dentro de los límites aceptados, y el tiempo de contacto (30 min) es estándar. No hay evidencia de daño térmico (temperatura estable) ni de exposición prolongada."
+    },
+    {
+      "hypothesis": "Contaminación cruzada por arrastre de H₂O₂ desde el tren T-03 a trenes vecinos durante la operación post-CIP.",
+      "why_plausible": "Si el aclarado fue insuficiente, el H₂O₂ residual podría haber sido arrastrado al sistema de alimentación común, afectando otros trenes. Sin embargo, los trenes vecinos no muestran desviación en conductividad.",
+      "why_discardable": "Los trenes vecinos tienen conductividad estable y sin cambios, lo que descarta contaminación cruzada como causa principal."
+    },
+    {
+      "hypothesis": "Fallo en la integridad de los sellos o O-rings de los elementos SWRO, permitiendo paso de salmuera a permeado.",
+      "why_plausible": "El aumento de conductividad y la caída de rechazo de sales podrían deberse a fugas internas en los elementos. Sin embargo, no hay señales de aumento de ΔP ni caída de caudal significativa.",
+      "why_discardable": "La estabilidad de ΔP y presión de alimentación sugiere que no hay fallos mecánicos graves en los elementos o sellos."
+    }
+  ],
+  "requested_data": "Concentración de H₂O₂ residual en la superficie de la membrana del tren T-03 (µg/L) tras el aclarado post-CIP, medida con método cuantitativo (ej. espectrofotometría o electrodo selectivo).",
+  "recommended_action": "Realizar un aclarado adicional del tren T-03 con permeado a 25 °C y flujo de 300 m³/h durante 90 minutos, seguido de verificación de H₂O₂ residual con método cuantitativo (< 0,1 mg/L). Si se confirma presencia de H₂O₂, repetir el aclarado hasta cumplir el límite. Posterior a la confirmación, realizar un CIP de recuperación con solución de bisulfito de sodio al 0,2 % p/p (pH 5, 60 min, 30 °C) para neutralizar cualquier oxidante residual en la membrana.",
+  "decision_change_condition": "Si la concentración de H₂O₂ residual en la superficie de la membrana del tren T-03 tras el aclarado adicional es < 0,1 mg/L y la conductividad del permeado no se recupera a valores cercanos al baseline (410 µS/cm) en 24 horas, descartar la hipótesis de H₂O₂ residual y reevaluar otras causas como fouling orgánico o degradación de membranas.",
+  "confidence": 92
+}

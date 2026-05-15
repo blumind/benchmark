@@ -1,0 +1,48 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:10:20Z",
+  "main_hypothesis": "Chlorine dioxide (ClO₂) intrusion from the neighboring fish farm's discharge, partially reduced to chlorite (ClO₂⁻) in the intake water, is oxidizing the bisulfite (SBS) dosed as antiscalant and creating oxidized sulfur species that are not effectively removed by pretreatment, leading to membrane oxidative damage and increased salt passage.",
+  "key_signals": [
+    "Cloro total (DPD) increased from <0.05 mg/L to 0.15 mg/L while cloro libre remained <0.02 mg/L, indicating presence of oxidants other than free chlorine",
+    "External laboratory confirmed clorito (ClO₂⁻) at 0.08 mg/L in RO feed water on day -3",
+    "ORP increased from +50 mV baseline to +180 mV, consistent with oxidizing species (ClO₂⁻ is a strong oxidant)",
+    "Conductivity of permeate increased progressively from 400 to 590 µS/cm while feed conductivity remained stable at 56,300 µS/cm",
+    "Salt rejection decreased from 99.29% to 98.95%, indicating membrane performance degradation",
+    "Permeate flow decreased 6% (207 to 195 m³/h) despite stable feed pressure and temperature",
+    "Temporal correlation: fish farm increased ClO₂ discharges on day -45; SWRO symptoms began appearing day -40 and progressed",
+    "Operator detected intense chlorine odor at intake on day -18, consistent with ClO₂ presence",
+    "Cloro libre remained suppressed (<0.02 mg/L) because dosed SBS (4 mg/L) is reducing any free chlorine, but cannot fully reduce ClO₂⁻ at the dosing rate"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling by biofouling or colloidal material despite normal ATP and visual cartridge inspection",
+      "why_plausible": "Permeate flow decline and pressure increase are classic fouling signatures; ATP is only 90 pg/mL (slightly elevated but not conclusive); DAF + bicapa + 5 µm cartridges may not remove all biofilm precursors or colloidal iron/silica",
+      "why_discardable": "ATP is stable and only marginally elevated; visual cartridge inspection on day -12 showed normal appearance; conductivity of permeate increased sharply (indicating salt passage, not just flow loss); fouling does not explain the rise in cloro total or ClO₂⁻ detection; temporal correlation with fish farm discharge change is too precise"
+    },
+    {
+      "hypothesis": "Membrane aging and natural salt passage increase after 12 months of operation",
+      "why_plausible": "Membranes are 12 months post-replacement; gradual salt passage increase is expected with age; conductivity rise could be attributed to normal degradation",
+      "why_discardable": "The rate of conductivity increase (190 µS/cm in 45 days) is too rapid for normal aging; salt rejection drop of 0.34% in 45 days is unusually steep; the temporal coincidence with ClO₂ discharge increase and ClO₂⁻ detection is not random; normal aging does not explain the ORP spike or cloro total elevation"
+    },
+    {
+      "hypothesis": "Incomplete removal of chlorine species by SBS dosing due to inadequate SBS concentration or poor mixing",
+      "why_plausible": "SBS is dosed at 4 mg/L continuously; if ClO₂⁻ concentration is 0.08 mg/L, the molar ratio of SBS to ClO₂⁻ is approximately 50:1 (sufficient in theory), but ClO₂⁻ reduction kinetics may be slow or mixing may be poor",
+      "why_discardable": "SBS is a strong reducing agent and 4 mg/L is a standard preventive dose; if SBS were simply insufficient, we would expect free chlorine to be detected (it is not); the problem is not inadequate SBS but rather that ClO₂⁻ is entering the system in the first place; increasing SBS would mask the root cause (external contamination) rather than solve it"
+    },
+    {
+      "hypothesis": "Oxidative damage to membrane polyamide layer by residual ClO₂⁻ that penetrates the cartridge filter and is not fully neutralized before reaching the membrane",
+      "why_plausible": "ClO₂⁻ is a strong oxidant (E° ≈ +0.95 V); polyamide membranes are susceptible to oxidative attack; even low concentrations (0.08 mg/L) can cause gradual degradation if exposure is continuous; SBS may not reduce all ClO₂⁻ before it reaches the membrane",
+      "why_discardable": "This is not a separate root cause but rather the mechanism by which ClO₂⁻ intrusion causes the observed symptoms; the root cause is still the intrusion itself, not the membrane's vulnerability"
+    }
+  ],
+  "requested_data": "Concentration of chlorite (ClO₂⁻) measured in the intake water at the base of the 1,300 m tower (before any pretreatment) and simultaneously at the RO feed point, measured by ion chromatography or HPLC-UV within the last 48 hours, in mg/L.",
+  "recommended_action": "Immediately implement a secondary oxidant removal stage between the cartridge filter and the RO membrane feed tank: install a granular activated carbon (GAC) column (minimum 10 minutes empty bed contact time at current flow rate, approximately 200 m³/h per train) or a catalytic carbon bed (e.g., Filtrasorb 400 or equivalent) to adsorb and reduce residual ClO₂⁻ to chloride. Simultaneously, increase SBS dosing from 4 mg/L to 6 mg/L (0.6 mL/min per 100 m³/h of feed) as a temporary measure to ensure complete reduction of any ClO₂⁻ that bypasses the GAC. Coordinate with the fish farm operator to confirm the timing and volume of ClO₂ discharges and request notification of any future changes to their disinfection protocol. Monitor ORP, cloro total (DPD), and ClO₂⁻ concentration daily until ORP returns to baseline (+50 mV) and cloro total drops below 0.05 mg/L. If ClO₂⁻ concentration in the intake remains above 0.05 mg/L after these measures, consider relocating the intake or installing a separate intake line with independent pretreatment.",
+  "decision_change_condition": "If the external laboratory analysis on day -3 is found to be erroneous (i.e., ClO₂⁻ is not actually present in the feed water at 0.08 mg/L or higher), or if ORP and cloro total return to baseline values within 7 days without any intervention, or if permeate conductivity stabilizes and salt rejection recovers to >99.2% while ClO₂⁻ remains undetected, then the diagnosis would shift toward membrane aging or fouling as the primary cause, and the recommended action would change to membrane cleaning or replacement rather than oxidant removal.",
+  "confidence": 82
+}

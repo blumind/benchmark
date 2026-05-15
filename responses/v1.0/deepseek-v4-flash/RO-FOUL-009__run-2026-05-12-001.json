@@ -1,0 +1,43 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:19:10Z",
+  "main_hypothesis": "Fouling of the first-stage RO membranes by a combination of antiespumante (from the refinery) and cationic polymer (from the neighboring plant), which have formed a gelatinous organic layer that increases feed pressure and differential pressure while reducing permeate flow and quality.",
+  "key_signals": [
+    "ΔP etapa 1 subida brusca de 1,2 a 2,4 bar",
+    "Presión alimentación tren subida de 59 a 65 bar",
+    "Caudal permeado tren bajada del 12 %",
+    "Conductividad permeado subida de 380 a 410 µS/cm",
+    "TOC alimentación a RO subida de 1,2 a 2,9 mg/L",
+    "SDI₁₅ salida cartuchos subida marcada de 2,5 a 4,5",
+    "Tensión superficial alimentación bajada marcada de 72 a 58 mN/m",
+    "ATP en alimentación RO subida moderada de 90 a 240 pg/mL",
+    "Depósito gelatinoso en cartuchos (día -1)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling due to increased microbial activity in the feed water.",
+      "why_plausible": "ATP increased from 90 to 240 pg/mL, TOC rose, and SDI increased, all consistent with biological growth. The gelatinous deposit could be a biofilm.",
+      "why_discardable": "The sharp drop in surface tension (72 to 58 mN/m) is not typical of biofouling alone; it strongly indicates surfactants. Also, the rapid onset (days) and the specific incident of foam and antiespumante release point to a chemical rather than purely biological cause."
+    },
+    {
+      "hypothesis": "Hydrocarbon fouling from the refinery discharge.",
+      "why_plausible": "Hydrocarbons in the intake rose to 2.1 mg/L, and hydrocarbons can foul membranes, increasing ΔP and reducing flux.",
+      "why_discardable": "Hydrocarbon levels are still below the regulatory limit of 5 mg/L, and the deposit was described as gelatinous, not oily. The surface tension drop is more consistent with surfactants than with hydrocarbons alone."
+    },
+    {
+      "hypothesis": "Cationic polymer fouling from the neighboring plant's restart.",
+      "why_plausible": "Cationic polymers are known to cause severe fouling on RO membranes, especially when combined with antiscalants. The timing (restart on day -5) and the gelatinous deposit match.",
+      "why_discardable": "The surface tension drop is more characteristic of surfactants (antiespumante) than of cationic polymers. The antiespumante event (day -10) preceded the polymer event, and the combination is more likely the root cause."
+    }
+  ],
+  "requested_data": "Concentration of antiespumante (e.g., as total surfactant or anionic/nonionic surfactant) in the RO feed water, in mg/L.",
+  "recommended_action": "Initiate a clean-in-place (CIP) using a low-pH (pH 2-3) citric acid solution (2% w/w) followed by an alkaline CIP with sodium hydroxide (pH 11-12) and sodium dodecyl sulfate (0.1% w/w) to remove organic and gelatinous foulants. Follow membrane manufacturer's guidelines for temperature and flow rates. Do not exceed 40 °C.",
+  "decision_change_condition": "If the requested datum shows antiespumante concentration below 0.1 mg/L and the ATP level continues to rise while surface tension remains low, I would shift to biofouling as the primary hypothesis.",
+  "confidence": 80
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T08:47:33Z",
+  "main_hypothesis": "Severe biofouling of the lead elements in the first RO stage, triggered by a raw water quality event (rough seas) combined with a subsequent critical failure in the pretreatment system (DAF).",
+  "key_signals": [
+    "The massive increase in ATP in the RO feed (from a baseline of 80 pg/mL to 1,200 pg/mL), indicating a high concentration of active biomass.",
+    "The sharp increase in the Silt Density Index (SDI₁₅) to 4.8, well above the acceptable limit for RO membranes, indicating a high load of particulate and colloidal matter, including bacteria.",
+    "The differential pressure (ΔP) increase is heavily localized to the first stage (2.8 bar vs. 1.2 bar baseline), while the second stage remains stable, which is characteristic of biofouling.",
+    "The elevated Total Organic Carbon (TOC) in the feed (2.8 mg/L vs 1.4 mg/L baseline), which serves as a nutrient source for microbial growth."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Colloidal/Particulate Fouling",
+      "why_plausible": "The high SDI value (4.8) is a direct indicator of particulate/colloidal matter. The rough sea event and the DAF malfunction are known causes for breakthroughs of suspended solids.",
+      "why_discardable": "This hypothesis alone does not explain the extremely high ATP concentration, which is a specific indicator of a large, active biological population being the primary fouling agent, not just inert particles."
+    },
+    {
+      "hypothesis": "Inorganic Scaling",
+      "why_plausible": "Increased feed pressure to overcome fouling can increase concentration polarization at the membrane surface, potentially leading to precipitation of sparingly soluble salts.",
+      "why_discardable": "Scaling typically manifests at the tail end of an RO train (last stage) where concentration is highest. The problem here is severe in the first stage. Furthermore, feed water chemistry (pH, temperature, conductivity) is stable, and antiscalant dosage was even increased."
+    },
+    {
+      "hypothesis": "Organic Fouling (non-biological)",
+      "why_plausible": "The TOC in the feed water has doubled, indicating a higher load of organic molecules (e.g., humic substances) which can adsorb to the membrane surface.",
+      "why_discardable": "While organic fouling is likely a contributing factor, it does not account for the order-of-magnitude increase in ATP, which points specifically to living microorganisms and their metabolic byproducts (biofilm) as the main cause of the hydraulic resistance."
+    }
+  ],
+  "requested_data": "Microscopic analysis of a foulant sample scraped from the surface of one of the most recently replaced 5 µm cartridge filters.",
+  "recommended_action": "Immediately stop the affected RO trains to prevent irreversible membrane damage. Perform an emergency Clean-In-Place (CIP) starting with a high-pH alkaline detergent (target pH 11.5-12.0) to break down the organic biofilm matrix, followed by a thorough rinse and a soak with a non-oxidizing biocide (e.g., DBNPA at 150 ppm). Strictly adhere to the membrane manufacturer's guidelines for temperature, pH, and contact time.",
+  "decision_change_condition": "If a repeat, verified analysis of the RO feed water showed an ATP value below 200 pg/mL, my primary diagnosis would shift to predominantly colloidal and organic fouling.",
+  "confidence": 95
+}

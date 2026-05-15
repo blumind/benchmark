@@ -1,0 +1,32 @@
+{
+  "case_id": "RO-FOUL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:45:59Z",
+  "main_hypothesis": "Biofouling en las membranas de la primera etapa de RO debido a un aumento en la carga orgánica y posible insuficiencia en la desinfección.",
+  "key_signals": [
+    "Aumento del 600% en ATP en la alimentación a RO",
+    "Aumento del 78% en SDI15 en la alimentación a RO",
+    "Aumento del 45% en ΔP en la primera etapa de RO"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por partículas debido a la subida estacional de turbidez en la captación.",
+      "why_plausible": "La subida de turbidez en la captación puede llevar a un aumento en la carga de partículas que no fueron completamente removidas por el pretratamiento.",
+      "why_discardable": "El SDI15 ha aumentado, pero el ATP ha tenido un aumento mucho más significativo, lo que sugiere un problema más relacionado con materia orgánica que con partículas inorgánicas."
+    },
+    {
+      "hypothesis": "Fouling por escalado debido a una posible insuficiencia en la dosificación de antiescalante.",
+      "why_plausible": "El aumento en la dosis de coagulante podría haber afectado la eficacia del antiescalante.",
+      "why_discardable": "La conductividad del permeado y el rechazo salino son estables, lo que indica que no hay un problema significativo de escalado."
+    }
+  ],
+  "requested_data": "Conteo de bacterias en la alimentación a RO (UFC/mL)",
+  "recommended_action": "Realizar una limpieza química de las membranas de RO con una solución de limpieza alcalina (pH 11-12) a una concentración de 0.1% en peso y a una temperatura de 30°C durante 30-60 minutos.",
+  "decision_change_condition": "Si el conteo de bacterias en la alimentación a RO es menor a 1000 UFC/mL, reconsiderar la hipótesis de biofouling.",
+  "confidence": 80
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-002",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'sílice scaling etapa 2 + dosis insuficiente tras recovery 75→82' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals conectados."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (biofouling, CaCO3, NOM/petroleum)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Reducir recovery 75% + CIP modificada pH 12.0 90 min + recalcular antiincrustante 12 ppm — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide SI sílice en concentrate o análisis directo — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Single threshold: SEM/EDX no sílice + alta orgánico → biofouling. Single pero específico."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

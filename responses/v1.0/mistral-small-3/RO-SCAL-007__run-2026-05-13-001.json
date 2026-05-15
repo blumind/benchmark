@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:32:51Z",
+  "main_hypothesis": "Fouling of stage 2 membranes by calcium phosphate (Ca₃(PO₄)₂) precipitates due to elevated phosphate concentration in feedwater and suboptimal antiincrustant formulation.",
+  "key_signals": [
+    "Sustained marked rise in ΔP etapa 2 (0,9 → 1,9 bar) despite stable ΔP etapa 1 and stable feed pressure trend",
+    "Conductivity of permeate increased (95 → 110 µS/cm) indicating reduced salt rejection",
+    "Feed PO₄³⁻ rose from 1,8 to 2,8 mg/L (subida marcada) with corresponding increase in PO₄³⁻ in reject stream (7,8 → 12,5 mg/L)",
+    "Seasonal agricultural fertilization episode (Día -30) correlated with PO₄³⁻ increase and subsequent fouling progression",
+    "CIP ácida (Día -8) temporarily lowered ΔP etapa 2 to 1,2 bar, confirming removable foulant",
+    "Antiincrustante poliacrílico no inhibe fosfatos según fabricante (Día -20)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling by calcium carbonate or sulfate due to insufficient antiincrustant performance.",
+      "why_plausible": "Antiincrustante is designed for carbonates and sulfates; rising feed TDS and calcium could favor scaling. ΔP rise and temporary CIP response are consistent with scaling.",
+      "why_discardable": "Calcium and alkalinity in reject are stable; no rise in sulfate or carbonate saturation indices; scaling would typically show higher ΔP in stage 1 first, not exclusively stage 2."
+    },
+    {
+      "hypothesis": "Biofouling due to nutrient-rich feedwater and low chlorine residual.",
+      "why_plausible": "High PO₄³⁻ and low chlorine (<0,02 mg/L) provide nutrients and permissive environment for biofilm growth; biofilm can increase ΔP and reduce flux.",
+      "why_discardable": "No reported increase in pressure drop across stage 1 or pretreatment filters; biofouling usually shows gradual ΔP rise across entire train and may include TOC or ATP signals not mentioned."
+    },
+    {
+      "hypothesis": "Particulate fouling by iron or manganese precipitates from well oxidation.",
+      "why_plausible": "Iron/manganese can precipitate and foul membranes, increasing ΔP; feed from contaminated aquifer may contain these species.",
+      "why_discardable": "No mention of iron/manganese in feed or reject; no turbidity or SDI data; CIP ácida would not effectively remove iron/manganese oxides without oxidant."
+    }
+  ],
+  "requested_data": "Silica concentration in stage 2 reject stream (mg/L) to assess potential co-precipitation with Ca₃(PO₄)₂.",
+  "recommended_action": "Switch to antiincrustant compatible with phosphate inhibition (formulación específica para fosfatos) at 3,2 ppm; perform CIP alcalina con secuestrante de fosfatos (NaOH pH 11 + 0,5 % ácido cítrico) a 30 °C durante 90 min; reiniciar con PO₄³⁻ alimentación monitorizado cada 4 h.",
+  "decision_change_condition": "If silica concentration in stage 2 reject exceeds 150 mg/L and ΔP remains stable after phosphate-targeted CIP, reconsider co-precipitation hypothesis.",
+  "confidence": 92
+}

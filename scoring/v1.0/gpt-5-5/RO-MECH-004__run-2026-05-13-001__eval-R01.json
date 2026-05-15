@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-004",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'falla mecánica defecto línea pegamento lote afectado T-04 + bypass localizado' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (O-rings, envejecimiento 36m, OXID, scaling)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Sacar T-04 + cuarentena 5 elementos + reemplazar + sellos nuevos + probe test + conductividad — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide autopsia colorante/vacío glue line — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: autopsia sin defecto + reemplazo sellos resuelve → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

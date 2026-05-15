@@ -1,0 +1,32 @@
+{
+  "case_id": "RO-MECH-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:43:59Z",
+  "main_hypothesis": "Degradación de la línea de pegamento en elementos del lote sospechoso",
+  "key_signals": [
+    "Probe test localiza desviación en 3 tubos específicos del T-04",
+    "Subida progresiva de conductividad permeado en T-04",
+    "Distribución del lote sospechoso: T-04 con 5 elementos del lote afectado"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo en los O-rings de cap finales",
+      "why_plausible": "El reapretado de cabezas y verificación de O-rings no alivió el problema",
+      "why_discardable": "No se observaron mejoras significativas tras la verificación de O-rings"
+    },
+    {
+      "hypothesis": "Obstrucción parcial en los elementos del lote sospechoso",
+      "why_plausible": "La conductividad permeado ha ido aumentando progresivamente",
+      "why_discardable": "La localización de la desviación en los tubos específicos apunta a un problema localizado en los elementos"
+    }
+  ],
+  "requested_data": "Resultado de la autopsia del elemento extraído del tubo sospechoso",
+  "recommended_action": "Realizar la autopsia al elemento extraído del tubo sospechoso para evaluar la degradación de la línea de pegamento",
+  "decision_change_condition": "Si la autopsia del elemento extraído muestra un fallo distinto a la degradación de la línea de pegamento",
+  "confidence": 90
+}

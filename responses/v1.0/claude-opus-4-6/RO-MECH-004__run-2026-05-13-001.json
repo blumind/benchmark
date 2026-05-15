@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-MECH-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:42:58Z",
+  "main_hypothesis": "Defecto de fabricación en la línea de pegamento (glue line) de los elementos del lote sospechoso instalados en T-04, que provoca paso interno de sales (by-pass de salmuera al permeado) a través de la unión defectuosa entre la hoja de membrana y el tubo colector de permeado.",
+  "key_signals": [
+    "Conductividad de permeado elevada (720 µS/cm vs 470 µS/cm baseline) con subida progresiva durante 45 días, indicando paso de sales creciente consistente con degradación progresiva de una unión adhesiva defectuosa.",
+    "Probe test localiza la anomalía exclusivamente en 3 tubos del T-04, exactamente donde están instalados los 5 elementos del lote con incidencia de garantía conocida por defecto en glue line.",
+    "Conductividad de permeado en los tubos afectados (1.500–2.200 µS/cm) es 3-5 veces superior al rango normal, indicando by-pass interno severo y no simple envejecimiento de membrana.",
+    "Rechazo de sales global bajó de 99,17 % a 98,72 %, consistente con fuga localizada en pocos elementos que diluyen el promedio del tren.",
+    "ΔP de etapa 1 y etapa 2 esencialmente estables (incremento mínimo de 0,1 bar), descartando fouling/scaling significativo como causa principal del deterioro de rechazo.",
+    "El reapretado de cabezas y verificación de O-rings no produjo alivio significativo, descartando fuga externa en las conexiones mecánicas del tubo de presión.",
+    "Notificación del fabricante hace 180 días sobre reclamación colectiva por defecto en glue line del lote específico, con recomendación de autopsia ante síntomas anómalos.",
+    "Presión de alimentación subió 2 bar (64 vs 62 bar) con caudal de permeado ligeramente inferior, consistente con pérdida de permeabilidad efectiva por by-pass interno que reduce el flujo neto aprovechable."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño oxidativo de membranas por exposición a cloro u oxidante no detectado",
+      "why_plausible": "El daño oxidativo causa degradación del rechazo de sales y aumento de conductividad de permeado de forma progresiva, y es una causa frecuente en plantas SWRO. Un evento puntual de cloro podría haber afectado selectivamente ciertos elementos.",
+      "why_discardable": "El cloro libre antes de RO se mantiene consistentemente < 0,02 mg/L, el ORP es estable en +95 mV (sin picos oxidantes), no se reportan incidentes de dosificación de oxidante, y la afectación está localizada exclusivamente en los tubos con elementos del lote sospechoso. Un daño oxidativo afectaría de forma más generalizada o al menos no coincidiría tan precisamente con la distribución del lote defectuoso."
+    },
+    {
+      "hypothesis": "Fuga mecánica en O-rings, adaptadores o interconectores de los tubos de presión del T-04",
+      "why_plausible": "Las fugas en sellos mecánicos (O-rings de interconector, adaptadores de cabeza) son causa común de paso de sales localizado por tubo, y podrían explicar la conductividad elevada en tubos específicos.",
+      "why_discardable": "Se realizó reapretado de cabezas y verificación de O-rings de cap finales en día -5 sin alivio significativo. Además, la coincidencia exacta de los tubos afectados con la distribución del lote defectuoso hace estadísticamente improbable que sea una fuga mecánica independiente del defecto de fabricación."
+    },
+    {
+      "hypothesis": "Envejecimiento acelerado normal de membranas con 36 meses de servicio (fin de vida útil)",
+      "why_plausible": "Las membranas tienen 36 meses de servicio, cerca del fin de vida útil típico en SWRO con captación abierta. La compactación y degradación hidrolítica progresiva pueden reducir el rechazo de sales.",
+      "why_discardable": "El envejecimiento normal afectaría de forma relativamente uniforme a todos los trenes y tubos, no selectivamente a 3 tubos de un solo tren. Los tubos restantes del T-04 y los demás trenes muestran conductividad en rango normal. Además, la magnitud de la desviación (1.500–2.200 µS/cm) es excesiva para simple envejecimiento."
+    },
+    {
+      "hypothesis": "Telescoping o daño mecánico de elementos por golpe de ariete o sobrepresión",
+      "why_plausible": "El telescoping puede dañar la unión glue line y los sellos internos del elemento, causando by-pass de sales. Podría haberse producido durante arranques/paradas.",
+      "why_discardable": "No se reportan eventos de sobrepresión, golpes de ariete ni arranques bruscos. El ΔP es estable y bajo. Además, el telescoping afectaría elementos independientemente del lote de fabricación, mientras que aquí la correlación con el lote defectuoso es directa."
+    }
+  ],
+  "requested_data": "Resultado de la autopsia destructiva del elemento extraído del T-04 (día -1), específicamente: inspección visual y prueba de integridad de la línea de pegamento (glue line) entre la hoja de membrana y el tubo colector de permeado, con medición de la fuerza de pelado (peel strength) en N/cm y comparación con la especificación del fabricante.",
+  "recommended_action": "Proceder con la autopsia programada del elemento extraído del T-04 según protocolo del fabricante, priorizando la inspección de la glue line. Simultáneamente, aislar los 3 tubos afectados del T-04 cerrando sus válvulas de permeado individual (si disponibles) o, en su defecto, desviar el permeado del T-04 completo al drenaje o a una línea de recirculación para proteger la calidad del producto global. Operar los trenes restantes para mantener producción. Preparar elementos de reemplazo (del inventario verificado como no perteneciente al lote defectuoso) para sustituir los 5 elementos sospechosos en los 3 tubos afectados una vez confirmado el diagnóstico por autopsia. Documentar con fotografías y datos de autopsia para respaldar la reclamación de garantía al fabricante dentro del plazo de la reclamación colectiva.",
+  "decision_change_condition": "Si la autopsia del elemento extraído muestra la glue line íntegra (fuerza de pelado dentro de especificación del fabricante, sin evidencia de delaminación ni by-pass interno) y en cambio revela daño oxidativo en la capa activa de poliamida (pérdida de la capa de rechazo visible por tinción con fucsina o análisis FTIR mostrando degradación de enlaces amida), cambiaría el diagnóstico a daño oxidativo localizado y se investigaría la fuente de oxidante en la línea de alimentación del T-04.",
+  "confidence": 88
+}

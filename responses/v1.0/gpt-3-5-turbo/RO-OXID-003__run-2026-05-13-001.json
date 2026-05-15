@@ -1,0 +1,32 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:51:59Z",
+  "main_hypothesis": "Mal funcionamiento del agitador del tanque de SBS",
+  "key_signals": [
+    "Caudal de SBS dosificado nulo a pesar de programación",
+    "ORP tras dosificación de SBS con cambio drástico",
+    "Concentración real de SBS en tanque estratificada"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo en la monitorización online de ORP y cloro libre",
+      "why_plausible": "La oscilación de ORP inesperada y el aumento marcado de cloro libre podrían indicar un problema en la monitorización",
+      "why_discardable": "El cambio drástico en ORP tras la dosificación de SBS apunta más a un problema en la dosificación que en la monitorización"
+    },
+    {
+      "hypothesis": "Degradación de las membranas SWRO",
+      "why_plausible": "La subida brusca de conductividad permeado y el descenso en el rechazo de sales podrían indicar una degradación de las membranas",
+      "why_discardable": "El cambio drástico en ORP tras la dosificación de SBS no se explica por la degradación de las membranas"
+    }
+  ],
+  "requested_data": "Concentración real de SBS en el punto de aspiración del tanque (en % p/p)",
+  "recommended_action": "Reparar o reemplazar el agitador del tanque de SBS para garantizar una mezcla homogénea de la solución. Verificar y ajustar la programación de dosificación de SBS.",
+  "decision_change_condition": "Si la concentración real de SBS en el punto de aspiración del tanque es la esperada (25 % p/p), entonces el diagnóstico cambiaría.",
+  "confidence": 90
+}

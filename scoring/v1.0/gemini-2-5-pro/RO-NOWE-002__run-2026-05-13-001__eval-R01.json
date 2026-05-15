@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-002",
+    "subject_id": "gemini-2-5-pro",
+    "subject_version": "gemini-2.5-pro",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 0,
+      "justification": "C1: 'daño mecanico... compactacion/delaminacion por choque osmotico' wrong diagnosis"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 4 signals (P 16.8, rechazo 85.3, cond 850, ORP neg + sulfito)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (biofouling, scaling) ambos descartados correctamente"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: stop + low-P 3-4 bar flush con permeado 2h - matches gold sin CIP"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (paso de sales por elemento)"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: generica 'si tras flush retornan a baseline... ' sin trigger numerico"
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Diagnostico erroneo aunque action correcta sin CIP"
+}

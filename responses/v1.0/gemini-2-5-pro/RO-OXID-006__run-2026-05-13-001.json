@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:11:22Z",
+  "main_hypothesis": "Irreversible oxidative damage to the polyamide layer of the RO membranes caused by chlorine dioxide (ClO₂) and its byproducts originating from the neighboring fish farm's discharge, which is overwhelming the protective sodium bisulfite (SBS) dechlorination system.",
+  "key_signals": [
+    "A significant increase in Oxidation-Reduction Potential (ORP) in the RO feed from +50 mV to +180 mV, indicating the presence of a residual oxidant despite SBS dosing.",
+    "An increase in total chlorine concentration to 0.15 mg/L while free chlorine remains undetectable (<0.02 mg/L), which is characteristic of an oxidant like chlorine dioxide that reacts with the DPD total chlorine reagent.",
+    "A progressive decrease in calculated salt rejection from 99.29% to 98.95%, coupled with a rise in permeate conductivity from 400 µS/cm to 590 µS/cm, which is a classic symptom of membrane oxidation.",
+    "The external laboratory confirmation of chlorite (ClO₂⁻) at 0.08 mg/L in the RO feed, a known byproduct of chlorine dioxide.",
+    "The timeline of the performance degradation, which began after the neighboring fish farm reported an increase in its ClO₂ discharge volume."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Mechanical failure of inter-element O-rings or permeate tube seals.",
+      "why_plausible": "This type of failure can cause a direct leak of high-salinity feed water into the permeate stream, which would explain the sharp increase in permeate conductivity and the corresponding drop in calculated salt rejection.",
+      "why_discardable": "This hypothesis does not account for the strong chemical evidence of an oxidant (high ORP, high total chlorine, presence of chlorite). A mechanical failure is also typically more sudden and might be isolated to one part of a train, whereas the data suggests a progressive, systemic issue. It also doesn't explain the drop in permeate flow."
+    },
+    {
+      "hypothesis": "Severe biological fouling of the membrane elements.",
+      "why_plausible": "Biofouling can lead to a decrease in permeate flow, an increase in feed pressure, and an apparent loss of salt rejection due to enhanced concentration polarization at the membrane surface.",
+      "why_discardable": "The key indicators of biofouling are absent. The differential pressure (ΔP) trend is stable, not rising sharply as would be expected. The feed water ATP level is low and stable (90 pg/mL), suggesting no significant biological activity. Most importantly, biofouling does not explain the chemical signals indicating oxidation (high ORP, total chlorine, and chlorite)."
+    }
+  ],
+  "requested_data": "Concentration of chlorine dioxide (ClO₂) in the RO feed water, measured after the sodium bisulfite injection point, using a ClO₂-specific analytical method (e.g., Lissamine Green B). Units: mg/L.",
+  "recommended_action": "Immediately increase the sodium bisulfite (SBS) dosing rate to reduce the RO feed ORP to the baseline level of approximately +50 mV. Start by doubling the dose to 8 mg/L and adjust as needed based on continuous ORP monitoring. Concurrently, establish urgent contact with the management of the neighboring fish farm to request they cease or divert their ClO₂ discharge away from the plant's intake. If the oxidant ingress cannot be controlled within hours, perform a controlled shutdown of the RO trains to prevent further irreversible membrane damage.",
+  "decision_change_condition": "My diagnosis would change if the requested chlorine dioxide measurement in the RO feed is non-detectable (<0.01 mg/L) and a membrane autopsy reveals physical damage (e.g., telescoping, glue line failure) or severe, localized biofouling not reflected in the bulk water ATP analysis.",
+  "confidence": 95
+}

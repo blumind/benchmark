@@ -1,0 +1,50 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:18:02Z",
+  "main_hypothesis": "Inadequate scale inhibitor dosage and/or incompatibility of the new phosphonate-based formulation with the specific feed water chemistry (high hardness 920 mg/L CaCO₃, high TDS 4500 mg/L, low pH 6.5) is causing progressive calcium carbonate and/or calcium sulfate scaling on stage 2 RO membranes, despite the lower nominal dose (1.2 ppm vs 3 ppm prior).",
+  "key_signals": [
+    "ΔP stage 2 progressive rise from 0.9 bar (baseline) to 1.7 bar (current) over 40 days with new inhibitor, while stage 1 ΔP remains stable at 1.2 bar",
+    "Permeate flow decline of 8% (333 → 305 m³/h) concurrent with feed pressure increase (14.8 → 17.8 bar), indicating membrane fouling/scaling rather than feed-side blockage",
+    "Temporary ΔP recovery after CIP acid cleaning (1.4 → 1.1 bar on day -8) followed by rapid re-escalation to 1.7 bar within 5 days, consistent with scale re-precipitation",
+    "Dosage reduction from 3 ppm to 1.2 ppm (60% cut) without site-specific validation for this feed water's hardness and TDS",
+    "Stable reject-side calcium (2450 mg/L), alkalinity (1080 mg/L), and silica (145 mg/L) indicate no upstream treatment change; scaling is membrane-specific",
+    "Permeate conductivity slight rise (78 → 88 µS/cm) suggests early membrane integrity loss or concentration polarization from scaling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling by organic matter or biofilm due to inadequate chlorine residual or pre-filter breakthrough.",
+      "why_plausible": "Cloro libre < 0.02 mg/L is at detection limit; biofilm can accumulate on stage 2 membranes if pre-treatment fails. Organic fouling would also cause ΔP rise and flow decline.",
+      "why_discardable": "Cloro residual is stable and unchanged from baseline; no reported pre-filter cartridge breakthrough or change in feed turbidity. CIP acid cleaning would not fully restore ΔP if biofilm were the primary cause (would require enzymatic or biocide treatment). Rapid re-fouling in 5 days post-CIP is atypical for biofilm kinetics in this feed water temperature (22.5 °C). Reject-side chemistry is stable, which would show signs of organic breakthrough if pre-treatment failed."
+    },
+    {
+      "hypothesis": "Mechanical blockage or partial collapse of stage 2 feed spacer due to high feed pressure or membrane defect.",
+      "why_plausible": "Feed pressure rise to 17.8 bar is elevated; spacer collapse or membrane deformation can cause localized ΔP rise and flow loss.",
+      "why_discardable": "Stage 1 ΔP is stable (1.2 bar), which would not be the case if feed-side blockage or pressure surge occurred—stage 1 would show higher ΔP first. Acid CIP recovery and rapid re-escalation pattern is inconsistent with mechanical blockage, which would not respond to chemical cleaning. No reported membrane element damage, leakage, or salt leakage in permeate."
+    },
+    {
+      "hypothesis": "Incorrect dosage implementation: actual inhibitor concentration delivered is lower than 1.2 ppm due to pump calibration error or solution degradation.",
+      "why_plausible": "Dosage was reduced 60% without field validation; pump calibration drift or inhibitor solution degradation (phosphonate oxidation) could result in sub-therapeutic doses.",
+      "why_discardable": "Caudal antiincrustante (0.4 L/h) is reported as 'consigna nueva, OK', implying pump setting was verified. No maintenance history of pump failure or solution age/stability issues reported. If actual dose were critically low, ΔP rise would begin immediately upon changeover (day -40), not after 2 weeks (day -25), suggesting a dose-dependent but not zero-dose scenario."
+    },
+    {
+      "hypothesis": "Seasonal or feed water quality shift (increased hardness or TDS) coinciding with inhibitor change, masking the true cause.",
+      "why_plausible": "Groundwater TDS and hardness can vary seasonally; a simultaneous increase would compound scaling risk.",
+      "why_discardable": "Conductivity alimentación is stable (6300 → 6350 µS/cm, <1% change); calcio rechazo, alcalinidad rechazo, and sílice rechazo are all stable. No seasonal trend data provided, but reported values show no significant shift. Feed temperature is stable (22.2 → 22.5 °C)."
+    },
+    {
+      "hypothesis": "Incompatibility of new phosphonate inhibitor with residual polyacrylate from prior formulation, causing co-precipitation or reduced inhibitor efficacy.",
+      "why_plausible": "Switching inhibitor chemistries can cause transient incompatibility if residual old inhibitor remains in the system or on membrane surfaces.",
+      "why_discardable": "Two-week lag before ΔP rise (day -25) is longer than expected for immediate chemical incompatibility; such effects typically manifest within 24–72 hours. CIP acid cleaning would remove residual polymers, yet ΔP re-escalated rapidly, suggesting the new inhibitor alone is insufficient, not that it is incompatible with residue."
+    }
+  ],
+  "requested_data": "Saturation Index (SI) for calcium carbonate and calcium sulfate calculated from current feed water analysis (pH, Ca²⁺, HCO₃⁻, SO₄²⁻, temperature) using the Langelier or Stiff-Davis method, compared to SI at baseline with prior inhibitor dose (3 ppm polyacrylate).",
+  "recommended_action": "Immediately increase scale inhibitor dosage from 1.2 ppm to 2.0 ppm (increase pump setpoint from 0.4 L/h to 0.67 L/h, assuming 6 mg/L stock solution) and request from the new supplier a site-specific inhibitor dose recommendation based on the provided feed water analysis (TDS 4500 mg/L, hardness 920 mg/L CaCO₃, pH 6.5, calcium 2450 mg/L in reject). Schedule a second CIP acid cleaning (HCl pH 2.0, 60 min) within 48 hours to remove accumulated scale. Monitor ΔP stage 2 daily for 7 days; if ΔP remains above 1.4 bar or continues to rise, revert to the prior polyacrylate inhibitor (3 ppm) pending supplier technical support.",
+  "decision_change_condition": "If ΔP stage 2 does not stabilize below 1.3 bar within 7 days of dosage increase and CIP cleaning, or if permeate conductivity exceeds 100 µS/cm (indicating membrane damage), the diagnosis would shift toward membrane element replacement or a fundamental incompatibility of the new inhibitor chemistry with this feed water, requiring reversion to the prior inhibitor formulation and a formal inhibitor qualification study.",
+  "confidence": 78
+}

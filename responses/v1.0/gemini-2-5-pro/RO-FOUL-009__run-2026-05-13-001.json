@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T08:52:19Z",
+  "main_hypothesis": "Fouling of the RO membranes by surfactants (antifoaming agents) and hydrocarbons originating from the refinery's effluent discharge.",
+  "key_signals": [
+    "Significant drop in feed water surface tension from a baseline of 72 mN/m to 58 mN/m, indicating the presence of surfactants.",
+    "Refinery's prior notification of a controlled discharge containing antifoaming agents, establishing a probable source.",
+    "Sharp increase in first stage differential pressure (ΔP etapa 1) from 1.2 bar to 2.4 bar, while the second stage remained stable, localizing the fouling to the front of the train.",
+    "Elevated Total Organic Carbon (2.9 mg/L) and Total Hydrocarbons (2.1 mg/L) in the RO feed, confirming organic contamination.",
+    "High Silt Density Index (SDI₁₅) of 4.5 after the cartridge filters, indicating that the foulant is passing through the pretreatment stage.",
+    "Visual inspection of cartridge filters revealing a 'gelatinous' deposit, consistent with organic or surfactant-based fouling."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling caused by the interaction between cationic polymers from the neighboring plant and the anionic antiscalant.",
+      "why_plausible": "A discharge of cationic polymers was reported five days prior to the main event. Cationic polymers are known to react with anionic antiscalants to form a sticky, gelatinous foulant, which aligns with the visual inspection of the cartridges and the rapid increase in differential pressure.",
+      "why_discardable": "This hypothesis does not explain the significant and measured drop in surface tension or the elevated concentration of hydrocarbons, for which there is direct evidence linking them to the refinery's discharge. The surfactant evidence is more specific and compelling."
+    },
+    {
+      "hypothesis": "Severe biofouling as the primary cause.",
+      "why_plausible": "The ATP level has increased significantly (from 90 to 240 pg/mL), and the deposit on the filters was described as gelatinous, both of which are indicators of biological activity and biofilm formation.",
+      "why_discardable": "The event's timeline is too rapid for biofouling to be the root cause. It is more likely a secondary effect, where the discharged organic matter (hydrocarbons, surfactants) acts as a nutrient source, accelerating biological growth. This hypothesis fails to account for the primary chemical contamination signals (surface tension, hydrocarbons)."
+    }
+  ],
+  "requested_data": "Result of a Fourier-transform infrared spectroscopy (FTIR) analysis of the gelatinous deposit collected from a sacrificed cartridge filter.",
+  "recommended_action": "Immediately stop the affected RO train to prevent further irreversible fouling. Initiate an emergency high-pH cleaning cycle using a specialized membrane cleaner formulated for organic and oil-based foulants. The cleaning solution should be maintained at pH 11.0-11.5 and a temperature of 30-35°C, following the membrane manufacturer's specific guidelines for duration and flow rates.",
+  "decision_change_condition": "My diagnosis would change if the FTIR analysis of the foulant on the cartridge filters shows a primary signature of polyacrylamide or other cationic polymers and a negligible signal for silicones or aliphatic hydrocarbons.",
+  "confidence": 95
+}

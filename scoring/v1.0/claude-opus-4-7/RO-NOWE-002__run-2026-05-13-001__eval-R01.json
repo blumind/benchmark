@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-002",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'aclarado insuficiente del SBS... agua bruta retenida' matches both anchors"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals: sulfito 8.5, ORP -180, cond 1500->850, dP normal, agua bruta, P alta"
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "C3: 3 alts (oxidativo, biofouling, O-rings) todas con descarte explicito"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: flush a drenaje hasta sulfito<0.5, ORP>0, cond<150, rechazo>97% - matches gold"
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "C5: 3 anchors (probing tubos, sulfito serie temporal, agua bruta prohibition)"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit: sulfito<0.5 + ORP normal pero cond>300 + rechazo<95% -> daño/bypass"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Claude conflict; respuesta excelente, sin CIP, alternativas correctas"
+}

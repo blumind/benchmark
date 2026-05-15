@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-OXID-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:49:01Z",
+  "main_hypothesis": "Oxidation damage to polyamide RO membranes caused by ozone residual in feed water, which originated from increased ozone dosing at the neighboring plant's tertiary treatment and was not removed due to absence of bisulfite or GAC pretreatment.",
+  "key_signals": [
+    "Ozono residual alimentación 0.06 mg/L (baseline <0.01)",
+    "ORP alimentación a RO +280 mV (baseline +110 mV)",
+    "Conductividad permeado 380 µS/cm (baseline 75 µS/cm)",
+    "Rechazo de sales calculado 88.8% (baseline 97.8%)",
+    "ΔP estable en ambas etapas (etapa 1: 1.1 bar; etapa 2: 0.8 bar)",
+    "ATP estable (95 pg/mL)",
+    "Cloro libre indetectable (<0.02 mg/L)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Degradación normal por envejecimiento de membranas tras 11 meses de operación.",
+      "why_plausible": "Las membranas pueden degradarse con el tiempo, especialmente si han estado expuestas a condiciones adversas previas no reportadas.",
+      "why_discardable": "La degradación fue abrupta (conductividad subió de 75 a 380 µS/cm en ~10 días), y coincide temporalmente con el aumento de ozono en la planta vecina; el rechazo era estable antes del día -18. Con solo 11 meses de operación, una caída tan rápida no es esperable sin una causa agresiva como oxidantes."
+    },
+    {
+      "hypothesis": "Fallo mecánico como fuga de O-ring o desplazamiento de elemento.",
+      "why_plausible": "Una fuga en los sellos interconectores puede causar aumento de conductividad en el permeado.",
+      "why_discardable": "Los ΔP son estables y no hay cambio en la presión. El aumento de conductividad sería probablemente localizado y no generalizado. Además, la subida de ORP y ozono residual no se explicaría."
+    },
+    {
+      "hypothesis": "Incrustación por escamas (scaling) de sulfato de calcio u otros.",
+      "why_plausible": "Scaling puede aumentar la presión diferencial y reducir la calidad del permeado.",
+      "why_discardable": "Los ΔP se mantienen estables, la presión de alimentación apenas ha subido (14.8 vs 14.5 bar), y el ATP no indica bioensuciamiento. El ORP elevado no se explica por scaling."
+    }
+  ],
+  "requested_data": "Perfil de conductividad de permeado por tubo de presión (µS/cm) para determinar si la pérdida de rechazo es uniforme en todo el bastidor o localizada.",
+  "recommended_action": "Iniciar la inyección continua de bisulfito de sodio (SBS) en la alimentación a RO a una dosis inicial de 0.3 mg/L (basada en ozono residual de 0.06 mg/L con factor de seguridad 5x) para eliminar ozono residual y reducir ORP por debajo de 150 mV. Ajustar la dosis según monitoreo de ORP en línea. Paralelamente, solicitar a la planta vecina la reducción inmediata de su dosis de ozono o instalar un sistema de cuaternamiento antes del retorno al colector común. Considerar paro de la planta si el ORP no se controla en 24 horas o si la conductividad del permeado sigue aumentando tras la inyección de SBS.",
+  "decision_change_condition": "Si la conductividad del permeado por tubo de presión muestra un patrón no uniforme (uno o pocos tubos con conductividad mucho mayor) y la inyección de SBS reduce el ORP pero no detiene el aumento de conductividad, entonces la hipótesis principal cambiaría a fallo mecánico localizado (fuga de O-ring o elemento dañado).",
+  "confidence": 90
+}

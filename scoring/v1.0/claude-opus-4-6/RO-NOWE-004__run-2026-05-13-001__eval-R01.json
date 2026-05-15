@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-004",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'aire atrapado en HP... purga insuficiente' matches anchor"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 7 signals (18h abierta, borboteo, balance 92%, dP bajos, cond 380, caudal 270, P alta)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (daño O-rings, fuga externa PVC) - falta wetting parcial como hipotesis"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: para + venteo completo + ramp lento + balance ±3% + cond<150 - matches gold completo"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (probing visual + cond por tubo) - tangencial"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit: tras venteo cond>200 + rechazo<98% -> daño O-rings + probing"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Claude conflict; solida, sin CIP, sin replacement prematuro"
+}

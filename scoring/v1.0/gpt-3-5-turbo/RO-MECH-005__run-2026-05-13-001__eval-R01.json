@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-005",
+    "subject_id": "gpt-3-5-turbo",
+    "subject_version": "gpt-3.5-turbo-0125",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'falta brine seal primer elemento Tubo 5' literal corto."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Reinstalar brine seal procedimientos fabricante — operacional simple sin verificar todos los elementos."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide conductividad permeado Tubo 5 — match parcial."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: no mejora → reconsiderar."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

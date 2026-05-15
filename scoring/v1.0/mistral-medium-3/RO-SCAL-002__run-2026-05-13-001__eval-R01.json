@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-002",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'antiincrustante insuficiente para recovery + sílice scaling etapa 2' — match anchor."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts (pretratamiento, daño mecánico) — same/MECH."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Aumentar antiincrustante 12 ppm + monitor 24h — sin CIP, sin reducir recovery."
+    },
+    "requested_data": {
+      "score": 0,
+      "justification": "Pide sílice en permeato — lugar incorrecto (como gpt-3-5)."
+    },
+    "decision_change_condition": {
+      "score": 0,
+      "justification": "Conceptual error: 'si sílice en permeato bajo → scaling no es primary'. Sílice en permeato siempre baja regardless de scaling."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "REQ y DEC tienen el mismo error conceptual que gpt-3-5: medir sílice en permeato no discrimina scaling."
+}

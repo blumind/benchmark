@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:12:07Z",
+  "main_hypothesis": "Biofouling microbiológico en las membranas RO",
+  "key_signals": [
+    "Aumento de ΔP en etapas 1 y 2",
+    "Aumento de presión de alimentación",
+    "Aumento marcado de ATP en alimentación RO",
+    "Presencia de olor sulfhídrico en muestras de concentrado"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustaciones en las membranas RO",
+      "why_plausible": "El aumento de ΔP y la disminución del caudal de permeado podrían indicar incrustaciones.",
+      "why_discardable": "La marcada subida de ATP en la alimentación RO y el olor sulfhídrico sugieren un problema microbiológico."
+    },
+    {
+      "hypothesis": "Problema en los cartuchos de pretratamiento",
+      "why_plausible": "El aumento de la turbidez en la salida de los cartuchos podría indicar un problema en los mismos.",
+      "why_discardable": "El aumento de ΔP y la presencia de olor sulfhídrico apuntan más a un problema en las membranas RO."
+    }
+  ],
+  "requested_data": "Análisis microbiológico del agua de alimentación y permeado de las membranas RO",
+  "recommended_action": "Realizar una limpieza química de las membranas RO siguiendo el protocolo recomendado por el fabricante, incluyendo desinfección con biocida adecuado.",
+  "decision_change_condition": "Si el análisis microbiológico muestra ausencia de biofouling en las membranas RO.",
+  "confidence": 90
+}

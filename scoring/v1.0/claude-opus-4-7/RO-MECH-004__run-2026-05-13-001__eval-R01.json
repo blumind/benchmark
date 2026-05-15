@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-004",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'defecto fabricación glue line lote reclamación T-04 + bypass interno 3 tubos' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (O-rings interconectores, envejecimiento 36m, OXID histórico, telescoping cola)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Aislar T-04 + retirar 5 elementos lote afectado + reemplazar elementos nuevos + enjuague — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia elemento extraído + inspección glue line + test colorante/vacío — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi: autopsia sin defecto + OXID/scaling/biofouling → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

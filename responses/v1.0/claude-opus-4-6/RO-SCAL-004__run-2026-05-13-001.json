@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:10:37Z",
+  "main_hypothesis": "Incrustación por precipitación de sulfato de calcio (CaSO₄·2H₂O, yeso) en la etapa de cola (etapa 3) causada por el aumento de recovery del 80 % al 83 % sin recálculo ni ajuste de la dosis de antiincrustante, agravada por el incremento de sulfato en la alimentación debido al cambio en el mix de aguas regeneradas con mayor proporción industrial.",
+  "key_signals": [
+    "ΔP etapa 3 triplicado respecto al baseline (1,5 bar vs 0,5 bar) con subida marcada en los 12 días tras el aumento de recovery, patrón típico de scaling en elementos de cola",
+    "Índice de saturación de CaSO₄ calculado en SI ≈ 1,1 (sobresaturado) en el concentrado, confirmando condiciones termodinámicas para precipitación de yeso",
+    "Sulfato en rechazo subió de 1.100 a 1.290 mg/L (subida marcada), superando lo esperado solo por el incremento de recovery, consistente con mayor carga de sulfato en alimentación por cambio de mix de fuentes",
+    "Calcio en rechazo subió de 390 a 460 mg/L, coherente con mayor concentración en la etapa de cola al aumentar recovery",
+    "CIP alcalino (NaOH pH 11,5) en día -7 fue ineficaz: ΔP etapa 3 bajó solo temporalmente y rebotó en 48 h, lo cual es consistente con scaling inorgánico de sulfato de calcio que no se disuelve en medio alcalino",
+    "Dosis de antiincrustante poliacrílico mantenida en 2,2 ppm sin recálculo tras subir recovery de 80 % a 83 %, resultando en subdosificación para las nuevas condiciones de saturación",
+    "Presión de alimentación subió de 12,5 a 14,8 bar (+18 %) indicando pérdida de permeabilidad por fouling/scaling",
+    "Caída de caudal de permeado del 8 % (833 → 770 m³/h) consistente con bloqueo parcial de membranas en etapa de cola"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación por sílice (SiO₂) polimerizada en la etapa de cola",
+      "why_plausible": "La sílice en rechazo alcanza 130 mg/L, y a pH 6,8 y 28,5 °C la solubilidad de sílice amorfa es ~120-150 mg/L; al aumentar recovery al 83 % se acerca al límite de saturación. La sílice polimerizada también causa aumento de ΔP en etapas de cola y no responde a CIP alcalino convencional.",
+      "why_discardable": "El SI de CaSO₄ ya está confirmado en 1,1 (sobresaturado), mientras que la sílice a 130 mg/L y pH 6,8 está cerca pero probablemente aún por debajo del límite de precipitación de sílice amorfa (~140-150 mg/L a esta temperatura). Además, el aumento marcado de sulfato en rechazo y el cambio de mix industrial apuntan más directamente a CaSO₄. La sílice podría ser un factor contribuyente pero no el principal."
+    },
+    {
+      "hypothesis": "Biofouling en etapa de cola favorecido por mayor concentración de materia orgánica residual",
+      "why_plausible": "El agua de alimentación es permeado de UF de aguas regeneradas con TOC de 1,8 mg/L, y el biofouling es común en sistemas de reúso. El aumento de recovery concentra nutrientes en la etapa de cola. El ΔP de etapa 2 también muestra subida ligera, lo cual puede asociarse a biofilm.",
+      "why_discardable": "El CIP alcalino a pH 11,5 debería haber tenido mayor efecto sobre biofilm (parcial disolución de EPS), pero la recuperación fue mínima y transitoria. El patrón de ΔP concentrado casi exclusivamente en etapa 3 es más típico de scaling que de biofouling (que suele afectar más la etapa 1). El TOC es estable y bajo, y el SI de CaSO₄ > 1 proporciona una explicación termodinámica directa."
+    },
+    {
+      "hypothesis": "Incrustación por carbonato de calcio (CaCO₃) por insuficiente acidificación",
+      "why_plausible": "Con calcio de 78 mg/L y alcalinidad de 95 mg/L CaCO₃ en alimentación, al concentrar al 83 % de recovery el LSI podría ser positivo en la etapa de cola. El pH de 6,8 podría no ser suficientemente bajo para prevenir CaCO₃ a alta concentración.",
+      "why_discardable": "A pH 6,8 con dosificación de H₂SO₄, el equilibrio carbonato está desplazado hacia CO₂/HCO₃⁻, haciendo improbable la precipitación de CaCO₃. Además, el CIP alcalino a pH 11,5 no disolvería CaCO₃ (se requiere CIP ácido), pero tampoco lo empeoraría; el rebote rápido del ΔP es más consistente con scaling de sulfato que continúa precipitando activamente. El dato clave es que el SI de CaSO₄ ya está confirmado como sobresaturado."
+    }
+  ],
+  "requested_data": "Análisis de depósitos por autopsia o raspado de membrana de la última posición de etapa 3 mediante difracción de rayos X (XRD) o espectroscopía de energía dispersiva (EDS) para confirmar composición mineralógica del scaling (presencia de CaSO₄·2H₂O vs SiO₂ vs otros precipitados).",
+  "recommended_action": "1) Reducir inmediatamente el recovery al 80 % (valor baseline) para sacar el sistema de la zona de sobresaturación de CaSO₄. 2) Ejecutar un CIP ácido específico para sulfato de calcio en etapa 3: solución de ácido cítrico al 2 % (w/v) a pH 2,0-2,5 ajustado con HCl, temperatura 35-40 °C, recirculación durante 4 horas con remojo intermitente de 30 minutos cada hora; alternativamente, si se dispone de producto quelante específico (EDTA o DTPA), usar solución de EDTA tetrasódico al 1 % (w/v) a pH 10-11 ajustado con NaOH, 40 °C, 4 horas de recirculación. 3) Recalcular la dosis de antiincrustante con el software del proveedor para las condiciones actuales de alimentación (sulfato elevado por mix industrial); es probable que se requiera aumentar a 3,5-4,5 ppm o cambiar a un antiincrustante con mayor eficacia contra CaSO₄. 4) Solo después de confirmar limpieza efectiva (ΔP etapa 3 ≤ 0,6 bar) y ajustar antiincrustante, considerar subir recovery gradualmente, sin superar el 82 % hasta verificar que el SI de CaSO₄ se mantiene < 1,0 con la nueva dosis. 5) Implementar monitoreo semanal de sulfato en alimentación para detectar variaciones del mix de fuentes.",
+  "decision_change_condition": "Si el análisis de depósitos (XRD/EDS) revelara que la composición del scaling es predominantemente sílice polimerizada (SiO₂) en lugar de CaSO₄·2H₂O, cambiaría el diagnóstico a incrustación por sílice, lo cual requeriría un CIP con NaOH a pH 12+ y temperatura elevada (40-45 °C) con tiempo extendido (6-8 h), y el ajuste operativo se centraría en control de sílice (posible adición de inhibidor de sílice específico o reducción de recovery hasta mantener sílice en rechazo < 120 mg/L) en lugar del enfoque en antiincrustante para sulfato de calcio.",
+  "confidence": 88
+}

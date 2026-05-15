@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-006",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling DBNPA reducido + umbral ATP permisivo' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ATP×4 + ΔP1 + ΔP3 estable + CIP ácido rebote 12d + TOC↑."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (NOM, Mn/Fe FOUL, SCAL, OXID KMnO4) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "DBNPA shock 20 mg/L cada 3d + CIP alcalino NaOH+EDTA+SDS + ácido cítrico."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide HPC/ATP en membrana frontal — match exacto accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ATP membrana <1000 OR autopsia inorgánico → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

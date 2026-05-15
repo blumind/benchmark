@@ -1,0 +1,32 @@
+{
+  "case_id": "RO-FOUL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:12:00Z",
+  "main_hypothesis": "Biofouling en la etapa 1 de los elementos de membrana RO",
+  "key_signals": [
+    "Subida progresiva de ΔP en etapa 1",
+    "Bajada del 8 % en caudal permeado",
+    "Subida marcada en ATP en alimentación RO"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incumplimiento en la limpieza CIP ácida",
+      "why_plausible": "La limpieza CIP ácida no logró eliminar completamente el biofouling, lo que podría causar el aumento progresivo de ΔP en la etapa 1.",
+      "why_discardable": "El cambio en la dosificación de biocida y la subida marcada en ATP sugieren un problema más relacionado con la biofouling que con la limpieza CIP ácida."
+    },
+    {
+      "hypothesis": "Contaminación microbiológica en el sistema de pretratamiento",
+      "why_plausible": "La reducción en la dosificación de biocida podría haber permitido un crecimiento microbiológico en el sistema de pretratamiento, contribuyendo al biofouling en la etapa 1.",
+      "why_discardable": "La subida marcada en ATP en la alimentación RO sugiere un problema más directamente relacionado con la membrana RO que con la contaminación microbiológica en el pretratamiento."
+    }
+  ],
+  "requested_data": "Perfil de limpieza CIP ácida realizada en el día -30, incluyendo duración, concentración de limpiador, y temperatura.",
+  "recommended_action": "Realizar una limpieza CIP ácida inmediata en la etapa 1 de los elementos de membrana RO, siguiendo el protocolo estándar de la planta para limpieza de biofouling. Reanudar la dosificación de biocida de acuerdo al protocolo original cada 3 días.",
+  "decision_change_condition": "Si la limpieza CIP ácida reciente mostrara un cumplimiento adecuado con el protocolo estándar y no se observara una mejora significativa en la caída de ΔP en la etapa 1, se reconsideraría la hipótesis de biofouling en la membrana RO.",
+  "confidence": 90
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-003",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "MH captura BOTH 'NOM e hidróxidos/coloides de hierro' explícitamente — match gold combinado."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ΔP1 vs ΔP2/3 + TOC + color + rebote post-cartuchos + cloro<0.02."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (bio, SCAL, MECH filtros, antiincrustante) con why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP en dos pasos pero ácido primero (cítrico) then alcalino — gold expects alcalino primero para orgánico-coloidal."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia LOI+Fe o Fe total alimentación — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: Fe<0.05 + autopsia biológico predominante → biofouling."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Pierde C4 por orden invertido (ácido primero) cuando gold expects alcalino primero."
+}

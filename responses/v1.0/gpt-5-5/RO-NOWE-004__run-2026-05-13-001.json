@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-NOWE-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:25:20Z",
+  "main_hypothesis": "Aire atrapado y flujo bifásico en la alimentación del bastidor RO por purga incompleta tras abrir la línea durante el mantenimiento, agravado por una rampa de presurización rápida.",
+  "key_signals": [
+    "La línea de alimentación estuvo abierta a la atmósfera durante 18 h antes del arranque.",
+    "Se reportó sonido intermitente de “borboteo” en la línea de alta presión durante y después del arranque.",
+    "El ΔP de etapa 1 y etapa 2 está por debajo del baseline y sube lentamente hacia valores normales, consistente con recuperación progresiva de flujo hidráulico efectivo al desplazarse aire.",
+    "El caudal permeado está bajo respecto al baseline pero sube hacia normalidad.",
+    "La conductividad de permeado está elevada pero desciende lentamente, y el rechazo de sales se recupera, compatible con una alteración transitoria de mojado/distribución de flujo más que con daño permanente.",
+    "La conductividad, temperatura, pH, ORP y cloro libre de alimentación permanecen estables, reduciendo la probabilidad de un cambio químico del agua como causa principal.",
+    "El balance alimentación versus concentrado más permeado solo cierra al 92 %, señal compatible con medición afectada por flujo bifásico o presencia de aire no purgado."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Válvula de drenaje o venteo del bastidor parcialmente abierta tras la purga manual.",
+      "why_plausible": "El operador abrió válvulas de drenaje antes del arranque y el balance de caudales muestra una diferencia de 27 m³/h entre alimentación y salidas medidas, lo que podría corresponder a descarga no contabilizada.",
+      "why_discardable": "No explica por sí sola la conductividad de permeado inicialmente alta con recuperación gradual ni el borboteo intermitente recurrente; además los ΔP y el rechazo evolucionan como un fenómeno transitorio de aireación."
+    },
+    {
+      "hypothesis": "Fuga interna por junta, interconector o adaptador de permeado dañado durante el arranque.",
+      "why_plausible": "Una fuga interna puede producir aumento de conductividad de permeado y pérdida de rechazo después de mantenimiento o presurización.",
+      "why_discardable": "La conductividad de permeado y el rechazo mejoran lentamente, lo cual es menos típico de una fuga mecánica permanente; tampoco explica bien el borboteo ni el ΔP bajo en ambas etapas."
+    },
+    {
+      "hypothesis": "Daño oxidativo de membranas por ingreso de oxidante.",
+      "why_plausible": "El aumento de conductividad de permeado y la caída de rechazo son señales que pueden aparecer con daño químico de membranas.",
+      "why_discardable": "El cloro libre antes de RO se mantiene < 0,02 mg/L, el ORP está estable y bajo, y la tendencia es de recuperación, no de deterioro irreversible."
+    },
+    {
+      "hypothesis": "Ensuciamiento o incrustación posterior al mantenimiento.",
+      "why_plausible": "La operación con agua portuaria industrial y recovery de 75 % puede ser susceptible a fouling o scaling si hubo perturbación hidráulica.",
+      "why_discardable": "El fouling o scaling normalmente elevaría el ΔP y reduciría progresivamente el flujo; aquí el ΔP está por debajo del baseline y sube lentamente, con recuperación del permeado."
+    },
+    {
+      "hypothesis": "Error de instrumentación en caudalímetros tras el mantenimiento.",
+      "why_plausible": "El balance de caudales no cierra dentro de tolerancia, lo que puede deberse a caudalímetro descalibrado o afectado por condiciones hidráulicas anómalas.",
+      "why_discardable": "Un error instrumental aislado no explica el borboteo audible ni la recuperación simultánea de ΔP, caudal permeado y rechazo."
+    }
+  ],
+  "requested_data": "Fracción volumétrica de gas libre en la línea de alimentación al bastidor durante el episodio de borboteo, medida aguas arriba del bastidor (% v/v).",
+  "recommended_action": "Poner el bastidor en modo seguro fuera de producción, despresurizar según procedimiento, abrir venteos altos y drenajes hacia descarga segura, y ejecutar un enjuague de baja presión con agua pretratada/UF filtrada hasta obtener descarga continua sin burbujas durante al menos 10 min y cierre de balance de caudales dentro de ±5 %. Luego reiniciar con rampa lenta de presión según manual del fabricante y desviar el permeado a drenaje hasta que la conductividad vuelva a la tendencia normal.",
+  "decision_change_condition": "La diagnosis cambiaría si, durante una purga controlada, no se observa gas libre en venteos ni en la alimentación y el balance de caudales sigue sin cerrar, especialmente si se detecta caudal líquido sostenido por un drenaje, venteo o bypass no contabilizado.",
+  "confidence": 74
+}

@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-FOUL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:17:48Z",
+  "main_hypothesis": "Biofouling of lead RO membrane elements caused by a phytoplankton bloom that increased TEP and organic carbon loading, overwhelming the UF pretreatment and leading to rapid differential pressure rise in the first stage.",
+  "key_signals": [
+    "ΔP etapa 1 (cabeza) subida brusca de 1,3 a 3,1 bar",
+    "TOC alimentación a RO subida marcada de 1,2 a 3,4 mg/L",
+    "Clorofila-a en captación subida marcada de 1,5 a 28 µg/L",
+    "TEP (transparent exopolymer particles) subida a 320 µg/L Xeq",
+    "Caudal permeado tren bajada del 11 %",
+    "Presión alimentación tren subida de 60 a 67 bar"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling (e.g., calcium carbonate or silica) on lead elements due to increased recovery or pH shift.",
+      "why_plausible": "High feed conductivity (57,800 µS/cm) indicates high salinity and potential scaling risk; pH 8.1 is borderline for CaCO3 scaling. A rapid ΔP rise could be consistent with scale formation.",
+      "why_discardable": "No increase in permeate conductivity (stable at 410 µS/cm) argues against significant scale damage; no pH or recovery change reported; the strong correlation with biological indicators (chlorophyll-a, TEP, TOC) points to organic fouling rather than inorganic scaling."
+    },
+    {
+      "hypothesis": "Particulate fouling from UF breakthrough (e.g., coagulant floc carryover or cartridge filter failure).",
+      "why_plausible": "SDI after UF increased from 2.3 to 3.1, indicating some deterioration in pretreatment; particulate fouling could cause rapid ΔP rise in lead elements.",
+      "why_discardable": "The SDI increase is modest and still within typical acceptable range (<4); the presence of visible filaments and earthy odor, along with elevated TEP and chlorophyll-a, strongly suggests biological material rather than inert particles. Also, ΔP in tail elements remains stable, which is more consistent with biofouling that preferentially affects lead elements."
+    },
+    {
+      "hypothesis": "Chemical fouling from residual coagulant (iron) precipitation on membranes.",
+      "why_plausible": "FeCl3 is dosed at 1.5 mg/L; if pH or redox conditions change, iron could precipitate and foul lead elements, increasing ΔP.",
+      "why_discardable": "No change in pH (stable at 8.1) or chlorine residual; no iron measurement reported; the temporal correlation with the phytoplankton bloom and TEP spike is much stronger than any coagulant-related event. Iron fouling typically develops more gradually and would not explain the sudden TOC and TEP increase."
+    }
+  ],
+  "requested_data": "ATP (adenosine triphosphate) concentration in the feed water to RO, in pg/mL, to confirm biological activity.",
+  "recommended_action": "Initiate an emergency CIP (clean-in-place) using a two-step protocol: first, an alkaline cleaning with 0.1% NaOH and 0.05% Na-DSS (sodium dodecyl sulfate) at 35°C, recirculated for 60 minutes, followed by a freshwater flush; second, an acidic cleaning with 0.2% HCl at 35°C, recirculated for 30 minutes, followed by a freshwater flush. Do not exceed pH 12 in alkaline step or pH 2 in acidic step. Monitor ΔP and permeate flow during cleaning to assess effectiveness.",
+  "decision_change_condition": "If ATP measurement returns < 10 pg/mL, indicating low biological activity, then the main hypothesis would shift to particulate fouling from UF breakthrough, and the recommended action would change to inspecting and replacing cartridge filters and conducting a forensic autopsy of lead elements.",
+  "confidence": 85
+}

@@ -1,0 +1,36 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:47:28Z",
+  "main_hypothesis": "Fouling of RO membranes due to the presence of antifoaming agents from the refinery effluent.",
+  "key_signals": [
+    "Increase in ΔP stage 1 from 1.2 bar to 2.4 bar",
+    "Decrease in permeate flow rate by 12%",
+    "Decrease in surface tension from 72 mN/m to 58 mN/m",
+    "Visual inspection of cartridges showing gelatinous deposit",
+    "Increase in TOC from 1.2 mg/L to 2.9 mg/L",
+    "Increase in SDI from 2.5 to 4.5",
+    "Reported antifoam discharge from the refinery 10 days prior"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling due to cationic polymers from the neighboring plant.",
+      "why_plausible": "Neighboring plant reported an increase in cationic polymer dosage 5 days prior, which can cause fouling.",
+      "why_discardable": "The visual inspection of cartridges did not show typical signs of polymer fouling, which often appears as a more solid or fibrous deposit."
+    },
+    {
+      "hypothesis": "Biofouling due to increased organic content.",
+      "why_plausible": "Increase in ATP levels from 90 pg/mL to 240 pg/mL indicates higher biological activity.",
+      "why_discardable": "Biofouling typically presents with a more gradual increase in ΔP and is often accompanied by a more significant change in color or slimy texture, which was not reported."
+    }
+  ],
+  "requested_data": "Fourier-transform infrared spectroscopy (FTIR) analysis of the gelatinous deposit on the cartridges.",
+  "recommended_action": "Perform a low-pH clean-in-place (CIP) with citric acid at 2% concentration to remove organic fouling.",
+  "decision_change_condition": "If the FTIR analysis shows the presence of cationic polymers as the primary component of the fouling layer.",
+  "confidence": 80
+}

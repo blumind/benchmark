@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-003",
+    "subject_id": "gemini-2-5-flash-lite",
+    "subject_version": "gemini-2.5-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'incomplete flushing of preservation chemicals' matches glicerina anchor"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals listados (cond, glicerina, ORP, dP1, caudal, rechazo)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (procedimiento, defecto) - poco discriminadas"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: 'continue at normal pressure 58-60 bar' - viola gold (debe bajar P), generic"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (bisulfito + glicerina permeado tras 2h)"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: generica 'if cond/COD not improve... shift to permanent issue'"
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Mantiene presion nominal en lugar de bajar - sub-optimo"
+}

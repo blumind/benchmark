@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:39:39Z",
+  "main_hypothesis": "Ensuciamiento de la etapa 1 por materia orgánica natural (NOM) e hidróxidos/coloides de hierro arrastrados tras el episodio de lluvias y la sobredosificación de FeCl₃, que han generado fouling orgánico-férrico en los elementos frontales.",
+  "key_signals": [
+    "ΔP etapa 1 sube de 0,9 a 1,9 bar (>100%) mientras etapas 2 y 3 permanecen estables, patrón típico de fouling particulado/coloidal en cabeza de bastidor",
+    "TOC en alimentación a RO se duplica largamente (1,8 → 4,1 mg/L) tras la avenida del río",
+    "Cartuchos retirados presentan coloración marrón-anaranjada, compatible con óxidos/hidróxidos de Fe",
+    "Secuencia temporal: crecida del río (día -28) → sobredosis FeCl₃ a 8 mg/L (días -25 a -20) → subida de TOC (día -15) → subida de ΔP",
+    "SDI₁₅ sube de 2,2 a 3,9 y turbidez post-cartuchos de 0,08 a 0,18 NTU, indicando mayor carga coloidal pasando al RO",
+    "Conductividad de permeado estable (95 µS/cm) y caudal cayendo 8% con presión de alimentación subiendo: pérdida de permeabilidad sin pérdida de rechazo, consistente con fouling y no con daño de membrana ni escaling severo"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bioensuciamiento (biofouling) favorecido por cloraminación intermitente y aporte de NOM asimilable tras la avenida",
+      "why_plausible": "El aumento de TOC aporta sustrato biodegradable; la cloraminación intermitente puede dejar ventanas sin desinfección y los fosfonatos pueden ser fuente de P; el ΔP de etapa 1 es el punto típico de inicio del biofilm",
+      "why_discardable": "La evidencia visual directa (cartuchos marrón-anaranjados) y la coincidencia con la sobredosis de FeCl₃ apuntan más a fouling férrico/orgánico; el biofouling clásico suele desarrollarse en semanas-meses sin un disparador tan claro y a menudo presenta olor/limo característico no reportado"
+    },
+    {
+      "hypothesis": "Scaling de CaCO₃ o sales poco solubles en cola por recovery 80%",
+      "why_plausible": "Recovery alto (80%) y antiincrustante fosfonato pueden ser insuficientes si la calidad del agua cambió tras la crecida",
+      "why_discardable": "El scaling se manifiesta primero en la última etapa (etapa 3) con caída de rechazo de sales; aquí ΔP de etapas 2 y 3 está estable y la conductividad de permeado es estable"
+    },
+    {
+      "hypothesis": "Avería/canalización en filtros multicapa que dejó pasar coloides y finos al RO",
+      "why_plausible": "La turbidez post-cartuchos y el SDI subieron, sugiriendo deterioro del pretratamiento; coincide con la sobrecarga hidráulica",
+      "why_discardable": "Es contribuyente probable, pero es causa de aporte; la causa raíz de la deposición sigue siendo el material orgánico-férrico introducido y el fouling resultante. No explica por sí sola el color naranja de los cartuchos"
+    },
+    {
+      "hypothesis": "Sobredosificación residual de antiincrustante fosfonato precipitando con Fe (complejos Fe-fosfonato)",
+      "why_plausible": "Fosfonatos pueden formar precipitados insolubles con Fe³⁺ residual, depositándose en etapa 1",
+      "why_discardable": "Es en realidad un mecanismo dentro de la hipótesis principal (fouling férrico); no constituye una causa alternativa independiente con evidencia diferenciadora"
+    }
+  ],
+  "requested_data": "Análisis de Fe total y materia orgánica (LOI) en un autopsia o lavado destructivo de un elemento de etapa 1, o alternativamente Fe total (mg/L) en la alimentación al RO en los últimos 30 días",
+  "recommended_action": "Programar CIP en dos pasos en etapa 1 (preferentemente con elementos aislados): (1) limpieza ácida con ácido cítrico al 2% (p/p) ajustado a pH 3,5–4,0 con NH4OH, 35 °C, recirculación 1 h + remojo 2–4 h, para disolver hierro; seguida de (2) limpieza alcalina con NaOH a pH 11,5–12,0 + 0,025% (p/p) Na-EDTA y 0,025% (p/p) Na-DSS, 35 °C, recirculación 1 h + remojo 4 h, para remover orgánicos. Enjuagar con permeado entre pasos. Mientras tanto, reducir temporalmente el recovery al 70–75%, verificar la eficacia del coagulante (jar test) y reforzar la filtración multicapa; revisar el residual de Fe en alimentación a RO (<0,05 mg/L). Confirmar compatibilidad con el fabricante de membranas antes del CIP.",
+  "decision_change_condition": "Si el Fe total en alimentación a RO es <0,05 mg/L y la autopsia/cartuchos muestran predominio de material biológico (proteínas, polisacáridos, ATP elevado) sin depósito significativo de hierro, la hipótesis principal cambiaría a biofouling impulsado por NOM, y el orden de limpieza sería alcalino primero con biocida compatible.",
+  "confidence": 72
+}

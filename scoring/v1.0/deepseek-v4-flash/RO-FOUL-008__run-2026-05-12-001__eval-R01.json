@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-008-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-008",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling 28-day shutdown without biocide preservation'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ATP×16 + parada + olor H2S + ΔP."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (SCAL, coloidal, OXID degradation) anclados."
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "ACCIÓN DAÑINA: 'low-dose ClO2 shock 0.5 mg/L for 30 min' + cítrico — ClO2 a PA."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ATP RO feed — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Specific: ATP <100 + olor disappears → temporary contamination."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "ClO2 al feed. Case-specific 008 dice 'choque con hipoclorito' — ClO2 ≠ hipoclorito strict. C4=0 captura el daño."
+}

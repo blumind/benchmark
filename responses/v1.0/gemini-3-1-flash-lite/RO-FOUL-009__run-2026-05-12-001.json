@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:17:27Z",
+  "main_hypothesis": "Fouling orgánico y químico por surfactantes (antiespumantes) y polímeros catiónicos procedentes de la captación.",
+  "key_signals": [
+    "Caída marcada de la tensión superficial (72 a 58 mN/m)",
+    "Incremento del TOC en alimentación (1,2 a 2,9 mg/L)",
+    "Depósito gelatinoso en cartuchos",
+    "Subida brusca de ΔP en etapa 1",
+    "Aumento de SDI15 (2,5 a 4,5)",
+    "Reporte de vertido de antiespumante y uso de polímeros catiónicos en la captación"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling severo",
+      "why_plausible": "El aumento de ATP (90 a 240 pg/mL) y el depósito gelatinoso son consistentes con crecimiento biológico.",
+      "why_discardable": "El aumento de ATP es moderado y la caída drástica de la tensión superficial es un indicador específico de surfactantes, no de actividad biológica primaria."
+    },
+    {
+      "hypothesis": "Fouling por hidrocarburos (petróleo)",
+      "why_plausible": "La refinería cercana y el aumento de hidrocarburos medidos (2,1 mg/L) sugieren contaminación por crudo o derivados.",
+      "why_discardable": "Los hidrocarburos suelen causar un ensuciamiento más lento y menos gelatinoso que los surfactantes/polímeros, y la caída de tensión superficial es más característica de agentes tensioactivos."
+    }
+  ],
+  "requested_data": "Análisis de espectroscopía infrarroja (FTIR) del depósito gelatinoso extraído de los cartuchos de 5 µm.",
+  "recommended_action": "Realizar un lavado químico (CIP) de la etapa 1 utilizando una solución alcalina (pH 11-12) con detergente tensioactivo no iónico (concentración 0,5-1,0 % p/p) para solubilizar los compuestos orgánicos y surfactantes.",
+  "decision_change_condition": "Si el análisis de FTIR del depósito revelara una composición predominantemente inorgánica (ej. silicatos o carbonatos) en lugar de orgánica/polimérica.",
+  "confidence": 85
+}

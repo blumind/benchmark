@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-FOUL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:46:56Z",
+  "main_hypothesis": "Biofouling debido a la reducción en la frecuencia de dosificación de biocida (DBNPA)",
+  "key_signals": [
+    "Aumento de ΔP en la etapa 1 de 0,8 bar a 1,7 bar",
+    "Aumento de ATP en la alimentación RO de 110 pg/mL a 480 pg/mL",
+    "Disminución del caudal de permeado en un 8%",
+    "Cambio de color en el concentrado a amarillento",
+    "Aumento de TOC en la alimentación de 1,3 mg/L a 1,9 mg/L"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por materia orgánica no biológica",
+      "why_plausible": "El aumento de TOC en la alimentación podría indicar una mayor carga orgánica que no es necesariamente biológica.",
+      "why_discardable": "El aumento de ATP es un indicador específico de actividad biológica, lo que sugiere que el fouling es principalmente biológico."
+    },
+    {
+      "hypothesis": "Fouling por precipitación de sales inorgánicas",
+      "why_plausible": "El aumento de la presión de alimentación y la conductividad del permeado podrían indicar precipitación de sales.",
+      "why_discardable": "La estabilidad de la conductividad de la alimentación y la ausencia de cambios significativos en los niveles de Mn y Fe sugieren que el fouling inorgánico no es la causa principal."
+    }
+  ],
+  "requested_data": "Análisis microbiológico del concentrado para identificar tipos específicos de microorganismos",
+  "recommended_action": "Realizar una limpieza CIP con una solución alcalina (pH 12) y biocida a una concentración de 0,1% para eliminar el biofouling. Restablecer la dosificación de DBNPA cada 3 días hasta que los niveles de ATP se estabilicen por debajo de 200 pg/mL.",
+  "decision_change_condition": "Si el análisis microbiológico del concentrado no muestra una alta concentración de microorganismos, la hipótesis de biofouling sería menos probable.",
+  "confidence": 85
+}

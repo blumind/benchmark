@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:18:16Z",
+  "main_hypothesis": "Insufficient dosage of the new phosphonate-based antiscalant leading to calcium phosphate scaling in the second stage of the RO system.",
+  "key_signals": [
+    "Progressive increase in ΔP stage 2 from 0.9 bar to 1.7 bar over 40 days with the new antiscalant.",
+    "Decrease in permeate flow rate by 8% (333 m³/h to 305 m³/h).",
+    "Increase in feed pressure from 14.8 bar to 17.8 bar.",
+    "Temporary improvement in ΔP stage 2 after acidic CIP cleaning (HCl pH 2, 60 min).",
+    "Stable calcium and alkalinity levels in the reject stream."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling due to insufficient chlorine dosage.",
+      "why_plausible": "Biofouling can cause an increase in ΔP and a decrease in permeate flow.",
+      "why_discardable": "Free chlorine levels are stable and below 0.02 mg/L, which is typical for RO systems to prevent membrane damage. No indication of biological activity or changes in organic content."
+    },
+    {
+      "hypothesis": "Mechanical blockage or physical damage in the second stage.",
+      "why_plausible": "Physical blockage or damage can cause an increase in ΔP and a decrease in flow.",
+      "why_discardable": "The temporary improvement after CIP cleaning suggests a chemical rather than mechanical issue. No reports of mechanical incidents or maintenance that could cause physical damage."
+    }
+  ],
+  "requested_data": "Analysis of the membrane autopsy or detailed composition of the scale deposit in stage 2.",
+  "recommended_action": "Increase the dosage of the new phosphonate-based antiscalant to 2.0 ppm and monitor ΔP stage 2 and permeate flow for 7 days.",
+  "decision_change_condition": "If the analysis of the scale deposit indicates a significant presence of biological material or non-calcium phosphate compounds.",
+  "confidence": 80
+}

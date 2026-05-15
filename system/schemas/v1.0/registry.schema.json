@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://benchmark.blumind.es/schemas/v1.0/registry.schema.json",
+  "title": "BluMind Benchmark — Subject registry schema v1.0",
+  "description": "Validates the central registry of subjects (LLMs, expert systems, human baselines) eligible for evaluation under BluMind Benchmark. The canonical file lives at subjects/registry.yaml and is shared across benchmark versions: each subject's versions are evaluated under whichever benchmark_version is active when responses are produced. Cross-entry invariants — uniqueness of subject_id across the array, uniqueness of subject_version within each subject's 'versions' array — are enforced by the CI validator (scripts/validate_registry.py), not by this JSON Schema. The CI also converts YAML to JSON internally before validation.",
+  "type": "object",
+  "required": ["subjects"],
+  "properties": {
+    "subjects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["subject_id", "kind", "provider", "versions"],
+        "properties": {
+          "subject_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_-]*$",
+            "minLength": 2,
+            "maxLength": 64,
+            "description": "Unique short identifier of the subject. Used as a folder name under responses/<benchmark_version>/<subject_id>/ and scoring/<benchmark_version>/<subject_id>/. Lowercase alphanumeric plus hyphens and underscores; must start with an alphanumeric character. Avoid version numbers or dates in this field — those belong in subject_version."
+          },
+          "kind": {
+            "type": "string",
+            "enum": ["llm", "expert_system", "human_baseline", "committee"],
+            "description": "Category of subject. 'llm' for general-purpose language models. 'expert_system' for purpose-built diagnostic systems (rule-based, retrieval-augmented, hybrid). 'human_baseline' for reference scores produced by senior domain experts under benchmark conditions; serves as the leaderboard ceiling. 'committee' is reserved for collective evaluations by multiple humans (activated in v2.0+)."
+          },
+          "provider": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Organization or person providing the subject (e.g. 'OpenAI', 'Anthropic', 'BluMind Internal', 'BluMind Committee'). Free-text in v1.0; bound to a provider registry in v2.0+."
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional free-text description of the subject. May include training data scope, intended use, known limitations, deprecation notes."
+          },
+          "contact": {
+            "type": "string",
+            "description": "Optional contact channel (email or URL) for issues related to this subject's evaluations. Free-form string in v1.0."
+          },
+          "versions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["subject_version", "registered_at", "access_type"],
+              "properties": {
+                "subject_version": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Unique version identifier within this subject (e.g. 'gpt-5-2026-03-15', 'claude-opus-4-6-20260301', 'expert-r01-2026-04-22'). Should be deterministically reproducible: a re-run on the same subject_version is expected to produce the same response (within sampling stochasticity, which is minimised by temperature=0 in the prompt template)."
+                },
+                "registered_at": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "Date the version was registered for evaluation, in ISO 8601 (YYYY-MM-DD)."
+                },
+                "access_type": {
+                  "type": "string",
+                  "enum": ["api", "local_weights", "hosted_endpoint", "manual"],
+                  "description": "How the subject is accessed during evaluation. 'api' for a public cloud API. 'local_weights' for self-hosted weights running on BluMind infrastructure. 'hosted_endpoint' for a custom non-public endpoint provided by the provider. 'manual' for human_baseline or any subject where responses are transcribed by a human."
+                },
+                "provider_pins_id": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Optional. Set to true when the provider treats subject_id itself as the pinned snapshot identifier (e.g. Anthropic Claude Opus 4.6+ keeps a single fixed model behind the bare 'claude-opus-4-6' id). When true, subject_version is allowed to equal subject_id — the runtime served_model check remains the binding gate against alias drift."
+                },
+                "sampling_policy": {
+                  "type": "object",
+                  "description": "Required for kind='llm' subjects. Declares how the runner must shape the API call for this version, and is recorded verbatim in every response.json (field 'track') so each row of the public leaderboard can be annotated with the sampling mode it was produced under. The benchmark publishes a SINGLE leaderboard with this annotation as an informational column — in line with mainstream evaluation practice (HELM, MMLU-Pro, GPQA, Artificial Analysis, etc.) — rather than splitting models into separate non-comparable tables. Two modes are supported: 'classic' (temperature=0 sent to the provider, the original v1.0 contract documented in system/prompts/v1.0/prompt_template.md § EXECUTION PARAMETERS) and 'reasoning' (temperature/top_p/top_k omitted, the provider's own deterministic defaults are used, and a single portable knob — reasoning_effort — controls the cost/quality trade-off).",
+                  "required": ["kind"],
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "enum": ["classic", "reasoning"],
+                      "description": "Sampling mode this version is evaluated under. 'classic' = send temperature=0 (the v1.0 original contract). 'reasoning' = omit temperature/top_p/top_k entirely; rely on the provider's deterministic reasoning defaults and pass reasoning_effort if declared."
+                    },
+                    "reasoning_effort": {
+                      "type": "string",
+                      "enum": ["minimal", "low", "medium", "high"],
+                      "description": "Optional. Only valid when kind='reasoning'. Forwarded as LiteLLM's portable 'reasoning_effort' parameter, which providers translate to their native control: OpenAI GPT-5.x → reasoning.effort; Anthropic Claude Opus 4.7 → thinking.adaptive + output_config.effort; etc. This is the only knob the runner accepts for the reasoning track in v1.0; any provider-specific extra (verbosity, thinking budget, …) is left at the provider's own default so the track stays portable and comparable across providers."
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "notes": {
+                  "type": "string",
+                  "description": "Optional notes specific to this version (e.g. context window, sampling parameter overrides agreed with the provider, deprecation date, retraction)."
+                }
+              },
+              "additionalProperties": false
+            },
+            "description": "List of distinct versions of the subject that have been registered for evaluation. Each version is evaluated and reported independently in the leaderboard."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Array of subjects registered for evaluation. Must contain at least one entry. The CI validator (scripts/validate_registry.py) enforces uniqueness of subject_id across the array and uniqueness of subject_version within each subject's 'versions' array."
+    }
+  },
+  "additionalProperties": false
+}

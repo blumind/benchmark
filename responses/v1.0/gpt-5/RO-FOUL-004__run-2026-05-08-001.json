@@ -1,0 +1,44 @@
+{
+  "case_id": "RO-FOUL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:39:59Z",
+  "main_hypothesis": "Ensuciamiento orgánico-biológico agudo en los elementos líderes de la etapa 1 por TEP/alginatos procedentes del bloom de fitoplancton, con formación de capa gel y obstrucción del espaciador por arrastre insuficiente de TEP a través del pretratamiento (FeCl₃/UF) subóptimo.",
+  "key_signals": [
+    "ΔP etapa 1 (cabeza) sube bruscamente a 3,1 bar (desde 1,3 bar), mientras la cola permanece casi estable (0,8 bar), patrón típico de ensuciamiento en elementos líderes.",
+    "TOC a RO elevado (3,4 mg/L vs 1,2 mg/L) y TEP muy alto (320 µg/L Xeq), ambos coherentes con matriz orgánica pegajosa.",
+    "Clorofila-a en captación muy aumentada (28 µg/L vs 1,5 µg/L) y presencia de filamentos y olor terroso, indicativos de proliferación de fitoplancton y exopolímeros.",
+    "Caída del caudal de permeado del 11% y aumento de la presión de alimentación a 67 bar pese a ligera subida de temperatura (que debería reducir presión), señal de resistencia hidráulica por fouling.",
+    "Conductividad de permeado estable (410 µS/cm), lo que sugiere que el problema es hidráulico (ensuciamiento) y no pérdida de rechazo o daño de membrana.",
+    "SDI15 tras UF sube solo ligeramente (3,1), compatible con paso de TEP (no bien capturado por SDI) más que con sólidos gruesos."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento por coloides de hierro (Fe(OH)₃) debido a arrastre de coagulante o inestabilidad de flóculos.",
+      "why_plausible": "Los coloides de hierro precipitados/coagulados tienden a depositarse en los elementos líderes y elevan rápidamente el ΔP; el proceso usa FeCl₃ y el bloom puede desestabilizar la coagulación.",
+      "why_discardable": "La dosis de FeCl₃ es baja y no ha cambiado; no hay dato de hierro elevado tras UF/cartuchos; el evento está fuertemente correlacionado con TEP/TOC altos y señales biológicas, y el SDI solo sube levemente."
+    },
+    {
+      "hypothesis": "Particulate breakthrough por pérdida de integridad o rendimiento de la UF/cartuchos.",
+      "why_plausible": "El SDI15 aumentó y el bloom eleva la carga particulada; un breakthrough puede obstruir los elementos líderes y el espaciador.",
+      "why_discardable": "No hay salto brusco de SDI/turbidez; la cola de la etapa 1 no muestra aumento de ΔP; el patrón y las señales orgánicas (TEP/TOC/olor/filamentos) apuntan más a gel orgánico que a sólidos minerales."
+    },
+    {
+      "hypothesis": "Incrustación inorgánica (CaCO₃/CaSO₄) en etapa 1 por sobre-saturación.",
+      "why_plausible": "pH 8,1 y recuperación 42% pueden aumentar el riesgo de carbonato; la caída de permeado y el aumento de presión son compatibles con incrustación.",
+      "why_discardable": "La incrustación típicamente se manifiesta en elementos de cola/etapas posteriores, no solo en cabeza; el rechazo iónico (conductividad de permeado) permanece estable; coincide temporalmente con fuerte bloom/TEP."
+    },
+    {
+      "hypothesis": "Daño mecánico/compacción o mal montaje que eleva el ΔP en cabeza.",
+      "why_plausible": "Podría causar un aumento rápido del ΔP en elementos líderes.",
+      "why_discardable": "No explicaría el aumento de TOC/TEP ni los signos biológicos; el rechazo salino está estable; la compacción no produce patrón focalizado en cabeza con fuerte correlación a un bloom."
+    }
+  ],
+  "requested_data": "Hierro total en la alimentación a RO a la salida de cartuchos de 1 µm (µg/L).",
+  "recommended_action": "Mitigación inmediata y restauración: 1) Reducir temporalmente el flux de 12 a 10–11 L/m²·h y la recuperación de 42% a 38–40% para frenar la progresión del fouling. 2) Ejecutar CIP alcalino orientado a orgánicos/biofouling en los trenes afectados: preparar con permeado una solución de NaOH 1–2 g/L (0,1–0,2% p/p) + tensioactivo no iónico 1 g/L (0,1% p/p), calentar a 30–35 °C; recircular por vasija a 3–4 m³/h alternando sentido durante 45–60 min; dejar en remojo 60 min; enjuagar hasta pH ~7. Si el ΔP sigue >1,8 bar sobre baseline, realizar CIP ácido con ácido cítrico 20 g/L (2% p/p) a 25–30 °C durante 30–45 min y enjuagar. Garantizar Cl₂ libre <0,02 mg/L en todo momento. 3) Control durante el bloom: aumentar la dosis de FeCl₃ de 1,5 a 2,5–3,0 mg/L (misma base que la actual) tras prueba rápida en línea, buscando SDI15 ≤ 3,0 y minimización de TEP; implementar CEB de UF cada 12 h con NaOCl 200 mg/L como Cl₂ (10 min) y ácido cítrico 1–2 g/L (10 min), seguido de enjuague y verificación de Cl₂ libre <0,02 mg/L en la alimentación a RO (dosificar SMBS 2–3 mg/L si es necesario para descloración).",
+  "decision_change_condition": "Si el hierro total en la alimentación a RO (>100 µg/L) y la inspección/analítica de depósitos en elementos líderes evidencian predominio de óxidos/hidróxidos férricos (depósitos pardo-rojizos), cambiaría el diagnóstico a ensuciamiento por arrastre de coagulante/coloides inorgánicos.",
+  "confidence": 84
+}

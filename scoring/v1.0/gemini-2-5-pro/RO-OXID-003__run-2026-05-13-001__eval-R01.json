@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-003",
+    "subject_id": "gemini-2-5-pro",
+    "subject_version": "gemini-2.5-pro",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'daño oxidativo irreversible por cloro libre + fallo cascada decloración + rotura agitador' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts brief (MECH, biofouling, fallo múltiple sensores)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Detener trenes + NO reanudar hasta SBS reparado + cloro <0.02 — match gold (aislar)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide perfilado conductividad tubo presión — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: aumento sales concentrado en único punto → MECH (O-ring)."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

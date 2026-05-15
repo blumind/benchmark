@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:49:54Z",
+  "main_hypothesis": "Incompatibility or insufficient dosage of the new phosphonate-based antiscalant leading to rapid scaling of calcium carbonate or calcium sulfate in the second stage.",
+  "key_signals": [
+    "Rapid increase in stage 2 differential pressure (0.9 to 1.7 bar)",
+    "Failure of acid-based CIP to provide long-term relief (ΔP returned to 1.7 bar in only 5 days)",
+    "Significant increase in feed pressure (14.8 to 17.8 bar) indicating membrane fouling/scaling",
+    "Decrease in permeate flow (8% drop)",
+    "Temporal correlation between the change of antiscalant and the onset of fouling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biological fouling due to lack of biocide or nutrient carryover.",
+      "why_plausible": "Biofouling often manifests as a progressive increase in differential pressure.",
+      "why_discardable": "The rapid recurrence of ΔP after an acid CIP (which is ineffective against biofouling) and the lack of reported pressure drop in stage 1 (where biofouling usually initiates) make this less likely than inorganic scaling."
+    },
+    {
+      "hypothesis": "Colloidal fouling from the softener resin or upstream pretreatment.",
+      "why_plausible": "Softener resin degradation or breakthrough can cause particulate fouling.",
+      "why_discardable": "The rapid, aggressive nature of the ΔP increase and the specific timing following the chemical change strongly point to a chemical incompatibility or dosage issue rather than mechanical failure of the pretreatment."
+    }
+  ],
+  "requested_data": "Silt Density Index (SDI) and a chemical analysis of the scale removed during the CIP or a membrane autopsy (specifically looking for calcium carbonate vs. calcium sulfate/silicate).",
+  "recommended_action": "Immediately revert to the previous polyacrylic-based antiscalant at the original dosage of 3 ppm and perform a thorough alkaline CIP (pH 11-12) to remove potential organic/phosphonate-based deposits.",
+  "decision_change_condition": "If the SDI of the feed water is found to be consistently > 5.0, the diagnosis would shift to particulate/colloidal fouling from the pretreatment system.",
+  "confidence": 85
+}

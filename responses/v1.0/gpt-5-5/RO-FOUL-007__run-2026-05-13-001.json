@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:50:40Z",
+  "main_hypothesis": "Bioensuciamiento en los elementos de cabeza de la primera etapa, provocado por una carga elevada de materia orgánica biodegradable y biomasa que atravesó el pretratamiento tras el temporal, favorecida por ausencia de biocida rutinario y temperatura elevada.",
+  "key_signals": [
+    "El aumento de ΔP está fuertemente localizado en la cabeza de etapa 1: 2,5 bar frente a 1,4 bar de baseline, mientras la cola permanece estable en 0,6 bar.",
+    "El ATP en alimentación a RO subió marcadamente de 90 a 720 pg/mL, señal directa de incremento de actividad biológica.",
+    "El TOC en alimentación a RO se duplicó de 1,1 a 2,2 mg/L, aportando sustrato para crecimiento biológico.",
+    "El caudal permeado por tren cayó 8 % y la presión de alimentación subió de 64 a 70 bar, patrón compatible con ensuciamiento hidráulico.",
+    "La conductividad de alimentación se mantiene prácticamente estable, por lo que el deterioro no se explica por un cambio relevante de salinidad de entrada.",
+    "La conductividad de permeado solo sube ligeramente, compatible con polarización de concentración o ensuciamiento inicial, no con fallo masivo de membrana.",
+    "El SDI15 y la turbidez a la salida de cartuchos aumentaron, indicando deterioro del pretratamiento y mayor carga de sólidos/coloides que puede transportar biomasa.",
+    "La subida comenzó después del temporal y de la perturbación operativa del pretratamiento, con evolución lenta durante 12 días, típica de colonización y acumulación en los elementos líderes."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Arrastre de coagulante férrico o flóculo de FeCl3 hacia RO con ensuciamiento férrico-coloidal en los elementos de cabeza.",
+      "why_plausible": "La dosis de FeCl3 se mantuvo en 2 mg/L después de que la turbidez bajara, por encima del baseline de 0,8 mg/L; además subieron SDI15 y turbidez a la salida de cartuchos y el ΔP aumentó sobre todo en cabeza, patrón compatible con depósito de flóculo o hidróxido férrico.",
+      "why_discardable": "No se reporta hierro residual ni coloración/foulant férrico, y los indicadores biológicos son mucho más específicos: ATP de 90 a 720 pg/mL y TOC de 1,1 a 2,2 mg/L. El coagulante explica bien sólidos, pero no explica por sí solo el aumento marcado de ATP."
+    },
+    {
+      "hypothesis": "Ensuciamiento particulado por paso de sólidos finos asociado al temporal y a una pérdida temporal de eficiencia del pretratamiento.",
+      "why_plausible": "El temporal elevó la turbidez de captación hasta 6 NTU, y después se observan SDI15 de 4,0 frente a 2,5 y turbidez de 0,16 NTU frente a 0,07 NTU a la salida de cartuchos; el ensuciamiento particulado suele manifestarse en los elementos de cabeza.",
+      "why_discardable": "La turbidez actual a RO no es extrema y el caso muestra un aumento biológico muy marcado de ATP y TOC, que apunta a biofilm más que a depósito puramente mineral o inerte."
+    },
+    {
+      "hypothesis": "Incrustación mineral por alta salinidad, recovery de 40 % y temperatura elevada.",
+      "why_plausible": "La captación tiene TDS inusualmente alto y la temperatura subió a 31,5 °C, condiciones que aumentan el riesgo de sobresaturación de sales en SWRO.",
+      "why_discardable": "La incrustación suele aparecer con mayor intensidad hacia la cola/concentrado, mientras aquí el ΔP de cola está estable; el pH y la conductividad de alimentación están estables y hay dosificación de antiincrustante de 2,8 ppm."
+    },
+    {
+      "hypothesis": "Compactación o envejecimiento de membranas por mezcla de elementos nuevos y de 4 años.",
+      "why_plausible": "El 60 % de las membranas tiene 4 años y la presión de alimentación aumentó, por lo que una pérdida de productividad por envejecimiento es técnicamente posible.",
+      "why_discardable": "La compactación o envejecimiento no explican una subida rápida de ΔP localizada en la cabeza de la etapa 1 ni los aumentos simultáneos de ATP, TOC, SDI15 y turbidez."
+    }
+  ],
+  "requested_data": "ATP en el foulant retirado del espaciador de alimentación del primer elemento de etapa 1, expresado en pg ATP/cm².",
+  "recommended_action": "Aislar un tren afectado y ejecutar una limpieza CIP alcalina compatible con membrana poliamida, sin oxidantes: enjuague con permeado, recirculación de solución de NaOH 0,1 % p/p más SDS 0,1 % p/p ajustada a pH 11,5 y temperatura ≤35 °C durante 30 minutos, remojo 60 minutos, nueva recirculación 30 minutos y enjuague con permeado hasta pH de descarga estable; mantener FeCl3 en control por turbidez/jar-test, retornando inicialmente a 0,8 mg/L mientras la turbidez sea comparable al baseline.",
+  "decision_change_condition": "Cambiaría el diagnóstico principal a ensuciamiento férrico-coloidal si el foulant del elemento de cabeza mostrara ATP superficial bajo y predominio de hierro/hidróxido férrico; cambiaría a incrustación mineral si el aumento de ΔP apareciera principalmente en cola con evidencia analítica de sales precipitadas.",
+  "confidence": 72
+}

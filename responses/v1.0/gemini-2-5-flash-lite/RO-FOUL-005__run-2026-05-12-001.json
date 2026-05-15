@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:52:22Z",
+  "main_hypothesis": "Obstrucción de las membranas de ósmosis inversa por depósitos de óxido de hierro (Fe₂O₃·nH₂O) debido a una dosificación excesiva y prolongada de FeCl₃.",
+  "key_signals": [
+    "ΔP etapa 1 cabeza: 2,2 bar (subida sostenida)",
+    "Presión alimentación tren: 63 bar (subida)",
+    "Caudal permeado tren: 196 m³/h (bajada del 9 %)",
+    "Fe total alimentación RO: 0,42 mg/L (subida marcada)",
+    "SDI₁₅ salida cartuchos: 4,2 (subida marcada)",
+    "Turbidez salida cartuchos: 0,22 NTU (subida)",
+    "Trazas de Fe (color amarillo-anaranjado) en muestras puntuales tras filtros de arena",
+    "Coloración rojiza intensa en cartuchos a la salida"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling biológico en las membranas de ósmosis inversa.",
+      "why_plausible": "El ATP en la alimentación RO es ligeramente elevado (95 pg/mL vs 80 pg/mL baseline), lo que podría indicar un crecimiento microbiano. El fouling biológico puede causar un aumento de ΔP y una disminución del caudal de permeado.",
+      "why_discardable": "La evidencia de hierro es abrumadora (coloración, Fe total elevado, SDI y turbidez elevados tras cartuchos). El fouling biológico típicamente no causa una coloración rojiza intensa en los cartuchos ni un aumento tan marcado del Fe total en la alimentación RO. El ATP no está significativamente elevado para ser la causa principal."
+    },
+    {
+      "hypothesis": "Obstrucción de los cartuchos de 5 µm por partículas sólidas, lo que provoca un aumento de la presión de alimentación y una reducción del caudal de permeado.",
+      "why_plausible": "El SDI₁₅ y la turbidez de salida de los cartuchos han aumentado significativamente, lo que indica que los cartuchos están perdiendo eficacia. El aumento de la presión de alimentación y la disminución del caudal de permeado son consistentes con una mayor resistencia al flujo a través de los cartuchos obstruidos.",
+      "why_discardable": "Si bien los cartuchos están claramente afectados, la causa raíz del problema parece ser la carga de hierro. La coloración rojiza intensa de los cartuchos y el alto Fe total en la alimentación RO sugieren que el hierro es el principal contaminante que causa la obstrucción, no solo partículas inertes generales. La obstrucción de los cartuchos es un síntoma de la sobre-dosificación de FeCl₃."
+    },
+    {
+      "hypothesis": "Fallo de las membranas de ósmosis inversa (p. ej., rotura de un elemento).",
+      "why_plausible": "Un fallo en una membrana podría causar un aumento de la presión de alimentación y una disminución del caudal de permeado. Sin embargo, la conductividad del permeado se mantiene estable, lo que descarta un fallo de selectividad significativo.",
+      "why_discardable": "La conductividad del permeado es estable, lo que indica que la selectividad de las membranas no se ha visto comprometida de forma generalizada. El aumento de ΔP y la disminución del caudal son más consistentes con una obstrucción física que con un fallo de integridad de la membrana. La evidencia de hierro es la causa más probable de la obstrucción."
+    }
+  ],
+  "requested_data": "Análisis de la composición de los depósitos en los cartuchos de 5 µm y en las membranas de RO (porcentaje de Fe).",
+  "recommended_action": "Detener inmediatamente el tren de RO. Realizar un lavado químico de las membranas de RO con una solución de ácido cítrico o EDTA para disolver los depósitos de óxido de hierro, seguido de un lavado con agua. Inspeccionar y reemplazar los cartuchos de 5 µm. Ajustar la dosificación de FeCl₃ a un valor dentro del rango recomendado (1-2 mg/L) y monitorizar el Fe total en la alimentación RO y el SDI₁₅ de salida de los cartuchos.",
+  "decision_change_condition": "Si el análisis de los depósitos en los cartuchos y membranas revela una composición predominantemente biológica o de sales inorgánicas distintas al óxido de hierro, la hipótesis principal cambiaría.",
+  "confidence": 95
+}

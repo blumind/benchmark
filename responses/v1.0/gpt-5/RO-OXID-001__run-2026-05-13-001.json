@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:36:53Z",
+  "main_hypothesis": "Daño oxidativo del film de poliamida en las membranas SWRO por paso de oxidante (cloro/bromo activo) debido a agotamiento del lecho de CAG tras aumentar la frecuencia de choques con hipoclorito.",
+  "key_signals": [
+    "Cloro libre antes de RO = 0,18 mg/L y tras CAG = 0,18 mg/L (antes <0,02 mg/L): clara penetración de oxidante al skid.",
+    "ORP antes de RO sube de +90 mV a +320 mV: ambiente fuertemente oxidante.",
+    "Rechazo de sales baja de 99,1 % a 96,2 % con ΔP de etapas estable y solo −2 % de caudal: patrón típico de oxidación (pérdida de rechazo sin fouling mecánico).",
+    "Conductividad de permeado sube bruscamente de 380 a 1.200 µS/cm en ~7–10 días: incremento de paso salino.",
+    "Iodo de poros del CAG al día −45 indica solo 25 % de capacidad residual; al día −10 ORP tras CAG empieza a oscilar y al día −5 ya hay 0,12 mg/L de cloro tras CAG: evidencia de agotamiento del CAG.",
+    "Aumento de frecuencia de choque con NaOCl al día −30: mayor carga oxidante que el CAG no pudo amortiguar."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Mezcla permeado/salmueras por fallo mecánico local (O-ring/interconector/end-cap) en uno o varios vasos.",
+      "why_plausible": "Un bypass mecánico puede elevar de forma súbita la conductividad de permeado sin cambiar significativamente ΔP ni caudales.",
+      "why_discardable": "Coincide temporalmente con paso de oxidante (cloro tras CAG y ORP alto) y señales de agotamiento del CAG; el problema parece generalizado, no localizado, y no hay otras señales de fallo mecánico."
+    },
+    {
+      "hypothesis": "Error de medición de conductividad de permeado.",
+      "why_plausible": "Un salto brusco podría deberse a sonda descalibrada.",
+      "why_discardable": "La caída de rechazo calculado confirma el aumento de paso salino y hay múltiples evidencias independientes de oxidante en la alimentación (cloro/ORP), coherentes con daño real."
+    },
+    {
+      "hypothesis": "Ensuciamiento/compactación de membranas.",
+      "why_plausible": "Cambios de rendimiento pueden afectar el rechazo.",
+      "why_discardable": "El fouling típico aumenta ΔP y reduce caudal; aquí ΔP es estable y el caudal apenas cae, mientras el rechazo baja de forma marcada y brusca, más consistente con oxidación."
+    }
+  ],
+  "requested_data": "Conductividad de permeado por vaso de presión (µS/cm) en un tren representativo.",
+  "recommended_action": "Detener cualquier dosificación de oxidantes en captación y garantizar 0,00–0,02 mg/L de oxidante a la entrada de RO: instalar/activar dosificación de bisulfito (recomendado metabisulfito sódico, Na2S2O5, disolución al 38 % p/p) aguas abajo del CAG, dosificando inicialmente 2,0–3,0 mg/L como Na2S2O5 por cada 1,0 mg/L de oxidante medido (como Cl2), y ajustar para mantener ORP 0 a +150 mV y cloro libre <0,02 mg/L (DPD) en la brida de entrada al skid. Sustituir de inmediato el medio del CAG y, una vez asegurada la dechloración, realizar diagnóstico por tren/vaso (perfil de conductividad) para identificar y reemplazar los elementos con paso salino elevado. Si no se puede garantizar residual 0, parar los trenes afectados para evitar más daño.",
+  "decision_change_condition": "Si con residual de oxidante en la entrada de RO mantenido en 0,00 mg/L (DPD) y ORP < +150 mV el perfil de conductividad por vaso muestra uno o pocos vasos con conductividad anómala y el resto normal, cambiaría el diagnóstico a bypass mecánico (O-ring/interconector) en esos vasos, no a daño oxidativo generalizado.",
+  "confidence": 88
+}

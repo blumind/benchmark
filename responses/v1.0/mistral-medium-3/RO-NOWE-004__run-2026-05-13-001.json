@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-NOWE-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:25:58Z",
+  "main_hypothesis": "Entrada de aire en el sistema durante el mantenimiento, formando bolsas de aire atrapadas en los elementos de la membrana.",
+  "key_signals": [
+    "Sonido de 'borboteo' intermitente reportado en el bastidor durante el arranque",
+    "Balance de caudales no cierra al 92% (fuera de la tolerancia esperada del 5%)",
+    "ΔP en etapas 1 y 2 por debajo de la baseline con tendencia de subida lenta",
+    "Conductividad del permeado inicialmente alta (510 µS/cm) con tendencia descendente lenta",
+    "La línea estuvo abierta a la atmósfera durante el mantenimiento"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga en la junta de la tubería recién reemplazada",
+      "why_plausible": "El mantenimiento reciente incluyó el reemplazo de una junta en la tubería, lo que podría haber introducido una fuga.",
+      "why_discardable": "La prueba de presión inicial fue positiva, lo que hace menos probable una fuga significativa."
+    },
+    {
+      "hypothesis": "Contaminación química de la membrana",
+      "why_plausible": "El mantenimiento podría haber introducido contaminantes en el sistema.",
+      "why_discardable": "No hay indicios de cambios en el ORP o el cloro libre que sugieran contaminación química."
+    }
+  ],
+  "requested_data": "Imagen de ultrasonido de los elementos de la membrana para detectar bolsas de aire",
+  "recommended_action": "Realizar un procedimiento de purgado de aire en los elementos de la membrana, siguiendo el protocolo estándar de arranque post-mantenimiento.",
+  "decision_change_condition": "Si la imagen de ultrasonido no muestra bolsas de aire en los elementos de la membrana.",
+  "confidence": 85
+}

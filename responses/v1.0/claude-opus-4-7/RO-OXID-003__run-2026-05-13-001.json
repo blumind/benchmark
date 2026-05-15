@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:51:02Z",
+  "main_hypothesis": "Daño oxidativo por cloro libre en las membranas SWRO debido a fallo del agitador del tanque de SBS, que provocó estratificación de la solución y dosificación efectiva nula de bisulfito, dejando pasar cloro libre (~0,4 mg/L) al bastidor durante varios días.",
+  "key_signals": [
+    "Caudal de SBS dosificado 0 L/h frente a 18 L/h baseline",
+    "ORP tras dosificación SBS +540 mV (esperado <0 mV, baseline -50 mV)",
+    "Cloro libre antes RO 0,42 mg/L vs <0,02 mg/L baseline",
+    "Inspección día -1: agitador parado y solución estratificada (0,2% p/p real vs 25% preparado en punto de aspiración)",
+    "Caída de rechazo de sales de 99,3% a 98,7% y subida de conductividad de permeado de 380 a 720 µS/cm",
+    "Secuencia temporal: mantenimiento día -8, oscilación ORP día -3, alarmas cloro día -2, degradación progresiva del permeado",
+    "ΔP de etapas estable (descarta ensuciamiento mecánico/biológico como causa primaria de la pérdida de rechazo)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga/bypass de o-rings o interconectores en tubos de presión que permite paso de salmuera al permeado",
+      "why_plausible": "Una subida brusca de conductividad de permeado con ΔP estables puede deberse a fuga mecánica en juntas o sondas de permeado dañadas.",
+      "why_discardable": "No explica el cloro libre alto ni el ORP +540 mV antes del RO; la coincidencia temporal con el fallo de SBS y la evidencia directa de estratificación del tanque hacen esta causa secundaria poco probable como raíz."
+    },
+    {
+      "hypothesis": "Ensuciamiento/incrustación con polarización de concentración elevada",
+      "why_plausible": "Pérdida de rechazo y caída de caudal de permeado pueden ocurrir con scaling.",
+      "why_discardable": "ΔP por etapas estables, temperatura y conductividad de alimentación estables; el patrón típico de scaling muestra subida de ΔP en etapa 2 y no se observa."
+    },
+    {
+      "hypothesis": "Sensor de conductividad de permeado descalibrado",
+      "why_plausible": "Operador atribuyó alarmas previas a problemas de calibración.",
+      "why_discardable": "El rechazo calculado coherente con el aumento, junto con cloro libre y ORP elevados medidos independientemente, confirman un evento físico real, no un artefacto de medición."
+    }
+  ],
+  "requested_data": "Test de integridad por sondeo de conductividad de permeado tren por tren y por tubo de presión (µS/cm), más prueba Fujiwara en muestras de membrana para confirmar halogenación de la poliamida.",
+  "recommended_action": "1) Parar inmediatamente la dosificación de hipoclorito en captación o aislar el bastidor RO de la alimentación clorada hasta restablecer reducción de cloro. 2) Reparar/reemplazar el agitador del tanque de SBS, homogeneizar y verificar concentración por titulación (objetivo 25% p/p de Na₂S₂O₅ o NaHSO₃ según ficha). 3) Reanudar dosificación SBS a 4 mg/L y confirmar ORP <+200 mV antes RO y cloro libre <0,02 mg/L durante 30 min mínimo antes de readmitir caudal a las membranas. 4) Implementar enclavamiento (interlock) que detenga la alimentación al RO si ORP antes RO >+300 mV o cloro libre >0,05 mg/L. 5) Tras estabilización, ejecutar lavado CIP alcalino (NaOH pH 12, 35°C) seguido de evaluación de rechazo por tren; planificar Fujiwara y posible sustitución de elementos en trenes con rechazo individual <99%. 6) Auditoría de la gestión de alarmas silenciadas.",
+  "decision_change_condition": "Si la prueba Fujiwara resulta negativa en todos los trenes y el rechazo se recupera tras eliminar el cloro y hacer CIP, la causa raíz sería transitoria (oxidación reversible/leve) y no daño permanente; si además se detectaran fugas mecánicas localizadas en sondeo por tubo, el diagnóstico cambiaría a falla de o-rings concurrente.",
+  "confidence": 93
+}

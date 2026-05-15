@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:05:09Z",
+  "main_hypothesis": "Aclarado pre-arranque insuficiente de la solución de preservación (bisulfito + glicerina) del nuevo proveedor: se ejecutó 1 aclarado de 30 min en lugar de los 3 aclarados de 1 h recomendados, dejando glicerina y bisulfito residuales en las membranas, lo que explica el ORP deprimido, la glicerina en permeado, la conductividad elevada transitoria y el caudal reducido por bloqueo osmótico/viscoso temporal de la superficie activa.",
+  "key_signals": [
+    "Solo 1 aclarado de 30 min ejecutado vs 3 aclarados de 1 h recomendados por el proveedor",
+    "Glicerina/COD en permeado 320 mg/L (vs <50 esperado) con tendencia descendente lenta",
+    "ORP alimentación -10 mV (esperado +90 mV), compatible con bisulfito residual saliendo del tren",
+    "Conductividad de permeado en bajada lenta (720 → 580 µS/cm) y caudal en subida lenta (70%): patrón típico de lavado progresivo de preservante",
+    "Cloro libre <0,02 mg/L y pH normal: descarta oxidación; el ORP bajo es por reductor (bisulfito), no por falta de cloraminación",
+    "ΔP etapa 1 ligeramente elevado (1,5 vs 1,1 bar) consistente con glicerina viscosa aún presente"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño oxidativo o defecto de fabricación de los elementos nuevos del nuevo proveedor (rechazo permanentemente bajo)",
+      "why_plausible": "Es un proveedor distinto, primer uso; el rechazo 98,97% es bajo para membrana nueva SWRO.",
+      "why_discardable": "La conductividad y el caudal están mejorando con el tiempo, lo que es incompatible con daño irreversible; además cloro libre <0,02 mg/L y sin histórico oxidativo."
+    },
+    {
+      "hypothesis": "Ramp-up demasiado rápido (5 min vs 30 min) que provocó telescoping o compactación irregular",
+      "why_plausible": "El procedimiento histórico difiere; un ramp-up agresivo puede causar daño mecánico y ΔP elevado.",
+      "why_discardable": "El ΔP solo está moderadamente elevado y estable, sin signos de telescoping (no hay salto brusco de conductividad ni ΔP creciente); las tendencias mejoran."
+    },
+    {
+      "hypothesis": "Fuga en o-rings/interconectores por montaje incorrecto de elementos de geometría ligeramente distinta",
+      "why_plausible": "Proveedor nuevo, tolerancias pueden diferir; explicaría rechazo bajo persistente.",
+      "why_discardable": "No explica glicerina en permeado ni ORP negativo; además el rechazo está mejorando, lo que una fuga mecánica no haría espontáneamente."
+    }
+  ],
+  "requested_data": "Conductividad de permeado, COD/glicerina en permeado y ORP de alimentación medidos tras ejecutar 2 aclarados adicionales de 60 min con permeado a baja presión (≤5 bar), reportados como serie temporal cada 15 min.",
+  "recommended_action": "Parar el Tren T-05 y ejecutar el procedimiento del fabricante: 2 aclarados adicionales con permeado a baja presión (≤5 bar, sin producción) de 60 min cada uno hasta que ORP alimentación >+50 mV, COD permeado <50 mg/L y conductividad permeado estabilizada; luego ramp-up controlado de 30 min hasta presión nominal. Mantener antiincrustante a 3 ppm y verificar ausencia de cloro libre (<0,02 mg/L) antes de presurizar. No dosificar oxidantes ni limpieza química en esta fase.",
+  "decision_change_condition": "Si tras completar los 2 aclarados adicionales (con ORP ≥ +50 mV y glicerina permeado <50 mg/L confirmados) el rechazo de sales permanece <99,2% y el caudal <85% del nominal normalizado a temperatura/presión, entonces la hipótesis cambiaría a defecto de fabricación de los elementos o fuga en interconectores/o-rings, y procedería con prueba de sonda (probing) por tubo de presión.",
+  "confidence": 78
+}

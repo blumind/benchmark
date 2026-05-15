@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-MECH-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:26:59Z",
+  "main_hypothesis": "Fuga de salmuera hacia el colector de permeado en el Tubo 4 del T-02 causada por un O-ring de interconector/adaptador de permeado mal asentado, dañado o de especificación incorrecta instalado durante la reinstalación.",
+  "key_signals": [
+    "Subida brusca y sostenida de la conductividad del permeado del T-02 tras la reinstalación (de 390 a 1.350 µS/cm) con caudal y ΔP prácticamente estables.",
+    "Probe test por tubo: el Tubo 4 presenta 4.100 µS/cm mientras el resto está en 380–420 µS/cm (problema localizado).",
+    "Test de presión del Tubo 4 con anomalía consistente con paso de salmuera por una junta interna.",
+    "Operario reporta que “uno de los O-rings nuevos parecía rígido” durante el montaje previo.",
+    "Trenes vecinos con conductividad de permeado y ΔP normales (problema no sistémico del agua de entrada ni de membranas del tren completo).",
+    "ΔP de etapa 1 y presión de alimentación del T-02 estables respecto a baseline (no indica ensuciamiento general ni daño extendido)."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Grieta en el tubo de permeado o en el end-cap de un elemento del Tubo 4 por daño mecánico durante la manipulación.",
+      "why_plausible": "Una fisura permitiría mezcla directa de salmuera con el permeado del tubo, elevando drásticamente su conductividad y manteniéndose localizada.",
+      "why_discardable": "El test de presión indica fuga a través de una junta interna y existe evidencia de O-ring potencialmente defectuoso; además, el comentario sobre el O-ring rígido apunta más a un problema de sellado que a rotura estructural."
+    },
+    {
+      "hypothesis": "Elemento instalado al revés o brine seal (u-cup) mal asentado en el Tubo 4.",
+      "why_plausible": "El montaje incorrecto puede causar bypass de alimentación y aumento del paso de sales.",
+      "why_discardable": "Un brine seal mal asentado produce bypass entre alimentación y concentrado, no mezcla directa hacia el colector de permeado; el patrón de fuga y el test de presión señalan una junta del lado de permeado."
+    },
+    {
+      "hypothesis": "Rotura de hoja (tear) o delaminación de la membrana en un elemento del Tubo 4.",
+      "why_plausible": "Elevaría la conductividad del permeado en ese tubo tras manipulación fuera de línea.",
+      "why_discardable": "La evidencia de fuga por junta interna y el test de presión son más consistentes con un fallo de sellado; además, los flujos y ΔP no muestran cambios propios de daño severo de hojas."
+    },
+    {
+      "hypothesis": "Conexión externa errónea en las vainas/colectores de permeado del Tubo 4.",
+      "why_plausible": "Una conexión cruzada podría introducir salmuera al colector de permeado del tubo.",
+      "why_discardable": "La inspección visual del Tubo 4 confirmó conexiones de vainas de permeado correctas; por lo tanto, es poco probable una mis-conexión externa."
+    }
+  ],
+  "requested_data": "Resultado de inspección tras abrir el Tubo 4: estado del O-ring del adaptador de permeado (intacto y bien asentado vs dañado/mal asentado/medida incorrecta).",
+  "recommended_action": "Parar y aislar el tren T-02; despresurizar, drenar y aplicar LOTO. Abrir el Tubo 4 por ambos extremos. Extraer los 7 elementos con útil adecuado y, uno a uno, inspeccionar y sustituir todos los O-rings del lado de permeado (interconectores y adaptadores de cabezal/cola) por repuestos OEM correctos según fabricante; lubricar con glicerina USP o lubricante compatible con RO y comprobar asiento sin pellizcos ni torsión. Verificar también orientación y asiento de brine seals. Reensamblar el Tubo 4 y realizar prueba de estanqueidad según manual del fabricante usando únicamente agua: presurizar el lado de alimentación a ~4–5 bar con el colector de permeado abierto y confirmar ausencia de paso (sin goteo/caudal apreciable por la línea de permeado). No usar aire comprimido. Una vez superada la prueba, poner en servicio y revalidar conductividad de permeado por tubo.",
+  "decision_change_condition": "Si al abrir el Tubo 4 los O-rings están intactos y correctamente asentados y, tras sustituirlos por nuevos OEM, la prueba de estanqueidad sigue mostrando paso de salmuera o la conductividad del Tubo 4 permanece alta, cambiaría el diagnóstico a daño físico de un elemento (grieta en tubo de permeado o rotura de hoja) como causa principal.",
+  "confidence": 90
+}

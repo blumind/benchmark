@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-001-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-001",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling 1ª etapa' literal; causa atribuida a breakthrough orgánico tras turbidez + cambio coagulante."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ΔP1↑+ATP×7+SDI↑+conductividad estable+ORP estable como argumento contra OXID/MECH."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts de 3 familias (FOUL Fe, SCAL, OXID, MECH UF) con why_discardable anclado a señales específicas."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP NaOH+SDS+EDTA opc; NaOCl SOLO en UF CEB con dechlorination explícita <0.02 antes de RO."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide Fe total — dato estándar; trigger del gold es ATP/cultivo en rechazo o autopsia."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-umbral: Fe ≥200 + ATP ≤2 + SDI ≤3 → switch a Fe coloidal."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Pierde C5 por elegir alt-discriminator en vez del MH-trigger."
+}

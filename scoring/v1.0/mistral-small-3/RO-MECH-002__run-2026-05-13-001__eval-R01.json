@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-002",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'daño físico primer elemento telescoping + sobrepresión transitoria rearranque + rampa VFD ajustada incorrectamente' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (fouling, sellos conexiones, OXID, VFD pulsaciones)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Aislar + reemplazar primer elemento + probe test + rampa VFD 120s + monitoreo tiempo real — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide perfil presión SCADA durante rearranque — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: pulsaciones <20 bar sin picos → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

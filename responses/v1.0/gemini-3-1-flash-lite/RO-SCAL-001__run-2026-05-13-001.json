@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:49:14Z",
+  "main_hypothesis": "Incrustación por carbonato de calcio (CaCO3) en la segunda etapa debido a una dosificación insuficiente de antiincrustante y un pH de alimentación elevado.",
+  "key_signals": [
+    "Caudal de antiincrustante medido de 0,3 L/h frente a 1,8 L/h de consigna",
+    "Subida marcada del pH de alimentación de 6,7 a 7,3",
+    "Aumento significativo del ΔP en la etapa 2 (de 0,8 a 2,1 bar)",
+    "Subida de la conductividad del permeado",
+    "Presencia de espuma y pulsaciones irregulares en la bomba peristáltica tras el cambio de manguera"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bioincrustación (Biofouling)",
+      "why_plausible": "El aumento de ΔP en la segunda etapa es un síntoma clásico de biofouling, y la espuma en el tanque podría indicar contaminación biológica.",
+      "why_discardable": "La caída drástica en el caudal de antiincrustante y el aumento del pH explican directamente la precipitación química, lo cual es más consistente con la cronología de los eventos de mantenimiento."
+    },
+    {
+      "hypothesis": "Fallo mecánico de la bomba de antiincrustante (obstrucción)",
+      "why_plausible": "La bomba presenta pulsaciones irregulares y un caudal medido muy inferior al esperado.",
+      "why_discardable": "Aunque el fallo de la bomba es el mecanismo de transporte, la causa raíz del problema de calidad de agua es la falta de inhibición química combinada con el pH elevado, no solo el fallo mecánico en sí."
+    }
+  ],
+  "requested_data": "Análisis de autopsia de un elemento de membrana de la segunda etapa (análisis de depósitos mediante microscopía electrónica de barrido/EDX).",
+  "recommended_action": "Restaurar el pH de alimentación a 6,7 mediante el ajuste de la bomba de H2SO4, purgar y cebar correctamente la bomba peristáltica de antiincrustante para alcanzar el caudal de 1,8 L/h, y realizar una limpieza química (CIP) ácida específica para carbonatos (pH 2,0-3,0) en la segunda etapa.",
+  "decision_change_condition": "Si el análisis de los depósitos en la membrana revelara una composición mayoritaria de materia orgánica o polisacáridos en lugar de carbonato de calcio.",
+  "confidence": 95
+}

@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:39:37Z",
+  "main_hypothesis": "Agotamiento del lecho de carbón activado granular (CAG) debido a la mayor frecuencia de dosificación de hipoclorito sódico, lo que ha resultado en un paso de cloro libre a las membranas de ósmosis inversa (RO) y su degradación.",
+  "key_signals": [
+    "Cloro libre antes RO: 0.18 mg/L (subida marcada desde < 0.02 mg/L)",
+    "ORP antes RO: +320 mV (subida marcada desde +90 mV)",
+    "Conductividad permeado: 1.200 µS/cm (subida brusca desde 380 µS/cm)",
+    "Rechazo de sales: 96.2% (bajada marcada desde 99.1%)",
+    "Capacidad residual del CAG del 25% reportada en el día -45",
+    "Aumento de frecuencia de choque con hipoclorito desde el día -30"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Falla en los cartuchos de 5 µm permitiendo el paso de partículas que dañan las membranas RO.",
+      "why_plausible": "El aumento en la presión diferencial podría indicar obstrucción o falla en los cartuchos.",
+      "why_discardable": "No hay señal de aumento en ΔP en las etapas 1 o 2 que indique obstrucción significativa."
+    },
+    {
+      "hypothesis": "Contaminación biológica en las membranas RO debido a la inefectividad del pretratamiento.",
+      "why_plausible": "El ATP estable sugiere que podría haber biofouling no detectado.",
+      "why_discardable": "La conductividad y el rechazo de sales son más consistentes con daño por cloro que con biofouling."
+    }
+  ],
+  "requested_data": "Análisis de integridad de las membranas RO mediante prueba de presión de burbuja o prueba de vacío.",
+  "recommended_action": "Detener inmediatamente la dosificación de hipoclorito sódico y reemplazar el lecho de CAG. Realizar un lavado químico de las membranas RO con una solución de bisulfito sódico al 0.5% para neutralizar el cloro residual.",
+  "decision_change_condition": "Si el análisis de integridad de las membranas RO no muestra daño significativo, entonces la hipótesis principal cambiaría a un problema de contaminación biológica o falla en los cartuchos.",
+  "confidence": 85
+}

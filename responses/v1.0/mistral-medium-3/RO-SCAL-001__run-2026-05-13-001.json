@@ -1,0 +1,36 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:53:10Z",
+  "main_hypothesis": "Fallo en la dosificación de antiincrustante debido a la manguera no cebada correctamente en la bomba peristáltica",
+  "key_signals": [
+    "Caudal de antiincrustante medido bajó drásticamente de 1.8 L/h a 0.3 L/h",
+    "Subida marcada de ΔP en la etapa 2",
+    "Subida de la presión de alimentación",
+    "Bajada del caudal de permeado",
+    "pH de alimentación a RO subió de 6.7 a 7.3",
+    "Espuma en el tanque del antiincrustante y pulsación irregular de la bomba",
+    "Mantenimiento preventivo trimestral donde se cambió la manguera de la bomba peristáltica y no se ejecutó el cebado completo"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por materia orgánica o biológica",
+      "why_plausible": "La bajada del caudal de permeado y el aumento de ΔP en la etapa 2 podrían indicar fouling",
+      "why_discardable": "No hay indicios de aumento en cloro libre o cambios en la conductividad que sugieran fouling biológico"
+    },
+    {
+      "hypothesis": "Fouling por sílice",
+      "why_plausible": "La sílice en el rechazo es estable pero podría contribuir al fouling",
+      "why_discardable": "No hay un aumento significativo en la sílice y el fouling por sílice generalmente ocurre a niveles más altos"
+    }
+  ],
+  "requested_data": "Análisis de la concentración de antiincrustante en el agua de alimentación a la RO (ppm)",
+  "recommended_action": "Detener la planta, realizar un cebado completo de la bomba peristáltica de antiincrustante y verificar el caudal de dosificación. Ajustar el pH de alimentación a 6.7 con H₂SO₄.",
+  "decision_change_condition": "Si el análisis de la concentración de antiincrustante en el agua de alimentación muestra niveles adecuados (2.5 ppm), entonces la hipótesis principal sería descartada.",
+  "confidence": 85
+}

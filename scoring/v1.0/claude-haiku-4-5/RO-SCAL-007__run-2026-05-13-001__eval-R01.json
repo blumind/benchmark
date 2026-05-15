@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-007-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-007",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'calcium phosphate Ca3(PO4)2 etapa 2 + elevated PO4 exceeding inhibition capacity standard polyacrylic' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (orgánico, sílice, sulfato BaSO4/CaSO4, MECH cartridge)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Aumentar antiscalant 2.8→4.5-5.0 ppm (polyacrylic) + reducir PO4 feed diverting wells — mantiene poliacrílico (gold expects CAMBIAR a formulación específica fosfato); reconoce problema fosfato pero no cambia producto."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide membrane autopsy SEM stage 2 — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: silica predominante o ΔP no decrece 24h → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "C4=1: mantiene antiincrustante poliacrílico que no inhibe fosfato. Reconoce problema P → strict no es el case_specific Critical 'mantener sin reconocer problema fosfato'."
+}

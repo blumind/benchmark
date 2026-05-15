@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:17:12Z",
+  "main_hypothesis": "Biofouling en la primera etapa del bastidor de RO, favorecido por la intrusión de material orgánico y microorganismos durante el episodio de mar gruesa y la operación deficiente de la DAF, que no fue adecuadamente removido por los filtros de cartucho ni controlado por la dosificación de biocida.",
+  "key_signals": [
+    "ΔP etapa 1 subida progresiva de 1,2 a 2,8 bar en 10 días",
+    "ATP en alimentación RO subida marcada de 80 a 1200 pg/mL",
+    "SDI₁₅ a la salida de cartuchos subida marcada de 2,5 a 4,8",
+    "TOC alimentación subida de 1,4 a 2,8 mg/L",
+    "Caudal permeado tren bajada del 8%",
+    "Presión alimentación subida lenta de 58 a 64 bar"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación inorgánica (scaling) en la primera etapa, principalmente por carbonato cálcico o sulfato cálcico, debido a una dosificación insuficiente de antiincrustante.",
+      "why_plausible": "El aumento de ΔP en primera etapa y la caída de caudal permeado son compatibles con scaling. La dosis de antiincrustante se incrementó recién en día -3, lo que sugiere que antes podría haber sido insuficiente. El pH de 8,1 es relativamente alto y podría favorecer la precipitación de carbonatos.",
+      "why_discardable": "El ATP elevado (1200 pg/mL) es un indicador directo de actividad microbiana, no de scaling. Además, el SDI alto y el TOC elevado apuntan a materia orgánica, no a incrustaciones inorgánicas. La conductividad del permeado solo ha aumentado ligeramente, lo que no es típico de un scaling severo que suele causar mayores aumentos de sales."
+    },
+    {
+      "hypothesis": "Fallo de los filtros de cartucho (bypass o rotura) permitiendo el paso de partículas que obstruyen la primera etapa.",
+      "why_plausible": "Los filtros de cartucho se reemplazaron en día -22, y el SDI comenzó a subir en día -8, lo que podría indicar una instalación defectuosa o un lote defectuoso. La presencia de partículas podría aumentar el ΔP y reducir el caudal.",
+      "why_discardable": "El ATP elevado no se explica por partículas inertes; el ATP es específico de microorganismos. Además, el TOC elevado sugiere materia orgánica disuelta o coloidal, no solo partículas. Un fallo de cartuchos no explicaría el aumento de ATP."
+    },
+    {
+      "hypothesis": "Contaminación por hidrocarburos o aceites procedentes del mar gruesa que afectaron la DAF y pasaron a la RO.",
+      "why_plausible": "El episodio de mar gruesa pudo haber arrastrado hidrocarburos o aceites desde la superficie, y la DAF operando al 60% de capacidad pudo no haberlos removido eficazmente. Los aceites pueden adsorberse en las membranas y aumentar la presión diferencial.",
+      "why_discardable": "El ATP elevado no es característico de contaminación por hidrocarburos; estos no generan señal de ATP. El TOC elevado podría deberse a hidrocarburos, pero el ATP es un marcador biológico. Además, no se reporta olor o aspecto anómalo en el permeado."
+    }
+  ],
+  "requested_data": "Resultado de un ensayo de identificación microbiana (p. ej., secuenciación 16S o cultivo) en una muestra de la membrana del primer elemento del primer tubo del tren afectado, o alternativamente, un análisis de microscopía electrónica de barrido (SEM) de la superficie de la membrana para confirmar la presencia de biopelícula.",
+  "recommended_action": "Realizar una limpieza química (CIP) específica para biofouling en el tren afectado, utilizando una solución de hidróxido sódico (NaOH) al 0,1% (pH 11-12) y dodecilsulfato sódico (SDS) al 0,1% como detergente, a una temperatura de 30-35 °C, recirculando durante 1-2 horas, seguido de un enjuague con agua permeada hasta pH neutro. No utilizar biocidas oxidantes (cloro) debido al riesgo de dañar las membranas de poliamida. Verificar que el CIP no exceda la presión máxima recomendada por el fabricante (generalmente 4 bar).",
+  "decision_change_condition": "Si el análisis de la membrana (SEM o cultivo) no muestra evidencia de biopelícula y en cambio revela cristales inorgánicos (p. ej., carbonato cálcico), entonces la hipótesis principal cambiaría a scaling, y la acción recomendada sería un CIP con ácido cítrico al 2% (pH 2-3) para disolver incrustaciones.",
+  "confidence": 85
+}

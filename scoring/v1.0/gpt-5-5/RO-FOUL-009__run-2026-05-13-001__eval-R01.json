@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-009-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-009",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'orgánico/surfactante por antiespumante + hidrocarburos vertido refinería' captura 2 de 3."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (polímero catiónico, biofouling, coloides DAF/filtros/cartuchos, SCAL) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Sacar tren + enjuague + sustituir cartuchos + CIP alcalino fouling orgánico + detergente no iónico — completo."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide FTIR-ATR depósito gelatinoso — match accepted (FTIR)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: FTIR firma cuaternario/poliamina + ausencia siloxano → polímero."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

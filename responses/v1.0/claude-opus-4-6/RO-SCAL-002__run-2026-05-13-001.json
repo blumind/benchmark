@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:56:43Z",
+  "main_hypothesis": "Incrustación (scaling) de sílice coloidal/polimerizada en las membranas de la etapa 2, causada por el aumento de recovery del 75 % al 82 % sin recalcular ni incrementar la dosis de antiincrustante específico para sílice, lo que elevó la concentración de sílice en el rechazo (295 mg/L) por encima del límite de protección del antiincrustante empleado (260 mg/L).",
+  "key_signals": [
+    "ΔP etapa 2 duplicado (0,9 → 1,9 bar) en 15 días, mientras ΔP etapa 1 permanece estable — patrón clásico de scaling en la cola del sistema donde la concentración es máxima.",
+    "Sílice en rechazo 295 mg/L, superando el límite recomendado del antiincrustante (260 mg/L), confirmando sobresaturación de sílice.",
+    "Dosis de antiincrustante mantenida en 8 ppm sin recálculo tras subir recovery de 75 % a 82 % — subdosificación relativa al nuevo factor de concentración.",
+    "Presión de alimentación subió de 14,5 a 18,2 bar (+25 %), indicando resistencia hidráulica adicional por depósitos en la superficie de membrana.",
+    "Caudal de permeado bajó 7 % (250 → 232 m³/h), consistente con pérdida de flujo por fouling/scaling.",
+    "Conductividad de permeado subió de 88 a 105 µS/cm, indicando concentración-polarización aumentada y/o daño incipiente por estrés mecánico sobre membranas parcialmente bloqueadas.",
+    "CIP alcalino estándar (pH 11,5, 60 min) logró reducción parcial y temporal del ΔP (rebote en 72 h), consistente con sílice polimerizada que no se disuelve completamente con NaOH a pH 11,5 y tiempo corto.",
+    "Acuífero volcánico con sílice naturalmente alta (52 mg/L) como factor predisponente."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling de carbonato de calcio (CaCO₃) en etapa 2",
+      "why_plausible": "El calcio en rechazo subió a 540 mg/L y la alcalinidad a 320 mg/L con el aumento de recovery; el LSI podría ser positivo a pH 7,1 y 16,8 °C en el concentrado. Además, el CIP alcalino no disolvería CaCO₃ (requiere ácido), lo que explicaría el rebote.",
+      "why_discardable": "El antiincrustante sulfonato modificado a 8 ppm normalmente cubre CaCO₃ a estos niveles de calcio y alcalinidad en BWRO. El dato clave es que la sílice en rechazo (295 mg/L) excede explícitamente el límite del antiincrustante (260 mg/L), mientras que no se reporta que el calcio exceda los límites del producto. Además, un CIP alcalino a pH 11,5 no habría producido ninguna mejora temporal si el depósito fuera solo CaCO₃; la reducción parcial observada es más consistente con sílice parcialmente disuelta."
+    },
+    {
+      "hypothesis": "Biofouling en etapa 2 favorecido por mayor tiempo de residencia a recovery alto",
+      "why_plausible": "El aumento de recovery reduce el caudal de rechazo, aumentando el tiempo de residencia en la etapa 2 y favoreciendo crecimiento biológico. El CIP alcalino puede tener efecto parcial sobre biofilm.",
+      "why_discardable": "No hay indicios de biofouling: no se reporta aumento de ΔP en etapa 1 (donde el biofouling suele manifestarse primero), no hay mención de olores, no hay datos de recuento bacteriano elevado, y la respuesta al CIP alcalino fue muy breve (rebote en 72 h), más típica de scaling inorgánico que de biofilm parcialmente removido. La correlación temporal directa con la sobresaturación de sílice es más fuerte."
+    },
+    {
+      "hypothesis": "Compactación mecánica de membranas por aumento de presión de operación",
+      "why_plausible": "La presión de alimentación subió de 14,5 a 18,2 bar; la compactación de membranas puede causar pérdida de flujo y aumento de rechazo de sal aparente.",
+      "why_discardable": "La compactación no explica el aumento selectivo de ΔP en etapa 2 con etapa 1 estable, ni la respuesta parcial al CIP. Además, 18,2 bar está dentro del rango operativo normal de membranas brackish (típicamente hasta 41 bar). La compactación es un fenómeno gradual e irreversible, no consistente con la mejora temporal post-CIP."
+    }
+  ],
+  "requested_data": "Análisis de los depósitos de membrana de etapa 2 mediante autopsia o, como mínimo, análisis del agua de lavado del CIP (contenido de sílice disuelta y coloidal en mg/L, más análisis elemental por ICP del residuo) para confirmar la composición predominante del scaling.",
+  "recommended_action": "1) Reducir inmediatamente el recovery a 75 % (valor baseline) para bajar la sílice en rechazo por debajo de 208 mg/L y detener la progresión del scaling. 2) Realizar un CIP específico para sílice: solución de NaOH a pH 12,0 ± 0,2 a temperatura de 35-40 °C durante 4-6 horas con recirculación, seguido de enjuague y, si el ΔP no se recupera al menos al 90 % del baseline, considerar un segundo CIP con solución de bifluoruro de amonio (NH₄HF₂) al 0,5-1,0 % p/v a pH 3-4 durante 30-60 minutos (siguiendo estrictamente las recomendaciones del fabricante de membranas para compatibilidad química). 3) Antes de volver a subir el recovery, recalcular la dosis de antiincrustante con el software del proveedor para el nuevo recovery objetivo, y no superar una sílice en rechazo de 240 mg/L (margen de seguridad del 8 % respecto al límite de 260 mg/L del producto). 4) Si se requiere operar a recovery >75 %, evaluar cambio a un antiincrustante con mayor tolerancia a sílice (límite ≥300 mg/L) o implementar ajuste de pH a 6,5 en la alimentación para aumentar la solubilidad de sílice reactiva.",
+  "decision_change_condition": "Si el análisis de los depósitos de membrana (autopsia o análisis del agua de lavado del CIP) mostrara que la composición predominante es CaCO₃ o material biológico (alto contenido orgánico, ATP elevado) en lugar de sílice, cambiaría el diagnóstico a scaling de carbonato de calcio o biofouling respectivamente, y modificaría el protocolo de limpieza (CIP ácido con HCl al 0,2 % a pH 2,0 para CaCO₃, o CIP con biocida tipo DBNPA a 100-200 ppm seguido de alcalino para biofouling).",
+  "confidence": 92
+}

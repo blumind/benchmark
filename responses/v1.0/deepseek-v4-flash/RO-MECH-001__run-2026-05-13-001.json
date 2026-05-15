@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-MECH-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:31:33Z",
+  "main_hypothesis": "Improperly seated or damaged O-ring at an interconnector or head/tail seal in Tube 4 of Train T-02, causing brine leakage into the permeate.",
+  "key_signals": [
+    "Conductividad permeado T-02 subió de 390 a 1350 µS/cm tras reinstalación, mientras trenes vecinos estables en ~395 µS/cm",
+    "Probe test muestra Tubo 4 con 4100 µS/cm, resto 380–420 µS/cm",
+    "Test de presión en Tubo 4 muestra anomalía consistente con paso de salmuera por junta interna",
+    "Reporte del operario: 'uno de los O-rings nuevos parecía rígido pero entró bien' durante reinstalación",
+    "ΔP etapa 1 T-02 estable en 1,3 bar, descartando obstrucción o fouling severo"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño mecánico en elementos de membrana del Tubo 4 durante el CIP avanzado (golpe de presión, temperatura excesiva, o ataque químico localizado)",
+      "why_plausible": "El CIP avanzado implica condiciones más agresivas que un lavado normal; un manejo brusco o un error en el protocolo podría haber dañado las membranas, reduciendo el rechazo de sales de forma localizada.",
+      "why_discardable": "Las membranas adyacentes en el mismo tren no muestran deterioro (conductividad normal en resto de tubos). El daño por CIP suele afectar a todo el vaso o al menos varios elementos, no a un solo tubo de forma aislada. Además, la presión de alimentación y el ΔP se mantienen estables, lo que no apoya una pérdida de integridad generalizada."
+    },
+    {
+      "hypothesis": "Fallo en el sello de la junta tórica del adaptador de permeado (product tube) en la cabeza o cola del vaso de presión del Tubo 4, mal ajustado o dañado durante la reinstalación",
+      "why_plausible": "La manipulación de los vasos durante el reensamblaje puede desplazar o dañar estos sellos, provocando un cortocircuito de salmuera hacia el permeado en ese vaso específico.",
+      "why_discardable": "La inspección visual realizada en el día -3 reportó que las vainas de permeado estaban conectadas correctamente, y el test de presión indicó un fallo en una junta interna (inter-elemento), no en los sellos de cabeza/cola. Además, la conductividad tan elevada en el permeado (4100 µS/cm) sugiere una fuga más cercana a los elementos que a los extremos."
+    }
+  ],
+  "requested_data": "Perfil de conductividad del permeado a lo largo del vaso de presión del Tubo 4 mediante sonda de conductividad móvil (probe test) con mediciones cada elemento (6-7 puntos), en µS/cm.",
+  "recommended_action": "Aislar el Tubo 4 del Tren T-02 (cerrar válvula de permeado y salmuera de ese vaso), despresurizar, retirar los elementos y reemplazar todos los O-rings interconectores y de cabeza/cola por unos nuevos, lubricados con glicerina o lubricante compatible con membranas, asegurando correcta colocación. Realizar prueba de presión hidrostática en el vaso vacío antes de reinstalar elementos y, tras remontaje, verificar conductividad de permeado individual durante el arranque.",
+  "decision_change_condition": "Si la inspección visual directa de los O-rings en Tubo 4 tras desmontaje no revela daños ni desalineación, o si el probe test detallado mostrara una subida gradual de conductividad a lo largo del vaso (apuntando a daño en varios elementos en lugar de un único punto de fuga), entonces la hipótesis principal se desplazaría hacia daño químico o mecánico inducido por el CIP en los elementos del Tubo 4.",
+  "confidence": 85
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-FOUL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:17:14Z",
+  "main_hypothesis": "Biofouling en la cara frontal de la primera etapa inducido por el exceso de coagulante (FeCl₃) y el aumento de TOC, que ha servido como sustrato para el crecimiento microbiológico tras el evento de turbidez.",
+  "key_signals": [
+    "Aumento drástico de ATP en alimentación (720 pg/mL vs 90 pg/mL)",
+    "Incremento marcado de TOC (2,2 mg/L vs 1,1 mg/L)",
+    "Subida de ΔP concentrada exclusivamente en la cabeza de la primera etapa",
+    "Aumento de SDI (4,0) y turbidez tras el evento de turbidez y el mantenimiento de dosis alta de FeCl₃"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling inorgánico por precipitación de hidróxido férrico",
+      "why_plausible": "La dosificación excesiva de FeCl₃ (2 mg/L) tras el evento de turbidez puede generar flóculos de hierro que se depositan en la entrada de los elementos.",
+      "why_discardable": "El aumento masivo de ATP sugiere una actividad biológica activa que explica mejor la rápida progresión y la naturaleza del ensuciamiento, aunque el hierro puede actuar como catalizador o sustrato."
+    },
+    {
+      "hypothesis": "Fouling coloidal por deficiencia en la filtración",
+      "why_plausible": "El aumento de SDI y turbidez tras el evento de turbidez indica que los filtros gravitatorios no están reteniendo adecuadamente las partículas.",
+      "why_discardable": "El fouling coloidal puro no explicaría el aumento exponencial de ATP, que es un indicador específico de biomasa."
+    }
+  ],
+  "requested_data": "Análisis de hierro total y hierro disuelto en el agua de alimentación a las membranas (mg/L).",
+  "recommended_action": "Reducir inmediatamente la dosificación de FeCl₃ a 0,5 mg/L y realizar una limpieza química (CIP) ácida seguida de una alcalina (pH 11-12) para eliminar tanto el hierro precipitado como la biopelícula.",
+  "decision_change_condition": "Si el análisis de hierro mostrara niveles extremadamente altos (>0,5 mg/L) y el ATP se mantuviera bajo, la causa principal sería fouling inorgánico por hierro en lugar de biofouling.",
+  "confidence": 85
+}

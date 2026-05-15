@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:39:24Z",
+  "main_hypothesis": "Exhaustion of granular activated carbon (GAC) bed adsorption capacity due to accelerated chlorine loading from increased shock dosing frequency, resulting in breakthrough of residual free chlorine and oxidizing species that damage reverse osmosis membranes, causing salt passage and loss of rejection.",
+  "key_signals": [
+    "Cloro libre antes RO increased from <0.02 to 0.18 mg/L coinciding with increased shock dosing frequency (1× to 3× per week on day -30)",
+    "Cloro libre tras CAG increased from <0.02 to 0.18 mg/L, indicating GAC breakthrough despite stable inlet chlorine control",
+    "ORP tras CAG elevated and oscillating (+110 to +280 mV, baseline +90 mV), consistent with oxidizing species breakthrough",
+    "Conductividad permeado increased sharply from 380 to 1.200 µS/cm over 7 days (day -7 to day 0), indicating membrane salt passage",
+    "Rechazo de sales decreased from 99.1% to 96.2%, consistent with membrane damage from oxidant exposure",
+    "GAC pore iodine capacity at 25% residual (day -45) indicates advanced saturation after 180 days of service",
+    "Temporal correlation: conductivity spike begins 10 days after increased shock dosing (day -30 to day -20 lag), consistent with GAC saturation kinetics"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling by biofouling or colloidal material breakthrough from DAF/filtration stages",
+      "why_plausible": "ATP in feed is stable at 75 pg/mL (near baseline 80 pg/mL), but biofouling can develop rapidly in warm seawater; increased shock dosing was intended to control zebra mussel and biofilm; membrane age (8 months) is within typical fouling window.",
+      "why_discardable": "Biofouling causes elevated ΔP in stage 1 (observed: 1.3 bar, baseline 1.2 bar, only +8% change) and stage 2, but here ΔP is stable and stage 2 unchanged. Biofouling does not explain the sharp, sustained increase in permeate conductivity (1.200 µS/cm) or the decrease in salt rejection from 99.1% to 96.2%. ATP is stable, not elevated. Biofouling would increase turbidity and SDI, not conductivity. The temporal pattern (sharp conductivity rise after chlorine breakthrough) is inconsistent with gradual biofouling."
+    },
+    {
+      "hypothesis": "Membrane damage from mechanical stress or manufacturing defect in recently replaced elements",
+      "why_plausible": "Membranes were partially replaced 8 months ago; manufacturing defects or installation damage can cause localized salt passage; pressure is stable at 60 bar (baseline 59 bar), so mechanical stress is not obvious, but micro-tears can develop over time.",
+      "why_discardable": "Membrane defects would cause gradual, steady salt passage over weeks to months, not a sharp spike over 7 days. The temporal correlation with chlorine breakthrough (day -7 spike coincides with cloro libre tras CAG reaching 0.12 mg/L on day -5) is too tight for a latent defect. If defects were present, conductivity would have been elevated at baseline; instead, baseline rejection was 99.1%. The operator's decision to stop shock dosing (day -1) preceded stabilization, which would not occur if the membrane were mechanically damaged."
+    },
+    {
+      "hypothesis": "Incomplete dechlorination due to CAG bed channeling or uneven flow distribution",
+      "why_plausible": "Channeling in GAC beds can develop after 180 days of operation, especially under variable flow or if the bed was not properly backwashed; uneven flow would allow chlorine to bypass the active carbon.",
+      "why_discardable": "Channeling would cause persistent, steady-state chlorine breakthrough, not the observed temporal pattern of breakthrough coinciding with increased shock dosing frequency. If channeling were the root cause, cloro libre tras CAG would have been elevated weeks ago, not suddenly on day -5. The iodine capacity measurement (25% residual) indicates saturation, not flow maldistribution. Channeling does not explain why ORP oscillated (day -10) before conductivity spiked (day -7), suggesting a transient saturation event rather than structural failure."
+    },
+    {
+      "hypothesis": "Oxidative damage to RO membranes from residual chlorine, independent of GAC capacity",
+      "why_plausible": "Chlorine is a strong oxidant; even 0.18 mg/L can degrade polyamide membranes over time; the ORP increase to +320 mV is consistent with oxidizing conditions; membranes are 8 months old and may have accumulated oxidative stress.",
+      "why_discardable": "This is not a root cause but a mechanism of damage. The root cause is the source of the chlorine breakthrough, which is GAC exhaustion. If chlorine were leaking through a healthy GAC bed, the baseline cloro libre tras CAG would not have been <0.02 mg/L for 180 days. The sharp increase in chlorine breakthrough (from <0.02 to 0.18 mg/L) is explained by the increase in shock dosing frequency (day -30), not by a sudden change in membrane vulnerability. Oxidative damage is the consequence of GAC exhaustion, not the root cause."
+    }
+  ],
+  "requested_data": "Iodine number (mg/g) of the GAC bed sample collected today, compared to the value at installation (day -180) and the measurement on day -45, to confirm whether adsorption capacity has fallen below the threshold for reliable chlorine removal under the current shock dosing protocol.",
+  "recommended_action": "Immediately cease all shock chlorine dosing at the intake until the GAC bed is replaced or regenerated. Reduce intake chlorine dosing to baseline (1 mg/L, 1× per week) if zebra mussel control is still required, and rely on mechanical intake screening and DAF for biofouling prevention. Schedule emergency replacement of the GAC bed within 48 hours. Monitor permeate conductivity and salt rejection every 4 hours until GAC is replaced; if conductivity remains >800 µS/cm or rejection <97.5%, reduce RO feed flow by 10–15% to minimize further membrane damage and allow time for chlorine residual to decay. Do not resume normal shock dosing until post-replacement iodine capacity testing confirms >60% residual capacity.",
+  "decision_change_condition": "If the iodine number of the current GAC sample is >50 mg/g (indicating >60% residual capacity), or if permeate conductivity and salt rejection return to baseline values within 24 hours of stopping shock dosing (indicating reversible membrane fouling rather than oxidative damage), the diagnosis would shift toward membrane fouling or temporary oxidative stress, and the recommended action would change to gentle backwashing of the GAC bed and continued monitoring rather than immediate replacement.",
+  "confidence": 82
+}

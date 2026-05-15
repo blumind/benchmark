@@ -1,0 +1,52 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:57:58Z",
+  "main_hypothesis": "Fallo de decloraminación por agotamiento o ruptura hidráulica de los lechos de CAG tras el aumento de cloramina municipal, permitiendo paso sostenido de cloramina al RO y causando oxidación irreversible de la capa de poliamida de las membranas.",
+  "key_signals": [
+    "Cloramina total a la alimentación RO elevada a 0,38 mg/L como Cl2 frente a <0,05 mg/L de baseline.",
+    "Cloramina tras CAG-1 de 0,42 mg/L y tras CAG-2 de 0,38 mg/L, indicando que ambos lechos ya no están removiendo cloramina de forma efectiva.",
+    "ORP de alimentación RO sube de +60 mV a +210 mV, consistente con entrada de oxidante.",
+    "Conductividad de permeado sube progresivamente de 65 a 280 µS/cm mientras la conductividad de alimentación permanece estable alrededor de 1.450 µS/cm.",
+    "Rechazo de sales cae de 95,5 % a 80,7 %, compatible con pérdida de integridad/selectividad de membrana por oxidación.",
+    "ΔP de etapa 1 y etapa 2 permanecen estables, lo que hace menos probable que el problema principal sea ensuciamiento o incrustación.",
+    "El aumento municipal de cloramina de 2,5 a 3,2 mg/L ocurrió antes del inicio de la subida de conductividad del permeado.",
+    "No hay dosificación de SBS como barrera secundaria frente a cloramina."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga mecánica en sellos, adaptadores o interconectores de presión que permite bypass de concentrado hacia permeado.",
+      "why_plausible": "Una fuga de sellos puede causar aumento brusco de conductividad de permeado con ΔP relativamente estable.",
+      "why_discardable": "La tendencia es progresiva y coincide con cloramina elevada tras ambos CAG y ORP alto; además el test de elemento líder muestra pérdida de rechazo, lo que apunta a daño de membrana y no solo a un sello aislado."
+    },
+    {
+      "hypothesis": "Envejecimiento normal de membranas por 26 meses de servicio.",
+      "why_plausible": "Las membranas tienen más de dos años de operación y el envejecimiento puede reducir gradualmente el rechazo.",
+      "why_discardable": "La caída de rechazo de 95,5 % a 80,7 % en aproximadamente 30 días es demasiado rápida para envejecimiento normal, y está acompañada por cloramina residual medible en la alimentación RO."
+    },
+    {
+      "hypothesis": "Incrustación mineral o fouling orgánico/biológico.",
+      "why_plausible": "La disminución de caudal de permeado del 6 % podría verse con fouling o scaling.",
+      "why_discardable": "El ΔP de ambas etapas está estable, la presión de alimentación apenas cambia y el síntoma dominante es pérdida de rechazo con oxidante presente; scaling/fouling normalmente eleva ΔP o presión normalizada antes de causar una caída tan marcada de rechazo."
+    },
+    {
+      "hypothesis": "Cambio en calidad del agua de alimentación, temperatura o salinidad que eleva la conductividad del permeado.",
+      "why_plausible": "La conductividad de permeado depende de TDS y temperatura de alimentación.",
+      "why_discardable": "La conductividad de alimentación está prácticamente estable, la temperatura solo sube ligeramente de 18,8 a 19,2 °C y no explica una caída del rechazo calculado de 95,5 % a 80,7 %."
+    },
+    {
+      "hypothesis": "Error analítico en la medición de cloramina residual.",
+      "why_plausible": "Las mediciones de cloramina pueden verse afectadas por método, reactivos o interferencias.",
+      "why_discardable": "Hay señales independientes concordantes: ORP elevado, cloramina detectada en varios puntos, secuencia temporal tras aumento municipal y deterioro real del rechazo de membrana."
+    }
+  ],
+  "requested_data": "Resultado de autopsia del elemento líder con ensayo específico de oxidación de poliamida, por ejemplo FTIR/ATR o prueba de tinte, reportado como presencia o ausencia de daño oxidativo.",
+  "recommended_action": "Retirar inmediatamente de servicio el bastidor afectado o desviar su permeado fuera de producto, detener la exposición a oxidante y enjuagar con agua decloraminada con cloramina total <0,05 mg/L como Cl2. Antes de reiniciar, sustituir o reponer el medio de CAG agotado y establecer una barrera temporal de SBS aguas arriba de cartuchos/RO: dosis inicial 0,8 mg/L como Na2S2O5 activo para el residual medido de 0,38 mg/L como Cl2, equivalente a aproximadamente 2,1 mg/L de solución comercial al 38 % p/p, ajustando solo para mantener cloramina total a entrada RO <0,05 mg/L como Cl2. No devolver el permeado a servicio hasta confirmar residual no detectable y rechazo aceptable según el manual del fabricante.",
+  "decision_change_condition": "Cambiaría el diagnóstico si se demostrara con registros verificados que la cloramina total a la entrada RO permaneció <0,05 mg/L como Cl2 durante todo el periodo de deterioro y una prueba de sondeo por tubo localizara la pérdida de sal en un único vaso o conexión mecánica.",
+  "confidence": 90
+}

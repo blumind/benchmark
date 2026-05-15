@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:08:04Z",
+  "main_hypothesis": "Oxidación de las membranas de poliamida por ingreso de dióxido de cloro (ClO₂) y su subproducto clorito (ClO₂⁻) desde la piscifactoría a través de la captación compartida, con neutralización insuficiente por la dosis actual de bisulfito sódico (4 mg/L).",
+  "key_signals": [
+    "Aumento sostenido de la conductividad de permeado (400 → 590 µS/cm) y bajada del rechazo calculado (99,29 % → 98,95 %) sin incrementos de ΔP (etapa 1 y 2 estables), patrón típico de daño oxidativo en poliamida (más paso de sales sin evidencia de ensuciamiento).",
+    "ORP en alimentación sube de +50 a +180 mV, indicativo de presencia de oxidantes.",
+    "Cloro total (DPD) en la alimentación a RO = 0,15 mg/L con cloro libre < 0,02 mg/L, compatible con oxidantes distintos del cloro libre (p. ej., ClO₂ o cloraminas).",
+    "Laboratorio externo detecta clorito (ClO₂⁻) = 0,08 mg/L en la alimentación a RO.",
+    "Incidente de olor intenso a “cloro” en la línea de captación (día -18).",
+    "Cambio del programa de desinfección con ClO₂ en la piscifactoría y aumento de descargas (día -45).",
+    "ATP en alimentación estable y cartuchos sin coloración anómala, lo que desestima bioensuciamiento como causa principal."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bypass interno por fallo de juntas/O-ring o fisura en conectores, provocando mezcla de alimentación con permeado y aumento de conductividad.",
+      "why_plausible": "Un bypass puede elevar de forma marcada la conductividad de permeado sin necesariamente alterar ΔP.",
+      "why_discardable": "La evolución es progresiva y coincide con señales claras de oxidantes (ORP alto, DPD total positivo, clorito medido) y con el cambio operacional en la piscifactoría; además, un bypass suele manifestarse como salto brusco más que tendencia gradual."
+    },
+    {
+      "hypothesis": "Envejecimiento/compactación de membranas a 12 meses.",
+      "why_plausible": "La compactación puede reducir el flujo con el tiempo.",
+      "why_discardable": "La compactación típicamente mantiene o mejora ligeramente el rechazo; aquí el rechazo disminuye de forma apreciable y coincide con marcadores de oxidación en el agua de alimentación."
+    },
+    {
+      "hypothesis": "Incrustación o ensuciamiento coloidal.",
+      "why_plausible": "Puede causar caída de flujo.",
+      "why_discardable": "ΔP de ambas etapas estable y pretratamiento sin anomalías visibles; además, la pérdida de rechazo no es característica primaria de incrustación, y no hay cambios en conductividad de alimentación, pH o temperatura."
+    },
+    {
+      "hypothesis": "Bioensuciamiento en etapa 1.",
+      "why_plausible": "Es un problema común en SWRO sin biocida continuo.",
+      "why_discardable": "ATP de alimentación estable, cartuchos sin coloración, ΔP estable y presencia de oxidantes (ORP alto), todo ello contrario a un bioensuciamiento activo."
+    }
+  ],
+  "requested_data": "ClO₂ residual en la alimentación a RO, mg/L como ClO₂ (método específico para ClO₂, p. ej., amperométrico), medido durante los picos de ORP.",
+  "recommended_action": "Proteger de inmediato las membranas frente a oxidantes: 1) Parar los trenes RO y poner en recirculación/flush con permeado desclorado durante 30 min a ≤5 bar; 2) Incrementar la dosificación de bisulfito sódico en el punto de alimentación a RO desde 4 mg/L a 10 mg/L como NaHSO₃ (y, si persiste oxidante, aumentar temporalmente hasta 20 mg/L como NaHSO₃), con el punto de inyección aguas arriba de cartuchos; 3) Reanudar operación sólo cuando el oxidante en alimentación sea 0,00 mg/L (ClO₂/oxidante total) y fijar un enclavamiento por ORP que impida operar si el ORP de alimentación supera +100 mV.",
+  "decision_change_condition": "Si el ClO₂ residual en alimentación a RO es consistentemente < 0,01 mg/L y el clorito es no detectable (< 0,02 mg/L) durante el periodo de degradación del rechazo, reconsideraría la causa principal hacia un bypass mecánico (juntas/conectores) o envejecimiento/compactación.",
+  "confidence": 85
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-002-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-002",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling + DAF degradada' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "6 signals con relaciones explícitas."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (SCAL, OXID, MECH cartridge) con why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP alcalino pH 11-12 + hipoclorito 1-2 mg/L choque CAPTACIÓN (no RO) — plant standard."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide ΔP por cartucho — discriminador cartridge issue, no MH-trigger."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial threshold."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

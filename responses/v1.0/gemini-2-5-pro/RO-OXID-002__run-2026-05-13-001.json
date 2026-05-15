@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-OXID-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:46:56Z",
+  "main_hypothesis": "Daño químico irreversible de las membranas de ósmosis inversa por oxidación, causado por la presencia de ozono residual en el agua de alimentación.",
+  "key_signals": [
+    "Presencia confirmada de ozono residual (0,06 mg/L) en la alimentación a la RO.",
+    "Potencial de Óxido-Reducción (ORP) elevado y en aumento en la alimentación (+280 mV).",
+    "Caída drástica del rechazo de sales calculado (del 97,8 % al 88,8 %).",
+    "Aumento brusco de la conductividad del permeado (de 75 a 380 µS/cm) con presiones diferenciales estables."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo de sellos mecánicos (O-rings o sellos de salmuera) en los tubos de presión.",
+      "why_plausible": "Un fallo en un sello puede provocar una fuga directa de agua de alimentación o concentrado al colector de permeado, explicando el rápido aumento de la conductividad del permeado.",
+      "why_discardable": "No explica el elevado ORP ni la presencia de ozono en la alimentación. Un fallo mecánico suele ser un evento localizado, mientras que la caída de rendimiento parece sistémica y coincide temporalmente con la exposición al oxidante."
+    },
+    {
+      "hypothesis": "Incrustación (scaling) o ensuciamiento (fouling) severo y repentino.",
+      "why_plausible": "Ciertos tipos de ensuciamiento pueden dañar físicamente la membrana o crear canales de flujo preferencial, aumentando el paso de sales.",
+      "why_discardable": "Las presiones diferenciales (ΔP) de ambas etapas se mantienen estables, lo que contradice un escenario de ensuciamiento severo. Además, no explica la causa del alto ORP ni la presencia de ozono."
+    }
+  ],
+  "requested_data": "Conductividad del permeado muestreada individualmente en cada uno de los tubos de presión (en µS/cm).",
+  "recommended_action": "Detener la planta de ósmosis inversa de forma inmediata y segura para evitar la destrucción completa de las membranas. Poner el sistema en modo de preservación utilizando agua de permeado o agua de alimentación libre de oxidantes (ORP < +150 mV) hasta que se garantice la eliminación del ozono en la fuente.",
+  "decision_change_condition": "Si la medición individual de conductividad mostrara que el valor anómalo de 380 µS/cm se origina en un único tubo de presión, mientras que el resto de tubos mantienen una conductividad cercana a la línea base de 75 µS/cm.",
+  "confidence": 98
+}

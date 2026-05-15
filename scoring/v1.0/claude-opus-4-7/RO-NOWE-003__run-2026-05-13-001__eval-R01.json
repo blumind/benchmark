@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-003",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'aclarado pre-arranque insuficiente bisulfito + glicerina' matches anchors"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals (1x30min, glicerina 320, ORP -10, cond 720->580, cloro<0.02, dP 1.5)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 3 alts (oxid/defecto, ramp-up, O-rings) - mezcla pero plausibles"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: 2 aclarados +60min low P + ramp 30 min sin CIP - matches gold"
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "C5: 3 anchors (cond + COD + ORP serie, sin CIP, no oxidantes)"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit: ORP>+50 + glicerina<50 + rechazo<99.2 + caudal<85% -> defecto"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Claude conflict; respuesta solida sin CIP"
+}

@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-OXID-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:45:15Z",
+  "main_hypothesis": "Daño oxidativo irreversible de membranas BWRO de poliamida por ingreso de ozono residual desde la planta vecina al colector común de alimentación.",
+  "key_signals": [
+    "Ozono residual medido en alimentación a RO de 0,06 mg/L frente a baseline <0,01 mg/L.",
+    "ORP de alimentación a RO subió de +110 mV a +280 mV, con medición previa de +260 mV.",
+    "La planta vecina aumentó la dosis de ozono de 0,8 a 1,5 mg/L antes del inicio del deterioro.",
+    "La conductividad de permeado aumentó bruscamente de 75 a 380 µS/cm mientras la conductividad de alimentación permaneció estable.",
+    "El rechazo de sales cayó de 97,8 % a 88,8 %, patrón compatible con pérdida de selectividad de membrana.",
+    "ΔP de etapa 1 y etapa 2 permanecen estables, lo que no sugiere ensuciamiento hidráulico significativo como causa principal.",
+    "Cloro libre permanece <0,02 mg/L, orientando hacia un oxidante distinto del cloro.",
+    "ATP de alimentación estable, sin señal fuerte de episodio biológico agudo."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga por sellos, adaptadores u O-rings de permeado en tubos de presión.",
+      "why_plausible": "Una fuga mecánica puede producir aumento rápido de conductividad de permeado y caída aparente del rechazo sin necesariamente aumentar el ΔP.",
+      "why_discardable": "La subida de ORP y la detección de ozono residual coinciden temporalmente con el aumento de dosis de ozono de la planta vecina, lo que explica de forma más completa la pérdida general de rechazo."
+    },
+    {
+      "hypothesis": "Error o deriva del sensor de conductividad de permeado.",
+      "why_plausible": "El primer aumento de 75 a 95 µS/cm fue interpretado por operación como posible ruido de sensor.",
+      "why_discardable": "La tendencia progresiva hasta 380 µS/cm, junto con el rechazo calculado bajo y la presencia confirmada de ozono residual, hace menos probable que sea solo instrumentación."
+    },
+    {
+      "hypothesis": "Incrustación o fouling químico por operación a 78 % de recovery.",
+      "why_plausible": "El agua salobre con TDS 2.200 mg/L y alto recovery puede favorecer incrustación si el control químico es insuficiente.",
+      "why_discardable": "El ΔP y la presión de alimentación están estables, el pH y temperatura no cambiaron, y el síntoma dominante es pérdida de rechazo con oxidante detectado, no aumento de resistencia hidráulica."
+    },
+    {
+      "hypothesis": "Biofouling o ensuciamiento orgánico por mezcla con agua de retorno tratada.",
+      "why_plausible": "La alimentación incluye 40 % de agua de retorno tratada, que puede aportar nutrientes o materia orgánica.",
+      "why_discardable": "El ATP está estable, no hay aumento de ΔP, y el deterioro de conductividad coincide con exposición oxidante, no con una señal biológica."
+    }
+  ],
+  "requested_data": "Perfil de conductividad de permeado por cada tubo de presión del bastidor, en µS/cm.",
+  "recommended_action": "Detener o aislar temporalmente el bastidor RO afectado y no alimentarlo con agua que contenga ozono; instalar dosificación temporal de metabisulfito sódico al 10 % p/p aguas arriba de los cartuchos de 5 µm, con dosis inicial equivalente a 1,5 mg/L de NaHSO3 por cada 1,0 mg/L de O3 residual medido, ajustando hasta ozono residual <0,01 mg/L antes de la RO y ORP cercano al baseline operativo.",
+  "decision_change_condition": "Cambiaría el diagnóstico si el perfil por tubo mostrara que casi toda la conductividad alta proviene de uno o pocos tubos aislados mientras el resto mantiene rechazo normal y una medición independiente confirmara ozono residual <0,01 mg/L en alimentación a RO.",
+  "confidence": 90
+}

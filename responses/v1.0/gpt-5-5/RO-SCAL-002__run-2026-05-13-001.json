@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:57:53Z",
+  "main_hypothesis": "Incrustación de sílice en la segunda etapa causada por operar a 82 % de recovery, elevando la sílice del rechazo por encima del límite efectivo del antiincrustante sin recalcular la dosificación ni el recovery admisible.",
+  "key_signals": [
+    "La sílice en rechazo subió a 295 mg/L, por encima del límite recomendado del antiincrustante usado de 260 mg/L.",
+    "La subida de recovery de 75 % a 82 % precedió temporalmente al aumento de ΔP en etapa 2.",
+    "El ΔP de etapa 2 aumentó marcadamente de 0,9 a 1,9 bar mientras el ΔP de etapa 1 permaneció estable.",
+    "La sílice de alimentación se mantuvo estable en 52–53 mg/L, indicando que el cambio crítico fue la concentración por recovery, no un cambio de calidad del pozo.",
+    "El caudal permeado cayó 7 % y la presión de alimentación subió de 14,5 a 18,2 bar, consistente con pérdida de permeabilidad por incrustación.",
+    "El CIP alcalino estándar produjo solo una recuperación parcial y transitoria del ΔP, con rebote rápido en 72 h, compatible con incrustación mineral persistente por sílice.",
+    "La conductividad de permeado aumentó de 88 a 105 µS/cm, compatible con deterioro operativo asociado a ensuciamiento/incrustación de membranas."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación de carbonato cálcico en la segunda etapa por aumento de recovery.",
+      "why_plausible": "El calcio de rechazo subió de 380 a 540 mg/L y la alcalinidad de rechazo de 240 a 320 mg/L al aumentar el recovery, lo que puede incrementar el riesgo de CaCO3 en los elementos finales.",
+      "why_discardable": "El caso reporta explícitamente que la sílice de rechazo excede el límite del antiincrustante, mientras que no se aporta un índice de saturación de CaCO3 fuera de control; además, el patrón temporal y la localización en etapa 2 encajan mejor con sobresaturación de sílice por concentración."
+    },
+    {
+      "hypothesis": "Biofouling localizado en la segunda etapa.",
+      "why_plausible": "El aumento de ΔP y la pérdida de caudal pueden aparecer con biofouling, y el cloro libre antes de RO es muy bajo, por lo que no hay oxidante residual protector.",
+      "why_discardable": "El biofouling suele afectar con frecuencia las primeras posiciones por mayor carga nutritiva/particulada; aquí la etapa 1 está estable y el evento se correlaciona con el incremento de recovery y con la sílice de rechazo por encima del límite del antiincrustante."
+    },
+    {
+      "hypothesis": "Ensuciamiento particulado o fallo de filtración/cartuchos.",
+      "why_plausible": "El pretratamiento es mínimo, con filtros multicapa y cartuchos de 5 µm, por lo que un arrastre de sólidos podría elevar ΔP y reducir caudal.",
+      "why_discardable": "Un problema particulado aguas arriba debería manifestarse primero en etapa 1; sin embargo, el ΔP de etapa 1 está prácticamente estable mientras el aumento fuerte está en etapa 2."
+    },
+    {
+      "hypothesis": "Daño químico u oxidativo de membranas.",
+      "why_plausible": "El aumento de conductividad de permeado puede ser señal de pérdida de rechazo por daño de membrana.",
+      "why_discardable": "El cloro libre antes de RO se mantuvo <0,02 mg/L y no se reporta exposición oxidante; además, el aumento de ΔP y presión de alimentación apunta más a depósito/incrustación que a daño químico primario."
+    }
+  ],
+  "requested_data": "Composición del depósito retirado de un elemento de cola de la etapa 2 mediante SEM-EDS/FTIR, expresada como % en peso de SiO2, CaCO3 y materia orgánica.",
+  "recommended_action": "Reducir inmediatamente el recovery del bastidor a 75 % o al valor que mantenga la sílice de rechazo ≤260 mg/L, y realizar limpieza CIP específica de la etapa 2 con limpiador alcalino compatible con membranas de poliamida al 1,0 % p/p, ajustado a pH 11,5–12,0, temperatura máxima 35 °C, recirculación 60 min y enjuague hasta pH y conductividad estables; no volver a 82 % hasta recalcular recovery y dosificación de antiincrustante con proyección validada.",
+  "decision_change_condition": "Cambiaría el diagnóstico si el análisis del depósito de la etapa 2 mostrara ausencia o baja proporción de sílice y predominio claro de carbonato cálcico, biomasa o sólidos particulados, o si la sílice de rechazo recalculada bajo las condiciones reales resultara por debajo del límite del antiincrustante.",
+  "confidence": 90
+}

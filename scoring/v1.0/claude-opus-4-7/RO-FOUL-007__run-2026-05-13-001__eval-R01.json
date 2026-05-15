@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-007-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-007",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling cabeza + sobredosis FeCl3' captura las 2 firmas concurrentes."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ATP×8 + TOC×2 + ΔP gradiente cabeza→cola + cronología temporal + UF bypass."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (Fe coloidal, SCAL, MECH compactación, NOM FOUL) anclados."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Reducir FeCl3 a 0.8 + UF backup + CIP alcalino NaOH+EDTA+SDBS 35°C."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia LOI+HPC/ATP+Fe — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-umbral: LOI<30% + Fe>40% + bajo ATP → Fe coloidal."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

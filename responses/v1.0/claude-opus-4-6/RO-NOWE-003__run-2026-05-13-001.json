@@ -1,0 +1,49 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:04:50Z",
+  "main_hypothesis": "Aclarado insuficiente de la solución de preservación (bisulfito + glicerina) de los elementos nuevos del Tren T-05, debido a que el operador ejecutó solo 1 aclarado de 30 min en lugar de los 3 aclarados de 1 h recomendados por el nuevo proveedor. La glicerina residual está obstruyendo parcialmente los canales de alimentación y la superficie activa de las membranas, reduciendo el flujo de permeado, elevando la caída de presión diferencial y degradando transitoriamente el rechazo de sales. El bisulfito residual explica el ORP anómalamente bajo (-10 mV vs +90 mV esperado).",
+  "key_signals": [
+    "Glicerina/COD en permeado de 320 mg/L (muy por encima del umbral de <50 mg/L esperado), indicando preservante residual no eliminado",
+    "ORP alimentación de -10 mV (vs +90 mV esperado), consistente con bisulfito de sodio residual actuando como reductor",
+    "Solo se ejecutó 1 aclarado de 30 min vs los 3 aclarados de 1 h recomendados por el proveedor de los elementos nuevos",
+    "ΔP etapa 1 elevado (1,5 bar vs 1,1 bar esperado), consistente con obstrucción parcial de los canales de alimentación por glicerina viscosa",
+    "ΔP etapa 2 también elevado (0,9 bar vs 0,7 bar esperado)",
+    "Caudal permeado al 70% del nominal (175 m³/h vs 250 m³/h), indicando reducción de permeabilidad por capa de glicerina sobre la membrana",
+    "Rechazo de sales de 98,97% vs 99,4% esperado, con tendencia de mejora lenta consistente con lavado progresivo del preservante",
+    "Conductividad permeado de 580 µS/cm con tendencia de bajada lenta desde 720 µS/cm, patrón típico de eliminación gradual de contaminante soluble",
+    "Presión de alimentación 2 bar por encima de lo esperado (60 vs 58 bar), consistente con resistencia adicional por fouling orgánico de glicerina",
+    "El procedimiento de commissioning del nuevo proveedor (con glicerina) difiere del histórico (propilenglicol) y no fue seguido"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño oxidativo a las membranas por exposición a cloro libre durante el aclarado o arranque",
+      "why_plausible": "Un rechazo de sales inferior al esperado (98,97% vs 99,4%) y conductividad elevada en permeado podrían indicar degradación de la capa activa de poliamida por oxidación. Si el permeado usado para aclarado contenía trazas de cloro, las membranas nuevas podrían haberse dañado.",
+      "why_discardable": "El cloro libre antes de RO es <0,02 mg/L (dentro de especificación), el ORP es anómalamente bajo (no alto como se esperaría con oxidante residual), y la tendencia de mejora progresiva del rechazo es inconsistente con daño oxidativo irreversible. Además, la presencia masiva de glicerina (320 mg/L COD) explica mejor la degradación transitoria del rechazo."
+    },
+    {
+      "hypothesis": "Defecto de fabricación en los elementos del nuevo proveedor (membranas con menor rechazo intrínseco o menor área efectiva)",
+      "why_plausible": "Los elementos provienen de un proveedor distinto al habitual, adquiridos por concurso de compras. Podría haber diferencias en la calidad de fabricación, área activa real o integridad de los sellos internos que expliquen el menor caudal y rechazo.",
+      "why_discardable": "Un defecto de fabricación no explicaría el ORP anómalamente bajo, la presencia de 320 mg/L de glicerina en permeado, ni la tendencia clara de mejora progresiva en conductividad y caudal. Estos patrones son consistentes con un transitorio de lavado de preservante, no con un defecto estructural permanente."
+    },
+    {
+      "hypothesis": "Instalación incorrecta de los elementos (O-rings dañados, interconectores mal colocados, telescoping)",
+      "why_plausible": "Un error de instalación mecánica podría causar bypass de alimentación a permeado, explicando la conductividad elevada y el menor rechazo. El ΔP elevado podría deberse a desalineación de elementos.",
+      "why_discardable": "Un bypass mecánico produciría una conductividad de permeado estable o empeorando, no la tendencia de mejora observada (de 720 a 580 µS/cm). Tampoco explicaría el ORP bajo ni la glicerina en permeado. El patrón transitorio es mucho más consistente con preservante residual."
+    },
+    {
+      "hypothesis": "Biofouling acelerado por la glicerina residual actuando como sustrato orgánico para crecimiento bacteriano en condiciones reductoras (ORP bajo)",
+      "why_plausible": "La glicerina es un sustrato fácilmente biodegradable. El ORP bajo (-10 mV) crea condiciones favorables para bacterias anaerobias. El ΔP elevado podría indicar inicio de biofouling. Solo han pasado 8 horas pero el biofilm puede iniciarse rápidamente sobre membranas nuevas.",
+      "why_discardable": "El biofouling significativo en 8 horas es poco probable; típicamente requiere días a semanas para manifestarse operacionalmente. La tendencia de mejora en todos los parámetros sugiere que el problema se está resolviendo (lavado progresivo), no empeorando como se esperaría con biofouling activo. Sin embargo, esta hipótesis es relevante como riesgo secundario si no se completa el aclarado."
+    }
+  ],
+  "requested_data": "Concentración de glicerina (o COD total) en el drenaje de rechazo del Tren T-05 en mg/L, medida a las 8 h post-arranque, para confirmar que la fuente del COD elevado es el preservante residual en los elementos y cuantificar la tasa de eliminación.",
+  "recommended_action": "Detener inmediatamente la producción del Tren T-05 (cerrar válvula de permeado a producto) y ejecutar el procedimiento de aclarado recomendado por el nuevo proveedor: realizar 3 ciclos sucesivos de recirculación a baja presión (10-15 bar) con permeado limpio de los otros trenes, cada ciclo de 1 hora de duración, drenando el concentrado y permeado a desagüe entre ciclos. Monitorizar COD en permeado y rechazo al final de cada ciclo; no reanudar producción hasta que COD permeado sea <50 mg/L y ORP alimentación se normalice a >+50 mV. Tras completar los aclarados, ejecutar ramp-up gradual de presión en 30 minutos hasta presión nominal, verificando ΔP, caudal y conductividad. Si tras los 3 aclarados el COD permeado sigue >50 mg/L, realizar un lavado alcalino suave (NaOH 0,1% p/v, pH 11,0-11,5, 35°C, 1 hora de recirculación) para solubilizar glicerina residual.",
+  "decision_change_condition": "Si tras completar los 3 aclarados recomendados por el proveedor, el COD en permeado baja a <50 mg/L y el ORP se normaliza (>+50 mV), pero el caudal de permeado permanece por debajo del 85% del nominal y/o el rechazo de sales no alcanza >99,2%, cambiaría mi diagnóstico hacia defecto de fabricación de los elementos o daño durante instalación/almacenamiento, y recomendaría prueba de vacío en los tubos de presión y sondeo individual de elementos con conductímetro.",
+  "confidence": 92
+}

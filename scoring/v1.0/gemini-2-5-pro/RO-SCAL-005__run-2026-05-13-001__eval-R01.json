@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-005",
+    "subject_id": "gemini-2-5-pro",
+    "subject_version": "gemini-2.5-pro",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'underdosing new phosphonate insufficient for high hardness/alkalinity/recovery + CaCO3 etapa 2' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts brief (fosfato cálcico, biofouling, antiincrustante precipitado)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Aumentar fosfonato 3.0 ppm temporal + demand dosis del proveedor — solo operacional, sin CIP."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ortofosfato en feed — discriminador para alt CaPO4, match parcial."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: foulant no CaCO3/CaPO4 sino precipitado → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

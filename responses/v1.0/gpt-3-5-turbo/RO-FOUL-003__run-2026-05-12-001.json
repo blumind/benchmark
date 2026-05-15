@@ -1,0 +1,32 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:11:42Z",
+  "main_hypothesis": "Fouling of the RO membranes due to organic matter accumulation",
+  "key_signals": [
+    "TOC increase in the RO feedwater",
+    "Turbidity increase in cartridge filter effluent",
+    "SDI₁₅ increase in cartridge filter effluent"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane damage or deterioration",
+      "why_plausible": "The sustained increase in ΔP stage 1 could indicate membrane fouling or damage.",
+      "why_discardable": "TOC increase and turbidity rise are more indicative of fouling by organic matter."
+    },
+    {
+      "hypothesis": "Scaling on the RO membranes",
+      "why_plausible": "The increase in ΔP stage 1 and the decrease in permeate flow rate could be attributed to scaling.",
+      "why_discardable": "The TOC increase and turbidity rise are not typical signals of scaling issues."
+    }
+  ],
+  "requested_data": "Microscopic analysis of the fouling layer composition on the RO membranes",
+  "recommended_action": "Perform a chemical cleaning of the RO membranes following the manufacturer's guidelines.",
+  "decision_change_condition": "If the microscopic analysis reveals predominantly inorganic scaling instead of organic fouling.",
+  "confidence": 85
+}

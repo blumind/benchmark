@@ -1,0 +1,52 @@
+{
+  "case_id": "RO-FOUL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:47:52Z",
+  "main_hypothesis": "Ensuciamiento orgánico/biológico de los elementos líderes de RO por arrastre de biopolímeros y TEP asociados a una proliferación de fitoplancton, con obstrucción gelatinosa de los espaciadores de alimentación en la cabeza de la etapa 1.",
+  "key_signals": [
+    "La subida brusca de ΔP está localizada en la cabeza de la etapa 1: 3,1 bar frente a baseline de 1,3 bar, mientras la cola de etapa 1 permanece estable en 0,8 bar frente a 0,7 bar.",
+    "La presión de alimentación del tren sube de 60 a 67 bar y el caudal permeado baja 11 %, patrón compatible con aumento de resistencia hidráulica por ensuciamiento.",
+    "La conductividad de permeado se mantiene estable, lo que apunta más a ensuciamiento hidráulico que a daño de membrana o pérdida de rechazo.",
+    "Clorofila-a en captación aumenta de 1,5 a 28 µg/L tras aviso oficial de proliferación de fitoplancton.",
+    "TEP medido en 320 µg/L Xeq frente a baseline menor de 50 µg/L Xeq, señal directa de carga elevada de exopolímeros gelatinosos.",
+    "TOC a la alimentación de RO aumenta de 1,2 a 3,4 mg/L, consistente con entrada de materia orgánica algal.",
+    "Se observaron filamentos visibles en muestras de alimentación y olor terroso antes de la aceleración del ΔP.",
+    "El aumento de SDI tras UF fue solo ligero, de 2,3 a 3,1, compatible con que parte relevante del problema sea biopolímero/gel deformable no plenamente capturado por SDI."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento por partículas finas o breakthrough de la UF/cartuchos",
+      "why_plausible": "El ΔP aumenta en la cabeza de la primera etapa y el SDI tras UF subió de 2,3 a 3,1, lo que puede indicar mayor carga de partículas hacia RO.",
+      "why_discardable": "El SDI sigue relativamente bajo y la señal dominante es la subida marcada de clorofila-a, TOC y TEP, además de filamentos visibles, que explican mejor un ensuciamiento gelatinoso orgánico que un simple arrastre mineral particulado."
+    },
+    {
+      "hypothesis": "Biofouling bacteriano no directamente asociado al evento algal",
+      "why_plausible": "No hay cloración continua, el TOC a RO está elevado y el patrón de aumento de ΔP en elementos líderes es típico de biofouling.",
+      "why_discardable": "La cronología está estrechamente ligada al bloom de fitoplancton, al aumento de clorofila-a y a TEP muy alto; esto favorece un origen algal/TEP del bioensuciamiento más que una proliferación bacteriana independiente."
+    },
+    {
+      "hypothesis": "Precipitación o ensuciamiento inorgánico por incrustación",
+      "why_plausible": "La presión de alimentación aumenta y el caudal permeado disminuye, lo que también puede ocurrir con scaling.",
+      "why_discardable": "El pH, la conductividad de alimentación y la temperatura no muestran un cambio brusco que sugiera sobresaturación nueva; además, el scaling suele manifestarse más hacia zonas de mayor concentración, no predominantemente en la cabeza de la etapa 1."
+    },
+    {
+      "hypothesis": "Ensuciamiento por hierro o arrastre de coagulante FeCl3",
+      "why_plausible": "Existe dosificación de FeCl3 aguas arriba y el fouling por hidróxidos metálicos puede incrementar ΔP en los elementos líderes.",
+      "why_discardable": "No se reporta cambio de dosificación de FeCl3 ni alteración de pH; la evidencia temporal y analítica principal apunta a carga algal, TOC y TEP, no a un incidente de coagulación."
+    },
+    {
+      "hypothesis": "Obstrucción mecánica localizada en la entrada del tren o en cartuchos de 1 µm",
+      "why_plausible": "Una obstrucción física puede causar aumento rápido de presión y caída de caudal.",
+      "why_discardable": "El dato específico de ΔP elevado en la cabeza de etapa 1 con cola estable, junto con señales de bloom y TEP, es más consistente con taponamiento de espaciadores en elementos líderes que con una restricción puramente mecánica aguas arriba."
+    }
+  ],
+  "requested_data": "Porcentaje de materia orgánica volátil en el depósito del espaciador de alimentación del elemento líder, medido por pérdida por ignición, en % de peso seco.",
+  "recommended_action": "Retirar de servicio el tren más afectado y ejecutar una limpieza CIP alcalina compatible con membranas SWRO para ensuciamiento orgánico/biológico: solución a pH 11,0 ajustada con NaOH, con 0,10 % p/p de tensioactivo no iónico aprobado para RO, a temperatura máxima de 30 °C, recirculación y remojo según el manual del fabricante; enjuagar con permeado hasta pH de descarga estable y no aplicar cloro u otros oxidantes a las membranas de poliamida.",
+  "decision_change_condition": "Cambiaría el diagnóstico si el depósito del elemento líder tuviera bajo contenido orgánico volátil y estuviera dominado por sales incrustantes, óxidos de hierro o partículas minerales, junto con TEP bajo en la alimentación a RO.",
+  "confidence": 86
+}

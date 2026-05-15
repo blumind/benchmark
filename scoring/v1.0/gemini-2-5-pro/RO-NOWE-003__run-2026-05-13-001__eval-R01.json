@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-003",
+    "subject_id": "gemini-2-5-pro",
+    "subject_version": "gemini-2.5-pro",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'incomplete flushing glycerin-based preservative... inadequate procedure' matches"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 5 signals (glicerina 320, ORP -10, 1x30min, dP+caudal, rechazo)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 3 alts (biofouling, defecto, ...) - segunda corta"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: take offline + low-P 3-5 bar flush con permeado 3h hasta COD<50 ORP>+50 - matches"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (ATP feed/concentrado) - tangencial"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: generica 'if COD<50 + ORP>+50 but dP>1.4 + caudal<200'"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Solida, sin CIP"
+}

@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:10:41Z",
+  "main_hypothesis": "Oxidative damage to SWRO membranes due to chronic exposure to chlorite (ClO₂⁻) and other oxidants from the piscifactoría's ClO₂ disinfection discharges, despite absence of measurable free chlorine.",
+  "key_signals": [
+    "Sustained rise in ORP (+180 mV vs baseline +50 mV) indicating presence of oxidants",
+    "Increase in total chlorine (DPD) from <0.05 to 0.15 mg/L in feed to RO",
+    "Presence of chlorite (ClO₂⁻) 0.08 mg/L confirmed in feed to RO",
+    "Progressive increase in permeate conductivity (590 µS/cm vs baseline 400 µS/cm) and decrease in salt rejection (98.95% vs 99.29%)",
+    "Olfactory detection of chlorine odor at intake inspection",
+    "Stable ΔP and flux decline (6%) consistent with membrane degradation rather than fouling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling due to increased organic load from piscifactoría discharges",
+      "why_plausible": "Piscifactoría discharges could introduce organic matter; ATP stable but not definitive for all biofouling types; permeate flux decline and conductivity rise could align with biofouling.",
+      "why_discardable": "No evidence of increased ATP, no coloration in cartridges, stable ΔP across stages, and conductivity rise is atypical for biofouling which usually causes more pronounced flux decline and ΔP increases."
+    },
+    {
+      "hypothesis": "Scaling due to changes in feedwater chemistry (e.g., increased bicarbonate or calcium from piscifactoría discharges)",
+      "why_plausible": "Piscifactoría discharges could alter feedwater composition; scaling would reduce salt rejection and increase permeate conductivity.",
+      "why_discardable": "Feedwater conductivity and pH are stable; scaling typically causes more pronounced ΔP increases in later stages and would not explain the ORP and chlorine signals."
+    },
+    {
+      "hypothesis": "Membrane aging or partial failure unrelated to oxidants",
+      "why_plausible": "Membranes are 12 months old post-partial replacement; aging can reduce rejection and increase conductivity.",
+      "why_discardable": "Conductivity rise is recent and progressive; aging would not explain the ORP spike, chlorine signals, or chlorite presence. Stable ΔP and flux decline are inconsistent with typical aging patterns."
+    }
+  ],
+  "requested_data": "Concentration of chlorite (ClO₂⁻) in feed to RO, measured by ion chromatography, in mg/L",
+  "recommended_action": "Immediately increase sodium bisulfite (SBS) dosage to 8 mg/L at the intake to neutralize oxidants, and install temporary activated carbon filtration (10 µm cartridges) on the feed line to RO. Verify chlorite concentration in feed to RO after 24 hours; if >0.05 mg/L, escalate to emergency shutdown of affected trains until resolved.",
+  "decision_change_condition": "If chlorite concentration in feed to RO is measured below 0.02 mg/L and ORP returns to baseline (<80 mV) within 48 hours of increased SBS dosage, the diagnosis of oxidative damage would be invalidated.",
+  "confidence": 95
+}

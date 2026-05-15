@@ -1,0 +1,53 @@
+{
+  "case_id": "RO-MECH-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:28:51Z",
+  "main_hypothesis": "Fallo de estanqueidad en una junta interna del Tubo 4 del Tren T-02, muy probablemente un O-ring inter-elemento nuevo mal asentado, dañado o dimensionalmente rígido tras la reinstalación, causando bypass de salmuera hacia el permeado.",
+  "key_signals": [
+    "La conductividad del permeado del T-02 subió bruscamente después de la reinstalación de los elementos, de 390 a 720 µS/cm en 24 h y hasta 1.350 µS/cm.",
+    "El problema está localizado: el probe test muestra Tubo 4 a 4.100 µS/cm mientras el resto de tubos del T-02 está en 380–420 µS/cm.",
+    "Los trenes vecinos mantienen conductividad de permeado estable alrededor de 395 µS/cm, descartando una causa común de alimentación.",
+    "La presión de alimentación, el caudal de permeado y el ΔP de etapa 1 del T-02 permanecen prácticamente estables, lo que no apunta a ensuciamiento o incrustación generalizada.",
+    "La conductividad de alimentación, temperatura, pH, ORP y cloro libre antes de RO están estables.",
+    "La anomalía apareció justo después de la retirada, limpieza externa, sustitución de O-rings y reinstalación de elementos.",
+    "El operario reportó que uno de los O-rings nuevos parecía rígido aunque entró bien.",
+    "La inspección visual indicó que las vainas de permeado estaban conectadas correctamente, reduciendo la probabilidad de una desconexión externa evidente.",
+    "El test de presión del Tubo 4 mostró una anomalía consistente con paso de salmuera por una junta interna."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño mecánico de una membrana o del tubo central de permeado de un elemento del Tubo 4 durante la manipulación o el CIP fuera de línea.",
+      "why_plausible": "La anomalía apareció tras retirar, limpiar, probar y reinstalar elementos; un daño físico localizado puede generar aumento de conductividad en un solo tubo sin afectar a trenes vecinos.",
+      "why_discardable": "El test de presión se reporta como consistente con paso de salmuera por una junta interna, y el antecedente específico de O-ring rígido favorece más un fallo de sellado inter-elemento que una rotura de membrana."
+    },
+    {
+      "hypothesis": "Fallo de O-ring de cabeza o cola del tubo de presión del Tubo 4.",
+      "why_plausible": "Los O-rings de cabeza/cola también fueron sustituidos y un mal asiento en esos puntos puede permitir contaminación del permeado por salmuera tras la reinstalación.",
+      "why_discardable": "La información disponible describe la anomalía del test de presión como paso por una junta interna, no por la cabeza o cola; además, la inspección visual no encontró una conexión incorrecta de las vainas de permeado."
+    },
+    {
+      "hypothesis": "Oxidación o ataque químico de las membranas del Tren T-02.",
+      "why_plausible": "Una pérdida de rechazo de sales puede deberse a daño químico de membranas.",
+      "why_discardable": "El cloro libre antes de RO se mantiene por debajo de 0,02 mg/L, el ORP está estable, los trenes vecinos no muestran pérdida de rechazo y el defecto está localizado en un solo tubo tras una intervención mecánica."
+    },
+    {
+      "hypothesis": "Ensuciamiento o incrustación en el Tubo 4 o en la primera etapa del T-02.",
+      "why_plausible": "El ensuciamiento puede afectar rechazo, caudal y conductividad de permeado en RO.",
+      "why_discardable": "El ΔP de etapa 1 está estable en 1,3 bar frente a 1,2 bar de línea base, el caudal solo baja 1 %, la subida de conductividad fue brusca y localizada, lo que no encaja con una evolución típica de fouling o scaling."
+    },
+    {
+      "hypothesis": "Cambio en la calidad del agua de alimentación o en las condiciones operativas globales.",
+      "why_plausible": "Aumentos de salinidad, temperatura o recuperación pueden elevar la conductividad del permeado.",
+      "why_discardable": "La conductividad de alimentación, temperatura, pH, presión y trenes vecinos permanecen estables; solo el T-02, y dentro de él el Tubo 4, presenta la desviación."
+    }
+  ],
+  "requested_data": "Perfil de conductividad del permeado del Tubo 4 por posición de elemento durante probing interno, en µS/cm por elemento o interconector.",
+  "recommended_action": "Sacar el Tren T-02 de servicio siguiendo el procedimiento estándar de parada, aislar y despresurizar el bastidor, abrir el Tubo 4, extraer los elementos manteniendo su orden y orientación, inspeccionar interconnectors y O-rings de cada unión, sustituir todos los O-rings inter-elemento y de cabeza/cola del Tubo 4 por repuestos OEM compatibles, lubricarlos únicamente con lubricante aprobado por el fabricante, reinstalar con control de asiento y orientación, realizar prueba de estanqueidad/pressure hold del tubo y un flushing a baja presión antes de devolver el tren a servicio.",
+  "decision_change_condition": "Cambiaría el diagnóstico si el probing por posición y la prueba de estanqueidad demostraran que todos los interconnectors y O-rings del Tubo 4 sellan correctamente y que la alta conductividad se origina dentro de un único elemento, lo que apuntaría a daño mecánico de membrana o del tubo central de permeado.",
+  "confidence": 92
+}

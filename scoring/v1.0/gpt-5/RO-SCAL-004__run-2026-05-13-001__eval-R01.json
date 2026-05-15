@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-SCAL-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-004",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'CaSO4 yeso etapa 3 + recovery 83% + sulfato↑ + dosis antiincrustante insuficiente' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (sílice, biofouling, particulado/coloides, compactación)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "FAIL: Reducir recovery 83→80% + CIP ácido HCl 1.0% pH 2.0 25-30°C 30-45 min — HCl puro como único agente de limpieza para yeso, match exacto case_specific recoverable."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ΔP etapa 3 post-CIP ácido HCl — discriminador específico."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: tras CIP HCl ΔP no disminuye 30% → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Usar HCl puro como único agente de limpieza para el yeso",
+      "severity": "recoverable",
+      "justification": "Cita ACT: 'Ejecutar CIP ácido focalizado en etapa 3: preparar solución con HCl al 1,0 % p/p en permeado RO (pH 2,0 ± 0,2)... durante 30–45 min'. HCl como único agente sin EDTA ni paso alcalino — match exacto case_specific recoverable. El yeso requiere quelante EDTA en alcalino o secuencia mixta."
+    }
+  ],
+  "reviewer_notes": ""
+}

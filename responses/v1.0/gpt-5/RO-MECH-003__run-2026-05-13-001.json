@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-MECH-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:37:27Z",
+  "main_hypothesis": "Fallo mecánico del sello de la cabeza (end-cap) y/o sus juntas en la vaina FRP del Tubo 2 de la etapa 1, provocando bypass de salmuera/alimento hacia el lado de permeado en la propia cabeza.",
+  "key_signals": [
+    "Perfil de permeado por tubo (etapa 1): Tubo 2 con 1.250 µS/cm frente a 100–130 µS/cm en los otros tubos (desviación localizada).",
+    "Aumento progresivo de la conductividad de permeado planta (110 → 480 µS/cm) con ΔP de ambas etapas estable (1,1 y 0,8 bar) y conductividad/temperatura de alimentación estables.",
+    "Bajada del rechazo de sales calculado de 97,8 % a 90,3 % sin indicios de oxidación (Cl2 < 0,02 mg/L; ORP +75 mV).",
+    "Incidente previo: fuga de agua dulce en la ‘pestaña’ de la cabeza del tubo, resuelta al reapretar pernos (día -22/-20).",
+    "Inspección visual: protrusión anómala del sello frontal y junta tórica marcada en el cap del Tubo 2 (día -4).",
+    "Test de presión del Tubo 2 con elementos extraídos: pérdida de presión a 1 bar consistente con defecto de sello de cabeza/cap (día -2).",
+    "Pista del cap en la vaina FRP con desgaste (día -1), compatible con asiento/sujeción deteriorados."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Rotura de lámina o fallo de pegado en un elemento del Tubo 2 (daño de membrana) que eleva el paso de sales.",
+      "why_plausible": "Un daño puntual de lámina puede producir conductividad elevada en el permeado de un solo tubo.",
+      "why_discardable": "El test de presión del tubo sin elementos mostró fuga en el conjunto de cabeza; además, no hay señales de oxidación (sin cloro) ni cambios en ΔP que acompañen un daño general de membrana."
+    },
+    {
+      "hypothesis": "Fallo/omisión de juntas de interconexión o del adaptador de permeado dentro del Tubo 2 (bypass interno alimento→permeado).",
+      "why_plausible": "Juntas dañadas pueden mezclar salmuera con el colector de permeado de un solo tubo, elevando su conductividad.",
+      "why_discardable": "La pérdida en el test de presión con el tubo vacío apunta al sello de cabeza/end-cap, y el antecedente de fuga en la pestaña del cap concuerda más con un problema en la cabeza que con interconectores internos."
+    },
+    {
+      "hypothesis": "Microrrotura/daño en la vaina FRP del Tubo 2 cerca del puerto de permeado.",
+      "why_plausible": "Una fisura podría permitir entrada de agua salada al puerto de permeado.",
+      "why_discardable": "La inspección no halló grietas visibles y la fuga previa cesó al reapretar la cabeza; además, el test de presión apunta específicamente al sello del cap, no a la pared de la vaina."
+    },
+    {
+      "hypothesis": "Envejecimiento/ensuciamiento generalizado de membranas elevando paso de sales.",
+      "why_plausible": "Con 5 años de servicio podría aumentar el paso de sales.",
+      "why_discardable": "La desviación está localizada en el Tubo 2; ΔP y condiciones de alimentación están estables y otros tubos muestran permeado 100–130 µS/cm."
+    }
+  ],
+  "requested_data": "Conductividad del permeado tomada desde el tubo colector interno (antes de la cabeza) del Tubo 2 de la etapa 1 (µS/cm).",
+  "recommended_action": "Aislar y despresurizar el bastidor con bloqueo/etiquetado. En el Tubo 2 de etapa 1: desmontar la cabeza/end-cap, inspeccionar y limpiar la pista/asiento en la vaina FRP; sustituir por repuestos nuevos del OEM todas las juntas del conjunto de cabeza (O-ring de presión del cap, juntas del puerto de permeado y anillos de respaldo), lubricando con grasa aprobada NSF según manual. Verificar y, si procede por precaución, renovar las juntas de interconexión y los ‘brine seals’ del primer elemento. Reinstalar asegurando el correcto asentamiento del anillo de retención y aplicar el par de apriete especificado por el OEM en patrón cruzado. Realizar prueba de estanqueidad del conjunto de cabeza por el lado de permeado a 1,0 bar (agua) durante 10 min según criterio del OEM; si es satisfactoria, efectuar una prueba hidrostática del tubo a ~1,25× la presión operativa (~20 bar) sin exceder la presión de diseño del fabricante. Reponer en servicio y repetir el probe test del tubo; si persiste conductividad alta, retirar e inspeccionar elementos y juntas internas.",
+  "decision_change_condition": "Si la conductividad del permeado tomada antes de la cabeza del Tubo 2 resulta igualmente elevada (p. ej., >500 µS/cm) o no baja tras sustituir y validar la estanqueidad del cap, cambiaría el diagnóstico a fallo interno de interconectores/elemento (daño de membrana u O-rings internos) en lugar de sello de cabeza.",
+  "confidence": 90
+}

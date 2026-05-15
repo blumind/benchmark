@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-003-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-003",
+    "subject_id": "gemini-2-5-flash-lite",
+    "subject_version": "gemini-2.5-flash-lite",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "MH 'biofouling exacerbado por TOC' — captura solo bio, no orgánico-coloidal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "3 alts genéricas."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "Alts breves."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP genérico alcalino + ácido siguiendo manual fabricante."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide microbio en permeado — dato sub-óptimo."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Generic threshold."
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Diagnóstico bio cuando gold expects orgánico-coloidal combinado."
+}

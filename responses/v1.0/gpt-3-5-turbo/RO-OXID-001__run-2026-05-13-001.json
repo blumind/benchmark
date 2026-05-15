@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:39:04Z",
+  "main_hypothesis": "Degradation of the activated carbon granules in the dechlorination stage",
+  "key_signals": [
+    "Decrease in salt rejection",
+    "Marked increase in free chlorine concentration before and after the CAG",
+    "Marked increase in ORP before and after the CAG",
+    "Increase in permeate conductivity",
+    "Change in ORP values after CAG replacement",
+    "Supervisor's decision to increase shock chlorination frequency"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling",
+      "why_plausible": "The decrease in salt rejection and increase in permeate conductivity could be indicative of fouling affecting membrane performance.",
+      "why_discardable": "The marked increase in free chlorine concentration and ORP before and after the CAG stage is not typical of membrane fouling."
+    },
+    {
+      "hypothesis": "Insufficient shock chlorination dosing",
+      "why_plausible": "The decision to increase shock chlorination frequency suggests a concern with biofouling, which could be due to insufficient dosing.",
+      "why_discardable": "The marked increase in free chlorine concentration and ORP before and after the CAG stage is not consistent with insufficient dosing."
+    }
+  ],
+  "requested_data": "Iodo de poros del CAG antes y después del aumento de la frecuencia de choque con hipoclorito",
+  "recommended_action": "Replace the activated carbon granules in the dechlorination stage immediately.",
+  "decision_change_condition": "If the analysis of the porosity of the activated carbon granules shows a significant decrease after the increase in shock chlorination frequency, then the diagnosis would change.",
+  "confidence": 85
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-005",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'daño oxidativo parcial por H2O2 residual + aclarado insuficiente' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (cloro libre residual, MECH O-rings, scaling, biofouling post-CIP)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Sacar T-03 + aclarado prolongado 90 min + verificar H2O2 <0.1 colorimétrico — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide H2O2 residual en permeato y concentrado método colorimétrico LD ≤0.1 — match parcial accepted (concentrado)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: H2O2 indetectable + probing único vaso anómalo → MECH switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

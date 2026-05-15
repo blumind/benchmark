@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-003",
+    "subject_id": "gemini-2-5-pro",
+    "subject_version": "gemini-2.5-pro",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'BaSO4 cola elementos T-04 + interrupción prolongada antiincrustante' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (biofouling localizado, particulado, SrSO4) con why_discardable."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Aislar T-04 + mantener wetted + NO chemical cleaning hasta identificar — conservador. Para Closed gold expects CIP directo DTPA/EDTA; espera análisis innecesario."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide SEM-EDX/XRF foulant — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: foulant orgánico/biofilm/aluminosilicato (no Ba) → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "ACT muy cauteloso (no CIP hasta análisis). Para Closed con firma clara la espera es subóptima pero no dañina."
+}

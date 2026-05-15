@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-001",
+    "subject_id": "gpt-3-5-turbo",
+    "subject_version": "gpt-3.5-turbo-0125",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "MH 'mal funcionamiento bomba peristáltica' — síntoma operacional, sin mencionar scaling/CaCO3 ni pH."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals listados muy brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts paráfrasis sin signal anchoring."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Reemplazar manguera + cebado; sin CIP, sin restablecer pH."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide 'estado de manguera' — cualitativo, no trigger."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: 'si manguera OK → otra causa'."
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

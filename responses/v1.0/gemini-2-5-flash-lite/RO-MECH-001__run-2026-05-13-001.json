@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-MECH-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:31:12Z",
+  "main_hypothesis": "Fallo de sellado en el O-ring de un elemento de membrana en el Tubo 4 del Tren T-02, permitiendo la fuga de salmuera al permeado.",
+  "key_signals": [
+    "Conductividad permeado T-02 (subida brusca tras reinstalación)",
+    "Conductividad permeado trenes vecinos (estable)",
+    "Rechazo de sales T-02 (bajada brusca)",
+    "Probe test perfil de conductividad permeado por tubo del T-02 (Tubo 4: 4.100 µS/cm; resto: 380–420 µS/cm)",
+    "Test de presión: el Tubo 4 muestra anomalía consistente con paso de salmuera por una junta interna."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Contaminación del Tubo 4 por residuos del CIP o del taller.",
+      "why_plausible": "El Tubo 4 fue parte del grupo de tubos que recibieron CIP avanzado y reinstalación. Si el enjuague post-CIP fue inadecuado o si hubo contaminación durante el manejo en taller, podría explicar la alta conductividad del permeado de ese tubo.",
+      "why_discardable": "La alta conductividad se mantiene y el test de presión indica un fallo de sellado interno, no una simple contaminación superficial que debería haberse lavado con el flujo de permeado. Además, la conductividad del permeado del T-02 en general subió, no solo la del Tubo 4 inicialmente."
+    },
+    {
+      "hypothesis": "Fallo de un elemento de membrana en el Tubo 4, no relacionado con el sellado.",
+      "why_plausible": "Los elementos de membrana tienen una vida útil y pueden fallar internamente (ej. rotura de la carcasa interna, del espaciador, etc.), lo que podría causar un aumento de la conductividad del permeado.",
+      "why_discardable": "El reporte del operario sobre un O-ring rígido y el resultado del test de presión apuntan fuertemente a un problema de sellado. Un fallo interno de membrana típicamente no se manifestaría con una fuga de salmuera detectable por test de presión de esa manera."
+    },
+    {
+      "hypothesis": "Problema con la sonda de conductividad del Tubo 4.",
+      "why_plausible": "La medición de 4.100 µS/cm en el Tubo 4 es excepcionalmente alta y podría ser un error de la sonda o de su instalación.",
+      "why_discardable": "El test de presión posterior confirma una anomalía consistente con paso de salmuera, lo que valida la medición de alta conductividad. Además, la conductividad general del T-02 subió inicialmente, sugiriendo un problema más general que luego se localizó en el Tubo 4."
+    }
+  ],
+  "requested_data": "Resultado de la inspección interna del Tubo 4, identificando el elemento de membrana específico y la naturaleza del fallo de sellado (ej. O-ring dañado, asiento de O-ring defectuoso).",
+  "recommended_action": "Desmontar el Tubo 4 del Tren T-02. Inspeccionar visualmente todos los O-rings inter-elemento y de cabeza/cola del Tubo 4. Si se identifica un O-ring dañado o mal asentado, reemplazarlo y realizar prueba de estanqueidad. Si el problema persiste o no se identifica visualmente, retirar y reemplazar todos los elementos de membrana del Tubo 4.",
+  "decision_change_condition": "Si la inspección del Tubo 4 revela que todos los O-rings están en perfecto estado y el test de presión no muestra fugas, y la conductividad del permeado del Tubo 4 se normaliza tras una purga, entonces la hipótesis principal sería incorrecta y se debería investigar un problema de contaminación residual del CIP o un fallo de membrana no relacionado con sellos.",
+  "confidence": 90
+}

@@ -1,0 +1,31 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:52:33Z",
+  "main_hypothesis": "Mal funcionamiento de la bomba peristáltica del antiincrustante",
+  "key_signals": [
+    "Bajada drástica en el caudal de antiincrustante medido",
+    "Operario observa 'espuma' en el tanque del antiincrustante y registra que 'la bomba parece pulsar irregular'"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Obstrucción en los cartuchos de filtración",
+      "why_plausible": "Podría causar un aumento en la presión de etapa 2 y una disminución en el caudal de permeado",
+      "why_discardable": "La obstrucción en los cartuchos no explicaría la bajada drástica en el caudal de antiincrustante ni la observación de 'espuma' en el tanque"
+    },
+    {
+      "hypothesis": "Fallo en el sensor de caudal de antiincrustante",
+      "why_plausible": "Explicaría la discrepancia entre el caudal medido y la consigna",
+      "why_discardable": "No justificaría la observación de 'espuma' en el tanque ni la pulsación irregular de la bomba"
+    }
+  ],
+  "requested_data": "Estado de la manguera de la bomba peristáltica del antiincrustante",
+  "recommended_action": "Reemplazar la manguera de la bomba peristáltica del antiincrustante y realizar un cebado completo de la bomba según procedimiento",
+  "decision_change_condition": "Si el estado de la manguera de la bomba peristáltica se encuentra en buen estado y no hay evidencia de fallo, se consideraría otra causa para el mal funcionamiento",
+  "confidence": 90
+}

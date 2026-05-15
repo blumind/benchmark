@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-OXID-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:06:03Z",
+  "main_hypothesis": "Daño oxidativo irreversible en las membranas de ósmosis inversa del Tren T-03, causado por la presencia de peróxido de hidrógeno residual debido a un enjuague insuficiente después del ciclo de limpieza química (CIP).",
+  "key_signals": [
+    "Aumento progresivo de la conductividad del permeado (de 410 a 540 µS/cm) y disminución del rechazo de sales inmediatamente después de un CIP con H₂O₂.",
+    "Reducción del tiempo de enjuague post-CIP de 60 a 45 minutos, lo que constituye una desviación del protocolo estándar que podría dejar oxidante residual.",
+    "Disminución del caudal de permeado del tren (bajada del 4%) junto con un aumento del paso de sales, lo cual es característico del daño químico en la capa de poliamida.",
+    "Estabilidad del diferencial de presión (ΔP) en ambas etapas, lo que hace menos probable un ensuciamiento (fouling) como causa principal.",
+    "El problema está aislado exclusivamente en el Tren T-03, el único que fue sometido al CIP reciente."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga en O-rings o sellos de salmuera (brine seals) en uno o más vasos de presión.",
+      "why_plausible": "Los ciclos de CIP (cambios de presión, pH y temperatura) pueden estresar los componentes mecánicos, y una fuga mezclaría agua de alimentación/concentrado con el permeado, elevando su conductividad.",
+      "why_discardable": "Una fuga mecánica típicamente causa un aumento de conductividad súbito y de mayor magnitud, no el aumento gradual observado durante 5 días. Además, no explicaría la ligera caída en el caudal de permeado."
+    },
+    {
+      "hypothesis": "Ensuciamiento biológico (biofouling) post-CIP.",
+      "why_plausible": "Un procedimiento de desinfección o enjuague inadecuado podría permitir una rápida proliferación de microorganismos en la superficie de la membrana, afectando el rendimiento.",
+      "why_discardable": "El biofouling se manifiesta principalmente por un aumento significativo en el diferencial de presión (ΔP) a través de las etapas, pero los datos indican que el ΔP se ha mantenido estable."
+    },
+    {
+      "hypothesis": "Precipitación de sales o residuos de los químicos del CIP sobre la membrana.",
+      "why_plausible": "Un enjuague inadecuado del limpiador alcalino (pH 12) podría causar precipitación de sales de dureza, y los rastros marrones en los cartuchos podrían indicar precipitación de metales.",
+      "why_discardable": "Al igual que el biofouling, la precipitación o scaling causaría un aumento notable en el diferencial de presión (ΔP), lo cual no se ha observado. Los valores de ΔP son estables."
+    }
+  ],
+  "requested_data": "Perfil de conductividad del permeado de cada uno de los vasos de presión individuales del Tren T-03 (en µS/cm).",
+  "recommended_action": "Detener inmediatamente el Tren T-03 y aislarlo. Realizar un enjuague exhaustivo del tren con agua de permeado durante un mínimo de 90 minutos y verificar la ausencia de peróxido de hidrógeno residual con un kit de análisis colorimétrico de alta sensibilidad (< 0.1 mg/L) antes de proceder con cualquier otra acción diagnóstica.",
+  "decision_change_condition": "Mi diagnóstico cambiaría si el perfil de conductividad de los vasos de presión muestra que el aumento de conductividad está localizado en un único vaso (especialmente en la cola del tren), en lugar de estar distribuido de forma generalizada por todo el tren.",
+  "confidence": 95
+}

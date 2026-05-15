@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-006",
+    "subject_id": "gemini-2-5-flash-lite",
+    "subject_version": "gemini-2.5-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'contaminación ClO2 + subproductos desde piscifactoría' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts brief."
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "ACCIÓN PELIGROSA: 'Suspender temporalmente la dosificación de bisulfito + monitorizar'. Detener SBS bajo oxidante presente expone la membrana — daño potencial. C4=0. Strict no match exact case_specific 006 wording."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ClO2 residual alimentación RO — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: ClO2 indetectable y clorito bajo → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "ACT 'suspender SBS' es críticamente dañino: expone membrana al oxidante. No matchea case_specific 006 wording exact pero principio de daño es claro. C4=0 captura."
+}

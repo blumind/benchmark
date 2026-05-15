@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-OXID-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:48:09Z",
+  "main_hypothesis": "Oxidative degradation of the polyamide thin-film composite (TFC) membrane active layer caused by residual ozone breakthrough from the upstream plant.",
+  "key_signals": [
+    "Drastic decrease in salt rejection (97.8% to 88.8%)",
+    "Sharp increase in permeate conductivity (75 to 380 µS/cm)",
+    "Detection of residual ozone (0.06 mg/L) in RO feed",
+    "Significant increase in feed ORP (+110 mV to +280 mV)",
+    "Temporal correlation with increased ozone dosing at the upstream plant"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane scaling due to anti-scalant failure",
+      "why_plausible": "Scaling can cause flux loss and potential salt passage increases.",
+      "why_discardable": "Scaling typically manifests as a significant increase in differential pressure (ΔP), which remains stable here; it does not explain the sharp rise in permeate conductivity."
+    },
+    {
+      "hypothesis": "O-ring or seal failure in the pressure vessels",
+      "why_discardable": "Seal failure would cause a localized increase in permeate conductivity but would not explain the systemic, progressive degradation of salt rejection across the entire train.",
+      "why_plausible": "Mechanical seal failure is a common cause of permeate quality degradation."
+    }
+  ],
+  "requested_data": "Normalized salt passage (SP) trend data for individual pressure vessels to determine if degradation is uniform or localized to the lead elements.",
+  "recommended_action": "Immediately install a sodium bisulfite (SBS) dosing system at the RO feed header to neutralize residual ozone, targeting a residual concentration of 2-3 mg/L of SBS to ensure complete reduction.",
+  "decision_change_condition": "If the permeate conductivity increase were accompanied by a significant rise in differential pressure (ΔP) across the first stage, I would shift the diagnosis to membrane fouling or scaling.",
+  "confidence": 95
+}

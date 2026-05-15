@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-NOWE-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-004",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'entrada de aire en bastidor... purgado insuficiente' matches"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals (dP bajos, balance 92%, borboteo, cond 380, rechazo, P alta)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (fuga membrana, contaminacion mantenimiento) descartadas"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: 'purgado prolongado + caudal 110% nominal' - excede flux con borboteo audible"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (O2 disuelto permeado)"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: explicit: O2<2 mg/L tras purgado -> descartar aire"
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Forzar la operación a presión completa con ΔP por debajo y borboteo audible",
+      "severity": "critical",
+      "justification": "Recomienda caudal 110% nominal y aumentar presion con borboteo audible - cavitacion"
+    }
+  ],
+  "reviewer_notes": "Forzar 110% caudal con borboteo audible es critical fail"
+}

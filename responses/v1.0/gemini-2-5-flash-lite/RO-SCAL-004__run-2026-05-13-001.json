@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:13:18Z",
+  "main_hypothesis": "Formación de incrustaciones de sulfato de calcio (CaSO₄) en las membranas de la etapa 3, exacerbada por el aumento de la recuperación y un posible cambio en la química del agua de alimentación.",
+  "key_signals": [
+    "ΔP etapa 3: Subida marcada (de 0,5 bar a 1,5 bar)",
+    "Sulfato rechazo: Subida marcada (de 1.100 mg/L a 1.290 mg/L)",
+    "Cálculo de saturación de CaSO₄ da SI ≈ 1,1 (sobresaturado)",
+    "Caudal permeado planta: Bajada del 8 %",
+    "Presión alimentación: Subida (de 12,5 bar a 14,8 bar)",
+    "Conductividad permeado: Subida ligera (de 32 µS/cm a 38 µS/cm)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling biológico o de materia orgánica en las membranas de la etapa 3.",
+      "why_plausible": "El aumento de la recuperación puede concentrar materia orgánica y nutrientes, favoreciendo el crecimiento biológico. El TOC de alimentación es estable, pero un cambio en la composición del mix de aguas regeneradas podría introducir componentes orgánicos más difíciles de tratar o que favorezcan el crecimiento biológico. El CIP alcalino estándar no es óptimo para fouling biológico.",
+      "why_discardable": "La señal más fuerte es la sobresaturación de CaSO₄ y el aumento del sulfato de rechazo, lo que apunta directamente a una incrustación inorgánica. El TOC de alimentación se mantiene estable, lo que reduce la probabilidad de un fouling orgánico significativo como causa principal. El CIP alcalino debería haber tenido un efecto más pronunciado si el fouling fuera principalmente orgánico."
+    },
+    {
+      "hypothesis": "Fouling por sílice en las membranas de la etapa 3.",
+      "why_plausible": "La sílice de alimentación es relativamente alta (22 mg/L) y el rechazo de sílice ha aumentado. El aumento de la recuperación concentra la sílice en el agua de rechazo, lo que podría llevar a la sobresaturación y precipitación de sílice, especialmente si hay cambios en el pH o la temperatura (aunque estos se reportan estables).",
+      "why_discardable": "El principal indicador de sobresaturación reportado es para CaSO₄ (SI ≈ 1,1), no para sílice. Aunque la sílice de rechazo ha aumentado, no hay un indicio directo de sobresaturación de sílice. El aumento del ΔP es más consistente con la precipitación de sales menos solubles como el sulfato de calcio."
+    },
+    {
+      "hypothesis": "Problema con las membranas de la etapa 3 (daño, canalización).",
+      "why_plausible": "Un daño físico o una canalización en las membranas de la etapa 3 podría causar un aumento localizado del ΔP y una disminución del rendimiento. El hecho de que el ΔP de la etapa 3 sea significativamente mayor que las otras etapas podría sugerir un problema específico de esa etapa.",
+      "why_discardable": "El aumento del ΔP en la etapa 3 se correlaciona fuertemente con el aumento del sulfato de rechazo y la sobresaturación de CaSO₄. Si fuera un problema de daño o canalización, esperaríamos ver una caída más drástica en la calidad del permeado (mayor conductividad) o un patrón de ΔP diferente entre las etapas. El CIP alcalino tuvo un efecto temporal, lo que sugiere que la causa es una deposición que puede ser parcialmente eliminada."
+    }
+  ],
+  "requested_data": "Análisis de la composición química del sarro extraído de las membranas de la etapa 3 (especialmente Ca, SO₄, Si).",
+  "recommended_action": "Realizar un CIP ácido para disolver las sales de sulfato de calcio. Utilizar una solución de ácido cítrico al 1-2% o ácido fosfórico al 1-2% a una temperatura controlada (ej. 30-40 °C) durante 60-120 minutos, seguido de un enjuague exhaustivo. Monitorear el ΔP durante el CIP. Si el ΔP no se recupera adecuadamente, considerar un CIP alcalino posterior para eliminar cualquier residuo orgánico o de sílice.",
+  "decision_change_condition": "Si el análisis del sarro muestra una predominancia de sílice o material orgánico, o si el CIP ácido no mejora significativamente el ΔP y la calidad del permeado, la hipótesis principal se vería comprometida.",
+  "confidence": 85
+}

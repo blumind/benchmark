@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-MECH-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:29:28Z",
+  "main_hypothesis": "Defective O-ring interconnector in the fourth tube of T-02 train",
+  "key_signals": [
+    "Conductivity of permeate in T-02 increased sharply after reinstallation",
+    "Probe test shows tube 4 of T-02 with 4,100 µS/cm while others are in normal range",
+    "Pressure test on tube 4 shows anomaly consistent with brine passage through an internal joint",
+    "Operator reported a stiff O-ring during reinstallation"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Damage to membrane elements during cleaning or reinstallation",
+      "why_plausible": "The membranes were subjected to an advanced CIP and reinstallation process which could have caused damage.",
+      "why_discardable": "Pressure test results and the specific high conductivity in one tube suggest a localized issue rather than widespread membrane damage."
+    },
+    {
+      "hypothesis": "Improper sealing of the permeate carriers in tube 4",
+      "why_plausible": "Improper sealing could lead to brine passage and increased conductivity.",
+      "why_discardable": "Visual inspection confirmed that the permeate carriers were correctly connected."
+    }
+  ],
+  "requested_data": "Detailed pressure decay test results for tube 4",
+  "recommended_action": "Isolate T-02 train and replace the O-rings in tube 4, followed by a pressure test to confirm sealing integrity.",
+  "decision_change_condition": "If the pressure decay test results show no anomaly in tube 4, the main hypothesis would be invalidated.",
+  "confidence": 85
+}

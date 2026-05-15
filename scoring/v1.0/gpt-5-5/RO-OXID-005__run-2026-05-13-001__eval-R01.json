@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-005",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'daño oxidativo incipiente capa poliamida T-03 por H2O2 residual + aclarado post-CIP insuficiente' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (MECH, biofouling/orgánico post-CIP, scaling, Fenton catalizado por Fe)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Retirar T-03 + aclarado 60 min + no retornar hasta H2O2 <1 mg/L medición cuantitativa — pero el umbral 1 mg/L es el de la tira, gold dice daño <1 mg/L. C4=1 borderline."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide H2O2 cuantitativo en enjuague final — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: H2O2 <0.1 + probing localizado → MECH switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Umbral <1 mg/L es lenient: gold dice daño <1 mg/L. Strict no es la tira (model usa cuantitativa) pero el threshold es alto."
+}

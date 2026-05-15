@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-009-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-009",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fouling por antiespumante + cationic polymer' captura 2 de 3."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta TS + hidrocarburos + TOC + depósito gel + cronología."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (bio, hidrocarburos FOUL, cationic polymer) — cubre 3rd candidato."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP dos pasos: cítrico + alcalino + 'do not exceed 40°C' + manufacturer guidelines."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide antiespumante concentration — single candidate trigger."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: antiespumante <0.1 + ATP rising + TS low → biofouling."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

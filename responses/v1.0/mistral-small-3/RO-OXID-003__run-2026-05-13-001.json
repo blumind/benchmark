@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:52:37Z",
+  "main_hypothesis": "Fallo en la neutralización del cloro libre por degradación de la solución de bisulfito sódico (SBS) en el tanque de dosificación, debido a la inoperatividad del agitador y estratificación de la solución (concentración real en punto de aspiración: 0,2 % p/p vs. 25 % p/p preparado).",
+  "key_signals": [
+    "Aumento marcado de cloro libre antes RO (0,42 mg/L vs. <0,02 mg/L basal)",
+    "Subida brusca de ORP antes RO (+540 mV vs. +120 mV basal)",
+    "ORP tras dosificación de SBS sin cambio drástico (+540 mV vs. esperado <0 mV)",
+    "Caudal de SBS dosificado en 0 L/h (sin caudal real pese a configuración de 18 L/h)",
+    "Conductividad de permeado elevada (720 µS/cm vs. 380 µS/cm basal) y rechazo de sales reducido (98,7 % vs. 99,3 % basal)",
+    "Estratificación confirmada en tanque de SBS (0,2 % p/p real vs. 25 % p/p preparado)",
+    "Historial de mantenimiento: agitador inoperativo desde Día -1 y consumo anómalo reportado desde Día -5"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo en la dosificación de hipoclorito sódico en captación (dosis excesiva o fallo en sensor de ORP/Cloro libre).",
+      "why_plausible": "El aumento de cloro libre y ORP antes RO podría deberse a una dosificación excesiva de hipoclorito o a un fallo en la monitorización que no detecte el exceso.",
+      "why_discardable": "No hay evidencia de cambios en la dosificación de hipoclorito (dosis estable en 1,2 mg/L) ni en la conductividad de alimentación. Además, el ORP tras SBS no muestra neutralización, lo que sugiere que el problema está en la dosificación de SBS, no en el hipoclorito."
+    },
+    {
+      "hypothesis": "Contaminación biológica en el bastidor RO por fallo en el pretratamiento (ej. rotura de cartuchos de 5 µm o fallo en DAF).",
+      "why_plausible": "La subida de conductividad en permeado y la reducción del rechazo de sales podrían deberse a un aumento de fouling orgánico o bacteriano en las membranas.",
+      "why_discardable": "No hay señales de aumento de ΔP en etapas 1 o 2, ni cambios en la presión de alimentación o flujo de permeado que indiquen fouling. Además, el cloro libre antes RO está elevado, lo que debería inhibir el crecimiento biológico."
+    },
+    {
+      "hypothesis": "Fallo en la bomba dosificadora de SBS (ej. obstrucción, fallo mecánico o calibración incorrecta).",
+      "why_plausible": "El caudal de SBS dosificado es 0 L/h pese a la configuración de 18 L/h, lo que sugiere un fallo en la bomba o en la línea de dosificación.",
+      "why_discardable": "Aunque la bomba podría estar fallando, la estratificación del tanque de SBS (0,2 % p/p real) explica por qué la dosificación no es efectiva incluso si la bomba funcionara. La causa raíz es la degradación de la solución, no el fallo de la bomba en sí."
+    }
+  ],
+  "requested_data": "Concentración de bisulfito sódico en la línea de dosificación (tras la bomba) en % p/p.",
+  "recommended_action": "1. Detener inmediatamente la dosificación de SBS y cerrar la válvula de aspiración del tanque. 2. Preparar una nueva solución de SBS al 25 % p/p con agitación continua durante al menos 2 horas. 3. Verificar la concentración de la nueva solución con un kit de medición en línea o manual. 4. Reiniciar la dosificación de SBS a 18 L/h con el agitador en funcionamiento continuo. 5. Monitorear ORP tras SBS (<0 mV) y cloro libre antes RO (<0,02 mg/L) durante 2 horas. 6. Si los valores se normalizan, aumentar gradualmente el flujo de permeado hasta recuperar el 99,3 % de rechazo de sales.",
+  "decision_change_condition": "Si la concentración de bisulfito sódico en la línea de dosificación (tras la bomba) es >15 % p/p y el ORP tras SBS se normaliza a <0 mV, el fallo sería atribuible a un problema en la bomba dosificadora, no a la degradación de la solución.",
+  "confidence": 98
+}

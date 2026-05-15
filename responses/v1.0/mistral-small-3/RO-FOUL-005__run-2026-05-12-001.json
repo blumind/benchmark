@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:44:18Z",
+  "main_hypothesis": "Exceso de dosificación de FeCl₃ (4 mg/L) con acumulación de hidróxidos de hierro en la superficie de las membranas, causando fouling inorgánico y obstrucción progresiva de los cartuchos de 5 µm y etapa 1 de RO.",
+  "key_signals": [
+    "Subida sostenida de ΔP etapa 1 cabeza (de 1,1 a 2,2 bar) con ΔP cola estable, indicando obstrucción en la entrada de los elementos de RO",
+    "Aumento de Fe total en alimentación RO (de 0,05 a 0,42 mg/L) con subida marcada de SDI₁₅ (de 2,4 a 4,2) y turbidez (de 0,06 a 0,22 NTU) a la salida de cartuchos, sugiriendo arrastre de flóculos de hierro",
+    "Coloración rojiza intensa en cartuchos a la salida de filtros de arena y trazas de Fe en muestras puntuales, confirmando presencia de óxidos/hidróxidos de hierro en el pretratamiento",
+    "Reducción del 9% en caudal de permeado con aumento de presión de alimentación (de 58 a 63 bar), típico de fouling por deposición en membranas",
+    "Dosis de FeCl₃ mantenida en 4 mg/L desde hace 22 días (tras episodio de turbidez en captación), superando el rango recomendado (1–4 mg/L) y generando exceso de coagulante"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling orgánico por crecimiento microbiológico (biofouling) en membranas, debido a aumento de ATP o nutrientes en alimentación.",
+      "why_plausible": "El ATP en alimentación RO se mantiene estable (95 pg/mL vs baseline 80 pg/mL), pero no es un indicador concluyente de biofouling incipiente. La estabilidad del pH y cloro libre (<0,02 mg/L) no descarta crecimiento de bacterias tolerantes al cloro.",
+      "why_discardable": "No hay evidencia de aumento de nutrientes (ej. AOC, fosfatos) ni de colonización visible en membranas. La subida de ΔP es localizada en cabeza de etapa 1, no uniforme como en biofouling avanzado. La coloración rojiza en cartuchos apunta a hierro, no a biomasa."
+    },
+    {
+      "hypothesis": "Fouling por partículas inorgánicas no relacionadas con hierro (ej. sílice coloidal o arcillas), arrastradas por turbidez en captación.",
+      "why_plausible": "La turbidez en captación aumentó temporalmente a 1,2 NTU (día -22), lo que podría introducir partículas inorgánicas en el sistema. La SDI₁₅ elevada (4,2) es compatible con arrastre de partículas finas.",
+      "why_discardable": "La coloración rojiza en cartuchos y el aumento marcado de Fe total (0,42 mg/L) son específicos de hierro, no de sílice o arcillas. La dosis de FeCl₃ en exceso (4 mg/L) explica mejor la presencia de óxidos/hidróxidos de hierro que un evento de turbidez puntual."
+    },
+    {
+      "hypothesis": "Fouling por carbonato de calcio o incrustación por escalado, debido a condiciones de saturación en el concentrado.",
+      "why_plausible": "El aumento de presión de alimentación (63 bar) y la reducción de permeado podrían deberse a incrustación en membranas, especialmente si el antiincrustante no es suficiente para la recovery del 40% y temperatura de 27,8 °C.",
+      "why_discardable": "La conductividad del permeado es estable (380 µS/cm) y no hay indicios de aumento de dureza o LSI positivo. La estabilidad de la conductividad de alimentación (56.500 µS/cm) y pH (8,0) no sugieren condiciones de escalado. La subida de ΔP es asimétrica (cabeza vs cola estable), típica de fouling por partículas, no de incrustación uniforme."
+    }
+  ],
+  "requested_data": "Análisis de especiación de hierro en alimentación RO (Fe²⁺ vs Fe³⁺) en mg/L, para confirmar si el hierro está en forma coloidal/particulada (Fe³⁺) o soluble (Fe²⁺), lo que discriminaría entre precipitación por exceso de coagulante vs arrastre de partículas inorgánicas.",
+  "recommended_action": "Reducir inmediatamente la dosis de FeCl₃ a 1,5 mg/L y realizar un lavado químico de los cartuchos de 5 µm con solución de ácido cítrico al 1% (pH 2,5) durante 30 minutos, seguido de lavado con agua permeada. Paralelamente, ajustar la consigna de FeCl₃ a 2,0 mg/L y verificar la calibración de la bomba dosificadora. Monitorear ΔP etapa 1 cada 2 horas y SDI₁₅ a la salida de cartuchos tras el lavado.",
+  "decision_change_condition": "Si el análisis de especiación de hierro en alimentación RO muestra que el Fe³⁺ es <0,1 mg/L y el Fe²⁺ es >0,3 mg/L, entonces el exceso de dosificación de FeCl₃ no sería la causa principal, y se debería investigar otro origen de hierro (ej. corrosión en tuberías o filtros de arena).",
+  "confidence": 92
+}

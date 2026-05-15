@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-001-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-001",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "MH 'fouling orgánico incompleto removal' — captura organic pero no biofouling explícito."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "5 signals con relación en MH ('argues against oxid')."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (biofouling, scaling, particulate UF) anclados."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP alcalino pH 10-11 + SDS 1-2% — SDS 1-2% es 10-20× sobre típico (excesivo)."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide ΔP entre módulos — discriminador localización pero no bio-trigger."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-umbral: patrón obstrucción localizada → switch."
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

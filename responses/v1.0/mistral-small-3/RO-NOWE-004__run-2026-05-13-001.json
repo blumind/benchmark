@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-NOWE-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:26:06Z",
+  "main_hypothesis": "Entrada de aire en el bastidor durante el mantenimiento y purgado insuficiente, generando burbujas atrapadas en los elementos de membrana que reducen el área efectiva de transferencia y alteran la hidrodinámica del sistema.",
+  "key_signals": [
+    "ΔP etapa 1 y 2 por debajo de baseline (0,8 bar vs 1,0 bar y 0,5 bar vs 0,8 bar) con tendencia ascendente lenta hacia valores normales",
+    "Balance de caudales volumétricos que cierra al 92% (anómalo vs 100% baseline)",
+    "Sonido de 'borboteo' intermitente reportado durante y después del arranque",
+    "Conductividad de permeado en 380 µS/cm (vs 110 µS/cm baseline) con tendencia descendente lenta hacia valores normales",
+    "Rechazo de sales calculado en 95,4% (vs 98,7% baseline) con tendencia ascendente lenta",
+    "Presión de alimentación estable pero ligeramente alta (14,5 bar vs 14,2 bar baseline) con flujo de permeado reducido (270 m³/h vs 295 m³/h baseline)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga de membrana en uno o más elementos del bastidor 3:2, permitiendo paso de agua salada al permeado.",
+      "why_plausible": "Explica la reducción en rechazo de sales (95,4% vs 98,7%) y el aumento en conductividad del permeado (380 µS/cm vs 110 µS/cm). La presión estable y el balance de caudales anómalo podrían deberse a una fuga interna que desvía flujo.",
+      "why_discardable": "No explica el sonido de 'borboteo' intermitente ni el balance de caudales que cierra al 92%. Además, la tendencia lenta hacia valores normales en ΔP y conductividad no es típica de una fuga aguda de membrana."
+    },
+    {
+      "hypothesis": "Contaminación química de los elementos de membrana por residuos del mantenimiento (junta de PVC, lubricantes o desinfectantes).",
+      "why_plausible": "Explica la reducción en rechazo de sales y el aumento en conductividad del permeado. La presencia de residuos orgánicos o inorgánicos podría alterar la selectividad de la membrana.",
+      "why_discardable": "No explica el sonido de 'borboteo' ni el balance de caudales anómalo. Además, la conductividad de alimentación estable y la ausencia de cambios en pH/ORP/Cloro libre hacen poco probable una contaminación química significativa."
+    },
+    {
+      "hypothesis": "Obstrucción parcial en la línea de concentrado o permeado debido a acumulación de sólidos durante el mantenimiento.",
+      "why_plausible": "Explica el balance de caudales anómalo (92%) y la presión ligeramente alta (14,5 bar). La obstrucción podría reducir el flujo de concentrado, aumentando la presión en el sistema.",
+      "why_discardable": "No explica el sonido de 'borboteo' ni la tendencia lenta en ΔP y conductividad hacia valores normales. Además, la obstrucción no justificaría la reducción en rechazo de sales ni el aumento en conductividad del permeado."
+    },
+    {
+      "hypothesis": "Fallo en el sistema de antiincrustante (dosificación insuficiente o interrupción durante el mantenimiento).",
+      "why_plausible": "Explica la posible formación de incrustaciones en los elementos de membrana, reduciendo el rechazo de sales y aumentando la conductividad del permeado. La presión estable y el balance anómalo podrían deberse a obstrucción incipiente.",
+      "why_discardable": "No explica el sonido de 'borboteo' ni la tendencia lenta en ΔP y conductividad hacia valores normales. Además, la dosificación de antiincrustante (2,5 ppm) es estable y no hay evidencia de interrupción en el historial reportado."
+    }
+  ],
+  "requested_data": "Concentración de oxígeno disuelto en el permeado (mg/L) para confirmar la presencia de aire atrapado en los elementos de membrana.",
+  "recommended_action": "Realizar purgado prolongado del bastidor con aumento gradual de presión (rampa de 5 minutos) y flujo de permeado al 110% del nominal durante 30 minutos, seguido de verificación del balance de caudales y medición de oxígeno disuelto en permeado. Si persiste el 'borboteo', repetir el purgado con válvulas de venteo abiertas en posición alta del bastidor.",
+  "decision_change_condition": "Si la concentración de oxígeno disuelto en el permeado es inferior a 2 mg/L tras el purgado prolongado, descartar la hipótesis de aire atrapado y reevaluar alternativas como fuga de membrana o contaminación química.",
+  "confidence": 92
+}

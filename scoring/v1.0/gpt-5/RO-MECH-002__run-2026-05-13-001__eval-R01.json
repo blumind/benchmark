@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-002",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'rampa arranque VFD mal configurada + golpe ariete + telescoping y fugas sellos elemento líder' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (brine seal volteado, interconector/tubo permeado, OXID, válvulas descarga)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Parar + retirar elemento telescopiado + verificar/restituir rampa VFD 90s + bloquear con contraseña — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide tiempo real aceleración VFD día -5 — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: registro rampa ≥90s sin picos → switch a sellado."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:49:37Z",
+  "main_hypothesis": "Biofouling severo de las membranas RO causado por crecimiento microbiológico durante los 28 días de parada con membranas estancadas en agua de permeado sin preservante (bisulfito de sodio al 1% no dosificado), lo que permitió proliferación bacteriana en los canales de alimentación y espaciadores.",
+  "key_signals": [
+    "ATP en alimentación RO de 980 pg/mL vs baseline de 60 pg/mL — incremento de ~16x, indicador directo de actividad biológica elevada",
+    "Procedimiento de preservación con bisulfito al 1% no ejecutado por error documental, dejando membranas 28 días en permeado sin biocida",
+    "ΔP etapa 1 subió de 0,9 bar a 1,5 bar (+67%), patrón típico de biofouling que afecta preferentemente los elementos de cabecera",
+    "ΔP etapa 2 con subida ligera (0,7 a 0,8 bar), consistente con biofouling que se concentra en etapa 1",
+    "Olor sulfhídrico en concentrado al arranque, indicativo de actividad de bacterias sulfato-reductoras en condiciones anaeróbicas durante la parada",
+    "Caída de caudal de permeado del 8% (208 a 192 m³/h) con aumento de presión de alimentación de 14,5 a 17 bar, consistente con pérdida de permeabilidad por biocapa",
+    "Aumento de conductividad de permeado de 95 a 110 µS/cm, indicando efecto de concentración de polarización incrementada por biofilm o daño incipiente a la membrana por metabolitos bacterianos",
+    "TOC alimentación subió de 1,2 a 1,5 mg/L, consistente con liberación de materia orgánica de origen biológico",
+    "Turbidez post-cartuchos subió de 0,06 a 0,12 NTU, sugiriendo desprendimiento de biomasa desde el pretratamiento o tuberías"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación por sílice coloidal o polimerizada en las membranas",
+      "why_plausible": "La sílice en alimentación es 32-33 mg/L y al 75% de recuperación la concentración en el concentrado puede superar el límite de solubilidad (~120-130 mg/L a pH 7,3 y 14°C). La sílice coloidal puede causar aumento de ΔP y pérdida de flux.",
+      "why_discardable": "La sílice y el pH se mantienen estables respecto al baseline, el antiincrustante específico para sílice está dosificado a 10 ppm, y el patrón de fouling (predominante en etapa 1 con ΔP +67%) es más consistente con biofouling que con scaling por sílice, que típicamente afecta más la etapa 2. Además, el ATP elevado y el olor sulfhídrico apuntan claramente a causa biológica."
+    },
+    {
+      "hypothesis": "Incrustación por carbonato de calcio (CaCO3) debido a la dureza moderada",
+      "why_plausible": "Calcio a 280 mg/L con pH 7,3 y 75% de recuperación puede generar sobresaturación de CaCO3 en el concentrado, causando aumento de ΔP y pérdida de flux.",
+      "why_discardable": "El scaling por CaCO3 afecta predominantemente la etapa 2 y los últimos elementos, no la etapa 1. El calcio y pH están estables respecto al baseline. El antiincrustante debería controlar esta precipitación. El ATP de 980 pg/mL y el olor sulfhídrico no se explican por scaling mineral."
+    },
+    {
+      "hypothesis": "Degradación oxidativa de las membranas durante la parada o el enjuague pre-arranque",
+      "why_plausible": "Si se hubiera utilizado agua clorada inadvertidamente durante el enjuague de 4 horas, podría haber daño oxidativo a la poliamida, explicando el aumento de conductividad de permeado.",
+      "why_discardable": "No hay reporte de uso de cloro o agentes oxidantes. El aumento de ΔP no es consistente con degradación oxidativa (que típicamente reduce ΔP por aumento de permeabilidad, no la disminuye). El patrón de aumento de ΔP con caída de flux es más consistente con fouling que con degradación química."
+    }
+  ],
+  "requested_data": "Resultado de autopsia microbiológica (recuento de UFC/cm² y análisis de EPS/polisacáridos) de un elemento de cabecera de la etapa 1, o en su defecto, medición de ATP en el concentrado de etapa 1 (pg/mL) para confirmar crecimiento biológico activo sobre las membranas versus contaminación en la alimentación.",
+  "recommended_action": "Realizar limpieza química alcalina (CIP) específica para biofouling en el bastidor completo, priorizando la etapa 1: (1) Enjuague con permeado a bajo caudal durante 15 minutos. (2) Recircular solución de NaOH al 0,1% (pH 12,0 ± 0,2) a 35°C con 200 ppm de DBNPA (2,2-dibromo-3-nitrilopropionamida) como biocida compatible con poliamida, durante 60 minutos con recirculación, seguido de remojo de 2 horas. (3) Enjuague con permeado hasta pH neutro. (4) Si ΔP no se recupera al menos un 80% del baseline, repetir con solución de NaOH al 0,1% (pH 12,0) con 2% de SDS (dodecilsulfato de sodio) o limpiador enzimático aprobado por el fabricante de membranas. (5) Post-limpieza, implementar inmediatamente el protocolo de preservación con bisulfito de sodio al 1% (10 g/L) para cualquier parada futura superior a 48 horas, y actualizar el procedimiento documental para incluir verificación obligatoria.",
+  "decision_change_condition": "Si el ATP en el concentrado de etapa 1 resultara inferior a 100 pg/mL y la autopsia de un elemento de cabecera mostrara depósitos inorgánicos (sílice amorfa o CaCO3) sin evidencia de biofilm o EPS, cambiaría el diagnóstico a incrustación mineral (sílice o CaCO3) y recomendaría CIP ácido (HCl al 0,2%, pH 2,0) en lugar de alcalino con biocida.",
+  "confidence": 93
+}

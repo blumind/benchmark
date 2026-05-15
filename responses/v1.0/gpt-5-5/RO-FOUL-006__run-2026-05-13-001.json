@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:49:14Z",
+  "main_hypothesis": "Bioensuciamiento progresivo en los elementos líderes de la etapa 1 por control biocida insuficiente tras cambiar de dosificación programada de biocida no oxidante a dosificación solo por umbral de ATP.",
+  "key_signals": [
+    "La reducción del biocida ocurrió en día -85 y la subida de ΔP de etapa 1 comenzó después, en día -50, con evolución progresiva.",
+    "ΔP etapa 1 aumentó de 0,8 a 1,7 bar, mucho más que etapa 2, mientras etapa 3 permaneció estable, patrón típico de ensuciamiento biológico/particulado en elementos de entrada.",
+    "ATP en alimentación RO subió marcadamente de 110 a 480 pg/mL, cerca del umbral de dosificación y con oscilaciones previas de 300 a 500 pg/mL.",
+    "El caudal permeado bajó 8 % y la presión de alimentación subió de 14,2 a 17,5 bar con temperatura y conductividad de alimentación estables, indicando pérdida real de permeabilidad/ensuciamiento.",
+    "La CIP ácida redujo temporalmente el ΔP de etapa 1 de forma incompleta y rebotó rápidamente de 0,9 a 1,3 bar en 12 días, consistente con biofilm no eliminado por limpieza ácida.",
+    "TOC de alimentación aumentó de 1,3 a 1,9 mg/L, aportando sustrato para crecimiento microbiológico.",
+    "Fe y Mn en alimentación RO permanecieron estables y bajos, lo que hace menos probable que el cambio principal sea precipitación de metales."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento orgánico por aumento de materia orgánica natural del acuífero.",
+      "why_plausible": "El TOC de alimentación subió de 1,3 a 1,9 mg/L y se observaron muestras de concentrado amarillentas, lo que puede asociarse a materia orgánica natural.",
+      "why_discardable": "No explica tan bien la fuerte subida de ATP ni la relación temporal con la reducción del biocida; además el patrón de rebote rápido tras CIP ácida es más compatible con biofilm activo que con materia orgánica inerte solamente."
+    },
+    {
+      "hypothesis": "Ensuciamiento particulado/coloidal por fallo o paso de sólidos desde filtros de greensand o cartuchos.",
+      "why_plausible": "Un aumento predominante de ΔP en etapa 1 puede producirse por carga de sólidos en los elementos líderes.",
+      "why_discardable": "No se reporta cambio en Fe o Mn hacia RO, ambos están estables, y la señal microbiológica ATP aumentó de forma marcada tras reducir el biocida, lo que apunta a biofouling como causa dominante."
+    },
+    {
+      "hypothesis": "Incrustación mineral por operación a 78 % de recuperación o control insuficiente de antiincrustante.",
+      "why_plausible": "La planta opera a alta recuperación y la presión de alimentación subió con pérdida de caudal, señales que también pueden verse con incrustación.",
+      "why_discardable": "La incrustación mineral suele manifestarse con mayor severidad en etapas finales por concentración de sales, pero la etapa 3 está estable y el incremento principal está en etapa 1; pH, temperatura y conductividad de alimentación están estables."
+    },
+    {
+      "hypothesis": "Precipitación de óxidos de hierro/manganeso asociada a aireación y KMnO4.",
+      "why_plausible": "El proceso usa oxidación con KMnO4 y filtros de greensand; precipitados de Fe/Mn pueden generar coloración y aumento de ΔP en la entrada del RO.",
+      "why_discardable": "Mn en alimentación RO está estable en 0,03 mg/L y Fe en 0,06 mg/L, sin señal de aumento respecto a baseline; el ATP y la historia de reducción de biocida explican mejor la tendencia."
+    }
+  ],
+  "requested_data": "ATP del material raspado del elemento líder de la etapa 1, en pg ATP/cm².",
+  "recommended_action": "Reinstaurar de inmediato la dosificación preventiva programada de biocida no oxidante compatible con membranas: DBNPA-equivalente a 20 mg/L en la alimentación RO durante 45 minutos cada 3 días, desviando el permeado a drenaje durante la aplicación y el enjuague según SOP; si el ΔP normalizado de etapa 1 no retorna hacia el valor base, ejecutar una CIP alcalina específica para biofouling conforme al manual del fabricante.",
+  "decision_change_condition": "Cambiaría el diagnóstico si el raspado/autopsia del elemento líder de etapa 1 mostrara ATP bajo, comparable al fondo, y el depósito estuviera dominado por carbonato/sílice/metales o sólidos inertes en lugar de biomasa.",
+  "confidence": 84
+}

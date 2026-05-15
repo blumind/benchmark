@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-FOUL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T08:48:11Z",
+  "main_hypothesis": "Fouling coloidal de la primera etapa de ósmosis inversa por complejos de hierro-materia orgánica, originado por una dosificación de coagulante (cloruro férrico) inadecuada para la alta carga de carbono orgánico total (TOC) tras un episodio de lluvias intensas.",
+  "key_signals": [
+    "El aumento de ΔP se concentra exclusivamente en la etapa 1 (de 0,9 a 1,9 bar), lo que es característico del ensuciamiento por partículas o coloides.",
+    "El marcado aumento del TOC en la alimentación a la ósmosis inversa (de 1,8 a 4,1 mg/L) indica una alta presencia del componente orgánico del ensuciamiento.",
+    "El aumento del SDI₁₅ (de 2,2 a 3,9) confirma la presencia de un alto potencial de ensuciamiento coloidal que llega a las membranas.",
+    "El historial reciente muestra un aumento de la dosis de cloruro férrico coincidiendo con el evento de lluvias, seguido de la aparición de los síntomas.",
+    "La coloración marrón anaranjada en los cartuchos de filtro retirados es una evidencia visual de la presencia de hierro."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento puramente biológico (biofouling).",
+      "why_plausible": "El aumento del TOC sirve como nutriente para el crecimiento microbiano, y los síntomas (aumento de ΔP en la primera etapa) son consistentes con el biofouling. Han pasado 6 meses desde el último CIP.",
+      "why_discardable": "La rápida escalada de la presión diferencial tras el evento de lluvias y el cambio de dosis de coagulante apunta más a un ensuciamiento fisicoquímico agudo que a un crecimiento biológico, que suele ser más gradual. La fuerte evidencia de presencia de hierro (color en cartuchos, alta dosificación de FeCl₃) no es explicada por esta hipótesis como causa raíz."
+    },
+    {
+      "hypothesis": "Incrustación inorgánica (scaling).",
+      "why_plausible": "La incrustación es un problema común en ósmosis inversa, especialmente con una recuperación del 80%.",
+      "why_discardable": "La incrustación por sales de dureza o sílice se manifiesta típicamente en la última etapa del sistema, donde la concentración de sales es máxima. En este caso, la ΔP de las etapas 2 y 3 está estable, mientras que la de la etapa 1 se ha disparado."
+    },
+    {
+      "hypothesis": "Arrastre de coagulante (hidróxido de hierro) sin componente orgánico.",
+      "why_plausible": "Se aumentó la dosis de cloruro férrico y hay evidencia visual de hierro en los prefiltros, lo que sugiere un posible arrastre de coagulante por una decantación o filtración ineficiente.",
+      "why_discardable": "Esta hipótesis no considera el papel del drástico aumento del TOC, que es una de las desviaciones más significativas en la calidad del agua de alimentación. Es mucho más probable que el hierro y los orgánicos hayan interactuado para formar un coloide complejo, en lugar de ser un simple arrastre de hidróxido férrico."
+    }
+  ],
+  "requested_data": "Concentración de hierro total en el agua de alimentación a la ósmosis inversa (mg/L Fe).",
+  "recommended_action": "Realizar una parada segura e inmediata del bastidor de ósmosis. Proceder con un CIP (Clean-In-Place) completo de dos etapas: primero, una limpieza alcalina a pH 11.5-12.0 con un limpiador formulado para materia orgánica, seguido de un enjuague y una limpieza ácida a pH 2.0-2.5 con un limpiador basado en ácido cítrico para eliminar los depósitos de hierro.",
+  "decision_change_condition": "Si el análisis del agua de alimentación a la ósmosis inversa muestra una concentración de hierro total inferior a 0,05 mg/L, la hipótesis principal de ensuciamiento por hierro sería incorrecta y la causa raíz sería probablemente un ensuciamiento puramente orgánico o biológico.",
+  "confidence": 95
+}

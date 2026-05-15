@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-OXID-004-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-004",
+    "subject_id": "gemini-2-5-flash-lite",
+    "subject_version": "gemini-2.5-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'degradación por cloramina + saturación CAG' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts brief (envejecimiento, fallo CAG-1, problema CAG-2)."
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "FAIL CRÍTICO: 'lavado químico con SBS + lavado con ácido cítrico para eliminar depósitos y RESTAURAR la superficie de la membrana'. La oxidación por cloramina es IRREVERSIBLE — restaurar es imposible y consume vida útil sin beneficio. Match exacto case_specific Critical 'CIP para recuperar rechazo'."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide cloramina en alimentación RO antes antiincrustante — match parcial accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: cloramina <0.05 + test elemento líder muestra rechazo normal → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Recomendar CIP para 'recuperar rechazo'",
+      "severity": "critical",
+      "justification": "Cita ACT: 'lavado químico de las membranas con una solución de bisulfito de sodio (SBS) para neutralizar cualquier cloramina residual y luego un lavado con ácido cítrico o similar para eliminar depósitos y RESTAURAR la superficie de la membrana'. 'Restaurar la superficie' implica recovery intent para daño oxidativo irreversible. Match exacto del case_specific Critical."
+    }
+  ],
+  "reviewer_notes": ""
+}

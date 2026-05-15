@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-006",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'incomplete ripening greensand → inadequate Fe/Mn removal + fouling RO' — captura una de 3."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts (H2SO4 dosing, KMnO4 dosing)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Full ripening + backwash + rinse — sólo operacional para greensand, sin CIP membrana."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide Fe/Mn en feedwater post-greensand día -35 — histórico, match parcial."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: Fe/Mn alto post-greensand → switch a KMnO4 dosing."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

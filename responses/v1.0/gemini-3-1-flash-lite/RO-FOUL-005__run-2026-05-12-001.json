@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:17:05Z",
+  "main_hypothesis": "Floc carryover due to over-dosing of ferric chloride (FeCl₃) leading to particulate iron fouling of the lead elements.",
+  "key_signals": [
+    "Fe total in RO feed increased from 0.05 mg/L to 0.42 mg/L",
+    "SDI₁₅ increased from 2.4 to 4.2",
+    "Turbidity at cartridge filter outlet increased from 0.06 NTU to 0.22 NTU",
+    "Reddish coloration of cartridge filters",
+    "ΔP stage 1 head increased from 1.1 bar to 2.2 bar",
+    "Manual dosage set to 4 mg/L (excessive) since day -20"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biological fouling",
+      "why_plausible": "ATP levels are present and the plant uses open intake, which is prone to bio-growth.",
+      "why_discardable": "ATP levels are stable (95 pg/mL) and the rapid increase in iron and turbidity points specifically to chemical carryover rather than biological proliferation."
+    },
+    {
+      "hypothesis": "Filter media breakthrough",
+      "why_plausible": "Sand filters can fail or channel, allowing media or trapped solids to pass through.",
+      "why_discardable": "The specific correlation with the FeCl₃ dosage increase and the reddish color of the cartridges strongly indicates chemical precipitation/floc carryover rather than mechanical media failure."
+    }
+  ],
+  "requested_data": "Dissolved vs. particulate iron concentration in the RO feed (mg/L).",
+  "recommended_action": "Immediately reduce FeCl₃ dosage to 1.0 mg/L and perform a chemical cleaning (CIP) of the RO membranes using a low pH citric acid solution (2% w/v) to dissolve iron deposits.",
+  "decision_change_condition": "If the iron concentration in the RO feed remained high after reducing the FeCl₃ dosage to 0 mg/L, the diagnosis would shift to a failure of the sand filter media or underdrain system.",
+  "confidence": 95
+}

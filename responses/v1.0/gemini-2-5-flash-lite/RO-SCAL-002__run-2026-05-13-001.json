@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:00:06Z",
+  "main_hypothesis": "Fouling por sílice debido a dosis insuficiente de antiincrustante en el nuevo punto de operación.",
+  "key_signals": [
+    "ΔP etapa 2: Subida marcada (de 0,9 bar a 1,9 bar)",
+    "Sílice rechazo: Subida marcada (de 208 mg/L a 295 mg/L)",
+    "Conductividad permeado: Subida (de 88 µS/cm a 105 µS/cm)",
+    "Presión alimentación: Subida (de 14,5 bar a 18,2 bar)",
+    "Caudal permeado planta: Bajada del 7 %",
+    "Cálculo en software de proyección: sílice en rechazo 295 mg/L, por encima del límite recomendado del antiincrustante usado (260 mg/L)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling inorgánico por sales de calcio o carbonatos.",
+      "why_plausible": "El aumento de la recuperación (75% a 82%) concentra las sales en el rechazo, lo que podría llevar a la precipitación de sales menos solubles que la sílice. El ΔP en la etapa 2 es el más afectado, lo que podría indicar un problema localizado en esa etapa.",
+      "why_discardable": "La sílice en el rechazo está significativamente por encima del límite recomendado del antiincrustante, y la sílice de alimentación se mantiene estable. El antiincrustante es específico para sílice, lo que sugiere que la sílice es el principal problema. El CIP alcalino estándar no resolvió completamente el problema, lo cual es más típico de fouling por sílice que por carbonatos/sulfatos."
+    },
+    {
+      "hypothesis": "Fouling biológico.",
+      "why_plausible": "Un aumento en la concentración de materia orgánica en el agua de alimentación o un biofilm en las membranas puede causar un aumento del ΔP y una disminución del caudal de permeado. El pretratamiento mínimo (filtros de 5 µm) podría permitir el paso de materia biológica.",
+      "why_discardable": "No hay señales directas de fouling biológico, como un aumento en la turbidez del permeado o un olor característico. La alta concentración de sílice en el rechazo y el hecho de que el antiincrustante esté sobrepasado apuntan más a un problema inorgánico. El CIP alcalino estándar no suele ser efectivo contra fouling biológico severo."
+    },
+    {
+      "hypothesis": "Daño o ensuciamiento severo de las membranas de la etapa 2.",
+      "why_plausible": "El ΔP en la etapa 2 es el que más ha aumentado, y el caudal de permeado ha bajado. Esto podría indicar que las membranas de esta etapa están obstruidas o dañadas, lo que reduce su eficiencia y aumenta la presión requerida.",
+      "why_discardable": "El patrón de aumento de ΔP y la concentración de sílice en el rechazo sugieren un problema de incrustación que se agrava con la mayor recuperación. Si fuera un daño físico, se esperaría una pérdida de rechazo de sales (aumento de conductividad del permeado) más pronunciada o un patrón de ΔP diferente. El hecho de que el problema se correlacione con el aumento de recuperación y la concentración de sílice es clave."
+    }
+  ],
+  "requested_data": "Concentración de sílice en el agua de alimentación (mg/L SiO₂).",
+  "recommended_action": "Aumentar la dosis de antiincrustante específico para sílice a 10 ppm durante 7 días, y luego evaluar la necesidad de un CIP ácido para eliminar la sílice precipitada.",
+  "decision_change_condition": "Si la concentración de sílice en la alimentación fuera significativamente mayor a 53 mg/L, podría indicar un problema con la fuente de agua o el pretratamiento que está exacerbando el problema de sílice.",
+  "confidence": 85
+}

@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-MECH-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:32:21Z",
+  "main_hypothesis": "Rampa de arranque del VFD mal configurada tras el mantenimiento, provocando un arranque demasiado rápido con golpe de ariete y daño mecánico (telescoping y fugas por sellos) en el elemento líder de la etapa 1.",
+  "key_signals": [
+    "Probe test: conductividad extremadamente alta en cabeza de etapa 1 (6.500 µS/cm) y baja en el resto (<200 µS/cm), indicando bypass localizado en el primer elemento.",
+    "Confirmación visual: telescoping en el extremo aguas abajo del primer elemento del Tubo 1 de la etapa 1.",
+    "ΔP de etapa 1 y 2 bajando (0,8→0,8 y 0,8→0,4 bar) en lugar de subir, consistente con canalización/bypass interno por daño mecánico.",
+    "Subida brusca de conductividad de permeado (92→320→950 µS/cm) y caída del rechazo (97,9%→78,7%) sin cambio en conductividad, pH u ORP del afluente.",
+    "Evento de ‘golpe’ audible en la línea de alta presión tras rearranque automático (día -4) y percepción de rampa ‘más rápida’ tras el mantenimiento del VFD.",
+    "Presión de alimentación ligeramente menor (14,8→14,2 bar) con caudal de permeado estable, compatible con pérdida de fricción interna por bypass."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Brine seal volteado o mal asentado en el elemento líder, causando bypass de alimentación a permeado.",
+      "why_plausible": "Explica la localización del alto paso de sales en el primer elemento y la caída de ΔP por canalización.",
+      "why_discardable": "No hubo intervención reciente en elementos; además se observó telescoping, típico de un shock hidráulico, y hubo reporte de golpe y rampa más rápida tras mantenimiento del VFD."
+    },
+    {
+      "hypothesis": "Fallo del interconector/tubo de permeado (grieta u O-ring desplazado) en el elemento líder.",
+      "why_plausible": "Un defecto en el tubo de permeado puede mezclar alimentación con permeado en un punto localizado y elevar la conductividad medida en la cabeza de etapa 1.",
+      "why_discardable": "No explica por sí solo el golpe audible ni la percepción de rampa acelerada; el telescoping sugiere sobrecarga hidráulica más que rotura aislada de interconector."
+    },
+    {
+      "hypothesis": "Daño químico (oxidación) de membranas produciendo alta pasaje de sal.",
+      "why_plausible": "Rechazo global reducido y permeado con alta conductividad son consistentes con pérdida de integridad de la película.",
+      "why_discardable": "Cloro libre <0,02 mg/L y ORP estables; el problema está localizado en el primer elemento según probe test, no uniforme en el tren, y coincide temporalmente con un evento mecánico."
+    },
+    {
+      "hypothesis": "Fallo/obstrucción de válvulas de descarga/retención provocando transitorios de presión a la puesta en marcha.",
+      "why_plausible": "Un mal funcionamiento de válvulas puede causar picos de presión similares a los de una rampa inadecuada y dañar el elemento líder.",
+      "why_discardable": "La secuencia causal más directa es el mantenimiento del VFD seguido de rampa ‘más rápida’ y golpe; sin evidencia de anomalías de válvulas en vibraciones ni operación normal."
+    }
+  ],
+  "requested_data": "Tiempo real de aceleración del VFD (segundos desde 0 hasta velocidad/presión de operación) registrado en el rearranque del día -5.",
+  "recommended_action": "Parar, aislar y despresurizar el bastidor; retirar y sustituir el elemento líder telescopiado; inspeccionar todos los elementos aguas abajo del tubo por deformaciones, brine seals e interconectores y reemplazar sellos/O-rings dañados; verificar y restituir la rampa de arranque del VFD a 90 s (o equivalente a un incremento de presión <0,2 bar/s) y deshabilitar el arranque automático tras fallo de red; antes de reiniciar, confirmar que la válvula de concentrado y las líneas de recirculación están totalmente abiertas; realizar arranque controlado con descarga de permeado a desagüe, subiendo desde baja velocidad hasta presión de operación durante ≥90 s y mantener permeado a drenaje hasta que la conductividad sea estable y <150 µS/cm; documentar el procedimiento en el PLC y registrar la rampa en tendencia.",
+  "decision_change_condition": "Si el registro demuestra que la rampa del VFD en el rearranque fue ≥90 s sin picos de presión y no hubo sobrepresiones, reconsideraría la causa principal hacia un fallo de sellado/brine seal o interconector del elemento líder independiente del VFD.",
+  "confidence": 90
+}

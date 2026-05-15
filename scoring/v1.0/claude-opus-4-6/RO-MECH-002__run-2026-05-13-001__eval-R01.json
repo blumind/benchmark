@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-002",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'telescoping cabeza etapa 1 + golpe ariete + rearranque HP pump + rampa VFD reprogramada' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (OXID, ATD interconnector, O-rings sobrepresión)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Parar bastidor + verificar/restaurar rampa VFD 90s + probing test elemento por elemento — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide tiempo rampa VFD HP pump — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: VFD 90s exacta y sin pico → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,186 @@
+# ============================================================
+# BluMind Benchmark — .gitignore
+# ============================================================
+# Regla de oro: nunca publicar golds ni mapeos internos.
+# Si estás añadiendo un archivo y dudas si es público, NO lo subas.
+# ============================================================
+
+
+# ------------------------------------------------------------
+# CRÍTICO — contenido que nunca debe salir del repo privado
+# ------------------------------------------------------------
+
+# Golds (soluciones de referencia). Viven en repo privado aparte.
+# Si alguna vez aparecen en este repo es por error.
+golds/
+**/golds/
+*_gold.md
+*_gold.json
+*_gold.yaml
+*_gold.yml
+
+# Mapeos internos (reviewer_id → identidad real, etc.)
+mappings/
+**/mappings/
+reviewers_real.yaml
+reviewers_real.json
+
+# Casos privados marcados con _private
+*_private.md
+*_private.json
+
+# Sellos y certificados firmados (se emiten fuera del repo)
+sellos/
+**/sellos/
+*.seal
+*.sig
+
+# Ideal responses (canonical expert answers for commercial SFT dataset).
+# Schema and folder placeholder are public; per-case JSONs are PRIVATE.
+ideal_responses/v1.0/*.json
+ideal_responses/**/*.json
+!ideal_responses/v1.0/.gitkeep
+
+
+# ------------------------------------------------------------
+# Credenciales y secretos
+# ------------------------------------------------------------
+
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.yaml
+api_keys.*
+
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Testing y coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Type checking
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+
+# ------------------------------------------------------------
+# Node / frontend (por si el sitio web usa build tools)
+# ------------------------------------------------------------
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+
+# ------------------------------------------------------------
+# Editores e IDEs
+# ------------------------------------------------------------
+
+.vscode/
+!.vscode/settings.json.example
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Cursor
+.cursor/
+.cursorignore.local
+
+
+# ------------------------------------------------------------
+# Sistema operativo
+# ------------------------------------------------------------
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+
+# ------------------------------------------------------------
+# Archivos temporales y de trabajo
+# ------------------------------------------------------------
+
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*~.nib
+*.log
+logs/
+tmp/
+temp/
+scratch/
+WIP/
+
+
+# ------------------------------------------------------------
+# Outputs locales (NO subir; se regeneran desde scripts)
+# ------------------------------------------------------------
+
+# Runs locales antes de ser commiteados al repo apropiado
+local_runs/
+.local/
+
+# Leaderboards o métricas generadas ad-hoc en local
+results/*.local.*
+results/**/*.draft.*

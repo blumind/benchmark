@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:12:31Z",
+  "main_hypothesis": "Scaling by calcium sulfate (CaSO₄) due to increased sulfate concentration in feedwater combined with higher recovery and insufficient anti-scalant adjustment.",
+  "key_signals": [
+    "Sulfato rechazo subido marcadamente (1.100 → 1.290 mg/L)",
+    "Cálculo de saturación de CaSO₄ con SI ≈ 1,1 (sobresaturado)",
+    "ΔP etapa 3 con subida marcada (0,5 → 1,5 bar) y tendencia al alza",
+    "Presión alimentación aumentada (12,5 → 14,8 bar) sin cambio en temperatura o pH",
+    "Recuperación aumentada del 80% al 83% sin recálculo de dosis de antiincrustante",
+    "Cambio en mix de aguas regeneradas con mayor proporción de aguas industriales (mayor sulfato)",
+    "CIP alcalino temporalmente redujo ΔP etapa 3 (0,9 bar), pero volvió a subir rápidamente"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling orgánico por aumento de TOC en alimentación",
+      "why_plausible": "TOC alimentación estable (1,8 mg/L) pero podría haber compuestos orgánicos no detectados por análisis estándar que causen fouling en membranas.",
+      "why_discardable": "No hay evidencia de aumento de TOC ni de caída en permeado por fouling orgánico. ΔP en etapas 1 y 2 estables, solo etapa 3 afectada. CIP alcalino no es efectivo para fouling orgánico severo."
+    },
+    {
+      "hypothesis": "Fouling inorgánico por sílice (SiO₂) sobresaturada",
+      "why_plausible": "Sílice rechazo subió moderadamente (110 → 130 mg/L) y membranas tienen 30 meses de servicio, lo que podría favorecer deposición de sílice.",
+      "why_discardable": "Cálculo de saturación de sílice no reportado como crítico (SI no proporcionado). ΔP en etapa 3 es más consistente con sulfato que con sílice. CIP alcalino no es específico para sílice."
+    },
+    {
+      "hypothesis": "Biofouling por cambio en calidad de agua regenerada",
+      "why_plausible": "Cambio en mix de aguas regeneradas podría introducir nutrientes para crecimiento microbiano, especialmente si hay aguas industriales con alta carga orgánica.",
+      "why_discardable": "No hay reportes de aumento de presión diferencial en etapas 1 y 2 (típico en biofouling). Cloro libre estable y <0,02 mg/L no es suficiente para prevenir biofouling, pero no hay señales claras de obstrucción biológica."
+    },
+    {
+      "hypothesis": "Compactación de membranas por presión operativa elevada",
+      "why_plausible": "Presión alimentación aumentó de 12,5 a 14,8 bar, lo que podría causar compactación física de membranas y aumento de ΔP.",
+      "why_discardable": "Compactación suele causar aumento gradual y sostenido de ΔP en todas las etapas, no solo en etapa 3. Además, ΔP en etapa 1 y 2 se mantiene estable. CIP alcalino redujo ΔP etapa 3 temporalmente, lo que no es típico en compactación."
+    }
+  ],
+  "requested_data": "Índice de saturación (SI) de CaSO₄ en el rechazo de la etapa 3 con condiciones actuales (recovery 83%, sulfato 1.290 mg/L, calcio 460 mg/L, pH 6,8, temperatura 28,5 °C).",
+  "recommended_action": "Reducir recovery al 80% inmediatamente y ajustar dosis de antiincrustante a 2,8 ppm (poliacrílico) basado en cálculo de saturación con sulfato actual. Realizar CIP ácido (HCl pH 2,5, 60 min) en etapa 3 para eliminar incrustaciones de CaSO₄ existentes.",
+  "decision_change_condition": "Si el índice de saturación (SI) de CaSO₄ en el rechazo de la etapa 3 es < 0,8 con las condiciones actuales, descartar escalamiento por sulfato y reevaluar otras causas como fouling orgánico o biofouling.",
+  "confidence": 92
+}

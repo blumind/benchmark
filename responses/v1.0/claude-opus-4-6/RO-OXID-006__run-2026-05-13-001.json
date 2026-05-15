@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:08:48Z",
+  "main_hypothesis": "Oxidative degradation of polyamide RO membrane active layer caused by chronic exposure to chlorine dioxide (ClO₂) and its reduction by-products (chlorite, ClO₂⁻) originating from the neighboring fish farm's increased disinfection discharge. The 4 mg/L sodium bisulfite dose is designed to quench free chlorine/hypochlorite but is ineffective or only partially effective against ClO₂/chlorite, which penetrate to the membrane surface and attack the polyamide amide bonds, increasing salt passage.",
+  "key_signals": [
+    "Permeate conductivity increased from 400 to 590 µS/cm (47.5% rise) with calculated salt rejection dropping from 99.29% to 98.95%, indicating membrane active layer damage rather than simple fouling",
+    "Free chlorine at RO feed remains < 0.02 mg/L while total chlorine (DPD) reads 0.15 mg/L — the difference indicates a non-free-chlorine oxidant species (consistent with ClO₂ or chlorite interference with DPD reagent)",
+    "ORP at RO feed rose from +50 mV to +180 mV, a 130 mV increase indicating persistent oxidant presence that SBS is not fully neutralizing",
+    "External lab confirmed chlorite (ClO₂⁻) at 0.08 mg/L in RO feed — chlorite is a direct reduction product of ClO₂ and confirms ClO₂ ingress",
+    "Timeline correlation: fish farm increased ClO₂ discharge at Day -45, ORP began rising at Day -40, and permeate conductivity degradation started at Day -25",
+    "Operator detected strong chlorine-like odor at intake line at Day -18, consistent with ClO₂ presence (ClO₂ has a characteristic chlorine-like odor)",
+    "Feed pressure increased from 60 to 62 bar while permeate flow decreased from 207 to 195 m³/h — consistent with membrane degradation requiring higher driving pressure to maintain partial flux",
+    "Differential pressures across stages are only marginally elevated and stable, ruling out significant particulate fouling or biofouling as the primary cause of performance loss"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biological fouling causing flux decline and apparent salt passage increase",
+      "why_plausible": "SWRO plants with open intakes are susceptible to biofouling, and flux decline with increased feed pressure could indicate biofilm formation on membrane surfaces.",
+      "why_discardable": "ATP levels in feed are stable (90 vs 85 pg/mL baseline) and low, differential pressures are only marginally elevated and stable (not the progressive ΔP rise typical of biofouling), cartridge inspection showed no abnormality, and the salt passage increase pattern (progressive, uniform) is more consistent with chemical degradation than patchy biofilm. Additionally, the confirmed presence of chlorite and elevated ORP provide a more direct explanation."
+    },
+    {
+      "hypothesis": "Membrane degradation from intermittent free chlorine breakthrough past the SBS dosing system",
+      "why_plausible": "If the SBS dosing system malfunctioned or was under-dosed, free chlorine from any source could reach membranes and cause polyamide degradation with similar symptoms.",
+      "why_discardable": "The plant does not dose hypochlorite at all, so there is no internal free chlorine source. Free chlorine at RO feed is consistently < 0.02 mg/L. The oxidant species detected is not free chlorine but rather ClO₂/chlorite, which SBS does not effectively neutralize. The ORP rise despite continuous SBS dosing specifically points to an oxidant that SBS cannot quench."
+    },
+    {
+      "hypothesis": "Natural membrane aging and hydrolysis of polyamide layer at 12 months post-replacement",
+      "why_plausible": "Membranes at 12 months can show some salt passage increase due to normal aging, compaction, and hydrolysis, especially in high-pressure SWRO service.",
+      "why_discardable": "The rate of salt rejection decline (0.34 percentage points in ~45 days) is far too rapid for normal aging. Normal aging would produce gradual, slow changes over years, not a 47.5% conductivity increase in weeks. The temporal correlation with the fish farm discharge change and the confirmed oxidant presence make chemical degradation the dominant mechanism."
+    },
+    {
+      "hypothesis": "O-ring or interconnector seal failure in one or more pressure vessels allowing feed-to-permeate bypass",
+      "why_plausible": "Mechanical seal failures can cause elevated permeate conductivity and apparent salt passage increase without significant changes in differential pressure.",
+      "why_discardable": "Seal failures typically produce a step-change in conductivity localized to specific vessels, not the progressive, system-wide conductivity increase observed over 45 days. The concurrent ORP elevation, chlorite detection, and timeline correlation with the external ClO₂ source all point to chemical degradation rather than mechanical failure. However, probing individual vessels would help rule this out."
+    }
+  ],
+  "requested_data": "Chlorine dioxide (ClO₂) residual concentration in the RO feed water measured by a ClO₂-specific method (e.g., amperometric or Palintest DPD/glycine method) in mg/L, to quantify the actual ClO₂ reaching the membranes and confirm it as the primary oxidant species versus chlorite alone.",
+  "recommended_action": "Immediately increase sodium bisulfite (SBS) dosing from 4 mg/L to 8–10 mg/L as a temporary emergency measure to attempt partial reduction of ClO₂/chlorite, while simultaneously installing a ferrous sulfate (FeSO₄) dosing system upstream of cartridge filters at 1–2 mg/L Fe²⁺ to chemically reduce ClO₂ and chlorite (Fe²⁺ reduces ClO₂ to chloride effectively). In parallel, install continuous ORP monitoring with an alarm setpoint at +100 mV to trigger automatic plant shutdown if oxidant breakthrough occurs. Urgently engage with the fish farm operator and local authorities to relocate or treat their ClO₂ discharge to prevent further ingress. Conduct a vessel-by-vessel permeate probing test to identify and isolate the most damaged elements for autopsy and warranty assessment. Do not attempt chemical cleaning until the oxidant source is eliminated, as cleaning will not reverse polyamide oxidation damage.",
+  "decision_change_condition": "If the ClO₂-specific measurement in the RO feed returns as undetectable (< 0.01 mg/L) AND vessel-by-vessel probing reveals that the elevated permeate conductivity is concentrated in only 1–2 specific vessels rather than distributed across all vessels, the diagnosis would shift to mechanical seal/O-ring failure or localized membrane manufacturing defect rather than systemic chemical oxidation from ClO₂ exposure.",
+  "confidence": 90
+}

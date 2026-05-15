@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:34:19Z",
+  "main_hypothesis": "Fouling por fosfato de calcio en las membranas de la etapa 2.",
+  "key_signals": [
+    "ΔP etapa 2: Subida marcada (1,9 bar actual vs 0,9 bar baseline)",
+    "PO₄³⁻ alimentación: Subida marcada (2,8 mg/L actual vs 1,8 mg/L baseline)",
+    "Cálculo de saturación sugiere riesgo alto de Ca₃(PO₄)₂ (Día -12)",
+    "ΔP etapa 2 baja temporalmente tras limpieza CIP ácida estándar (HCl), pero vuelve a subir",
+    "Conductividad permeado: Subida (110 µS/cm vs 95 µS/cm baseline), indicando menor eficiencia de rechazo"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por materia orgánica o biológico.",
+      "why_plausible": "El aumento de fósforo en el agua de alimentación podría indicar un cambio en la fuente de agua, potencialmente con mayor carga orgánica o biológica. El fouling biológico o por materia orgánica puede causar un aumento de ΔP y una disminución del caudal permeado.",
+      "why_discardable": "La limpieza CIP ácida estándar (HCl) debería haber sido efectiva contra el fouling biológico o por materia orgánica, pero el ΔP volvió a subir rápidamente. Además, no hay señales directas de aumento de materia orgánica (ej. TOC, turbidez) ni de crecimiento biológico (ej. biomasa en filtros previos)."
+    },
+    {
+      "hypothesis": "Fouling por carbonato de calcio o sulfato de calcio.",
+      "why_plausible": "El aumento de la presión de alimentación y el ΔP son síntomas típicos de incrustaciones de sales. La alcalinidad y el calcio presentes en el agua de alimentación son precursores de carbonato de calcio. El antiincrustante está diseñado para inhibir estas sales.",
+      "why_discardable": "El antiincrustante debería estar previniendo la formación de incrustaciones de carbonato y sulfato de calcio. La limpieza CIP ácida (HCl) es efectiva contra estas incrustaciones, y el hecho de que el ΔP volviera a subir rápidamente sugiere que no es el principal problema. Además, el fósforo en la alimentación ha aumentado significativamente, lo cual no se correlaciona directamente con un aumento de carbonatos o sulfatos."
+    },
+    {
+      "hypothesis": "Problema con las membranas (daño físico o envejecimiento acelerado).",
+      "why_plausible": "Las membranas tienen 20 meses de servicio, lo que las acerca al final de su vida útil esperada. Un daño físico o un envejecimiento acelerado podrían explicar la disminución del caudal y el aumento de la conductividad del permeado, así como un posible aumento del ΔP.",
+      "why_discardable": "El aumento del ΔP es más pronunciado en la etapa 2, lo que sugiere un problema localizado en esa etapa en lugar de un problema generalizado de las membranas. La rápida recuperación del ΔP tras la limpieza ácida, seguida de una nueva subida, es más indicativa de un depósito que de un daño estructural permanente. El aumento de fósforo en la alimentación y el riesgo de incrustación de fosfato de calcio son factores desencadenantes claros."
+    }
+  ],
+  "requested_data": "Análisis de la composición de los depósitos en las membranas de la etapa 2 (ej. por EDX o XRD).",
+  "recommended_action": "Realizar una limpieza CIP alcalina (ej. con NaOH 0.5-1% a 40-50°C) seguida de una limpieza CIP ácida específica para fosfatos (ej. con ácido cítrico o EDTA a pH 4-5 y temperatura moderada) en la etapa 2. Si el problema persiste, considerar la sustitución de las membranas de la etapa 2.",
+  "decision_change_condition": "Si el análisis de los depósitos revela una composición predominantemente orgánica o biológica, o si la limpieza alcalina/ácida específica para fosfatos no resuelve el problema de ΔP y conductividad del permeado, mi diagnóstico cambiaría a fouling orgánico/biológico o a un problema intrínseco de las membranas.",
+  "confidence": 85
+}

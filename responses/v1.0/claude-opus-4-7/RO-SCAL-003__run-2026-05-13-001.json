@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-SCAL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:03:43Z",
+  "main_hypothesis": "Incrustación de sulfato de bario (barita) en los elementos de cola de la etapa 1 del tren T-04, precipitada durante los ~19 días en que el antiincrustante no se inyectó en ese tren por desconexión del solenoide de la válvula de inyección.",
+  "key_signals": [
+    "Día -22: solenoide de la válvula de inyección de antiincrustante de T-04 desconectado durante el cambio del cuadro eléctrico; sin verificación de flujo por tren.",
+    "Día -5: inspección confirma que el antiincrustante NO entraba en T-04 durante ~17 días.",
+    "ΔP cola etapa 1 sube de 0,9 a 2,3 bar (≈ +155 %), mientras cabeza y medio suben mucho menos: patrón típico de scaling en el extremo concentrado donde se maximiza la sobresaturación.",
+    "Agua de captación con Ba 0,12 mg/L (alto) y SO4 3.150 mg/L; a recovery 45 % el concentrado supera con holgura el Ksp de BaSO4 sin antiincrustante específico.",
+    "Caída de caudal permeado 9 % y subida de presión de alimentación a 67 bar (consistente con pérdida de área activa por scaling en cola).",
+    "Subida de conductividad de permeado (460 vs 405 µS/cm): scaling daña/derivaciona los elementos de cola incrementando paso de sales.",
+    "Tras restablecer la dosis (Día -3), la ΔP no remite: el depósito ya formado no se disuelve por sí solo, descartando ensuciamiento reversible por bioflim/coloides incipiente.",
+    "Caudal global de antiincrustante estable (4,1 L/h) enmascaró el fallo: el caudal por tren no se verificaba."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling de sulfato de estroncio (SrSO4, celestita) coprecipitado con BaSO4.",
+      "why_plausible": "El antiincrustante también inhibe Sr; sin dosificación y con SO4 alto, SrSO4 puede coprecipitar en cola.",
+      "why_discardable": "Termodinámicamente BaSO4 precipita primero (Ksp mucho menor); el agente forzante dominante es Ba. Probablemente coexiste pero no es la causa raíz."
+    },
+    {
+      "hypothesis": "Ensuciamiento coloidal/biológico en elementos de cola.",
+      "why_plausible": "26 meses de servicio, captación abierta; fouling acumulativo posible.",
+      "why_discardable": "El inicio brusco coincide exactamente con la desconexión del solenoide (Día -22 → subida Día -16) y afecta solo a T-04; los otros trenes con el mismo pretratamiento están normales."
+    },
+    {
+      "hypothesis": "Daño mecánico/telescoping de elementos de cola por golpe de presión al reiniciar.",
+      "why_plausible": "Hubo trabajo eléctrico y reinicio; podría haber causado choques hidráulicos.",
+      "why_discardable": "El daño mecánico típicamente aumenta el paso de sales fuertemente pero no produce subida progresiva de ΔP durante días; la cronología es la de un depósito progresivo."
+    },
+    {
+      "hypothesis": "Precipitación de carbonato cálcico (CaCO3) por LSI positivo sin inhibición.",
+      "why_plausible": "pH 8,1 y sin antiincrustante; en concentrado puede saturar.",
+      "why_discardable": "En SWRO con recovery 45 % el LSI suele ser controlable; el factor diferencial fuerte aquí es el Ba elevado (0,12 mg/L) que apunta específicamente a BaSO4."
+    }
+  ],
+  "requested_data": "Análisis composicional del depósito en un elemento de cola del T-04 (autopsia/SEM-EDS o digestión ácida) con cuantificación de Ba, Sr, Ca, SO4 en mg/g de membrana.",
+  "recommended_action": "Aislar T-04 y ejecutar limpieza química CIP en dos etapas siguiendo manual del fabricante: (1) lavado alcalino previo con NaOH a pH 11–12 + surfactante/EDTA al 1,0 % p/v, 35 °C máx, recirculación 1–2 h y remojo; (2) lavado ácido específico para BaSO4 con agente quelante fuerte (p. ej. DTPA o EDTA tetrasódico al 2 % p/v ajustado a pH 11–12 con NaOH, 35 °C, recirculación prolongada 4–8 h con remojos intermedios). Evitar HCl/cítrico solos (ineficaces sobre BaSO4). Verificar compatibilidad con membrana (pH 1–12, T ≤ 35 °C, ΔP < 1 bar por elemento). Antes de reinicio general: instalar verificación de flujo de antiincrustante por tren (rotámetro o presostato en cada punto de inyección) y procedimiento de chequeo tras cualquier intervención eléctrica. Si tras 2 ciclos CIP la ΔP cola no recupera < 1,2 bar, programar reemplazo de los elementos de cola de T-04 y enviar uno a autopsia.",
+  "decision_change_condition": "Si la autopsia/análisis del depósito muestra predominio de materia orgánica/biofilm o de sílice/aluminosilicatos en lugar de Ba+SO4, o si se demuestra que el solenoide sí entregaba antiincrustante a T-04 durante el periodo (registro de flujo por tren), la hipótesis cambiaría a fouling orgánico/coloidal o a otro mecanismo de scaling.",
+  "confidence": 86
+}

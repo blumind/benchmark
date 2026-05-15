@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-NOWE-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-002",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 0,
+      "justification": "C1: 'daño quimico hidrolisis... pérdida irreversible de rechazo' DIAGNOSTICO ERRONEO"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals citados (rechazo 85.3, cond 850, sulfito 8.5, ORP -120/-180, P 16.8)"
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "C3: 3 alts (choque osmotico, biofouling, ...) bien justificadas"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: aclarado pero programa autopsia/sustitucion - violacion recommended action gold"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (probing test) - relevante pero no en accepted_requested_data"
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "C6: explicit: rechazo>97% y cond<120 tras flush -> cambia a SBS sin daño"
+    }
+  },
+  "correctness": 0,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Recomendar sustituir membranas por 'pérdida de rechazo'",
+      "severity": "critical",
+      "justification": "Diagnostica daño quimico irreversible y prepara autopsia/sustitucion"
+    }
+  ],
+  "reviewer_notes": "Claude conflict; diagnostico erroneo critico - daño irreversible por SBS"
+}

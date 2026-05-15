@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:43:50Z",
+  "main_hypothesis": "Fouling of first-stage RO membranes due to elevated organic and microbial load (TOC and ATP) passing through pre-treatment, exacerbated by partial DAF failure and marinas episode, leading to increased SDI and progressive pressure drop.",
+  "key_signals": [
+    "Sustained rise in SDI₁₅ at cartucho outlet (4.8 vs baseline 2.5)",
+    "Marked increase in ATP in RO feed (1,200 pg/mL vs baseline 80 pg/mL)",
+    "Rise in TOC in RO feed (2.8 mg/L vs baseline 1.4 mg/L)",
+    "Progressive increase in ΔP etapa 1 (2.8 bar vs baseline 1.2 bar)",
+    "Decrease in permeate flow (245 m³/h vs baseline 268 m³/h)",
+    "Marinas episode (Hs > 3.5 m) and DAF partial failure (60% capacity) 10–14 days prior to SDI rise"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Inadequate antiincrustant dosing causing scaling on first-stage membranes",
+      "why_plausible": "Increased antiincrustant dose from 2.5 to 3.2 ppm three days before notification suggests concern about scaling; pressure rise could be due to scale formation.",
+      "why_discardable": "Scaling would typically cause a more uniform pressure rise across stages and a decrease in permeate conductivity, neither of which is observed. Also, SDI and ATP increases point to organic/microbial fouling rather than scaling."
+    },
+    {
+      "hypothesis": "Chlorine damage to RO membranes due to intermittent hypochlorite dosing in intake",
+      "why_plausible": "Intermittent hypochlorite dosing is reported; chlorine can damage polyamide membranes, leading to increased pressure drop and reduced flux.",
+      "why_discardable": "Chlorine damage would typically cause a rapid increase in permeate conductivity and a decrease in salt rejection, neither of which is observed. Also, free chlorine before RO is consistently <0.02 mg/L, indicating no residual chlorine reaching membranes."
+    },
+    {
+      "hypothesis": "Cartridge filter failure allowing particulate breakthrough into RO stage",
+      "why_plausible": "Cartridge filters were replaced 22 days ago; however, SDI at cartucho outlet is elevated, suggesting breakthrough or improper installation.",
+      "why_discardable": "Cartridge filter replacement occurred 22 days prior, and SDI rise began 8 days ago, making filter failure less likely as the primary cause. Also, ATP and TOC increases in RO feed suggest organic/microbial load rather than particulate breakthrough alone."
+    }
+  ],
+  "requested_data": "Diferencia de presión entre entrada y salida de cada cartucho de 5 µm (ΔP por cartucho) en bar",
+  "recommended_action": "Realizar limpieza química de la primera etapa con solución de limpieza alcalina (pH 11–12) a 30 °C durante 60 minutos, seguida de enjuague con permeado. Dosificar hipoclorito sódico en la captación según protocolo de choque (1–2 mg/L) durante 2 horas para reducir carga orgánica y microbiana en pretratamiento, manteniendo bisulfito sódico a 4 ppm en alimentación RO.",
+  "decision_change_condition": "Si la diferencia de presión entre entrada y salida de cada cartucho de 5 µm es inferior a 0,1 bar y la turbidez del efluente de DAF se mantiene por debajo de 0,5 NTU durante 72 horas consecutivas, entonces el diagnóstico cambiaría hacia un fallo de pretratamiento específico no detectado en los datos actuales.",
+  "confidence": 92
+}

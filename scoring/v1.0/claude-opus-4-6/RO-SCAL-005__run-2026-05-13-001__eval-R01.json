@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-005",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'subdosificación nuevo antiincrustante fosfonado para condiciones específicas (dureza 920, recovery 78%)' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (CaSO4, fosfato cálcico, biofouling, fallo ablandador)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP ácido cítrico 2% pH 2.0-2.5 4h + restablecer poliacrílico anterior 3 ppm provisional — match gold (CIP cítrico + revertir antiincrustante)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide LSI/SI(CaSO4) con software membrana — match accepted (jar test, software)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: LSI <0 + saturación CaSO4 <100% → descartar."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

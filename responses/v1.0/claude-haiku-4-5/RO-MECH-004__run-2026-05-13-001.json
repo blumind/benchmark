@@ -1,0 +1,52 @@
+{
+  "case_id": "RO-MECH-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:44:17Z",
+  "main_hypothesis": "Glue line defect in membrane elements from the known defective manufacturer lot, causing progressive salt leakage through compromised seals rather than through the active layer, resulting in elevated permeate conductivity without proportional pressure drop increase.",
+  "key_signals": [
+    "Permeate conductivity in T-04 increased from 470 µS/cm to 720 µS/cm (53% rise) while feed conductivity remained stable at ~56,500 µS/cm",
+    "Salt rejection calculated decreased from 99.17% to 98.72% (0.45 percentage point drop), indicating barrier compromise",
+    "Probe test identified three specific tubes in T-04 with elevated permeate conductivity (1,500–2,200 µS/cm) versus normal range",
+    "All five elements from the known defective lot are distributed in T-04, with three tubes showing anomalies matching the lot distribution",
+    "Permeate flow decreased only 3% (245 vs 252 m³/h) despite 53% conductivity rise, inconsistent with general membrane fouling or scaling",
+    "Pressure differentials across stages remained stable (ΔP1: 1.3 bar, ΔP2: 0.9 bar) despite conductivity degradation, ruling out progressive fouling",
+    "Manufacturer issued specific warning 180 days prior regarding glue line defects in this lot and recommended autopsy upon anomalies",
+    "Temporal correlation: conductivity rise began ~45 days after lot identification, consistent with progressive seal degradation under operating stress"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling or biofilm formation in affected tubes despite low chlorine residual",
+      "why_plausible": "Seawater intake is open; biofilm can develop on membrane surfaces and cause salt leakage if it compromises the active layer or creates bypass channels. ORP is low (+95 mV), which may not inhibit all microorganisms.",
+      "why_discardable": "Biofouling typically causes progressive pressure drop increase (not observed here: ΔP stable). Biofilm would affect all trains proportionally, not localize to three specific tubes in T-04. Probe test shows conductivity elevation in discrete tubes, not gradual degradation across the train. Biofouling does not explain why only tubes containing defective lot elements are affected."
+    },
+    {
+      "hypothesis": "Scaling (CaCO₃, CaSO₄, or silica) on membrane surface reducing effective barrier",
+      "why_plausible": "Seawater has high hardness and silica; scaling can reduce salt rejection if it creates micro-cracks or uneven surface coverage. Antiincrustant is dosed at 3 ppm, which may be insufficient under 43% recovery.",
+      "why_discardable": "Scaling causes progressive pressure drop increase (ΔP would rise), which is not observed. Scaling would affect all elements in a train proportionally, not localize to three tubes. Probe test shows salt leakage in discrete tubes, not uniform degradation. Membranes are at 36 months (near end of life) but scaling onset would be gradual over months, not sudden at day -45."
+    },
+    {
+      "hypothesis": "Mechanical damage to element end caps or O-rings from reapretading or handling",
+      "why_plausible": "Reapretading of heads on day -5 could have damaged seals or introduced micro-leaks. O-ring degradation after 36 months of service is plausible.",
+      "why_discardable": "Reapretading occurred on day -5, but conductivity rise began on day -45 (40 days earlier). Mechanical damage from reapretading would affect all tubes in the affected train, not three specific tubes. Probe test shows salt leakage localized to tubes containing defective lot elements, not random mechanical failure. O-ring degradation would be gradual over 36 months, not sudden."
+    },
+    {
+      "hypothesis": "Membrane active layer degradation due to chlorine breakthrough or oxidative stress",
+      "why_plausible": "Chlorine residual is <0.02 mg/L (very low), but ORP is +95 mV. If a dechlorination step failed or chlorine spiked, it could degrade the polyamide active layer.",
+      "why_discardable": "Chlorine residual is consistently <0.02 mg/L with stable ORP; no evidence of breakthrough. Oxidative degradation would affect all elements, not localize to three tubes. Membranes are 36 months old; if oxidative stress were the cause, degradation would be more uniform across the train. The temporal correlation with the known defective lot is absent."
+    },
+    {
+      "hypothesis": "Incorrect element installation or orientation in the three affected tubes",
+      "why_plausible": "If elements were installed backwards or with misaligned seals, salt leakage could occur without proportional pressure rise.",
+      "why_discardable": "Installation errors would have been evident at startup or during initial operation, not after 36 months. All three affected tubes contain elements from the known defective lot; coincidental installation errors in exactly those tubes is implausible. Probe test shows conductivity elevation in tubes with defective lot elements, not random tubes."
+    }
+  ],
+  "requested_data": "Microscopic or visual inspection results from the autopsy of the extracted membrane element, specifically: presence of glue line separation, delamination, or micro-cracks in the end cap seal area, and confirmation of whether the defect is consistent with the manufacturer's known glue line issue.",
+  "recommended_action": "Immediately isolate and shut down the three affected tubes in T-04 (those with permeate conductivity >1,500 µS/cm per probe test). Extract all five membrane elements from the known defective lot in T-04 and send them to the manufacturer for autopsy to confirm glue line defects. Do not attempt further reapretading or pressure testing, as this may accelerate seal failure. Operate the remaining five tubes in T-04 at reduced flux (10 L/m²·h instead of 12.5 L/m²·h) to minimize stress on remaining elements pending autopsy results. Monitor permeate conductivity of the remaining T-04 tubes daily. If conductivity in any remaining tube exceeds 900 µS/cm, extract that element immediately. Prepare replacement elements from a different manufacturer lot for installation once autopsy confirms the defect.",
+  "decision_change_condition": "If the autopsy of the extracted element shows no glue line defect, no delamination, and no seal compromise, and instead reveals active layer degradation, biofilm, or scaling, then the diagnosis would shift to oxidative stress, biofouling, or scaling as the root cause, and treatment would pivot to membrane replacement, biocide dosing, or antiincrustant optimization respectively.",
+  "confidence": 87
+}

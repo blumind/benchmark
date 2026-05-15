@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-NOWE-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:25:27Z",
+  "main_hypothesis": "Intrusión de aire en la línea de alimentación durante el mantenimiento",
+  "key_signals": [
+    "Sonido tipo 'borboteo' intermitente en la línea HP",
+    "Caudal volumétrico de alimentación vs concentrado + permeado anómalo",
+    "Presión de etapas 1 y 2 por debajo de los valores basales",
+    "Conductividad de permeado en 380 µS/cm con tendencia descendente"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Obstrucción parcial en los elementos de membrana",
+      "why_plausible": "Podría causar descenso en la conductividad del permeado y aumento en el caudal permeado",
+      "why_discardable": "No explica el sonido tipo 'borboteo' ni el caudal volumétrico anómalo"
+    },
+    {
+      "hypothesis": "Fallo en el sistema de antiincrustante",
+      "why_plausible": "Podría causar descenso en la conductividad del permeado y aumento en el caudal permeado",
+      "why_discardable": "No explica el sonido tipo 'borboteo' ni el caudal volumétrico anómalo"
+    }
+  ],
+  "requested_data": "Nivel de oxígeno disuelto en la línea de alimentación",
+  "recommended_action": "Verificar y corregir cualquier posible entrada de aire en la línea de alimentación, purgando el sistema si es necesario.",
+  "decision_change_condition": "Si el nivel de oxígeno disuelto en la línea de alimentación es cercano a cero, descartar la intrusión de aire como causa.",
+  "confidence": 85
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "RO-MECH-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:45:53Z",
+  "main_hypothesis": "Glue line defect in the suspect membrane lot (5 elements in T-04) causing internal leakage and elevated permeate conductivity.",
+  "key_signals": [
+    "Conductividad permeado subida progresiva desde 470 µS/cm a 720 µS/cm con alimentación estable",
+    "Probe test perfil de permeado por tubo: tres tubos en T-04 con 1.500–2.200 µS/cm mientras el resto normal",
+    "Distribución del lote sospechoso: T-04 con 5 elementos del lote afectado",
+    "Reapretado de cabezas y verificación de O-rings sin alivio significativo"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "O-ring seal failure or end-cap leakage in the affected tubes of T-04",
+      "why_plausible": "O-ring failure is a common cause of localized high permeate conductivity and can occur gradually. The probe test shows only specific tubes affected, which could indicate seal issues at the end caps or interconnectors.",
+      "why_discardable": "The plant already performed a re-torquing of heads and verification of O-rings without significant improvement, and a pressure test was inconclusive. This reduces the likelihood of simple seal failure. Additionally, the known defective lot distribution directly aligns with the affected tubes."
+    },
+    {
+      "hypothesis": "Concentration polarization exacerbated by fouling or scaling in those tubes",
+      "why_plausible": "Fouling or scaling can increase localized concentration polarization, leading to higher salt passage and apparent conductivity rise. The slight permeate flow decline (3%) could support some fouling.",
+      "why_discardable": "The feed pressure, ΔP, and temperature are stable, and there is no sign of increased differential pressure or flux decline that would indicate significant fouling. The conductivity rise is too high (from 470 to 720 µS/cm) and localized to specific tubes with the suspect lot, not a general trend."
+    },
+    {
+      "hypothesis": "Membrane oxidation due to residual chlorine breakthrough",
+      "why_plausible": "Oxidation can degrade membrane rejection, causing increased conductivity. Chlorine is monitored but could have transient spikes.",
+      "why_discardable": "Chlorine free before RO is consistently <0.02 mg/L, ORP stable around +95 mV, and pH is 8.1 (no acidic shift). There is no history of oxidant addition. The localized nature (only 3 tubes in one train) and the known lot defect make oxidation unlikely as the primary cause."
+    }
+  ],
+  "requested_data": "Resultado de autopsia del elemento extraído del tubo sospechoso en T-04: confirmación de defecto en la línea de pegamento (glue line) o daño en la membrana.",
+  "recommended_action": "Proceder con la autopsia del elemento extraído según recomendación del fabricante, y mientras tanto aislara los tres tubos sospechosos del T-04 (cerrando válvulas de permeado y alimentación) para evitar que permeado de baja calidad contamine el producto general; en paralelo, programar reemplazo de los 5 elementos del lote afectado una vez confirmado el fallo.",
+  "decision_change_condition": "Si la autopsia revela que el defecto no está en la línea de pegamento sino en otra causa (p. ej., O-rings internos dañados o delaminación), mi diagnóstico cambiaría a fallo mecánico del elemento en sí, posiblemente relacionado con el lote pero con mecanismo diferente.",
+  "confidence": 85
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-009-run-2026-05-08-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-009",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-08-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Captura 2 de 3 hipótesis (hidrocarburos+antiespumante); reconoce ambigüedad. Polímero en alt."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "6 señales discriminantes: ΔP cabeza vs ΔP2 estable, TS 58 vs 72, hidrocarburos 2.1, depósito gelatinoso."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (polímero catiónico, bio, escalado) con why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP alcalino directo sin identify-first; el Ambiguous expects aislar+coordinar+FTIR antes de CIP."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide poliDADMAC — trigger SOLO para 1 candidato; gold expects FTIR/oil-in-water multi-candidato."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single threshold para 1 candidato (poliDADMAC ≥0.1) → polímero; no discrimina antiespumante vs HC."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Pierde C4/C5/C6 por CIP-first y triggers mono-candidato en caso Ambiguous."
+}

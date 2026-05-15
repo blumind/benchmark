@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-SCAL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:16:08Z",
+  "main_hypothesis": "Subdosificación del nuevo antiincrustante fosfonado para las condiciones específicas de esta agua (dureza 920 mg/L CaCO₃, recovery 78 %), lo que provoca precipitación de CaCO₃ y/o CaSO₄ preferentemente en la etapa 2 (zona de mayor concentración), generando fouling inorgánico progresivo.",
+  "key_signals": [
+    "ΔP etapa 2 casi duplicada (1,7 bar vs 0,9 bar baseline) con ΔP etapa 1 estable → incrustación concentrada en la cola del sistema donde la sobresaturación es máxima",
+    "Presión de alimentación subió de 14,8 a 17,8 bar (3 bar, ~20 %) indicando pérdida de permeabilidad por depósito en membranas",
+    "Caudal permeado bajó 8 % (305 vs 333 m³/h) consistente con bloqueo parcial de membranas",
+    "Conductividad permeado subió de 78 a 88 µS/cm → concentración polarizada mayor por fouling, incremento de paso de sales",
+    "Correlación temporal directa: la tendencia de deterioro comenzó ~15 días después del cambio de antiincrustante (día -25), tiempo coherente con nucleación y crecimiento de cristales",
+    "CIP ácida (HCl pH 2) logró reducir ΔP etapa 2 temporalmente (de 1,4 a 1,1 bar), confirmando depósito soluble en ácido (CaCO₃ o fosfato de calcio), pero la rápida recurrencia en 5 días indica que la causa raíz (subdosificación) persiste",
+    "Dosis del nuevo producto (1,2 ppm fosfonado) fue recomendada para 'agua estándar' sin considerar la dureza extremadamente alta (920 mg/L CaCO₃) ni el recovery de 78 %, condiciones que requieren mayor inhibición",
+    "Calcio y alcalinidad en rechazo estables → no hay cambio en la calidad del agua de alimentación; el problema es de inhibición, no de carga"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Precipitación de CaSO₄ (yeso) por la combinación de alta dureza, acidificación con H₂SO₄ y antiincrustante insuficiente",
+      "why_plausible": "El uso de H₂SO₄ para bajar pH introduce sulfato adicional; con 920 mg/L de dureza y 78 % recovery, el índice de saturación de CaSO₄ en el concentrado puede superar 1. El CaSO₄ precipita preferentemente en etapa 2. La formulación fosfonada puede tener menor eficacia contra sulfatos que el poliacrílico anterior.",
+      "why_discardable": "La CIP ácida con HCl pH 2 logró reducción parcial de ΔP; el CaSO₄ es poco soluble en ácido clorhídrico a pH 2 y normalmente requiere limpieza alcalina con EDTA o conversores específicos. La respuesta parcial al CIP ácido sugiere más CaCO₃ que CaSO₄, aunque no se descarta un componente mixto."
+    },
+    {
+      "hypothesis": "Precipitación de fosfato de calcio (Ca₃(PO₄)₂ o hidroxiapatita) inducida por el propio antiincrustante fosfonado al degradarse o reaccionar con el calcio a alta concentración",
+      "why_plausible": "Algunos antiincrustantes fosfonados pueden hidrolizarse liberando ortofosfato, que en presencia de calcio elevado precipita como fosfato cálcico. Este depósito es parcialmente soluble en ácido, consistente con la respuesta al CIP ácido.",
+      "why_discardable": "A pH 6,5 y dosis de solo 1,2 ppm, la cantidad de fósforo disponible es muy baja para generar depósito significativo por sí sola. Es más probable que el depósito principal sea CaCO₃ por falta de inhibición, aunque un componente de fosfato cálcico podría coexistir."
+    },
+    {
+      "hypothesis": "Biofouling en etapa 2 coincidente temporalmente con el cambio de antiincrustante",
+      "why_plausible": "El biofouling típicamente afecta más la etapa 2 por mayor tiempo de residencia y nutrientes concentrados. La rápida recurrencia post-CIP podría explicarse por recolonización bacteriana.",
+      "why_discardable": "El biofouling normalmente afecta primero la etapa 1 (entrada de nutrientes) y responde mejor a CIP alcalina con biocida, no a CIP ácida. La CIP ácida sí redujo ΔP, lo que apunta a depósito inorgánico. Además, no hay cambio en la fuente de agua ni en el pretratamiento que explique aparición súbita de biofouling, y el cloro libre está controlado."
+    },
+    {
+      "hypothesis": "Fallo del ablandador (bypass de dureza) coincidente con el cambio de antiincrustante",
+      "why_plausible": "El ablandador opera en arranque-paro; un fallo en la regeneración o en la válvula de bypass podría incrementar la dureza de alimentación, sobrepasando la capacidad del antiincrustante.",
+      "why_discardable": "El calcio en rechazo (2.450 mg/L) es estable respecto al baseline (2.380 mg/L), lo que indica que la dureza de alimentación no ha cambiado significativamente. Si el ablandador fallara, se esperaría un aumento notable del calcio en rechazo."
+    }
+  ],
+  "requested_data": "Índice de saturación de Langelier (LSI) o índice de saturación de CaSO₄ (y BaSO₄/SrSO₄) calculado con el software de proyección de membranas (p. ej. ROSA, IMSDesign o WAVE) usando la composición completa del agua de alimentación actual, la dosis de 1,2 ppm del nuevo antiincrustante fosfonado y el recovery de 78 %, comparado con la proyección equivalente con el antiincrustante poliacrílico anterior a 3 ppm.",
+  "recommended_action": "1) Realizar inmediatamente una CIP secuencial: primero ácida con ácido cítrico al 2 % (p/v) a pH 2,0-2,5 durante 4 horas con recirculación a 35-40 °C en la etapa 2, seguida de enjuague y verificación de ΔP. 2) Simultáneamente, restablecer el antiincrustante poliacrílico anterior a 3 ppm como medida provisional hasta que se complete la evaluación del producto fosfonado con un estudio de compatibilidad para esta agua específica (dureza 920 mg/L, recovery 78 %). 3) Solicitar al nuevo proveedor un cálculo de dosis específico con el análisis completo del agua y las condiciones de operación reales, incluyendo proyección de índices de saturación. 4) Monitorizar ΔP etapa 2 diariamente y normalizar datos de flujo por temperatura y presión para detectar recurrencia temprana.",
+  "decision_change_condition": "Si el cálculo de índices de saturación (LSI y CaSO₄) con el nuevo antiincrustante a 1,2 ppm muestra que ambos están por debajo de los umbrales de precipitación (LSI < 0 y saturación CaSO₄ < 100 %) a las condiciones de operación, entonces la subdosificación del antiincrustante no sería la causa raíz y redireccionaría el diagnóstico hacia biofouling o hacia incompatibilidad química del producto fosfonado (precipitación de fosfato cálcico inducida por el propio producto).",
+  "confidence": 88
+}

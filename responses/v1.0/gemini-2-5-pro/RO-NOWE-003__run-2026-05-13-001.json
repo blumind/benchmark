@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:20:40Z",
+  "main_hypothesis": "Incomplete flushing of the glycerin-based preservative solution from the new membrane elements due to the use of an inadequate, historical commissioning procedure.",
+  "key_signals": [
+    "High glycerin/COD concentration in permeate (320 mg/L), directly indicating residual preservative.",
+    "Anomalously low feed ORP (-10 mV), consistent with the presence of residual sodium bisulfite from the preservation solution.",
+    "The documented operational error of performing only one 30-minute flush instead of the three 1-hour flushes recommended by the new membrane supplier.",
+    "Simultaneously low permeate flow (175 m³/h vs 250 m³/h expected) and high differential pressure (ΔP stage 1 at 1.5 bar vs 1.1 bar expected), suggesting increased hydraulic resistance on the membrane surface.",
+    "Lower than specified salt rejection (98.97% vs 99.4%) and high permeate conductivity, which is a known transient effect of residual preservatives on new membranes."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Rapid biological fouling.",
+      "why_plausible": "Glycerin is an excellent carbon source for bacteria. The combination of residual glycerin, seawater inoculum, and favorable temperature (22.3 °C) could cause rapid biofilm formation, explaining the high differential pressure and low flow.",
+      "why_discardable": "This is more likely a secondary effect or a developing problem rather than the root cause. The issue appeared immediately upon startup, and the strongly negative ORP and high permeate glycerin levels are direct chemical signatures of the preservative itself, which would be the primary cause of the observed performance issues within the first 8 hours."
+    },
+    {
+      "hypothesis": "Manufacturing defects or physical damage to the new membranes.",
+      "why_plausible": "The membranes are from a new, untried supplier. Poor initial performance could stem from out-of-spec manufacturing or damage during transport and installation.",
+      "why_discardable": "The specific pattern of symptoms (low flow with high ΔP) is not typical for most forms of physical damage, which usually result in high permeate flow and much poorer salt rejection. It is also improbable that an entire train of new elements would have uniform defects causing this specific performance profile. The chemical signals (ORP, glycerin) point away from a purely physical problem."
+    }
+  ],
+  "requested_data": "ATP (Adenosine Triphosphate) concentration in the feed and concentrate water of train T-05 (in pg/mL).",
+  "recommended_action": "Take train T-05 offline. Perform a low-pressure (3-5 bar) flush with RO permeate for a minimum of 3 hours, monitoring the permeate COD and the ORP of the water entering the pressure vessels. Continue flushing until the permeate COD is below 50 mg/L and the ORP is consistently positive (> +50 mV). After flushing is complete, restart the train following the new supplier's recommended slow ramp-up procedure (30-minute ramp to nominal pressure).",
+  "decision_change_condition": "If, after the recommended extended flushing procedure, the permeate COD is confirmed to be < 50 mg/L and the feed ORP is > +50 mV, but the train's differential pressure remains high (>1.4 bar) and permeate flow remains low (<200 m³/h).",
+  "confidence": 95
+}

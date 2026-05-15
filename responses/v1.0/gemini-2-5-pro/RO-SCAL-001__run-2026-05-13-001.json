@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:54:03Z",
+  "main_hypothesis": "Incrustación severa por carbonato de calcio (CaCO₃) en la segunda etapa del sistema de ósmosis inversa, causada por la falla combinada de la dosificación de antiincrustante y el control del pH de la alimentación.",
+  "key_signals": [
+    "Aumento drástico de la presión diferencial (ΔP) exclusivamente en la segunda etapa (de 0,8 a 2,1 bar).",
+    "Caudal medido de antiincrustante extremadamente bajo (0,3 L/h) en comparación con la consigna (1,8 L/h).",
+    "pH de alimentación a la RO elevado (7,3) en comparación con el valor de diseño (6,7).",
+    "Reducción del caudal de permeado y aumento de la presión de alimentación."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling (ensuciamiento biológico).",
+      "why_plausible": "El biofouling también causa un aumento de la ΔP, que a menudo es más pronunciado en la última etapa del sistema donde la concentración de nutrientes es mayor.",
+      "why_discardable": "La rápida aparición y aceleración del problema coinciden directamente con fallas operativas específicas (bomba de antiincrustante, ajuste de pH), lo cual es más característico de una incrustación química que de un crecimiento biológico, que suele ser más lento."
+    },
+    {
+      "hypothesis": "Ensuciamiento por partículas o coloides.",
+      "why_plausible": "El ensuciamiento por partículas provoca un aumento de la presión diferencial en los bastidores de membranas.",
+      "why_discardable": "Este tipo de ensuciamiento afecta principalmente a la primera etapa, cuya ΔP se mantiene estable. Además, el cambio de los filtros de cartucho no tuvo ningún efecto, lo que sugiere que el pretratamiento funciona correctamente."
+    }
+  ],
+  "requested_data": "Valor del Índice de Saturación de Langelier (LSI) en la corriente de rechazo de la segunda etapa, calculado a partir de una muestra reciente.",
+  "recommended_action": "Realizar una parada de emergencia controlada del bastidor de ósmosis inversa. Proceder con una limpieza química in situ (CIP) de bajo pH para disolver la incrustación de carbonato de calcio, utilizando una solución de ácido cítrico al 2% a un pH de 3,5-4,0 y una temperatura de 30-35°C durante 4-6 horas, siguiendo las especificaciones del fabricante de la membrana. Antes de reiniciar, reparar y verificar el funcionamiento correcto de los sistemas de dosificación de antiincrustante y ácido.",
+  "decision_change_condition": "Si un análisis del material incrustado (ej. mediante autopsia de membrana) revelara que el componente mayoritario no es carbonato de calcio, sino sílice o materia orgánica/biológica.",
+  "confidence": 95
+}

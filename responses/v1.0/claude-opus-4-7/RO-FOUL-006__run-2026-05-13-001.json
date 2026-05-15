@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:41:02Z",
+  "main_hypothesis": "Biofouling progresivo en etapa 1 causado por la reducción de la frecuencia de dosificación de biocida (DBNPA) y un umbral de ATP demasiado permisivo, que ha permitido el crecimiento microbiano sostenido en la membrana frontal.",
+  "key_signals": [
+    "ATP en alimentación a RO subió de 110 a 480 pg/mL (4x el baseline) tras el cambio de protocolo de biocida en día -85",
+    "ΔP etapa 1 más que duplicado (0,8 → 1,7 bar) mientras etapas 2 y 3 permanecen casi estables, patrón típico de biofouling frontal",
+    "Rebote rápido de ΔP tras CIP ácida (0,9 → 1,3 bar en 12 días) — un CIP ácido no remueve biopelícula, lo que explica la recurrencia",
+    "TOC en alimentación subió de 1,3 a 1,9 mg/L, aportando sustrato para crecimiento microbiano",
+    "Coloración amarillenta en concentrado consistente con productos microbianos/EPS",
+    "Umbral de dosificación (500 pg/mL) nunca se dispara aunque ATP oscila justo por debajo (300–500), permitiendo crecimiento continuo",
+    "Fe y Mn estables y bajos, descartando fouling metálico; pH y temperatura estables"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling orgánico (NOM) por aumento de TOC del acuífero",
+      "why_plausible": "TOC subió de 1,3 a 1,9 mg/L y el color amarillento del concentrado sugiere materia húmica",
+      "why_discardable": "El salto de ATP de 4x es desproporcionado respecto al aumento de TOC (~46%); el TOC adicional probablemente actúa como sustrato del biofouling, no como foulant primario. NOM puro no rebotaría tan rápido tras CIP."
+    },
+    {
+      "hypothesis": "Fouling por óxidos de Mn/Fe por sobredosis o residual de KMnO₄",
+      "why_plausible": "Se dosifica KMnO₄ 0,8 mg/L aguas arriba y los filtros greensand pueden tener fugas",
+      "why_discardable": "Fe (0,06) y Mn (0,03) en alimentación a RO están en baseline o por debajo; no hay evidencia analítica de fuga oxidativa, y el patrón de ΔP localizado en etapa 1 con ATP creciente apunta a biológico."
+    },
+    {
+      "hypothesis": "Scaling de etapa 1 por fallo del antiincrustante",
+      "why_plausible": "Aumento de ΔP y presión de alimentación podrían indicar precipitación",
+      "why_discardable": "El scaling típicamente afecta la etapa final (mayor concentración), no la etapa 1. La etapa 3 está estable. Además ATP elevado y rebote post-CIP ácida son inconsistentes con scaling (que el ácido sí removería de forma duradera)."
+    },
+    {
+      "hypothesis": "Daño oxidativo a la membrana por KMnO₄ residual",
+      "why_plausible": "Aumento de conductividad de permeado (68→78 µS/cm) podría indicar pérdida de rechazo",
+      "why_discardable": "El aumento de salt passage es modesto y consistente con compactación/biofouling que reduce flujo local; no hay correlación temporal con cambios en dosis de KMnO₄ y el ΔP no se explicaría por oxidación."
+    }
+  ],
+  "requested_data": "Recuento heterotrófico (HPC, UFC/mL) y/o ATP en muestra de la membrana frontal de etapa 1 (autopsia o swab del tubo de presión líder), o alternativamente análisis SDI + ATP comparativo entre alimentación, concentrado etapa 1 y permeado",
+  "recommended_action": "Restaurar inmediatamente la dosificación preventiva de DBNPA: shock dosing de 20 mg/L durante 30–60 min cada 3 días (o continua a 1 mg/L) según especificación del fabricante de membrana, verificando compatibilidad. Programar CIP de dos pasos en 48–72 h: (1) alcalino con NaOH a pH 11–12 + surfactante (EDTA 1% + Na-DSS 0,025%) a 35 °C durante 4–6 h para remover biopelícula y EPS, seguido de (2) ácido cítrico 2% pH 3 si hay sospecha de coprecipitados. Recircular y desplazar a baja presión (<4 bar). Tras CIP, restablecer umbral ATP a ≤100 pg/mL o retornar a dosificación programada cada 3 días. Verificar normalización de ΔP etapa 1 y caudal de permeado.",
+  "decision_change_condition": "Cambiaría el diagnóstico si: (a) el ATP de la membrana frontal resulta bajo (<1.000 pg/cm²) y HPC <10⁴ UFC/cm², o (b) una autopsia revela predominio de depósitos inorgánicos (sílice, carbonatos, óxidos metálicos) sobre biomasa/EPS, o (c) un CIP alcalino correctamente ejecutado no recupera el ΔP de etapa 1.",
+  "confidence": 86
+}

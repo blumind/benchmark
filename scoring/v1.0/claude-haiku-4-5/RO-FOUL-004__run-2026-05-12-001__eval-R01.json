@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-004-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-004",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling phytoplankton TEP+algal metabolites' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ΔP1 cabeza vs cola + TEP + clorofila + TOC×3 + filamentos."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts de 4 familias (MECH, coagulación, UF biofouling, SCAL) anclados."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP dos pasos: ácido cítrico 1.0-1.5% pH 2.5-3.0 PRIMERO, then alcalino — orden inverso del gold (alcalino primero para TEP)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide microscopic SEM stage 1 — match accepted autopsia."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ΔP >2.5 + conductividad >450 + microscopic daño → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Orden invertido (ácido primero) para TEP — gold expects alcalino primero."
+}

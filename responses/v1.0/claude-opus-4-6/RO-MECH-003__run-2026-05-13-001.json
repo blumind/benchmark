@@ -1,0 +1,43 @@
+{
+  "case_id": "RO-MECH-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:38:05Z",
+  "main_hypothesis": "Fallo del sello (junta tórica) del cap frontal de la vaina de presión FRP del Tubo 2 (etapa 1), causado por deformación/extrusión de la junta tórica debido a desgaste de la pista de asiento del cap tras 5 años de servicio y un reapriete inadecuado en el Día -22, lo que permite bypass de alimentación/concentrado directamente al canal de permeado.",
+  "key_signals": [
+    "Conductividad de permeado global subió de 110 a 480 µS/cm (caída de rechazo de 97,8% a 90,3%), indicando paso directo de sales no consistente con degradación de membrana uniforme.",
+    "Probe test del Tubo 2 muestra 1.250 µS/cm vs. 100-130 µS/cm en los demás tubos, localizando el problema en un solo tubo de presión.",
+    "Inspección visual del Día -4 confirma protrusión anómala del cap final del Tubo 2 y junta tórica marcada (extruida/deformada).",
+    "Test de presión del Tubo 2 con elementos extraídos (Día -2) muestra pérdida de presión a 1 bar, consistente con fuga en el sello del cap y no en las membranas.",
+    "Historial del Día -22: fuga de agua dulce en la pestaña de la cabeza de un tubo durante parada, seguida de reapriete que no resolvió el problema de raíz.",
+    "Inspección del Día -1: desgaste en la pista del cap de la vaina FRP del Tubo 2, consistente con asiento deficiente de la junta tórica.",
+    "Caída del caudal de permeado (6%) y del caudal de concentrado (70 vs 75 m³/h), consistente con bypass parcial de alimentación al permeado que reduce el flujo neto a través de las membranas.",
+    "ΔP de ambas etapas estable, descartando fouling o bloqueo como causa principal.",
+    "Cloro libre < 0,02 mg/L y ORP estable, descartando daño oxidativo de membranas."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño oxidativo localizado de las membranas del Tubo 2 por exposición puntual a oxidante no detectado.",
+      "why_plausible": "Un evento de oxidación localizado podría degradar selectivamente las membranas de un solo tubo, produciendo alta conductividad de permeado en ese tubo. El cloro libre actual es bajo, pero un evento pasado transitorio no quedaría registrado.",
+      "why_discardable": "El test de presión del Tubo 2 con elementos extraídos mostró pérdida de presión atribuible al sello del cap, no a las membranas. Además, la inspección visual confirmó protrusión del cap y junta tórica marcada. Un daño oxidativo de membrana no explicaría la fuga observada en la pestaña del cap en el Día -22 ni el desgaste de la pista del cap."
+    },
+    {
+      "hypothesis": "Grieta o defecto estructural en la vaina FRP del Tubo 2 que permite bypass al colector de permeado.",
+      "why_plausible": "Las vainas FRP tienen 5 años de servicio y la última inspección estructural fue hace 30 meses. Una microgrieta en la zona del cap podría permitir bypass y explicar la fuga inicial y la pérdida de presión.",
+      "why_discardable": "La inspección del Día -1 de la vaina FRP del Tubo 2 no reveló grieta visible, solo desgaste en la pista del cap. El patrón de fallo (protrusión del cap, junta tórica marcada, fuga en la pestaña) apunta al sello mecánico más que a la integridad del cuerpo FRP."
+    },
+    {
+      "hypothesis": "Fallo de interconector (adaptador) o junta tórica interna entre elementos dentro del Tubo 2, permitiendo bypass interno de alimentación a permeado.",
+      "why_plausible": "Un interconector dañado o una junta tórica interna entre elementos podría causar paso de sales al permeado en un solo tubo, y es un fallo mecánico común en bastidores BWRO.",
+      "why_discardable": "El test de presión del Tubo 2 se realizó con elementos extraídos y aun así mostró pérdida de presión, lo que indica que el fallo está en la vaina/cap y no en los interconectores internos. Además, la evidencia visual del cap (protrusión, junta marcada) y el historial de fuga en la pestaña del cap son consistentes con fallo del sello externo."
+    }
+  ],
+  "requested_data": "Resultado de un test de vacío (vacuum test) o test de presión con tinte (dye test) aplicado específicamente al sello del cap frontal del Tubo 2 con los elementos reinstalados, para confirmar la ubicación exacta y magnitud de la fuga en el sello del cap versus posible fuga en la pared de la vaina FRP.",
+  "recommended_action": "Aislar el Tubo 2 de etapa 1 del servicio (cerrar válvulas de alimentación y permeado del tubo si la configuración lo permite, o taponar temporalmente la conexión de permeado del Tubo 2 al colector). Reemplazar la junta tórica del cap frontal del Tubo 2 por una nueva de especificación OEM (material EPDM o Buna-N según especificación del fabricante de la vaina). Inspeccionar la pista de asiento del cap en la vaina FRP: si el desgaste excede las tolerancias del fabricante (típicamente > 0,5 mm de profundidad de surco o deformación), reemplazar el cap o la vaina completa. Reapretar los pernos del cap al torque especificado por el fabricante (consultar manual de la vaina). Tras el reensamblaje, realizar test de presión estático a 1,5 bar durante 10 minutos para verificar estanqueidad antes de poner en línea. Monitorizar conductividad de permeado del Tubo 2 con probe test a las 24 y 72 horas post-reparación para confirmar resolución.",
+  "decision_change_condition": "Si el test de presión del Tubo 2 con junta tórica y cap nuevos (en especificación) siguiera mostrando pérdida de presión, o si un test de tinte revelara fuga a través de la pared de la vaina FRP y no del sello del cap, cambiaría el diagnóstico a defecto estructural de la vaina FRP del Tubo 2, requiriendo reemplazo completo de la vaina.",
+  "confidence": 92
+}

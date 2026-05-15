@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-NOWE-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:53:33Z",
+  "main_hypothesis": "Residual propilenglicol (20 % v/v) atrapado en los poros y canales de los elementos de membrana causa un fenómeno de 'non-wetting' parcial y reducción de la permeabilidad efectiva. El propilenglicol, al ser un solvente orgánico miscible con agua pero de mayor viscosidad y menor tensión superficial, desplaza el agua de los microporos de la capa activa de poliamida y de los espaciadores del canal de permeado; un aclarado de solo 30 minutos con permeado es insuficiente para eliminar el glicol de los volúmenes muertos (tubos colectores, espaciadores de permeado, interior de los sobres enrollados). La mejora progresiva observada durante 5 días confirma que el glicol se va diluyendo lentamente, pero la cinética de difusión desde los espaciadores internos del sobre es muy lenta a baja temperatura (17 °C).",
+  "key_signals": [
+    "Caudal de permeado al 36 % del nominal inmediatamente tras arranque, con subida muy lenta y progresiva (indicativo de eliminación gradual de un contaminante soluble, no de un fouling convencional)",
+    "ΔP de etapa 1 y etapa 2 por debajo de lo esperado (0,7 y 0,4 bar vs 1,2 y 0,8 bar), lo que descarta fouling particulado o biofouling severo que elevaría ΔP",
+    "Presión de alimentación elevada (64 bar vs 60 bar esperados) necesaria para compensar la menor permeabilidad, consistente con resistencia adicional en la capa activa por presencia de glicol",
+    "Conductividad de permeado elevada (480 µS/cm vs 400 µS/cm) y rechazo de sales reducido (99,15 % vs 99,3 %), coherente con transporte facilitado de sales a través de poros parcialmente ocupados por glicol (menor flujo de agua pura diluye menos el paso de sal)",
+    "Mejora continua día a día (36 % → 48 % → 65 % → 78 %) tras circulación prolongada a baja presión, patrón típico de lavado progresivo de un soluto miscible retenido en volúmenes muertos",
+    "Preservación con propilenglicol al 20 % v/v durante 5 meses y aclarado de solo 30 minutos antes del arranque (insuficiente según recomendaciones de fabricantes que exigen mínimo 1 hora de flush a caudal nominal o hasta que TOC del permeado sea < 5 mg/L)",
+    "Cloro libre < 0,02 mg/L y ORP +90 mV descartan daño oxidativo a la membrana"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño parcial por congelación de la membrana (cristalización de hielo en los poros de la capa activa a 4 °C con protección insuficiente de glicol)",
+      "why_plausible": "La temperatura del almacén bajó a 4 °C; si la concentración real de propilenglicol fue inferior a la nominal (mala mezcla, dilución) o si hubo microzonas más frías, podría haberse producido cristalización parcial que dañaría irreversiblemente la estructura de la poliamida, reduciendo flujo y rechazo.",
+      "why_discardable": "Un daño por congelación sería irreversible y no mostraría la mejora progresiva observada (36 % → 78 % en 5 días). Además, 4 °C está muy por encima del punto de congelación de una solución de propilenglicol al 20 % (aprox. -8 °C), por lo que la protección fue adecuada."
+    },
+    {
+      "hypothesis": "Biofouling desarrollado durante el almacenamiento de 5 meses (agotamiento del bisulfito y proliferación bacteriana en medio rico en glicol como fuente de carbono)",
+      "why_plausible": "El propilenglicol es una fuente de carbono orgánico; si el bisulfito se oxidó con el tiempo y perdió efecto biocida, las bacterias podrían haber colonizado las membranas durante 5 meses, generando biofilm que reduce flujo y rechazo.",
+      "why_discardable": "El biofouling típicamente eleva el ΔP de la primera etapa de forma significativa; aquí el ΔP está por debajo de lo esperado (0,7 bar vs 1,2 bar). Además, la mejora progresiva con simple circulación de agua (sin biocida ni limpieza química) no es consistente con un biofilm establecido, que requiere CIP con álcali y biocida para su eliminación."
+    },
+    {
+      "hypothesis": "Air-lock o bolsas de aire atrapadas en los vasos de presión tras el vaciado del fluido de preservación",
+      "why_plausible": "El procedimiento indica que la vaina estaba vacía durante el almacenamiento; al rellenar, podrían haberse formado bolsas de aire en los tubos colectores de permeado o en la parte superior de los vasos, bloqueando parcialmente el flujo de permeado.",
+      "why_discardable": "Las bolsas de aire se eliminan rápidamente con la presurización (a 64 bar el aire se disuelve en el agua) y no explicarían una recuperación tan lenta durante 5 días. Además, el aclarado de 30 min a presión debería haber purgado el aire residual."
+    },
+    {
+      "hypothesis": "Degradación química de la membrana por exposición prolongada a bisulfito concentrado (hidrólisis ácida de la poliamida)",
+      "why_plausible": "El bisulfito de sodio al 1 % genera un pH ácido (aprox. 4-5); una exposición de 5 meses podría teóricamente degradar parcialmente la capa activa de poliamida, reduciendo flujo y selectividad.",
+      "why_discardable": "Los fabricantes de membranas SWRO aprueban la preservación con bisulfito al 1 % durante periodos prolongados (hasta 12 meses) sin degradación significativa. Además, una degradación química sería irreversible y no explicaría la mejora progresiva observada."
+    }
+  ],
+  "requested_data": "Concentración de carbono orgánico total (TOC, en mg/L) en el permeado del Tren T-04 medida actualmente (Día 0), para confirmar la presencia de propilenglicol residual permeando a través de la membrana; un valor > 10 mg/L confirmaría glicol residual significativo, mientras que un valor < 2 mg/L sugeriría una causa diferente.",
+  "recommended_action": "Realizar un flush prolongado de baja presión (5-10 bar) con permeado de los otros trenes a temperatura ambiente (o calentado a 30-35 °C si es posible, sin exceder 35 °C) a caudal máximo permitido por el bastidor (sin superar el caudal máximo de alimentación por elemento indicado por el fabricante, típicamente 3,6 m³/h por elemento 8040) durante un mínimo de 4-6 horas adicionales, recirculando el concentrado y el permeado a drenaje (no al tanque de producto). Monitorizar el TOC del permeado cada hora; continuar el flush hasta que el TOC del permeado sea < 5 mg/L y el caudal normalizado alcance > 95 % del valor de referencia. Si tras 12 horas de flush el caudal normalizado no supera el 90 %, ejecutar un CIP alcalino suave (NaOH 0,1 % p/v, pH 11,5-12,0, temperatura 35 °C, recirculación 1 hora, remojo 1 hora) para solubilizar residuos orgánicos de glicol adsorbidos en la membrana, seguido de aclarado con permeado hasta pH neutro.",
+  "decision_change_condition": "Si el TOC del permeado del Tren T-04 fuera < 2 mg/L (indicando ausencia de glicol residual) y el caudal normalizado no continuara mejorando tras 24 horas adicionales de flush, cambiaría mi diagnóstico hacia daño irreversible de la membrana (por congelación o degradación química), lo que requeriría una autopsia de un elemento terminal para confirmar y planificar el reemplazo de los elementos afectados.",
+  "confidence": 85
+}

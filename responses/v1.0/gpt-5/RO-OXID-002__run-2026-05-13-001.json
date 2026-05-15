@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-OXID-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:43:25Z",
+  "main_hypothesis": "Degradación oxidativa de las membranas de poliamida por presencia de ozono residual en la alimentación al RO, tras el aumento de dosis de O3 en la planta vecina y ausencia de neutralización (bisulfito/GAC) en el pretratamiento.",
+  "key_signals": [
+    "Ozono residual en alimentación a RO = 0,06 mg/L (vs <0,01 mg/L baseline).",
+    "ORP alimentación subió de +110 mV a +280 mV.",
+    "Rechazo de sales cayó de 97,8 % a 88,8 % con ΔP de etapas estable (1,1 y 0,8 bar).",
+    "Conductividad de permeado aumentó bruscamente de 75 a 380 µS/cm con conductividad de alimentación prácticamente estable.",
+    "Caudal de permeado solo bajó 7 % (no hay indicios de ensuciamiento fuerte ni scaling que elevarían ΔP).",
+    "Histórico: incremento de dosis de ozono en la planta vecina (0,8 → 1,5 mg/L) pocos días antes de iniciarse la pérdida de rechazo.",
+    "No hay dosificación de bisulfito ni carbón activado en línea (sin barrera contra oxidantes).",
+    "Cloro libre indetectable (<0,02 mg/L), por lo que el oxidante responsable no es cloro."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo mecánico localizado (rotura de hoja, daño de junta u o-ring/interconnector) que provoca bypass de salmuera a permeado.",
+      "why_plausible": "Una rotura o mal asiento puede causar pérdida súbita de rechazo sin incremento de ΔP.",
+      "why_discardable": "La cronología coincide con la elevación sostenida de ORP y detección de ozono en toda la alimentación; la pérdida de rechazo fue progresiva en ~2 semanas, más típica de ataque químico que de fallo brusco localizado. ΔP y presiones no muestran indicios de evento mecánico."
+    },
+    {
+      "hypothesis": "Error de instrumentación del sensor de conductividad de permeado.",
+      "why_plausible": "El operador inicialmente sospechó ‘ruido’ y una deriva del sensor podría inflar la conductividad de permeado y el cálculo de rechazo.",
+      "why_discardable": "El aumento de salinidad en permeado coincide con ORP alto y ozono residual medido; la pérdida de rechazo es grande y sostenida, y no hay señales contradictorias (p.ej., ΔP estable)."
+    },
+    {
+      "hypothesis": "Scaling/ensuciamiento que incrementa la polarización de concentración y empeora el rechazo.",
+      "why_plausible": "Recuperación relativamente alta (78 %) con TDS 2.200 mg/L; un control de incrustación insuficiente podría degradar el rendimiento.",
+      "why_discardable": "El scaling/ensuciamiento suele elevar ΔP y reducir más el caudal; aquí ΔP es estable y la caída de caudal es solo 7 %. Además, la variación es brusca y coincide con oxidante en alimentación."
+    },
+    {
+      "hypothesis": "Contaminación por polímero catiónico/surfactante que reduce selectividad.",
+      "why_plausible": "Ciertos polímeros pueden causar pérdidas de rechazo sin gran impacto en ΔP.",
+      "why_discardable": "No hay cambios reportados en dosificaciones de químicos; el aumento de ORP y la presencia confirmada de ozono apuntan a oxidación, no a contaminación orgánica."
+    }
+  ],
+  "requested_data": "Conductividad de permeado del primer tubo de la etapa 1 (µS/cm) medida en su puerto de muestreo.",
+  "recommended_action": "Detener el RO y enjuagar 30 min con permeado para desplazar ozono; implementar de inmediato neutralización de oxidante antes de los cartuchos: dosificar bisulfito (sodio metabisulfito, Na2S2O5) solución al 38 % p/p para alcanzar 1,0 mg/L como Na2S2O5 en la alimentación (equivale a ~2,6 mg/L de solución al 38 %), ajustar finamente para mantener ORP en 0 a +150 mV y ozono residual <0,01 mg/L. Nota: este setpoint cubre holgadamente la demanda estequiométrica de ~0,24 mg/L Na2S2O5 por 0,06 mg/L O3; verificar con kit DPD/indigo y solo reiniciar producción cuando el oxidante sea no detectable.",
+  "decision_change_condition": "Si el ozono residual en la alimentación al RO hubiera permanecido <0,01 mg/L con ORP cercano al baseline (+110 mV) durante el inicio de la pérdida de rechazo, o si la conductividad de permeado del primer tubo de la etapa 1 resultara muy superior al resto (patrón localizado), cambiaría el diagnóstico a fallo mecánico (rotura de elemento o junta).",
+  "confidence": 90
+}

@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-003",
+    "subject_id": "gemini-3-1-flash-lite",
+    "subject_version": "gemini-3.1-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'falla sello cap o adaptador interconexión Tubo 2 + bypass alimentación' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief (OXID, fisura FRP)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Reemplazar kit sellos O-rings cap + adaptador + silicona alimenticio + prueba hidrostática 1.5x — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide conductividad permeado por elemento individual Tubo 2 — match accepted (probing)."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single: reemplazo no corrige → fallo integridad membranas switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,44 @@
+{
+  "case_id": "RO-NOWE-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:52:43Z",
+  "main_hypothesis": "Membranas no completamente humectadas por remanencia de propilenglicol de la solución de preservación y bolsas de aire tras un aclarado inicial insuficiente, lo que reduce la permeabilidad y el caudal de permeado.",
+  "key_signals": [
+    "Arranque tras 5 meses en preservación con 20 % v/v de propilenglicol y solo 30 min de aclarado con permeado.",
+    "Caudal de permeado muy bajo (36 % del nominal) a presión completa, con mejora lenta y sostenida tras recirculación a baja presión.",
+    "ΔP etapa 1 y 2 por debajo de lo esperado y subiendo lentamente (coherente con canales parcialmente no humectados/aireados, no con ensuciamiento).",
+    "Conductividad de permeado y rechazo inicialmente peores que el objetivo pero mejorando día a día.",
+    "La recomendación del fabricante (circulación lenta a baja presión) produjo mejora clara, consistente con expulsión de propilenglicol/aire y humectación progresiva."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Insuficiente caudal de alimentación por configuración hidráulica (válvula de rechazo/recirculación mal ajustada) o bomba de alta entregando menos caudal.",
+      "why_plausible": "ΔP bajo y caudal de permeado bajo pueden explicarse por menor caudal de paso por los elementos.",
+      "why_discardable": "La mejora sostenida solo con recirculación a baja presión sin cambios de equipos apunta más a humectación progresiva que a un problema de control de caudal; además la presión de alimentación empezó alta (64 bar) y fue bajando conforme aumentó el caudal de permeado, lo que encaja con reducción de resistencia de membrana más que con falta de caudal."
+    },
+    {
+      "hypothesis": "Bioensuciamiento desarrollado durante el almacenamiento (el propilenglicol es fuente de carbono si el bisulfito se agotó).",
+      "why_plausible": "5 meses en reposo con un orgánico presente pueden permitir crecimiento si la capacidad biocida se pierde.",
+      "why_discardable": "El biofouling eleva ΔP y no se revierte con un simple enjuague; aquí ΔP está bajo y todo mejora con circulación a baja presión, lo que es atípico de bioensuciamiento."
+    },
+    {
+      "hypothesis": "Daño oxidativo de la poliamida por exposición a oxidantes durante el paro/arranque.",
+      "why_plausible": "Un rechazo algo peor y conductividad de permeado alta podrían sugerir daño.",
+      "why_discardable": "El cloro libre está <0,02 mg/L y el rechazo mejora con el tiempo; el daño oxidativo no mejora con el enjuague ni con la operación a baja presión."
+    },
+    {
+      "hypothesis": "Compactación irreversible por rampa de presión rápida tras almacenamiento.",
+      "why_plausible": "Se aplicó una rampa de solo 2 min hasta presión nominal, lo que puede incrementar compresión inicial.",
+      "why_discardable": "La compactación no se revierte de forma apreciable en pocos días; aquí el caudal y el rechazo mejoran de manera continua con el acondicionamiento a baja presión."
+    }
+  ],
+  "requested_data": "Concentración de propilenglicol en el permeado del T-04 durante la primera hora de arranque (mg/L).",
+  "recommended_action": "Reacondicionar el tren para humectación completa y purga de propilenglicol y aire: 1) Aislar el T-04 de producción y ventear/abrir purgas en ambos extremos de cada carcasa para expulsar bolsas de aire. 2) Recircular permeado libre de cloro a través del tren en lazo cerrado, con presión de entrada 5–8 bar y presión de rechazo 0–2 bar, durante 12–24 h; si es posible, usar permeado templado a 25–30 °C para acelerar la desorción del propilenglicol. 3) Mantener el caudal de recirculación elevado (equivalente al de diseño del tren) y purgar a desagüe el permeado de forma continua; renovar el tanque de enjuague si el olor/TOC aumentan. 4) Repetir el venteo intermitente de carcasas y colectores de permeado durante la recirculación. 5) Finalizar cuando el rechazo estabilice ≥99,3 % y la conductividad de permeado alcance el valor objetivo (o [propilenglicol] en permeado <10 mg/L, si se mide). 6) Arrancar en producción con rampa lenta de 0,5–1,0 bar/min hasta la presión objetivo, verificando que ΔP de cada etapa converge a los valores esperados.",
+  "decision_change_condition": "Si la concentración de propilenglicol en el permeado desde el inicio es <10 mg/L y, tras un venteo completo y 24 h de recirculación a baja presión, el caudal de permeado sigue <70 % del nominal con ΔP bajo, cambiaría el diagnóstico a una restricción de caudal de alimentación/ajuste de válvulas o fallo de bomba como causa principal.",
+  "confidence": 78
+}

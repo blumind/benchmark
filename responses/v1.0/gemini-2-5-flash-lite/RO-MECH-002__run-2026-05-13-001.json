@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-MECH-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:35:57Z",
+  "main_hypothesis": "Daño físico en el primer elemento de membrana de la Etapa 1 (telescoping) debido a un golpe de ariete o sobrepresión transitoria.",
+  "key_signals": [
+    "Probe test perfil de permeado por etapa: Etapa 1 cabeza: 6.500 µS/cm; resto < 200 µS/cm",
+    "Conductividad permeado: Subida brusca (de 92 µS/cm a 950 µS/cm)",
+    "Rechazo de sales (calculado): Bajada drástica (de 97,9 % a 78,7 %)",
+    "ΔP etapa 1: Bajada moderada (de 1,0 bar a 0,8 bar)",
+    "ΔP etapa 2: Bajada marcada (de 0,8 bar a 0,4 bar)",
+    "Apertura inicial del Tubo 1 de etapa 1: el primer elemento muestra deformación visible (telescoping) en el extremo de aguas abajo."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo del VFD de la HP pump, resultando en una rampa de arranque incorrecta y sobrepresión transitoria.",
+      "why_plausible": "El mantenimiento del VFD el Día -10 y el reporte del operario sobre una rampa de arranque 'más rápida' el Día -8 sugieren una posible desconfiguración o mal funcionamiento del VFD. La parada no programada el Día -5 y el posterior arranque automático con rampa podrían haber expuesto este problema, causando un golpe de ariete o sobrepresión que dañó la membrana.",
+      "why_discardable": "Aunque el VFD es un factor contribuyente potencial, el daño físico específico (telescoping) y la localización de la alta conductividad en la cabeza del primer elemento de la Etapa 1 apuntan más directamente a un daño mecánico en la membrana como causa principal del mal rendimiento, más que un problema generalizado de la bomba. El ΔP de la Etapa 1 y 2 bajando es más consistente con un bypass o daño en la membrana que con un problema de bomba que generalmente causaría un aumento de ΔP."
+    },
+    {
+      "hypothesis": "Contaminación o incrustación severa en el primer elemento de la Etapa 1, causando un bypass.",
+      "why_plausible": "Una incrustación o contaminación severa podría bloquear el flujo a través de la membrana, creando un camino preferencial para el agua y resultando en una alta conductividad del permeado y un bajo rechazo de sales. Esto podría explicar la alta conductividad medida en la cabeza de la Etapa 1.",
+      "why_discardable": "La incrustación típicamente causa un aumento en el ΔP a través del elemento afectado, no una disminución como se observa en la Etapa 1 (de 1.0 a 0.8 bar) y Etapa 2 (de 0.8 a 0.4 bar). Además, la deformación física visible (telescoping) es un daño mecánico directo, no un síntoma de incrustación."
+    },
+    {
+      "hypothesis": "Fallo de sellado o junta en el primer elemento de la Etapa 1.",
+      "why_plausible": "Un fallo en el sellado del primer elemento podría permitir que el agua de alimentación o el permeado de alta salinidad se mezclen, resultando en una alta conductividad del permeado y un bajo rechazo de sales. Esto podría explicar la alta conductividad medida en la cabeza de la Etapa 1.",
+      "why_discardable": "Un fallo de sellado típicamente no causa la deformación física visible (telescoping) observada en el elemento. Además, la caída de presión en ambas etapas es más indicativa de un daño interno en la membrana que de un problema de sellado externo."
+    }
+  ],
+  "requested_data": "Presión de operación del Tubo 1 de la Etapa 1 durante el evento de sonido anómalo (Día -4).",
+  "recommended_action": "Retirar y reemplazar el primer elemento de membrana del Tubo 1 de la Etapa 1. Inspeccionar los elementos restantes del Tubo 1 de la Etapa 1 y, si se observa algún daño similar, reemplazarlos también. Realizar una limpieza química de las membranas si se sospecha de incrustación o fouling, y verificar la calibración del VFD de la HP pump.",
+  "decision_change_condition": "Si la presión de operación del Tubo 1 de la Etapa 1 durante el evento anómalo fue significativamente más alta que la presión de alimentación normal, esto reforzaría la hipótesis de sobrepresión transitoria/golpe de ariete. Si la presión fue normal, se debería investigar más a fondo la posibilidad de un defecto de fabricación del elemento o un problema de instalación.",
+  "confidence": 90
+}

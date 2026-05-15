@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-007-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-007",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fouling stage 2 calcium phosphate Ca3(PO4)2' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (CaCO3/sulfato, biofouling, particulado Fe/Mn)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Switch antiincrustante específico fosfato 3.2 ppm + CIP alcalina con cítrico 0.5% pH 11 (mezcla atípica) — cambia antiincrustante (correcto) pero CIP mixto alcalino+cítrico (gold expects ácido cítrico solo)."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide silica en stage 2 reject — discriminador menor, no es trigger gold."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: silica >150 + ΔP estable post-CIP fosfato → reconsider co-precipitación."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

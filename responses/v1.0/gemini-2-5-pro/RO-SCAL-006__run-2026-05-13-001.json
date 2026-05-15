@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:25:46Z",
+  "main_hypothesis": "Fouling by iron and manganese hydroxides, caused by the premature return to service of a greensand filter without proper ripening, and exacerbated by an elevated feed pH (6.8 instead of 6.5) which promoted precipitation on the membrane surface.",
+  "key_signals": [
+    "Marked increase in Fe (0.18 mg/L) and Mn (0.11 mg/L) in the RO feed water.",
+    "Chronological link between the replacement of greensand media without ripening (Day -35) and the subsequent rise in Fe/Mn.",
+    "Elevated feed pH of 6.8, which is known to decrease the solubility of iron and manganese hydroxides.",
+    "Disproportionately large increase in differential pressure in the second stage (ΔP from 0.8 to 1.8 bar), where concentration factors are highest.",
+    "Visual evidence of light brown deposits on the cartridge filters, which is characteristic of iron fouling."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Calcium carbonate scaling",
+      "why_plausible": "The feed water has high calcium and alkalinity, and the feed pH increased from 6.5 to 6.8, which increases the scaling potential (LSI/S&DSI). The ΔP increase is most pronounced in the second stage, which is typical for scaling.",
+      "why_discardable": "The massive and measured breakthrough of iron and manganese provides a more direct and potent fouling mechanism. The visual evidence points to iron (brown deposit), not calcium carbonate (white scale). While minor co-precipitation is possible, it is not the primary cause."
+    },
+    {
+      "hypothesis": "Silica scaling",
+      "why_plausible": "The feed water has very high silica (78 mg/L) and temperature (32 °C), and the high recovery (75%) leads to high silica concentration in the reject (305 mg/L). A silica-specific antiscalant is used, but it has operational limits.",
+      "why_discardable": "Significant silica scaling typically occurs at higher pH values (e.g., >7.5). The observed pH of 6.8 is more critical for iron precipitation than for silica polymerization. The overwhelming evidence of iron/manganese breakthrough makes it the far more likely root cause."
+    },
+    {
+      "hypothesis": "Biofouling",
+      "why_plausible": "The high feed water temperature (30.5 °C) is conducive to microbial growth. A differential pressure increase that is more severe in the second stage can be a symptom of biofouling.",
+      "why_discardable": "There is no direct evidence of biological activity (e.g., slime). The evidence for inorganic fouling from iron and manganese is direct, measured, and chronologically linked to specific operational failures in the pretreatment system."
+    }
+  ],
+  "requested_data": "Chemical analysis of the deposit from the 5 µm cartridge filters, reporting the percentage by dry weight of iron, manganese, calcium, and silicon.",
+  "recommended_action": "Immediately stop the RO system to prevent further damage. Isolate the faulty greensand filter, correct the acid dosing to restore the feed pH to 6.5, and prepare for an emergency low-pH Clean-In-Place using a 2% citric acid solution at pH 3.5-4.0.",
+  "decision_change_condition": "My diagnosis would change if the chemical analysis of the cartridge filter deposits showed that the primary components (>70% by weight) were calcium carbonate or silica, not iron and manganese oxides.",
+  "confidence": 95
+}

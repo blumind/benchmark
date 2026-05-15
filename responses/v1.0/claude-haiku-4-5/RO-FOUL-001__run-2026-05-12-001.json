@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:21:32Z",
+  "main_hypothesis": "Biofouling of first-stage RO membranes caused by elevated microbial activity in the feed water, exacerbated by temporary loss of residual biocide protection during the 6-hour SBS line shutdown.",
+  "key_signals": [
+    "ATP in RO feed increased 600% (1.2 → 8.5 ng/L) over 30 days, indicating elevated microbial biomass",
+    "SDI₁₅ increased 78% (2.3 → 4.1) over 7 days, suggesting increased colloidal/particulate load including biofilm fragments",
+    "ΔP first stage increased 45% over 7 days (+1.0 bar) while feed flow and temperature remained stable, indicating membrane fouling",
+    "Seasonal turbidity spike in intake (8 → 22 NTU) 21 days ago provided organic substrate for microbial growth",
+    "Coagulant dose increase (1.5 → 2.8 mg/L Fe) on day -14 may have been insufficient to remove all biodegradable organic matter",
+    "SBS line shutdown for 6 hours on day -3 eliminated residual chlorine/biocide protection, allowing microbial proliferation in the 24-48 hours before ΔP alarm",
+    "Timing: ΔP alarm triggered 4 days after SBS shutdown, consistent with biofilm formation kinetics"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Colloidal/particulate fouling from inadequate DAF-UF pretreatment performance",
+      "why_plausible": "Turbidity spike and coagulant dose increase occurred 21 and 14 days ago; SDI₁₅ elevation (4.1) is above ideal threshold (≤3) for RO feed; DAF-UF membranes can degrade or bypass under high inlet turbidity.",
+      "why_discardable": "Conductivity and salt rejection remain stable at 99.4%, which would degrade significantly if inorganic colloidal silica or clay were fouling the membrane. ATP elevation (600%) is inconsistent with inorganic particulate fouling alone; ATP indicates biological activity. SDI₁₅ rise is recent (7 days) but ATP rise is more dramatic (30 days), suggesting biological rather than purely particulate cause."
+    },
+    {
+      "hypothesis": "Scaling (calcium carbonate or silica) on first-stage membranes despite antiscalant dosing",
+      "why_plausible": "Polyamide membranes are susceptible to scaling; 4-year-old membranes may have reduced active layer integrity; antiscalant is non-phosphonate (possibly polycarboxylate), which can be less effective under high recovery (45%) and elevated temperature stress.",
+      "why_discardable": "Permeate conductivity is stable (380 µS/cm, baseline 375), and salt rejection is unchanged at 99.4%. Scaling would increase salt passage and permeate conductivity. Temperature is stable at 21 °C, not elevated. No report of pH drift or saturation index changes. Scaling kinetics do not explain the 600% ATP spike or the temporal correlation with SBS shutdown."
+    },
+    {
+      "hypothesis": "Membrane degradation or defect (pinhole, delamination) in first-stage elements",
+      "why_plausible": "Membranes are 4 years old; polyamide is susceptible to oxidative and hydrolytic degradation; ΔP increase could reflect partial element bypass or internal blockage.",
+      "why_discardable": "Salt rejection remains at 99.4% with stable permeate conductivity. A pinhole or significant defect would cause immediate salt passage and conductivity spike. ΔP increase is gradual (45% over 7 days), not sudden. No report of visible permeate turbidity or color change. Defects do not explain the ATP and SDI₁₅ elevations."
+    },
+    {
+      "hypothesis": "Inadequate dechlorination by SBS; residual chlorine damaging membrane or allowing microbial growth",
+      "why_plausible": "SBS line shutdown on day -3 interrupted dechlorination; if SBS dosing is marginal, residual chlorine could accumulate post-shutdown or be absent, allowing microbial growth.",
+      "why_discardable": "Chlorine free in RO feed is reported as <0.02 mg/L (stable), indicating effective dechlorination. ORP is stable at +180 mV, consistent with adequate SBS dosing. Chlorine damage to polyamide would cause immediate salt passage; none observed. The 6-hour shutdown is too brief to cause membrane chemical damage; the subsequent ΔP rise is consistent with microbial regrowth, not chlorine toxicity."
+    }
+  ],
+  "requested_data": "Heterotrophic plate count (HPC) or viable aerobic bacteria count (CFU/mL) in the RO feed water, measured within the last 48 hours.",
+  "recommended_action": "Perform an immediate chemical cleaning of the first-stage RO membrane elements using a low-pH (pH 3.5–4.0) biocidal cleaning solution containing 0.5–1.0% sodium hypochlorite (or equivalent oxidizing biocide) and a surfactant-based membrane cleaner (e.g., 0.1–0.2% citric acid or equivalent chelant) at 40–45 °C, circulating at 1.5–2.0 m³/h for 60–90 minutes. After cleaning, rinse thoroughly with product water. Concurrently, increase SBS dosing by 20–30% to ensure residual biocide protection (target 0.5–1.0 mg/L free chlorine equivalent downstream of SBS) and verify SBS system redundancy to prevent future shutdown gaps. Increase DAF coagulant dose to 3.2–3.5 mg/L Fe and monitor UF membrane integrity (transmembrane pressure, SDI₁₅) daily for 7 days. If ΔP does not decrease by ≥0.8 bar within 24 hours post-cleaning, suspect irreversible biofouling and schedule membrane replacement.",
+  "decision_change_condition": "If HPC/CFU count in RO feed is <1,000 CFU/mL (indicating low microbial activity) and ATP remains elevated, the diagnosis would shift toward colloidal or organic fouling unrelated to active biofilm, requiring UF membrane inspection and possible replacement. If post-cleaning ΔP remains elevated (>2.8 bar) and ATP does not decrease by ≥50%, irreversible biofouling or membrane damage is indicated, necessitating element replacement rather than cleaning.",
+  "confidence": 78
+}

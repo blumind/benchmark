@@ -1,0 +1,44 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:42:07Z",
+  "main_hypothesis": "Sobredosificación sostenida de FeCl3 desde el evento de turbidez (mantenida en 4 mg/L) que provocó arrastre de hidróxidos férricos a través de filtros de arena y cartuchos, causando ensuciamiento particulado de los elementos líderes de la etapa 1 y aumento de ΔP.",
+  "key_signals": [
+    "Fe total en alimentación RO elevado a 0,42 mg/L (vs 0,05 mg/L) tras subir y mantener FeCl3 en 4 mg/L",
+    "SDI15 a la salida de cartuchos alto (4,2 vs 2,4) y turbidez aumentada (0,22 NTU vs 0,06 NTU)",
+    "Cartuchos con coloración rojiza intensa y trazas amarillo‑anaranjadas tras filtros de arena (típico de óxidos/hidróxidos de Fe)",
+    "ΔP etapa 1 cabeza elevado (2,2 bar vs 1,1 bar) con cola estable (0,7 bar), patrón típico de colmatación particulada en los elementos líderes",
+    "Presión de alimentación aumentada y caudal permeado -9 %, con conductividad de permeado estable (rechazo iónico no deteriorado, sugiere fouling, no daño de membrana ni scaling)",
+    "ATP estable (95 vs 80 pg/mL), no compatible con un repunte biológico marcado"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bioensuciamiento en elementos líderes por materia orgánica de captación.",
+      "why_plausible": "ΔP creciente con rechazo estable y captación abierta en agua cálida pueden favorecer biofouling localizado en etapa 1.",
+      "why_discardable": "ATP en alimentación prácticamente estable; coloración rojiza (no marrón/viscosa); incremento claro de Fe total y SDI/turbidez tras cartuchos apunta a partículas férricas, no biomasa."
+    },
+    {
+      "hypothesis": "Ensuciamiento por sólidos inorgánicos (limo/arena) por fallo de filtros/cambio en captación, independiente del FeCl3.",
+      "why_plausible": "SDI15 y turbidez post‑cartuchos elevados y ΔP en cabeza de etapa 1 son compatibles con colmatación por partículas minerales.",
+      "why_discardable": "La cronología coincide con el aumento y mantenimiento de FeCl3 a 4 mg/L; presencia de hierro visible y Fe total alto sugiere que el sólido dominante es férrico, no solo limo."
+    },
+    {
+      "hypothesis": "Scalado inorgánico (p. ej., CaCO3/CaSO4) en la etapa 1.",
+      "why_plausible": "Aumento de ΔP y caída de caudal podrían verse en scalado.",
+      "why_discardable": "El scalado se manifiesta típicamente en etapas posteriores (mayor concentración); aquí la cola está estable y el rechazo iónico no empeora; antincrustante a 2,5 ppm activo y química de alimentación estable."
+    },
+    {
+      "hypothesis": "Aporte de hierro por corrosión aguas arriba (p. ej., línea metálica) no relacionado con la dosificación.",
+      "why_plausible": "Coloración férrica y Fe total alto podrían provenir de corrosión localizada.",
+      "why_discardable": "El repunte de Fe coincide temporalmente con el incremento de dosis y capacidad de la bomba de FeCl3; además, tras evento de turbidez se mantuvo dosis alta por olvido, coherente con exceso de coagulante y precipitado férrico."
+    }
+  ],
+  "requested_data": "Hierro particulado en la alimentación a RO (>0,45 µm), mg/L, medido simultáneamente con Fe disuelto (<0,45 µm).",
+  "recommended_action": "Inmediatamente reducir la dosis de FeCl3 (producto) a 2,0 mg/L y optimizar por jar-test para cumplir SDI15 ≤ 3 y turbidez post‑cartucho ≤ 0,1 NTU; reemplazar todos los cartuchos de 5 µm; ejecutar una limpieza ácida de los trenes afectados: preparar solución de ácido cítrico al 2,0 % p/p (20 g/L) ajustada a pH 2,5–3,0, recircular a ~30 °C durante 45 min por etapa con caudal de limpieza recomendado por el OEM, realizar remojo 30 min y enjuagar hasta pH neutro; repetir si el ΔP de la etapa 1 no retorna a ±10–20 % del baseline. Asegurar un retrolavado completo con air‑scour de los filtros de arena antes de reanudar operación y recalibrar la bomba dosificadora.",
+  "decision_change_condition": "Si el Fe particulado (>0,45 µm) en la alimentación a RO es <0,05 mg/L mientras el SDI15 sigue alto y el depósito extraído de un espaciador líder muestra predominio orgánico en SEM/EDS, cambiaría el diagnóstico a bioensuciamiento/particulado no férrico por fallo de pretratamiento.",
+  "confidence": 88
+}

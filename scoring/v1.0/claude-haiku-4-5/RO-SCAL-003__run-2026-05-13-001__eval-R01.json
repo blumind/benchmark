@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-003",
+    "subject_id": "claude-haiku-4-5",
+    "subject_version": "claude-haiku-4-5-20251001",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'BaSO4 T-04 + 22-day zero antiscalant + interrupted dosing' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals conectados con cronología."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (orgánico, coloidal, OXID degradation, MECH damage)."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP HCl 50-100 mg/L (0.005-0.01% w/w) — concentración insuficiente; BaSO4 es prácticamente insoluble en ácido (gold expects DTPA/EDTA en alcalino)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide SEM membrane coupon T-04 stage 1 tail — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single threshold: <5% BaSO4 surface coverage → switch a partial reversible."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "C4=1 por chemistry incorrecta (BaSO4 no responde a ácido; gold prescribe DTPA/EDTA alcalino)."
+}

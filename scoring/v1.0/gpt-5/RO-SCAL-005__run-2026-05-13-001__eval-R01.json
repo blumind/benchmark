@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-005",
+    "subject_id": "gpt-5",
+    "subject_version": "gpt-5-2025-08-07",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'inhibición insuficiente tras cambio antiincrustante poliacrílico 3 mg/L a fosfonado 1.2 mg/L → CaCO3 etapa 2' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (CaSO4, fallo ablandador, particulado, biofouling)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "CIP ácido HCl pH 2 60-90 min + restablecer poliacrílico previo 3 ppm — match gold (CIP ácido + revertir)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide dureza total tras ablandador día -25 — match accepted (auditar ablandador)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: dureza post-ablandador 2x baseline → ablandador."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

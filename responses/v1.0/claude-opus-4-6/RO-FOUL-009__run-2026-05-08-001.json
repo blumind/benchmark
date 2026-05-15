@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:51:49Z",
+  "main_hypothesis": "Fouling orgánico de las membranas de etapa 1 causado por contaminación de la captación con tensioactivos/antiespumantes (surfactantes) y trazas de hidrocarburos procedentes del vertido de la refinería, que atraviesan el pretratamiento (DAF + filtros + cartuchos) y se adsorben irreversiblemente sobre la capa activa de poliamida, formando una película gelatinosa que incrementa la resistencia hidráulica y reduce el flux.",
+  "key_signals": [
+    "Caída drástica de la tensión superficial de la alimentación (58 mN/m vs 72 mN/m baseline), indicativa de presencia de surfactantes/antiespumantes que reducen la tensión interfacial y facilitan la adsorción sobre la membrana.",
+    "TOC en alimentación a RO más que duplicado (2,9 mg/L vs 1,2 mg/L baseline), consistente con carga orgánica adicional de origen industrial (surfactantes + hidrocarburos).",
+    "Hidrocarburos totales en captación elevados (2,1 mg/L vs <1 mg/L baseline), correlacionados temporalmente con el aviso de vertido de la refinería (día -10).",
+    "ΔP etapa 1 duplicada (2,4 bar vs 1,2 bar) con ΔP etapa 2 estable, patrón típico de fouling en cabeza de bastidor por deposición de contaminantes orgánicos/surfactantes que afectan preferentemente los primeros elementos.",
+    "SDI₁₅ post-cartuchos elevado (4,5 vs 2,5 baseline), indicando que el pretratamiento no retiene adecuadamente los contaminantes orgánicos disueltos/coloidales de origen industrial.",
+    "Depósito gelatinoso (no marrón ni rojizo) observado en cartuchos, consistente con acumulación de surfactantes/polímeros orgánicos y no con fouling inorgánico (óxidos de hierro) ni biológico clásico.",
+    "Correlación temporal: aviso de vertido de antiespumante (día -10), espuma visible en captación (día -8), subida de SDI (día -7), inicio de subida de ΔP (día -3).",
+    "Subida de presión de alimentación (65 bar vs 59 bar) y caída de permeado (192 vs 218 m³/h, -12%), consistentes con pérdida de permeabilidad por fouling orgánico."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling acelerado por nutrientes orgánicos del vertido industrial",
+      "why_plausible": "El ATP en alimentación ha subido (240 vs 90 pg/mL), el TOC elevado puede servir como sustrato para crecimiento bacteriano, y el depósito gelatinoso podría ser biofilm. El patrón de ΔP en etapa 1 también es compatible con biofouling.",
+      "why_discardable": "La cinética es demasiado rápida para biofouling clásico (subida brusca de ΔP en 3-5 días); el ATP, aunque elevado, no alcanza niveles típicos de biofouling severo (>1000 pg/mL). La caída de tensión superficial y la presencia de hidrocarburos apuntan más a fouling por surfactantes. El depósito no se describe como viscoso/mucilaginoso típico de biofilm sino como gelatinoso. El aumento de ATP puede ser secundario a la mayor carga orgánica sin constituir la causa primaria."
+    },
+    {
+      "hypothesis": "Fouling por polímero catiónico de la planta vecina que interacciona con la membrana de poliamida (cargada negativamente)",
+      "why_plausible": "La planta vecina incrementó puntualmente la dosificación de polímero catiónico (día -5), y los polímeros catiónicos son conocidos por causar fouling irreversible en membranas de poliamida por atracción electrostática. El depósito gelatinoso es compatible con residuos poliméricos.",
+      "why_discardable": "El inicio de la degradación de SDI (día -7) precede al evento de la planta vecina (día -5), lo que sugiere que la causa primaria ya estaba actuando antes del vertido de polímero. Además, la caída de tensión superficial es más característica de surfactantes que de polímeros catiónicos, y los hidrocarburos elevados no se explican por polímeros. No obstante, podría ser un factor agravante sinérgico."
+    },
+    {
+      "hypothesis": "Fouling coloidal/particulado por fallo del pretratamiento (DAF + filtros) ante la carga orgánica elevada",
+      "why_plausible": "El SDI₁₅ elevado (4,5) indica que el pretratamiento no está eliminando adecuadamente la materia coloidal. Si la DAF pierde eficiencia ante surfactantes (que alteran la flotación), la carga coloidal pasante aumentaría y causaría fouling en cabeza de bastidor.",
+      "why_discardable": "Este mecanismo sería una consecuencia secundaria de la presencia de surfactantes/antiespumantes que desestabilizan la DAF, no una causa raíz independiente. El depósito gelatinoso y la caída de tensión superficial apuntan a adsorción directa de surfactantes sobre la membrana como mecanismo dominante, más que a simple fouling particulado."
+    }
+  ],
+  "requested_data": "Análisis cromatográfico (GC-MS o LC-MS) del depósito gelatinoso extraído de los cartuchos y/o de un elemento de membrana de cabeza de etapa 1, para identificar y cuantificar la presencia de surfactantes no iónicos/siliconas (componentes típicos de antiespumantes), polímeros catiónicos y/o hidrocarburos, discriminando así entre fouling por surfactantes, por polímero catiónico o por biofilm.",
+  "recommended_action": "Parar inmediatamente el bastidor afectado para evitar compactación irreversible del fouling. Realizar una limpieza química alcalina con solución de NaOH 0,1% p/v (pH 12, máximo permitido por fabricante) + 0,025% p/v de dodecilsulfato sódico (SDS) como detergente a 35°C durante 1 hora de recirculación a bajo caudal, seguida de enjuague y una segunda etapa con solución de NaOH 0,1% p/v + 200 ppm de Na₂-EDTA a pH 12 y 35°C durante 1 hora, para eliminar la capa orgánica/surfactante adsorbida. Antes de reiniciar, verificar que el SDI₁₅ post-cartuchos sea <3,0 y la tensión superficial de la alimentación sea >68 mN/m. Simultáneamente, coordinar con la refinería la suspensión o control del vertido de antiespumante y considerar la instalación de un monitor en línea de hidrocarburos/TOC en la captación como alarma preventiva. Si la tensión superficial no se recupera, evaluar la adición de carbón activo en polvo (PAC) a 10-20 mg/L antes de la DAF como barrera adicional contra surfactantes.",
+  "decision_change_condition": "Si el análisis cromatográfico del depósito gelatinoso revelara predominancia de polímero catiónico (>60% del material orgánico identificado) y ausencia significativa de surfactantes/siliconas, cambiaría el diagnóstico a fouling por polímero catiónico de la planta vecina, lo que requeriría un protocolo de limpieza diferente (ácido cítrico 2% p/v a pH 2-3 seguido de alcalino) y medidas de control dirigidas a la planta vecina en lugar de a la refinería.",
+  "confidence": 78
+}

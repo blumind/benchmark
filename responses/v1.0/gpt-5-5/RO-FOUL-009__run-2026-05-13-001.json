@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:52:07Z",
+  "main_hypothesis": "Ensuciamiento orgánico/surfactante de la primera etapa de RO por entrada de antiespumante y compuestos hidrocarbonados procedentes del vertido de la refinería.",
+  "key_signals": [
+    "ΔP de etapa 1 duplicado de 1,2 a 2,4 bar con etapa 2 estable, patrón típico de ensuciamiento en cabeza del tren.",
+    "Presión de alimentación del tren aumentada de 59 a 65 bar y caudal permeado reducido de 218 a 192 m³/h.",
+    "TOC a RO aumentado de 1,2 a 2,9 mg/L.",
+    "SDI15 tras cartuchos aumentado de 2,5 a 4,5.",
+    "Hidrocarburos totales en captación aumentados a 2,1 mg/L frente a baseline menor de 1 mg/L.",
+    "Tensión superficial de alimentación reducida marcadamente de 72 a 58 mN/m, señal compatible con presencia de surfactantes/antiespumantes.",
+    "Aviso de posible vertido controlado con antiespumante y episodio de espuma visible en captación antes del deterioro.",
+    "Depósito gelatinoso en cartuchos, no marrón ni rojizo, compatible con fouling orgánico no férrico."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento por polímero catiónico procedente de la planta vecina, con formación de gel por interacción con coloides o antiincrustante.",
+      "why_plausible": "Hubo paro y rearranque de la planta vecina con incremento puntual de polímero catiónico; los polímeros catiónicos pueden producir fouling severo en membranas de poliamida y formar depósitos gelatinosos, especialmente en primera etapa.",
+      "why_discardable": "El aumento de SDI comenzó antes del evento reportado de polímero, y las señales más específicas son la caída de tensión superficial, el aviso de antiespumante, la espuma visible y el aumento de hidrocarburos."
+    },
+    {
+      "hypothesis": "Biofouling incipiente en primera etapa.",
+      "why_plausible": "El ATP en alimentación RO subió de 90 a 240 pg/mL y el biofouling suele iniciar en la primera etapa con aumento de ΔP y pérdida de caudal.",
+      "why_discardable": "La subida fue brusca en pocos días y coincide con señales químicas de surfactantes/hidrocarburos; el ATP aumenta solo de forma moderada y no explica por sí solo la fuerte reducción de tensión superficial."
+    },
+    {
+      "hypothesis": "Paso de coloides por fallo de DAF/filtros multicapa/cartuchos.",
+      "why_plausible": "El SDI15 a salida de cartuchos subió marcadamente y el depósito gelatinoso en cartuchos indica carga retenible o mal removida por el pretratamiento.",
+      "why_discardable": "Un fallo genérico de filtración no explica bien la bajada de tensión superficial ni el aumento de hidrocarburos y TOC asociados temporalmente al evento de antiespumante."
+    },
+    {
+      "hypothesis": "Incrustación mineral en RO.",
+      "why_plausible": "Hay aumento de presión de alimentación, caída de permeado y ligera subida de conductividad de permeado, que pueden aparecer con scaling.",
+      "why_discardable": "La conductividad, temperatura y pH de alimentación están estables, se dosifica antiincrustante, la etapa 2 no muestra aumento de ΔP y el depósito observado es gelatinoso, no cristalino."
+    }
+  ],
+  "requested_data": "Resultado FTIR-ATR del depósito gelatinoso de cartuchos o del espaciador de entrada de etapa 1, indicando si domina señal de siloxano/PDMS-hidrocarburo o de polímero catiónico.",
+  "recommended_action": "Sacar el tren afectado de servicio o reducirlo a caudal mínimo seguro, enjuagar con permeado a baja presión hacia drenaje, sustituir los cartuchos de 5 µm y realizar CIP alcalina para fouling orgánico en la primera etapa conforme al OEM: solución con NaOH al 0,1 % p/p ajustada a pH 11,5 y detergente no iónico compatible con membranas al 0,1 % p/p, temperatura máxima 30 °C, recirculación y remojo según manual, seguida de enjuague con permeado hasta pH estable antes de devolver el tren a servicio.",
+  "decision_change_condition": "Cambiaría el diagnóstico principal a fouling por polímero catiónico si el FTIR-ATR del depósito mostrara firma dominante de amonio cuaternario/poliamina y ausencia de señal relevante de siloxano, surfactante o hidrocarburo.",
+  "confidence": 78
+}

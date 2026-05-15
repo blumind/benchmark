@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-NOWE-002-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-002",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'arranque inadecuado tras preservacion con exceso SBS' matches anchor"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 7 signals: sulfito 8.5, ORP -120/-180, agua bruta+SBS, 15min, cond, dP, cloro<0.02"
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "C3: 3 alts (oxidacion, fuga mecanica, biofouling) bien justificadas"
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "C4: drenaje + low-P flush hasta sulfito<0.5 - matches gold sin CIP"
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "C5: 3 anchors (conductividad normalizada, sulfito monitoring, no SBS adiciones)"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit: sulfito<0.5 + cond muy por encima baseline + prueba tubo -> fuga"
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Excelente; respeta gold completamente"
+}

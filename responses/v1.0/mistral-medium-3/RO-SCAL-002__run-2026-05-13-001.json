@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:58:27Z",
+  "main_hypothesis": "Insufficient antiscalant dosage for the increased recovery rate leading to silica scaling in the second stage of the RO system.",
+  "key_signals": [
+    "Increase in ΔP stage 2 from 0.9 bar to 1.9 bar",
+    "Increase in feed pressure from 14.5 bar to 18.2 bar",
+    "Decrease in permeate flow rate by 7%",
+    "Silica concentration in the reject stream (295 mg/L) exceeding the antiscalant's recommended limit (260 mg/L)",
+    "Recent increase in recovery rate from 75% to 82% without adjusting antiscalant dosage",
+    "Ineffectiveness of standard alkaline CIP to reduce ΔP stage 2"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling due to inadequate pretreatment",
+      "why_plausible": "Increased pressure drop and reduced permeate flow could indicate fouling.",
+      "why_discardable": "Pretreatment filters are reported to be functioning normally, and the issue is more pronounced in the second stage, which is indicative of scaling rather than fouling."
+    },
+    {
+      "hypothesis": "Mechanical damage to the membranes",
+      "why_plausible": "Increased pressure drop and reduced flow could be due to physical damage.",
+      "why_discardable": "No sudden changes or events reported that could cause mechanical damage, and the issue developed gradually over time."
+    }
+  ],
+  "requested_data": "Silica concentration in the permeate stream (mg/L)",
+  "recommended_action": "Increase the antiscalant dosage to 12 ppm and monitor ΔP stage 2 and permeate flow rate for 24 hours.",
+  "decision_change_condition": "If the silica concentration in the permeate stream is found to be significantly lower than expected, indicating that scaling is not the primary issue.",
+  "confidence": 85
+}

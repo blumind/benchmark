@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:44:58Z",
+  "main_hypothesis": "Biofouling of Stage 1 RO membranes caused by insufficient biocide dosing frequency after the protocol change from scheduled (every 3 days) to reactive (ATP threshold-based) DBNPA application, allowing biofilm establishment and progressive growth on the lead elements.",
+  "key_signals": [
+    "ATP in RO feed increased from 110 pg/mL baseline to 480 pg/mL — a ~4.3× increase — directly correlating with the reduction in biocide dosing frequency",
+    "ΔP Stage 1 more than doubled (0.8 → 1.7 bar) with progressive rise over 60 days, classic signature of biofilm accumulation on lead elements",
+    "ΔP Stage 2 shows only slight increase (0.7 → 0.9 bar) and Stage 3 is stable, consistent with biofouling pattern that preferentially affects lead stage",
+    "Feed TOC rose from 1.3 to 1.9 mg/L, consistent with extracellular polymeric substances (EPS) from biofilm contributing to organic load or biofilm-enhanced nutrient cycling",
+    "CIP acid cleaning at Day -30 provided only transient ΔP relief (0.9 bar) with rapid rebound to 1.3 bar in 12 days — acid CIP is ineffective against biofilm (requires alkaline/biocide CIP), confirming biological rather than inorganic fouling",
+    "Yellowish color in concentrate samples is consistent with biological metabolites and EPS release, not typical of mineral scaling",
+    "Timeline correlation: fouling onset (~Day -50) follows ~35 days after biocide protocol change (Day -85), consistent with biofilm establishment lag time",
+    "ATP oscillating between 300–500 pg/mL but consistently staying just below the 500 pg/mL dosing trigger, meaning the reactive protocol never actually triggers biocide dosing while biofilm is actively growing on the membranes"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Organic fouling (non-biological) from natural organic matter (NOM) in the aquifer",
+      "why_plausible": "Feed TOC increased from 1.3 to 1.9 mg/L, and organic fouling can cause ΔP increases in lead elements and permeate flux decline. Seasonal or aquifer changes could increase NOM loading.",
+      "why_discardable": "The TOC increase correlates temporally with the ATP increase, suggesting the TOC rise is a consequence of biofilm EPS rather than an independent cause. Feed conductivity is stable, arguing against aquifer chemistry changes. The strong ATP increase (4.3×) and the temporal link to biocide protocol change make biofouling the primary driver. Pure NOM fouling would not explain the rapid ΔP rebound after acid CIP."
+    },
+    {
+      "hypothesis": "Iron/manganese oxide fouling from incomplete oxidation or greensand filter breakthrough",
+      "why_plausible": "The plant uses KMnO₄ oxidation and greensand filters; any filter media exhaustion or dosing imbalance could allow Fe/Mn oxides to reach membranes. Fe and Mn are present in feed at 0.06 and 0.03 mg/L respectively.",
+      "why_discardable": "Fe and Mn concentrations in RO feed are stable and at low levels (0.06 and 0.03 mg/L), indicating greensand filters are performing adequately. Metal oxide fouling would respond well to acid CIP, but the acid CIP at Day -30 gave only transient relief. The dominant ΔP increase in Stage 1 with stable Stage 3 is more consistent with biofouling than particulate/oxide fouling which would also affect cartridge filters."
+    },
+    {
+      "hypothesis": "Colloidal/particulate fouling from cartridge filter degradation or bypass",
+      "why_plausible": "5 µm cartridge filters could degrade over time, allowing particulates to reach membranes, causing lead-element ΔP increase and flux decline.",
+      "why_discardable": "No cartridge filter issues are reported. Particulate fouling would typically respond to acid CIP, unlike the observed rapid rebound. The 4.3× ATP increase and direct temporal correlation with biocide protocol change strongly point to biological origin. SDI data would help confirm but the biological indicators are compelling."
+    },
+    {
+      "hypothesis": "Calcium carbonate or sulfate scaling in lead elements due to antiscalant underdosing",
+      "why_plausible": "At 78% recovery with brackish water (TDS 3500 mg/L), scaling risk exists. If antiscalant dosing became insufficient, CaCO₃ or CaSO₄ could precipitate. pH 7.1 allows some CaCO₃ scaling potential.",
+      "why_discardable": "Scaling predominantly affects the tail (last stage) elements where concentration factors are highest, but Stage 3 ΔP is completely stable at 0.4 bar. The acid CIP should have dissolved CaCO₃ scale effectively, yet ΔP rebounded rapidly. Antiscalant dose (1.8 ppm) is unchanged. The fouling pattern (Stage 1 dominant) is inconsistent with scaling."
+    }
+  ],
+  "requested_data": "Results of an alkaline CIP flush or membrane autopsy from a Stage 1 lead element, specifically measuring biofilm thickness (µm), total organic carbon of the foulant deposit (mg/cm²), and ATP per membrane area (pg ATP/cm²), to quantitatively confirm biofouling versus abiotic organic or colloidal fouling.",
+  "recommended_action": "Perform an immediate alkaline/biocide CIP on Stage 1 vessels using the following sequence: (1) Alkaline cleaning with 0.1% w/v NaOH + 0.025% w/v Na-SDS (sodium dodecyl sulfate) solution at pH 12.0, temperature 35°C, recirculate for 60 minutes with 30-minute soak, then rinse; (2) Follow with a biocide soak using 100–150 mg/L DBNPA (2,2-dibromo-3-nitrilopropionamide) solution at neutral pH for 30 minutes to kill residual biofilm organisms; (3) Final acid CIP with 0.2% w/v HCl at pH 2.0 for 30 minutes to remove any inorganic co-deposits; (4) Restore the scheduled biocide dosing protocol to DBNPA shock dosing every 3 days (or implement continuous low-dose biocide at 1–2 mg/L DBNPA for 15–30 minutes every 72 hours) regardless of ATP readings; (5) Lower the ATP trigger threshold from 500 pg/mL to 200 pg/mL if a reactive protocol is retained as a supplementary measure; (6) Monitor ΔP Stage 1 daily and ATP twice weekly to verify recovery.",
+  "decision_change_condition": "If a membrane autopsy or alkaline CIP foulant analysis showed the deposit to be predominantly inorganic (Fe/Mn oxides or CaCO₃/CaSO₄ with minimal organic/biological content), and if ATP on the membrane surface were below 100 pg ATP/cm², I would shift my diagnosis to inorganic fouling or colloidal fouling and focus on pretratment optimization (greensand regeneration, KMnO₄ dosing adjustment, or antiscalant reformulation) rather than biocide protocol restoration.",
+  "confidence": 92
+}

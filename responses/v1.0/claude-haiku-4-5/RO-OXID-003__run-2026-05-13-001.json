@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:52:18Z",
+  "main_hypothesis": "Failure of the SBS (sodium bisulfite) dosing system due to non-functional agitator in the SBS tank, resulting in solution stratification and severe under-dosing of reducing agent. This allows residual free chlorine (0.42 mg/L) to reach the RO membrane, causing oxidative damage and salt passage.",
+  "key_signals": [
+    "Cloro libre antes RO increased from <0.02 mg/L to 0.42 mg/L (21× baseline)",
+    "ORP tras dosificación SBS changed from -50 mV to +540 mV (expected <0 mV), indicating complete loss of reducing capacity",
+    "Caudal de SBS dosificado dropped from 18 L/h to 0 L/h despite tank refill on day -7",
+    "Conductividad permeado increased from 380 to 720 µS/cm (89% rise) with rechazo de sales declining from 99.3% to 98.7%",
+    "Caudal permeado decreased 4% (280 to 268 m³/h) despite stable feed pressure and temperature",
+    "Physical inspection confirmed agitador non-functional and solution stratified at 0.2% p/p vs. 25% p/p prepared concentration",
+    "Tank level drop attributed to consumption but actually reflects dosing of dilute surface layer only"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling or scaling (organic or mineral) reducing permeate quality and flux",
+      "why_plausible": "Conductivity rise and flux decline are consistent with membrane surface blockage; 14 months of operation is within fouling risk window; coastal intake with open captation increases biofouling risk",
+      "why_discardable": "Fouling does not explain the dramatic ORP reversal (+540 mV post-SBS dosing), the spike in free chlorine (0.42 mg/L), or the sudden onset after SBS tank maintenance. Fouling develops gradually; this is acute. Pressure drop in stage 1 is only 1.3 bar (baseline 1.2 bar), not the 2–3 bar typical of significant fouling."
+    },
+    {
+      "hypothesis": "Calibration drift or sensor malfunction in ORP and free chlorine analyzers",
+      "why_plausible": "Operator attributed alarm to 'calibration issue' on day -2; simultaneous anomalies in two sensors could suggest instrumentation failure rather than process upset",
+      "why_discardable": "The physical inspection of the SBS tank directly confirmed non-functional agitator and stratification—an independent, hardware-level observation that does not depend on sensor readings. The conductivity rise (720 µS/cm) is a direct consequence of salt passage, not a sensor artifact. If sensors were drifted, the SBS dosing system would still be functioning mechanically, but caudal de SBS dosificado is 0 L/h, indicating no flow."
+    },
+    {
+      "hypothesis": "Incorrect SBS concentration prepared during tank refill on day -7, or contamination of SBS stock",
+      "why_plausible": "Tank was emptied for maintenance and refilled; if stock solution was diluted or wrong concentration used, dosing would be ineffective despite pump operation",
+      "why_discardable": "Inspection revealed the agitator itself is non-functional, not merely a concentration error. Even if concentration were correct, a non-functioning agitator would cause stratification and withdrawal of only the dilute surface layer (0.2% p/p observed). The root cause is mechanical failure of the agitator, not preparation error alone."
+    },
+    {
+      "hypothesis": "Pump cavitation or mechanical failure in the SBS dosing pump, preventing flow despite tank refill",
+      "why_plausible": "Caudal de SBS dosificado is 0 L/h; pump failure would explain zero flow and rising tank level",
+      "why_discardable": "The inspection report states the agitador is non-functional and solution is stratified, indicating the tank itself is the failure point. If the pump had failed, the tank would remain well-mixed (no stratification observed). The stratification is the direct result of no agitation. Additionally, the tank level drop on day -5 ('bajado más rápido de lo esperado') suggests some dosing did occur initially, consistent with pump operation but withdrawal of dilute surface layer due to lack of mixing."
+    },
+    {
+      "hypothesis": "Bisulfite oxidation or decomposition in the tank due to prolonged exposure to air or high temperature",
+      "why_plausible": "Bisulfite is oxidized by dissolved oxygen and chlorine; if the tank vent is open or seal compromised, SBS could degrade in situ",
+      "why_discardable": "Oxidation would occur throughout the tank volume and would be gradual. The inspection found stratification (0.2% at surface vs. 25% at depth), indicating the bulk solution is intact but unmixed. If oxidation were the cause, the entire tank would show low concentration. The acute onset after maintenance and the non-functional agitator are the direct cause."
+    }
+  ],
+  "requested_data": "Mechanical inspection report confirming whether the SBS tank agitator motor is energized and rotating, or whether the motor is de-energized, seized, or mechanically disconnected.",
+  "recommended_action": "Immediately stop the RO feed and isolate the membrane trains. (1) Repair or replace the SBS tank agitator motor and verify full rotation at nominal speed. (2) Drain and refill the SBS tank with fresh 25% w/w sodium bisulfite solution, ensuring complete mixing for ≥30 minutes before resuming dosing. (3) Verify SBS dosing pump operation and set flow to 18 L/h (or per SOP for 4 mg/L SBS at current feed rate). (4) Monitor ORP post-SBS dosing continuously; do not restart RO feed until ORP stabilizes at ≤0 mV and free chlorine before RO is <0.02 mg/L for ≥2 hours. (5) Inspect RO membranes visually for oxidative damage (discoloration, brittleness); if damage is evident, schedule element replacement. (6) Conduct a full CIP (clean-in-place) cycle with citric acid (pH 3.5–4.0, 500 mg/L) at 15 L/m²·h for 60 minutes to remove any oxidative residue and restore flux baseline.",
+  "decision_change_condition": "If the agitator motor is confirmed to be energized, rotating at nominal speed, and the SBS tank is well-mixed (concentration uniform throughout), then the root cause would shift to either sensor calibration drift (requiring recalibration of ORP and free chlorine analyzers) or membrane oxidative damage from a prior transient chlorine excursion (requiring CIP and possible element replacement without further SBS system repair).",
+  "confidence": 94
+}

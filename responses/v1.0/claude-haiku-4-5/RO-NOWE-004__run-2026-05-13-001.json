@@ -1,0 +1,51 @@
+{
+  "case_id": "RO-NOWE-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:25:49Z",
+  "main_hypothesis": "Residual air trapped in the RO membrane elements and feed distribution manifold following the 18-hour maintenance shutdown and atmospheric exposure, with incomplete purging during the startup procedure.",
+  "key_signals": [
+    "Intermittent 'borboteo' (gurgling/cavitation sound) in the high-pressure line immediately post-startup and recurring 24 hours later, consistent with air pockets moving through the system",
+    "Caudal volumétrico balance closure at 92% (27 m³/h unaccounted) versus 100% baseline, indicating air occupying ~8% of the feed line volume",
+    "ΔP stage 1 and stage 2 both below baseline (0.8 bar vs 1.0 bar; 0.5 bar vs 0.8 bar) with slow recovery trend, consistent with air reducing effective membrane contact area",
+    "Permeate conductivity elevated at 380 µS/cm (baseline 110 µS/cm) with slow downward trend, indicating incomplete salt rejection due to air-induced bypass or membrane wetting transients",
+    "Salt rejection calculated at 95.4% versus baseline 98.7%, a 3.3 percentage-point drop consistent with air-induced membrane channeling",
+    "Permeate flow 270 m³/h below baseline 295 m³/h with upward trend, consistent with air gradually being expelled and membrane area progressively returning to service",
+    "Operator opened drain valves pre-startup to 'purge air' but did not execute a controlled, low-pressure air-release procedure, leaving air in the elements"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling or partial blockage of feed distribution ports due to debris introduced during the PVC pipe replacement.",
+      "why_plausible": "The maintenance involved cutting and replacing a PVC section with a new joint; particulate matter (PVC shavings, joint compound residue, or corrosion products from the old pipe) could have entered the feed line. The 18-hour atmospheric exposure increases oxidation risk. Fouling would reduce ΔP and permeate flow.",
+      "why_discardable": "Fouling would cause ΔP to rise progressively (membrane resistance increases), not fall below baseline as observed. The slow recovery of ΔP toward baseline is inconsistent with fouling, which would worsen or plateau. Cloro libre is <0.02 mg/L (no oxidant residue), and UF pretreatment should have removed particulates. The intermittent gurgling sound is not typical of fouling; it is characteristic of air movement. A fouling event would not produce a 27 m³/h flow balance discrepancy."
+    },
+    {
+      "hypothesis": "Biofouling or biofilm growth in the feed line during the 18-hour shutdown with atmospheric exposure.",
+      "why_plausible": "Stagnant water at 14 °C in an open line for 18 hours could support microbial colonization, especially in a port environment with moderate industrial load. Biofilm would increase feed-side resistance and reduce permeate flow and quality.",
+      "why_discardable": "Biofilm growth over 18 hours at 14 °C is slow and would not produce the acute, intermittent acoustic signature ('borboteo') observed. Biofilm would cause progressive ΔP rise, not the observed below-baseline ΔP with slow recovery. The 27 m³/h flow balance gap is too large and too sudden to be explained by biofilm. Biofouling does not explain the recurring gurgling sound 24 hours post-startup."
+    },
+    {
+      "hypothesis": "Membrane element damage or delamination caused by pressure shock during the 2-minute ramp-up startup procedure.",
+      "why_plausible": "A rapid pressure ramp (2 minutes to operating pressure) following an 18-hour shutdown could induce mechanical stress on membrane fibers, especially if air pockets were present. Damaged membranes would leak salt and reduce rejection.",
+      "why_discardable": "Membrane damage would cause immediate, sustained high permeate conductivity and low rejection, not the observed slow downward trend in conductivity and slow recovery of rejection toward baseline. The intermittent gurgling sound is not consistent with membrane rupture. A damaged element would not recover performance; the observed trend is toward recovery. The flow balance discrepancy (92%) is too large to be explained by a single element leak."
+    },
+    {
+      "hypothesis": "Incorrect reassembly or misalignment of the feed manifold or tube sheet following the pipe replacement, causing internal bypass or maldistribution.",
+      "why_plausible": "The maintenance involved opening the feed line; if the manifold was disturbed or the tube sheet was not properly reseated, feed could bypass the membrane elements or distribute unevenly, reducing effective rejection and flow.",
+      "why_discardable": "Maldistribution would cause sustained, non-recovering ΔP and conductivity anomalies. The observed slow recovery of both ΔP and conductivity toward baseline is inconsistent with a static geometric problem. The intermittent gurgling sound suggests a dynamic phenomenon (air movement), not a static bypass. A manifold misalignment would be detected during the post-maintenance pressure test."
+    },
+    {
+      "hypothesis": "Antiincrustante (antiscalant) overdose or precipitation in the feed line during the shutdown, reducing permeability.",
+      "why_plausible": "If the antiscalant dose (2.5 ppm) was not properly flushed or if the line was exposed to air and temperature fluctuations, the chemical could precipitate or polymerize, blocking feed ports or reducing membrane flux.",
+      "why_discardable": "Antiscalant precipitation would cause progressive ΔP rise and sustained low flow, not the observed below-baseline ΔP with recovery. The 18-hour shutdown at 14 °C is not conducive to rapid precipitation. The intermittent gurgling sound is not explained by chemical precipitation. The flow balance discrepancy (27 m³/h) is too large and too sudden to be explained by antiscalant fouling alone."
+    }
+  ],
+  "requested_data": "Differential pressure across the air release valve (or vent line) on the RO feed manifold, measured immediately after opening the vent and again after 30 minutes of operation at 14.5 bar feed pressure, in bar. This will confirm whether air is still being expelled from the elements.",
+  "recommended_action": "Execute a controlled air-release procedure: (1) Reduce feed pressure to 5 bar and open the high-pressure vent valve on the RO feed manifold fully for 5 minutes to allow trapped air to escape under low pressure. (2) Close the vent valve and slowly ramp feed pressure to 14.5 bar over 10 minutes, monitoring for gurgling sounds. (3) If gurgling persists, repeat the vent cycle at 5 bar for an additional 3 minutes. (4) Monitor permeate conductivity and ΔP every 15 minutes for 2 hours; expect conductivity to fall below 200 µS/cm and ΔP to recover to within 0.1 bar of baseline (1.0 bar stage 1, 0.8 bar stage 2) within 90 minutes. (5) Do not increase feed pressure above 14.5 bar until conductivity stabilizes below 150 µS/cm and flow balance closes to ≥98%.",
+  "decision_change_condition": "If, after executing the air-release procedure, permeate conductivity remains above 250 µS/cm, ΔP does not recover to baseline, or the flow balance remains below 95% after 4 hours of operation, then the diagnosis would shift toward membrane element damage, fouling, or manifold misalignment, and a membrane inspection or element replacement would be warranted.",
+  "confidence": 78
+}

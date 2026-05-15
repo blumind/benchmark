@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-SCAL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:47:28Z",
+  "main_hypothesis": "Ensuciamiento por sílice (scaling de sílice amorfa/polimerizada) en etapa 2, causado por subir el recovery a 82% sin recalcular la dosis de antiincrustante: la sílice en el rechazo (295 mg/L) supera el límite del antiincrustante (260 mg/L) al pH 7,1 sin ajuste.",
+  "key_signals": [
+    "ΔP etapa 2 sube de 0,9 a 1,9 bar mientras ΔP etapa 1 permanece estable (ensuciamiento localizado en la cola, típico de scaling)",
+    "Sílice en rechazo 295 mg/L > 260 mg/L (límite declarado del antiincrustante)",
+    "Recovery elevado de 75% a 82% sin reajustar dosis de antiincrustante (sigue en 8 ppm)",
+    "CIP alcalino (pH 11,5) bajó ΔP solo parcialmente y rebotó a 1,8 bar en 72 h (sílice polimerizada requiere limpieza específica y a menudo no se remueve completamente con un único CIP alcalino estándar)",
+    "Caída de caudal permeado 7% y aumento de presión de alimentación (pérdida de área activa en cola)",
+    "pH alimentación 7,1 sin ajuste (la solubilidad de sílice mejora notablemente sobre pH 8,5–9)",
+    "Temperatura relativamente baja (16,8 °C) que reduce solubilidad de sílice"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Scaling de carbonato de calcio (CaCO₃) en etapa 2",
+      "why_plausible": "Calcio y alcalinidad en rechazo subieron con el recovery; LSI puede haberse vuelto positivo en la cola.",
+      "why_discardable": "El CIP alcalino habría empeorado o no mejorado el ΔP si fuera CaCO₃ (se limpia con ácido); aquí el alcalino bajó parcialmente el ΔP, más consistente con sílice/foulant orgánico-silíceo. Además el aumento de conductividad de permeado es modesto y no hay indicios de LSI calculado positivo reportados."
+    },
+    {
+      "hypothesis": "Bioensuciamiento / fouling orgánico en etapa 2",
+      "why_plausible": "El CIP alcalino mejoró parcialmente el ΔP, lo que es típico de fouling orgánico/biológico; pretratamiento mínimo.",
+      "why_discardable": "No hay reporte de incremento de SDI, ni de cloro residual variable, ni evolución progresiva previa al cambio de recovery; el evento coincide temporalmente con el aumento de recovery y la sílice supera el límite, lo que apunta a scaling como causa primaria."
+    },
+    {
+      "hypothesis": "Sobredosificación o incompatibilidad del antiincrustante generando depósito polimérico",
+      "why_plausible": "Algunos antiincrustantes a sobredosis o con cationes multivalentes pueden formar geles; la dosis no se ajustó al nuevo recovery.",
+      "why_discardable": "La dosis se mantuvo (no se incrementó) y el cuadro clínico (ΔP en cola, sílice 295>260, CIP alcalino con rebote) es más consistente con sílice precipitada que con un gel de antiincrustante."
+    }
+  ],
+  "requested_data": "Análisis elemental (SEM-EDS o digestión ácida) de un cupón/autopsia o de los sólidos recuperados del CIP del último elemento de etapa 2: % en peso de Si, Ca, Fe, Al y materia orgánica.",
+  "recommended_action": "1) Reducir inmediatamente el recovery al 75% (o al máximo que mantenga la sílice en rechazo <220 mg/L, con margen de seguridad sobre el límite de 260 mg/L del antiincrustante). 2) Ejecutar CIP específico para sílice en etapa 2: limpieza alcalina con NaOH a pH 11,5–12,0 + agente complejante de sílice (p. ej. limpiador comercial tipo bisulfito/EDTA o formulación específica anti-sílice del proveedor de membrana) a 35 °C, recirculación 4–6 h con remojos intermedios, siguiendo la hoja técnica del fabricante de membrana (típicamente Hydranautics/DuPont permiten hasta pH 12 y 35 °C en CIP para PA). 3) Recalcular dosis de antiincrustante con el software del proveedor para 82% recovery y subir la dosis hasta el valor recomendado (habitualmente 10–15 ppm para sílice >260 mg/L), o cambiar a un antiincrustante específico con límite de sílice ≥320 mg/L. 4) Evaluar elevar pH de alimentación a 7,8–8,2 con NaOH para aumentar solubilidad de sílice si el proyector lo soporta sin riesgo de CaCO₃. 5) No retomar 82% recovery hasta verificar normalización de ΔP etapa 2 y validar el nuevo esquema con el fabricante del antiincrustante.",
+  "decision_change_condition": "Si la autopsia o el análisis de sólidos del CIP muestra Si <15% en peso y predominio de Ca/CO₃, materia orgánica o biomasa, la hipótesis principal cambiaría a scaling de CaCO₃ o bioensuciamiento, respectivamente.",
+  "confidence": 82
+}

@@ -1,0 +1,48 @@
+{
+  "case_id": "RO-SCAL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-6",
+  "subject_version": "claude-opus-4-6",
+  "served_model": "claude-opus-4-6",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:03:14Z",
+  "main_hypothesis": "Precipitación de sulfato de bario (BaSO4) en los elementos de cola de la etapa 1 del tren T-04, causada por la interrupción de la dosificación de antiincrustante durante aproximadamente 17 días (día -22 a día -5) tras la desconexión inadvertida del solenoide de inyección durante el mantenimiento eléctrico.",
+  "key_signals": [
+    "Solenoide de inyección de antiincrustante del T-04 encontrado desenergizado en día -5, confirmando ausencia de dosificación durante ~17 días",
+    "ΔP cola etapa 1 del T-04 subió de 0,9 bar (baseline) a 2,3 bar — incremento del 156 % concentrado exclusivamente en la zona de cola donde la concentración de bario y sulfato es máxima por efecto de la recuperación",
+    "ΔP cabeza y medio del T-04 muestran incrementos mucho menores (estable y ligera subida respectivamente), patrón consistente con scaling en cola donde la supersaturación de BaSO4 es mayor",
+    "Agua de captación con bario 0,12 mg/L (alto para SWRO) y sulfato 3.150 mg/L — condiciones de alta supersaturación de BaSO4 al 45% de recuperación",
+    "Antiincrustante formulado específicamente para inhibir precipitación de bario y estroncio, lo que confirma que el riesgo de BaSO4 era conocido y la protección era crítica",
+    "Comparación cruzada entre trenes muestra desviación exclusiva del T-04 — los demás trenes con ΔP normal, descartando causa sistémica",
+    "ΔP cola no remitió tras restablecer la dosificación de antiincrustante (día -3 a día 0), consistente con la naturaleza insoluble y cristalina del BaSO4 que no se redisuelve espontáneamente",
+    "Caída de caudal permeado del 9% y aumento de presión de alimentación de 60 a 67 bar, indicando bloqueo parcial de canales de alimentación y pérdida de área efectiva de membrana",
+    "Aumento de conductividad de permeado de 405 a 460 µS/cm, consistente con concentración polarizada elevada por reducción de flujo en elementos de cola"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling en elementos de cola del T-04",
+      "why_plausible": "El biofouling puede causar incrementos de ΔP en cola y es común en SWRO con captación abierta. La ausencia de antiincrustante no excluye un evento biológico concurrente.",
+      "why_discardable": "El biofouling típicamente afecta primero los elementos de cabeza (donde hay mayor concentración de nutrientes y oxígeno) y progresa hacia cola. El patrón observado es exclusivamente de cola. Además, la correlación temporal exacta con la desconexión del solenoide (inicio de subida de ΔP 6 días después de la desconexión, tiempo consistente con nucleación de BaSO4) y la afectación exclusiva del T-04 apuntan a scaling. El biofouling también respondería parcialmente a un CIP alcalino, mientras que el BaSO4 no."
+    },
+    {
+      "hypothesis": "Scaling de sulfato de estroncio (SrSO4) en lugar de o además de BaSO4",
+      "why_plausible": "El antiincrustante está formulado para inhibir tanto bario como estroncio, lo que implica que el SrSO4 también está cerca de saturación. Sin datos de estroncio en alimentación no se puede descartar contribución de SrSO4.",
+      "why_discardable": "El BaSO4 tiene un producto de solubilidad mucho menor (Ksp ~1,1×10⁻¹⁰) que el SrSO4 (Ksp ~3,4×10⁻⁷), por lo que precipita primero y más agresivamente. Con bario a 0,12 mg/L (valor alto) y sulfato a 3.150 mg/L, la supersaturación de BaSO4 al 45% de recuperación es extrema. El SrSO4 puede contribuir pero el BaSO4 es el precipitante dominante."
+    },
+    {
+      "hypothesis": "Scaling de CaSO4 (yeso) en elementos de cola",
+      "why_plausible": "El sulfato de calcio puede precipitar en SWRO a alta recuperación, especialmente sin antiincrustante. El patrón de ΔP en cola sería similar.",
+      "why_discardable": "A 45% de recuperación en SWRO, la saturación de CaSO4 normalmente no se alcanza salvo con calcio muy elevado (no reportado como problemático). El antiincrustante está específicamente formulado para bario y estroncio, indicando que estos son los riesgos identificados en el diseño. Además, el CaSO4 tiene mayor solubilidad y respondería mejor a un CIP ácido, mientras que el BaSO4 es prácticamente insoluble."
+    },
+    {
+      "hypothesis": "Colapso mecánico o telescoping de elementos de cola por sobrepresión",
+      "why_plausible": "El aumento de presión de alimentación a 67 bar podría causar daño mecánico en elementos de cola, generando aumento de ΔP y paso de sales.",
+      "why_discardable": "El aumento de presión es consecuencia del bloqueo, no causa. La cronología muestra que el ΔP subió primero y la presión de alimentación aumentó como respuesta del sistema para mantener producción. Además, 67 bar está dentro del rango operativo de elementos SWRO (típicamente diseñados para 69-83 bar). El telescoping causaría aumento abrupto de conductividad de permeado, no gradual."
+    }
+  ],
+  "requested_data": "Análisis de depósitos mediante autopsia de un elemento de cola del T-04 (o al menos análisis por fluorescencia de rayos X / difracción de rayos X de material recuperado durante un CIP ácido) para confirmar la composición mineralógica del scaling (presencia de BaSO4 cristalino vs. otros precipitados).",
+  "recommended_action": "Realizar un CIP químico específico para BaSO4 en el tren T-04 utilizando una solución de DTPA (ácido dietilentriaminopentaacético) al 2,0% en peso, ajustada a pH 11-12 con NaOH, a temperatura de 35-40 °C, con recirculación durante 4-6 horas y remojo de 8-12 horas. Si el DTPA no está disponible, usar una solución de EDTA tetrasódico al 1,0% en peso a pH 10-11 como alternativa. Antes del CIP, verificar compatibilidad con las recomendaciones del fabricante de membranas para pH máximo y temperatura. Monitorizar el ΔP durante la recirculación; si no hay mejora significativa tras dos ciclos de CIP, considerar autopsia de un elemento de cola para evaluar la extensión del daño y la posible necesidad de reemplazo de elementos. Simultáneamente, instalar caudalímetros individuales de antiincrustante en cada tren y alarmas de flujo bajo para prevenir recurrencia.",
+  "decision_change_condition": "Si la autopsia o el análisis de depósitos revelara que el material incrustante es predominantemente biológico (polisacáridos, biomasa) o de naturaleza orgánica en lugar de cristales de BaSO4, cambiaría el diagnóstico a biofouling oportunista favorecido por la reducción de flujo en cola, y la estrategia de limpieza cambiaría a CIP alcalino con NaOH 0,1% + SDS 0,025% seguido de biocida (DBNPA 100-300 ppm durante 30 minutos).",
+  "confidence": 92
+}

@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:00:05Z",
+  "main_hypothesis": "Oxidative degradation of the polyamide membrane active layer due to breakthrough of chloramines caused by exhaustion of the GAC media.",
+  "key_signals": [
+    "Chloramine concentration of 0.38 mg/L after CAG-2",
+    "Drastic decrease in salt rejection from 95.5% to 80.7%",
+    "Significant increase in permeate conductivity from 65 µS/cm to 280 µS/cm",
+    "Increase in ORP from +60 mV to +210 mV",
+    "Correlation between municipal chloramine increase at day -45 and subsequent performance decline"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane fouling or scaling",
+      "why_plausible": "Membranes are 26 months old and permeate flow has decreased by 6%.",
+      "why_discardable": "Fouling/scaling typically increases differential pressure (ΔP), but ΔP remains stable in both stages."
+    },
+    {
+      "hypothesis": "O-ring or seal failure in the pressure vessels",
+      "why_plausible": "Can cause a sudden increase in permeate conductivity and loss of salt rejection.",
+      "why_discardable": "The degradation is progressive over 30 days, consistent with chemical oxidation rather than a mechanical seal failure."
+    }
+  ],
+  "requested_data": "Total Organic Carbon (TOC) or UV254 absorbance of the feed water post-GAC to assess the current adsorption capacity and organic loading.",
+  "recommended_action": "Immediately cease operation of the RO system and replace the exhausted GAC media in both vessels; perform a membrane integrity test and replace damaged elements as the oxidative damage to the polyamide layer is irreversible.",
+  "decision_change_condition": "If the permeate conductivity increase were accompanied by a significant increase in differential pressure (ΔP) across the stages, I would shift the diagnosis to physical fouling or scaling.",
+  "confidence": 95
+}

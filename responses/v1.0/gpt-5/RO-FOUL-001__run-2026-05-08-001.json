@@ -1,0 +1,43 @@
+{
+  "case_id": "RO-FOUL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-08-001",
+  "timestamp_utc": "2026-05-08T14:33:18Z",
+  "main_hypothesis": "Biofouling of 1st‑stage RO feed channels driven by breakthrough of biological/organic load from pretreatment (DAF+UF) after the seasonal turbidity increase and coagulant dose change.",
+  "key_signals": [
+    "ΔP 1ª etapa increased from 2.2 to 3.2 bar in 7 days (+45%) with constant feed flow (850 m³/h) — typical of feed‑channel fouling rather than membrane damage.",
+    "ATP in RO feed jumped from 1.2 to 8.5 ng/L (+600%) — strong indicator of elevated biological load.",
+    "SDI15 to RO increased from 2.3 to 4.1 (+78%) — indicates higher particulate/colloidal load reaching RO.",
+    "Permeate conductivity and global salt rejection stable (380 µS/cm and 99.4%) — argues against oxidation damage or intrinsic membrane degradation.",
+    "Recent events: intake turbidity spike (8 → 22 NTU) and higher coagulant dose in DAF (1.5 → 2.8 mg/L as Fe) preceding the ΔP rise — consistent with pretreatment stress and breakthrough."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Colloidal/iron fouling from DAF carryover (over‑coagulation or poor floc removal) causing particulate loading of the RO.",
+      "why_plausible": "Seasonal turbidity rise and coagulant dose increase can produce residual Fe flocs and fines; SDI15 rose markedly, matching particulate fouling.",
+      "why_discardable": "ATP increased 7×, pointing more strongly to biofouling; salt rejection unchanged and no evidence of inorganic scaling signatures. Without elevated Fe in RO feed, biofouling better explains the data."
+    },
+    {
+      "hypothesis": "Mineral scaling (e.g., CaCO3/CaSO4) due to antiscalant underdose or failure.",
+      "why_plausible": "Scaling can raise ΔP while keeping salt passage near normal initially.",
+      "why_discardable": "No reported change in recovery, temperature, or chemistry; antiscalant is routinely dosed; the sharp SDI and ATP increases temporally align with the ΔP rise, which fits bio/particulate fouling better than scaling."
+    },
+    {
+      "hypothesis": "Oxidative damage from transient chlorine exposure during the 6 h SBS outage.",
+      "why_plausible": "Loss of dechlorination could allow free chlorine to reach RO.",
+      "why_discardable": "Free chlorine at RO feed remained <0.02 mg/L and ORP stable; oxidative damage typically manifests as higher salt passage, not a predominant ΔP rise with stable rejection."
+    },
+    {
+      "hypothesis": "UF integrity breach (fiber break) allowing particles and bacteria to pass.",
+      "why_plausible": "Would elevate both SDI and ATP to RO, consistent with measured increases and ΔP rise.",
+      "why_discardable": "No integrity alarm is reported; increases followed DAF/coagulant changes and intake turbidity spike, which can degrade filtrate quality even without a breach; biofouling from general pretreatment underperformance is the simpler explanation."
+    }
+  ],
+  "requested_data": "Total iron (as Fe) concentration in RO feed, µg/L.",
+  "recommended_action": "Mitigate fouling and restore pretreatment performance: (1) Perform an alkaline biofouling CIP on 1st‑stage RO: prepare cleaning solution at pH 11–11.5 using NaOH 2 g/L (0.2% w/w) plus non‑ionic surfactant 1 g/L (0.1% w/w) or OEM alkaline cleaner per spec; heat to 30–35 °C; circulate at low pressure (<1 bar) for 45–60 min per vessel, soak 30 min, then recirculate 15–20 min; rinse to permeate/flush until pH <8; verify ΔP recovery. If ΔP recovery <75% of baseline, follow with an acid clean using citric acid 20 g/L (2% w/w) at 25–30 °C for 30–45 min, then rinse. (2) Before restart, correct pretreatment bio/solids load: execute a UF CEB with NaOCl 150–200 mg/L as free chlorine for 20 min (per UF OEM), thoroughly flush; ensure SBS dosing is fully restored and adjust to keep free chlorine at RO feed <0.02 mg/L and ORP ~170–190 mV; re‑optimize DAF coagulant by jar tests to target UF filtrate SDI15 <3 and confirm RO feed ATP ≤2 ng/L before bringing RO to full load.",
+  "decision_change_condition": "If total Fe in RO feed is ≥200 µg/L while ATP is ≤2 ng/L and SDI15 ≤3, I would switch the diagnosis from biofouling to inorganic/colloidal iron carryover as the primary root cause.",
+  "confidence": 78
+}

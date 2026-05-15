@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-FOUL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:44:26Z",
+  "main_hypothesis": "Biological fouling due to reduced biocide dosing frequency, leading to microbial growth and biofilm formation on RO membranes in stage 1.",
+  "key_signals": [
+    "Sustained rise in ΔP etapa 1 (1.7 bar vs. baseline 0.8 bar) despite stable ΔP in later stages",
+    "Marked increase in ATP in feed to RO (480 pg/mL vs. baseline 110 pg/mL)",
+    "Reduction in biocide dosing frequency from every 3 days to 'as needed' based on ATP > 500 pg/mL, with ATP oscillating near threshold",
+    "Observed color changes in concentrate samples (yellowish), suggesting organic load and microbial activity",
+    "TOC in feed increased moderately (1.9 mg/L vs. 1.3 mg/L), consistent with biological activity",
+    "ΔP stage 1 rebounded to 1.3 bar within 12 days after CIP, indicating rapid re-fouling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Inorganic scaling due to changes in antiscalant performance or feed water chemistry",
+      "why_plausible": "Increase in ΔP could be caused by scale formation on membranes, especially if antiscalant dosing or feed chemistry changed. However, feed conductivity and pH are stable, and antiscalant (poliacrílico) dosing is reported as consistent at 1.8 ppm.",
+      "why_discardable": "No evidence of increased hardness, silica, or phosphate in feed. ΔP is isolated to stage 1, which is typical for biological fouling rather than uniform scaling. Also, CIP acid wash would not effectively remove scale if antiscalant were underdosed."
+    },
+    {
+      "hypothesis": "Colloidal or particulate fouling due to increased TOC and organic load",
+      "why_plausible": "TOC has risen moderately and ATP is high, suggesting organic matter accumulation. Particulates could increase ΔP, especially in early stages. However, prefiltration includes 5 µm cartridges and greensand filters, which should remove larger particles.",
+      "why_discardable": "ΔP is stable in stages 2 and 3, which would not be expected if particulates were passing through stage 1. Also, color change in concentrate is more indicative of biological activity than inert organics."
+    },
+    {
+      "hypothesis": "Oxidation byproducts or manganese precipitation due to KMnO4 dosing",
+      "why_plausible": "KMnO4 is used for H2S oxidation and may form MnO2 precipitates, which can foul membranes. However, Mn in feed is stable and low (0.03 mg/L), and ΔP is not uniform across stages.",
+      "why_discardable": "ΔP rise is localized to stage 1, and Mn levels are unchanged. Also, KMnO4 dosing has been stable (0.8 mg/L), so no recent change in oxidation conditions."
+    },
+    {
+      "hypothesis": "Mechanical damage or compaction of membranes in stage 1",
+      "why_plausible": "Increased ΔP could result from membrane compaction or damage reducing flow area. However, flux is stable and within normal range, and pressure is rising, not dropping.",
+      "why_discardable": "Flux is slightly decreased (8%), which is consistent with fouling, not compaction. Also, no reports of pressure spikes or cleaning failures that would cause mechanical damage."
+    }
+  ],
+  "requested_data": "Microbial identification (e.g., presence of biofilm-forming bacteria such as Pseudomonas or Bacillus) in feed water or on membrane surface via qPCR or microscopy.",
+  "recommended_action": "Immediately restore biocide dosing to the historical frequency of every 3 days using isotiazolinona (DBNPA equivalent) at 1.5–2.0 ppm for 2 hours, followed by a 30-minute flush. Then perform a targeted CIP with a high-pH (pH 11–12) cleaning solution containing 0.1% sodium dodecyl sulfate and 0.05% sodium hypochlorite for 60 minutes at 35 °C to remove biofilm. Adjust antiscalant dose to 2.0 ppm to ensure adequate protection during recovery.",
+  "decision_change_condition": "If ATP in feed to RO drops below 100 pg/mL and ΔP etapa 1 stabilizes below 1.0 bar for 7 days after biocide restoration and CIP, the diagnosis of biological fouling would be invalidated.",
+  "confidence": 92
+}

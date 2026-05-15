@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-005",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'error instalación + ausencia brine seal primer elemento Tubo 5 + retirado operador nuevo no repuesto + bypass externo' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts (interconnectors mal lubricados, membrana defectuosa, adaptador cabezal)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Sacar Tubo 5 + LOTO + extraer 12 elementos + reinstalar verificando brine seal cada uno + O-rings nuevos — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide conductividad Tubo 5 24-48h tras reinstalación correcta — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: reinstalación correcta + Tubo 5 sigue >300 µS/cm → fuga interna O-ring switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

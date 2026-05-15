@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-MECH-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:33:26Z",
+  "main_hypothesis": "Telescoping mecánico del primer elemento de etapa 1 por golpe de ariete hidráulico, causado por una rampa de arranque del VFD mal reconfigurada (más corta que los 90 s programados) tras el mantenimiento del día -10; el rearranque automático del día -5 generó el transitorio de presión que dañó el elemento y comprometió el sello de salmuera o la membrana, abriendo un bypass interno.",
+  "key_signals": [
+    "Deformación visible (telescoping) en el extremo aguas abajo del primer elemento del Tubo 1 de etapa 1 al abrir",
+    "Probe test localiza 6.500 µS/cm en cabeza de etapa 1 vs <200 µS/cm en el resto",
+    "Sonido de 'golpe' de 2 s en la línea de alta presión tras el rearranque del día -4",
+    "Operario reporta rampa de arranque 'más rápida' tras intervención del VFD (día -8)",
+    "Caída anómala de ΔP en ambas etapas (1,0→0,8 y 0,8→0,4 bar) consistente con pérdida de integridad/bypass, no con ensuciamiento",
+    "Subida brusca de conductividad de permeado (92→950 µS/cm) y rechazo de sales colapsado a 78,7 %",
+    "Cloro libre <0,02 mg/L y ORP estable: descarta daño oxidativo",
+    "Membranas con solo 22 meses, sin deriva previa de calidad"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño oxidativo de la membrana por cloro u oxidante residual",
+      "why_plausible": "Pérdida de rechazo de sales drástica es típica de oxidación de poliamida",
+      "why_discardable": "Cloro libre <0,02 mg/L, ORP estable en +80/+85 mV, sin uso de oxidante; además, oxidación afectaría progresivamente y de forma distribuida, no localizada en la cabeza de etapa 1 con telescoping visible"
+    },
+    {
+      "hypothesis": "O-ring de interconector dañado o mal asentado en el primer elemento",
+      "why_plausible": "Explica bypass localizado y alta conductividad en cabeza de etapa 1 con probe test",
+      "why_discardable": "No explica por sí solo la deformación física (telescoping) observada al abrir el tubo ni la caída simultánea de ΔP en ambas etapas; el o-ring sería consecuencia, no causa raíz"
+    },
+    {
+      "hypothesis": "Fallo del ATD (Anti-Telescoping Device) o tope de retención del elemento",
+      "why_plausible": "Permitiría desplazamiento axial y deformación incluso con rampa normal",
+      "why_discardable": "No hay reporte de hallazgo de ATD roto; la cronología vincula el daño al transitorio del rearranque y a la intervención previa del VFD, que es la causa probable aguas arriba"
+    },
+    {
+      "hypothesis": "Golpe de ariete por fallo de la válvula de control de concentrado o check valve",
+      "why_plausible": "Un cierre brusco también genera transitorios capaces de telescopar elementos",
+      "why_discardable": "No se reportan anomalías en válvulas; el evento coincide temporalmente con el rearranque automático tras corte eléctrico y la queja previa sobre la rampa del VFD"
+    }
+  ],
+  "requested_data": "Registro/trend del VFD de la HP pump: tiempo real de rampa de aceleración (segundos) y curva presión-tiempo durante el arranque del día -5",
+  "recommended_action": "Sacar de servicio el bastidor afectado. Aislar y drenar el Tubo 1 de etapa 1, retirar el elemento telescopado y los aguas abajo para inspección (probe + vacuum decay test) e inspeccionar ATD, interconnectors y o-rings de todos los tubos de etapa 1. Antes de rearrancar, verificar y bloquear con contraseña la parametrización del VFD a rampa ≥90 s, validar arranque controlado y configurar enclavamiento que fuerce apertura lenta de la válvula de concentrado y arranque a baja presión (≤3 bar durante los primeros 60 s) según procedimiento del fabricante de membranas (p. ej. Hydranautics/DuPont TSB on start-up). Reemplazar elementos dañados por elementos brackish equivalentes. Tras restablecer, monitorizar conductividad de permeado y ΔP cada 15 min durante 24 h. No dosificar químicos adicionales hasta confirmar integridad.",
+  "decision_change_condition": "Si el registro del VFD muestra que la rampa de arranque del día -5 fue ≥90 s y la curva de presión sin transitorio, y/o si la inspección revela ATD intacto pero o-rings o glue lines degradados de forma generalizada, la hipótesis cambiaría a fallo mecánico del ATD o defecto de fabricación/edad del elemento, descartando golpe de ariete como causa raíz.",
+  "confidence": 82
+}

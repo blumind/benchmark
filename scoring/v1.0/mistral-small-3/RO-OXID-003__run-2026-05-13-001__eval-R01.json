@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-003",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fallo neutralización cloro por degradación solución SBS + agitador inoperativo + estratificación' literal con cuantificación."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (hipoclorito excesivo, contaminación biológica, fallo bomba SBS)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Detener SBS + cerrar válvula + preparar nueva solución 25% con agitación 2h + verificar concentración + reiniciar — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide concentración SBS en línea de dosificación tras bomba — match accepted (verificación SBS)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: SBS >15% + ORP <0 → fallo bomba switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

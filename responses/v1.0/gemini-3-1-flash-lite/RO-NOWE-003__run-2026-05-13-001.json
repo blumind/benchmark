@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:20:43Z",
+  "main_hypothesis": "Incomplete removal of membrane preservation solution (glycerin and sodium bisulfite) due to insufficient flushing cycles, leading to residual chemical fouling and osmotic interference.",
+  "key_signals": [
+    "High glycerin/COD concentration in permeate (320 mg/L vs <50 mg/L expected)",
+    "Anomalously low ORP (-10 mV vs +90 mV expected) indicating residual reducing agent (bisulfite)",
+    "Lower than expected permeate flow (70% of nominal)",
+    "Higher than expected differential pressure (ΔP) in stage 1 (1.5 bar vs 1.1 bar)",
+    "Deviation from manufacturer's recommended flushing protocol (1 cycle of 30 min vs 3 cycles of 1 h)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane damage due to rapid ramp-up (5 min vs 30 min recommended).",
+      "why_plausible": "Rapid pressurization can cause mechanical stress or telescoping of new elements.",
+      "why_discardable": "Mechanical damage would typically result in a permanent, non-improving salt rejection issue rather than the observed transient improvement in conductivity and permeate quality."
+    },
+    {
+      "hypothesis": "Biological fouling of the new membranes.",
+      "why_plausible": "Open intake systems are prone to biofouling, and low ORP can sometimes be associated with microbial activity.",
+      "why_discardable": "The high concentration of glycerin in the permeate is a direct signature of the preservation solution, not biological growth, and the ORP is low due to the chemical reducing agent (bisulfite)."
+    }
+  ],
+  "requested_data": "Total Organic Carbon (TOC) concentration in the feed water compared to the permeate water to confirm the mass balance of the residual glycerin.",
+  "recommended_action": "Perform an immediate extended flush of the T-05 train using permeate water at low pressure (approx. 2-3 bar) for a minimum of 4 hours, monitoring the permeate conductivity and COD levels until they stabilize below 50 mg/L.",
+  "decision_change_condition": "If the permeate flow and conductivity do not improve after an additional 4 hours of flushing, or if the ΔP continues to increase, the hypothesis would shift toward mechanical damage or manufacturing defects.",
+  "confidence": 90
+}

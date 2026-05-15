@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-NOWE-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:36:50Z",
+  "main_hypothesis": "Entrapment of a significant volume of air in the high-pressure feed line and pressure vessels, introduced during recent maintenance.",
+  "key_signals": [
+    "The mass balance does not close (Feed flow > Permeate + Concentrate flow by 7.5%), suggesting the feed flow meter is over-reporting due to two-phase flow (air and water).",
+    "Intermittent 'borboteo' (gurgling) sound reported in the RO rack, indicating the presence of moving air pockets.",
+    "Simultaneously low differential pressure (ΔP) in both stages and low permeate production, which is characteristic of air binding reducing the effective membrane surface area.",
+    "High permeate conductivity and consequently low salt rejection, consistent with feed water channeling caused by air pockets on the membrane surface.",
+    "The onset of all symptoms occurred immediately after a maintenance event where the feed line was opened to the atmosphere, providing a clear mechanism for air ingress."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "A significant leak to the exterior from the high-pressure piping or components.",
+      "why_plausible": "This would directly explain the 27 m³/h discrepancy in the flow balance, as water is physically leaving the system unmeasured.",
+      "why_discardable": "This hypothesis does not adequately explain the low differential pressures, the poor salt rejection, or the specific 'gurgling' sound inside the rack. Also, the system reportedly passed an initial pressure test after maintenance."
+    },
+    {
+      "hypothesis": "Failure of one or more interconnector O-rings between membrane elements.",
+      "why_plausible": "This is a common failure mode that causes a feed-to-permeate leak, which would directly explain the high permeate conductivity and poor salt rejection.",
+      "why_discardable": "This would not cause a mass balance discrepancy, as all water remains within the measured process streams. It also fails to explain the widespread low differential pressures and the reported gurgling sounds."
+    },
+    {
+      "hypothesis": "Sudden, severe biological or organic fouling of the membranes.",
+      "why_plausible": "The system was shut down for 18 hours with the line open, which could have introduced contaminants and allowed for rapid microbial growth.",
+      "why_discardable": "Fouling would cause a significant increase in differential pressure (ΔP) to maintain flow, whereas the observed ΔP is lower than the baseline. This hypothesis also does not explain the gurgling sound or the flow balance discrepancy."
+    }
+  ],
+  "requested_data": "Reading from a calibrated, portable clamp-on ultrasonic flow meter on the RO feed line, in m³/h.",
+  "recommended_action": "Perform a controlled shutdown of the RO unit. Once the system is fully depressurized, systematically vent all high points, including filter housings and each individual pressure vessel, until a solid, air-free stream of water is discharged. Afterwards, restart the plant using a slow, extended pressure ramp-up (over 5-10 minutes) while closely monitoring for any abnormal sounds.",
+  "decision_change_condition": "If the requested portable flow meter reading confirms the actual feed flow is approximately 360 m³/h (matching the installed meter), my diagnosis would change to a major physical leak in the high-pressure system downstream of the flow meter.",
+  "confidence": 95
+}

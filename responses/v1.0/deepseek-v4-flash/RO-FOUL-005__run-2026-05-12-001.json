@@ -1,0 +1,44 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:18:07Z",
+  "main_hypothesis": "Exceso de dosis de FeCl3 por fallo en la calibración de la nueva bomba dosificadora y posterior olvido de reducción de la dosis, provocando arrastre de hierro coloidal a las membranas RO y obstrucción de los canales de alimentación de la primera etapa.",
+  "key_signals": [
+    "Fe total alimentación RO: 0,42 mg/L (baseline 0,05 mg/L, subida marcada)",
+    "SDI₁₅ salida cartuchos: 4,2 (baseline 2,4, subida marcada)",
+    "Turbidez salida cartuchos: 0,22 NTU (baseline 0,06 NTU, subida)",
+    "ΔP etapa 1 cabeza: 2,2 bar (baseline 1,1 bar, subida sostenida)",
+    "ΔP etapa 1 cola: 0,7 bar (estable)",
+    "Presión alimentación tren: 63 bar (baseline 58 bar, subida)",
+    "Caudal permeado tren: 196 m³/h (baseline 215 m³/h, bajada del 9%)",
+    "Coloración rojiza en cartuchos (día -5)",
+    "Trazas de Fe tras filtros de arena (día -15)",
+    "Dosis de FeCl3 mantenida en 4 mg/L tras episodio de turbidez (día -20 en adelante)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling en la primera etapa de las membranas RO",
+      "why_plausible": "El ATP en alimentación RO es de 95 pg/mL, ligeramente por encima del baseline de 80 pg/mL, y el aumento de ΔP en cabeza con permeado decreciente es compatible con biofouling. La temperatura estable y la ausencia de cloraminación favorecen el crecimiento biológico.",
+      "why_discardable": "El ATP no muestra un incremento significativo (estable según la tendencia), y la presencia de coloración rojiza y alto Fe total apunta más a un fouling inorgánico. Además, el SDI elevado y la turbidez alta en la salida de cartuchos indican que el problema viene de aguas arriba, no de la membrana misma."
+    },
+    {
+      "hypothesis": "Fallo en los filtros de arena (canalización o rotura de lecho) permitiendo paso de sólidos",
+      "why_plausible": "La turbidez y SDI elevados a la salida de cartuchos podrían deberse a una deficiencia en la filtración primaria. Un aumento de la dosis de FeCl3 podría haber causado sobrecarga y formación de canales en los filtros.",
+      "why_discardable": "No hay reporte de problemas en los filtros de arena (caudales, presiones diferenciales, etc.). La presencia de coloración rojiza y Fe elevado sugiere que el hierro está pasando a través de los filtros, lo que es más consistente con una dosis excesiva de coagulante que con un fallo mecánico del filtro."
+    },
+    {
+      "hypothesis": "Corrosión en tuberías de acero al carbono aguas arriba de la RO",
+      "why_plausible": "Un aumento de hierro en la alimentación podría deberse a corrosión interna de tuberías, especialmente si hubo cambios en el pH o en la dosificación de inhibidores.",
+      "why_discardable": "El pH de alimentación es estable (8,0) y no hay reporte de cambios en la química del agua que favorezcan la corrosión. La aparición de coloración rojiza coincidente con el aumento de dosis de FeCl3 y el cambio de bomba dosificadora apunta más a la fuente de coagulante."
+    }
+  ],
+  "requested_data": "Concentración de Fe total en el efluente de los filtros de arena (mg/L) para confirmar si el hierro está siendo removido inadecuadamente en la prefiltración.",
+  "recommended_action": "Reducir inmediatamente la dosis de FeCl3 a 2,0 mg/L (valor dentro del rango normal de operación) y realizar un lavajo químico (CIP) con ácido cítrico al 2% (pH 3-4) en el tren afectado para eliminar el fouling de hierro coloidal. Monitorear la presión diferencial y el caudal de permeado durante el CIP.",
+  "decision_change_condition": "Si el análisis de Fe total en el efluente de los filtros de arena muestra valores inferiores a 0,1 mg/L, entonces el origen del hierro no es el exceso de coagulante sino posiblemente corrosión o contaminación posterior, y se debería investigar la integridad de las tuberías y equipos aguas abajo de los filtros.",
+  "confidence": 85
+}

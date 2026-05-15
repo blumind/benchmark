@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-006-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-006",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'daño oxidativo crónico por ClO2 desde piscifactoría + SBS insuficiente' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (envejecimiento, biofouling, scaling, MECH, fuga localizada)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Tren en espera segura + flush con permeato sin oxidantes + mantener hasta ClO2 no detectable — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ClO2 residual disuelto en alimentación RO tras SBS — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: ClO2 no detectable durante ORP alto + perfil vaso localizado → MECH."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

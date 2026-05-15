@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:11:37Z",
+  "main_hypothesis": "Fouling de las membranas RO debido al aumento sostenido de SDI₁₅ a la salida de los cartuchos de 5 µm",
+  "key_signals": [
+    "Aumento sostenido de SDI₁₅ a la salida de los cartuchos de 5 µm",
+    "Bajada del 8 % en el caudal permeado del tren",
+    "Subida marcada del ATP en alimentación RO",
+    "Subida del TOC en alimentación"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incumplimiento en la dosificación de antiincrustante poliacrílico",
+      "why_plausible": "El supervisor decidió aumentar la dosis de antiincrustante recientemente, lo que podría indicar una posible falta previa en la dosificación.",
+      "why_discardable": "El aumento sostenido de SDI₁₅ y otros parámetros no se explicarían únicamente por un problema en la dosificación de antiincrustante."
+    },
+    {
+      "hypothesis": "Problema en la bomba de alta presión de la etapa 1",
+      "why_plausible": "El aumento progresivo de ΔP en la etapa 1 podría indicar un problema en la bomba de alta presión.",
+      "why_discardable": "Otros parámetros como el SDI₁₅ y el ATP en alimentación RO no se explicarían por un problema en la bomba de alta presión."
+    }
+  ],
+  "requested_data": "Perfil de limpieza de las membranas RO (historial de limpiezas, frecuencia, eficacia)",
+  "recommended_action": "Realizar una limpieza química de las membranas RO siguiendo el procedimiento estándar del fabricante.",
+  "decision_change_condition": "Si el perfil de limpieza de las membranas RO muestra una limpieza reciente y efectiva, descartar el fouling como causa principal.",
+  "confidence": 85
+}

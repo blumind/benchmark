@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-001",
+    "subject_id": "gemini-3-1-flash-lite",
+    "subject_version": "gemini-3.1-flash-lite",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'CaCO3 etapa 2 + dosificación insuficiente + pH elevado' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals listados."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief (biofouling, fallo mecánico bomba)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Restaurar pH 6.7 + cebado bomba + CIP ácida pH 2.0-3.0 en etapa 2 — match gold operacional+CIP."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide autopsia SEM/EDX — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single threshold: si depósito muestra mayoritario orgánico → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-OXID-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:42:03Z",
+  "main_hypothesis": "Oxidative damage to polyamide RO membrane elements due to chlorine breakthrough from exhausted granular activated carbon (GAC) dechlorination bed.",
+  "key_signals": [
+    "free chlorine before RO = 0.18 mg/L (baseline <0.02)",
+    "ORP before RO = +320 mV (baseline +90)",
+    "cloro libre tras CAG = 0.18 mg/L (baseline <0.02)",
+    "conductividad permeado = 1200 µS/cm (baseline 380)",
+    "rechazo de sales = 96.2% (baseline 99.1%)",
+    "GAC residual capacity 25% at day -45",
+    "increased chlorine shock frequency from day -30"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Mechanical seal leakage (O-ring failure or membrane element seal bypass)",
+      "why_plausible": "A sudden increase in permeate conductivity and decrease in salt rejection, with stable feed pressure and delta P, is characteristic of a bypass leak around the membrane seals.",
+      "why_discardable": "This hypothesis does not explain the presence of free chlorine and elevated ORP in the RO feed, which are strong indicators of an oxidative event. Additionally, such leaks typically affect only a few elements, not the entire train, unless multiple failures coincide."
+    },
+    {
+      "hypothesis": "Membrane scaling (e.g., calcium carbonate, calcium sulfate)",
+      "why_plausible": "Scaling can reduce effective membrane area, increasing concentration polarization and salt passage, especially if anti-scalant dosage is insufficient.",
+      "why_discardable": "The delta P across stages is stable, which argues against significant scaling. Feed pH is stable at 8.1, temperature is stable, and the anti-scalant is dosed continuously. Moreover, the abrupt onset and coincidence with chlorine breakthrough make scaling unlikely."
+    },
+    {
+      "hypothesis": "Biofouling of membrane surface",
+      "why_plausible": "Biofouling can cause loss of salt rejection due to secondary membrane formation or degradation of the polyamide layer by microbial enzymes.",
+      "why_discardable": "ATP in feed is stable at 75-80 pg/mL, indicating no increase in microbial activity. Delta P remains low and stable, which is not consistent with biofouling. The chlorine and ORP signals point to a chemical, not biological, cause."
+    }
+  ],
+  "requested_data": "Free chlorine concentration in the permeate stream (mg/L)",
+  "recommended_action": "Stop all chlorine dosing at intake (already done by operator). Immediately dose sodium bisulfite (NaHSO3) at 0.54 mg/L (3 mg per mg free chlorine) to the RO feed stream to neutralize residual chlorine. Reduce permeate flow by 10% and monitor ORP and permeate conductivity. Initiate emergency replacement of the GAC media. Perform a membrane integrity test (vacuum hold test) on the affected train to locate compromised elements.",
+  "decision_change_condition": "If free chlorine in the permeate is below 0.02 mg/L and membrane autopsy (FTIR analysis) shows no evidence of polyamide oxidation (no carbonyl peak), then the diagnosis would shift to a mechanical integrity failure (e.g., O-ring or element seal leakage).",
+  "confidence": 90
+}

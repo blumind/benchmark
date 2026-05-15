@@ -1,0 +1,37 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:13:40Z",
+  "main_hypothesis": "Calcium sulfate (gypsum) scaling in the third stage due to increased recovery and higher sulfate in feed water, with insufficient antiscalant dose.",
+  "key_signals": [
+    "ΔP etapa 3 subida marcada de 0,5 a 1,5 bar",
+    "ΔP etapa 2 subida ligera, ΔP etapa 1 estable",
+    "Sulfato rechazo subida marcada a 1.290 mg/L",
+    "Cálculo de saturación de CaSO₄ SI ≈ 1,1 (sobresaturado)",
+    "CIP alcalino solo efecto temporal (48 h de alivio)",
+    "Caudal permeado bajada del 8 %",
+    "Presión alimentación subida a 14,8 bar",
+    "Cambio en mix de aguas regeneradas con mayor sulfato industrial"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por materia orgánica (humics, surfactantes)",
+      "why_plausible": "El cambio en la fuente de agua podría incrementar la carga orgánica. La CIP alcalina puede remover parcialmente la materia orgánica, pero re-fouling rápido es consistente.",
+      "why_discardable": "TOC alimentación estable en 1,8 mg/L, no hay incremento. Además, el sulfato y el SI de CaSO₄ indican claramente sobresaturación de sulfato de calcio, que no es explicado por fouling orgánico."
+    },
+    {
+      "hypothesis": "Biofouling en etapa 3",
+      "why_plausible": "Biofilms pueden causar incremento rápido de ΔP y ser parcialmente removidos con CIP alcalino, regenerándose rápidamente si hay nutrientes.",
+      "why_discardable": "No hay reporte de aumento de TOC o de nutrientes, y el aumento de sulfato y el SI de CaSO₄ no son consistentes con biofouling. Además, la selectividad del aumento de ΔP en etapa 3 es típica de scaling en concentración."
+    }
+  ],
+  "requested_data": "Análisis de incrustaciones en membrana de etapa 3 (SEM-EDX o difracción de rayos X) para confirmar presencia de yeso (CaSO₄·2H₂O).",
+  "recommended_action": "Reducir inmediatamente la recovery al 80 % y recalcular la dosis de antiincrustante basándose en el nuevo perfil de agua de alimentación (sulfato 220 mg/L, calcio 78 mg/L). Realizar un CIP específico para scaling de sulfato de calcio (por ejemplo, con EDTA a pH 12 y baja temperatura) si las membranas lo permiten. No aumentar la dosis de antiincrustante sin antes realizar un cálculo de saturación con la nueva recovery y composición.",
+  "decision_change_condition": "Si el análisis de incrustaciones mostrara predominantemente materia orgánica o biopolímeros, y no yeso, entonces el diagnóstico cambiaría a fouling orgánico/biológico.",
+  "confidence": 85
+}

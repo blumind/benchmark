@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:53:44Z",
+  "main_hypothesis": "Oxidative degradation of the SWRO membranes due to breakthrough of free chlorine caused by failure of the bisulfite (SBS) dosing system.",
+  "key_signals": [
+    "Caudal de SBS dosificado 0 L/h",
+    "Cloro libre antes RO 0,42 mg/L",
+    "ORP tras dosificación de SBS +540 mV",
+    "Subida brusca de conductividad del permeado",
+    "Estratificación del tanque de SBS con concentración efectiva de 0,2% p/p"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Mechanical seal failure or O-ring degradation in the membrane elements.",
+      "why_plausible": "Could explain the sudden increase in permeate conductivity and loss of salt rejection.",
+      "why_discardable": "Does not explain the presence of free chlorine and high ORP values at the RO feed, which are direct indicators of chemical oxidation."
+    },
+    {
+      "hypothesis": "Biofouling of the membrane surface.",
+      "why_plausible": "Common in SWRO plants with open intakes, leading to flux decline and potential conductivity changes.",
+      "why_discardable": "Biofouling typically causes a significant increase in differential pressure (ΔP), which remains stable in this case."
+    }
+  ],
+  "requested_data": "Concentration of free chlorine in the permeate (mg/L).",
+  "recommended_action": "Immediately shut down the affected RO train, verify the SBS dosing pump functionality, replace the stratified SBS solution with a fresh 25% p/p batch, and perform a full system flush with permeate before restarting.",
+  "decision_change_condition": "If the free chlorine levels were confirmed to be < 0.05 mg/L at the RO feed despite the high ORP readings, I would diagnose an instrumentation failure (ORP sensor drift) rather than chemical oxidation.",
+  "confidence": 95
+}

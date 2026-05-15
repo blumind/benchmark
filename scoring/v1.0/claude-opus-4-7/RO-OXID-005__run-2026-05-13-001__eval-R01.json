@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-005",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'daño oxidativo irreversible T-03 por H2O2 residual + Fenton por Fe traza + aclarado insuficiente' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia incluyendo catálisis Fenton."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (MECH O-rings, cloro residual no detectado, scaling, alcalino mal aclarado)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Aislar T-03 + flushing prolongado >2h + verificar H2O2 <0.1 colorimétrico (no tira 1 mg/L) — match gold explícito."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide test integridad/autopsia: rechazo NaCl banco + tinción — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: autopsia/FTIR sin oxidación + probing única fuga puntual → MECH/O-ring."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

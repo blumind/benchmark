@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-FOUL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:15:36Z",
+  "main_hypothesis": "Biofouling of the first stage RO membranes due to breakthrough of biological matter from the pre-treatment system following the DAF coagulant dosage increase and the temporary loss of SBS residual protection.",
+  "key_signals": [
+    "Significant increase in ATP (8.5 ng/L vs 1.2 ng/L baseline)",
+    "Increase in SDI15 (4.1 vs 2.3 baseline)",
+    "Rapid increase in differential pressure (+45% in 7 days)",
+    "Stable salt rejection (indicates fouling rather than membrane degradation)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Colloidal fouling from coagulant carryover (Fe-based)",
+      "why_plausible": "The increase in coagulant dosage (1.5 to 2.8 mg/L) coincides with the timeline of SDI increase.",
+      "why_discardable": "Colloidal fouling typically shows a more gradual pressure increase and does not explain the massive 600% spike in ATP levels."
+    },
+    {
+      "hypothesis": "Scaling (non-phosphonate antiscalant failure)",
+      "why_plausible": "The plant uses non-phosphonate antiscalant; if the dosage was insufficient for the feed water chemistry, scaling could occur.",
+      "why_discardable": "Scaling usually results in a more linear pressure increase and would not cause a significant rise in ATP or SDI15."
+    }
+  ],
+  "requested_data": "Microbiological analysis (total plate count or specific bacterial identification) of the RO feed water and the UF filtrate.",
+  "recommended_action": "Perform a clean-in-place (CIP) using an alkaline detergent (pH 11-12) combined with a non-oxidizing biocide (e.g., DBNPA at 50-100 mg/L) to address biological growth, followed by a thorough flush.",
+  "decision_change_condition": "If the ATP levels were stable but the SDI15 remained high, I would shift the diagnosis to inorganic colloidal fouling from coagulant carryover.",
+  "confidence": 85
+}

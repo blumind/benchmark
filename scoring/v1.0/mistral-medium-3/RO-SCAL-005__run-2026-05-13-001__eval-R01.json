@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-005-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-005",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 1,
+      "justification": "MH 'insufficient dose new phosphonate → calcium phosphate scaling etapa 2' — fosfato cálcico es alternativo del gold, no la hipótesis dominante (gold = CaCO3)."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Aumentar fosfonato 2.0 ppm + monitor 7 días — solo operacional, sin CIP."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide membrane autopsy + scale composition — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: análisis muestra biológico/no Ca-P → reconsiderar."
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Para Semi-closed C1=1 porque el MH no captura la hipótesis dominante (CaCO3) sino la alternativa (fosfato)."
+}

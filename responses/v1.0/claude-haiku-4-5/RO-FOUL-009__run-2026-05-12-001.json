@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-haiku-4-5",
+  "subject_version": "claude-haiku-4-5-20251001",
+  "served_model": "claude-haiku-4-5-20251001",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:24:12Z",
+  "main_hypothesis": "Surfactant-induced membrane fouling caused by antifoaming agent from refinery discharge and/or cationic polymer from neighboring plant, creating a gelatinous organic deposit on RO feed-side membranes and cartridge filters.",
+  "key_signals": [
+    "Marked decrease in surface tension (72 → 58 mN/m) indicating surfactant presence",
+    "Gelatinous (not particulate) deposit on cartridge filters observed on day -1",
+    "Rapid rise in SDI₁₅ post-cartridge (2.5 → 4.5) despite stable turbidity baseline",
+    "Elevated TOC in RO feed (1.2 → 2.9 mg/L) coinciding with refinery antifoaming notice",
+    "Stage 1 ΔP spike (1.2 → 2.4 bar) while stage 2 remains stable, indicating feed-side fouling",
+    "Permeate conductivity rise (380 → 410 µS/cm) despite stable feed conductivity, consistent with membrane passage of smaller organic molecules",
+    "Elevated total hydrocarbons in intake (< 1 → 2.1 mg/L) within 48 hours of refinery notice",
+    "Temporal correlation: refinery antifoaming notice (day -10), visible foam (day -8), SDI rise (day -7), ΔP stage 1 spike (day -3)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling (algal or bacterial growth on membrane surface)",
+      "why_plausible": "ATP elevation (90 → 240 pg/mL) suggests increased microbial activity; gelatinous deposits can be biofilm; SDI rise and ΔP increase are consistent with biofilm accumulation.",
+      "why_discardable": "ATP rise is moderate (2.7×) and still below typical biofilm alarm thresholds (>500 pg/mL); chlorine residual is undetectable but stable, ruling out recent chlorination upset; temperature is stable at 19.8 °C (cool, not conducive to rapid algal bloom); the deposit is described as gelatinous without color (biofilm typically shows brown/green/red pigmentation); surface tension drop is incompatible with biofilm alone."
+    },
+    {
+      "hypothesis": "Colloidal silica or inorganic scaling breakthrough from cartridge filters",
+      "why_plausible": "SDI rise and ΔP increase can result from silica colloidal breakthrough; stage 1 ΔP elevation is consistent with membrane surface loading.",
+      "why_discardable": "Feed conductivity is stable (55.7 → 56.0 mS/cm), and silica solubility is pH-dependent; pH is stable at 8.1, making sudden silica precipitation unlikely; surface tension drop is not explained by inorganic silica; TOC rise (1.2 → 2.9 mg/L) is organic, not silica; gelatinous deposit is inconsistent with silica particle morphology."
+    },
+    {
+      "hypothesis": "Cartridge filter media degradation or bypass",
+      "why_plausible": "SDI rise post-cartridge and ΔP stage 1 spike could indicate filter bypass allowing larger particles; 16-month membrane age is within normal life but cartridge life is typically 6–12 months.",
+      "why_discardable": "Cartridge inspection (day -1) showed gelatinous deposit, not media tears or bypass; SDI rise is accompanied by TOC and hydrocarbon elevation in feed, indicating source contamination, not filter failure; surface tension drop is independent of cartridge condition."
+    },
+    {
+      "hypothesis": "Antiincrustant overdose or precipitation",
+      "why_plausible": "Antiincrustant at 3 ppm is dosed; overdose or incompatibility with feed water could cause precipitation and fouling.",
+      "why_discardable": "Antiincrustant dosing is reported as stable; no recent dosing changes are documented; antiincrustants are designed to remain soluble at RO feed pH and ionic strength; surface tension drop is not a signature of antiincrustant precipitation; TOC and hydrocarbon spikes are external source indicators, not internal dosing errors."
+    }
+  ],
+  "requested_data": "Infrared spectroscopy (FTIR) or gas chromatography–mass spectrometry (GC-MS) analysis of the gelatinous deposit on the cartridge filter to identify the chemical composition (antifoaming agent, cationic polymer, or other organic compound).",
+  "recommended_action": "Immediately shut down the RO train and replace all cartridge filters (5 µm stage). Perform a visual and chemical inspection of the first-stage RO membrane element for gelatinous deposits. If deposits are present, conduct a low-pressure (5–10 bar) water flush at 25–30 L/m²·h for 30 minutes to attempt removal without membrane damage. If ΔP does not return to baseline (≤1.5 bar) after flushing, replace the first-stage element. Simultaneously, coordinate with the refinery and neighboring plant to confirm cessation of antifoaming agent and cationic polymer discharge into the shared intake. Reinstate intake monitoring for total hydrocarbons and surface tension at 6-hour intervals until both parameters return to baseline (≤1 mg/L and ≥70 mN/m, respectively). Do not restart the RO train until SDI₁₅ post-cartridge is ≤3 and stage 1 ΔP is ≤1.5 bar.",
+  "decision_change_condition": "If FTIR/GC-MS analysis of the cartridge deposit shows no surfactant or polymer signature, or if the deposit is confirmed to be inorganic (silica, calcium carbonate) or biological (algal pigments, bacterial exopolysaccharide), the diagnosis would shift to colloidal silica breakthrough or biofouling, respectively, and the recommended action would change to cartridge replacement alone with extended backwash cycles or biocide treatment.",
+  "confidence": 78
+}

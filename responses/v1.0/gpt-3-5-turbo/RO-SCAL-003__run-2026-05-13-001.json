@@ -1,0 +1,32 @@
+{
+  "case_id": "RO-SCAL-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:04:33Z",
+  "main_hypothesis": "Mal funcionamiento del solenoide de la válvula de inyección de antiincrustante en el tren T-04",
+  "key_signals": [
+    "Subida marcada en ΔP etapa 1 cola del tren T-04",
+    "Desviación en ΔP cola del tren T-04 en comparación con otros trenes",
+    "Inspección visual confirma solenoide desenergizado en el punto de inyección de T-04"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Obstrucción en las membranas del tren T-04",
+      "why_plausible": "La subida marcada en ΔP etapa 1 cola puede indicar obstrucción en las membranas",
+      "why_discardable": "La inspección visual confirmó el solenoide desenergizado, lo que apunta a un problema en la inyección de antiincrustante, no en las membranas"
+    },
+    {
+      "hypothesis": "Fallo en el sistema de control de presión del tren T-04",
+      "why_plausible": "La subida marcada en ΔP etapa 1 cola podría ser causada por un fallo en el control de presión",
+      "why_discardable": "La inspección visual reveló el solenoide desenergizado, lo que sugiere un problema específico en la válvula de inyección de antiincrustante"
+    }
+  ],
+  "requested_data": "Presión de operación del solenoide de la válvula de inyección de antiincrustante en el tren T-04",
+  "recommended_action": "Reemplazar el solenoide de la válvula de inyección de antiincrustante en el tren T-04 siguiendo los procedimientos de mantenimiento del fabricante",
+  "decision_change_condition": "Si al reemplazar el solenoide el problema persiste, el diagnóstico deberá reconsiderarse",
+  "confidence": 90
+}

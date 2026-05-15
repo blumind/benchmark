@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-SCAL-007",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:32:45Z",
+  "main_hypothesis": "Fouling por precipitación de fosfato de calcio en la etapa 2 debido a un aumento en la concentración de fosfatos en el agua de alimentación.",
+  "key_signals": [
+    "Aumento marcado de ΔP en la etapa 2 (de 0.9 bar a 1.9 bar)",
+    "Aumento en la concentración de PO₄³⁻ en la alimentación (de 1.8 mg/L a 2.8 mg/L)",
+    "Aumento en la concentración de PO₄³⁻ en el rechazo (de 7.8 mg/L a 12.5 mg/L)",
+    "Disminución del caudal de permeado (380 m³/h frente a 415 m³/h)",
+    "Aviso de la confederación hidrográfica sobre posible aumento de fósforo en pozos",
+    "Respuesta del fabricante del antiincrustante indicando que no inhibe fosfatos"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por materia orgánica o coloidal",
+      "why_plausible": "El aumento en ΔP podría ser causado por fouling orgánico o coloidal, especialmente si el pretratamiento no es efectivo.",
+      "why_discardable": "No hay indicios de un aumento en la turbiedad o en la materia orgánica en el agua de alimentación, y el pretratamiento parece ser estable."
+    },
+    {
+      "hypothesis": "Degradación de las membranas",
+      "why_plausible": "Las membranas tienen 20 meses de servicio, lo que podría indicar envejecimiento.",
+      "why_discardable": "La conductividad del permeado ha aumentado, pero no hay un aumento significativo en la conductividad de la alimentación, y el ΔP en la etapa 1 se mantiene estable."
+    }
+  ],
+  "requested_data": "Análisis de la composición del fouling en las membranas de la etapa 2",
+  "recommended_action": "Realizar una limpieza CIP específica para fosfato de calcio utilizando una solución ácida con un pH de 2 y un tiempo de contacto de 60 minutos, seguida de una evaluación de la efectividad mediante la medición de ΔP.",
+  "decision_change_condition": "Si el análisis de la composición del fouling en las membranas de la etapa 2 no muestra presencia significativa de fosfato de calcio.",
+  "confidence": 85
+}

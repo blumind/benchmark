@@ -1,0 +1,53 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:09:53Z",
+  "main_hypothesis": "Daño oxidativo crónico de las membranas de poliamida por ingreso de dióxido de cloro y especies derivadas desde la descarga de la piscifactoría vecina, con neutralización insuficiente por el SBS preventivo.",
+  "key_signals": [
+    "Aumento progresivo de la conductividad de permeado de 400 a 590 µS/cm con caída del rechazo de sales de 99,29 % a 98,95 %, patrón compatible con pérdida de selectividad de membrana.",
+    "Conductividad, temperatura y pH de alimentación estables, por lo que el deterioro de rechazo no se explica por cambios de agua bruta.",
+    "ΔP de etapa 1 y etapa 2 prácticamente estables, lo que hace menos probable ensuciamiento hidráulico severo como causa principal.",
+    "ORP de alimentación a RO sube de +50 mV a +180 mV.",
+    "Cloro total DPD en alimentación a RO de 0,15 mg/L con cloro libre <0,02 mg/L, compatible con oxidantes no medidos por cloro libre, incluyendo ClO₂ o interferencias asociadas.",
+    "Confirmación externa de clorito en alimentación a RO a 0,08 mg/L, subproducto de reducción parcial de ClO₂.",
+    "Incidente de olor intenso a cloro en la línea de captación.",
+    "La piscifactoría aumentó descargas con ClO₂ 45 días antes, temporalmente alineado con el inicio de la subida de ORP y posterior aumento de conductividad de permeado.",
+    "ATP de alimentación estable, lo que no apoya un incremento biológico como causa principal."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Envejecimiento o compactación normal de membranas",
+      "why_plausible": "Las membranas tienen 12 meses desde una sustitución parcial y se observa una bajada de caudal permeado del 6 %, lo que podría atribuirse inicialmente a envejecimiento operativo.",
+      "why_discardable": "El deterioro es relativamente rápido en 14 a 25 días y coincide con señales oxidantes claras: ORP elevado, cloro total DPD aumentado, olor a cloro y clorito confirmado. El envejecimiento normal no explica la presencia de clorito ni el cambio externo de dosificación de ClO₂."
+    },
+    {
+      "hypothesis": "Biofouling incipiente del bastidor",
+      "why_plausible": "Una caída de permeado puede aparecer con ensuciamiento biológico, especialmente en captaciones abiertas de agua de mar.",
+      "why_discardable": "El ATP de alimentación permanece estable, los ΔP de ambas etapas están estables y no se reporta aumento progresivo de pérdida de carga, que sería una señal esperada de biofouling relevante."
+    },
+    {
+      "hypothesis": "Incrustación mineral o fouling coloidal en membranas",
+      "why_plausible": "La reducción de caudal permeado y el aumento de presión de alimentación podrían observarse con scaling o fouling.",
+      "why_discardable": "La presión de alimentación y los ΔP están prácticamente estables, el recovery y flux reportados no muestran un cambio operativo, y el aumento dominante es la conductividad de permeado con señales oxidantes concurrentes."
+    },
+    {
+      "hypothesis": "Fuga mecánica por junta tórica, interconector o daño localizado de un elemento",
+      "why_plausible": "Una fuga de sellado puede causar aumento de conductividad de permeado sin requerir un gran aumento de ΔP.",
+      "why_discardable": "La tendencia progresiva del rechazo en el tren junto con ORP elevado, cloro total positivo y clorito confirmado apunta a exposición química sistémica más que a una falla mecánica aislada."
+    },
+    {
+      "hypothesis": "Error analítico o interferencia del método DPD en cloro total",
+      "why_plausible": "El propio reporte indica que la diferencia entre cloro total y libre podría deberse a cloramina, ClO₂ u otro oxidante, y el DPD puede presentar interferencias.",
+      "why_discardable": "Aunque el DPD no identifica inequívocamente el oxidante, el laboratorio externo confirmó clorito en alimentación a RO y hay señales independientes de oxidación: ORP elevado, olor a cloro y antecedente de descarga de ClO₂."
+    }
+  ],
+  "requested_data": "Concentración de ClO₂ residual disuelto en la alimentación a RO después de la dosificación de SBS, medida en mg/L como ClO₂ durante la misma condición de marea/operación.",
+  "recommended_action": "Poner el tren afectado en espera segura y realizar desplazamiento/flush de baja presión con permeado o agua de alimentación confirmada libre de oxidantes según el manual del fabricante; mantenerlo fuera de producción hasta que el ClO₂ residual en alimentación a RO sea no detectable y el cloro total DPD vuelva a <0,05 mg/L, mientras se implementa medición específica de ClO₂/clorito en la alimentación a RO.",
+  "decision_change_condition": "Cambiaría el diagnóstico si la medición específica mostrara ClO₂ residual no detectable en la alimentación a RO durante los episodios de ORP alto y, simultáneamente, un perfil por vaso o prueba de integridad localizara el aumento de conductividad en un único elemento, con ausencia de marcadores de oxidación en autopsia de membrana.",
+  "confidence": 88
+}

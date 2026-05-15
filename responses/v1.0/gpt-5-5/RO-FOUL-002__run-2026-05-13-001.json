@@ -1,0 +1,53 @@
+{
+  "case_id": "RO-FOUL-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:46:03Z",
+  "main_hypothesis": "Ensuciamiento biológico-orgánico y coloidal en los elementos de cabeza de la primera etapa de RO, provocado por ruptura de la barrera de pretratamiento durante el episodio de mar gruesa y la operación de la DAF al 60 % de capacidad.",
+  "key_signals": [
+    "ΔP de etapa 1 aumentó progresivamente de 1,2 a 2,8 bar, mientras la ΔP de etapa 2 permaneció prácticamente estable de 0,8 a 0,9 bar, patrón típico de ensuciamiento en elementos de cabeza.",
+    "SDI15 a la salida de cartuchos subió de 2,5 a 4,8, indicando paso de coloides/partículas finas hacia la RO.",
+    "ATP en alimentación RO aumentó de 80 a 1.200 pg/mL, señal fuerte de carga microbiológica elevada.",
+    "TOC en alimentación aumentó de 1,4 a 2,8 mg/L, compatible con carga orgánica favorecedora de biofouling.",
+    "El episodio de mar gruesa elevó la turbidez del efluente DAF a 1,8 NTU frente a 0,3 NTU de baseline.",
+    "La DAF operó al 60 % de capacidad durante 4 días por avería de una bomba de aire saturado, reduciendo la capacidad de eliminación de materia orgánica y sólidos.",
+    "La presión de alimentación subió de 58 a 64 bar y el caudal permeado bajó un 8 %, coherente con aumento de resistencia hidráulica por ensuciamiento.",
+    "Conductividad y temperatura de alimentación permanecieron estables, reduciendo la probabilidad de que el cambio se deba a variación de salinidad o temperatura.",
+    "Cloro libre antes de RO se mantuvo < 0,02 mg/L, sin señal directa de exposición oxidante reciente."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación mineral por carbonatos o sulfatos.",
+      "why_plausible": "La presión de alimentación aumentó, el caudal permeado disminuyó y la conductividad del permeado subió ligeramente, señales que pueden observarse con pérdida de rendimiento por incrustación.",
+      "why_discardable": "La ΔP elevada está concentrada en etapa 1 y no en la zona de mayor concentración de sales; pH, temperatura y conductividad de alimentación están estables; además hay señales directas de alta carga biológica, orgánica y coloidal."
+    },
+    {
+      "hypothesis": "Fallo o mala instalación de los cartuchos de 5 µm tras su sustitución.",
+      "why_plausible": "Los cartuchos fueron sustituidos 22 días antes y el SDI medido a su salida aumentó marcadamente, por lo que un bypass, sellado deficiente o rotura podría permitir paso de sólidos.",
+      "why_discardable": "La subida sostenida de SDI comenzó después del episodio de mar gruesa y de la operación de la DAF al 60 %, y el aumento simultáneo de ATP y TOC apunta a una carga aguas arriba no controlada, no sólo a un defecto mecánico de cartuchos."
+    },
+    {
+      "hypothesis": "Daño oxidativo de membranas por entrada de hipoclorito.",
+      "why_plausible": "Existe dosificación intermitente de hipoclorito en captación y la conductividad del permeado mostró un ligero aumento, lo que podría sugerir pérdida de rechazo.",
+      "why_discardable": "El cloro libre antes de RO se reporta estable en < 0,02 mg/L y el síntoma dominante es aumento fuerte de ΔP en etapa 1, más compatible con ensuciamiento que con oxidación de poliamida."
+    },
+    {
+      "hypothesis": "Ensuciamiento principalmente inorgánico/coloidal por sólidos finos arrastrados durante el temporal.",
+      "why_plausible": "El temporal elevó la turbidez del efluente DAF y el SDI15 tras cartuchos subió a 4,8, lo que puede producir taponamiento de espaciadores y aumento de ΔP en la primera etapa.",
+      "why_discardable": "El ATP aumentó de forma muy marcada y el TOC se duplicó, por lo que el componente biológico-orgánico explica mejor el conjunto de señales que un ensuciamiento sólo mineral o particulado."
+    },
+    {
+      "hypothesis": "Sobredosificación o incompatibilidad del antiincrustante poliacrílico.",
+      "why_plausible": "La dosis de antiincrustante se aumentó recientemente a 3,2 ppm y algunos polímeros pueden contribuir a ensuciamiento orgánico si interactúan con sólidos o coagulantes residuales.",
+      "why_discardable": "El aumento de SDI comenzó antes del incremento de dosis de antiincrustante, por lo que temporalmente no explica el inicio del evento."
+    }
+  ],
+  "requested_data": "ATP del material raspado del espaciador de alimentación del primer elemento del primer tubo afectado, en pg/cm².",
+  "recommended_action": "Retirar de servicio el tren afectado y realizar limpieza CIP de la primera etapa por separado con permeado: enjuague inicial a baja presión, limpieza alcalina para ensuciamiento orgánico-biológico con solución ajustada a pH 11,0 y 0,1 % p/p de tensioactivo no iónico o limpiador alcalino aprobado por el fabricante de membranas, a temperatura no superior a 35 °C, recirculación y remojo según manual OEM, seguida de enjuague con permeado hasta pH neutro; no aplicar hipoclorito ni oxidantes a las membranas de poliamida.",
+  "decision_change_condition": "La diagnosis cambiaría si el depósito del elemento de cabeza mostrara ATP bajo y predominio de sales minerales cristalinas, o si el aumento principal de ΔP apareciera en la etapa 2/concentrado en lugar de la etapa 1.",
+  "confidence": 84
+}

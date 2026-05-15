@@ -1,0 +1,46 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "claude-opus-4-7",
+  "subject_version": "claude-opus-4-7",
+  "served_model": "claude-opus-4-7",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:42:22Z",
+  "main_hypothesis": "Ensuciamiento orgánico/coloidal en etapa 1 por co-deposición de antiespumante (tensioactivo) procedente del vertido de la refinería, posiblemente potenciado por interacción con polímero catiónico de la planta vecina, formando una capa gelatinosa sobre las membranas frontales.",
+  "key_signals": [
+    "Caída marcada de tensión superficial en alimentación de 72 a 58 mN/m (indicador directo de tensioactivo)",
+    "ΔP etapa 1 duplicado (1,2 → 2,4 bar) mientras ΔP etapa 2 permanece estable: ensuciamiento frontal típico de orgánico/coloidal",
+    "TOC alimentación a RO subiendo de 1,2 a 2,9 mg/L y SDI15 tras cartuchos de 2,5 a 4,5",
+    "Hidrocarburos totales en captación subiendo de <1 a 2,1 mg/L tras aviso de vertido con antiespumante (día -10) y episodio de espuma (día -8)",
+    "Depósito gelatinoso (no marrón/rojizo) en cartuchos, incompatible con óxidos de hierro o biopelícula madura",
+    "Caída de permeado 12 % y subida de presión de alimentación y de conductividad de permeado (compactación/recubrimiento de membrana)",
+    "Cloro libre <0,02 mg/L descarta oxidación; pH y temperatura estables descartan scaling"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bioensuciamiento (biofouling) clásico",
+      "why_plausible": "ATP en alimentación sube de 90 a 240 pg/mL y TOC aumenta; membranas con 16 meses son susceptibles.",
+      "why_discardable": "La subida de ATP es moderada y el evento es agudo (3-5 días), incompatible con cinética típica de biopelícula; el depósito gelatinoso transparente y la caída brusca de tensión superficial apuntan a tensioactivo, no a EPS biológico maduro."
+    },
+    {
+      "hypothesis": "Ensuciamiento por hidrocarburos libres (oil fouling)",
+      "why_plausible": "Hidrocarburos en captación duplicados y vertido refinería reportado.",
+      "why_discardable": "Concentración (2,1 mg/L) por debajo del límite normativo y el DAF debería retenerlos; el depósito no es oleoso/marrón. El descenso de tensión superficial es más consistente con tensioactivo disuelto que con aceite libre."
+    },
+    {
+      "hypothesis": "Ensuciamiento por polímero catiónico residual (sobredosis/fuga del vecino)",
+      "why_plausible": "Episodio día -5 con incremento de polímero catiónico; los catiónicos son notoriamente dañinos para membranas de poliamida aniónica produciendo gel irreversible.",
+      "why_discardable": "La caída de tensión superficial y el aviso previo (día -10) preceden al evento del vecino (día -5); la cronología sugiere que el tensioactivo es el iniciador, aunque el polímero catiónico puede estar agravándolo (hipótesis combinada plausible)."
+    },
+    {
+      "hypothesis": "Ensuciamiento coloidal inorgánico (aluminosilicatos/Fe)",
+      "why_plausible": "SDI15 elevado tras cartuchos.",
+      "why_discardable": "Depósito gelatinoso no marrón/rojizo y caída de tensión superficial no se explican por coloides inorgánicos; TOC elevado apunta a orgánico."
+    }
+  ],
+  "requested_data": "Análisis de autopsia/hisopado de cartuchos y/o elemento frontal de etapa 1: contenido en carbono orgánico, FTIR para identificar grupos funcionales de tensioactivos/antiespumante (siliconas/polialquilenglicoles) y test de polímero catiónico (cloruro de polidialildimetilamonio o similar) sobre el depósito gelatinoso.",
+  "recommended_action": "1) Reducir flux temporalmente al 80 % para limitar deposición adicional y proteger membranas. 2) Aumentar vigilancia: muestreo diario de tensión superficial, TOC, hidrocarburos y SDI en captación y tras cartuchos. 3) Coordinar con refinería y planta vecina para confirmar/suspender vertidos y desplazar captación o activar by-pass si es posible. 4) Programar CIP alcalino: primero limpieza con NaOH al 0,1 % (pH 11,5-12) + EDTA 0,1 % + tensioactivo compatible (p. ej. SDBS 0,025 %) a 35 °C durante 2 h con remojo, seguido de enjuague y, si persiste, CIP ácido con ácido cítrico al 2 % (pH 2-3) a 35 °C. 5) Verificar integridad y dosificación del DAF y considerar dosificación de coagulante (FeCl3 1-3 mg/L como Fe) aguas arriba si se confirma carga orgánica/tensioactivo sostenida. 6) NO incrementar antiincrustante (no es scaling).",
+  "decision_change_condition": "Si la autopsia/FTIR del depósito identifica predominantemente polímero catiónico (no tensioactivo/antiespumante) o si se detecta hierro/aluminio mayoritario, la hipótesis principal cambiaría a daño por polielectrolito catiónico o fouling coloidal inorgánico respectivamente; igualmente, si la tensión superficial regresa a baseline pero el ΔP sigue subiendo, el diagnóstico viraría a biofouling.",
+  "confidence": 62
+}

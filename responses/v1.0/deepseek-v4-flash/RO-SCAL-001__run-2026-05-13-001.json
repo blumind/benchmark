@@ -1,0 +1,41 @@
+{
+  "case_id": "RO-SCAL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T14:54:39Z",
+  "main_hypothesis": "Calcium carbonate scaling in the second stage of the RO array due to antiscalant underdosing and elevated feed pH.",
+  "key_signals": [
+    "ΔP etapa 2: 2,1 bar vs baseline 0,8 bar (sharp increase, stage selective)",
+    "Caudal antiincrustante (medido): 0,3 L/h vs consigna 1,8 L/h (drastic drop)",
+    "pH alimentación a RO: 7,3 vs baseline 6,7 (upward shift due to H₂SO₄ pump maintenance)",
+    "Presión alimentación: 18,5 bar vs 15,8 bar (increase indicating higher resistance)",
+    "Caudal permeado planta: 460 m³/h vs 500 m³/h (8 % decline)",
+    "Conductividad permeado: 92 µS/cm vs 80 µS/cm (increase suggesting salt passage due to scaling)",
+    "Historial: bomba peristáltica sin cebado completo tras mantenimiento el día -22, y espuma y pulsación irregular el día -10"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling in stage 2",
+      "why_plausible": "Biofouling can cause differential pressure increase, especially in lead elements, and can occur after a change in pretreatment or cartridge filters. The presence of foam in the antiscalant tank might indicate bacterial growth or contamination.",
+      "why_discardable": "Biofouling typically increases ΔP in both stages or progresses from lead to tail, but here stage 1 ΔP is stable. Also, no organic carbon data, no chlorine breakthrough, and the pH elevation alone would not directly cause biofouling. The antiscalant underdosing is a more direct and temporally correlated cause."
+    },
+    {
+      "hypothesis": "Silica scaling in stage 2",
+      "why_plausible": "Silica scaling can occur at recoveries > 75% and when silica concentration in reject exceeds saturation (~100-120 mg/L at neutral pH). Reject silica is 89 mg/L, approaching thresholds.",
+      "why_discardable": "Silica in reject is stable at 89 mg/L, well below typical scaling threshold. Silica scaling would not be as responsive to pH change (silica solubility increases with pH). The LSI increase due to pH and antiscalant underdosing is a more consistent explanation."
+    },
+    {
+      "hypothesis": "Cartridge filter breakthrough or bypass",
+      "why_plausible": "Poorly seated or damaged cartridge filters can allow particulate matter to reach the RO, causing fouling and ΔP increase.",
+      "why_discardable": "Cartridge filters were changed on day -5 with no relief in ΔP. If particulate fouling were the cause, stage 1 would likely see an increase first (as lead elements trap particles), but stage 1 ΔP is stable. The timing also does not align with the ΔP rise starting on day -18."
+    }
+  ],
+  "requested_data": "LSI (Langelier Saturation Index) or calcium carbonate saturation ratio in the RO reject stream, calculated or measured at actual pH and temperature.",
+  "recommended_action": "Immediately restore antiscalant dosing: re-prime the peristaltic pump following the manufacturer's full priming procedure, verify flow rate at 1.8 L/h, and adjust the pump stroke or speed if needed. Simultaneously, reduce the H₂SO₄ setpoint to lower feed pH back to 6.7 to control LSI. If possible, temporarily reduce system recovery to 70-75% to decrease supersaturation in the reject. Monitor ΔP stage 2 and permeate conductivity hourly for the next 24 hours.",
+  "decision_change_condition": "If, after restoring antiscalant dosing and pH to baseline for 48 hours, the ΔP in stage 2 does not stabilize or continues to rise, then the root cause is likely more complex (e.g., combined scaling and biofouling or irreversible membrane damage) and a membrane autopsy would be required.",
+  "confidence": 90
+}

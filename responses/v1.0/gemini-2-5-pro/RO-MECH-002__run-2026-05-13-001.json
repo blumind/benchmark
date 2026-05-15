@@ -1,0 +1,40 @@
+{
+  "case_id": "RO-MECH-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:35:31Z",
+  "main_hypothesis": "Incorrectly shortened VFD start-up ramp time following external maintenance, causing a hydraulic shock (water hammer) that resulted in physical damage (telescoping) to the lead membrane elements.",
+  "key_signals": [
+    "Maintenance performed on the HP pump VFD 10 days prior to the incident.",
+    "Operator report of a 'faster' start-up ramp after the VFD maintenance.",
+    "Anomalous 'hammering' sound reported from the high-pressure line during start-up.",
+    "Visual confirmation of 'telescoping' damage on the lead membrane element, a typical result of hydraulic shock.",
+    "Probe test results localizing the high conductivity leak to the head of the first stage, where start-up shock impact is greatest.",
+    "Anomalous drop in differential pressure across both stages, indicating a physical breach rather than fouling."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Catastrophic failure of an interconnector O-ring on a lead element.",
+      "why_plausible": "A failed O-ring would create a direct path for feed water to enter the permeate stream, explaining the sudden and localized increase in permeate conductivity.",
+      "why_discardable": "This does not explain the observed 'telescoping' of the membrane element, the reported hammering sound, or the operator's observation of a faster start-up ramp. A simple O-ring failure is a sealing issue, not a structural failure caused by massive hydraulic force."
+    },
+    {
+      "hypothesis": "Sudden backpressure event from the permeate line.",
+      "why_plausible": "High backpressure from the permeate side (e.g., a rapidly closed valve) is a known cause of telescoping damage to membrane elements.",
+      "why_discardable": "The timeline of events (VFD maintenance, faster ramp, hammering sound on the high-pressure line) points strongly to a forward-pressure event, not a backpressure one. There is no report of any operational changes or incidents on the permeate side of the system."
+    },
+    {
+      "hypothesis": "Manufacturing defect in the lead membrane element.",
+      "why_plausible": "A pre-existing weakness in the membrane's structure could have led to its failure under normal operating pressure after 22 months of service.",
+      "why_discardable": "It is highly coincidental for a manufacturing defect to manifest immediately following VFD maintenance and a reported change in start-up behavior. The combination of the hammering sound and the specific timing makes an operational cause far more likely than a random component failure."
+    }
+  ],
+  "requested_data": "Actual VFD start-up ramp time programmed in the controller, in seconds.",
+  "recommended_action": "Immediately lock out and tag out the high-pressure pump. Verify the VFD start-up ramp time setting in the controller and reprogram it to the design specification of 90 seconds. Do not restart the RO train until the VFD settings are confirmed and all damaged membrane elements and interconnectors in the affected pressure vessel(s) are replaced.",
+  "decision_change_condition": "If the VFD controller log shows that the start-up ramp time has consistently been 90 seconds both before and after the maintenance on Day -10.",
+  "confidence": 95
+}

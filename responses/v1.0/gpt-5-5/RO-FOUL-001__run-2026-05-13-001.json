@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-FOUL-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T09:33:20Z",
+  "main_hypothesis": "Biofouling incipiente en los canales de alimentación de la 1ª etapa de RO, favorecido por aumento de carga biológica y de sólidos finos que atravesaron el pretratamiento durante el episodio de turbidez estacional.",
+  "key_signals": [
+    "ΔP de 1ª etapa aumentó de 2,2 a 3,2 bar, un incremento de aproximadamente 45%, con caudal de alimentación estable en 850 m³/h.",
+    "ATP en alimentación a RO subió de 1,2 a 8,5 ng/L, incremento de aproximadamente 600%, señal directa de aumento de carga biológica viable.",
+    "SDI15 en alimentación a RO aumentó de 2,3 a 4,1, indicando mayor potencial de ensuciamiento por partículas/coloides que puede sostener biofilm.",
+    "Conductividad de permeado y rechazo salino global permanecen estables, lo que favorece ensuciamiento hidráulico de canales frente a daño químico de membrana.",
+    "Temperatura estable en 21 °C, por lo que la subida de ΔP no se explica por cambio de viscosidad.",
+    "El inicio del aumento de ΔP ocurrió tras la subida de turbidez de captación y el ajuste de coagulación, coherente con mayor carga al pretratamiento y paso de material biodegradable/particulado."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Ensuciamiento coloidal o por arrastre de hidróxidos de hierro desde el DAF tras el aumento de coagulante.",
+      "why_plausible": "La dosis de coagulante como Fe aumentó de 1,5 a 2,8 mg/L y el SDI15 a RO subió de 2,3 a 4,1; el arrastre de flóculos finos o Fe puede elevar rápidamente el ΔP de la primera etapa.",
+      "why_discardable": "El ATP aumentó mucho más marcadamente que el SDI y apunta a actividad biológica; además no se reporta hierro residual ni evidencia directa de arrastre férrico."
+    },
+    {
+      "hypothesis": "Scaling inorgánico en la primera etapa por fallo de antiescalante o sobresaturación local.",
+      "why_plausible": "Un incremento de ΔP en RO puede ser causado por precipitados inorgánicos, especialmente en membranas con 4 años de servicio.",
+      "why_discardable": "No se reportan cambios en recovery, temperatura, caudal ni dosificación de antiescalante; el rechazo y la conductividad de permeado están estables, y las señales dominantes son ATP y SDI elevados."
+    },
+    {
+      "hypothesis": "Daño oxidativo de membranas por paso de cloro durante la parada de 6 h de la línea de SBS.",
+      "why_plausible": "Las membranas de poliamida son sensibles a oxidantes y hubo una parada reciente del sistema de descloración.",
+      "why_discardable": "El cloro libre a RO se reporta estable por debajo de 0,02 mg/L, el ORP está estable, y no hay pérdida de rechazo ni aumento de conductividad de permeado; el daño oxidativo normalmente se manifestaría primero como aumento de paso de sales, no como subida aislada de ΔP."
+    },
+    {
+      "hypothesis": "Fallo de integridad o rendimiento de la UF que permite paso de partículas finas hacia RO.",
+      "why_plausible": "La captación abierta tuvo turbidez elevada y el SDI15 a RO aumentó significativamente, compatible con deterioro de la barrera de pretratamiento.",
+      "why_discardable": "La información disponible no reporta roturas, TMP anómalo o pruebas de integridad UF fallidas; además el ATP elevado sugiere que el mecanismo dominante en RO ya es biológico, aunque el deterioro del pretratamiento pueda ser factor contribuyente."
+    }
+  ],
+  "requested_data": "ATP superficial en el espaciador de alimentación del elemento líder de la 1ª etapa, expresado en pg ATP/cm².",
+  "recommended_action": "Sacar de servicio la línea afectada y ejecutar una CIP alcalina no oxidante compatible con membranas de poliamida: enjuague de baja presión con permeado, recirculación de limpiador alcalino aprobado para RO al 2% p/p ajustado a pH 11,5 con NaOH a 30 °C durante 45-60 min, remojo 60 min, y enjuague con permeado hasta pH y conductividad estables; no aplicar cloro ni otros oxidantes a las membranas.",
+  "decision_change_condition": "El diagnóstico cambiaría si el ATP superficial del espaciador del elemento líder no estuviera elevado respecto a una condición limpia y el depósito recuperado fuese predominantemente inorgánico o férrico, en cuyo caso priorizaría scaling o arrastre de coagulante sobre biofouling.",
+  "confidence": 76
+}

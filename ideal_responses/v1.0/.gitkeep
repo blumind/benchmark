@@ -1,0 +1,4 @@
+# Reserved for ideal responses (one JSON per case, validated against
+# system/schemas/v1.0/ideal_response.schema.json). Files are written by senior
+# experts and consumed by scripts/export_commercial.py to build sft.jsonl.
+# Not exposed in the public benchmark export — only the schema is public.

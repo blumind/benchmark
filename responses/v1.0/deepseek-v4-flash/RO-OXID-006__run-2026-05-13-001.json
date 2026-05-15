@@ -1,0 +1,42 @@
+{
+  "case_id": "RO-OXID-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "deepseek-v4-flash",
+  "subject_version": "deepseek-v4-flash",
+  "served_model": "deepseek-v4-flash",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:12:32Z",
+  "main_hypothesis": "Oxidative damage to polyamide RO membranes caused by chlorine dioxide (ClO2) from the neighboring fish farm, which is not fully scavenged by the current sodium bisulfite (SBS) dose, leading to increased salt passage.",
+  "key_signals": [
+    "Permeate conductivity increased from 400 to 590 µS/cm over 14 days",
+    "Calculated salt rejection decreased from 99.29% to 98.95%",
+    "Total chlorine (DPD) in RO feed rose from <0.05 to 0.15 mg/L while free chlorine remained <0.02 mg/L",
+    "ORP in RO feed increased from +50 mV to +180 mV",
+    "Chlorite (ClO2-) detected at 0.08 mg/L in RO feed, a byproduct of ClO2 reduction",
+    "Strong chlorine odor reported at intake line on day -18",
+    "Fish farm increased ClO2 discharge volume starting day -45",
+    "ΔP and feed pressure stable, ruling out fouling as primary cause"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane aging or compaction",
+      "why_plausible": "Membranes are 12 months old after partial replacement, and gradual salt passage increase can occur with age.",
+      "why_discardable": "The degradation rate accelerated sharply over 14 days, coinciding with the fish farm activity change, whereas membrane aging typically progresses slowly. ΔP and feed pressure remain stable, inconsistent with significant compaction."
+    },
+    {
+      "hypothesis": "Biofouling or organic fouling",
+      "why_plausible": "Biofouling can cause loss of salt rejection due to concentration polarization or membrane damage.",
+      "why_discardable": "ATP levels in feed are stable (85→90 pg/mL), ΔP is stable, and cartridge filters showed no discoloration. Biofouling would typically increase ΔP and reduce permeate flow more severely."
+    },
+    {
+      "hypothesis": "Mechanical damage (O-ring leaks, interconnector failure)",
+      "why_plausible": "A sudden leak in a pressure vessel can cause a rapid increase in permeate conductivity.",
+      "why_discardable": "The conductivity increase has been progressive over 14 days, not sudden. Additionally, no ΔP changes or abnormal noises were reported. Mechanical failures usually cause discrete jumps rather than gradual trends."
+    }
+  ],
+  "requested_data": "Chlorine dioxide (ClO2) concentration in RO feed water, measured by amperometric titration or DPD method with glycine, in mg/L.",
+  "recommended_action": "Increase sodium bisulfite (SBS) dosing rate from 4 mg/L to 12 mg/L (threefold increase, based on a stoichiometric ratio of ~4 mg SBS per mg ClO2 for complete reduction). Verify effectiveness by monitoring ORP, total chlorine, and chlorite; target ORP below 100 mV and total chlorine below 0.05 mg/L within 24 hours. Additionally, install an online ClO2 analyzer on the RO feed line to enable real-time dose adjustment.",
+  "decision_change_condition": "If ClO2 concentration in RO feed is found to be below 0.02 mg/L or absent, and the conductivity rise persists, then the root cause would shift to membrane aging or a non-oxidative degradation mechanism, warranting membrane autopsy or replacement evaluation.",
+  "confidence": 85
+}

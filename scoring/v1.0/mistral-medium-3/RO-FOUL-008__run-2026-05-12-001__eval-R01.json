@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-008-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-008",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling preservación inadecuada'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "5 signals."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts breves."
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "ACCIÓN DAÑINA: 'NaOH 0.1% + H2O2 0.2%' — H2O2 2000 ppm sobre PA con Fe/Mn (catalizador) = degradación."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide microbio UFC/cm² — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial threshold."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "H2O2 0.2% sobre PA en presencia probable de Fe/Mn del lecho filtrante = degradación oxidativa (Fenton-like)."
+}

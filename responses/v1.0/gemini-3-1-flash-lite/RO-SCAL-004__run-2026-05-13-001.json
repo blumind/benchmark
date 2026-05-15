@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-SCAL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:49:37Z",
+  "main_hypothesis": "Incrustación inorgánica de sulfato de calcio (yeso) en la tercera etapa debido a la sobresaturación provocada por el aumento del recovery y el incremento en la concentración de sulfatos en el agua de alimentación.",
+  "key_signals": [
+    "Aumento marcado de ΔP en la etapa 3 (0,5 a 1,5 bar)",
+    "Cálculo de SI de CaSO₄ ≈ 1,1 (sobresaturado)",
+    "Aumento de la concentración de sulfato en el rechazo (1.290 mg/L)",
+    "Ineficacia del CIP alcalino para resolver la tendencia de ΔP",
+    "Falta de ajuste en la dosificación de antiincrustante tras subir el recovery al 83 %"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Bioincrustación (biofouling) acelerada",
+      "why_plausible": "El aumento de temperatura y la presencia de TOC pueden favorecer el crecimiento biológico, lo cual suele causar caídas de presión en las etapas finales.",
+      "why_discardable": "El CIP alcalino estándar (NaOH) suele ser efectivo contra biofouling, pero en este caso el ΔP volvió a subir rápidamente, y el análisis químico apunta específicamente a la sobresaturación de sales."
+    },
+    {
+      "hypothesis": "Incrustación de sílice polimerizada",
+      "why_plausible": "La sílice en el rechazo ha subido a 130 mg/L, acercándose a los límites de solubilidad típicos en sistemas RO.",
+      "why_discardable": "El aumento de ΔP es mucho más pronunciado en la etapa 3 que en la 2, y el SI de CaSO₄ es un indicador termodinámico más crítico y directo dado el aumento de sulfatos en el mix de agua."
+    }
+  ],
+  "requested_data": "Análisis de composición química (SEM/EDX) de un depósito extraído de un elemento de la etapa 3.",
+  "recommended_action": "Reducir inmediatamente el recovery al 80 % y aumentar la dosificación de antiincrustante específico para sulfato de calcio a 3,5 ppm (concentración en alimentación) mientras se evalúa la viabilidad de un CIP ácido (ácido cítrico o clorhídrico) para disolver el yeso.",
+  "decision_change_condition": "Si el análisis de los depósitos revelara una presencia predominante de materia orgánica o polisacáridos en lugar de cristales de sulfato de calcio.",
+  "confidence": 85
+}

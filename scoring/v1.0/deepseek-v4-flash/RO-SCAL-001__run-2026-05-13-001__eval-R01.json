@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-001",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'CaCO3 etapa 2 + antiincrustante subdosificación + pH elevado' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "MH conecta antiincrustante + pH como causa raíz; signals breves pero relacionados."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (biofouling, sílice, MECH cartridge breakthrough) con why_discardable."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Restablecer antiincrustante + reducir pH 6.7 + 'If possible, temporarily reduce recovery to 70-' — operacional; CIP ácido no especificado."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide LSI en rechazo — match exacto accepted_requested_data."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Single condition: 'tras 48h ΔP no estabiliza → causa más compleja' — genérico, no switch específico."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

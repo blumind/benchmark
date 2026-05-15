@@ -1,0 +1,206 @@
+BluMind Benchmark — Licencia multi-parte
+=========================================
+
+Copyright (c) 2026 BluMind Technologies SL. Todos los derechos reservados en lo no expresamente licenciado.
+
+Este repositorio contiene distintos tipos de contenido que se publican bajo
+licencias diferentes. La licencia aplicable depende de la carpeta y del tipo
+de archivo, según la tabla siguiente. En caso de ambigüedad, prevalecen las
+cláusulas más restrictivas.
+
+
+1. RESUMEN DE LICENCIAS POR TIPO DE CONTENIDO
+----------------------------------------------
+
+| Contenido                                              | Licencia                                   |
+|--------------------------------------------------------|--------------------------------------------|
+| /scripts/**/*.py y cualquier código fuente auxiliar    | MIT License (ver sección 2)                |
+| /system/rubric/**                                     | CC BY-NC-SA 4.0 (ver sección 3)            |
+| /system/schemas/**                                    | CC BY-NC-SA 4.0                            |
+| /system/prompts/**                                    | CC BY-NC-SA 4.0                            |
+| /system/families/**                                   | CC BY-NC-SA 4.0                            |
+| /cases/**  (solo los marcados como públicos)           | CC BY-NC-SA 4.0                            |
+| /responses/**                                          | CC BY-NC-SA 4.0 con cláusula de atribución |
+|                                                        | al modelo evaluado (ver sección 4)         |
+| /scoring/**                                            | CC BY-NC-SA 4.0 con cláusula de anonimato  |
+|                                                        | obligatorio (ver sección 5)                |
+| /results/**                                            | CC BY-NC-SA 4.0                            |
+| /docs/**                                               | CC BY-NC-SA 4.0                            |
+| /web/**                                                | CC BY-NC-SA 4.0 (contenido y textos)       |
+|                                                        | MIT (HTML/CSS/JS generado)                 |
+| /README.md, /CHANGELOG.md                              | CC BY-NC-SA 4.0                            |
+| Golds (vivan en este repo o en repo privado)           | Propietario, todos los derechos reservados |
+|                                                        | (ver sección 6)                            |
+| Casos marcados como privados                           | Propietario, todos los derechos reservados |
+| Emisión de sellos y certificados "BluMind Certified"   | Propietario (ver sección 7)                |
+| Marca denominativa "BluMind" y logotipo                | Marca registrada (ver sección 8)           |
+
+
+2. LICENCIA MIT — APLICABLE AL CÓDIGO FUENTE (/scripts/**)
+-----------------------------------------------------------
+
+Copyright (c) 2026 BluMind Technologies SL
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+3. LICENCIA CC BY-NC-SA 4.0 — APLICABLE AL CONTENIDO PÚBLICO
+-------------------------------------------------------------
+
+Se aplica Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International (CC BY-NC-SA 4.0) al contenido indicado en la sección 1.
+
+Esto significa que cualquier persona u organización puede:
+
+  - COMPARTIR: copiar y redistribuir el material en cualquier medio o formato.
+  - ADAPTAR: remezclar, transformar y construir a partir del material.
+
+Siempre que cumpla las siguientes condiciones:
+
+  a) ATRIBUCIÓN. Debe reconocer adecuadamente la autoría de BluMind, proveer
+     un enlace a este repositorio (o a https://blumind.es cuando esté
+     disponible), e indicar si se realizaron cambios.
+
+  b) NO COMERCIAL. No puede utilizar el material con propósitos comerciales.
+     Se considera uso comercial, entre otros:
+       - Incluirlo en un producto de pago o en un servicio facturable.
+       - Utilizarlo como dataset de entrenamiento de un modelo comercial.
+       - Redistribuirlo como parte de una oferta consultiva facturada.
+
+  c) COMPARTIR IGUAL. Si remezcla, transforma o construye a partir del
+     material, debe distribuir sus contribuciones bajo la misma licencia
+     CC BY-NC-SA 4.0.
+
+Texto legal completo: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+
+4. CLÁUSULA ADICIONAL SOBRE /responses/**
+------------------------------------------
+
+Los archivos JSON contenidos en /responses/ recogen respuestas producidas
+por modelos de IA evaluados por BluMind. Además de CC BY-NC-SA 4.0, aplican
+las siguientes condiciones:
+
+  a) La atribución debe identificar al modelo concreto cuyas respuestas se
+     reutilizan (campos "subject_id" y "subject_version" del JSON).
+
+  b) BluMind no garantiza la corrección técnica ni la seguridad operativa de
+     ninguna respuesta contenida en /responses/. El propósito de estos
+     archivos es documentar el estado del evaluado en un momento concreto,
+     no servir de referencia de decisión operativa.
+
+  c) No se permite utilizar estas respuestas para entrenar un modelo comercial
+     sin permiso expreso y escrito de BluMind (extensión de la cláusula
+     NoComercial).
+
+
+5. CLÁUSULA ADICIONAL SOBRE /scoring/**
+----------------------------------------
+
+Los archivos JSON contenidos en /scoring/ recogen puntuaciones emitidas por
+revisores expertos. Además de CC BY-NC-SA 4.0:
+
+  a) El campo "reviewer_id" publicado en el repositorio es un identificador
+     anonimizado. Ninguna versión pública del repositorio puede contener la
+     identidad real del revisor. El mapeo reviewer_id → identidad real queda
+     fuera de este repositorio y es confidencial.
+
+  b) Queda expresamente prohibido intentar re-identificar a un revisor a
+     partir de los datos publicados (por ejemplo, mediante triangulación
+     con metadatos de commits, estilos de redacción o patrones de
+     puntuación).
+
+  c) La violación de la cláusula (b) rescinde automáticamente la licencia
+     CC BY-NC-SA 4.0 para el infractor.
+
+
+6. GOLDS Y CASOS PRIVADOS — PROPIETARIO
+----------------------------------------
+
+Los golds (archivos *_gold.md) y los casos marcados como privados en el
+registry o en notas internas son propiedad exclusiva de BluMind Technologies
+SL.
+
+  a) No se publican en este repositorio bajo ninguna circunstancia.
+  b) Su acceso está limitado al comité experto de BluMind Technologies SL y
+     a personal autorizado bajo acuerdo de confidencialidad.
+  c) Queda prohibida su reproducción, distribución, comunicación pública,
+     transformación o uso como dato de entrenamiento.
+  d) Si un gold o caso privado apareciera por error en el repositorio
+     público, BluMind Technologies SL lo retirará del historial público
+     (mediante reescritura de historial si es necesario). Cualquier copia
+     obtenida durante la ventana de exposición sigue sujeta a esta cláusula.
+
+
+7. SELLOS Y CERTIFICACIONES "BluMind Certified"
+------------------------------------------------
+
+La emisión, renovación y retirada de sellos "BluMind Certified" y cualquier
+nivel asociado (Bronze, Silver, Gold) es competencia exclusiva de BluMind
+Technologies SL.
+
+  a) Ningún tercero puede emitir, replicar o imitar el sello sin autorización
+     escrita de BluMind Technologies SL.
+  b) El uso del sello por parte de un modelo certificado está regulado por
+     un contrato específico de certificación, separado de esta licencia.
+  c) El contenido de /docs/seal_reglamento.md (cuando se publique) se
+     distribuye bajo CC BY-NC-SA 4.0 con fines informativos, sin que ello
+     otorgue derecho alguno a emitir el sello.
+
+
+8. MARCAS REGISTRADAS
+---------------------
+
+Los siguientes signos distintivos están registrados en la OEPM a nombre del
+fundador de BluMind Technologies SL, y cedidos en uso a la sociedad:
+
+  - "BluMind" (marca denominativa)
+  - Logotipo y la identidad visual asociada (marca figurativa)
+
+Ninguna parte de esta licencia (ni la licencia MIT aplicable al código, ni la
+CC BY-NC-SA aplicable al contenido) otorga derecho alguno a usar estas marcas.
+El uso por terceros requiere autorización escrita.
+
+La referencia al nombre "BluMind Benchmark" con el único propósito de citar
+este trabajo académicamente o de describir su existencia (uso nominativo)
+está permitida.
+
+
+9. DESCARGO DE RESPONSABILIDAD GENERAL
+---------------------------------------
+
+El contenido de este repositorio se proporciona "TAL CUAL", sin garantía
+expresa o implícita de ningún tipo. Las respuestas, puntuaciones y métricas
+documentadas reflejan el estado del evaluado en el momento de la evaluación
+y no constituyen recomendación de ingeniería para plantas reales.
+
+BluMind no se hace responsable de decisiones operativas tomadas basándose
+total o parcialmente en este material. Cualquier acción sobre una planta
+de tratamiento de agua requiere validación por un ingeniero cualificado
+en contacto directo con las condiciones físicas del sistema.
+
+
+10. JURISDICCIÓN Y LEY APLICABLE
+--------------------------------
+
+Esta licencia se rige por la ley española. Cualquier controversia se
+someterá a los juzgados y tribunales competentes del domicilio social de
+BluMind Technologies SL, salvo que la normativa imperativa disponga otra cosa.
+
+Fin del documento.

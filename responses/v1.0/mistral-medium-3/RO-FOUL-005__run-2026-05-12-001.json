@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-FOUL-005",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:46:42Z",
+  "main_hypothesis": "Excessive FeCl₃ dosing leading to iron fouling of the RO membranes",
+  "key_signals": [
+    "ΔP increase in the first stage head of the RO system",
+    "Increased Fe total in the RO feed water",
+    "Reddish coloration on cartridge filters",
+    "Recent increase in FeCl₃ dosing to 4 mg/L and subsequent maintenance of this dose",
+    "Increased SDI and turbidity after cartridge filters"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling due to increased organic matter",
+      "why_plausible": "ATP levels are slightly elevated and there is a seasonal increase in feed water temperature which can promote biological activity.",
+      "why_discardable": "ATP levels are relatively stable and the increase in ΔP is more consistent with particulate fouling rather than biofouling."
+    },
+    {
+      "hypothesis": "Scaling due to increased recovery or anti-scalant failure",
+      "why_plausible": "There is an increase in feed pressure and a decrease in permeate flow, which can be symptoms of scaling.",
+      "why_discardable": "Conductivity levels are stable, indicating that scaling is less likely. Additionally, the presence of iron in the feed water points more towards fouling."
+    }
+  ],
+  "requested_data": "Iron content in the feed water before and after the cartridge filters (mg/L)",
+  "recommended_action": "Reduce FeCl₃ dosage to the baseline level of 2.5 mg/L and perform a cleaning-in-place (CIP) procedure with a low pH solution to remove iron fouling.",
+  "decision_change_condition": "If the iron content in the feed water after the cartridge filters is significantly lower than before the filters, the main hypothesis would change to cartridge filter failure.",
+  "confidence": 85
+}

@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-NOWE-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-flash-lite",
+  "subject_version": "gemini-2.5-flash-lite",
+  "served_model": "gemini-2.5-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:02:04Z",
+  "main_hypothesis": "Oxidación del bisulfito sódico (SBS) por presencia de cloro residual en el agua de alimentación, lo que ha generado subproductos de reacción que han contaminado los elementos y/o han reducido su eficacia de separación de sales.",
+  "key_signals": [
+    "ORP alimentación anómalamente bajo (-120 mV)",
+    "ORP en permeado anómalamente bajo (-180 mV)",
+    "Sulfito residual permeado subida marcada (8,5 mg/L)",
+    "Conductividad permeado alta (850 µS/cm)",
+    "Rechazo de sales bajo (85,3 %)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Contaminación biológica de los elementos de ósmosis inversa.",
+      "why_plausible": "La parada prolongada y la adición de SBS sin propilenglicol podrían haber favorecido el crecimiento bacteriano si la preservación no fue óptima. El agua bruta utilizada para rellenar el bastidor también podría haber introducido biomasa. La baja conductividad del permeado y el bajo ORP podrían ser síntomas de actividad biológica que consume sulfito y genera compuestos reducidos.",
+      "why_discardable": "La conductividad del permeado y el rechazo de sales, aunque bajos, no son tan extremos como se esperaría de una bioincrustación severa que cause un aumento significativo de ΔP en la etapa 1. El ORP bajo es más indicativo de una reacción química que de una bioactividad generalizada. La presencia de sulfito residual en el permeado es inusual en condiciones normales y sugiere una reacción química activa."
+    },
+    {
+      "hypothesis": "Daño físico o químico a las membranas durante la preservación o el arranque.",
+      "why_plausible": "El uso de agua bruta para rellenar el bastidor en lugar de permeado, especialmente si contenía partículas finas o tenía un pH o salinidad inusuales, podría haber dañado las membranas. La preservación con SBS al 1% sin propilenglicol podría haber sido insuficiente o haber causado algún tipo de hinchamiento o degradación si las condiciones de almacenamiento no fueron ideales. El aumento de ΔP en la etapa 2 y la baja recuperación podrían ser indicativos de esto.",
+      "why_discardable": "El ΔP en la etapa 1 es relativamente estable, lo que sugiere que la obstrucción principal no está en la primera etapa. El ΔP en la etapa 2 está subiendo lentamente, lo que podría ser un síntoma de ensuciamiento o daño, pero la causa principal de la alta conductividad y el bajo ORP no se explica directamente por un daño físico generalizado. La presencia de sulfito residual en el permeado apunta a una reacción química."
+    },
+    {
+      "hypothesis": "Fallo en el pretratamiento (antiincrustante o filtro de cartucho) que ha permitido la entrada de incrustaciones o partículas finas a las membranas.",
+      "why_plausible": "Si el antiincrustante no se dosificó correctamente o si el filtro de cartucho de 5 µm estaba dañado o saturado, podría haber permitido el paso de sólidos que causaran un aumento del ΔP y una reducción de la eficiencia de separación de sales. El agua bruta utilizada para rellenar el bastidor podría haber exacerbado este problema si contenía más sólidos suspendidos.",
+      "why_discardable": "El ΔP en la etapa 1 es estable, lo que no sugiere una obstrucción generalizada por sólidos en la primera etapa. El ΔP en la etapa 2 está subiendo lentamente, lo cual es consistente, pero la causa principal de la alta conductividad y el bajo ORP no se explica directamente por un fallo en el pretratamiento. La presencia de sulfito residual en el permeado es un fuerte indicador de una reacción química."
+    }
+  ],
+  "requested_data": "Concentración de cloro libre en el agua de alimentación antes del arranque.",
+  "recommended_action": "Detener la operación de la planta. Realizar un lavado de emergencia de los elementos de ósmosis inversa con una solución de limpieza alcalina (pH 10-11) a baja presión y caudal durante 1-2 horas, seguido de un aclarado exhaustivo con agua de alimentación. Si el problema persiste, considerar un lavado con una solución reductora suave (ej. metabisulfito de sodio a baja concentración) para neutralizar cualquier subproducto oxidado, seguido de un aclarado y posterior lavado alcalino. Si la conductividad y el rechazo de sales no mejoran significativamente, se deberá considerar la limpieza química de las membranas o su reemplazo.",
+  "decision_change_condition": "Si la concentración de cloro libre en el agua de alimentación fuera indetectable (<0.02 mg/L) y el ORP de alimentación fuera consistentemente alto (+50 mV o más), entonces la hipótesis principal sería descartada y se investigaría más a fondo la contaminación biológica o un daño químico no relacionado con el cloro.",
+  "confidence": 85
+}

@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-NOWE-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:23:04Z",
+  "main_hypothesis": "Ingreso de aire en la línea de alimentación (lado de succión/LP) a través de la nueva unión/junta de PVC instalada durante el mantenimiento, provocando flujo bifásico y bolsas de aire en el bastidor tras el arranque.",
+  "key_signals": [
+    "Sonido de “borboteo” intermitente en la línea HP tras el arranque y reapareciendo al mediodía (característico de presencia de aire).",
+    "Desbalance de caudales: alimentación 360 m³/h vs concentrado + permeado 333 m³/h (cierra al 92 %), consistente con presencia de gas/aire y/o derivaciones no medidas.",
+    "ΔP etapa 1 = 0,8 bar y ΔP etapa 2 = 0,5 bar por debajo de baseline y subiendo lentamente, coherente con canales parcialmente desaireados y mal distribución de flujo.",
+    "Conductividad de permeado elevada (510→380 µS/cm) con tendencia descendente; rechazo bajo (95,4 %) subiendo lentamente, típico de membranas parcialmente deshumectadas por aire y mal lavado inicial.",
+    "Presión de alimentación ligeramente alta (14,5 bar) con caudal de permeado reducido (270 m³/h), indicando NDP no aprovechada por área efectiva reducida/mal distribución por aire.",
+    "Historial: línea abierta a la atmósfera 18 h y purga manual por drenajes antes del arranque, condiciones propicias para atrapamiento/ingreso de aire."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fuga interna feed→permeado por O-ring/interconector mal asentado en un elemento.",
+      "why_plausible": "Explicaría el aumento brusco de conductividad de permeado y menor rechazo tras el arranque.",
+      "why_discardable": "La conductividad y el rechazo mejoran con el tiempo y los ΔP están por debajo del baseline; una fuga de sellos suele ser persistente y localizada. No explica el desbalance de caudal ni el borboteo."
+    },
+    {
+      "hypothesis": "Cavitación de la bomba HP por NPSH insuficiente u obstrucción parcial en succión.",
+      "why_plausible": "Puede causar ruidos, caudal reducido y comportamiento transitorio con dos fases.",
+      "why_discardable": "La presión de alimentación es estable y solo ligeramente alta; no se reportan vibraciones/alarma de cavitación. La intermitencia y mejora gradual encajan mejor con ingreso/bolsas de aire que con cavitación sostenida."
+    },
+    {
+      "hypothesis": "Válvula(s) de drenaje/venteo del bastidor parcialmente abierta(s) tras la purga, derivando caudal a desagüe.",
+      "why_plausible": "Explicaría el 8 % de desbalance de caudal y posibles ruidos por entrada de aire.",
+      "why_discardable": "Esperable descarga visible/continua a desagüe y posible caída de presión; no se reporta. No justifica por sí sola la elevación inicial de conductividad y el patrón de ΔP bajo recuperando."
+    },
+    {
+      "hypothesis": "Error/mala lectura de caudalímetros por presencia de burbujas (instrumentación afectada).",
+      "why_plausible": "El aire puede falsear mediciones volumétricas y causar desbalances aparente.",
+      "why_discardable": "Aunque puede explicar el balance, no explica por sí solo el borboteo ni la pérdida de rechazo y su recuperación. La causa raíz seguiría siendo el aire en el sistema."
+    }
+  ],
+  "requested_data": "Presión en succión de la bomba de alta presión durante operación estable (bar g).",
+  "recommended_action": "Parar e aislar el bastidor. 1) Verificar y cerrar completamente todas las válvulas de drenaje/venteo del bastidor; colocar tapones/capuchones si existen. 2) Inspeccionar la unión/junta de PVC recién sustituida en la línea de succión/LP: desmontar, revisar asiento de junta tórica, reponer junta si está dañada y rearmar según par recomendado por el fabricante; realizar prueba de estanqueidad a baja presión (2–3 bar) y observar que no haya ingreso de aire ni fuga. 3) Re-llenar y desairear: abrir venteos de puntos altos (colectores LP/HP y cabezales de vasos) y circular con la bomba LP a 2–3 bar durante 20–30 min, manteniendo una purga continua a desagüe hasta que no se observen burbujas en los venteos; cerrar venteos progresivamente. 4) Arranque con rampa extendida: subir presión de 0 a 10 bar en 10 min, mantener 10 min y luego a 14–15 bar en otros 10–15 min; mantener antincrustante a 2,5 mg/L. 5) Verificar cierre de balance de caudales (±5 %) y conductividad de permeado; si persiste conductividad alta o desbalance tras 2 h, muestrear conductividad de permeado por cabezal/vaso para descartar fuga de O-ring en un elemento.",
+  "decision_change_condition": "Si la presión de succión de la bomba HP es normal (sin depresión anómala u oscilaciones) y no se libera aire por los venteos durante la desaireación, pero la conductividad de permeado permanece elevada y un vaso/cabezal muestra conductividad de permeado marcadamente superior al resto, cambiaría el diagnóstico a fuga de sello (O-ring/interconector) en un elemento.",
+  "confidence": 72
+}

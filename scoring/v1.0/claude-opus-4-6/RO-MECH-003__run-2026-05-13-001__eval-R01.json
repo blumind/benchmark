@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-003",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fallo sello (junta tórica) cap frontal vaina FRP Tubo 2 + deformación/extrusión + desgaste pista 5 años' literal — captura ambas hipótesis (O-ring + FRP)."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "3 alts (OXID, grieta FRP, interconector)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Aislar Tubo 2 + reemplazar O-ring cap OEM EPDM/Buna-N + verificar par — match gold."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide test vacío/presión con tinte sello cap — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Multi: test sigue mostrando pérdida o tinte revela fuga FRP → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

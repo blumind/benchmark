@@ -1,0 +1,45 @@
+{
+  "case_id": "RO-NOWE-002",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5",
+  "subject_version": "gpt-5-2025-08-07",
+  "served_model": "gpt-5-2025-08-07",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:58:04Z",
+  "main_hypothesis": "Arranque tras preservación incorrecta y enjuague insuficiente: el bastidor se dejó y se arrancó con alto contenido de bisulfito sódico (≈1–1,5 % p/p) y agua bruta en el lado de permeado, provocando arrastre de sulfito y sales al permeado que reduce el NDP y degrada temporalmente el rechazo.",
+  "key_signals": [
+    "ORP alimentación -120 mV (vs +50 mV base) y ORP permeado -180 mV (vs -20 mV base): ambiente fuertemente reductor típico de exceso de sulfito.",
+    "Sulfito residual en permeado 8,5 mg/L (vs <0,5 mg/L base): claro arrastre de solución conservante.",
+    "Conductividad de permeado muy alta tras arranque (1.500→850 µS/cm) con bajada lenta: limpieza/arrastre incompleto del lado de permeado cargado de sales.",
+    "Rechazo de sales bajo 85,3 % subiendo lentamente (vs 98,3 % base): indica efecto transitorio compatible con contaminante en lado permeado, no daño irreversible.",
+    "Caudal de permeado 75 % del base subiendo lentamente y necesidad de mayor presión de alimentación (16,8 vs 14,5 bar): NDP efectivo reducido por alta salinidad en permeado.",
+    "Histórico: sustitución de agua de preservación por agua bruta y múltiples adiciones de SBS; solo 15 min de aclarado previo al arranque y rampa rápida."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Daño irreversible de la poliamida (oxidación/ataque químico) que reduce el rechazo.",
+      "why_plausible": "Rechazo muy bajo y conductividad de permeado alta podrían indicar membrana dañada.",
+      "why_discardable": "No hubo oxidante (Cl2 <0,02 mg/L) y el ORP es fuertemente reductor; además, el rechazo y la conductividad mejoran con el tiempo, patrón no típico de daño permanente."
+    },
+    {
+      "hypothesis": "By-pass interno o fallo de sellos/O-rings que mezcla alimentación con permeado.",
+      "why_plausible": "Conductividad de permeado elevada podría deberse a mezcla mecánica.",
+      "why_discardable": "ΔP de etapas dentro de lo normal (E1 estable, E2 solo ligera subida) y la mejora gradual del rechazo sugiere depuración química, no un defecto mecánico constante."
+    },
+    {
+      "hypothesis": "Bioincrustación acelerada por haber usado agua bruta en preservación.",
+      "why_plausible": "El uso de agua bruta puede introducir nutrientes y microbios, elevando ΔP y bajando rendimiento.",
+      "why_discardable": "Tiempo de operación muy corto (horas) y presencia de sulfito en altas concentraciones (biostático); ΔP E1 estable y rechazo mejora, poco compatible con bioensuciamiento inicial."
+    },
+    {
+      "hypothesis": "Incrustación en etapa 2 (scaling) tras el arranque a alta recuperación.",
+      "why_plausible": "ΔP de etapa 2 muestra subida lenta, posible inicio de incrustación.",
+      "why_discardable": "Recuperación y antincrustante iguales al histórico; pocas horas de operación; el síntoma dominante es bajo rechazo asociado a sulfito, no aumento marcado de ΔP."
+    }
+  ],
+  "requested_data": "Conductividad de permeado (µS/cm) medida tras un enjuague con permeado a 0 % de recuperación hasta obtener residual de sulfito en permeado <1,0 mg/L.",
+  "recommended_action": "Sacar el bastidor de producción y realizar un enjuague de desplazamiento con permeado: abrir totalmente la válvula de concentrado (0 % recuperación) y circular permeado a caudal de diseño de crossflow con presión baja (<4 bar) durante 60–90 minutos. Muestrear cada 10–15 min el permeado hasta lograr residual de sulfito <1,0 mg/L y ORP en permeado > -50 mV. Drenar y volver a llenar ambos lados con permeado; purgar líneas de muestreo. Reanudar gradualmente: rampa de presión en 10–15 min, verificando que la conductividad de permeado desciende hacia el valor base (<150 µS/cm). Evitar nuevas adiciones de SBS y no usar agua bruta para preservación en el futuro.",
+  "decision_change_condition": "Si, tras eliminar el sulfito (residual en permeado <1,0 mg/L y ORP cercano a neutro) y después de un enjuague completo, la conductividad de permeado permanece >400 µS/cm (rechazo <95 %) a las mismas condiciones de operación, reinterpretaría el caso como daño de membrana o by-pass mecánico y no como arrastre de preservante.",
+  "confidence": 80
+}

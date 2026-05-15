@@ -1,0 +1,39 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-2-5-pro",
+  "subject_version": "gemini-2.5-pro",
+  "served_model": "gemini-2.5-pro",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:53:18Z",
+  "main_hypothesis": "Daño oxidativo irreversible de las membranas de poliamida de la ósmosis inversa por exposición prolongada a cloro libre. La causa raíz es un fallo en cascada del sistema de decloración: inicialmente por la rotura del agitador del tanque de SBS que provocó estratificación y una dosificación ineficaz, seguido de la parada completa de la bomba dosificadora.",
+  "key_signals": [
+    "Cloro libre antes RO de 0,42 mg/L (valor de referencia < 0,02 mg/L), indicando la presencia del agente oxidante.",
+    "ORP antes RO de +540 mV, confirmando un ambiente fuertemente oxidante.",
+    "Aumento drástico de la conductividad del permeado a 720 µS/cm y caída del rechazo de sales al 98,7 %, síntomas clásicos de daño en la membrana.",
+    "Caudal de SBS dosificado de 0 L/h, evidenciando la interrupción total de la neutralización del cloro.",
+    "Historial del incidente, que documenta la estratificación de la solución de SBS en el tanque por fallo del agitador como evento iniciador."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo mecánico de O-rings o elementos de membrana.",
+      "why_plausible": "Un aumento súbito de la conductividad del permeado puede deberse a una fuga física que permite el paso de agua de alimentación al colector de permeado.",
+      "why_discardable": "No explica los altos niveles de cloro libre y ORP registrados antes de la RO. Además, un fallo mecánico suele ser localizado, mientras que los datos sugieren un problema sistémico y progresivo que coincide con el fallo de la decloración."
+    },
+    {
+      "hypothesis": "Biofouling severo y agudo.",
+      "why_plausible": "El ensuciamiento biológico puede degradar el rendimiento de la membrana y aumentar el paso de sales si el sistema de biocida falla.",
+      "why_discardable": "El biofouling causa un aumento significativo y progresivo de la presión diferencial (ΔP), la cual se reporta como estable. Tampoco explica la presencia masiva de cloro libre."
+    },
+    {
+      "hypothesis": "Fallo múltiple de sensores (cloro, ORP, conductividad).",
+      "why_plausible": "El operador inicialmente sospechó de un problema de calibración, y es teóricamente posible que los instrumentos den lecturas erróneas.",
+      "why_discardable": "La correlación entre múltiples mediciones independientes (cloro, ORP, conductividad de permeado, rechazo de sales) que presentan un cuadro coherente de daño por cloro hace que un fallo simultáneo de todos los sensores sea extremadamente improbable. El caudal nulo de SBS confirma un fallo de proceso real."
+    }
+  ],
+  "requested_data": "Resultado del perfilado de conductividad (profiling) en un tubo de presión representativo del primer bastidor afectado.",
+  "recommended_action": "Detener inmediatamente todos los trenes de ósmosis inversa para prevenir mayor daño por cloro. No reanudar la operación hasta que el sistema de dosificación de SBS (agitador, bomba, concentración de la solución) esté completamente reparado y se verifique que el cloro libre antes de la RO es consistentemente < 0,02 mg/L durante al menos 30 minutos.",
+  "decision_change_condition": "Si el perfilado de conductividad del tubo de presión revelara que el aumento de sales se concentra en un único punto (p. ej., un O-ring de interconexión dañado) en lugar de estar distribuido a lo largo de las superficies de las membranas.",
+  "confidence": 95
+}

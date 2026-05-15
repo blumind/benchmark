@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-003-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-003",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fouling orgánico NOM precipitada + sobredosis coagulante' — captura ambos."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta signals con causa raíz operacional."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (Fe coloidal, biofouling, particulado) con why_discardable anclado."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "CIP alcalino NaOH pH 11.5-12 60 min; 'No CIP ácido hasta confirmar' — incompleto (falta paso ácido para Fe)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide SEM-EDX elemento etapa 1 o autopsia — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: Fe >30% en peso de fouling → Fe coloidal."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "Solo alcalino — falta paso ácido para Fe."
+}

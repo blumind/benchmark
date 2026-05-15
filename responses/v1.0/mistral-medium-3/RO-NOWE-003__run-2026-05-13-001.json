@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:06:28Z",
+  "main_hypothesis": "Inadequate flushing of glycerin preservative from new membrane elements due to insufficient pre-startup rinsing steps.",
+  "key_signals": [
+    "Glicerina/COD permeado = 320 mg/L (expected < 50 mg/L)",
+    "ORP alimentación = -10 mV (expected +90 mV)",
+    "Pasos de aclarado pre-arranque ejecutados = 1 (recommended 3)",
+    "Conductividad permeado = 580 µS/cm (expected ~350 µS/cm)",
+    "Caudal permeado tren = 175 m³/h (expected ~250 m³/h)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane damage due to rapid pressure ramp-up.",
+      "why_plausible": "The operator used a 5-minute ramp-up instead of the recommended 30-minute ramp-up, which could cause physical damage to the membranes.",
+      "why_discardable": "Membrane damage would typically result in higher salt passage and lower rejection rates, but the rejection rate is still high (98.97%) and improving."
+    },
+    {
+      "hypothesis": "Chemical incompatibility with the new preservative solution.",
+      "why_plausible": "The new preservative solution contains glycerin instead of propylene glycol, which might interact differently with the membrane material.",
+      "why_discardable": "Chemical incompatibility would likely cause more severe and immediate performance issues rather than a gradual improvement."
+    }
+  ],
+  "requested_data": "Glicerina concentration in the feed water (mg/L)",
+  "recommended_action": "Perform two additional flushing cycles with permeate water for 1 hour each at low pressure (10-15 bar) to remove residual glycerin from the membrane elements.",
+  "decision_change_condition": "If the glycerin concentration in the feed water is found to be below 50 mg/L, the main hypothesis would be invalidated.",
+  "confidence": 85
+}

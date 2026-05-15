@@ -1,0 +1,35 @@
+{
+  "case_id": "RO-FOUL-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:46:33Z",
+  "main_hypothesis": "Biofouling caused by excessive organic matter and transparent exopolymer particles (TEP) due to a phytoplankton bloom.",
+  "key_signals": [
+    "Increase in ΔP stage 1 (head) from 1.3 bar to 3.1 bar",
+    "Decrease in train permeate flow by 11%",
+    "Increase in TOC from 1.2 mg/L to 3.4 mg/L",
+    "Increase in chlorophyll-a from 1.5 µg/L to 28 µg/L",
+    "High TEP levels at 320 µg/L Xeq",
+    "Visible filaments and earthy odor in feed samples"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Membrane scaling due to increased concentration of sparingly soluble salts.",
+      "why_plausible": "Increased feed pressure and slight increase in feed conductivity could suggest scaling.",
+      "why_discardable": "Conductivity is relatively stable and the increase in organic matter and TEP strongly suggests biofouling."
+    },
+    {
+      "hypothesis": "Mechanical blockage or damage in the membrane elements.",
+      "why_plausible": "Sudden increase in pressure drop could indicate physical damage or blockage.",
+      "why_discardable": "No reports of mechanical issues or maintenance incidents that would suggest physical damage."
+    }
+  ],
+  "requested_data": "Microscopic analysis of membrane autopsy samples for biofilm confirmation.",
+  "recommended_action": "Perform a low-pH cleaning-in-place (CIP) with citric acid at 2% concentration to remove organic fouling and biofilm.",
+  "decision_change_condition": "If microscopic analysis of membrane samples shows no signs of biofilm or organic fouling.",
+  "confidence": 85
+}

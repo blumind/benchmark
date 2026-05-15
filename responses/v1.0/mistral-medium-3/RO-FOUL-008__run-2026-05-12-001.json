@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:47:17Z",
+  "main_hypothesis": "Biofouling debido a la preservación inadecuada de las membranas durante la parada programada",
+  "key_signals": [
+    "ATP en alimentación RO aumentó de 60 pg/mL a 980 pg/mL",
+    "Olor sulfhídrico en muestras de concentrado",
+    "Aumento en ΔP etapa 1 de 0,9 bar a 1,5 bar",
+    "Aumento en la turbidez de salida de cartuchos de 0,06 NTU a 0,12 NTU",
+    "Disminución del caudal de permeado en un 8%"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fouling por sílice",
+      "why_plausible": "La sílice en la alimentación es moderadamente alta (32 mg/L) y podría precipitar en las membranas.",
+      "why_discardable": "La concentración de sílice en la alimentación se ha mantenido estable y no hay un aumento significativo en la conductividad del permeado que sugiera precipitación de sílice."
+    },
+    {
+      "hypothesis": "Fouling por escalado de sales",
+      "why_plausible": "La conductividad del permeado ha aumentado, lo que podría indicar precipitación de sales.",
+      "why_discardable": "La conductividad de la alimentación se ha mantenido estable y no hay un aumento significativo en la concentración de calcio."
+    }
+  ],
+  "requested_data": "Análisis microbiológico de las membranas (conteo de bacterias en UFC/cm²)",
+  "recommended_action": "Realizar una limpieza química de las membranas con una solución de hidróxido de sodio (NaOH) al 0,1% y peróxido de hidrógeno (H2O2) al 0,2% a 30°C durante 30 minutos.",
+  "decision_change_condition": "Si el análisis microbiológico de las membranas no muestra un aumento significativo en el conteo de bacterias, la hipótesis de biofouling sería descartada.",
+  "confidence": 85
+}

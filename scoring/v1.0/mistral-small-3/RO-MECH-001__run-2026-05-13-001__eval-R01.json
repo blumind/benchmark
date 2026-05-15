@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-MECH-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-14T09:34:25Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-MECH-001",
+    "subject_id": "mistral-small-3",
+    "subject_version": "mistral-small-2603",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'fallo junta interna O-ring interconnector Tubo 4 T-02 + paso salmuera + instalación incorrecta o defecto' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta evidencia."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (rotura membrana, contaminación cruzada, fouling, error instalación)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Aislar Tubo 4 + integridad test burbuja/presión + reemplazar O-ring + reinstalar + monitor — match gold + antiincrustante 3 ppm operacional (no daño)."
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "Pide test integridad membrana presión diferencial lado permeado — match accepted."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi: integridad normal + conductividad normaliza <450 → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

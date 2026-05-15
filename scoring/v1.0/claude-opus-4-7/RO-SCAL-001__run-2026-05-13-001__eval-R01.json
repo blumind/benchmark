@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-001",
+    "subject_id": "claude-opus-4-7",
+    "subject_version": "claude-opus-4-7",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'CaCO3 etapa 2 + subdosificación antiincrustante (bomba descebada) + deriva pH 6.7→7.3' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta señales del caso con relación causal."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "4 alts (sílice, fouling coloidal, OXID, CaSO4) con why_discardable."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Parada + restablecer H2SO4 pH 6.7 + LSI rechazo ≤0.3 explícito + cebado bomba + integridad manguera + válvulas retención — match gold."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide pH rechazo + cálculo LSI/S&DSI — match exacto accepted_requested_data."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: tras restaurar pH 6.7 y dosis 1.8 L/h, si ΔP etapa 2 no responde a ácido o depósito no es CaCO3 → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

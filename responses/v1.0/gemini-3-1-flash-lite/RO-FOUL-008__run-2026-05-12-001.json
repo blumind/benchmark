@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-FOUL-008",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T15:17:23Z",
+  "main_hypothesis": "Biofouling severo en la primera etapa de las membranas de ósmosis inversa debido a la proliferación bacteriana durante el periodo de estancamiento sin preservación biocida.",
+  "key_signals": [
+    "Aumento marcado de ATP en alimentación (980 pg/mL vs 60 pg/mL)",
+    "Olor sulfhídrico en el concentrado durante el arranque",
+    "Incremento significativo de ΔP en la etapa 1 (1,5 bar vs 0,9 bar)",
+    "Ausencia de dosificación de bisulfito durante la parada de 28 días",
+    "Aumento de la conductividad del permeado"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Incrustación inorgánica (sílice o carbonato de calcio)",
+      "why_plausible": "La sílice está presente en el agua de alimentación y el aumento de presión podría sugerir una restricción de flujo.",
+      "why_discardable": "La química del agua (pH, sílice, calcio) se mantiene estable y el aumento de ATP es un indicador biológico directo que no explica la incrustación inorgánica."
+    },
+    {
+      "hypothesis": "Fouling por partículas (coloidal/sedimentos)",
+      "why_plausible": "La turbidez de salida de los cartuchos ha subido, lo que podría indicar una falla en la filtración previa.",
+      "why_discardable": "El aumento de turbidez es leve (0,06 a 0,12 NTU) y no correlaciona con el aumento masivo de ATP ni con el olor sulfhídrico característico de actividad bacteriana."
+    }
+  ],
+  "requested_data": "Análisis microbiológico de la superficie de la membrana (autopsia o muestreo de biofilm) para identificar especies bacterianas presentes.",
+  "recommended_action": "Realizar un procedimiento de limpieza química (CIP) utilizando un detergente alcalino de alto pH (pH 11-12) diseñado para la eliminación de materia orgánica y biofilm, seguido de una desinfección con un biocida no oxidante compatible con las membranas (ej. isotiazolinona al 0,1% v/v) según las especificaciones del fabricante.",
+  "decision_change_condition": "Si el análisis de la autopsia de la membrana revelara una capa densa de sílice polimerizada sin presencia significativa de biomasa, mi diagnóstico cambiaría a incrustación inorgánica por sílice.",
+  "confidence": 95
+}

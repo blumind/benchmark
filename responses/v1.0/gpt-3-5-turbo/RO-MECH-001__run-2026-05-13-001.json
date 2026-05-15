@@ -1,0 +1,33 @@
+{
+  "case_id": "RO-MECH-001",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-3-5-turbo",
+  "subject_version": "gpt-3.5-turbo-0125",
+  "served_model": "gpt-3.5-turbo-0125",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T16:28:58Z",
+  "main_hypothesis": "Mal funcionamiento de los O-rings de los elementos reinstalados en el Tren T-02 durante la sustitución parcial",
+  "key_signals": [
+    "Subida brusca de conductividad en permeado del T-02 tras reinstalación de elementos",
+    "Bajada brusca en el rechazo de sales del T-02",
+    "Probe test mostrando alta conductividad en Tubo 4 del T-02",
+    "Anomalía en el test de presión del Tubo 4 del T-02"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Contaminación de las membranas durante la reinstalación",
+      "why_plausible": "La conductividad del permeado subió bruscamente tras la reinstalación, lo que podría indicar contaminación de las membranas durante el proceso.",
+      "why_discardable": "La sustitución de O-rings y la anomalía en el test de presión del Tubo 4 sugieren un problema más específico con los O-rings."
+    },
+    {
+      "hypothesis": "Problema en el sistema de dosificación de antiincrustante",
+      "why_plausible": "La bajada brusca en el rechazo de sales del T-02 podría indicar una falta de efectividad del antiincrustante, lo que podría estar relacionado con un problema en su dosificación.",
+      "why_discardable": "La subida brusca de conductividad en el permeado y la alta conductividad en el Tubo 4 del T-02 no se explicarían por un problema en la dosificación de antiincrustante."
+    }
+  ],
+  "requested_data": "Concentración de cloro libre en el permeado del T-02",
+  "recommended_action": "Reemplazar nuevamente los O-rings de los elementos reinstalados en el Tren T-02 y realizar un nuevo CIP avanzado en caso de persistir el problema de conductividad elevada en el permeado.",
+  "decision_change_condition": "Si la concentración de cloro libre en el permeado del T-02 es significativamente mayor que el límite establecido, se descartaría el mal funcionamiento de los O-rings como causa principal.",
+  "confidence": 85
+}

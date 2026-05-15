@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-OXID-004",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-medium-3",
+  "subject_version": "mistral-medium-2505",
+  "served_model": "mistral-medium-2505",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:58:36Z",
+  "main_hypothesis": "Degradación de las membranas de ósmosis inversa debido a la exposición prolongada a cloramina residual",
+  "key_signals": [
+    "Aumento de cloramina total en la alimentación a RO (0,38 mg/L) y tras CAG-1 y CAG-2",
+    "Aumento del ORP en la alimentación a RO (+210 mV)",
+    "Disminución del rechazo de sales del 95,5% al 80,7%",
+    "Aumento de la conductividad del permeado de 65 µS/cm a 280 µS/cm",
+    "Disminución del caudal de permeado en un 6%"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Envejecimiento natural de las membranas",
+      "why_plausible": "Las membranas tienen 26 meses de servicio, lo que podría explicar la disminución en el rendimiento.",
+      "why_discardable": "El envejecimiento natural no explicaría el aumento significativo de cloramina residual y el ORP elevado."
+    },
+    {
+      "hypothesis": "Falla en el sistema de pretratamiento de CAG",
+      "why_plausible": "Los filtros de CAG no están eliminando adecuadamente la cloramina, lo que podría deberse a una saturación o mal funcionamiento.",
+      "why_discardable": "Aunque los filtros de CAG no están funcionando correctamente, la exposición prolongada a cloramina es la causa raíz de la degradación de las membranas."
+    }
+  ],
+  "requested_data": "Análisis de la integridad de las membranas mediante prueba de presión de aire",
+  "recommended_action": "Reemplazar las membranas de ósmosis inversa y revisar el sistema de pretratamiento de CAG para asegurar la eliminación adecuada de cloramina.",
+  "decision_change_condition": "Si el análisis de integridad de las membranas muestra que están intactas y sin daño, la hipótesis principal cambiaría a una falla en el sistema de pretratamiento de CAG.",
+  "confidence": 85
+}

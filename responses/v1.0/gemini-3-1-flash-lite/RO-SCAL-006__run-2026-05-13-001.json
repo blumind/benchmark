@@ -1,0 +1,34 @@
+{
+  "case_id": "RO-SCAL-006",
+  "benchmark_version": "v1.0",
+  "subject_id": "gemini-3-1-flash-lite",
+  "subject_version": "gemini-3.1-flash-lite",
+  "served_model": "gemini-3.1-flash-lite",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:50:01Z",
+  "main_hypothesis": "Fouling in the second stage of the RO system caused by the breakthrough of iron and manganese oxides due to incomplete ripening of the greensand filter and inadequate pH control.",
+  "key_signals": [
+    "Marked increase in ΔP in stage 2 (0.8 to 1.8 bar)",
+    "Significant increase in Fe (0.03 to 0.18 mg/L) and Mn (0.02 to 0.11 mg/L) in RO feed",
+    "Brownish deposits on 5 µm cartridge filters",
+    "Increase in feed pH to 6.8, reducing the efficiency of iron/manganese removal and increasing scaling potential",
+    "Greensand filter returned to service without proper ripening"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Calcium carbonate scaling",
+      "why_plausible": "The increase in feed pH to 6.8 and the increase in alkalinity in the reject stream suggest a higher LSI, which could lead to carbonate scaling.",
+      "why_discardable": "The primary symptom is a marked ΔP increase in the second stage rather than a decline in permeate flow/salt rejection characteristic of scaling, and the presence of iron/manganese in the feed is a more direct cause of particulate fouling."
+    },
+    {
+      "hypothesis": "Silica polymerization",
+      "why_plausible": "The feed water has high silica (78 mg/L) and the recovery is 75%, which is near the solubility limit.",
+      "why_discardable": "Silica fouling typically manifests as a gradual decline in performance and is less likely to cause the rapid, localized ΔP increase in the second stage compared to the observed iron/manganese breakthrough."
+    }
+  ],
+  "requested_data": "Silt Density Index (SDI) measured at the RO feed header.",
+  "recommended_action": "Immediately restore the H2SO4 dosage to achieve a feed pH of 6.5, perform an intensive backwash and ripening cycle on the greensand filters, and conduct a low-pH (citric acid 2% w/v) CIP on the RO membranes to remove metal oxide deposits.",
+  "decision_change_condition": "If the SDI were found to be < 3.0 despite the high iron/manganese levels, the diagnosis would shift toward chemical scaling (calcium carbonate or silica) rather than particulate fouling.",
+  "confidence": 85
+}

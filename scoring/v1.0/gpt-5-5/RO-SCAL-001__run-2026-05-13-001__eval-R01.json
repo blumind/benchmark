@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-SCAL-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:26:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-SCAL-001",
+    "subject_id": "gpt-5-5",
+    "subject_version": "gpt-5.5-2026-04-23",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'CaCO3 segunda etapa + subdosificación real tras mantenimiento + operar pH por encima de consigna' literal."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Signals con relación causal."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "5 alts (CaCO3 por pH, coloidal/finos, biofouling, sílice, CaSO4)."
+    },
+    "recommended_action": {
+      "score": 2,
+      "justification": "Retirar bastidor + cebar bomba completamente + estanqueidad manguera + calibrar caudal 1.8 L/h para 2.5 mg/L + devolver consigna ácido pH 6.7 — match gold operacional completo."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide % en masa CaCO3 en depósito por análisis incrustación — match accepted (test efervescencia HCl)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Multi-condición: ausencia CaCO3 + biomasa/sílice/coloidal o si verificación... → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": ""
+}

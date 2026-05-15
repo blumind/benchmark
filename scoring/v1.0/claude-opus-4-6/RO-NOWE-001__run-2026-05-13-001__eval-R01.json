@@ -1,0 +1,48 @@
+{
+  "evaluation_id": "eval-RO-NOWE-001-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:59:30Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-NOWE-001",
+    "subject_id": "claude-opus-4-6",
+    "subject_version": "claude-opus-4-6",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "C1: 'propilenglicol residual... non-wetting parcial' matches PG + no-wetting"
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "C2: 6 signals (caudal 36%, dP low, P=64 bar, cond 480, mejora 36->78, aclarado 30min)"
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "C3: 2 alts (congelacion, biofouling) but third truncated; reasonable"
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "C4: long flush 4-6h ok but suggests CIP alcalino NaOH 0.1% at 12h (recoverable fail)"
+    },
+    "requested_data": {
+      "score": 1,
+      "justification": "C5: 1 anchor (TOC permeado), no fabricante consult, no preservation audit"
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "C6: explicit numeric: TOC<2 mg/L + no improvement at 24h -> autopsia"
+    }
+  },
+  "correctness": 0.5,
+  "automatic_fails_triggered": [
+    {
+      "type": "case_specific",
+      "reference": "Aplicar CIP ácido o alcalino antes de completar el wetting",
+      "severity": "recoverable",
+      "justification": "Propone CIP NaOH si tras 12h flush no >90% caudal - viola fail recoverable"
+    }
+  ],
+  "reviewer_notes": "Claude conflict; explicit CIP alcalino antes de completar wetting"
+}

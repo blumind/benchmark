@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-OXID-003-run-2026-05-13-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T18:38:53Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-OXID-003",
+    "subject_id": "mistral-medium-3",
+    "subject_version": "mistral-medium-2505",
+    "run_id": "run-2026-05-13-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'dosificación insuficiente SBS por estratificación + oxidación cloro libre' literal."
+    },
+    "key_signals": {
+      "score": 1,
+      "justification": "Signals brief."
+    },
+    "alternatives": {
+      "score": 1,
+      "justification": "2 alts brief."
+    },
+    "recommended_action": {
+      "score": 1,
+      "justification": "Detener alimentación + drenar tanque + reponer SBS + verificar agitador + 'lavado químico con SBS 0.5%' protective. C4=1."
+    },
+    "requested_data": {
+      "score": 0,
+      "justification": "Pide cloro libre en permeato — lugar incorrecto."
+    },
+    "decision_change_condition": {
+      "score": 1,
+      "justification": "Trivial: cloro permeato <0.02 → switch."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "REQ permeato incorrecto. ACT lavado con SBS es protective."
+}

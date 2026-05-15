@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "eval-RO-FOUL-007-run-2026-05-12-001-R01",
+  "benchmark_version": "v1.0",
+  "scoring_timestamp_utc": "2026-05-13T10:38:10Z",
+  "reviewer_id": "R01",
+  "response_ref": {
+    "case_id": "RO-FOUL-007",
+    "subject_id": "deepseek-v4-flash",
+    "subject_version": "deepseek-v4-flash",
+    "run_id": "run-2026-05-12-001"
+  },
+  "criterion_scores": {
+    "main_hypothesis": {
+      "score": 2,
+      "justification": "Anchor 'biofouling lead elements biological bloom storm + inadequate pretreatment'."
+    },
+    "key_signals": {
+      "score": 2,
+      "justification": "Conecta ATP+TOC+ΔP cabeza+SDI con cronología post-storm."
+    },
+    "alternatives": {
+      "score": 2,
+      "justification": "3 alts (SCAL, Fe coloidal, NOM) anclados."
+    },
+    "recommended_action": {
+      "score": 0,
+      "justification": "ACCIÓN DAÑINA: 'low-dose chlorine dioxide (ClO2) shock 0.5 mg/L for 30 min on feed side' — ClO2 al feed (=alimentación)."
+    },
+    "requested_data": {
+      "score": 2,
+      "justification": "Pide ATP brine first stage — match accepted (ATP por etapa)."
+    },
+    "decision_change_condition": {
+      "score": 2,
+      "justification": "Specific: ATP brine <100 → Fe coloidal."
+    }
+  },
+  "correctness": 1,
+  "automatic_fails_triggered": [],
+  "reviewer_notes": "ClO2 al feed durante 30 min. Case-specific 007 dice 'continua + cloro/monocloramina' — strict no match (ClO2 no es cloro/monocloramina y 30 min no es continua). C4=0 captura el daño potencial a PA."
+}

@@ -1,0 +1,47 @@
+{
+  "case_id": "RO-OXID-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "gpt-5-5",
+  "subject_version": "gpt-5.5-2026-04-23",
+  "served_model": "gpt-5.5-2026-04-23",
+  "track": "reasoning",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T15:51:52Z",
+  "main_hypothesis": "Fallo de la decloración con bisulfito sódico por pérdida de dosificación efectiva tras el mantenimiento, agravada por estratificación del tanque por agitador fuera de servicio, que permitió paso de cloro libre al RO y produjo daño oxidativo en las membranas.",
+  "key_signals": [
+    "Cloro libre antes de RO de 0,42 mg/L frente a baseline <0,02 mg/L.",
+    "ORP antes de RO de +540 mV frente a baseline +120 mV.",
+    "ORP tras dosificación de SBS de +540 mV frente a baseline -50 mV, indicando ausencia de neutralización efectiva.",
+    "Caudal de SBS dosificado actual de 0 L/h frente a baseline 18 L/h.",
+    "Inspección del tanque de SBS con agitador fuera de servicio y solución estratificada; concentración en aspiración 0,2 % p/p frente a 25 % p/p preparada.",
+    "Subida brusca de conductividad de permeado de 380 a 720 µS/cm y caída del rechazo de 99,3 % a 98,7 %.",
+    "ΔP de etapa 1 y etapa 2 estables, lo que no apunta a ensuciamiento hidráulico como causa principal.",
+    "Conductividad, temperatura y pH de alimentación estables, descartando un cambio relevante de calidad de agua bruta como causa principal."
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Fallo de calibración o deriva del sensor de conductividad de permeado.",
+      "why_plausible": "El aumento de conductividad de permeado fue brusco y previamente el operador atribuyó alarmas a problemas de calibración de sensores.",
+      "why_discardable": "El aumento de conductividad coincide con cloro libre elevado, ORP fuertemente oxidante y ausencia de dosificación efectiva de SBS; además el rechazo calculado cae en la misma dirección, por lo que no es solo una lectura aislada."
+    },
+    {
+      "hypothesis": "Fuga mecánica en juntas tóricas, adaptadores o interconectores de vasos de presión.",
+      "why_plausible": "Una fuga de salmuera hacia permeado puede causar subida abrupta de conductividad sin incremento significativo de ΔP.",
+      "why_discardable": "No explica el cloro libre de 0,42 mg/L, ORP +540 mV tras el punto de SBS ni el caudal de SBS 0 L/h; la coincidencia temporal con el fallo de decloración hace más probable daño oxidativo generalizado."
+    },
+    {
+      "hypothesis": "Ensuciamiento biológico, coloidal o por hierro en la primera etapa.",
+      "why_plausible": "La planta utiliza captación abierta, coagulación con FeCl3 y control biológico con hipoclorito; un problema de pretratamiento podría reducir caudal de permeado.",
+      "why_discardable": "El ΔP de etapa 1 solo pasa de 1,2 a 1,3 bar y se mantiene estable, el ΔP de etapa 2 no cambia y la señal dominante es pérdida de rechazo con ambiente oxidante, no aumento hidráulico progresivo."
+    },
+    {
+      "hypothesis": "Cambio de salinidad o temperatura del agua de alimentación.",
+      "why_plausible": "La conductividad del permeado depende de la conductividad y temperatura de alimentación.",
+      "why_discardable": "La conductividad de alimentación se mantiene prácticamente estable, 56.500 frente a 56.300 µS/cm, y la temperatura solo cambia de 21,5 a 21,8 °C, insuficiente para explicar la duplicación de conductividad de permeado."
+    }
+  ],
+  "requested_data": "Resultado de una prueba de oxidación/autopsia en un elemento representativo del tren afectado, reportado como presencia o ausencia de daño oxidativo por cloro en la capa activa.",
+  "recommended_action": "Parar e aislar de forma controlada los trenes RO afectados, detener la dosificación de hipoclorito hacia la línea que alimenta RO, preparar solución fresca y homogénea de SBS al 25 % p/p, poner en servicio bomba dosificadora de reserva cebada y verificada, ajustar inicialmente a 4 mg/L de SBS en la línea ascendente de cartuchos y no reiniciar RO hasta confirmar en muestra manual antes de bastidor cloro libre <0,02 mg/L y ORP <0 mV; después realizar enjuague a baja presión con agua declorada según el procedimiento operativo.",
+  "decision_change_condition": "Cambiaría el diagnóstico si muestras manuales independientes demostraran cloro libre antes de RO <0,02 mg/L y ORP <0 mV durante el periodo de subida de conductividad, y una prueba de integridad/probing localizara una fuga mecánica sin indicios de oxidación de membrana.",
+  "confidence": 94
+}

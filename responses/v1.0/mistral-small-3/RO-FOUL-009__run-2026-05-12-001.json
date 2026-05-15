@@ -1,0 +1,48 @@
+{
+  "case_id": "RO-FOUL-009",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-12-001",
+  "timestamp_utc": "2026-05-12T14:44:49Z",
+  "main_hypothesis": "Fouling of SWRO membranes due to adsorption of surface-active agents (surfactants) from refinery antiespumante and/or cationic polymers from neighboring plant, leading to organic fouling and increased differential pressure.",
+  "key_signals": [
+    "SDI₁₅ salida cartuchos subida marcada (4,5 vs baseline 2,5)",
+    "Tensión superficial alimentación bajada marcada (58 mN/m vs baseline 72 mN/m)",
+    "TOC alimentación a RO subida (2,9 mg/L vs baseline 1,2 mg/L)",
+    "ΔP etapa 1 subida brusca (2,4 bar vs baseline 1,2 bar)",
+    "Presión alimentación tren subida (65 bar vs baseline 59 bar)",
+    "Caudal permeado tren bajada del 12% (192 m³/h vs baseline 218 m³/h)",
+    "Hidrocarburos totales captación subida (2,1 mg/L vs baseline <1 mg/L)",
+    "ATP en alimentación RO subida moderada (240 pg/mL vs baseline 90 pg/mL)",
+    "Inspección visual de cartuchos: depósito gelatinoso"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Biofouling due to increased microbial activity in feedwater",
+      "why_plausible": "ATP en alimentación RO subida moderada (240 pg/mL vs baseline 90 pg/mL) y TOC subido sugieren posible crecimiento microbiano. ΔP etapa 1 subida brusca podría deberse a biofilm en membranas.",
+      "why_discardable": "No hay evidencia de aumento de cloro libre ni cambios en pH que favorezcan crecimiento microbiano. Depósito en cartuchos gelatinoso pero no marrón/rojizo típico de biofilm. Tensión superficial estable en baseline no compatible con biofouling típico."
+    },
+    {
+      "hypothesis": "Inorganic scaling due to changes in feedwater chemistry",
+      "why_plausible": "Presión alimentación subida y ΔP etapa 1 subida podrían indicar precipitación de sales en membranas, especialmente con recovery del 42% y temperatura estable.",
+      "why_discardable": "Conductividad alimentación estable y pH estable no indican cambios en equilibrio de solubilidad. No hay evidencia de aumento de iones específicos (ej. Ca²⁺, Mg²⁺) ni de formación de incrustaciones visibles en inspección."
+    },
+    {
+      "hypothesis": "Particulate fouling due to inadequate prefiltration",
+      "why_plausible": "SDI₁₅ salida cartuchos subida marcada (4,5) sugiere fallo en filtración previa, permitiendo paso de partículas a membranas.",
+      "why_discardable": "Inspección visual de cartuchos muestra depósito gelatinoso (no particulado) y ΔP etapa 2 estable, lo que no es típico de fouling particulado que afectaría uniformemente a todas las etapas. No hay evidencia de rotura de cartuchos o fallo en DAF."
+    },
+    {
+      "hypothesis": "Oil and grease fouling from refinery effluent",
+      "why_plausible": "Hidrocarburos totales captación subidos (2,1 mg/L) y aviso informal de posible vertido de antiespumante sugieren entrada de aceites en sistema.",
+      "why_discardable": "Tensión superficial bajada marcada (58 mN/m) es más consistente con surfactantes que con aceites puros (típicamente no reducen tensión superficial tan drásticamente). Depósito gelatinoso en cartuchos no es típico de fouling por aceites."
+    }
+  ],
+  "requested_data": "Concentración de surfactantes aniónicos/catiónicos específicos (ej. LAS, quats) en alimentación RO (mg/L)",
+  "recommended_action": "Realizar limpieza química de membranas con solución de 0,1% de dodecilsulfato sódico (SDS) a pH 10 y 35°C durante 60 minutos, seguido de enjuague con permeado y ajuste de dosificación de antiincrustante a 4 ppm. Paralelamente, coordinar con refinería para suspender vertidos de antiespumante y con planta vecina para evitar dosificación de polímeros catiónicos durante 72 horas.",
+  "decision_change_condition": "Si la concentración de surfactantes específicos en alimentación RO es < 0,5 mg/L y la tensión superficial se recupera a > 70 mN/m tras limpieza, descartar hipótesis de fouling orgánico por surfactantes.",
+  "confidence": 92
+}

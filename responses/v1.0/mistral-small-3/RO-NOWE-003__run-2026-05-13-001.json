@@ -1,0 +1,44 @@
+{
+  "case_id": "RO-NOWE-003",
+  "benchmark_version": "v1.0",
+  "subject_id": "mistral-small-3",
+  "subject_version": "mistral-small-2603",
+  "served_model": "mistral-small-2603",
+  "track": "classic",
+  "run_id": "run-2026-05-13-001",
+  "timestamp_utc": "2026-05-13T17:06:36Z",
+  "main_hypothesis": "Residual preservative (glicerina) in the new SWRO elements is causing incomplete cleaning during the commissioning flush, leading to organic fouling and reduced membrane performance.",
+  "key_signals": [
+    "Glicerina/COD permeado con valor de 320 mg/L (muy por encima del límite de <50 mg/L)",
+    "ORP alimentación anómalamente bajo (-10 mV vs +90 mV esperado), indicando presencia de compuestos reductores (bisulfito/glicerina)",
+    "Conductividad permeado elevada (580 µS/cm) y rechazo de sales bajo (98.97%) con tendencia de mejora lenta",
+    "Procedimiento de commissioning no seguido según recomendación del proveedor (solo 1 aclarado de 30 min vs 3 aclarados de 1 h recomendados)",
+    "Preservación de elementos con bisulfito + glicerina (diferente al habitual bisulfito + propilenglicol)"
+  ],
+  "alternatives": [
+    {
+      "hypothesis": "Falta de acondicionamiento químico post-preservación (bisulfito residual) que no se eliminó adecuadamente durante el aclarado.",
+      "why_plausible": "El bisulfito es un agente reductor que puede consumir cloro residual y generar compuestos orgánicos que afectan el ORP y la calidad del permeado. La falta de aclarados suficientes podría dejar trazas de bisulfito en el sistema.",
+      "why_discardable": "El ORP bajo (-10 mV) es más consistente con la presencia de glicerina (compuesto orgánico) que con bisulfito solo, ya que el bisulfito tiende a elevar el ORP en exceso. Además, el proveedor histórico usa propilenglicol (menos problemático) y no se reportan estos síntomas."
+    },
+    {
+      "hypothesis": "Fouling orgánico por compuestos de la solución de preservación (glicerina) que no se eliminó completamente en el aclarado.",
+      "why_plausible": "La glicerina es un compuesto orgánico que puede adsorberse en la membrana y causar fouling reversible, reduciendo el flujo de permeado y aumentando la conductividad. El procedimiento de commissioning no siguió las recomendaciones del proveedor para eliminar estos compuestos.",
+      "why_discardable": "No es descartable, pero es parte del mismo fenómeno principal (residuos de preservación). La glicerina es el componente más problemático en este caso, ya que el bisulfito se degrada más fácilmente con el aclarado."
+    },
+    {
+      "hypothesis": "Daño físico o químico en las membranas nuevas debido a incompatibilidad con la solución de preservación o procedimiento de arranque inadecuado.",
+      "why_plausible": "El uso de una solución de preservación diferente (glicerina vs propilenglicol) podría causar hinchamiento o degradación de las membranas, afectando su rendimiento. El ramp-up demasiado rápido (5 min vs 30 min recomendados) podría generar estrés osmótico.",
+      "why_discardable": "No hay evidencia de daño irreversible (la conductividad permeado está mejorando lentamente y el rechazo de sales es aún aceptable). El problema parece reversible con un aclarado adicional."
+    },
+    {
+      "hypothesis": "Contaminación por materia orgánica externa al sistema (ej. biofilm en tuberías o residuales de limpieza previa).",
+      "why_plausible": "La presencia de glicerina en el permeado sugiere que el problema está relacionado con los elementos nuevos o su preservación, pero una contaminación externa podría agravar el fouling orgánico.",
+      "why_discardable": "No hay evidencia de contaminación externa en los datos reportados. El origen más probable es la solución de preservación de los elementos nuevos."
+    }
+  ],
+  "requested_data": "Concentración de glicerina en la solución de alimentación al tren T-05 (mg/L) tras el aclarado adicional.",
+  "recommended_action": "Ejecutar un aclarado adicional con permeado a baja presión (5 bar) durante 2 horas, seguido de un ramp-up gradual en 30 minutos hasta presión nominal. Ajustar la dosificación de antiincrustante a 4 ppm durante 24 horas para prevenir fouling residual. Monitorear ORP, conductividad permeado y glicerina/COD cada 30 minutos durante el aclarado.",
+  "decision_change_condition": "Si tras el aclarado adicional la concentración de glicerina en permeado sigue siendo >50 mg/L y el ORP no se normaliza a +90 mV, considerar que el fouling orgánico es irreversible y evaluar limpieza química con solución de hipoclorito sódico (200 ppm, pH 11) durante 1 hora.",
+  "confidence": 92
+}
