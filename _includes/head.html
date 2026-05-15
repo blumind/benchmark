@@ -1,14 +1,3 @@
-{%- comment -%}
-Custom head include for BluMind Benchmark.
-
-Overrides Minima's default head to add:
-  - Favicon (BluMind icon)
-  - Open Graph image for social shares
-  - Montserrat web font from Google Fonts
-
-Standard SEO metadata is handled by jekyll-seo-tag through the
-{%- raw -%}{%- seo -%}{%- endraw -%} call.
-{%- endcomment -%}
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +7,7 @@ Standard SEO metadata is handled by jekyll-seo-tag through the
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- feed_meta -%}
 
-  <link rel="icon" type="image/png" sizes="32x32"  href="{{ "/assets/blumind-icon.png" | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/blumind-icon.png" | relative_url }}">
   <link rel="icon" type="image/png" sizes="192x192" href="{{ "/assets/blumind-icon.png" | relative_url }}">
   <link rel="apple-touch-icon" href="{{ "/assets/blumind-icon.png" | relative_url }}">
 

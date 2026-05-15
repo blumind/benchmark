@@ -1,23 +1,13 @@
 ---
-# Front matter present (even if empty) is required so that Jekyll
-# processes this file as Sass and emits /assets/main.css.
 ---
 
-// BluMind brand: use Montserrat as the base font family. Define the
-// variable before importing Minima so the theme picks it up
-// throughout headings, paragraphs, lists, tables, code blocks, etc.
-$base-font-family: "Montserrat", -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", Helvetica, Arial, sans-serif !default;
-
-// Minima uses $brand-color for headings, links, and the site-title.
-// Match the navy of the BluMind wordmark for a consistent identity.
-$brand-color: #122c4b !default;
+// BluMind brand variables. Set before importing Minima so that the
+// theme picks them up throughout headings, links, tables, etc.
+$base-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+$brand-color: #122c4b;
 
 @import "minima";
 
-// Site logo in the header. The wordmark image replaces the text
-// site-title. Constrain the height so the header stays compact on
-// all viewports; preserve aspect ratio via width: auto.
 .site-logo {
   display: inline-block;
   height: 28px;
@@ -25,30 +15,22 @@ $brand-color: #122c4b !default;
   vertical-align: middle;
 }
 
-// Ensure the site-title anchor does not show the link underline that
-// Minima applies to anchors by default.
 .site-title,
 .site-title:hover,
 .site-title:visited {
   text-decoration: none;
 }
 
-// Tighten body line-height slightly for Montserrat (its native
-// vertical metrics are taller than the default Minima font).
 body {
   line-height: 1.6;
 }
 
-// Page H1: bolder and slightly larger to anchor the landing visually.
 h1 {
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
-// Tables: a touch more breathing room and a subtle border style that
-// reads cleaner with Montserrat than the Minima default.
-table {
-  th, td {
-    padding: 0.6em 0.9em;
-  }
+table th,
+table td {
+  padding: 0.6em 0.9em;
 }
