@@ -52,8 +52,8 @@ The committee is responsible for:
 ## Composition (v1.0)
 
 The committee operates with a public roster and additional members
-under organizational embargo. The roster is updated as additional
-members complete their clearance to be listed publicly.
+whose names are not yet publicly listed. The roster is updated as
+those members complete their clearance to be listed publicly.
 
 ### Public members
 
@@ -79,12 +79,12 @@ Reuse, Universidad de Alicante**. Industry expert contributor at
 Combines a strong engineering foundation with senior operational and
 business leadership.
 
-### Members under organizational embargo
+### Members pending public disclosure
 
 Three additional senior international figures of the water sector are
-part of the committee. Their public disclosure is pending their
-respective organizational clearance and is expected during the v1.0
-foundational phase:
+part of the committee. Their names are not yet publicly listed,
+pending clearance from their respective organizations, and are
+expected to be disclosed during the v1.0 foundational phase:
 
 - **Senior Advisor** — global desalination and water sector.
   *Negotiation in progress.*
@@ -165,7 +165,7 @@ committee escalates a response to **collective review** when:
   versions.
 
 During the foundational phase, collective decisions are taken by
-consensus among publicly listed members, with embargoed members
+consensus among publicly listed members, with not-yet-public members
 participating under the same anonymity rules they hold elsewhere.
 Formal voting procedures, term lengths, and rotation rules will be
 introduced when the public roster reaches five members or earlier if
