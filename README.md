@@ -73,15 +73,15 @@ BluMind Benchmark is deliberately **hybrid**: credibility comes from the public 
  │         PUBLIC (this repo)              │      │           PRIVATE            │
  ├─────────────────────────────────────────┤      ├──────────────────────────────┤
  │ • Generic rubric                        │      │ • All golds                  │
- │ • JSON Schemas                          │      │ • v2.0 closed cases          │
- │ • Family taxonomy                       │      │ • v3.0 cases (majority)      │
- │ • v1.0 cases (30 cases)                 │      │ • reviewer_id → real name    │
- │ • v2.0 cases (40 public of 80)          │      │ • SFT / RLHF datasets        │
- │ • v3.0 cases (60 public of 300)         │      │ • Seal regulations           │
+ │ • JSON Schemas                          │      │ • reviewer_id → real name    │
+ │ • Family taxonomy                       │      │ • SFT / RLHF datasets        │
+ │ • v1.0 cases (31, all public)           │      │ • Sealed regulations         │
  │ • Lab responses                         │      └──────────────────────────────┘
  │ • Leaderboard + aggregated metrics      │
  │ • Evaluation scripts                    │
  └─────────────────────────────────────────┘
+
+The split of cases between *public* and *private* in future versions (v2.0, v3.0…) is a roadmap decision, not a current commitment, and will be set on the basis of operational evidence accumulated during v1.0.
 ```
 
 **Fundamental rule**: **golds are never published**, not even for public cases. Publishing a gold is equivalent to publishing exam answers before the exam.
@@ -98,7 +98,7 @@ blumind-benchmark/
 │   ├── prompts/v1.0/         # Prompt template sent to the subject
 │   └── families/v1.0/        # Taxonomy of the 5 failure modes
 ├── cases/                    # Case statements (public part)
-│   └── v1.0/                 # 30 v1.0 cases, all public
+│   └── v1.0/                 # 31 v1.0 cases, all public
 ├── subjects/
 │   └── registry.yaml         # Central registry of evaluated subjects
 ├── responses/                # Subject responses (append-only)

@@ -36,7 +36,7 @@ The pattern is formalized in the `case_id` field of `response.schema.json`.
 | 4 | `MECH` | Mechanical damage / integrity | O-rings, telescoping, seal leaks | Discriminates against those who confuse fouling with mechanical failure |
 | 5 | `NOWE` | No-wetting / abnormal startup | Unpurged sodium bisulfite, abnormal salt passage | Edge case, separates experts from generalists |
 
-v1.0 case distribution: **5 families × 6 cases = 30 cases**, all public.
+v1.0 case distribution: **31 cases across the 5 families** (FOUL: 9, MECH: 5, NOWE: 4, OXID: 6, SCAL: 7), all public. v2.0 will rebalance per-family counts based on operational evidence.
 
 ---
 

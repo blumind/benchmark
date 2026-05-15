@@ -20,7 +20,7 @@ Every value the rubric or the gold can yield is materialised here: `raw_score`, 
 | `metrics_per_subject.csv` and `metrics_per_family.csv` | They are computed *from* this file; this is the canonical fact table. |
 | External labs (private report) | Backing data when a lab disputes a result. |
 
-Expected size at v1.0 full coverage: 30 cases × subjects × reviewers ≈ 60-90 rows.
+Expected size at v1.0 full coverage: 31 cases × subjects × reviewers ≈ 60-90 rows.
 
 ### `metrics_per_subject.csv` — leaderboard source
 
