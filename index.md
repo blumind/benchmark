@@ -1,10 +1,10 @@
 ---
-layout: home
+layout: default
 title: BluMind Benchmark
 description: The public benchmark of AI reasoning applied to water-treatment-plant operations.
 ---
 
-<p style="text-align: right; font-size: 0.9em; margin-top: -0.5em;"><strong>English</strong> · <a href="/es/">Español</a></p>
+<p style="text-align: right; font-size: 0.9em; color: #666; margin-bottom: 1.5em;"><strong>English</strong> &nbsp;·&nbsp; <a href="/es/">Español</a></p>
 
 # BluMind Benchmark
 

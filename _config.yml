@@ -17,6 +17,12 @@ theme: minima
 minima:
   skin: classic
 
+# Empty nav: the site is a single landing page per language; the in-page
+# language switcher handles EN/ES navigation. This prevents Minima from
+# auto-adding both index pages (both titled "BluMind Benchmark") to the
+# top nav and producing a duplicated link.
+header_pages: []
+
 markdown: kramdown
 highlighter: rouge
 
