@@ -8,6 +8,15 @@ $brand-color: #122c4b;
 
 @import "minima";
 
+.site-header {
+  border-top: 5px solid #122c4b;
+}
+
+.site-header .wrapper {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
 .site-icon {
   display: inline-block;
   height: 34px;
