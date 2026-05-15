@@ -1,0 +1,17 @@
+{%- comment -%}
+Custom Minima header for BluMind Benchmark.
+
+We override Minima's default header to remove the auto-generated page
+navigation, which produced duplicated "BluMind Benchmark" links
+because both index pages (English and Spanish) share the same title.
+
+Language navigation is handled in-page, at the top of each landing.
+
+When a logo asset is added (e.g. /assets/logo.svg) it can replace the
+text site-title by swapping the inner content of the <a> tag below.
+{%- endcomment -%}
+<header class="site-header" role="banner">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+  </div>
+</header>
