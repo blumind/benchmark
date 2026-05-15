@@ -77,4 +77,4 @@ Tres figuras internacionales senior adicionales del sector del agua forman parte
 
 ---
 
-<p style="font-size: 0.85em; color: #666;">BluMind Benchmark es operado por BluMind. El benchmark se publica bajo los términos de licencia indicados en <a href="https://github.com/blumind/benchmark/blob/main/LICENSE">LICENSE</a>.</p>
+<p style="font-size: 0.85em; color: #122c4b;">BluMind Benchmark es operado por BluMind. El benchmark se publica bajo los términos de licencia indicados en <a href="https://github.com/blumind/benchmark/blob/main/LICENSE">LICENSE</a>.</p>

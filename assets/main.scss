@@ -23,19 +23,21 @@ $brand-color: #122c4b;
 .site-lang {
   margin-left: auto;
   font-size: 0.9em;
-  color: #666;
+  color: #122c4b;
 
-  a {
-    color: #122c4b;
+  a,
+  a:visited {
+    color: #2c6cbf;
     text-decoration: none;
   }
 
   a:hover {
+    color: #122c4b;
     text-decoration: underline;
   }
 
   strong {
-    color: #111;
+    color: #122c4b;
     font-weight: 600;
   }
 }
@@ -67,14 +69,40 @@ $brand-color: #122c4b;
 
 body {
   line-height: 1.6;
+  color: #122c4b;
 }
 
 h1 {
   font-weight: 700;
   letter-spacing: -0.01em;
+  color: #122c4b;
 }
 
-table th,
-table td {
-  padding: 0.6em 0.9em;
+h2, h3, h4, h5, h6 {
+  color: #122c4b;
+}
+
+a,
+a:visited {
+  color: #2c6cbf;
+}
+
+a:hover {
+  color: #122c4b;
+}
+
+strong {
+  color: #122c4b;
+}
+
+table {
+  color: #122c4b;
+
+  th, td {
+    padding: 0.6em 0.9em;
+  }
+}
+
+blockquote {
+  color: #122c4b;
 }
