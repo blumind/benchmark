@@ -50,6 +50,8 @@ v1.0 covers the **5 core failure families** (FOUL, SCAL, OXID, MECH, NOWE) of re
 
 [See operational metrics (cost, latency, tokens) and safety-gate citations on GitHub →](https://github.com/blumind/benchmark/blob/main/results/leaderboard.md)
 
+[Read the v1.0 Findings Report — generational uplift, hypothesis quality, calibration, and limitations →](https://github.com/blumind/benchmark/blob/main/docs/findings_v1.0.md)
+
 ---
 
 ## What makes BluMind different

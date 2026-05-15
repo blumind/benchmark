@@ -77,6 +77,12 @@ This CHANGELOG documents **system changes** (rubric, schemas, cases, scripts, do
 
 - [`docs/methodology.md`](docs/methodology.md) — entry-point map linking
   to all authoritative sources.
+- [`docs/findings_v1.0.md`](docs/findings_v1.0.md) — canonical v1.0
+  findings report (~15 pages), authored by the BluMind Technical
+  Committee, covering the safety-gate analysis, generational uplift,
+  hypothesis quality, per-family weaknesses, calibration, cost and
+  the explicit limitations of v1.0. Subject to a 7-day provider
+  embargo prior to public release.
 - [`docs/reviewer_guide.md`](docs/reviewer_guide.md) — reviewer scoring
   guide, including the *"Premium contributions for the commercial datasets"*
   section.

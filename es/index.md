@@ -51,6 +51,8 @@ v1.0 cubre las **5 familias principales de fallo** (FOUL, SCAL, OXID, MECH, NOWE
 
 [Ver métricas operativas (coste, latencia, tokens) y citas literales de la *safety gate* en GitHub →](https://github.com/blumind/benchmark/blob/main/results/leaderboard.md)
 
+[Lee el Findings Report de v1.0 — uplift generacional, calidad de hipótesis, calibración y limitaciones →](https://github.com/blumind/benchmark/blob/main/docs/findings_v1.0.md)
+
 ---
 
 ## Qué hace diferente a BluMind
