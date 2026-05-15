@@ -16,5 +16,13 @@ text site-title by swapping the inner content of the <a> tag below.
       <img src="{{ "/assets/blumind-icon.png"     | relative_url }}" alt=""        class="site-icon">
       <img src="{{ "/assets/blumind-wordmark.png" | relative_url }}" alt="BluMind" class="site-logo">
     </a>
+
+    <nav class="site-lang" aria-label="Language">
+      {%- if page.lang == "es" -%}
+        <a href="{{ "/" | relative_url }}">English</a> &nbsp;&middot;&nbsp; <strong>Español</strong>
+      {%- else -%}
+        <strong>English</strong> &nbsp;&middot;&nbsp; <a href="{{ "/es/" | relative_url }}">Español</a>
+      {%- endif -%}
+    </nav>
   </div>
 </header>

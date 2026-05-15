@@ -3,9 +3,8 @@ layout: default
 title: BluMind Benchmark
 description: El benchmark público de razonamiento de IA aplicado a la operación de plantas de tratamiento de agua.
 permalink: /es/
+lang: es
 ---
-
-<p style="text-align: right; font-size: 0.9em; color: #666; margin-bottom: 1.5em;"><a href="/">English</a> &nbsp;·&nbsp; <strong>Español</strong></p>
 
 # BluMind Benchmark
 
