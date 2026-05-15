@@ -28,7 +28,8 @@
 5. **Reasoning-mode models hold a monopoly on the eligible top-3.** `claude-opus-4-7` and `gpt-5-5` are the only two models that combine ≥ 0.90 Pass-rate with zero critical fails. The third eligible model in the top-3 (`gpt-5`, classic) reaches Q = 0.89 — within sampling noise.
 6. **Per-case diagnostic structure separates frontier from non-frontier models more sharply than the final answer does.** The frontier models produce 4 alternative hypotheses on average, each with explicit `why_plausible` / `why_discardable` reasoning, against 1–2 alternatives produced by older or smaller models, often with cosmetic discardable reasoning. This is the dimension where the rubric is most discriminating.
 7. **Cost is not monotonic with quality.** `claude-opus-4-7` (Q = 0.91) costs $0.0623 per case; `deepseek-v4-flash` (Q = 0.78, but disqualified) costs $0.0014 per case — a 44× cost ratio for a 17 % quality gap. The Pareto frontier is non-trivial and provider-specific.
-8. **Two known limitations affect the comparability of specific rows.** Claude Opus 4.6 was evaluated in classic mode (no extended thinking activated); Claude Opus 4.7 was evaluated in reasoning mode (extended thinking forced by API). A v2.0 re-evaluation of 4.6 with `thinking.budget_tokens` enabled is committed.
+8. **The only open-weights model in v1.0 is `deepseek-v4-flash`.** It would rank 6th by raw quality (Q = 0.78) but is disqualified for recommending a chlorine dioxide shock on RO membranes. The 11 remaining subjects are closed-API frontier or mid-tier models. The open-weights tier is under-represented in v1.0 and will be expanded in v2.0; see § 3.7.
+9. **Two known limitations affect the comparability of specific rows.** Claude Opus 4.6 was evaluated in classic mode (no extended thinking activated); Claude Opus 4.7 was evaluated in reasoning mode (extended thinking forced by API). A v2.0 re-evaluation of 4.6 with `thinking.budget_tokens` enabled is committed.
 
 ---
 
@@ -53,6 +54,19 @@ data. Where the committee takes a position, it is signalled by a
 *"Committee position:"* paragraph. Disagreement is welcome — every
 underlying response is public under `responses/v1.0/` and every
 classification is reconstructible from `results/per_run.csv`.
+
+**Note on open-weights vs closed-API.** v1.0 evaluates one explicit
+open-weights subject (`deepseek-v4-flash`, registered in
+[`subjects/registry.yaml`](../subjects/registry.yaml) as an
+*"Open-weights frontier reference point to compare against closed
+frontier models"*) and 11 closed-API subjects served by their
+providers' hosted endpoints. The open-vs-closed dimension is
+analysed in § 3.7 and is the second-highest priority for v2.0 expansion
+of the subject pool. Mistral has open-weights variants in market
+(Mistral 7B family, Mixtral), but the specific snapshots evaluated in
+v1.0 (`mistral-small-2603`, `mistral-medium-2505`) were accessed via
+Mistral's hosted API; the registry does not assert open or closed
+status for those snapshots and this report does not infer it.
 
 This is **not** a marketing white paper. We name names. We cite literal
 recommended actions that would have damaged a real plant. We do this
@@ -379,6 +393,72 @@ operating points:
 
 Everything else is dominated.
 
+### 3.7 Open weights vs closed API
+
+v1.0 evaluates one explicitly open-weights subject and 11 closed-API
+subjects. The single open-weights row is the most analytically
+constrained dimension of this release, and the committee acknowledges
+it as such.
+
+| Subject | Weights | Provider | Mode | Pass | Crit | Mean | Q | Status |
+|---|---|---|---|---:|---:|---:|---:|---|
+| `deepseek-v4-flash` | **Open** | DeepSeek | classic | 22 | 1 | 10.16 | 0.78 | ⛔ |
+| `claude-opus-4-7` | Closed | Anthropic | 🧠 reasoning | 28 | 0 | 11.03 | 0.91 | ✅ |
+| `gpt-5-5` | Closed | OpenAI | 🧠 reasoning | 28 | 0 | 10.97 | 0.91 | ✅ |
+| `gpt-5` | Closed | OpenAI | classic | 27 | 0 | 10.87 | 0.89 | ✅ |
+| `claude-haiku-4-5` | Closed | Anthropic | classic | 25 | 1 | 10.48 | 0.84 | ⛔ |
+| `claude-opus-4-6` | Closed | Anthropic | classic | 24 | 1 | 10.58 | 0.83 | ⛔ |
+| `mistral-small-3` | Not asserted¹ | Mistral | classic | 18 | 1 | 9.74 | 0.70 | ⛔ |
+| `gemini-2-5-pro` | Closed | Google | classic | 14 | 0 | 9.48 | 0.62 | ✅ |
+| `gemini-3-1-flash-lite` | Closed | Google | classic | 5 | 1 | 8.32 | 0.43 | ⛔ |
+| `mistral-medium-3` | Not asserted¹ | Mistral | classic | 0 | 0 | 7.84 | 0.33 | ✅ |
+| `gemini-2-5-flash-lite` | Closed | Google | classic | 0 | 3 | 7.35 | 0.31 | ⛔ |
+| `gpt-3-5-turbo` | Closed | OpenAI | classic | 0 | 2 | 5.48 | 0.23 | ⛔ |
+
+<sup>¹*Mistral runs both open-weights and closed-weights product
+lines; the specific snapshots evaluated (`mistral-small-2603`,
+`mistral-medium-2505`) were served via the hosted API and the
+registry does not assert their weights regime. The committee
+chose not to infer it.*</sup>
+
+**What the single open-weights row shows:**
+
+- On raw quality, `deepseek-v4-flash` reaches Q = 0.78. Within the
+  v1.0 cohort that places it **6th overall** — ahead of every closed
+  Mistral and Google snapshot in the benchmark.
+- It is **disqualified** by one critical fail on `RO-FOUL-001`
+  (recommending a low-dose chlorine dioxide shock on polyamide
+  membranes — *"Initiate a low-dose chlorine dioxide shock treatment
+  (0.5 mg/L as ClO2) for 30 minutes at the RO feed"*).
+- On hypothesis quality (§ 3.2), `deepseek-v4-flash` produces 2
+  alternatives per case on the cases sampled here, versus 4 for the
+  closed-frontier tier. The structural reasoning depth is the
+  observable gap.
+- On calibration, Brier 0.040 and ECE 0.137 place it in the same
+  band as `claude-opus-4-6` (0.035 / 0.100) — i.e. neither uniquely
+  miscalibrated nor uniquely well calibrated for its quality tier.
+- Cost per case is **$0.0014**, the lowest priced row in the entire
+  benchmark. This is the dimension where open weights deliver their
+  expected advantage; the unit economics for self-hosted deployment
+  (not measured in v1.0) would be even more favourable.
+
+**Committee position.** v1.0 is **not** a fair test of the open-weights
+ecosystem. The benchmark currently lacks Llama 4 / Llama 3.3, Qwen 3,
+Mixtral 8x22B, DeepSeek R1, and any self-hosted reasoning model with
+controllable thinking budget. Procurement teams should not read
+"only one open-weights row, and it was disqualified" as evidence that
+the open-weights tier is uncompetitive — *it is evidence that v1.0
+under-sampled it*. A representative open-weights track is a v2.0
+commitment (see § 6).
+
+**One operational caveat carries over from the closed analysis,
+however**, and we state it without qualifier: a single critical-fail
+event on an open-weights model is exactly as damaging to a real plant
+as a critical-fail on a closed-API model. Open weights does not
+imply, and must not be allowed to imply, weaker safety review. Any
+deployment of an open-weights advisor at the operational layer
+inherits the same need for a safety filter above it (§ 2.3).
+
 ---
 
 ## 4. Lessons for the water sector
@@ -454,6 +534,15 @@ addressed by the v2.0 commitments (§ 6).
   standard SOPs) are not yet represented and will be added in v2.0
   through invited international committee members (see
   [`COMMITTEE.md`](../COMMITTEE.md)).
+- **Subject-pool composition: under-representation of open-weights
+  models.** v1.0 evaluates 1 open-weights subject vs 11 closed-API
+  subjects (§ 3.7). The open-weights row that *is* present
+  (`deepseek-v4-flash`) is competitive on raw quality (Q = 0.78,
+  6th overall) but is disqualified by a single critical fail. **One
+  open-weights data point cannot characterise the open-weights tier**;
+  v1.0 findings about open vs closed weights should be treated as
+  preliminary. A representative open-weights track is committed for
+  v2.0.
 
 ---
 
@@ -477,6 +566,12 @@ accumulated during the v1.0 foundational phase.
   `requested_data` fields).
 - **Per-family heatmap** as a first-class artefact in
   `results/`, replacing the current per-family CSV.
+- **Representative open-weights track.** v1.0 evaluated a single
+  open-weights subject (`deepseek-v4-flash`). v2.0 will add at least
+  Llama 4, Qwen 3 and DeepSeek R1 in their open-weights snapshots,
+  served either via inference partners or self-hosted, and will
+  publish the weights regime explicitly as a column in
+  `metrics_per_subject.csv` and in the leaderboard.
 - **Append-only history** of leaderboard rows enforced by CI, so that
   historical rankings cannot be silently rewritten.
 
