@@ -8,9 +8,17 @@ $brand-color: #122c4b;
 
 @import "minima";
 
+.site-icon {
+  display: inline-block;
+  height: 34px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
 .site-logo {
   display: inline-block;
-  height: 28px;
+  height: 24px;
   width: auto;
   vertical-align: middle;
 }
@@ -19,6 +27,9 @@ $brand-color: #122c4b;
 .site-title:hover,
 .site-title:visited {
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 
 body {
