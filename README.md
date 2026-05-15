@@ -34,6 +34,7 @@ Each subject declares its mode in `subjects/registry.yaml` (`sampling_policy.kin
 ## Quick links
 
 - **Public leaderboard**: [https://benchmark.blumind.es](https://benchmark.blumind.es)
+- **Technical Committee**: [`COMMITTEE.md`](COMMITTEE.md)
 - **Methodology**: [`docs/methodology.md`](docs/methodology.md)
 - **Submit a model for evaluation**: [`docs/submission_guide.md`](docs/submission_guide.md)
 - **Join as an expert reviewer**: [`docs/reviewer_guide.md`](docs/reviewer_guide.md)

@@ -291,10 +291,11 @@ Expedited evaluations with shorter turnaround times may be offered as a paid ser
 
 Every response is scored by the **BluMind Technical Committee** — a body of
 senior practitioners and researchers in the water treatment sector. Members
-of the committee are listed publicly on
-[https://benchmark.blumind.es/committee](https://benchmark.blumind.es/committee)
-and include the BluMind founder plus invited experts under formal collaboration
-agreements.
+of the committee are listed publicly in
+[`../COMMITTEE.md`](../COMMITTEE.md) and, in due course, on
+[https://benchmark.blumind.es/committee](https://benchmark.blumind.es/committee).
+The committee includes the BluMind founder plus invited experts under formal
+collaboration agreements.
 
 For each response:
 
