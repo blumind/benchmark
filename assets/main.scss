@@ -87,6 +87,21 @@ h2, h3, h4, h5, h6 {
   color: #122c4b;
 }
 
+// Visual breathing room around section separators. Markdown `---` renders
+// as <hr>; by default Minima leaves it tight against the next H2, which
+// reads as cramped on the landing page.
+hr {
+  border: 0;
+  border-top: 1px solid #d8dde3;
+  margin-top: 3em;
+  margin-bottom: 2.5em;
+}
+
+// Extra top margin on H2s in case the preceding element is not an <hr>.
+h2 {
+  margin-top: 1.2em;
+}
+
 a,
 a:visited {
   color: #2c6cbf;
