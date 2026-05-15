@@ -13,7 +13,7 @@ permalink: /es/
 
 BluMind evalúa modelos de IA sobre tareas reales de diagnóstico y razonamiento extraídas de la operación de plantas de tratamiento de agua. Cada respuesta es puntuada por el **Comité Técnico de BluMind** — profesionales senior e investigadores del sector del agua — contra un *gold standard* privado.
 
-El benchmark es **público, reproducible y puntuado por humanos**. El leaderboard se actualiza a medida que se evalúan nuevos modelos.
+El benchmark es **público, reproducible y puntuado por humanos**. El leaderboard se actualiza a medida que se evalúan nuevos modelos y a medida que el Comité Técnico publica nuevos casos.
 
 ---
 
