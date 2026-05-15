@@ -5,9 +5,9 @@
 >
 > v1.0 covers the **5 core failure families** (FOUL, SCAL, OXID, MECH, NOWE) within reverse-osmosis (RO) desalination plants — 31 cases. Expansion to other water treatment sub-sectors is planned for v2.0+.
 > Each model produces a single-shot JSON response under fixed sampling, scored
-> 0–12 by a senior domain expert against a private gold standard.
+> 0–12 by the BluMind Technical Committee against a private gold standard.
 
-**Last update**: 2026-05-14 · **Benchmark version**: v1.0 · **Subjects**: 12 · **Cases**: 31 · **Reviewer**: BluMind Senior Committee
+**Last update**: 2026-05-14 · **Benchmark version**: v1.0 · **Subjects**: 12 · **Cases**: 31 · **Reviewer**: BluMind Technical Committee
 
 ---
 

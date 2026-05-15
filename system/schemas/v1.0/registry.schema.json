@@ -28,7 +28,7 @@
           "provider": {
             "type": "string",
             "minLength": 1,
-            "description": "Organization or person providing the subject (e.g. 'OpenAI', 'Anthropic', 'BluMind Internal', 'BluMind Committee'). Free-text in v1.0; bound to a provider registry in v2.0+."
+            "description": "Organization or person providing the subject (e.g. 'OpenAI', 'Anthropic', 'BluMind Internal', 'BluMind Technical Committee'). Free-text in v1.0; bound to a provider registry in v2.0+."
           },
           "description": {
             "type": "string",

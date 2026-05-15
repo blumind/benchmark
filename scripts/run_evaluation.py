@@ -87,7 +87,7 @@ PROVIDER_TO_LITELLM_PREFIX = {
     "DeepSeek": "deepseek",
     "Moonshot": "moonshot",
     "BluMind Internal": "openai",
-    "BluMind Committee": "manual",
+    "BluMind Technical Committee": "manual",
 }
 
 REQUIRED_CASE_SECTIONS = [

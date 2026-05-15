@@ -14,7 +14,7 @@ subjects:
 
   - subject_id: human-senior-baseline
     kind: human_baseline
-    provider: BluMind Committee
+    provider: BluMind Technical Committee
     description: >
       Reference baseline produced by senior domain experts (≥10 years of
       operational experience in reverse-osmosis desalination plants) solving

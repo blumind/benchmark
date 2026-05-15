@@ -182,10 +182,10 @@ def render_header(
         f">\n"
         + coverage
         + f"> Each model produces a single-shot JSON response under fixed sampling, scored\n"
-        f"> 0–12 by a senior domain expert against a private gold standard.\n\n"
+        f"> 0–12 by the BluMind Technical Committee against a private gold standard.\n\n"
         f"**Last update**: {last_update} · **Benchmark version**: {version} · "
         f"**Subjects**: {n_subjects} · **Cases**: {n_cases} · "
-        f"**Reviewer**: BluMind Senior Committee\n\n---\n\n"
+        f"**Reviewer**: BluMind Technical Committee\n\n---\n\n"
     )
 
 
