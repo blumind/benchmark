@@ -9,7 +9,7 @@ permalink: /es/
 
 # BluMind Benchmark
 
-**El benchmark público de razonamiento de IA aplicado a la operación de plantas de tratamiento de agua — en español.**
+**El benchmark público de razonamiento de IA aplicado a la operación de plantas de tratamiento de agua.**
 
 BluMind evalúa modelos de IA sobre tareas reales de diagnóstico y razonamiento extraídas de la operación de plantas de tratamiento de agua. Cada respuesta es puntuada por el **Comité Técnico de BluMind** — profesionales senior e investigadores del sector del agua — contra un *gold standard* privado.
 

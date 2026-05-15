@@ -8,7 +8,7 @@ description: The public benchmark of AI reasoning applied to water-treatment-pla
 
 # BluMind Benchmark
 
-**The public benchmark of AI reasoning applied to water-treatment-plant operations — in Spanish.**
+**The public benchmark of AI reasoning applied to water-treatment-plant operations.**
 
 BluMind evaluates AI models on real diagnostic and reasoning tasks drawn from the operation of water-treatment plants. Every response is scored by the **BluMind Technical Committee** — senior practitioners and researchers of the water sector — against a private gold standard.
 
