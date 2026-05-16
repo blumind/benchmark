@@ -44,7 +44,42 @@ v1.0 cubre las **5 familias principales de fallo** (FOUL, SCAL, OXID, MECH, NOWE
 - **Aprob. / Cond. / Fallo** — Clasificación por caso del Comité Técnico. **Aprobado** = respuesta que un operador con experiencia aceptaría tal cual. **Condicional** = respuesta con carencias pero recuperable. **Fallo** = respuesta que induciría a error a un operador real.
 - **Crít.** — Fallos críticos automáticos. Casos en los que la respuesta recomienda una acción que dañaría la planta o comprometería la seguridad del operador (por ejemplo, recomendar un oxidante sobre membranas de poliamida). **Un solo fallo crítico descalifica al modelo del leaderboard**, sin importar el resto de puntuaciones. La acción que activa la *safety gate* se cita literalmente en el leaderboard completo de GitHub.
 - **Media (/12)** — Puntuación media de calidad por caso según experto, en la rúbrica 0–12. 12 = "indistinguible de la respuesta *gold* del experto"; 0 = "completamente errónea".
-- **Brier ↓** y **ECE ↓** — Ambas miden la **calibración de confianza**: si el modelo sabe lo que sabe. Imagina un operador que dice *"estoy un 90 % seguro de que es biofouling"*: si realmente acierta 90 de cada 100 veces que lo dice, está bien calibrado. Si dice 90 % pero solo acierta 60 de cada 100, está sobreconfiado y es peligroso fiarse de él. **Menor es mejor.** Importa cuando las decisiones aguas abajo pesan la confianza del modelo — alarmas automáticas, sistemas de asesoramiento, o cualquier pipeline que tome al pie de la letra un *"estoy 95 % seguro"*.
+- **Brier ↓** — Es una medida de la confianza, es decir *"si el modelo cree que sabe más de lo que realmente sabe, o no"*.
+
+  Léelo así: **si el modelo dice "estoy muy seguro", el Brier mide cuánto le castigan sus errores cuando esa seguridad no estaba justificada.** Cuanto más bajo, mejor: significa que el modelo no solo acierta, sino que además declara una confianza razonable.
+
+  En una frase: **Brier mide si la confianza del modelo es prudente en cada respuesta.**
+
+  **Rango: 0–1. Menor es mejor.** En v1.0 el rango observado va de **0,009 (mejor) a 0,142 (peor)**.
+
+  Técnicamente, BluMind calcula en cada caso la diferencia al cuadrado entre la confianza declarada por el modelo —por ejemplo, "90 % seguro" = 0,9— y la corrección real de la respuesta `{0; 0,5; 1}`. Una respuesta con "100 % de confianza" que resulta incorrecta aporta un error muy alto.
+
+- **ECE ↓** *(Expected Calibration Error — error esperado de calibración)* — *Qué tan fiable es la confianza del modelo en conjunto.*
+
+  Léelo así: **si el modelo dice muchas veces "estoy 70 % seguro", el ECE mide si realmente acierta cerca del 70 % de esas veces.** Cuanto más bajo, mejor: significa que sus porcentajes de confianza se parecen más a probabilidades reales.
+
+  Técnicamente, BluMind agrupa las predicciones en 10 bandas de confianza —0-10 %, 10-20 %, …, 90-100 %— y compara, en cada banda, la confianza media declarada con la corrección media real, ponderando por el número de casos de cada banda.
+
+  Por ejemplo, si el modelo dice "70 % seguro" en 20 casos, pero solo acierta el 50 %, esa banda está mal calibrada y aumenta el ECE.
+
+  **Rango: 0–1. Menor es mejor.** En v1.0 el rango observado va de **0,035 (mejor) a 0,268 (peor)**. Etiquetada como *indicativa* con N = 31.
+
+  En una frase: **ECE mide si los porcentajes de confianza del modelo se pueden creer como probabilidades.**
+
+- **Por qué importan ambas.**
+
+  Imagina un operador que dice: *"estoy 90 % seguro de que es biofouling"*.
+
+  Un **buen Brier** significa que, en esa predicción concreta, el operador/modelo no suele mostrarse extremadamente seguro cuando se equivoca.
+
+  Un **buen ECE** significa que, cuando dice "90 % seguro" muchas veces, realmente acierta aproximadamente 90 de cada 100.
+
+  La diferencia simple es:
+
+  - **Brier** mira la calidad de la confianza **caso a caso**.
+  - **ECE** mira si la confianza está bien calibrada **en conjunto**.
+
+  Ambas métricas importan porque muchos sistemas aguas abajo —alarmas, asistentes operativos, workflows automáticos o sistemas de recomendación— pueden tomar el número de confianza literalmente. Si el modelo dice "95 % seguro" pero en realidad no lo está, el sistema puede sobrerreaccionar.
 - **Q ↑** — Puntuación de calidad compuesta que combina tasa de aprobado y media por caso. Es la columna que ordena el leaderboard.
 - **Modo** — `classic` significa que el modelo se consultó con `temperature = 0`. 🧠 `reasoning` significa que el modelo se consultó en su modo nativo de razonamiento profundo (Claude reasoning, GPT reasoning, etc.).
 - **Estado** — ✅ **Elegible** si el modelo tiene cero fallos críticos. ⛔ **Descalificado** en caso contrario. Los modelos descalificados se listan igualmente por transparencia, pero no pueden ganar el leaderboard.

@@ -43,7 +43,42 @@ v1.0 covers the **5 core failure families** (FOUL, SCAL, OXID, MECH, NOWE) of re
 - **Pass / Cond / Fail** — Per-case classification by the Technical Committee. **Pass** = a response an experienced operator would accept on its own. **Conditional** = a response with gaps but salvageable. **Fail** = a response that would mislead a real operator.
 - **Crit** — Critical automatic fails. Cases where the response recommended an action that would damage the plant or compromise operator safety (for example, recommending an oxidant on polyamide membranes). **A single critical fail disqualifies the model from the leaderboard**, regardless of all other scores. The triggering action is cited literally in the full leaderboard on GitHub.
 - **Mean (/12)** — Average expert-scored quality per case, on the 0–12 rubric. 12 = "indistinguishable from the expert gold answer"; 0 = "completely wrong".
-- **Brier ↓** and **ECE ↓** — Both measure **confidence calibration**: whether the model knows what it knows. Imagine an operator who says *"I'm 90 % sure this is biofouling"*: if they are right 90 times out of 100 when they say that, they are well-calibrated. If they say 90 % but are right only 60 times out of 100, they are overconfident and dangerous to trust. **Lower is better.** This matters when downstream decisions weigh the model's confidence — automated alarms, advisory systems, or any pipeline that takes "I am 95 % sure" at face value.
+- **Brier ↓** — A measure of confidence, that is *"whether the model believes it knows more than it actually does, or not"*.
+
+  Read it like this: **if the model says "I'm very sure", Brier measures how heavily it is penalised by its errors when that confidence was not justified.** The lower the better: it means the model not only gets things right, it also declares a reasonable level of confidence.
+
+  In one sentence: **Brier measures whether the model's confidence is prudent on each response.**
+
+  **Range: 0–1. Lower is better.** In v1.0 the observed spread is **0.009 (best) to 0.142 (worst)**.
+
+  Technically, on every case BluMind computes the squared gap between the model's stated confidence — for example, "90% sure" = 0.9 — and the actual correctness of the response `{0, 0.5, 1}`. A response with "100% confidence" that turns out to be wrong contributes a very large error.
+
+- **ECE ↓** *(Expected Calibration Error)* — *How trustworthy the model's confidence is in aggregate.*
+
+  Read it like this: **if the model says "I'm 70% sure" many times, ECE measures whether it actually gets close to 70% of those right.** The lower the better: it means its confidence percentages look more like real probabilities.
+
+  Technically, BluMind groups predictions into 10 confidence bands — 0-10%, 10-20%, …, 90-100% — and in each band compares the average stated confidence against the average actual correctness, weighted by the number of cases in each band.
+
+  For example, if the model says "70% sure" on 20 cases but only gets 50% right, that band is miscalibrated and increases the ECE.
+
+  **Range: 0–1. Lower is better.** In v1.0 the observed spread is **0.035 (best) to 0.268 (worst)**. Labelled *indicative* at N = 31.
+
+  In one sentence: **ECE measures whether the model's confidence percentages can be trusted as probabilities.**
+
+- **Why both matter.**
+
+  Imagine an operator who says: *"I'm 90% sure this is biofouling."*
+
+  A **good Brier** means that, on that specific prediction, the operator/model does not tend to be extremely confident when wrong.
+
+  A **good ECE** means that, when they say "90% sure" many times, they really are right about 90 of every 100.
+
+  The simple difference is:
+
+  - **Brier** looks at the quality of confidence **case by case**.
+  - **ECE** looks at whether confidence is well-calibrated **in aggregate**.
+
+  Both metrics matter because many downstream systems — alarms, operational assistants, automated workflows, recommendation systems — may take the confidence number literally. If the model says "95% sure" but really is not, the system can over-react.
 - **Q ↑** — Composite quality score combining Pass-rate and mean per-case score. This is the ranking column.
 - **Mode** — `classic` means the model was queried at `temperature = 0`. 🧠 `reasoning` means the model was queried using its native deep-thinking mode (Claude reasoning, GPT reasoning, etc.).
 - **Status** — ✅ **Eligible** if the model has zero critical fails. ⛔ **Disqualified** otherwise. Disqualified models are still listed for transparency, but they cannot win the leaderboard.
